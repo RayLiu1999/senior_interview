@@ -1,7 +1,7 @@
 # 資深後端工程師面試指南
 
-[![Last Commit](https://img.shields.io/github/last-commit/m1stborn/Senior-Interview?style=for-the-badge&logo=github)](https://github.com/RayLiu1999/senior_interview)
-[![Stars](https://img.shields.io/github/stars/m1stborn/Senior-Interview?style=for-the-badge&logo=github)](https://github.com/RayLiu1999/senior_interview/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/RayLiu1999/senior_interview?style=for-the-badge&logo=github)](https://github.com/RayLiu1999/senior_interview)
+[![Stars](https://img.shields.io/github/stars/RayLiu1999/senior_interview?style=for-the-badge&logo=github)](https://github.com/RayLiu1999/senior_interview/stargazers)
 
 這是一份專為資深後端工程師設計的綜合面試指南，旨在提供深入的理論解釋，並在必要時輔以簡潔的程式碼範例，幫助您系統性地複習和掌握核心技術。
 
