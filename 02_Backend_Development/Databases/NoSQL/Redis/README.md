@@ -14,7 +14,6 @@ This section contains interview questions related to using Redis as a NoSQL data
 - [請解釋 Redis 的持久化機制 (RDB 和 AOF)，並比較其優缺點。](./redis_persistence_rdb_vs_aof.md)
 - [Redis 的交易 (Transaction) 如何運作？它滿足 ACID 嗎？](./redis_transactions_and_acid.md)
 - [Redis 的單執行緒模型是什麼意思？它為何如此高效？](./redis_single_thread_model.md)
-- [什麼是快取穿透、快取擊穿和快取雪崩？該如何應對？](./cache_penetration_breakdown_avalanche.md)
 
 ### Advanced Level
 

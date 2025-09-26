@@ -5,3 +5,4 @@
 ## 問題索引
 
 - [如何設計一個高併發的短網址系統？](./how_to_design_a_tiny_url_system.md)
+- [使用 Pub/Sub 建立可靠的聊天系統](./reliable_chat_system_with_pubsub.md)

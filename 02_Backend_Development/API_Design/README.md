@@ -5,3 +5,5 @@
 - [API 中的冪等性](./idempotency_in_api.md)
 - [API 驗證與授權機制](./api_authentication_and_authorization.md)
 - [GraphQL vs. REST](./graphql_vs_rest.md)
+- [WebSocket](./WebSocket/README.md)
+
