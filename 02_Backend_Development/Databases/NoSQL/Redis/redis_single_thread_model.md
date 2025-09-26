@@ -1,6 +1,7 @@
 # Redis 的單執行緒模型是什麼意思？它為何如此高效？
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Redis`, `Concurrency`, `Performance`, `System Design`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # 什麼是 `sync.Mutex` 和 `sync.RWMutex`？它們之間有什麼區別和適用場景？
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Concurrency`, `Mutex`, `Synchronization`
 
 ## 問題詳述

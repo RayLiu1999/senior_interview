@@ -1,6 +1,7 @@
 # PostgreSQL 是什麼？它與 MySQL 相比有哪些主要優勢？
 
 - **難度**: 3
+- **重要程度**: 4
 - **標籤**: `PostgreSQL`, `MySQL`, `Database`
 
 ## 問題詳述

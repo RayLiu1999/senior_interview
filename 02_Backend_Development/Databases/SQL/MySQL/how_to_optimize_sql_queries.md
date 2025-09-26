@@ -1,6 +1,7 @@
 # 如何進行 SQL 查詢優化？請提供一些常見的策略
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `MySQL`, `SQL`, `Performance`, `Query Optimization`
 
 ## 問題詳述

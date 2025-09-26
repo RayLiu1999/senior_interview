@@ -1,6 +1,7 @@
 # 請解釋 Redis 的持久化機制 (RDB 和 AOF)，並比較其優缺點
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Redis`, `Persistence`, `RDB`, `AOF`, `System Design`
 
 ## 問題詳述

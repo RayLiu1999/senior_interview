@@ -1,6 +1,7 @@
 # 主鍵 (Primary Key) 和唯一鍵 (Unique Key) 有什麼區別？
 
 - **難度**: 4
+- **重要程度**: 4
 - **標籤**: `MySQL`, `SQL`, `Database Design`, `Constraints`
 
 ## 問題詳述

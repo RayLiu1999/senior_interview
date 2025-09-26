@@ -1,6 +1,7 @@
 # 談談 Go 中的 Channel，它的主要用途是什麼？以及緩衝區 Channel 和非緩衝區 Channel 的區別？
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Concurrency`, `Channel`, `Synchronization`
 
 ## 問題詳述

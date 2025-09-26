@@ -1,6 +1,7 @@
 # 請解釋 MySQL 的主從複製 (Replication) 機制及其主要用途
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `MySQL`, `Replication`, `High Availability`, `Scalability`
 
 ## 問題詳述

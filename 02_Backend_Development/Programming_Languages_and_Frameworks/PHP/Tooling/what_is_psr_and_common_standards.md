@@ -1,6 +1,7 @@
 # 什麼是 PSR？請列舉並解釋幾個重要的 PSR 標準 (例如 PSR-4, PSR-7, PSR-12)
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `PHP`, `PSR`, `Standards`, `Interoperability`
 
 ## 問題詳述

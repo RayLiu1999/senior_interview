@@ -1,6 +1,7 @@
 # InnoDB 和 MyISAM 儲存引擎有什麼核心區別？
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `MySQL`, `Storage Engine`, `InnoDB`, `MyISAM`, `ACID`
 
 ## 問題詳述

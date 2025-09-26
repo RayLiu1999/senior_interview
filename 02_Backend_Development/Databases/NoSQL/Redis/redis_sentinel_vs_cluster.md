@@ -1,6 +1,7 @@
 # Redis Sentinel (哨兵) 和 Redis Cluster (叢集) 的架構與取捨是什麼？
 
 - **難度**: 9
+- **重要程度**: 5
 - **標籤**: `Redis`, `High Availability`, `Scalability`, `System Design`
 
 ## 問題詳述

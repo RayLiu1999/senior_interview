@@ -1,6 +1,7 @@
 # 什麼是 Goroutine？它與傳統的線程 (Thread) 有什麼區別？
 
 - **難度**: 4
+- **重要程度**: 5
 - **標籤**: `Concurrency`, `Goroutine`, `Scheduler`
 
 ## 問題詳述

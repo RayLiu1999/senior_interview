@@ -1,6 +1,7 @@
 # 解釋 Node.js 中的 Stream 和 Buffer
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Node.js`, `Stream`, `Buffer`, `Memory Management`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # 在 Node.js 專案中使用 TypeScript 的原因與好處
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Node.js`, `TypeScript`, `Static Typing`
 
 ## 問題詳述

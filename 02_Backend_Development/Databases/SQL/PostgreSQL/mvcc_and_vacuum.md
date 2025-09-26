@@ -1,6 +1,7 @@
 # 請解釋 PostgreSQL 的 MVCC 機制與 `VACUUM` 的作用
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `PostgreSQL`, `MVCC`, `VACUUM`, `Concurrency`
 
 ## 問題詳述

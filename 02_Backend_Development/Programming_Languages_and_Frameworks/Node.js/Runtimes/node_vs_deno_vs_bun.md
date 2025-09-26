@@ -1,6 +1,7 @@
 # 比較現代 JavaScript 執行環境：Node.js vs. Deno vs. Bun
 
 - **難度**: 7
+- **重要程度**: 3
 - **標籤**: `Node.js`, `Deno`, `Bun`, `JavaScript Runtimes`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # 比較 Node.js 中的模組系統：CommonJS vs. ESM
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Node.js`, `Modules`, `CommonJS`, `ESM`
 
 ## 問題詳述

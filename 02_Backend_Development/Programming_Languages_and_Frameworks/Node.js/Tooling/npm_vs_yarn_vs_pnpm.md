@@ -1,6 +1,7 @@
 # 比較 Node.js 套件管理器：npm vs. Yarn vs. pnpm
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Node.js`, `npm`, `Yarn`, `pnpm`, `Package Manager`
 
 ## 問題詳述

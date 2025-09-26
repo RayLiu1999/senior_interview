@@ -1,6 +1,7 @@
 # 什麼是 PostgreSQL 中的模式 (Schema)？它有什麼用途？
 
 - **難度**: 3
+- **重要程度**: 3
 - **標籤**: `PostgreSQL`, `Schema`, `Database Design`
 
 ## 問題詳述

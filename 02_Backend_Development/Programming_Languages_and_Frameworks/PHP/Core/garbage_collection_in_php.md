@@ -1,6 +1,7 @@
 # PHP 的垃圾回收 (Garbage Collection) 機制是如何運作的？
 
 - **難度**: 7
+- **重要程度**: 3
 - **標籤**: `PHP`, `Core`, `Internals`, `Memory Management`
 
 ## 問題詳述
@@ -23,17 +24,23 @@ PHP 的記憶體管理核心圍繞著一個名為 `zval` (Zend Value) 的內部�
 **基本的引用計數機制** 非常直觀：
 
 1. **創建**: 當一個變數被賦值時，PHP 會創建一個 `zval` 容器，並將其 `refcount` 設為 1。
+
     ```php
     $a = "Hello"; // 創建一個 zval，"Hello" 的 refcount = 1
     ```
+
 2. **增加**: 當另一個變數指向同一個 `zval` 時，`refcount` 會加 1。
+
     ```php
     $b = $a; // $a 和 $b 指向同一個 zval，"Hello" 的 refcount = 2
     ```
+
 3. **減少**: 當一個變數被 `unset` 或離開其作用域時，它所指向的 `zval` 的 `refcount` 會減 1。
+
     ```php
     unset($b); // "Hello" 的 refcount = 1
     ```
+
 4. **銷毀**: 當一個 `zval` 的 `refcount` 變為 0 時，表示沒有任何變數再指向它，PHP 就會釋放這個 `zval` 佔用的記憶體。這就是最基礎的「垃圾回收」。
 
 ### 2. 循環引用問題
@@ -41,6 +48,7 @@ PHP 的記憶體管理核心圍繞著一個名為 `zval` (Zend Value) 的內部�
 單純的引用計數機制無法處理 **循環引用 (Circular References)** 的情況。當兩個或多個物件（或陣列）互相引用，形成一個閉環時，它們的 `refcount` 將永遠不會變為 0，即使它們已經沒有被外部的任何變數所使用。
 
 **範例**:
+
 ```php
 <?php
 $a = new stdClass();
@@ -55,6 +63,7 @@ unset($a); // $a 的 zval 的 refcount 減 1，但不為 0
 unset($b); // $b 的 zval 的 refcount 減 1，但不為 0
 ?>
 ```
+
 在 `unset($a)` 和 `unset($b)` 之後，變數 `$a` 和 `$b` 本身已經被銷毀，但它們所指向的物件記憶體並沒有被釋放。因為 `$a` 物件內部還被 `$b->parent` 引用，而 `$b` 物件內部還被 `$a->child` 引用。它們的 `refcount` 都大於 0，導致了 **記憶體洩漏 (Memory Leak)**。
 
 ### 3. PHP 的同步週期回收演算法 (Concurrent Cycle Collection)

@@ -1,6 +1,7 @@
 # `VACUUM`, `VACUUM FULL`, 和 `ANALYZE` 有何不同？請解釋它們各自的使用時機
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `PostgreSQL`, `VACUUM`, `Performance`, `DBA`
 
 ## 問題詳述

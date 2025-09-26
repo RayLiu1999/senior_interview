@@ -1,6 +1,7 @@
 # 什麼是快取穿透、快取擊穿和快取雪崩？該如何應對？
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Redis`, `Caching`, `System Design`, `High Availability`
 
 ## 問題詳述

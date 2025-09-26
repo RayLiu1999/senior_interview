@@ -1,6 +1,7 @@
 # PHP Web 開發中常見的安全漏洞有哪些？(SQLi, XSS, CSRF) 如何防範？
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `PHP`, `Security`, `SQLi`, `XSS`, `CSRF`
 
 ## 問題詳述

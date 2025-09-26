@@ -1,6 +1,7 @@
 # 比較 Node.js 中的阻塞式 I/O 與非阻塞式 I/O
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Node.js`, `Blocking I/O`, `Non-blocking I/O`, `Asynchronous`
 
 ## 問題詳述

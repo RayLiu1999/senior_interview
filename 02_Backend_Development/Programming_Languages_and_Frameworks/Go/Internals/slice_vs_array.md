@@ -1,6 +1,7 @@
 # Go 中的 `slice` 和 `array` 有什麼區別？`slice` 的底層結構是什麼？
 
 - **難度**: 4
+- **重要程度**: 5
 - **標籤**: `Slice`, `Array`, `Internals`, `Data Structures`
 
 ## 問題詳述

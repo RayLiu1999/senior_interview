@@ -1,6 +1,7 @@
 # PostgreSQL 有哪些主要的索引類型？請比較 B-Tree、Hash、GiST 和 GIN 的使用場景
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `PostgreSQL`, `Indexing`, `B-Tree`, `Hash`, `GiST`, `GIN`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # Composer 是什麼以及它的主要作用是什麼？
 
 - **難度**: 4
+- **重要程度**: 5
 - **標籤**: `PHP`, `Tooling`, `Dependency Management`
 
 ## 問題詳述

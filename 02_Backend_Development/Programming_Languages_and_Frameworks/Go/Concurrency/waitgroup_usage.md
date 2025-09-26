@@ -1,6 +1,7 @@
 # 什麼是 `sync.WaitGroup`？請舉例說明其使用方法。
 
 - **難度**: 4
+- **重要程度**: 4
 - **標籤**: `Concurrency`, `WaitGroup`, `Synchronization`
 
 ## 問題詳述

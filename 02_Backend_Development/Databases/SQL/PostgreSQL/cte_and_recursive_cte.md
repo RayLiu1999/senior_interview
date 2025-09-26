@@ -1,6 +1,7 @@
 # 什麼是通用表達式 (CTE)？請解釋其優點以及在 PostgreSQL 中如何使用遞迴 CTE
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `PostgreSQL`, `SQL`, `CTE`, `Recursion`
 
 ## 問題詳述

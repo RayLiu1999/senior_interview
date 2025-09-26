@@ -1,6 +1,7 @@
 # `VARCHAR` 和 `CHAR` 有什麼區別？
 
 - **難度**: 2
+- **重要程度**: 3
 - **標籤**: `MySQL`, `Data Types`, `Schema Design`
 
 ## 問題詳述

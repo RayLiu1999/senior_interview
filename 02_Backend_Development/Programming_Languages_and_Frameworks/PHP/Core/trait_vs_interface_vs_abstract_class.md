@@ -1,6 +1,7 @@
 # 解釋 PHP 中的 `trait` 是什麼，以及它與 `interface` 和 `abstract class` 的區別
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `PHP`, `Core`, `OOP`
 
 ## 問題詳述

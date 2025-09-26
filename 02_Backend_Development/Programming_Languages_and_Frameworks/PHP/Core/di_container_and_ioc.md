@@ -1,6 +1,7 @@
 # 什麼是依賴注入容器 (Dependency Injection Container)？它如何幫助我們實現控制反轉 (IoC)？
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `PHP`, `Design Patterns`, `IoC`, `DI Container`
 
 ## 問題詳述

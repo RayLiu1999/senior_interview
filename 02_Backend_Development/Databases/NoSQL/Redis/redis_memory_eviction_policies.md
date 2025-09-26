@@ -1,6 +1,7 @@
 # 請解釋 Redis 的記憶體淘汰策略 (Eviction Policies)
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `Redis`, `Memory Management`, `System Design`, `Performance`
 
 ## 問題詳述

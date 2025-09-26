@@ -1,6 +1,7 @@
 # 詳述 Node.js 的事件循環 (Event Loop) 及其與 Libuv 的關係
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `Node.js`, `Event Loop`, `Libuv`, `Asynchronous`
 
 ## 問題詳述
@@ -125,7 +126,7 @@ console.log('end'); // 4. 同步執行
 
 **預期輸出**:
 
-```
+```javascript
 start
 end
 nextTick 1

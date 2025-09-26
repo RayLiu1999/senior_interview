@@ -1,6 +1,7 @@
 # 什麼是 PHP-FPM？它在 Web 伺服器 (如 Nginx) 架構中扮演什麼角色？
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `PHP`, `Web Server`, `PHP-FPM`, `Nginx`
 
 ## 問題詳述

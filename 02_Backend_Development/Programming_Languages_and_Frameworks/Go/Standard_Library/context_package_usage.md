@@ -1,6 +1,7 @@
 # 請解釋 Go 語言中的 `context` 套件，它的主要用途和 API 是什麼？
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Context`, `Standard Library`, `Concurrency`
 
 ## 問題詳述

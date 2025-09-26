@@ -1,6 +1,7 @@
 # `include`, `require`, `include_once`, `require_once` 的區別是什麼？
 
 - **難度**: 2
+- **重要程度**: 3
 - **標籤**: `PHP`, `Core`
 
 ## 問題詳述

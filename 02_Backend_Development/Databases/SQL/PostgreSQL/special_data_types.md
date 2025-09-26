@@ -1,6 +1,7 @@
 # PostgreSQL 有哪些特殊的資料類型？
 
 - **難度**: 3
+- **重要程度**: 4
 - **標籤**: `PostgreSQL`, `Data Types`
 
 ## 問題詳述

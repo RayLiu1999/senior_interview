@@ -1,6 +1,7 @@
 # PostgreSQL 的串流複製 (Streaming Replication) 和邏輯複製 (Logical Replication) 有何不同？
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `PostgreSQL`, `Replication`, `High Availability`, `Scaling`
 
 ## 問題詳述

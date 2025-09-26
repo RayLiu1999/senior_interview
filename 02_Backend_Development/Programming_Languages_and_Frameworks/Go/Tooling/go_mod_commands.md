@@ -1,6 +1,7 @@
 # `go mod` 的主要指令有哪些？例如 `tidy`, `vendor` 的作用是什麼？
 
 - **難度**: 3
+- **重要程度**: 3
 - **標籤**: `Go Modules`, `Tooling`, `Dependency Management`
 
 ## 問題詳述

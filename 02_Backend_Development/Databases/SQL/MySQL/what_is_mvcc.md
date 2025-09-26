@@ -1,6 +1,7 @@
 # 什麼是 MVCC (多版本併發控制)？它是如何運作的？
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `MySQL`, `InnoDB`, `MVCC`, `Transaction`, `Concurrency`
 
 ## 問題詳述

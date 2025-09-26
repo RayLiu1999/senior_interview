@@ -1,6 +1,7 @@
 # 解釋 SQL 標準中的四種交易隔離等級，並說明 PostgreSQL 如何實現它們
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `PostgreSQL`, `Transaction`, `Isolation`, `ACID`
 
 ## 問題詳述

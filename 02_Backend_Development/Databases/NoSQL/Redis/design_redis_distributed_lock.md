@@ -1,6 +1,7 @@
 # 如何基於 Redis 設計一個可靠的分散式鎖？
 
 - **難度**: 9
+- **重要程度**: 5
 - **標籤**: `Redis`, `Distributed Lock`, `System Design`, `Concurrency`
 
 ## 問題詳述

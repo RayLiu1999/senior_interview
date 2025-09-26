@@ -1,6 +1,7 @@
 # Redis 的交易 (Transaction) 如何運作？它滿足 ACID 嗎？
 
 - **難度**: 6
+- **重要程度**: 3
 - **標籤**: `Redis`, `Transaction`, `ACID`, `System Design`
 
 ## 問題詳述

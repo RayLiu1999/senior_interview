@@ -1,6 +1,7 @@
 # Redis 和 Memcached 有什麼核心區別？
 
 - **難度**: 3
+- **重要程度**: 3
 - **標籤**: `Redis`, `Memcached`, `Caching`, `NoSQL`
 
 ## 問題詳述

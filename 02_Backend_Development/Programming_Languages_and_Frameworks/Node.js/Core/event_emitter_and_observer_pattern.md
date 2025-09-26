@@ -1,6 +1,7 @@
 # 詳解 Node.js 的 EventEmitter 與觀察者模式
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Node.js`, `EventEmitter`, `Observer Pattern`, `Events`
 
 ## 問題詳述
