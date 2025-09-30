@@ -1,5 +1,19 @@
-# Cloud Computing
+# Cloud Computing (雲端運算)
 
-This section contains questions and answers related to Cloud Computing.
+雲端運算是現代基礎設施的核心組成部分。作為資深後端工程師，您需要深入理解不同雲服務模型的特性、主流雲平台的服務，以及如何在雲端環境中設計可擴展、高可用的系統。本章節涵蓋了面試中最常被考察的雲端運算核心主題。
 
-- [What is the difference between IaaS, PaaS, and SaaS?](./iaas_paas_saas.md)
+## 主題列表
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | [What is the difference between IaaS, PaaS, and SaaS?](./iaas_paas_saas.md) | 5 | 5 | `Cloud Computing`, `IaaS`, `PaaS`, `SaaS` |
+
+---
+
+## 學習建議
+
+1.  **理解服務模型**: IaaS、PaaS、SaaS 三種服務模型各有其適用場景和責任邊界。
+2.  **熟悉主流平台**: AWS、Azure、GCP 是業界三大雲平台，至少要深入了解其中一個。
+3.  **掌握核心服務**: 運算（EC2/VM）、儲存（S3/Blob）、資料庫（RDS）、網路（VPC）等是雲端的基礎服務。
+4.  **關注成本優化**: 雲端成本管理是企業關注的重點，要能提出合理的優化方案。
+5.  **實踐雲原生架構**: 容器化、微服務、自動擴展等是充分利用雲端優勢的關鍵技術。
