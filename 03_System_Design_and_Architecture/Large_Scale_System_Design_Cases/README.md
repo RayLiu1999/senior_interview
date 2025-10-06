@@ -8,6 +8,11 @@
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [如何設計一個高併發的短網址系統？](./how_to_design_a_tiny_url_system.md) | 7 | 5 | `System Design`, `URL Shortener`, `High Concurrency` |
 | 2 | [使用 Pub/Sub 建立可靠的聊天系統](./reliable_chat_system_with_pubsub.md) | 8 | 4 | `System Design`, `Chat System`, `Pub/Sub`, `Real-time` |
+| 3 | [如何設計 Twitter/Instagram 社交平台？](./design_twitter_like_social_platform.md) | 9 | 5 | `System Design`, `Social Network`, `Feed`, `Fanout` |
+| 4 | [如何設計秒殺系統？](./design_flash_sale_system.md) | 9 | 5 | `System Design`, `Flash Sale`, `High Concurrency`, `Inventory` |
+| 5 | [如何設計新聞推送系統？](./design_news_feed_push_system.md) | 8 | 5 | `System Design`, `Push System`, `Personalization`, `Recommendation` |
+| 6 | [如何設計即時排行榜系統？](./design_realtime_leaderboard_system.md) | 8 | 5 | `System Design`, `Leaderboard`, `Redis`, `Sorted Set` |
+| 7 | [如何設計分散式鎖？](./design_distributed_lock.md) | 8 | 5 | `System Design`, `Distributed Lock`, `Redis`, `ZooKeeper`, `Etcd` |
 
 ---
 

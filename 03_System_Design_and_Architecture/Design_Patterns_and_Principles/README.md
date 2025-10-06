@@ -6,9 +6,20 @@
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | [什麼是單例模式 (Singleton Pattern)？如何在 Go 中實現線程安全的單例？](./singleton_pattern.md) | 5 | 5 | `Design Pattern`, `Singleton`, `Creational` |
-| 2 | [什麼是工廠方法模式 (Factory Method Pattern)？它與簡單工廠有何不同？](./factory_method_pattern.md) | 6 | 4 | `Design Pattern`, `Factory Method`, `Creational` |
-| 3 | [什麼是抽象工廠模式 (Abstract Factory Pattern)？](./abstract_factory_pattern.md) | 7 | 4 | `Design Pattern`, `Abstract Factory`, `Creational` |
+| 1 | [什麼是單一職責原則 (Single Responsibility Principle, SRP)？](./solid_srp.md) | 5 | 5 | `SOLID`, `SRP`, `Design Principles` |
+| 2 | [什麼是開閉原則 (Open-Closed Principle, OCP)？](./solid_ocp.md) | 6 | 5 | `SOLID`, `OCP`, `Design Principles` |
+| 3 | [什麼是里氏替換原則 (Liskov Substitution Principle, LSP)？](./solid_lsp.md) | 7 | 4 | `SOLID`, `LSP`, `Design Principles` |
+| 4 | [什麼是介面隔離原則 (Interface Segregation Principle, ISP)？](./solid_isp.md) | 6 | 4 | `SOLID`, `ISP`, `Design Principles` |
+| 5 | [什麼是依賴反轉原則 (Dependency Inversion Principle, DIP)？](./solid_dip.md) | 7 | 5 | `SOLID`, `DIP`, `Design Principles` |
+| 6 | [什麼是單例模式 (Singleton Pattern)？如何在 Go 中實現線程安全的單例？](./singleton_pattern.md) | 5 | 5 | `Design Pattern`, `Singleton`, `Creational` |
+| 7 | [什麼是工廠方法模式 (Factory Method Pattern)？它與簡單工廠有何不同？](./factory_method_pattern.md) | 6 | 4 | `Design Pattern`, `Factory Method`, `Creational` |
+| 8 | [什麼是抽象工廠模式 (Abstract Factory Pattern)？](./abstract_factory_pattern.md) | 7 | 4 | `Design Pattern`, `Abstract Factory`, `Creational` |
+| 9 | [什麼是策略模式 (Strategy Pattern)？](./strategy_pattern.md) | 5 | 5 | `Design Pattern`, `Strategy`, `Behavioral` |
+| 10 | [什麼是觀察者模式 (Observer Pattern)？](./observer_pattern.md) | 6 | 5 | `Design Pattern`, `Observer`, `Behavioral` |
+| 11 | [什麼是裝飾器模式 (Decorator Pattern)？](./decorator_pattern.md) | 6 | 4 | `Design Pattern`, `Decorator`, `Structural` |
+| 12 | [什麼是代理模式 (Proxy Pattern)？](./proxy_pattern.md) | 6 | 5 | `Design Pattern`, `Proxy`, `Structural` |
+| 13 | [什麼是適配器模式 (Adapter Pattern)？](./adapter_pattern.md) | 5 | 4 | `Design Pattern`, `Adapter`, `Structural` |
+| 14 | [什麼是依賴注入 (Dependency Injection) 與控制反轉 (Inversion of Control)？](./dependency_injection.md) | 7 | 5 | `Design Principles`, `DI`, `IoC` |
 
 ---
 

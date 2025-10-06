@@ -1,19 +1,45 @@
-# Cloud Computing (雲端運算)
+# Cloud Computing（雲端運算）
 
-雲端運算是現代基礎設施的核心組成部分。作為資深後端工程師，您需要深入理解不同雲服務模型的特性、主流雲平台的服務，以及如何在雲端環境中設計可擴展、高可用的系統。本章節涵蓋了面試中最常被考察的雲端運算核心主題。
+雲端運算已經成為現代後端系統的基礎設施。了解雲端服務的核心概念、主流雲平台的特性，以及雲原生架構的設計原則，是資深後端工程師的必備技能。
 
-## 主題列表
+## 問題索引
 
-| 編號 | 主題 | 難度 | 重要性 | 標籤 |
-| :---: | :--- | :---: | :---: | :--- |
-| 1 | [What is the difference between IaaS, PaaS, and SaaS?](./iaas_paas_saas.md) | 5 | 5 | `Cloud Computing`, `IaaS`, `PaaS`, `SaaS` |
+### 基礎概念
 
----
+| 問題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [什麼是雲端運算？IaaS、PaaS、SaaS 有什麼區別？](./iaas_paas_saas.md) | 3 | 4 | `雲端運算`, `IaaS`, `PaaS`, `SaaS` |
 
-## 學習建議
+### AWS 核心服務
 
-1.  **理解服務模型**: IaaS、PaaS、SaaS 三種服務模型各有其適用場景和責任邊界。
-2.  **熟悉主流平台**: AWS、Azure、GCP 是業界三大雲平台，至少要深入了解其中一個。
-3.  **掌握核心服務**: 運算（EC2/VM）、儲存（S3/Blob）、資料庫（RDS）、網路（VPC）等是雲端的基礎服務。
-4.  **關注成本優化**: 雲端成本管理是企業關注的重點，要能提出合理的優化方案。
-5.  **實踐雲原生架構**: 容器化、微服務、自動擴展等是充分利用雲端優勢的關鍵技術。
+| 問題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [AWS 核心服務概覽（EC2、S3、RDS、Lambda）](./aws_core_services.md) | 6 | 5 | `AWS`, `EC2`, `S3`, `RDS`, `Lambda` |
+| [雲原生架構 12 要素](./cloud_native_12_factors.md) | 6 | 5 | `雲原生`, `12 Factor`, `最佳實踐` |
+| [Serverless 架構設計與應用](./serverless_architecture.md) | 7 | 4 | `Serverless`, `Lambda`, `FaaS` |
+| [雲端成本優化策略](./cloud_cost_optimization.md) | 7 | 4 | `成本優化`, `FinOps` |
+
+## 學習路徑建議
+
+### 初學者（2-3 週）
+1. 理解雲端運算的基本概念（IaaS、PaaS、SaaS）
+2. 學習 AWS 核心服務（EC2、S3、RDS、Lambda）
+3. 動手實踐：部署一個簡單的應用到雲端
+
+### 進階（1-2 個月）
+1. 深入學習雲原生架構 12 要素
+2. 掌握 Serverless 架構設計
+3. 學習成本優化策略
+4. 實踐高可用架構設計
+
+### 專家（2-3 個月）
+1. 設計複雜的雲端架構
+2. 掌握多雲架構設計
+3. 深入了解雲端安全
+4. 獲得雲平台認證
+
+## 相關資源
+
+- [AWS 官方文件](https://docs.aws.amazon.com/)
+- [AWS Training](https://aws.amazon.com/training/)
+- [A Cloud Guru](https://acloudguru.com/)
