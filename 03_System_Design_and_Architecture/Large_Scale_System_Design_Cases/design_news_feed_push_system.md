@@ -1,1508 +1,534 @@
-# 如何設計新聞推送系統?
+# 如何設計新聞推送系統？
 
 - **難度**: 8
 - **重要程度**: 5
-- **標籤**: `系統設計`, `推送系統`, `個性化推薦`, `使用者分群`
+- **標籤**: `System Design`, `Push Notification`, `Personalization`, `Recommendation`
 
 ## 問題詳述
 
-設計一個新聞推送系統,支援向數百萬使用者推送個性化新聞內容。系統需要根據使用者興趣進行內容推薦,支援多種推送管道(App Push、簡訊、Email),並控制推送頻率避免打擾使用者。
+設計一個新聞推送系統，支援向數千萬使用者推送個性化新聞內容。系統需要根據使用者興趣進行內容推薦，支援多種推送渠道（App Push、簡訊、Email），並控制推送頻率避免打擾使用者。
 
 ## 核心理論與詳解
 
-### 1. 新聞推送系統的特點
+### 1. 系統特點與挑戰分析
 
 #### 1.1 業務特點
 
-**大規模使用者**:
-```
-日活使用者: 1 億
-訂閱使用者: 5000 萬
-每日推送: 2 億次
-```
+**大規模使用者**：
+- 日活使用者：1 億
+- 訂閱推送使用者：5000 萬
+- 每日推送總量：2 億次
 
-**個性化內容**:
-```
-使用者興趣不同
-內容類型多樣(新聞、體育、財經、娛樂)
-需要精準推薦
-```
+**個性化需求**：
+- 每個使用者的興趣不同
+- 需要推薦不同的新聞內容
+- 點擊率直接影響使用者留存
 
-**多管道推送**:
-```
-App Push 通知
-SMS 簡訊
-Email 郵件
-Web Push
-```
+**多渠道推送**：
+- App Push Notification（主要）
+- SMS 簡訊（重要通知）
+- Email（日報/週報）
+- Web Push（瀏覽器）
 
-**推送時機敏感**:
-```
-突發新聞: 即時推送
-定時推送: 早 8 點、晚 8 點
-個性化推送: 使用者活躍時段
-```
+**時機敏感性**：
+- 突發新聞：需即時推送
+- 定時推送：早報（8:00）、晚報（20:00）
+- 個性化推送：使用者活躍時段
 
-#### 1.2 技術挑戰
+#### 1.2 核心挑戰
 
-**1. 推送規模**:
-- 5000 萬訂閱使用者
-- 高峰期 100 萬次/分鐘
+**挑戰一：如何做好個性化推薦**
+- 使用者興趣如何建模？
+- 內容如何標籤化？
+- 如何平衡探索與利用（Exploration vs Exploitation）？
 
-**2. 個性化推薦**:
-- 使用者興趣建模
-- 內容相似度計算
-- 即時推薦
+**挑戰二：如何控制推送頻率**
+- 推送過多：使用者關閉通知
+- 推送過少：使用者流失
+- 不同使用者的容忍度不同
 
-**3. 推送頻率控制**:
-- 避免過度打擾
-- 疲勞度管理
-- 靜默時段
+**挑戰三：如何保證推送到達率**
+- 渠道穩定性（FCM、APNs 可能失敗）
+- 設備離線問題
+- 失敗重試機制
 
-**4. 多管道協調**:
-- 管道優先級
-- 到達率監控
-- 失敗重試
+**挑戰四：如何處理瞬時高並發**
+- 突發新聞需要同時推送給百萬使用者
+- 如何在 1 分鐘內完成推送？
 
-### 2. 需求澄清
+### 2. 整體架構設計
 
-#### 2.1 功能性需求
-
-**核心功能**:
-- ✅ 使用者訂閱感興趣的新聞分類
-- ✅ 根據使用者興趣推送個性化內容
-- ✅ 支援多管道推送(App、SMS、Email)
-- ✅ 使用者可設定推送偏好(頻率、時間)
-
-**延伸功能**:
-- 突發新聞即時推送
-- 推送效果追蹤(點擊率、轉化率)
-- A/B 測試
-- 使用者疲勞度管理
-
-#### 2.2 非功能性需求
-
-**效能**:
-- 推送延遲 < 1 分鐘
-- 支援 100 萬推送/分鐘
-- 點擊率 > 5%
-
-**可用性**:
-- 系統可用性 99.9%+
-- 推送失敗自動重試
-
-**可擴展性**:
-- 支援水平擴展
-- 輕鬆新增推送管道
-
-### 3. 容量估算
-
-#### 3.1 流量估算
-
-**假設**:
-- 日活使用者(DAU): 1 億
-- 訂閱使用者: 5000 萬(50%)
-- 每日人均推送: 4 次
-- 推送高峰: 早 8 點、晚 8 點
-
-**計算**:
-```
-每日推送總量:
-5000 萬 × 4 = 2 億次
-
-平均 QPS:
-2 億 / (24 × 3600) ≈ 2,300 次/秒
-
-高峰 QPS(高峰 1 小時推送 30%):
-2 億 × 0.3 / 3600 ≈ 16,600 次/秒
-
-推送系統寫入 QPS: ~17,000
-```
-
-#### 3.2 儲存估算
-
-**使用者興趣標籤**:
-```
-使用者數: 1 億
-每人標籤數: 50 個
-每個標籤: 8 bytes (tag_id)
-總計: 1 億 × 50 × 8 = 40 GB
-```
-
-**新聞內容**:
-```
-每日新增新聞: 10 萬篇
-每篇大小: 10 KB (標題、摘要、圖片 URL)
-保留 30 天: 10 萬 × 10 KB × 30 = 30 GB
-```
-
-**推送記錄**:
-```
-每日推送: 2 億次
-每條記錄: 100 bytes (user_id, news_id, status, timestamp)
-保留 90 天: 2 億 × 100 bytes × 90 = 1.8 TB
-```
-
-### 4. 核心架構設計
-
-#### 4.1 整體架構圖
+#### 2.1 系統架構圖
 
 ```
-┌─────────────────────────────────────────────────┐
-│              News Publishing System             │
-│   (編輯發佈新聞、打標籤、設定推送策略)           │
-└──────────────────┬──────────────────────────────┘
-                   │
-            ┌──────▼──────┐
-            │ News Queue  │
-            │   (Kafka)   │
-            └──────┬──────┘
-                   │
-       ┌───────────┼───────────┐
-       │           │           │
-   ┌───▼───┐  ┌───▼───┐  ┌───▼───┐
-   │Content│  │Content│  │Content│
-   │ Tag   │  │ Tag   │  │ Tag   │
-   │Worker │  │Worker │  │Worker │
-   └───┬───┘  └───┬───┘  └───┬───┘
-       │          │          │
-       └──────────┼──────────┘
-                  │
-         ┌────────▼─────────┐
-         │  Recommendation  │
-         │     Engine       │
-         │  (使用者興趣匹配) │
-         └────────┬─────────┘
-                  │
-         ┌────────▼─────────┐
-         │   User Segment   │
-         │  (使用者分群)     │
-         └────────┬─────────┘
-                  │
-       ┌──────────┼──────────┐
-       │          │          │
-   ┌───▼────┐ ┌──▼─────┐ ┌──▼─────┐
-   │ Push   │ │ SMS    │ │ Email  │
-   │Service │ │Service │ │Service │
-   └───┬────┘ └──┬─────┘ └──┬─────┘
-       │         │          │
-   ┌───▼────┐ ┌──▼─────┐ ┌──▼─────┐
-   │Firebase│ │ Twilio │ │SendGrid│
-   │  FCM   │ │        │ │        │
-   └───┬────┘ └──┬─────┘ └──┬─────┘
-       │         │          │
-       └─────────┼──────────┘
-                 │
-         ┌───────▼────────┐
-         │   Users        │
-         │ (1 億使用者)    │
-         └────────────────┘
-
-[儲存層]
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│   Redis      │  │   MongoDB    │  │  PostgreSQL  │
-│ (使用者偏好)  │  │ (新聞內容)    │  │ (推送記錄)   │
-│ (興趣標籤)    │  │ (標籤索引)    │  │ (統計資料)   │
-└──────────────┘  └──────────────┘  └──────────────┘
+┌──────────────────────────────────────────┐
+│      新聞發布系統（CMS）                   │
+│  - 編輯發布新聞                            │
+│  - 打標籤（科技、體育、娛樂等）             │
+│  - 設定推送策略                            │
+└────────────┬─────────────────────────────┘
+             │
+             ↓ 發布新聞事件
+┌────────────▼─────────────────────────────┐
+│      消息隊列（Kafka）                     │
+│  Topic: news.published                    │
+└────────────┬─────────────────────────────┘
+             │
+     ┌───────┼───────┐
+     ↓       ↓       ↓
+┌────▼───┐ ┌──▼───┐ ┌──▼───┐
+│內容    │ │內容  │ │內容  │
+│標籤    │ │標籤  │ │標籤  │
+│Worker  │ │Worker│ │Worker│
+└────┬───┘ └──┬───┘ └──┬───┘
+     └───────┼───────┘
+             ↓ 標籤提取完成
+┌────────────▼─────────────────────────────┐
+│      推薦引擎                              │
+│  - 使用者興趣匹配                          │
+│  - 計算推送分數                            │
+│  - 使用者分群                              │
+└────────────┬─────────────────────────────┘
+             │
+     ┌───────┼───────┐
+     ↓       ↓       ↓
+┌────▼───┐ ┌──▼───┐ ┌──▼───┐
+│ App    │ │ SMS  │ │Email │
+│ Push   │ │ 推送  │ │ 推送 │
+│ 服務   │ │ 服務  │ │ 服務 │
+└────┬───┘ └──┬───┘ └──┬───┘
+     └───────┼───────┘
+             ↓
+┌────────────▼─────────────────────────────┐
+│      第三方推送服務                        │
+│  - Firebase FCM（Android）                │
+│  - Apple APNs（iOS）                      │
+│  - Twilio（SMS）                          │
+│  - SendGrid（Email）                      │
+└──────────────────────────────────────────┘
 ```
 
-#### 4.2 核心組件
+#### 2.2 數據存儲設計
 
-**1. 內容標籤 Worker**:
-- 自動提取新聞關鍵字
-- 分類(體育、財經、科技等)
-- 相似內容去重
+**Redis**：
+- 使用者興趣標籤：`user:interests:{user_id}` → Sorted Set（標籤 + 權重）
+- 使用者偏好設定：`user:preferences:{user_id}` → Hash
+- 推送頻率控制：`push:count:{user_id}:{date}` → Counter
 
-**2. 推薦引擎**:
-- 使用者興趣建模
-- 內容相似度計算
-- 個性化推薦
+**MongoDB**：
+- 新聞內容：支援靈活的文檔結構
+- 新聞標籤索引：支援多標籤查詢
 
-**3. 使用者分群服務**:
-- 按興趣分群
-- 按活躍度分群
-- 按地理位置分群
+**MySQL**：
+- 使用者基本資訊
+- 推送記錄（用於統計和審計）
+- 訂閱關係
 
-**4. 推送服務**:
-- 多管道推送
-- 頻率控制
-- 失敗重試
+### 3. 使用者興趣建模（個性化核心）
 
-### 5. 使用者興趣建模 (核心難點)
+這是推送系統的核心，決定了推送的精準度。
 
-#### 5.1 興趣標籤採集
+#### 3.1 興趣標籤採集策略
 
-**1. 顯性行為**:
-```go
-// 使用者訂閱主題
-func Subscribe(userID int64, tags []string) {
-    for _, tag := range tags {
-        // 權重: 10 分
-        redis.ZIncrBy("user:interests:" + userID, 10, tag)
-    }
-}
+**顯性興趣（使用者主動行為）**：
 
-// 使用者點擊新聞
-func Click(userID int64, newsID int64) {
-    news := GetNews(newsID)
+| 行為 | 權重 | 說明 |
+|------|------|------|
+| 訂閱主題 | 10 | 最強興趣信號 |
+| 分享新聞 | 5 | 強興趣信號 |
+| 點擊閱讀 | 1 | 基礎興趣信號 |
+| 收藏新聞 | 3 | 中等興趣信號 |
+
+**隱性興趣（系統推斷）**：
+
+| 行為 | 權重 | 說明 |
+|------|------|------|
+| 閱讀時長 > 30s | 2 | 深度閱讀 |
+| 滑動瀏覽（未點擊） | 0.1 | 輕微興趣 |
+| 快速劃過 | 0 | 無興趣 |
+| 點擊後立即退出 | -1 | 負向信號 |
+
+**數據結構選擇**：
+```
+Redis Sorted Set：
+  Key: user:interests:{user_id}
+  Score: 興趣權重（累計分數）
+  Member: 標籤 ID
+
+示例：
+  user:interests:12345
+    - "tech": 50.5
+    - "sports": 30.2
+    - "finance": 20.8
+```
+
+**為什麼選擇 Sorted Set**：
+- ✅ 支援權重排序（ZREVRANGE 獲取 Top N 興趣）
+- ✅ 支援分數累加（ZINCRBY 增加權重）
+- ✅ 性能高（O(log N) 操作）
+
+#### 3.2 興趣衰減機制
+
+**為什麼需要衰減**：
+- 使用者興趣會隨時間變化
+- 舊的興趣標籤不應永久影響推薦
+- 需要給新興趣騰出空間
+
+**衰減策略**：
+```
+每日衰減任務：
+1. 獲取所有使用者的興趣標籤
+2. 對每個標籤的權重 × 0.99（衰減 1%）
+3. 移除權重 < 1 的標籤
+
+效果：
+- 100 天後，不更新的標籤權重衰減到原來的 37%
+- 保持興趣標籤的時效性
+```
+
+### 4. 內容推薦演算法
+
+推送什麼內容給使用者？有多種策略可以結合使用。
+
+#### 4.1 基於內容的推薦（Content-Based）
+
+**原理**：根據使用者的興趣標籤，匹配新聞的標籤。
+
+**流程**：
+```
+1. 獲取使用者的 Top 10 興趣標籤
+   例如：["科技": 50, "AI": 30, "創業": 20]
+
+2. 查詢包含這些標籤的最新新聞
+   MongoDB 查詢：tags IN ["科技", "AI", "創業"] AND publish_time > 24h
+
+3. 計算匹配分數
+   分數 = Σ(標籤權重 × 標籤匹配度)
+
+4. 排序返回 Top N
+```
+
+**優點**：
+- ✅ 實現簡單
+- ✅ 可解釋性強
+- ✅ 適合冷啟動（新使用者）
+
+**缺點**：
+- ❌ 容易陷入「信息繭房」（只推薦相似內容）
+- ❌ 無法發現新興趣
+
+#### 4.2 協同過濾推薦（Collaborative Filtering）
+
+**原理**：找到興趣相似的使用者，推薦他們喜歡的內容。
+
+**流程**：
+```
+1. 計算使用者相似度
+   用戶 A 興趣：[科技, 創業, 投資]
+   用戶 B 興趣：[科技, 商業, 投資]
+   相似度：2/3 = 0.67（餘弦相似度）
+
+2. 找到 Top 10 相似使用者
+
+3. 聚合他們最近閱讀的新聞
+
+4. 過濾掉使用者已讀的，推薦剩餘的
+```
+
+**優點**：
+- ✅ 能發現新興趣（探索）
+- ✅ 基於真實使用者行為
+
+**缺點**：
+- ❌ 計算複雜度高
+- ❌ 需要大量使用者數據
+- ❌ 相似度計算需要離線預處理
+
+#### 4.3 混合推薦策略（推薦）
+
+**實踐中的最佳方案**：結合多種策略。
+
+**推薦比例**：
+- 60% 基於內容推薦（利用已知興趣）
+- 30% 協同過濾推薦（探索新興趣）
+- 10% 熱門新聞（避免信息繭房）
+
+**為什麼這樣分配**：
+- 大部分推送滿足使用者已知興趣（高點擊率）
+- 適度探索新內容（保持新鮮感）
+- 熱門新聞保證不錯過重要事件
+
+### 5. 推送頻率控制（避免打擾）
+
+推送頻率是推送系統的生命線，控制不好會導致使用者卸載 App。
+
+#### 5.1 使用者分層策略
+
+根據使用者活躍度分層，不同層級不同策略。
+
+| 使用者類型 | 定義 | 推送頻率 | 說明 |
+|-----------|------|---------|------|
+| **高活躍** | 每天打開 5+ 次 | 6 次/天 | 重度使用者，可多推 |
+| **中活躍** | 每天打開 1-5 次 | 3 次/天 | 一般使用者 |
+| **低活躍** | 一週打開 1 次 | 1 次/天 | 輕度使用者，少推 |
+| **沉睡** | 7 天未打開 | 0 或喚醒推送 | 避免打擾，或嘗試喚醒 |
+
+**為什麼要分層**：
+- 高活躍使用者願意接受更多推送
+- 低活躍使用者需要精打細算，推送最精準的內容
+- 一刀切的策略會導致兩邊都不滿意
+
+#### 5.2 推送限額控制
+
+**每日限額**：
+```
+實現方式：
+  Redis Key: push:count:{user_id}:{date}
+  
+  檢查邏輯：
+  if redis.INCR(key) > limit:
+      return "超過每日限額"
+  redis.EXPIRE(key, 24h)
+```
+
+**推送間隔**：
+```
+最小間隔：2 小時
+
+實現：
+  Redis Key: push:last:{user_id}
+  Value: 上次推送時間戳
+  
+  檢查邏輯：
+  last_time = redis.GET(key)
+  if now - last_time < 2h:
+      return "間隔太短"
+```
+
+#### 5.3 靜默時段
+
+**尊重使用者作息**：
+```
+預設靜默時段：23:00 - 08:00
+
+使用者可自定義：
+  user_preferences:
+    quiet_start: "23:00"
+    quiet_end: "08:00"
+
+推送前檢查：
+  if 當前時間 in 靜默時段:
+      延遲到靜默時段結束
+```
+
+**例外情況**：
+- 緊急新聞可突破靜默時段限制
+- 使用者訂閱的特定事件更新
+
+### 6. 推送優先級與渠道選擇
+
+不是所有推送都一樣重要，需要設計優先級機制。
+
+#### 6.1 優先級劃分
+
+| 優先級 | 使用場景 | 處理方式 |
+|-------|---------|---------|
+| **緊急（Urgent）** | 突發新聞、災害預警 | 忽略所有限制，立即推送 |
+| **高（High）** | 重要新聞、使用者訂閱事件 | 可突破推送間隔限制 |
+| **普通（Normal）** | 日常推薦 | 嚴格遵守所有限制 |
+
+**決策邏輯**：
+```
+function shouldPush(user, news, priority):
+    if priority == Urgent:
+        return true  // 無條件推送
     
-    for _, tag := range news.Tags {
-        // 權重: 1 分
-        redis.ZIncrBy("user:interests:" + userID, 1, tag)
-    }
-}
-
-// 使用者分享新聞
-func Share(userID int64, newsID int64) {
-    news := GetNews(newsID)
-    
-    for _, tag := range news.Tags {
-        // 權重: 5 分
-        redis.ZIncrBy("user:interests:" + userID, 5, tag)
-    }
-}
-```
-
-**2. 隱性行為**:
-```go
-// 閱讀時長
-func TrackReadTime(userID int64, newsID int64, duration int) {
-    news := GetNews(newsID)
-    
-    // 閱讀超過 30 秒視為感興趣
-    if duration > 30 {
-        for _, tag := range news.Tags {
-            // 權重: 2 分
-            redis.ZIncrBy("user:interests:" + userID, 2, tag)
-        }
-    }
-}
-
-// 滑動瀏覽(未點擊)
-func View(userID int64, newsID int64) {
-    news := GetNews(newsID)
-    
-    for _, tag := range news.Tags {
-        // 權重: 0.1 分(輕微興趣)
-        redis.ZIncrBy("user:interests:" + userID, 0.1, tag)
-    }
-}
-```
-
-#### 5.2 興趣標籤儲存
-
-**Redis Sorted Set**:
-```
-Key: user:interests:{user_id}
-Score: 興趣權重
-Member: 標籤 ID
-
-示例:
-ZADD user:interests:123 50 "sports"
-ZADD user:interests:123 30 "tech"
-ZADD user:interests:123 20 "finance"
-```
-
-**獲取使用者 Top 興趣**:
-```go
-func GetTopInterests(userID int64, limit int) []string {
-    key := fmt.Sprintf("user:interests:%d", userID)
-    
-    // 獲取分數最高的 N 個標籤
-    result := redis.ZRevRange(key, 0, limit-1).Val()
-    
-    return result
-}
-```
-
-#### 5.3 興趣衰減
-
-**問題**: 使用者興趣隨時間變化。
-
-**解決方案: 時間衰減**
-
-```go
-func DecayInterests() {
-    ticker := time.NewTicker(24 * time.Hour)
-    
-    for range ticker.C {
-        // 每天衰減 1%
-        users := GetAllUsers()
-        
-        for _, userID := range users {
-            key := fmt.Sprintf("user:interests:%d", userID)
-            
-            // 獲取所有標籤
-            tags := redis.ZRangeWithScores(key, 0, -1).Val()
-            
-            for _, tag := range tags {
-                // 分數 × 0.99
-                newScore := tag.Score * 0.99
-                
-                // 低於 1 分則移除
-                if newScore < 1 {
-                    redis.ZRem(key, tag.Member)
-                } else {
-                    redis.ZAdd(key, &redis.Z{
-                        Score:  newScore,
-                        Member: tag.Member,
-                    })
-                }
-            }
-        }
-    }
-}
-```
-
-### 6. 內容推薦演算法
-
-#### 6.1 協同過濾
-
-**使用者相似度**:
-```
-使用者 A 興趣: [科技, 財經, 體育]
-使用者 B 興趣: [科技, 娛樂, 體育]
-
-餘弦相似度:
-sim(A, B) = (科技 + 體育) / sqrt(3 * 3) = 0.67
-
-推薦邏輯:
-如果 A 和 B 相似,B 喜歡的新聞也推薦給 A
-```
-
-**實現**:
-```go
-func FindSimilarUsers(userID int64, limit int) []int64 {
-    // 1. 獲取使用者興趣向量
-    userTags := GetTopInterests(userID, 20)
-    
-    // 2. 查詢相似使用者(預先計算)
-    key := fmt.Sprintf("user:similar:%d", userID)
-    similarUsers := redis.ZRevRange(key, 0, limit-1).Val()
-    
-    return similarUsers
-}
-
-func RecommendByCollaborative(userID int64) []int64 {
-    // 1. 找到相似使用者
-    similarUsers := FindSimilarUsers(userID, 10)
-    
-    // 2. 聚合他們最近閱讀的新聞
-    newsScores := make(map[int64]float64)
-    
-    for _, similarUserID := range similarUsers {
-        recentNews := GetRecentReadNews(similarUserID, 20)
-        
-        for _, newsID := range recentNews {
-            newsScores[newsID] += 1.0
-        }
-    }
-    
-    // 3. 排序返回 Top N
-    return TopNewsByScore(newsScores, 10)
-}
-```
-
-#### 6.2 基於內容推薦
-
-**標籤匹配**:
-```go
-func RecommendByContent(userID int64) []int64 {
-    // 1. 獲取使用者興趣標籤
-    userTags := GetTopInterests(userID, 10)
-    
-    // 2. 查詢包含這些標籤的最新新聞
-    newsIDs := []int64{}
-    
-    for _, tag := range userTags {
-        // MongoDB 索引查詢
-        news := mongo.Find(bson.M{
-            "tags":       tag,
-            "created_at": bson.M{"$gte": time.Now().Add(-24 * time.Hour)},
-        }).Sort("-created_at").Limit(20)
-        
-        newsIDs = append(newsIDs, news...)
-    }
-    
-    // 3. 去重排序
-    return DeduplicateAndSort(newsIDs)
-}
-```
-
-#### 6.3 混合推薦
-
-```go
-func HybridRecommend(userID int64) []int64 {
-    // 1. 協同過濾推薦 (50%)
-    collaborative := RecommendByCollaborative(userID)
-    
-    // 2. 基於內容推薦 (40%)
-    content := RecommendByContent(userID)
-    
-    // 3. 熱門新聞 (10%)
-    trending := GetTrendingNews(10)
-    
-    // 4. 混合
-    result := []int64{}
-    result = append(result, collaborative[:5]...)
-    result = append(result, content[:4]...)
-    result = append(result, trending[:1]...)
-    
-    return Deduplicate(result)
-}
-```
-
-### 7. 使用者分群策略
-
-#### 7.1 按興趣分群
-
-**實現**:
-```go
-func SegmentByInterest(newsID int64) []int64 {
-    news := GetNews(newsID)
-    
-    // 新聞標籤: ["科技", "AI"]
-    users := []int64{}
-    
-    for _, tag := range news.Tags {
-        // 獲取對該標籤感興趣的使用者
-        // Redis Set: tag:users:{tag} = {user1, user2, ...}
-        tagUsers := redis.SMembers("tag:users:" + tag).Val()
-        users = append(users, tagUsers...)
-    }
-    
-    return Deduplicate(users)
-}
-```
-
-**建立索引**:
-```go
-// 當使用者訂閱標籤時
-func Subscribe(userID int64, tag string) {
-    // 1. 記錄使用者興趣
-    redis.ZIncrBy("user:interests:" + userID, 10, tag)
-    
-    // 2. 反向索引: 標籤 → 使用者
-    redis.SAdd("tag:users:" + tag, userID)
-}
-```
-
-#### 7.2 按活躍度分群
-
-```go
-type UserActivity int
-
-const (
-    HighActive   UserActivity = 1 // 每天打開 5+ 次
-    MidActive    UserActivity = 2 // 每天打開 1-5 次
-    LowActive    UserActivity = 3 // 一週打開 1 次
-    Inactive     UserActivity = 4 // 超過 7 天未打開
-)
-
-func ClassifyUserActivity(userID int64) UserActivity {
-    // 最近 7 天的活躍次數
-    key := fmt.Sprintf("user:activity:%d", userID)
-    count := redis.ZCount(key,
-        strconv.FormatInt(time.Now().Add(-7*24*time.Hour).Unix(), 10),
-        strconv.FormatInt(time.Now().Unix(), 10),
-    ).Val()
-    
-    switch {
-    case count >= 35:
-        return HighActive
-    case count >= 7:
-        return MidActive
-    case count >= 1:
-        return LowActive
-    default:
-        return Inactive
-    }
-}
-
-// 推送策略
-func GetPushStrategy(activity UserActivity) int {
-    switch activity {
-    case HighActive:
-        return 6 // 每天 6 次
-    case MidActive:
-        return 3 // 每天 3 次
-    case LowActive:
-        return 1 // 每天 1 次
-    case Inactive:
-        return 0 // 不推送(或每週 1 次喚醒)
-    }
-    
-    return 0
-}
-```
-
-#### 7.3 按地理位置分群
-
-```go
-func SegmentByLocation(newsID int64) []int64 {
-    news := GetNews(newsID)
-    
-    // 新聞地域標籤: ["北京", "中國"]
-    if news.Location != "" {
-        // 獲取該地區的使用者
-        users := redis.SMembers("location:users:" + news.Location).Val()
-        return users
-    }
-    
-    // 全域性新聞
-    return []int64{}
-}
-```
-
-### 8. 推送頻率控制
-
-#### 8.1 使用者疲勞度管理
-
-**問題**: 推送過多導致使用者關閉通知。
-
-**解決方案**:
-
-**1. 每日限額**:
-```go
-func CanPush(userID int64) bool {
-    key := fmt.Sprintf("push:count:%d:%s", userID, time.Now().Format("2006-01-02"))
-    count := redis.Incr(key).Val()
-    
-    // 首次設定過期時間
-    if count == 1 {
-        redis.Expire(key, 24*time.Hour)
-    }
-    
-    // 活躍使用者: 每天最多 6 次
-    // 普通使用者: 每天最多 3 次
-    activity := ClassifyUserActivity(userID)
-    limit := GetPushStrategy(activity)
-    
-    return count <= int64(limit)
-}
-```
-
-**2. 推送間隔**:
-```go
-func CheckPushInterval(userID int64) bool {
-    key := fmt.Sprintf("push:last:%d", userID)
-    lastPush := redis.Get(key).Val()
-    
-    if lastPush == "" {
-        return true
-    }
-    
-    lastTime, _ := time.Parse(time.RFC3339, lastPush)
-    
-    // 至少間隔 2 小時
-    if time.Since(lastTime) < 2*time.Hour {
+    if 超過每日限額:
         return false
-    }
+    
+    if 在靜默時段 and priority != High:
+        return false
+    
+    if 距離上次推送 < 2h and priority != High:
+        return false
     
     return true
-}
-
-func RecordPush(userID int64) {
-    key := fmt.Sprintf("push:last:%d", userID)
-    redis.Set(key, time.Now().Format(time.RFC3339), 24*time.Hour)
-}
 ```
 
-#### 8.2 靜默時段
+#### 6.2 多渠道策略
 
-```go
-func IsInQuietTime(userID int64) bool {
-    // 使用者自訂靜默時段
-    quietStart := GetUserQuietStart(userID) // 例如: 23:00
-    quietEnd := GetUserQuietEnd(userID)     // 例如: 08:00
-    
-    now := time.Now().Hour()
-    
-    // 跨午夜情況
-    if quietStart > quietEnd {
-        return now >= quietStart || now < quietEnd
-    }
-    
-    return now >= quietStart && now < quietEnd
-}
+**渠道選擇邏輯**：
+```
+優先級 = Urgent：
+  - App Push
+  - SMS（雙渠道保證到達）
+
+優先級 = High：
+  - App Push
+  - Email（作為備份）
+
+優先級 = Normal：
+  - App Push（僅此一個）
 ```
 
-#### 8.3 推送優先級
+**為什麼不總是多渠道**：
+- SMS 和 Email 有成本（每條 $0.01-0.1）
+- 多渠道推送可能讓使用者煩躁
+- 只在重要場景使用
 
-```go
-type PushPriority int
+### 7. 推送到達率優化
 
-const (
-    Urgent    PushPriority = 1 // 突發新聞,忽略限制
-    High      PushPriority = 2 // 重要新聞
-    Normal    PushPriority = 3 // 普通推送
-)
+推送發出不等於推送送達，需要處理各種失敗場景。
 
-func ShouldPush(userID int64, priority PushPriority) bool {
-    // 緊急推送忽略所有限制
-    if priority == Urgent {
-        return true
-    }
-    
-    // 檢查每日限額
-    if !CanPush(userID) {
-        return false
-    }
-    
-    // 檢查推送間隔
-    if !CheckPushInterval(userID) {
-        return false
-    }
-    
-    // 檢查靜默時段
-    if IsInQuietTime(userID) {
-        return false
-    }
-    
-    return true
-}
+#### 7.1 失敗重試機制
+
+**失敗類型與處理**：
+
+```
+暫時性失敗（可重試）：
+- 網絡超時
+- 第三方服務限流
+- 設備暫時離線
+
+處理：指數退避重試
+  - 第 1 次：立即
+  - 第 2 次：1 秒後
+  - 第 3 次：4 秒後
+  - 第 4 次：16 秒後
+  - 最多 3 次
+
+永久性失敗（不重試）：
+- 使用者卸載 App
+- 使用者關閉通知權限
+- 設備 Token 失效
+
+處理：
+  - 記錄失敗原因
+  - 更新使用者狀態
+  - 後續不再推送（直到狀態恢復）
 ```
 
-### 9. 推送管道設計
+#### 7.2 離線設備處理
 
-#### 9.1 多管道推送
+**設備離線問題**：
+- App 未打開，設備離線
+- 推送服務會暫存消息（FCM 最多 4 週）
+- 但太晚送達失去意義
 
-**App Push (Firebase FCM)**:
-```go
-func SendAppPush(userID int64, title, body string) error {
-    // 獲取使用者裝置 Token
-    token := GetUserDeviceToken(userID)
-    
-    // FCM 訊息
-    message := &messaging.Message{
-        Token: token,
-        Notification: &messaging.Notification{
-            Title: title,
-            Body:  body,
-        },
-        Android: &messaging.AndroidConfig{
-            Priority: "high",
-        },
-        APNS: &messaging.APNSConfig{
-            Headers: map[string]string{
-                "apns-priority": "10",
-            },
-        },
-    }
-    
-    // 發送
-    response, err := fcmClient.Send(context.Background(), message)
-    if err != nil {
-        return err
-    }
-    
-    log.Info("FCM sent", response)
-    return nil
-}
+**解決方案**：
+```
+新聞推送的時效性：
+- < 1 小時：仍然有價值，正常送達
+- 1-24 小時：價值降低，可以送達但降低優先級
+- > 24 小時：過期，直接放棄
+
+實現：
+  設置 TTL（Time To Live）
+  FCM: time_to_live: 3600  // 1 小時
+  
+  如果 1 小時內設備未上線，推送自動過期
 ```
 
-**SMS 簡訊 (Twilio)**:
-```go
-func SendSMS(userID int64, content string) error {
-    phone := GetUserPhone(userID)
-    
-    // Twilio API
-    params := &twilioApi.CreateMessageParams{}
-    params.SetTo(phone)
-    params.SetFrom(twilioPhoneNumber)
-    params.SetBody(content)
-    
-    _, err := twilioClient.Api.CreateMessage(params)
-    return err
-}
+### 8. 系統擴展性與性能優化
+
+#### 8.1 水平擴展設計
+
+**無狀態服務**：
+- 所有推送 Worker 都是無狀態的
+- 可以隨時增加或減少 Worker 數量
+- 通過 Kafka 的 Consumer Group 自動負載均衡
+
+**數據分片**：
+```
+使用者數據分片：
+  - 按 user_id % 256 分片
+  - 每個分片獨立的 Redis 實例
+  - 避免單點瓶頸
+
+新聞內容分片：
+  - 按 news_id 分片（MongoDB 原生支援）
 ```
 
-**Email (SendGrid)**:
-```go
-func SendEmail(userID int64, subject, body string) error {
-    email := GetUserEmail(userID)
-    
-    message := mail.NewSingleEmail(
-        mail.NewEmail("News App", "noreply@newsapp.com"),
-        subject,
-        mail.NewEmail("", email),
-        body,
-        body,
-    )
-    
-    _, err := sendGridClient.Send(message)
-    return err
-}
+#### 8.2 批次處理優化
+
+**為什麼需要批次**：
+- 單個推送調用第三方 API 有網絡開銷
+- 批次推送可以顯著提升效率
+
+**批次策略**：
+```
+批次大小：1000 個使用者/批次
+
+處理流程：
+1. 累積 1000 個推送任務
+2. 批次調用 FCM API
+3. 處理返回結果（成功/失敗）
+
+性能提升：
+- 單次推送：1000 QPS
+- 批次推送：100,000 QPS（提升 100 倍）
 ```
 
-#### 9.2 管道選擇策略
+### 9. 監控與優化
 
-```go
-type Channel int
+#### 9.1 關鍵指標
 
-const (
-    AppPush Channel = 1
-    SMS     Channel = 2
-    Email   Channel = 3
-)
+**業務指標**：
+- **送達率**：成功推送 / 總推送 × 100%（目標 > 95%）
+- **點擊率（CTR）**：點擊數 / 送達數 × 100%（目標 > 5%）
+- **取消訂閱率**：每日取消訂閱 / DAU（目標 < 0.5%）
 
-func SelectChannel(userID int64, priority PushPriority) Channel {
-    // 1. 緊急新聞: 多管道推送
-    if priority == Urgent {
-        go SendAppPush(userID, title, body)
-        go SendSMS(userID, shortContent)
-        return AppPush
-    }
-    
-    // 2. 檢查使用者偏好
-    preference := GetUserChannelPreference(userID)
-    
-    switch preference {
-    case "app_only":
-        return AppPush
-    case "email_only":
-        return Email
-    case "all":
-        // 重要新聞: App + Email
-        if priority == High {
-            go SendAppPush(userID, title, body)
-            go SendEmail(userID, subject, body)
-        }
-        return AppPush
-    }
-    
-    return AppPush // 預設
-}
+**系統指標**：
+- 推送延遲（P99 < 1 分鐘）
+- Kafka 消費延遲（< 1000 消息）
+- Redis 命中率（> 95%）
+
+#### 9.2 A/B 測試
+
+**持續優化推送策略**：
+```
+測試案例：
+- 標題 A vs 標題 B（哪個點擊率更高？）
+- 推送時間：8:00 vs 9:00（哪個更好？）
+- 推送頻率：3 次/天 vs 5 次/天
+
+實施：
+- 將使用者隨機分為 A/B 組
+- 收集 7 天數據
+- 比較點擊率、取消訂閱率
+- 選擇更好的策略全量上線
 ```
 
-#### 9.3 失敗重試機制
+## 程式碼範例（可選）
+
+僅展示核心的使用者興趣更新邏輯：
 
 ```go
-func PushWithRetry(userID int64, title, body string) error {
-    maxRetries := 3
+// 使用者點擊新聞後更新興趣
+func UpdateUserInterest(userID int64, newsID int64) {
+    // 1. 獲取新聞標籤
+    news := getNews(newsID)
     
-    for i := 0; i < maxRetries; i++ {
-        err := SendAppPush(userID, title, body)
-        
-        if err == nil {
-            return nil
-        }
-        
-        // 指數退避
-        backoff := time.Duration(math.Pow(2, float64(i))) * time.Second
-        time.Sleep(backoff)
-    }
-    
-    // 所有重試失敗,記錄並嘗試備用管道
-    log.Error("App push failed after retries", userID)
-    
-    // 降級到 Email
-    return SendEmail(userID, title, body)
-}
-```
-
-### 10. 推送效果追蹤
-
-#### 10.1 關鍵指標
-
-**送達率**:
-```go
-type PushRecord struct {
-    ID        int64
-    UserID    int64
-    NewsID    int64
-    Channel   Channel
-    Status    string // sent, delivered, failed
-    CreatedAt time.Time
-}
-
-func CalculateDeliveryRate() float64 {
-    total := db.Count("push_records", "status = 'sent'")
-    delivered := db.Count("push_records", "status = 'delivered'")
-    
-    return float64(delivered) / float64(total) * 100
-}
-```
-
-**點擊率 (CTR)**:
-```go
-func CalculateCTR(newsID int64) float64 {
-    // 推送次數
-    sent := db.Count("push_records", "news_id = ? AND status = 'delivered'", newsID)
-    
-    // 點擊次數
-    clicked := db.Count("click_events", "news_id = ? AND source = 'push'", newsID)
-    
-    if sent == 0 {
-        return 0
-    }
-    
-    return float64(clicked) / float64(sent) * 100
-}
-```
-
-**取消訂閱率**:
-```go
-func CalculateUnsubscribeRate() float64 {
-    // 當天推送使用者數
-    pushed := redis.SCard("pushed:users:" + time.Now().Format("2006-01-02")).Val()
-    
-    // 當天取消訂閱使用者數
-    unsubscribed := redis.SCard("unsubscribed:users:" + time.Now().Format("2006-01-02")).Val()
-    
-    return float64(unsubscribed) / float64(pushed) * 100
-}
-```
-
-#### 10.2 A/B 測試
-
-```go
-func ABTest(newsID int64) {
-    news := GetNews(newsID)
-    
-    // 目標使用者
-    users := SegmentByInterest(newsID)
-    
-    // 隨機分組
-    groupA := users[:len(users)/2]
-    groupB := users[len(users)/2:]
-    
-    // A 組: 標題 A
-    for _, userID := range groupA {
-        SendPush(userID, news.TitleA, news.Summary)
-        RecordABTest(userID, newsID, "A")
-    }
-    
-    // B 組: 標題 B
-    for _, userID := range groupB {
-        SendPush(userID, news.TitleB, news.Summary)
-        RecordABTest(userID, newsID, "B")
-    }
-    
-    // 24 小時後分析結果
-    time.AfterFunc(24*time.Hour, func() {
-        ctrA := CalculateGroupCTR(newsID, "A")
-        ctrB := CalculateGroupCTR(newsID, "B")
-        
-        log.Info("A/B Test Result", ctrA, ctrB)
-        
-        // 選擇贏家
-        if ctrA > ctrB {
-            UseTitle(newsID, news.TitleA)
-        } else {
-            UseTitle(newsID, news.TitleB)
-        }
-    })
-}
-```
-
-### 11. 實時推送 vs 批次推送
-
-#### 11.1 實時推送
-
-**場景**: 突發新聞、使用者關注的事件更新。
-
-```go
-func RealtimePush(newsID int64) {
-    news := GetNews(newsID)
-    
-    // 找到目標使用者
-    users := SegmentByInterest(newsID)
-    
-    // 並行推送
-    var wg sync.WaitGroup
-    
-    for _, userID := range users {
-        wg.Add(1)
-        
-        go func(uid int64) {
-            defer wg.Done()
-            
-            if ShouldPush(uid, Urgent) {
-                SendAppPush(uid, news.Title, news.Summary)
-            }
-        }(userID)
-    }
-    
-    wg.Wait()
-}
-```
-
-#### 11.2 批次推送
-
-**場景**: 定時推送(早報、晚報)、個性化推薦。
-
-```go
-func BatchPush() {
-    ticker := time.NewTicker(1 * time.Hour)
-    
-    for range ticker.C {
-        now := time.Now().Hour()
-        
-        // 早上 8 點推送
-        if now == 8 {
-            users := GetAllActiveUsers()
-            
-            for _, userID := range users {
-                // 個性化推薦
-                news := HybridRecommend(userID)
-                
-                if len(news) > 0 && ShouldPush(userID, Normal) {
-                    topNews := news[0]
-                    SendAppPush(userID, topNews.Title, topNews.Summary)
-                }
-            }
-        }
+    // 2. 更新使用者興趣權重
+    for _, tag := range news.Tags {
+        redis.ZIncrBy(
+            fmt.Sprintf("user:interests:%d", userID),
+            1.0,  // 點擊權重 +1
+            tag,
+        )
     }
 }
-```
-
-### 12. 效能優化
-
-#### 12.1 Redis 快取
-
-**使用者偏好快取**:
-```go
-// 讀取使用者興趣
-func GetUserInterests(userID int64) []string {
-    key := fmt.Sprintf("user:interests:cache:%d", userID)
-    
-    // 1. 快取
-    cached := redis.Get(key).Val()
-    if cached != "" {
-        return json.Unmarshal(cached)
-    }
-    
-    // 2. 計算
-    interests := redis.ZRevRange("user:interests:" + userID, 0, 9).Val()
-    
-    // 3. 寫入快取
-    redis.Set(key, json.Marshal(interests), 1*time.Hour)
-    
-    return interests
-}
-```
-
-#### 12.2 非同步處理
-
-```go
-func PublishNews(news News) {
-    // 1. 儲存新聞
-    db.Insert(news)
-    
-    // 2. 發送到 Kafka(非同步)
-    kafka.Publish("news.created", news)
-    
-    // Worker 處理推送
-}
-
-func NewsCreatedWorker() {
-    for msg := range kafka.Consume("news.created") {
-        news := msg.(News)
-        
-        // 標籤提取
-        ExtractTags(news)
-        
-        // 使用者分群
-        users := SegmentByInterest(news.ID)
-        
-        // 推送
-        for _, userID := range users {
-            if ShouldPush(userID, Normal) {
-                SendPush(userID, news.Title, news.Summary)
-            }
-        }
-    }
-}
-```
-
-#### 12.3 批次查詢
-
-```go
-func BatchGetUserInterests(userIDs []int64) map[int64][]string {
-    result := make(map[int64][]string)
-    
-    // Redis Pipeline
-    pipe := redis.Pipeline()
-    
-    cmds := make(map[int64]*redis.StringSliceCmd)
-    
-    for _, userID := range userIDs {
-        key := fmt.Sprintf("user:interests:%d", userID)
-        cmds[userID] = pipe.ZRevRange(key, 0, 9)
-    }
-    
-    pipe.Exec()
-    
-    // 解析結果
-    for userID, cmd := range cmds {
-        result[userID] = cmd.Val()
-    }
-    
-    return result
-}
-```
-
-### 13. 監控與告警
-
-#### 13.1 關鍵指標
-
-**業務指標**:
-```
-- 每日推送量
-- 送達率
-- 點擊率 (CTR)
-- 取消訂閱率
-```
-
-**系統指標**:
-```
-- 推送延遲 (P99)
-- Kafka 消費延遲
-- Redis 命中率
-- API 回應時間
-```
-
-#### 13.2 告警規則
-
-```yaml
-alerts:
-  - name: LowDeliveryRate
-    condition: delivery_rate < 90%
-    action: 檢查推送服務
-    
-  - name: HighUnsubscribeRate
-    condition: unsubscribe_rate > 1%
-    action: 檢查推送內容質量
-    
-  - name: KafkaLag
-    condition: kafka_lag > 10000
-    action: 擴容 Worker
-```
-
-## 常見面試考點
-
-### Q1: 如何實現個性化推薦?
-
-**答案**:
-
-個性化推薦需要結合多種演算法:
-
-**1. 使用者興趣建模**
-
-```go
-// 收集使用者行為
-- 訂閱主題 (權重 10)
-- 點擊新聞 (權重 1)
-- 分享新聞 (權重 5)
-- 閱讀時長 (>30s 權重 2)
-
-// 儲存在 Redis Sorted Set
-ZADD user:interests:123 50 "tech"
-ZADD user:interests:123 30 "sports"
-```
-
-**2. 協同過濾**
-
-```
-找到興趣相似的使用者
-推薦他們閱讀的新聞
-```
-
-**3. 基於內容推薦**
-
-```
-匹配使用者興趣標籤
-查詢包含這些標籤的最新新聞
-```
-
-**4. 混合推薦**
-
-```
-50% 協同過濾
-40% 基於內容
-10% 熱門新聞
-```
-
-**5. 興趣衰減**
-
-```go
-// 每天衰減 1%
-每天: score × 0.99
-低於 1 分則移除
-```
-
-**關鍵**: 多維度採集、實時更新、時間衰減。
-
-### Q2: 如何控制推送頻率避免打擾使用者?
-
-**答案**:
-
-**1. 使用者分級**
-
-```go
-高活躍 (每天 5+ 次): 每天推送 6 次
-中活躍 (每天 1-5 次): 每天推送 3 次
-低活躍 (一週 1 次): 每天推送 1 次
-不活躍 (7 天未開啟): 不推送(或每週喚醒 1 次)
-```
-
-**2. 每日限額**
-
-```go
-func CanPush(userID int64) bool {
-    key := "push:count:" + userID + ":" + today
-    count := redis.Incr(key)
-    
-    limit := GetPushLimit(userID) // 根據活躍度
-    
-    return count <= limit
-}
-```
-
-**3. 推送間隔**
-
-```go
-// 至少間隔 2 小時
-if time.Since(lastPush) < 2*time.Hour {
-    return false
-}
-```
-
-**4. 靜默時段**
-
-```go
-// 使用者自訂: 23:00 - 08:00 不推送
-if IsInQuietTime(userID) {
-    return false
-}
-```
-
-**5. 推送優先級**
-
-```go
-緊急新聞 (Urgent): 忽略所有限制
-重要新聞 (High): 忽略間隔限制
-普通推送 (Normal): 嚴格遵守限制
-```
-
-**6. 疲勞度監控**
-
-```go
-// 追蹤取消訂閱率
-if unsubscribe_rate > 1% {
-    降低推送頻率
-}
-```
-
-### Q3: 突發新聞如何實現秒級推送?
-
-**答案**:
-
-**1. 架構設計**
-
-```
-編輯發佈 → Kafka (優先級 topic) → Worker (並行推送) → 使用者
-```
-
-**2. 優先級 Topic**
-
-```go
-// Kafka 有兩個 Topic
-topic: news.urgent  (高優先級,更多 partition)
-topic: news.normal  (普通優先級)
-
-// 緊急新聞發到 urgent topic
-kafka.Publish("news.urgent", news)
-```
-
-**3. 專用 Worker Pool**
-
-```go
-// Urgent Worker (100 個)
-for i := 0; i < 100; i++ {
-    go UrgentWorker()
-}
-
-// Normal Worker (20 個)
-for i := 0; i < 20; i++ {
-    go NormalWorker()
-}
-```
-
-**4. 預先分群**
-
-```
-提前建立使用者分群索引:
-tag:users:tech = {user1, user2, ...}
-
-突發新聞直接查詢索引,無需實時計算
-```
-
-**5. 並行推送**
-
-```go
-func RealtimePush(newsID int64) {
-    users := GetTargetUsers(newsID) // 從索引獲取
-    
-    // 分批並行推送
-    batchSize := 1000
-    var wg sync.WaitGroup
-    
-    for i := 0; i < len(users); i += batchSize {
-        batch := users[i:min(i+batchSize, len(users))]
-        
-        wg.Add(1)
-        go func(b []int64) {
-            defer wg.Done()
-            
-            for _, userID := range b {
-                SendAppPush(userID, title, body)
-            }
-        }(batch)
-    }
-    
-    wg.Wait()
-}
-```
-
-**6. FCM 優先級**
-
-```go
-message := &messaging.Message{
-    Token: token,
-    Android: &messaging.AndroidConfig{
-        Priority: "high", // 高優先級
-    },
-    APNS: &messaging.APNSConfig{
-        Headers: map[string]string{
-            "apns-priority": "10", // 最高優先級
-        },
-    },
-}
-```
-
-**效能**:
-- 100 萬使用者
-- 100 個 Worker 並行
-- 每個 Worker 10,000 使用者
-- 單次推送 10ms
-- 總時長: 10,000 × 10ms = 100 秒 ≈ 2 分鐘
-
-**優化**: 增加 Worker 數量到 1000,總時長降到 10 秒。
-
-### Q4: 如何防止使用者取消訂閱?
-
-**答案**:
-
-**1. 精準推送**
-
-```
-不推送使用者不感興趣的內容
-提高點擊率
-降低打擾感
-```
-
-**2. 頻率控制**
-
-```
-根據使用者活躍度調整推送頻率
-不活躍使用者減少推送
-```
-
-**3. 時段選擇**
-
-```
-分析使用者活躍時段
-在使用者通常開啟 App 的時段推送
-```
-
-**4. 個性化時間**
-
-```go
-func GetBestPushTime(userID int64) int {
-    // 分析使用者過去 30 天的開啟時間
-    times := GetUserOpenTimes(userID, 30*24*time.Hour)
-    
-    // 統計最頻繁的小時
-    hourCounts := make(map[int]int)
-    for _, t := range times {
-        hourCounts[t.Hour()]++
-    }
-    
-    // 返回最活躍的小時
-    maxHour := 8 // 預設早上 8 點
-    maxCount := 0
-    
-    for hour, count := range hourCounts {
-        if count > maxCount {
-            maxCount = count
-            maxHour = hour
-        }
-    }
-    
-    return maxHour
-}
-```
-
-**5. 推送質量追蹤**
-
-```go
-// 追蹤每篇新聞的 CTR
-if CTR < 3% {
-    標記為低質量內容
-    減少推送
-}
-```
-
-**6. 提供細粒度控制**
-
-```
-使用者可選擇:
-- 接收哪些分類的推送
-- 每天接收幾次
-- 靜默時段
-- 完全關閉
-```
-
-**7. 價值感知**
-
-```
-推送使用者真正關心的內容
-例如: 使用者訂閱的作者發布新文章
-     使用者關注的事件有更新
-```
-
-### Q5: 推送系統如何擴展到支援 10 億使用者?
-
-**答案**:
-
-**1. 水平擴展架構**
-
-```
-分散式架構:
-- 多個 Kafka 叢集(分地域)
-- 多個 Worker 叢集(可動態擴容)
-- 多個 Redis 叢集(分片)
-```
-
-**2. 資料分片**
-
-```go
-// 使用者資料按 user_id 分片
-shard := userID % 1024
-
-// 儲存到對應的 Redis 叢集
-redis[shard].ZAdd("user:interests:" + userID, ...)
-```
-
-**3. 地域分散式部署**
-
-```
-美洲區: Kafka + Workers + Redis (5 億使用者)
-歐洲區: Kafka + Workers + Redis (2 億使用者)
-亞洲區: Kafka + Workers + Redis (3 億使用者)
-
-減少跨區延遲
-```
-
-**4. 推送服務解耦**
-
-```
-使用者分群服務 (獨立擴展)
-推薦引擎服務 (獨立擴展)
-推送閘道服務 (獨立擴展)
-```
-
-**5. 非同步化**
-
-```
-所有非核心操作都非同步:
-- 興趣標籤更新
-- 使用者分群
-- 推送記錄寫入
-```
-
-**6. 批次處理**
-
-```go
-// 批次獲取使用者資料
-users := BatchGetUsers(userIDs) // 100 個/批次
-
-// 批次發送推送
-BatchSendPush(users, news) // 1000 個/批次
-```
-
-**7. 預計算和快取**
-
-```
-預先計算:
-- 使用者相似度
-- 內容相似度
-- 使用者分群索引
-
-快取熱點資料:
-- 熱門新聞
-- 活躍使用者興趣
-- 使用者分群結果
-```
-
-**8. 動態擴容**
-
-```yaml
-# Kubernetes HPA
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-spec:
-  scaleTargetRef:
-    kind: Deployment
-    name: push-worker
-  minReplicas: 100
-  maxReplicas: 1000
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 70
-```
-
-**容量估算**:
-```
-10 億使用者
-每日推送 4 次
-總推送量: 40 億次/天
-
-平均 QPS: 40 億 / 86400 ≈ 46,000
-高峰 QPS: 46,000 × 3 ≈ 140,000
-
-Worker 數量:
-假設單 Worker 處理 100 QPS
-需要: 140,000 / 100 = 1,400 個 Worker
 ```
 
 ## 總結
 
-新聞推送系統是典型的大規模個性化推薦場景,涵蓋了:
+設計新聞推送系統的核心要點：
 
-**核心挑戰**:
-1. **個性化推薦**: 使用者興趣建模、內容匹配
-2. **推送頻率控制**: 疲勞度管理、靜默時段
-3. **實時推送**: 突發新聞秒級送達
-4. **效果追蹤**: CTR、送達率、取消訂閱率
+1. **個性化推薦**：使用者興趣建模（Sorted Set） + 混合推薦演算法（內容 + 協同）
+2. **頻率控制**：使用者分層 + 每日限額 + 推送間隔 + 靜默時段
+3. **優先級機制**：緊急/重要/普通三級，不同處理策略
+4. **多渠道推送**：App Push（主） + SMS + Email（輔助）
+5. **到達率優化**：重試機制 + 離線處理 + TTL 設置
+6. **可擴展性**：無狀態服務 + 數據分片 + 批次處理
 
-**關鍵技術**:
-- **Redis Sorted Set**: 使用者興趣標籤儲存
-- **Kafka**: 非同步訊息處理
-- **協同過濾 + 內容推薦**: 混合推薦演算法
-- **多管道推送**: App Push、SMS、Email
-- **使用者分群**: 按興趣、活躍度、地理位置
-
-**設計原則**:
-- **以使用者為中心**: 推送使用者真正關心的內容
-- **頻率適度**: 避免過度打擾
-- **實時與批次結合**: 突發新聞實時推送,定時推送批次處理
-- **持續優化**: A/B 測試、效果追蹤
-
-掌握新聞推送系統設計,對理解個性化推薦、使用者增長、資料探勘有重要幫助!
+推送系統的核心挑戰是**平衡推送效果和使用者體驗**：推送太少使用者流失，推送太多使用者關閉通知。需要通過精準的個性化和智能的頻率控制找到最佳平衡點。
