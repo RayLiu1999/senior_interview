@@ -11,6 +11,13 @@
 | 3 | [整合測試 (Integration Testing)](./integration_testing.md) | 6 | 4 | `Testing`, `Integration Testing` |
 | 4 | [端對端測試 (End-to-End Testing)](./end_to_end_testing.md) | 7 | 3 | `Testing`, `E2E Testing` |
 | 5 | [TDD vs. BDD](./tdd_vs_bdd.md) | 7 | 4 | `Testing`, `TDD`, `BDD`, `Methodology` |
+| 6 | [驗收測試驅動開發 (ATDD)](./atdd.md) | 7 | 3 | `Testing`, `ATDD`, `BDD`, `Methodology` |
+| 7 | [契約測試 (Contract Testing)](./contract_testing.md) | 7 | 4 | `Testing`, `Microservices`, `API`, `Contract Testing` |
+| 8 | [性能測試 (Performance Testing)](./performance_testing.md) | 8 | 5 | `Testing`, `Performance`, `Load Testing`, `Stress Testing` |
+| 9 | [安全性測試 (Security Testing)](./security_testing.md) | 8 | 5 | `Testing`, `Security`, `Penetration Testing`, `Vulnerability` |
+| 10 | [混沌工程 (Chaos Engineering)](./chaos_engineering.md) | 9 | 4 | `Testing`, `Resilience`, `Distributed Systems`, `Chaos Engineering` |
+| 11 | [回歸測試 (Regression Testing)](./regression_testing.md) | 6 | 5 | `Testing`, `Regression Testing`, `Automation` |
+| 12 | [變異測試 (Mutation Testing)](./mutation_testing.md) | 8 | 3 | `Testing`, `Mutation Testing`, `Test Quality` |
 
 ---
 
