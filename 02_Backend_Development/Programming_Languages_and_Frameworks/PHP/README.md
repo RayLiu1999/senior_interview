@@ -1,69 +1,76 @@
-# PHP
+# PHP 程式語言
 
 PHP 是最廣泛使用的伺服器端程式語言之一，驅動著全球超過 70% 的網站。作為資深後端工程師，您需要深入理解 PHP 的語言特性、生態系統工具、安全最佳實踐以及與 Web 伺服器的整合方式。本章節涵蓋了面試中最常被考察的 PHP 核心主題。
 
-## 主題概覽
+## 核心概念
 
-### 核心特性
+### Core（核心特性）
+
+| 主題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [PHP 8+ 新特性](./Core/php8_new_features.md) | 6 | 5 | `PHP 8`, `Attributes`, `Enums` |
+| [類型系統演進](./Core/type_system_evolution.md) | 6 | 5 | `Type System`, `Strict Types` |
+| [Trait vs Interface vs Abstract](./Core/trait_vs_interface_vs_abstract_class.md) | 5 | 5 | `Trait`, `Interface`, `Abstract` |
+| [依賴注入與 IoC](./Core/di_container_and_ioc.md) | 7 | 5 | `DI`, `IoC`, `Container` |
+| [命名空間與自動載入](./Core/namespaces_and_autoloading.md) | 4 | 5 | `Namespace`, `Autoload`, `PSR-4` |
+| [常見安全漏洞](./Core/common_security_vulnerabilities.md) | 7 | 5 | `Security`, `SQL Injection`, `XSS` |
+| [OPcache 與 JIT](./Core/opcache_and_jit.md) | 7 | 4 | `OPcache`, `JIT`, `Performance` |
+| [垃圾回收機制](./Core/garbage_collection_in_php.md) | 6 | 4 | `GC`, `Reference Counting` |
+| [魔術方法詳解](./Core/magic_methods.md) | 5 | 4 | `Magic Methods`, `__get`, `__set` |
+| [閉包與匿名函數](./Core/closures_and_anonymous_functions.md) | 5 | 4 | `Closure`, `Anonymous Function` |
+| [生成器與迭代器](./Core/generators_and_iterators.md) | 6 | 4 | `Generator`, `Iterator` |
+| [反射機制](./Core/reflection_api.md) | 6 | 3 | `Reflection`, `Metaprogramming` |
+| [錯誤與異常處理](./Core/error_and_exception_handling.md) | 5 | 4 | `Error`, `Exception` |
+| [相等性與類型轉換](./Core/equality_and_type_juggling.md) | 4 | 4 | `Type Juggling`, `Comparison` |
+| [include/require 差異](./Core/include_vs_require.md) | 3 | 3 | `Include`, `Require` |
 
 完整列表請參考 [Core README](./Core/README.md)
 
-**基礎主題**（15 個題目）：
-- [相等性與類型轉換](./Core/equality_and_type_juggling.md) - PHP 的相等性比較與類型轉換機制
-- [include/require 差異](./Core/include_vs_require.md) - 文件引入方式的差異
-- [Trait vs Interface vs Abstract](./Core/trait_vs_interface_vs_abstract_class.md) - 代碼重用機制對比
-- [垃圾回收機制](./Core/garbage_collection_in_php.md) - 引用計數與循環回收
-- [依賴注入與 IoC](./Core/di_container_and_ioc.md) - 依賴注入容器原理
-- [常見安全漏洞](./Core/common_security_vulnerabilities.md) - SQL 注入、XSS、CSRF 防護
-- [PHP 8+ 新特性](./Core/php8_new_features.md) - Attributes、Enums、Match 等
-- [命名空間與自動載入](./Core/namespaces_and_autoloading.md) - PSR-4 自動載入機制
-- [錯誤與異常處理](./Core/error_and_exception_handling.md) - 錯誤處理策略
-- [魔術方法詳解](./Core/magic_methods.md) - __get、__set、__call 等
-- [閉包與匿名函數](./Core/closures_and_anonymous_functions.md) - 函數式編程特性
-- [生成器與迭代器](./Core/generators_and_iterators.md) - 記憶體優化技術
-- [反射機制](./Core/reflection_api.md) - 運行時元編程
-- [類型系統演進](./Core/type_system_evolution.md) - PHP 類型系統發展
-- [OPcache 與 JIT](./Core/opcache_and_jit.md) - 性能優化技術
+### Tooling（工具鏈）
 
-**工具鏈主題**（見 [Tooling README](./Tooling/README.md)）：
-- [Composer 與依賴管理](./Tooling/what_is_composer_and_its_purpose.md)
-- [PSR 標準詳解](./Tooling/what_is_psr_and_common_standards.md)
+| 主題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [Composer 與依賴管理](./Tooling/what_is_composer_and_its_purpose.md) | 4 | 5 | `Composer`, `Dependency` |
+| [PSR 標準詳解](./Tooling/what_is_psr_and_common_standards.md) | 5 | 5 | `PSR`, `Standards`, `PHP-FIG` |
 
-**Web 伺服器主題**（見 [Web_Servers README](./Web_Servers/README.md)）：
-- [PHP-FPM 架構與角色](./Web_Servers/php_fpm_and_its_role.md)
+完整列表請參考 [Tooling README](./Tooling/README.md)
 
----
+### Web Servers（Web 伺服器）
 
-## 子主題
+| 主題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [PHP-FPM 架構與角色](./Web_Servers/php_fpm_and_its_role.md) | 6 | 5 | `PHP-FPM`, `FastCGI`, `Nginx` |
 
-### 框架
+完整列表請參考 [Web_Servers README](./Web_Servers/README.md)
 
-#### Laravel
+## 框架
 
-詳見 [Laravel 專屬 README](./Frameworks/Laravel/README.md)
+### Laravel
 
-**核心概念**（5 個主題）：
-- [請求生命週期](./Frameworks/Laravel/request_lifecycle.md)
-- [Service Container 與 IoC](./Frameworks/Laravel/service_container_and_ioc.md)
-- [Facades 原理](./Frameworks/Laravel/facades_explained.md)
-- [Eloquent ORM 深入](./Frameworks/Laravel/eloquent_orm_deep_dive.md)
-- [Middleware 機制](./Frameworks/Laravel/middleware_in_depth.md)
+| 主題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [請求生命週期](./Frameworks/Laravel/request_lifecycle.md) | 6 | 5 | `Request Lifecycle`, `Laravel` |
+| [Service Container 與 IoC](./Frameworks/Laravel/service_container_and_ioc.md) | 7 | 5 | `Service Container`, `IoC` |
+| [Facades 原理](./Frameworks/Laravel/facades_explained.md) | 6 | 4 | `Facades`, `Static Proxy` |
+| [Eloquent ORM 深入](./Frameworks/Laravel/eloquent_orm_deep_dive.md) | 7 | 5 | `Eloquent`, `ORM`, `Active Record` |
+| [Middleware 機制](./Frameworks/Laravel/middleware_in_depth.md) | 6 | 5 | `Middleware`, `Pipeline` |
+| [隊列與任務調度](./Frameworks/Laravel/queue_and_task_scheduling.md) | 7 | 4 | `Queue`, `Job`, `Schedule` |
+| [測試與調試](./Frameworks/Laravel/testing_and_debugging.md) | 6 | 4 | `Testing`, `PHPUnit`, `Debug` |
+| [性能優化](./Frameworks/Laravel/performance_optimization.md) | 8 | 5 | `Performance`, `Optimization` |
 
-**進階主題**（3 個主題）：
-- [隊列與任務調度](./Frameworks/Laravel/queue_and_task_scheduling.md)
-- [測試與調試](./Frameworks/Laravel/testing_and_debugging.md)
-- [性能優化](./Frameworks/Laravel/performance_optimization.md)
+完整列表請參考 [Laravel README](./Frameworks/Laravel/README.md)
 
-#### Symfony
+### Symfony
 
-詳見 [Symfony 專屬 README](./Frameworks/Symfony/README.md)
+| 主題 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [Symfony 框架基礎](./Frameworks/Symfony/symfony_framework_basics.md) | 6 | 4 | `Symfony`, `Basics` |
+| [依賴注入容器](./Frameworks/Symfony/dependency_injection_container.md) | 7 | 5 | `DI`, `Container`, `Service` |
+| [事件系統與監聽器](./Frameworks/Symfony/event_system_and_listeners.md) | 7 | 4 | `Event`, `Listener`, `Dispatcher` |
+| [Security 安全組件](./Frameworks/Symfony/security_component.md) | 8 | 5 | `Security`, `Authentication`, `Authorization` |
+| [性能優化與最佳實踐](./Frameworks/Symfony/performance_optimization.md) | 8 | 4 | `Performance`, `Best Practices` |
 
-**核心概念**（5 個主題）：
-- [Symfony 框架基礎](./Frameworks/Symfony/symfony_framework_basics.md)
-- [依賴注入容器](./Frameworks/Symfony/dependency_injection_container.md)
-- [事件系統與監聽器](./Frameworks/Symfony/event_system_and_listeners.md)
-- [Security 安全組件](./Frameworks/Symfony/security_component.md)
-- [性能優化與最佳實踐](./Frameworks/Symfony/performance_optimization.md)
+完整列表請參考 [Symfony README](./Frameworks/Symfony/README.md)
 
 ---
 
