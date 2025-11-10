@@ -8,11 +8,24 @@
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [如何設計一個高併發的短網址系統？](./how_to_design_a_tiny_url_system.md) | 7 | 5 | `System Design`, `URL Shortener`, `High Concurrency` |
 | 2 | [使用 Pub/Sub 建立可靠的聊天系統](./reliable_chat_system_with_pubsub.md) | 8 | 4 | `System Design`, `Chat System`, `Pub/Sub`, `Real-time` |
-| 3 | [如何設計 Twitter/Instagram 社交平台？](./design_twitter_like_social_platform.md) | 9 | 5 | `System Design`, `Social Network`, `Feed`, `Fanout` |
+| 3 | [如何設計 Twitter/Instagram/LinkedIn 社交平台？](./design_social_platform.md) | 9 | 5 | `System Design`, `Social Network`, `Feed`, `Fanout` |
 | 4 | [如何設計秒殺系統？](./design_flash_sale_system.md) | 9 | 5 | `System Design`, `Flash Sale`, `High Concurrency`, `Inventory` |
 | 5 | [如何設計新聞推送系統？](./design_news_feed_push_system.md) | 8 | 5 | `System Design`, `Push System`, `Personalization`, `Recommendation` |
 | 6 | [如何設計即時排行榜系統？](./design_realtime_leaderboard_system.md) | 8 | 5 | `System Design`, `Leaderboard`, `Redis`, `Sorted Set` |
 | 7 | [如何設計分散式鎖？](./design_distributed_lock.md) | 8 | 5 | `System Design`, `Distributed Lock`, `Redis`, `ZooKeeper`, `Etcd` |
+| 8 | [如何設計購票系統？](./design_ticket_booking_system.md) | 9 | 5 | `System Design`, `Ticket Booking`, `Concurrency`, `Payment` |
+| 9 | [如何設計串流影音服務？](./design_video_streaming_service.md) | 9 | 5 | `System Design`, `Video Streaming`, `CDN`, `Encoding` |
+| 10 | [如何設計即時通訊系統？](./design_inㄊstant_messaging_system.md) | 8 | 5 | `System Design`, `Instant Messaging`, `WebSocket`, `Real-time` |
+| 11 | [如何設計分散式鍵值儲存系統？](./design_distributed_key_value_store.md) | 9 | 5 | `System Design`, `Key-Value Store`, `Distributed`, `Consistency` |
+| 12 | [如何設計唯一識別碼產生器？](./design_unique_id_generator.md) | 7 | 5 | `System Design`, `ID Generator`, `Distributed`, `UUID` |
+| 13 | [如何設計支付系統？](./design_payment_system.md) | 9 | 5 | `System Design`, `Payment`, `Transaction`, `Security` |
+| 14 | [如何設計共乘打車系統？](./design_ride_sharing_system.md) | 9 | 5 | `System Design`, `Ride Sharing`, `Location`, `Matching` |
+| 15 | [如何設計新聞推薦系統？](./design_news_recommendation_system.md) | 8 | 5 | `System Design`, `Recommendation`, `Machine Learning`, `Personalization` |
+| 16 | [如何設計搜尋引擎或自動補全？](./design_search_engine_autocomplete.md) | 8 | 5 | `System Design`, `Search Engine`, `Autocomplete`, `Indexing` |
+
+| 17 | [如何設計 Twitter 社交平台？](./design_twitter_system.md) | 9 | 5 | `System Design`, `Social Network`, `Feed`, `Fanout` |
+| 18 | [如何設計 Instagram 社交平台？](./design_instagram_system.md) | 9 | 5 | `System Design`, `Social Network`, `Media`, `CDN` |
+| 19 | [如何設計 LinkedIn 社交平台？](./design_linkedin_system.md) | 9 | 5 | `System Design`, `Professional Graph`, `Search`, `Jobs` |
 
 ---
 
