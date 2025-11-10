@@ -7,6 +7,7 @@ CI/CD 是現代軟體開發的核心實踐之一。作為資深後端工程師�
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [What is CI/CD? What are its core concepts?](./what_is_ci_cd.md) | 5 | 5 | `CI/CD`, `DevOps`, `Automation` |
+| 2 | [Jenkins 與 CI/CD：核心概念、實踐與最佳做法](./jenkins_with_ci_cd.md) | 6 | 5 | `CI/CD`, `Jenkins`, `Pipeline`, `DevOps` |
 
 ---
 

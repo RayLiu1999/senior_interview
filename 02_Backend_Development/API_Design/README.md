@@ -10,8 +10,9 @@ API 設計是後端工程師的核心技能之一。良好的 API 設計不僅�
 | 2 | [API 版本管理策略](./api_versioning_strategies.md) | 6 | 5 | `API`, `Versioning`, `Best Practices` |
 | 3 | [API 中的冪等性](./idempotency_in_api.md) | 6 | 5 | `API`, `Idempotency`, `Design Pattern` |
 | 4 | [API 驗證與授權機制](./api_authentication_and_authorization.md) | 7 | 5 | `API`, `Authentication`, `Authorization`, `Security` |
-| 5 | [GraphQL vs. REST](./graphql_vs_rest.md) | 7 | 4 | `API`, `GraphQL`, `REST`, `Comparison` |
-| 6 | [WebSocket](./WebSocket/README.md) | 6 | 4 | `API`, `WebSocket`, `Real-time` |
+| 5 | [API 限流與降級策略](./api_rate_limiting.md) | 7 | 5 | `API`, `Rate Limiting`, `Best Practices` |
+| 6 | [GraphQL vs. REST](./graphql_vs_rest.md) | 7 | 4 | `API`, `GraphQL`, `REST`, `Comparison` |
+| 7 | [WebSocket](./WebSocket/README.md) | 6 | 4 | `API`, `WebSocket`, `Real-time` |
 
 ---
 

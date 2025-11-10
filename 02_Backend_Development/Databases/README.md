@@ -11,6 +11,8 @@
 | 3 | [資料庫交易](./database_transactions.md) | 6 | 5 | `Database`, `Transaction`, `ACID` |
 | 4 | [資料庫正規化](./database_normalization.md) | 6 | 4 | `Database`, `Normalization`, `Schema Design` |
 | 5 | [資料庫分片](./database_sharding.md) | 8 | 5 | `Database`, `Sharding`, `Scalability` |
+| 6 | [資料庫高可用方案](./database_high_availability.md) | 7 | 5 | `Database`, `High Availability`, `Replication`, `Load Balancing` |
+| 7 | [資料庫效能調優全攻略](./database_performance_tuning.md) | 8 | 5 | `Database`, `Performance`, `Tuning` |
 
 ---
 
