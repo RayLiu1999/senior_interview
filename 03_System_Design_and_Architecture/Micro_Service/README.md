@@ -12,6 +12,7 @@
 | 4 | [事件驅動的微服務通訊](./event_driven_communication.md) | 7 | 4 | `Microservices`, `Event-Driven`, `Communication` |
 | 5 | [分散式交易與 Saga 模式](./distributed_transactions_and_saga_pattern.md) | 8 | 5 | `Microservices`, `Distributed Transactions`, `Saga Pattern` |
 | 6 | [斷路器模式 (Circuit Breaker Pattern)](./circuit_breaker_pattern.md) | 7 | 4 | `Microservices`, `Circuit Breaker`, `Resilience` |
+| 7 | [什麼是服務網格 (Service Mesh)？](./service_mesh.md) | 8 | 4 | `Microservices`, `Service Mesh`, `Istio`, `Sidecar Proxy` |
 
 ---
 
