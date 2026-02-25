@@ -13,8 +13,10 @@ PostgreSQL 是最先進的開源關聯式資料庫之一，以其強大的功能
 | 5 | [PostgreSQL 支援哪些常見的索引類型？(GiST, GIN 等)](./index_types.md) | 6 | 4 | `PostgreSQL`, `Indexing`, `GiST`, `GIN` |
 | 6 | [PostgreSQL 的預設交易隔離級別是什麼？與 MySQL 有何不同？](./transaction_isolation_levels.md) | 6 | 4 | `PostgreSQL`, `Transaction`, `Isolation Level` |
 | 7 | [詳細解釋 `VACUUM`, `VACUUM FULL` 和 `autovacuum` 的區別。](./vacuum_deep_dive.md) | 7 | 4 | `PostgreSQL`, `VACUUM`, `Maintenance` |
-| 8 | [解釋 PostgreSQL 的串流複製和邏輯複製。](./replication_types.md) | 8 | 4 | `PostgreSQL`, `Replication`, `High Availability` |
-| 9 | [什麼是通用資料表運算式 (CTE)？它有什麼優勢？](./what_is_cte.md) | 6 | 3 | `PostgreSQL`, `CTE`, `Query Optimization` |
+| 8 | [解釋 PostgreSQL 的串流複製和邏輯複製。](./replication_streaming_vs_logical.md) | 8 | 4 | `PostgreSQL`, `Replication`, `High Availability` |
+| 9 | [什麼是通用資料表運算式 (CTE)？它有什麼優勢？](./cte_and_recursive_cte.md) | 6 | 3 | `PostgreSQL`, `CTE`, `Query Optimization` |
+| 10 | [PostgreSQL WAL (Write-Ahead Log) 原理與應用](./wal_write_ahead_log.md) | 7 | 4 | `PostgreSQL`, `WAL`, `崩潰恢復`, `複製` |
+| 11 | [PostgreSQL 表格分區 (Table Partitioning) 深度解析](./table_partitioning.md) | 7 | 4 | `PostgreSQL`, `Partitioning`, `性能調優`, `大資料量` |
 
 ---
 
