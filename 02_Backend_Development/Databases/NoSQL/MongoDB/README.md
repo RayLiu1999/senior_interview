@@ -12,6 +12,9 @@ MongoDB 是最流行的 NoSQL 文檔資料庫之一。作為資深後端工程�
 | 4 | [Sharding in MongoDB](./mongodb_sharding.md) | 8 | 4 | `MongoDB`, `Sharding`, `Horizontal Scaling` |
 | 5 | [Replication in MongoDB](./mongodb_replication.md) | 7 | 4 | `MongoDB`, `Replication`, `High Availability` |
 | 6 | [Data Modeling: Embedding vs. Referencing](./mongodb_data_modeling.md) | 7 | 5 | `MongoDB`, `Data Modeling`, `Schema Design` |
+| 7 | [WiredTiger 存儲引擎深度解析（MVCC、Cache、壓縮）](./mongodb_wiredtiger.md) | 7 | 4 | `MongoDB`, `WiredTiger`, `存儲引擎`, `MVCC` |
+| 8 | [MongoDB 多文件事務（Multi-Document Transactions）](./mongodb_transactions.md) | 7 | 4 | `MongoDB`, `Transaction`, `ACID`, `2PC` |
+| 9 | [MongoDB Change Streams：即時資料變更監聽](./mongodb_change_streams.md) | 6 | 3 | `MongoDB`, `Change Streams`, `CDC`, `事件驅動` |
 
 ---
 
