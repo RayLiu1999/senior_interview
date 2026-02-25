@@ -12,7 +12,11 @@ API 設計是後端工程師的核心技能之一。良好的 API 設計不僅�
 | 4 | [API 驗證與授權機制](./api_authentication_and_authorization.md) | 7 | 5 | `API`, `Authentication`, `Authorization`, `Security` |
 | 5 | [API 限流與降級策略](./api_rate_limiting.md) | 7 | 5 | `API`, `Rate Limiting`, `Best Practices` |
 | 6 | [GraphQL vs. REST](./graphql_vs_rest.md) | 7 | 4 | `API`, `GraphQL`, `REST`, `Comparison` |
-| 7 | [WebSocket](./WebSocket/README.md) | 6 | 4 | `API`, `WebSocket`, `Real-time` |
+| 7 | [API 分頁設計（Offset vs 游標分頁）](./api_pagination.md) | 5 | 4 | `API`, `Pagination`, `游標`, `效能` |
+| 8 | [Webhook 設計](./webhook_design.md) | 6 | 4 | `Webhook`, `事件驅動`, `回調`, `可靠性` |
+| 9 | [API 向後相容策略](./api_backward_compatibility.md) | 6 | 4 | `向後相容`, `Breaking Change`, `廢棄管理` |
+| 10 | [API 文件設計與 OpenAPI](./api_documentation_openapi.md) | 4 | 4 | `OpenAPI`, `Swagger`, `契約優先` |
+| 11 | [WebSocket](./WebSocket/README.md) | 6 | 4 | `API`, `WebSocket`, `Real-time` |
 
 ---
 
