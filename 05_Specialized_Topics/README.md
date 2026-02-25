@@ -8,3 +8,4 @@
 | :--- | :--- | :--- |
 | **安全性 (Security)** | [資訊安全](./Security/README.md) | 涵蓋 Web 安全性的各個方面，包括 OWASP Top 10、常見攻擊手法 (SQL Injection, XSS, CSRF) 與防禦、身份驗證、授權、密碼儲存、JWT、HTTPS、API 安全等核心主題。 |
 | **測試 (Testing)** | [測試](./Testing/README.md) | 深入探討軟體測試的策略、方法論與實踐，包括測試金字塔、TDD 與 BDD 等核心概念。 |
+| **AI 工程 (AI Engineering)** | [AI 工程](./AI_Engineering/README.md) | 探討 AI Engineer 的必備技能，包括 Prompt Engineering、RAG (檢索增強生成)、Vector Database 與 LLM 應用開發。 |
