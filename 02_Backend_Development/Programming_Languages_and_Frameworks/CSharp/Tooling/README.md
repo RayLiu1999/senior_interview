@@ -6,7 +6,7 @@
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | NuGet 套件管理 | 4 | 4 | `NuGet`, `Package` |
+| 1 | [NuGet 套件管理與 dotnet CLI](./dotnet_cli_and_nuget.md) | 4 | 4 | `NuGet`, `dotnet CLI`, `Package` |
 | 2 | dotnet CLI 使用 | 4 | 4 | `CLI`, `dotnet` |
 | 3 | MSBuild 與專案結構 | 5 | 3 | `MSBuild`, `csproj` |
 | 4 | 程式碼分析工具 | 5 | 3 | `Analyzer`, `Code Quality` |

@@ -6,7 +6,7 @@
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | xUnit 與 NUnit | 4 | 4 | `xUnit`, `NUnit`, `Unit Test` |
+| 1 | [xUnit 與 NUnit：C# 測試框架](./xunit_nunit.md) | 4 | 4 | `xUnit`, `NUnit`, `Unit Test` |
 | 2 | Moq 模擬框架 | 5 | 4 | `Moq`, `Mock`, `Stub` |
 | 3 | 整合測試策略 | 6 | 4 | `Integration Test`, `WebApplicationFactory` |
 | 4 | BenchmarkDotNet | 5 | 3 | `Benchmark`, `Performance` |
