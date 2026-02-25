@@ -45,6 +45,8 @@
 | [圖的表示與遍歷](./graph_representation_traversal.md) | 6 | 4 | `鄰接表`, `鄰接矩陣`, `BFS`, `DFS` |
 | [最短路徑算法](./shortest_path_algorithms.md) | 7 | 4 | `Dijkstra`, `Bellman-Ford`, `Floyd` |
 | [拓撲排序與依賴關係](./topological_sort.md) | 6 | 4 | `拓撲排序`, `DAG`, `任務依賴` |
+| [並查集 (Union-Find)](./union_find.md) | 6 | 4 | `並查集`, `DSU`, `連通分量`, `Kruskal` |
+| [最小生成樹 (Kruskal/Prim)](./minimum_spanning_tree.md) | 7 | 4 | `MST`, `Kruskal`, `Prim`, `貪心` |
 
 ### 核心算法 (Algorithms)
 
@@ -62,6 +64,13 @@
 | [二分搜尋及其變體](./binary_search_variants.md) | 5 | 5 | `二分搜尋`, `查找邊界`, `旋轉陣列` |
 | [深度優先搜尋 (DFS)](./depth_first_search.md) | 6 | 5 | `DFS`, `回溯`, `排列組合`, `路徑搜尋` |
 | [廣度優先搜尋 (BFS)](./breadth_first_search.md) | 6 | 5 | `BFS`, `最短路徑`, `層級遍歷` |
+| [回溯法 (Backtracking)](./backtracking_algorithm.md) | 7 | 5 | `回溯`, `剪枝`, `全排列`, `N皇后`, `搜索空間樹` |
+
+#### 字串算法
+
+| 題目 | 難度 | 重要程度 | 標籤 |
+|------|------|----------|------|
+| [字串搜尋算法 (KMP / Rabin-Karp)](./string_search_algorithms.md) | 6 | 4 | `KMP`, `Rabin-Karp`, `模式匹配`, `滾動雜湊` |
 
 #### 動態規劃
 

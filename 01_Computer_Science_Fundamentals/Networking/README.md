@@ -18,9 +18,12 @@
 | 題目 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [HTTP/1.1 vs HTTP/2 vs HTTP/3](./http_versions_comparison.md) | 7 | 5 | `HTTP`, `協定演進`, `QUIC` |
+| [HTTP 狀態碼完整解析](./http_status_codes.md) | 3 | 5 | `HTTP`, `狀態碼`, `REST API`, `錯誤處理` |
 | [HTTPS 與 TLS/SSL 原理](./https_tls_ssl.md) | 7 | 5 | `HTTPS`, `TLS`, `加密`, `安全` |
 | [DNS 解析流程與優化](./dns_resolution_and_optimization.md) | 5 | 4 | `DNS`, `域名解析`, `快取` |
 | [WebSocket 協定與應用](./websocket_protocol.md) | 6 | 4 | `WebSocket`, `雙向通信`, `即時通訊` |
+| [長輪詢、SSE 與 WebSocket 對比](./long_polling_sse_vs_websocket.md) | 6 | 4 | `SSE`, `長輪詢`, `推播`, `即時通訊` |
+| [Cookie vs Session vs Token](./cookie_session_token.md) | 5 | 5 | `Cookie`, `Session`, `JWT`, `認證` |
 | [RESTful API vs gRPC](./restful_vs_grpc.md) | 6 | 5 | `REST`, `gRPC`, `API 設計` |
 
 ### 網路架構 (Network Architecture)
@@ -30,6 +33,7 @@
 | [負載均衡策略與實現](./load_balancing_strategies.md) | 7 | 5 | `負載均衡`, `高可用`, `分散式` |
 | [CDN 原理與應用](./cdn_principles_and_applications.md) | 6 | 4 | `CDN`, `內容分發`, `快取` |
 | [跨域問題與解決方案](./cors_and_cross_origin.md) | 5 | 4 | `CORS`, `同源策略`, `安全` |
+| [正向代理 vs 反向代理](./proxy_vs_reverse_proxy.md) | 5 | 4 | `Proxy`, `Reverse Proxy`, `Nginx`, `負載均衡` |
 
 ### 網路安全 (Network Security)
 
