@@ -14,6 +14,9 @@ Redis 是最流行的記憶體資料庫之一，以其高效能、豐富的資�
 | 6 | [請解釋 Redis 的記憶體淘汰策略 (Eviction Policies)。](./redis_memory_eviction_policies.md) | 7 | 5 | `Redis`, `Memory`, `Eviction Policy` |
 | 7 | [如何基於 Redis 設計一個可靠的分散式鎖？](./design_redis_distributed_lock.md) | 8 | 5 | `Redis`, `Distributed Lock`, `Concurrency` |
 | 8 | [Redis Sentinel (哨兵) 和 Redis Cluster (叢集) 的架構與取捨是什麼？](./redis_sentinel_vs_cluster.md) | 8 | 4 | `Redis`, `Sentinel`, `Cluster`, `High Availability` |
+| 9 | [Redis Stream：持久化訊息串流與 Consumer Group 機制](./redis_stream.md) | 7 | 4 | `Redis`, `Stream`, `訊息佇列`, `Consumer Group` |
+| 10 | [Redis 熱點 Key 與大 Key 問題及解決方案](./redis_hotkey_bigkey.md) | 7 | 5 | `Redis`, `Hot Key`, `Big Key`, `效能調優` |
+| 11 | [Redis Pipeline 與 Lua 腳本：批次操作與原子性](./redis_pipeline.md) | 6 | 4 | `Redis`, `Pipeline`, `Lua`, `原子性` |
 
 ---
 
