@@ -34,6 +34,7 @@
 | [**`03_System_Design_and_Architecture`**](./03_System_Design_and_Architecture/) | 系統設計與架構，包含設計模式、軟體架構、微服務及大型系統設計案例。 |
 | [**`04_Infrastructure_and_DevOps`**](./04_Infrastructure_and_DevOps/) | 基礎設施與 DevOps，涉及雲端運算、容器化、CI/CD 和可觀測性。 |
 | [**`05_Specialized_Topics`**](./05_Specialized_Topics/) | 特定領域主題，如資訊安全和軟體測試。 |
+| [**`06_Frontend_Development`**](./06_Frontend_Development/) | 前端開發，涵蓋使用者介面設計、前端框架和效能優化。 |
 
 ## 貢獻指南
 
