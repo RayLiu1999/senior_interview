@@ -20,6 +20,11 @@
 | 12 | [什麼是代理模式 (Proxy Pattern)？](./proxy_pattern.md) | 6 | 5 | `Design Pattern`, `Proxy`, `Structural` |
 | 13 | [什麼是適配器模式 (Adapter Pattern)？](./adapter_pattern.md) | 5 | 4 | `Design Pattern`, `Adapter`, `Structural` |
 | 14 | [什麼是依賴注入 (Dependency Injection) 與控制反轉 (Inversion of Control)？](./dependency_injection.md) | 7 | 5 | `Design Principles`, `DI`, `IoC` |
+| 15 | [什麼是命令模式 (Command Pattern)？](./command_pattern.md) | 6 | 4 | `Design Pattern`, `Command`, `Behavioral` |
+| 16 | [什麼是建造者模式 (Builder Pattern)？](./builder_pattern.md) | 5 | 4 | `Design Pattern`, `Builder`, `Creational` |
+| 17 | [什麼是模板方法模式 (Template Method Pattern)？](./template_method_pattern.md) | 5 | 4 | `Design Pattern`, `Template Method`, `Behavioral` |
+| 18 | [什麼是責任鏈模式 (Chain of Responsibility Pattern)？](./chain_of_responsibility.md) | 6 | 4 | `Design Pattern`, `Chain of Responsibility`, `Behavioral`, `Middleware` |
+| 19 | [什麼是六邊形架構 (Hexagonal Architecture / Ports and Adapters)？](./hexagonal_architecture.md) | 8 | 4 | `Architecture`, `Hexagonal Architecture`, `Ports and Adapters`, `DDD` |
 
 ---
 
