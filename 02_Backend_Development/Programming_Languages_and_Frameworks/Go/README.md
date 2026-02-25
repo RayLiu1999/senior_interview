@@ -21,12 +21,16 @@ Go 是一門專為高並行、高效能後端系統設計的程式語言。作�
 | [GC 與三色標記法](./Internals/go_garbage_collection.md) | 8 | 4 | `GC`, `Memory Management` |
 | [Defer 執行時機](./Internals/defer_execution.md) | 6 | 4 | `Defer`, `Control Flow` |
 | [Slice vs Array](./Internals/slice_vs_array.md) | 4 | 5 | `Slice`, `Array` |
+| [逃逸分析：Stack vs Heap 分配原理](./Internals/escape_analysis.md) | 7 | 4 | `Escape Analysis`, `Memory`, `GC` |
+| [接口底層實現：iface 與 eface](./Internals/interface_internals.md) | 7 | 4 | `Interface`, `iface`, `eface`, `動態分派` |
+| [Go 泛型（Generics）- Go 1.18+](./Internals/go_generics.md) | 6 | 4 | `Generics`, `型別參數`, `Constraints` |
 
 ### Standard Library（標準庫）
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [Context 套件使用](./Standard_Library/context_package_usage.md) | 7 | 5 | `Context`, `Cancellation` |
+| [sync.Pool：物件池與 GC 壓力降低](./Standard_Library/sync_pool.md) | 6 | 4 | `sync.Pool`, `物件池`, `GC`, `效能優化` |
 
 ### Tooling（工具鏈）
 
