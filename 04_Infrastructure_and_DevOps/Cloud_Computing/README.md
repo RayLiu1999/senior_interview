@@ -14,7 +14,7 @@
 
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [AWS 核心服務概覽（EC2、S3、RDS、Lambda）](./aws_core_services.md) | 6 | 5 | `AWS`, `EC2`, `S3`, `RDS`, `Lambda` |
+| [AWS 核心服務概覽（EC2, ECS, Lambda, S3, RDS, SQS, CloudFront）](./aws_core_services.md) | 6 | 5 | `AWS`, `EC2`, `ECS`, `Lambda`, `S3`, `RDS`, `SQS`, `CloudFront` |
 | [雲原生架構 12 要素](./cloud_native_12_factors.md) | 6 | 5 | `雲原生`, `12 Factor`, `最佳實踐` |
 | [Serverless 架構設計與應用](./serverless_architecture.md) | 7 | 4 | `Serverless`, `Lambda`, `FaaS` |
 | [雲端成本優化策略](./cloud_cost_optimization.md) | 7 | 4 | `成本優化`, `FinOps` |

@@ -1,6 +1,67 @@
-# Observability（可觀測性）
+# Observability (可觀測性)
 
 可觀測性是現代分散式系統和微服務架構中的核心能力，讓工程師能夠理解系統內部狀態、快速定位問題並優化效能。本章節涵蓋監控、日誌和追蹤三大支柱，以及常用的可觀測性工具和實踐。
+
+## 主題列表
+
+### 基礎概念
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | [可觀測性與監控有什麼區別？](./observability_vs_monitoring.md) | 4 | 4 | `可觀測性`, `監控` |
+| 2 | [SLI、SLO、SLA 與錯誤預算](./sli_slo_sla.md) | 7 | 5 | `SLI`, `SLO`, `SLA`, `SRE` |
+| 3 | [如何設計有效的監控指標？](./effective_metrics_design.md) | 6 | 4 | `監控`, `指標設計`, `USE`, `RED` |
+| 4 | [OpenTelemetry 統一可觀測性標準](./opentelemetry_overview.md) | 7 | 4 | `OpenTelemetry`, `標準` |
+| 5 | [如何建立完整的可觀測性體系？](./building_observability_system.md) | 8 | 5 | `系統設計`, `架構` |
+
+### Prometheus 監控系統
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 6 | [Prometheus 架構與 Pull 模型](./Prometheus/prometheus_architecture.md) | 6 | 5 | `Prometheus`, `架構`, `Pull vs Push` |
+| 7 | [PromQL 基礎與常用函數](./Prometheus/promql_basics.md) | 5 | 4 | `PromQL`, `Rate`, `Irate` |
+| 8 | [Histogram vs Summary](./Prometheus/histogram_vs_summary.md) | 7 | 4 | `Metrics`, `Quantile`, `P99` |
+
+### Grafana 視覺化與告警
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 9 | [Grafana 儀表板設計最佳實踐](./Grafana/grafana_dashboard_design.md) | 5 | 4 | `Grafana`, `Dashboard`, `UX` |
+| 10 | [Grafana 告警與 Alertmanager 對比](./Grafana/grafana_alerting.md) | 5 | 4 | `Grafana`, `Alerting` |
+
+### Jaeger 分散式追蹤
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 11 | [分散式追蹤基礎 (Trace, Span, Context)](./distributed_tracing_basics.md) | 7 | 5 | `Tracing`, `Context Propagation` |
+| 12 | [Jaeger 架構與部署模式](./Jaeger/jaeger_architecture.md) | 7 | 4 | `Jaeger`, `架構`, `Kafka` |
+| 13 | [採樣策略 (Head-based vs Tail-based)](./Jaeger/sampling_strategies.md) | 7 | 4 | `Sampling`, `Performance` |
+
+### 日誌系統 (ELK/EFK)
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 14 | [集中式日誌系統架構](./centralized_logging_architecture.md) | 6 | 5 | `Logging`, `ELK`, `EFK` |
+| 15 | [結構化日誌 vs 非結構化日誌](./structured_vs_unstructured_logs.md) | 4 | 4 | `Logging`, `JSON` |
+| 16 | [Logstash vs Fluentd vs Fluent Bit](./ELK/logstash_vs_fluentd.md) | 5 | 4 | `Logstash`, `Fluentd`, `K8s` |
+| 17 | [Elasticsearch 索引策略 (ILM, Rollover)](./ELK/elasticsearch_indexing_strategy.md) | 8 | 4 | `Elasticsearch`, `Performance`, `ILM` |
+
+### On-Call 與 SRE 文化
+
+| 編號 | 主題 | 難度 | 重要性 | 標籤 |
+| :---: | :--- | :---: | :---: | :--- |
+| 18 | [事故管理流程 (Incident Management)](./On_Call/incident_management_process.md) | 6 | 4 | `On-Call`, `Incident`, `Process` |
+| 19 | [事後復盤文化 (Blameless Post-mortem)](./On_Call/post_mortem_culture.md) | 5 | 5 | `Culture`, `Post-mortem`, `SRE` |
+
+---
+
+## 學習建議
+
+1. **從概念入手**: 先理解 [可觀測性 vs 監控](./observability_vs_monitoring.md) 和 [SLI/SLO](./sli_slo_sla.md)，這是 SRE 的靈魂。
+2. **掌握 Prometheus**: 它是雲原生監控的事實標準。重點掌握 [架構](./Prometheus/prometheus_architecture.md) 和 [PromQL](./Prometheus/promql_basics.md)。
+3. **日誌與追蹤**: 理解 [集中式日誌](./centralized_logging_architecture.md) 和 [分散式追蹤](./distributed_tracing_basics.md) 如何解決微服務的調試難題。
+4. **實戰文化**: 技術只是工具，[事故管理](./On_Call/incident_management_process.md) 和 [復盤文化](./On_Call/post_mortem_culture.md) 才是保障系統穩定的關鍵。
+
 
 ## 問題索引
 
