@@ -17,6 +17,7 @@
 | 9 | [資料庫備份與還原](./database_backup_and_restore.md) | 6 | 4 | `Backup`, `Restore`, `PITR`, `Disaster Recovery` |
 | 10 | [資料庫遷移策略](./database_migration_strategies.md) | 8 | 4 | `Migration`, `Dual Write`, `CDC`, `Zero Downtime` |
 | 11 | [讀寫分離](./read_write_splitting.md) | 6 | 5 | `Database`, `Scalability`, `Replication`, `Architecture` |
+| 12 | [資料庫連線池原理](./database_connection_pool.md) | 5 | 5 | `Connection Pool`, `效能調優`, `HikariCP`, `GORM` |
 
 ---
 

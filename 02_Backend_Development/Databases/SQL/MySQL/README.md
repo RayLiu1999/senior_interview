@@ -15,6 +15,9 @@ MySQL 是世界上最流行的開源關聯式資料庫之一。作為資深後�
 | 7 | [什麼是 MVCC (多版本併發控制)？它是如何運作的？](./what_is_mvcc.md) | 8 | 4 | `MySQL`, `MVCC`, `Concurrency` |
 | 8 | [如何進行 SQL 查詢優化？請提供一些常見的策略](./how_to_optimize_sql_queries.md) | 8 | 4 | `MySQL`, `Query Optimization`, `Performance` |
 | 9 | [請解釋 MySQL 的主從複製 (Replication) 機制及其主要用途](./mysql_replication.md) | 7 | 4 | `MySQL`, `Replication`, `High Availability` |
+| 10 | [InnoDB 的鎖機制：行鎖、間隙鎖與 Next-Key Lock](./mysql_lock_mechanism.md) | 8 | 5 | `MySQL`, `InnoDB`, `Locking`, `Gap Lock`, `Deadlock` |
+| 11 | [MySQL 的三大日誌：Binlog、Redo Log 與 Undo Log](./mysql_binlog_redolog_undolog.md) | 8 | 5 | `MySQL`, `WAL`, `Binlog`, `Redo Log`, `Undo Log`, `2PC` |
+| 12 | [MySQL 架構深度解析：連接層、Server 層與存儲引擎層](./mysql_architecture.md) | 6 | 4 | `MySQL`, `架構`, `InnoDB`, `查詢優化器`, `插件式存儲引擎` |
 
 ---
 
