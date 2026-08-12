@@ -12,7 +12,7 @@ import {
   rejectOversizedSyncRequest,
   requireJsonSyncRequest,
 } from '../../utils/sync-http'
-import { validateSyncState } from '~/utils/sync-security'
+import { validateSyncState } from '../../../utils/sync-security'
 
 export default defineEventHandler(async (event) => {
   prepareSyncResponse(event)

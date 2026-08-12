@@ -106,6 +106,16 @@ export function useProgress() {
     }
   }
 
+  async function deleteSyncedProgress(requestedToken?: string | null) {
+    if (!import.meta.client) throw new Error('Progress sync is only available in the browser.')
+    const syncToken = requestedToken || state.value.syncToken
+    if (!syncToken) throw new Error('A sync token is required to delete server progress.')
+    await $fetch<{ deleted: boolean }>('/api/progress/sync', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${syncToken}` },
+    })
+  }
+
   return {
     state,
     ready,
@@ -118,5 +128,6 @@ export function useProgress() {
     markArticleViewed,
     resetProgress,
     syncWithServer,
+    deleteSyncedProgress,
   }
 }

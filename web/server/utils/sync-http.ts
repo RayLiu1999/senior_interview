@@ -11,7 +11,7 @@ import {
   extractBearerToken,
   getSyncLimits,
   getSyncRateLimitOptions,
-} from '~/utils/sync-security'
+} from '../../utils/sync-security'
 
 export function prepareSyncResponse(event: H3Event): void {
   setResponseHeader(event, 'cache-control', 'no-store')

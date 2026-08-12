@@ -5,7 +5,8 @@ const { state, ready, saving, hydrate, persist, resetProgress } = useProgress()
 const fileInput = ref<HTMLInputElement | null>(null)
 const status = ref<{ type: 'success' | 'error'; message: string } | null>(null)
 const syncCode = ref('')
-const { syncing, syncWithServer } = useProgress()
+const { syncing, syncWithServer, deleteSyncedProgress } = useProgress()
+const deletingSync = ref(false)
 
 onMounted(async () => {
   await hydrate()
@@ -60,6 +61,20 @@ async function copySyncCode() {
   await navigator.clipboard.writeText(syncCode.value)
   status.value = { type: 'success', message: '同步碼已複製。請把它安全地帶到另一台裝置。' }
 }
+
+async function deleteRemoteProgress() {
+  const token = syncCode.value.trim() || state.value.syncToken
+  if (!token || !window.confirm('確定要刪除伺服器上的同步副本嗎？目前瀏覽器的本機紀錄不會被刪除。')) return
+  deletingSync.value = true
+  try {
+    await deleteSyncedProgress(token)
+    status.value = { type: 'success', message: '伺服器同步副本已刪除；本機紀錄仍保留。' }
+  } catch {
+    status.value = { type: 'error', message: '刪除同步副本失敗：請確認同步碼與 Nuxt server build。' }
+  } finally {
+    deletingSync.value = false
+  }
+}
 </script>
 
 <template>
@@ -109,6 +124,7 @@ async function copySyncCode() {
           <button class="button button-primary" type="button" :disabled="syncing || !ready" @click="syncProgress">{{ syncing ? '同步中…' : syncCode ? '同步此紀錄' : '產生同步碼並同步' }}</button>
           <button v-if="syncCode" class="button button-quiet" type="button" @click="copySyncCode">複製同步碼</button>
         </div>
+        <button v-if="syncCode" class="button danger-button" type="button" :disabled="deletingSync || syncing" @click="deleteRemoteProgress">{{ deletingSync ? '刪除中…' : '刪除伺服器同步副本' }}</button>
         <small v-if="state.lastSyncedAt" class="muted">上次同步：{{ new Date(state.lastSyncedAt).toLocaleString('zh-TW') }}</small>
       </div>
     </section>
