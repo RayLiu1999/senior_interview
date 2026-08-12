@@ -1700,6 +1700,74 @@ def file_manager(filename):
 
 📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Tooling/poetry_dependency_management.md)
 
+### Q72: Python metaclass 何時值得使用？
+<!-- Concept ID: concept.python.metaclasses-class-creation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 metaclass、class decorator、descriptor 與 `__init_subclass__` 的可讀性、能力與測試成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 說明 class creation、MRO、metaclass conflict、import side effect 與 runtime magic；先選較局部的替代方案。
+- 測試 inheritance、error path、generated attributes、startup cost、debugging 與 framework integration。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Core/metaclasses_in_python.md)
+
+### Q73: Django Admin 如何兼顧客製化、權限與效能？
+<!-- Concept ID: concept.django.admin-customization-security; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計大量資料、bulk action、tenant permission、audit 與 N+1 查詢的 Admin 方案。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 檢查 queryset、select_related／prefetch_related、pagination、action transaction、object permission 與 audit evidence。
+- Admin 不是繞過 domain policy 的後門；要測試越權、批次失敗、timeout、rollback、query count 與 response p99。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/admin_customization.md)
+
+### Q74: Jinja2 template boundary 如何避免 XSS 與 context leakage？
+<!-- Concept ID: concept.flask.jinja2-template-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請比較 autoescape、safe HTML、macro、context processor、template cache 與使用者輸入的安全邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 依輸出 context 做 escaping，避免把 raw HTML、secret、tenant data 或 request object 放入全域 context；測試 injection 與錯誤頁。
+- 觀察 render latency、cache invalidation、template error、CSP／security header 與可回滾部署。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/template_engine_jinja2.md)
+
+### Q75: Python performance benchmark 如何避免錯誤結論？
+<!-- Concept ID: concept.testing.performance-benchmark-design; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計一個能區分 microbenchmark、load test、profiling 與 production regression 的測試計畫。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 固定 workload、dataset、warmup、runner、Python／dependency、CPU、GC、sample size 與 percentile；不要只比較平均值。
+- 以 p50／p95／p99、throughput、error、resource、variance、confidence、capacity threshold 與 release gate 判斷。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/performance_and_benchmark_testing.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

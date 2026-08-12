@@ -79,3 +79,15 @@ Fatal error: require(): Failed opening required 'non_existent_file.php' (include
 
 **經驗法則**:
 在現代 PHP 開發中，特別是遵循 PSR-4 自動載入標準的專案，你應該總是優先使用 `require_once` 來引入啟動檔案或設定檔，而類別和函數的載入則交給 Composer 的自動載入器處理，手動引入檔案的場景已大幅減少。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.file-inclusion-autoloading`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 include、require、once、autoload 與 fatal／warning error semantics。
+  - `LO-2`: 能分析 path、scope、duplicate load、Composer PSR-4 與 deployment artifact 風險。
+  - `LO-3`: 能設計可測試、可追蹤且不洩漏敏感設定的 bootstrap／autoload boundary。
+- **Prerequisites**: PHP execution、Composer 與 PSR-4
+- **Quick Quiz**: [PHP Quick Quiz：include 與 require](../../../../QUIZ/09_PHP.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

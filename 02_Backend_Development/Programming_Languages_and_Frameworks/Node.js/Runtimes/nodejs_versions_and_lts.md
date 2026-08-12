@@ -621,3 +621,15 @@ nvm use
 - 定期檢查 [Node.js Release Schedule](https://github.com/nodejs/release#release-schedule)
 
 理解 Node.js 版本策略有助於選擇合適的版本並規劃升級路徑。
+
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.runtime-version-lts`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Current、LTS、maintenance、V8／OpenSSL 與 native addon 的關係。
+  - `LO-2`: 能從 dependency、ABI、security fix、performance 與 support window 規劃升級。
+  - `LO-3`: 能設計 version matrix、canary、compatibility gate 與 rollback evidence。
+- **Prerequisites**: Node.js runtime、package manager 與 CI release 基礎
+- **Quick Quiz**: [Node.js Quick Quiz：Versions 與 LTS](../../../../QUIZ/07_Node.js.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

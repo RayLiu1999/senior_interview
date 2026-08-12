@@ -189,3 +189,15 @@ def login():
 ## 關鍵要點
 
 Jinja2 是 Flask 的默認模板引擎，提供變量輸出、控制結構、過濾器、宏等功能。模板繼承機制通過 extends 和 block 實現代碼復用。過濾器用於格式化輸出，支持自定義。宏類似函數，可以封裝可復用的模板片段。上下文處理器可以向所有模板注入全局變量。Flash 消息用於顯示一次性通知。合理使用模板功能可以實現前端代碼的模塊化和維護性。
+
+### 測驗對應
+
+- **Concept ID**: `concept.flask.jinja2-template-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Jinja2 template、context、inheritance、macro、filter 與 autoescape。
+  - `LO-2`: 能診斷 template injection、XSS、context leakage、slow render 與 cache invalidation。
+  - `LO-3`: 能設計安全的 template boundary、測試策略與退化／回滾方案。
+- **Prerequisites**: Flask request lifecycle、HTML escaping 與 web security
+- **Quick Quiz**: [Python Quick Quiz：Jinja2 Template](../../../../../QUIZ/05_Python.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

@@ -94,3 +94,15 @@ Bun 由 Jarred Sumner 於 2022 年發布，其首要目標是 **極致的性能*
 - **Bun** 則將性能推向了極致，並試圖通過其多合一的工具鏈來簡化開發流程。對於追求最高性能和快速開發迭代的專案，Bun 展現了巨大的潛力，但其穩定性仍需時間來檢驗。
 
 選擇哪個執行環境取決於專案的具體需求：穩定性與生態、安全性與現代化，還是極致的性能。
+
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.runtime-selection.compatibility`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Node.js、Deno、Bun 的 runtime、API、權限與套件模型。
+  - `LO-2`: 能從相容性、啟動、吞吐、observability、供應鏈與團隊能力評估 benchmark。
+  - `LO-3`: 能設計漸進式 runtime migration、fallback、測試矩陣與 rollback。
+- **Prerequisites**: JavaScript runtime、module system 與 HTTP service 基礎
+- **Quick Quiz**: [Node.js Quick Quiz：Runtime 選型](../../../../QUIZ/07_Node.js.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

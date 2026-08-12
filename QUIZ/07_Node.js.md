@@ -1107,6 +1107,74 @@ const cache = new WeakMap();
 
 📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/directory_structure_conventions.md)
 
+### Q32: Node.js、Deno 與 Bun 如何做 production runtime 選型？
+<!-- Concept ID: concept.nodejs.runtime-selection.compatibility; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請以現有 Node.js service 遷移到其他 runtime 為例，列出相容性、權限、效能、供應鏈與 rollback evidence。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 不要只比 benchmark；要檢查 Node API、native addon、package、observability、security policy、cold start、p99 與團隊維運能力。
+- 先 shadow／canary，再用相同 workload、錯誤率、資源、成本與 rollback time 決定是否擴大。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Runtimes/node_vs_deno_vs_bun.md)
+
+### Q33: Node.js LTS 升級如何避免 ABI 與依賴事故？
+<!-- Concept ID: concept.nodejs.runtime-version-lts; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請設計 Node.js major／LTS 升級的版本矩陣、native addon 驗證、canary 與停止線。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 固定 runtime、package lock、OS image、V8／OpenSSL、native addon 與 build toolchain；驗證 security fix 與 support window。
+- 觀察 startup、event loop lag、error、memory、p99、dependency warning 與 rollback artifact。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Runtimes/nodejs_versions_and_lts.md)
+
+### Q34: node_modules 與 package resolution 出錯時如何取證？
+<!-- Concept ID: concept.nodejs.tooling.module-resolution; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請分析 workspace、hoisting、peer dependency、exports 與 lock drift 導致的「本地正常、CI 失敗」事故。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 比較 clean install、lockfile、Node／package manager 版本、realpath、dependency graph、package exports 與 artifact contents。
+- 以 checksum、SBOM、SCA、install log、runtime require／import trace 與可重現 build gate 保護發布。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Tooling/node_modules_and_resolution.md)
+
+### Q35: TypeScript Decorator 的 metadata 與 runtime boundary 如何治理？
+<!-- Concept ID: concept.typescript.decorators-metaprogramming; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 decorator order、metadata emit、inheritance、reflection 與 framework coupling，並提出測試方法。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 區分 compile-time type 與 runtime metadata；測試 evaluation order、繼承、錯誤、cold start、reflection cost 與 generated artifact。
+- 以明確 boundary、contract test、migration flag 與可觀測 startup／request latency 避免 magic behavior。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/TypeScript/decorators_metaprogramming.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

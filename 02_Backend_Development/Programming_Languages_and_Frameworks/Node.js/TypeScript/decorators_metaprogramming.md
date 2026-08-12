@@ -727,3 +727,15 @@ function Log(target: Function, context: ClassMethodDecoratorContext) {
 ```
 
 裝飾器是 TypeScript 元編程的核心工具，廣泛應用於 NestJS、Angular 等現代框架。
+
+### 測驗對應
+
+- **Concept ID**: `concept.typescript.decorators-metaprogramming`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 decorator evaluation、metadata、emit、stage 3 語意與 runtime cost。
+  - `LO-2`: 能分析 decorator order、inheritance、reflection、type erasure 與 framework coupling。
+  - `LO-3`: 能設計可測試、可觀測且可逐步遷移的 metaprogramming boundary。
+- **Prerequisites**: TypeScript type system、class、module 與 runtime reflection
+- **Quick Quiz**: [Node.js Quick Quiz：TypeScript Decorators](../../../../QUIZ/07_Node.js.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

@@ -535,3 +535,15 @@ class ArticleAdmin(admin.ModelAdmin):
 ## 總結
 
 Django Admin 通過客製化可以滿足大部分後台管理需求。合理使用 list_display、list_filter、actions 等選項，配合自定義方法和過濾器，可以打造功能強大的管理界面。對於複雜的業務場景，可以通過自定義視圖、表單和權限控制來實現更精細的管理功能。同時要注意性能優化，使用 select_related 和 prefetch_related 減少資料庫查詢。
+
+### 測驗對應
+
+- **Concept ID**: `concept.django.admin-customization-security`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Django Admin 的 model、form、permission、action 與 queryset boundary。
+  - `LO-2`: 能分析 N+1、bulk action、權限繞過、audit、慢查詢與大量資料 pagination。
+  - `LO-3`: 能設計安全、可觀測且不把 Admin 當成任意業務 workflow 的管理介面。
+- **Prerequisites**: Django model、ORM、authentication／authorization
+- **Quick Quiz**: [Python Quick Quiz：Django Admin](../../../../../QUIZ/05_Python.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

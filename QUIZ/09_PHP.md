@@ -1296,6 +1296,23 @@ function gen() {
 
 ---
 
+### Q32: include、require 與 Composer autoload 的邊界如何判斷？
+<!-- Concept ID: concept.php.core.file-inclusion-autoloading; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請以 bootstrap、設定檔、class autoload、重複載入與 production artifact 為例，說明錯誤語意與安全邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 區分 warning／fatal、once、scope、path、Composer PSR-4 與 deploy artifact；不要讓使用者輸入決定 include path。
+- 測試 cold start、missing file、case sensitivity、autoload dump、secret exposure 與 rollback。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Core/include_vs_require.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

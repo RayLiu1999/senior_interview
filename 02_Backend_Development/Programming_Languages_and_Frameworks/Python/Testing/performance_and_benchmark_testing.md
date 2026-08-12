@@ -395,3 +395,15 @@ def test_api_load():
 
 - [單元測試最佳實踐](./unit_testing_best_practices.md)
 - [pytest 框架深入解析](./pytest_framework.md)
+
+### 測驗對應
+
+- **Concept ID**: `concept.testing.performance-benchmark-design`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 benchmark、load、stress、soak、profiling 與 production SLI。
+  - `LO-2`: 能控制 workload、warmup、noise、sample size、percentile、environment 與 regression threshold。
+  - `LO-3`: 能把測試結果連到容量模型、release gate、root cause 與 rollback decision。
+- **Prerequisites**: test pyramid、latency percentile、capacity planning
+- **Quick Quiz**: [Python Quick Quiz：Performance Benchmark Testing](../../../../QUIZ/05_Python.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

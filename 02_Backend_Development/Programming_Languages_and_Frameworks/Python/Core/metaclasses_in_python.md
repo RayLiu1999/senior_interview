@@ -127,3 +127,15 @@ print(MyClassWithMeta.extra_attribute)
     - **實現**: 元類別可以遍歷類別的屬性，將特定的欄位物件轉換為資料庫操作的描述符或方法，並將它們附加到最終創建的類別上。
 
 在大多數情況下，類別裝飾器 (Class Decorators) 或描述符可以作為元類別的更簡單的替代方案。只有當你需要動態地、系統性地修改大量類別的創建過程時，元類別才是最合適的工具。
+
+### 測驗對應
+
+- **Concept ID**: `concept.python.metaclasses-class-creation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 class creation、type、metaclass、`__new__`／`__init__` 與 MRO。
+  - **LO-2**: 能分析 metaclass conflict、inheritance、descriptor、import time side effect 與 debug cost。
+  - **LO-3**: 能比較 class decorator、descriptor、metaclass 的適用邊界並設計可測試方案。
+- **Prerequisites**: Python object model、class、descriptor 與 import
+- **Quick Quiz**: [Python Quick Quiz：Metaclass](../../../../QUIZ/05_Python.md)
+- **Hard Assessment**: [Language／Tooling／Framework Completion Incident](../../../../QUIZ/Hard_Assessments/language_tooling_framework_completion_incident.md) (`assessment.language-tooling-framework.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
