@@ -91,3 +91,15 @@ export default Timer;
     -   由於依賴項陣列是空的 `[]`，這個副作用只會執行一次，不會在每次 `count` 更新後都重新設定計時器。
     -   它返回一個**清理函式** `clearInterval`，這至關重要。當組件被卸載時，React 會調用這個函式來清除計時器，從而防止了記憶體洩漏和不必要的背景執行。
     -   在更新狀態時，使用了 `setCount(prevCount => ...)` 的函式形式，這是處理閉包中舊狀態問題的最佳實踐。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.react.hooks-state-lifecycle`
+- **Learning Objectives**:
+  - `concept.frontend.react.hooks-state-lifecycle/LO-1`: 能解釋 Hooks 依呼叫順序保存狀態的模型，以及為何不能在條件、迴圈或巢狀函式中呼叫。
+  - `concept.frontend.react.hooks-state-lifecycle/LO-2`: 能分析 dependency array、closure、functional update、effect cleanup 與 request cancellation 的互動。
+  - `concept.frontend.react.hooks-state-lifecycle/LO-3`: 能用 lint、測試與 profiler 找出 stale closure、重複 effect、無限更新與 Strict Mode 不安全副作用。
+- **Prerequisites**: JavaScript closure、promise／AbortController、React render／commit 與 component state 基礎。
+- **Quick Quiz**: [Q3](../../QUIZ/22_Frontend_Development.md#q3)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q3，再在 Hard Assessment 中提出可觀測、可取消且可回滾的 Hooks／state 修復。

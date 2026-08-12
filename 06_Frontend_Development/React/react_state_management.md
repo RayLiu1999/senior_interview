@@ -132,6 +132,18 @@ function Controls() {
 2.  **使用 Store**: 在組件中，直接調用 `useBearStore` 這個 hook。
 3.  **性能優化**: `BearCounter` 組件使用 `useBearStore(state => state.bears)` 這種選擇器 (selector) 的方式來訂閱狀態。這意味著只有當 `bears` 這個狀態值發生變化時，`BearCounter` 組件才會重新渲染，而 store 中其他狀態的變化不會影響到它。這是 Zustand 內建的性能優化，避免了 Context API 中常見的不必要渲染問題。
 
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.react.state-management`
+- **Learning Objectives**:
+  - `concept.frontend.react.state-management/LO-1`: 能依照狀態的 ownership、更新頻率、讀寫範圍與 server／client 性質選擇 local state、Context、Redux 或 Zustand。
+  - `concept.frontend.react.state-management/LO-2`: 能分析 selector、provider value、derived state、cache invalidation 與 optimistic update 對 render、效能和一致性的影響。
+  - `concept.frontend.react.state-management/LO-3`: 能設計可測試、可觀測且具 migration／rollback 路徑的共享狀態邊界，避免多份真實來源與租戶資料串流。
+- **Prerequisites**: React props／state、Context、reducer、component render 與非同步資料流基礎。
+- **Quick Quiz**: [Q4](../../QUIZ/22_Frontend_Development.md#q4)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q4，再以 Hard Assessment 證明狀態 ownership、render fan-out 與資料一致性可被量測。
+
 ```
 這個 Zustand 範例展示了其極致的簡潔性：
 1.  **創建 Store**: 只用一個 `create` 函式就定義了完整的 store，包括 state (`bears`) 和 actions (`increasePopulation`, `removeAllBears`)。`set` 函式用於更新狀態，其 API 類似於 React 的 `setState`。

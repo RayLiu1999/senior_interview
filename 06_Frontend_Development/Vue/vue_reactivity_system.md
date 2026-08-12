@@ -238,3 +238,15 @@ Vue 3 的響應式系統基於 `Proxy` 實現，相比 Vue 2 的 `Object.defineP
 - `computed` 和 `watch` 都是這個響應式系統的上層建築，通過依賴收集 (track) 和觸發更新 (trigger) 的機制來實現其功能。
 
 理解這一核心原理對於編寫高效的 Vue 應用、進行性能調優以及解決複雜的狀態問題至關重要。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.vue.reactivity-system`
+- **Learning Objectives**:
+  - `concept.frontend.vue.reactivity-system/LO-1`: 能解釋 Proxy、ref、reactive、track／trigger 與 effect scope 如何形成依賴圖。
+  - `concept.frontend.vue.reactivity-system/LO-2`: 能判斷 computed、watch、watchEffect、flush timing、深層 reactive 與 shallow／readonly 的取捨。
+  - `concept.frontend.vue.reactivity-system/LO-3`: 能用 dependency trace、render count、flush timing 與 memory／performance 指標找出失效依賴、過度觸發和 stale state。
+- **Prerequisites**: JavaScript Proxy、Vue component render、ref／reactive、computed／watch 與 browser event loop。
+- **Quick Quiz**: [Q8](../../QUIZ/22_Frontend_Development.md#q8)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q8，再以 Hard Assessment 證明 reactive update graph 與效能／一致性指標相互對應。

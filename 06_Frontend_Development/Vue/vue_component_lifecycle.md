@@ -187,3 +187,15 @@ export default {
 - **Composition API** 則提供了更靈活、更集中的方式來組織邏輯，特別是將相關的建立和清理邏輯放在一起，提高了程式碼的可讀性和可維護性。
 
 在面試中，能夠清晰地闡述各個鉤子的用途、執行順序以及在不同場景下的最佳實踐，是展現 Vue 掌握程度的關鍵。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.vue.component-lifecycle`
+- **Learning Objectives**:
+  - `concept.frontend.vue.component-lifecycle/LO-1`: 能描述 Vue component 建立、掛載、更新、卸載與 Composition API／Options API hook 的相對順序。
+  - `concept.frontend.vue.component-lifecycle/LO-2`: 能處理 watcher、timer、subscription、DOM measurement 與非同步請求的 cleanup、取消和錯誤傳播。
+  - `concept.frontend.vue.component-lifecycle/LO-3`: 能區分 SSR、hydration、client navigation 與純瀏覽器生命週期，並以測試驗證不會重複執行副作用。
+- **Prerequisites**: Vue reactivity、Composition API、SSR／CSR 基礎、browser DOM 與非同步取消。
+- **Quick Quiz**: [Q7](../../QUIZ/22_Frontend_Development.md#q7)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q7，再於 Hard Assessment 中提出 SSR／CSR lifecycle 與 cleanup 的可觀測修復。

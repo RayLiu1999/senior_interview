@@ -112,3 +112,15 @@ export default LifecycleDemo;
 - **`useEffect` 搭配空依賴項 `[]`** 完美地模擬了 `componentDidMount`（執行副作用）和 `componentWillUnmount`（返回清理函式）。
 - **`useEffect` 搭配依賴項 `[count]`** 則模擬了 `componentDidUpdate`，它會監聽 `count` 的變化並在變化後執行相應的邏輯。
 - 函式組件的**主體**和**返回的 JSX** 就相當於類別組件的 `render` 方法。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.react.component-lifecycle`
+- **Learning Objectives**:
+  - `concept.frontend.react.component-lifecycle/LO-1`: 能區分 render、commit、effect 與 unmount 階段，並說明類別生命週期與函式組件 Hooks 的對應限制。
+  - `concept.frontend.react.component-lifecycle/LO-2`: 能判斷 effect cleanup、取消非同步工作與 Strict Mode／重複掛載對資源生命週期的影響。
+  - `concept.frontend.react.component-lifecycle/LO-3`: 能用 profiling、render／commit trace 與測試證明生命週期邊界沒有 stale data、重複訂閱或記憶體洩漏。
+- **Prerequisites**: React component composition、props／state、JavaScript closure、DOM event 與非同步請求基礎。
+- **Quick Quiz**: [Q1](../../QUIZ/22_Frontend_Development.md#q1)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q1，再以 Hard Assessment 說明 render／commit／effect cleanup 的證據與可回滾修復。

@@ -194,3 +194,15 @@ function AnotherComponent() {
     -   **無 Wrapper Hell**: 不會增加任何額外的組件嵌套。
     -   **無 Props 衝突**: 狀態是作為函式返回值直接賦給變數，而不是作為 prop 注入。
     -   **數據來源清晰**: `const windowWidth = useWindowWidth();` 這樣的寫法讓數據來源一目了然。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.react.hoc-render-props`
+- **Learning Objectives**:
+  - `concept.frontend.react.hoc-render-props/LO-1`: 能說明 HOC 與 Render Props 如何複用狀態邏輯，以及 wrapper、props 與 render tree 的資料流。
+  - `concept.frontend.react.hoc-render-props/LO-2`: 能比較 HOC、Render Props 與 Custom Hook 在命名衝突、可測試性、composition、效能與可讀性上的取捨。
+  - `concept.frontend.react.hoc-render-props/LO-3`: 能在既有元件樹中選擇漸進式遷移方式，保留 ref、static property、錯誤邊界與 accessibility 契約。
+- **Prerequisites**: React props／children、component composition、Hooks、render tree 與基本效能分析。
+- **Quick Quiz**: [Q2](../../QUIZ/22_Frontend_Development.md#q2)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q2，再用 Hard Assessment 證明複用模式沒有造成 wrapper 過深、狀態重複或無障礙回歸。

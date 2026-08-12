@@ -233,3 +233,15 @@ const sendMessageToParent = () => {
 - **狀態管理庫 (Pinia)** 是處理複雜、全域共享狀態的最終解決方案。
 
 在面試中，能夠根據具體場景權衡各種方式的利弊，是衡量候選人架構思維的重要標準。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.vue.component-communication`
+- **Learning Objectives**:
+  - `concept.frontend.vue.component-communication/LO-1`: 能依照父子、兄弟、祖孫與跨模組關係選擇 props、emits、v-model、provide／inject 或 Pinia。
+  - `concept.frontend.vue.component-communication/LO-2`: 能分析事件命名、資料 ownership、不可變邊界、provide／inject 隱性依賴與 store 過度共享的取捨。
+  - `concept.frontend.vue.component-communication/LO-3`: 能用 component contract、devtools、render trace 與 accessibility 測試驗證通信不造成狀態漂移或無限更新。
+- **Prerequisites**: Vue component tree、Props／Emit、Composition API、ref／reactive 與 Pinia 基礎。
+- **Quick Quiz**: [Q6](../../QUIZ/22_Frontend_Development.md#q6)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q6，再用 Hard Assessment 證明跨元件資料流與 fallback／rollback 行為清楚可測。

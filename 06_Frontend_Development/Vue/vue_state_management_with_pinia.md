@@ -235,3 +235,15 @@ Pinia 作為 Vue 的新一代官方狀態管理庫，憑藉其**簡潔的 API、
 - 相比 Vuex，它極大地降低了開發者的心智負擔和樣板代碼。
 
 在面試中，理解 Pinia 的核心概念以及它相對於 Vuex 的改進，是衡量候選人是否跟上 Vue 生態最新發展的重要指標。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.vue.pinia-state-management`
+- **Learning Objectives**:
+  - `concept.frontend.vue.pinia-state-management/LO-1`: 能說明 Pinia store、state、getters、actions、plugins 與 setup／option store 的 ownership。
+  - `concept.frontend.vue.pinia-state-management/LO-2`: 能分析 SSR request isolation、hydration、持久化、selector／computed、非同步 action 與 optimistic update 的一致性風險。
+  - `concept.frontend.vue.pinia-state-management/LO-3`: 能設計跨頁狀態的 schema migration、權限邊界、失敗回復、devtools／telemetry 與效能驗證。
+- **Prerequisites**: Vue reactivity、component communication、SSR／CSR hydration、非同步請求與瀏覽器 storage 基礎。
+- **Quick Quiz**: [Q10](../../QUIZ/22_Frontend_Development.md#q10)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q10，再以 Hard Assessment 證明 Pinia 的 request isolation、render fan-out 與 rollback 可量測。

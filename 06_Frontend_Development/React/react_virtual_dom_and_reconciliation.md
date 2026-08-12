@@ -83,3 +83,15 @@ export default ItemList;
 
 - **如果沒有 `key`**: React 會逐個比較新舊列表的 `<li>`。它會認為第一個 `<li>` 的內容從 "Apple" 變成了 "New Fruit"，第二個從 "Banana" 變成了 "Apple"，以此類推，導致所有 `<li>` 元素都被更新，效率低下。
 - **有了 `key`**: React 通過 `key` 知道 `id` 為 'a', 'b', 'c' 的 `<li>` 仍然存在，只是它們的位置需要向後移動。React 只需創建一個新的 `<li>` 用於 "New Fruit"，並將其插入到 DOM 的開頭。這極大地優化了性能，避免了不必要的 DOM 操作。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.react.virtual-dom-reconciliation`
+- **Learning Objectives**:
+  - `concept.frontend.react.virtual-dom-reconciliation/LO-1`: 能區分 render 產生的 element tree、reconciliation、commit 與瀏覽器 layout／paint 階段。
+  - `concept.frontend.react.virtual-dom-reconciliation/LO-2`: 能判斷 key、component identity、memoization 與 state preservation 對列表更新、重掛載和效能的影響。
+  - `concept.frontend.react.virtual-dom-reconciliation/LO-3`: 能以 profiler、DOM mutation、commit duration 與 accessibility／focus 測試驗證優化沒有破壞使用者狀態。
+- **Prerequisites**: React render model、component identity、list rendering、DOM focus 與基本 browser performance 指標。
+- **Quick Quiz**: [Q5](../../QUIZ/22_Frontend_Development.md#q5)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q5，再以 Hard Assessment 連結 key／identity、render cost、focus 保留與 rollback 指標。

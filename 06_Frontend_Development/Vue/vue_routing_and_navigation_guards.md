@@ -287,3 +287,15 @@ Vue Router 是構建 SPA 的核心工具。
 - **路由模式**的選擇取決於對 URL 美觀度和後端配置成本的權衡。
 - **導航守衛**是實現應用程式流程控制的關鍵，特別是在**用戶認證**和**權限管理**方面。
 - 理解守衛的**種類**、**執行順序**和 `next` 函式的用法，是精通 Vue Router 的標誌。在面試中，能夠設計一個完整的基於導航守衛的認證流程是一個重要的加分項。
+
+## Concept Metadata
+
+- **Concept ID**: `concept.frontend.vue.routing-navigation-guards`
+- **Learning Objectives**:
+  - `concept.frontend.vue.routing-navigation-guards/LO-1`: 能重建 route matching、nested route、history／hash、lazy loading 與 navigation guard 的執行順序。
+  - `concept.frontend.vue.routing-navigation-guards/LO-2`: 能設計具備 authentication、authorization、tenant isolation、redirect loop 防護與取消競態的守衛流程。
+  - `concept.frontend.vue.routing-navigation-guards/LO-3`: 能以 route contract、SSR／CSR trace、focus／aria 測試與錯誤 telemetry 驗證導航不洩漏資料且可回滾。
+- **Prerequisites**: Vue component lifecycle、Vue Router route matching、Promise／navigation failure 與 authentication state。
+- **Quick Quiz**: [Q9](../../QUIZ/22_Frontend_Development.md#q9)
+- **Hard Assessment**: [Frontend State & Rendering Incident](../../QUIZ/Hard_Assessments/frontend_state_rendering_incident.md) (`assessment.frontend.state-rendering.incident.v1`)
+- **Assessment Gate**: 先完成 Q9，再用 Hard Assessment 證明 guard、render、資料權限與 accessibility 的 rollback 條件。
