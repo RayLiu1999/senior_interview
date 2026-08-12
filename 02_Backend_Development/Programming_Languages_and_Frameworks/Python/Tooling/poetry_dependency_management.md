@@ -8,6 +8,18 @@
 
 Poetry 是 Python 的現代依賴管理和打包工具。相比傳統的 pip + requirements.txt，Poetry 提供了哪些優勢和功能？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.tooling.poetry-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`：能區分 pyproject.toml 的直接需求、lock resolution、來源與 Python marker。
+  - `LO-2`：能設計可重現的本地、CI、容器與發布流程，處理 lock drift、hash、editable／package mode 與多版本 Python。
+  - `LO-3`：能用 clean install、dependency diff、artifact／環境指紋與回滾演練驗證依賴供應鏈品質。
+- **Prerequisites**: [CPython 的編譯與執行過程](../Internals/compilation_and_execution.md)
+- **Quick Quiz**: [Python Q71](../../../../QUIZ/05_Python.md#q71)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Poetry 簡介

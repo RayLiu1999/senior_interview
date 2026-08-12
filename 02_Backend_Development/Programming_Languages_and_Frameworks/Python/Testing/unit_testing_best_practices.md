@@ -8,6 +8,18 @@
 
 探討在 Python 中編寫高質量單元測試的最佳實踐，包括測試的組織、命名、隔離性、可讀性和維護性等方面的原則與技巧。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.unit-test-design`
+- **Learning Objectives**:
+  - `LO-1`：能以 FIRST、單一行為與明確 failure message 設計快速、獨立、可重複的 unit test。
+  - `LO-2`：能界定 unit test 的依賴隔離、資料生命週期、時間／隨機性控制與可讀性取捨。
+  - `LO-3`：能從 flaky、測試順序、過度 mock、coverage gap 與維護成本判斷測試套件品質。
+- **Prerequisites**: [pytest 框架深入解析](./pytest_framework.md)
+- **Quick Quiz**: [Python Q70](../../../../QUIZ/05_Python.md#q70)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 單元測試的核心原則

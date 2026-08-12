@@ -8,6 +8,18 @@
 
 在單元測試中，如何使用 Mock 和 Patch 技術隔離外部依賴，編寫獨立、可靠的測試代碼？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.mock-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能說明 mock、stub、fake、spy 與 patch 的行為驗證和隔離目的。
+  - `LO-2`：能正確在被測模組使用依賴的命名空間 patch，並用 autospec／spec_set 避免假物件漂移。
+  - `LO-3`：能判斷 mock 是否掩蓋整合契約、重試、時序或資源生命週期問題，並設計補強測試。
+- **Prerequisites**: [單元測試最佳實踐](./unit_testing_best_practices.md)、[測試固件與依賴注入](./fixtures_and_dependency_injection.md)
+- **Quick Quiz**: [Python Q64](../../../../QUIZ/05_Python.md#q64)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Mock 核心概念

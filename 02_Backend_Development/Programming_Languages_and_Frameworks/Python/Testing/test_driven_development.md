@@ -8,6 +8,18 @@
 
 探討測試驅動開發（TDD）的核心理念、實踐流程、優勢與挑戰，以及如何在 Python 項目中有效應用 TDD 來提高代碼質量和設計水平。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.tdd-feedback-loop`
+- **Learning Objectives**:
+  - `LO-1`：能解釋 Red-Green-Refactor 的目的、節奏與測試作為設計回饋的角色。
+  - `LO-2`：能區分行為契約與實作細節，避免 TDD 只產生脆弱的 interaction tests。
+  - `LO-3`：能把 TDD 與 integration、contract、async、回歸與技術債治理組成可持續的交付流程。
+- **Prerequisites**: [單元測試最佳實踐](./unit_testing_best_practices.md)
+- **Quick Quiz**: [Python Q68](../../../../QUIZ/05_Python.md#q68)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### TDD 的核心概念

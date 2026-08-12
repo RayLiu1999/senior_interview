@@ -1461,6 +1461,245 @@ def file_manager(filename):
 
 📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/flask_blueprint.md)
 
+<a id="q60"></a>
+### Q60: CPython 如何把原始碼編譯並交給執行迴圈？
+<!-- Concept ID: concept.python.internals.compilation-execution; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請從 source、AST、code object／bytecode、`.pyc` 與 eval loop 說明編譯和執行邊界，並指出如何診斷啟動差異。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- CPython 會先解析並編譯成 code object／bytecode，再由虛擬機執行；bytecode 不是 CPU 原生機器碼。
+- `.pyc` 是可失效的 import cache，必須考慮 Python 版本、source／hash、容器與部署環境，不是跨版本 artifact 契約。
+- 用 import trace、啟動 profiling、`dis`／code object 觀察與 clean environment 對照來分離編譯、import side effect 和 runtime 成本。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Internals/compilation_and_execution.md)
+
+
+<a id="q61"></a>
+### Q61: Python 動態類型、鴨子類型與 Type Hint 的責任邊界是什麼？
+<!-- Concept ID: concept.python.internals.type-system-duck-typing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 runtime typing、duck typing、Protocol 與靜態型別檢查，並說明它們如何影響測試設計與 API 相容性。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 動態型別把許多錯誤延後到實際路徑執行；鴨子類型依行為契約而不是名義繼承，但錯誤可能在深層路徑才出現。
+- Type hint、Protocol 和 mypy／pyright 是開發與 CI 的靜態證據，不會自動把 Python runtime 變成靜態型別語言。
+- 測試要涵蓋有效實作、缺少方法、錯誤型別與相容變更；不能只用 mock 讓型別錯誤永遠不會執行。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Internals/type_system_and_duck_typing.md)
+
+
+<a id="q62"></a>
+### Q62: pytest fixture scope 如何在效能與測試隔離之間取捨？
+<!-- Concept ID: concept.python.testing.fixture-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 fixture 的依賴解析、scope、autouse 與 teardown，並設計不受順序和並行執行影響的資源生命週期。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- scope 越大不代表越好；資料庫、cache、檔案、event loop 等資源要依成本、可變狀態與 ownership 選擇生命週期。
+- yield／finalizer 必須在成功、例外、取消與測試失敗後清理；autouse fixture 要避免隱藏昂貴或有副作用的依賴。
+- 用隨機順序、xdist、重跑、失敗中斷與 cleanup assertion 驗證 fixture isolation。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/fixtures_and_dependency_injection.md)
+
+
+<a id="q63"></a>
+### Q63: Python 測試如何劃分 unit、integration、contract 與 E2E 邊界？
+<!-- Concept ID: concept.python.testing.integration-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請以資料庫、HTTP 下游、訊息或檔案系統為例，說明各層測試應使用真實依賴、fake 或 mock 的時機。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- unit test 聚焦單一行為與快速回饋；integration／component test 驗證多元件協作；contract test 驗證跨服務 schema；E2E 驗證少量關鍵流程。
+- mock 可以隔離，但不能取代真實 transaction、serialization、timeout、retry 與資源 cleanup 的整合證據。
+- 依風險安排測試矩陣，對慢下游、資料隔離、失敗重試和 deployment smoke path 做可重現的故障注入。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/integration_testing.md)
+
+
+<a id="q64"></a>
+### Q64: Mock 與 Patch 應該在哪個命名空間使用，如何避免過度隔離？
+<!-- Concept ID: concept.python.testing.mock-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 mock、stub、fake、spy，說明 patch where used、autospec 和 interaction test 的風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- patch 應放在被測模組查找依賴的命名空間，而不是只改依賴原始定義所在的模組。
+- autospec／spec_set 可縮小介面漂移，但仍不能證明真實 HTTP、資料庫、序列化或重試契約。
+- 以行為結果為主，只有對外部副作用、冪等、呼叫次數或順序有明確契約時才驗證 interaction。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/mocking_and_patching.md)
+
+
+<a id="q65"></a>
+### Q65: 參數化測試如何增加邊界覆蓋而不造成案例爆炸？
+<!-- Concept ID: concept.python.testing.parametrized-testing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計具可讀 ID 的多組案例，涵蓋有效值、邊界、錯誤和組合條件，並說明如何控制執行成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 每個案例應代表可說明的行為差異，使用明確 ID 讓 CI 失敗能直接定位輸入與預期。
+- 多參數笛卡兒積可能讓 suite 成本失控；可用等價類、邊界分析、代表性組合和分層標記控制數量。
+- 參數化不應只追求行覆蓋率，還要檢查錯誤訊息、狀態轉換、property／mutation 或故障注入是否真的會使測試失敗。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/parametrized_testing.md)
+
+
+<a id="q66"></a>
+### Q66: 如何用 pytest 的 discovery、fixture 與 plugin 建立可診斷的測試套件？
+<!-- Concept ID: concept.python.testing.pytest-framework; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 pytest collection、設定來源、markers、plugins、fixture 發現與並行執行，並提出 CI flake 的診斷方法。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先固定 pytest／plugin／Python 版本與設定來源，再查看 collection、marker、fixture graph 和 test duration。
+- xdist、隨機順序或重試可協助重現問題，但不能用 retry 掩蓋共享狀態、未清理資源或非決定性依賴。
+- 對 collection error、fixture scope、plugin hook、輸出 log 和最小重現案例分層取證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/pytest_framework.md)
+
+
+<a id="q67"></a>
+### Q67: 測試覆蓋率為什麼不是品質的單一答案？
+<!-- Concept ID: concept.python.testing.coverage-signal; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 line、branch、changed-code coverage 與 quality gate，並說明如何避免排除規則或無效斷言製造虛假的信心。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- line coverage 只表示執行過，branch coverage 能暴露條件分支，但兩者都不保證斷言驗證正確行為。
+- 應關注高風險與變更程式碼、失敗路徑、錯誤處理、權限、取消與資料一致性，而不是只把全域百分比調高。
+- 檢查 source include／omit、generated code、測試本身、branch gap，搭配 mutation 或故障注入觀察測試是否能抓到錯誤。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/test_coverage.md)
+
+
+<a id="q68"></a>
+### Q68: TDD 的 Red-Green-Refactor 如何改善設計而不是製造脆弱測試？
+<!-- Concept ID: concept.python.testing.tdd-feedback-loop; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 TDD 的回饋循環、行為契約與重構安全網，並指出何時需要補上 integration 或 contract test。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Red 必須先證明測試能捕捉缺陷，Green 只做最小實作，Refactor 則在行為不變下改善設計。
+- 測試應描述可觀察行為與 domain contract，不要把每個私有呼叫、內部資料結構或 mock interaction 當成永久契約。
+- TDD 不會消除外部系統風險；資料庫、網路、async、schema、部署與非功能需求仍需較高層測試。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/test_driven_development.md)
+
+
+<a id="q69"></a>
+### Q69: 如何可靠測試 Python 非同步程式的取消、例外與資源清理？
+<!-- Concept ID: concept.python.testing.async-testing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請設計 pytest-asyncio 測試，涵蓋 event loop scope、async fixture、timeout、cancellation、pending task 和非同步 mock。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 每個測試要明確擁有 event loop 與背景 task；測試結束時檢查 pending task、未 await coroutine、連線和 semaphore 是否回收。
+- 不要靠任意 sleep 等待時序；用可控 gate、事件、fake clock 或明確的 completion signal 驗證競態和 timeout。
+- 對成功、例外、取消、部分完成和慢下游分別驗證 cleanup、重試與 idempotency。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/testing_async_code.md)
+
+
+<a id="q70"></a>
+### Q70: 高品質 Python unit test 如何維持快速、獨立且可重複？
+<!-- Concept ID: concept.python.testing.unit-test-design; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請用 FIRST、單一責任、清楚命名與資源隔離說明如何設計 unit test，並診斷 flaky 或過度 mock 的 suite。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 測試要快速、獨立、可重複、自我驗證且及時，並讓 failure message 能說明行為差異。
+- 固定時間、隨機性、環境與外部副作用；共享 fixture 要有明確 ownership，避免測試順序或全局狀態影響結果。
+- 若測試只驗證 mock 呼叫而不驗證結果，應補 integration／contract 證據並重新評估抽象邊界。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Testing/unit_testing_best_practices.md)
+
+
+<a id="q71"></a>
+### Q71: Poetry 如何讓 Python 依賴與 CI 建置可重現？
+<!-- Concept ID: concept.python.tooling.poetry-reproducibility; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 `pyproject.toml`、lock resolution、Python markers、package mode 與 clean CI install，並提出 lock drift 的防護方式。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `pyproject.toml` 表達直接需求與專案 metadata；lock file 固定完整 dependency graph、版本與來源條件，兩者責任不同。
+- CI 應使用受控 Python／Poetry 版本、驗證 lock 未漂移、固定 artifact／hash 並在乾淨環境安裝，而非默默重新解析。
+- 多 Python 版本、marker、optional group、editable／package mode 和私有來源都要進入矩陣；失敗時保留 dependency diff 與可回滾 artifact。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Tooling/poetry_dependency_management.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

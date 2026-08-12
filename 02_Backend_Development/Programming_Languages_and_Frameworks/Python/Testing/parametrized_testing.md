@@ -8,6 +8,18 @@
 
 探討如何在 Python 中使用參數化測試來減少重複的測試代碼，通過一個測試函數測試多組輸入輸出，提高測試的可維護性和可讀性。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.parametrized-testing`
+- **Learning Objectives**:
+  - `LO-1`：能設計清楚、可診斷且涵蓋邊界條件的參數化案例與測試 ID。
+  - `LO-2`：能處理多參數組合、預期例外、fixture 組合與資料生成，避免案例數爆炸。
+  - `LO-3`：能用失敗分布、案例成本與 coverage／mutation 證據判斷參數化是否真正增加信心。
+- **Prerequisites**: [pytest 框架深入解析](./pytest_framework.md)、[單元測試最佳實踐](./unit_testing_best_practices.md)
+- **Quick Quiz**: [Python Q65](../../../../QUIZ/05_Python.md#q65)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 參數化測試的概念

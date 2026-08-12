@@ -8,6 +8,18 @@
 
 Python 是一個動態類型語言，這與靜態類型語言有何不同？請解釋什麼是“鴨子類型”(Duck Typing) 的概念，並舉例說明。近年來，Python 引入了類型提示 (Type Hints)，這是否意味著 Python 正在變成一個靜態類型語言？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.internals.type-system-duck-typing`
+- **Learning Objectives**:
+  - `LO-1`：能區分動態型別、名義型別、結構型／鴨子類型與執行期錯誤發生的時機。
+  - `LO-2`：能說明 type hints、Protocol 與靜態檢查器如何改善契約，而不會自動改變 Python 的 runtime。
+  - `LO-3`：能在測試與生產診斷中辨識型別邊界、隱式 coercion、錯誤路徑與相容性取捨。
+- **Prerequisites**: [CPython 的編譯與執行過程](./compilation_and_execution.md)
+- **Quick Quiz**: [Python Q61](../../../../QUIZ/05_Python.md#q61)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Python 的類型系統是其靈活性和易用性的核心來源之一。理解動態類型和鴨子類型的概念，以及現代類型提示的角色，對於編寫地道且可維護的 Python 代碼至關重要。

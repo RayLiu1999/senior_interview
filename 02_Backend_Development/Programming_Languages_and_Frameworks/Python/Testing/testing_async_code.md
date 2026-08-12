@@ -8,6 +8,18 @@
 
 探討如何在 Python 中測試異步代碼，包括使用 pytest-asyncio 插件、處理異步 fixture、測試協程函數以及模擬異步依賴的技巧和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.async-testing`
+- **Learning Objectives**:
+  - `LO-1`：能設計事件循環、async fixture、協程與非同步 mock 的隔離邊界。
+  - `LO-2`：能驗證 timeout、取消、例外、重試、背景 task 與 pending task cleanup，而不依賴 sleep timing。
+  - `LO-3`：能用慢下游、競態、並行負載與未 await 警告重現並診斷 async test flake。
+- **Prerequisites**: [pytest 框架深入解析](./pytest_framework.md)、[測試固件與依賴注入](./fixtures_and_dependency_injection.md)
+- **Quick Quiz**: [Python Q69](../../../../QUIZ/05_Python.md#q69)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 異步編程的測試挑戰

@@ -8,6 +8,18 @@
 
 一個 Python 腳本（`.py` 檔案）是如何被 CPython 直譯器轉換並執行的？請解釋什麼是位元組碼 (bytecode)、`.pyc` 檔案的作用，以及直譯器循環 (eval loop) 是如何工作的。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.internals.compilation-execution`
+- **Learning Objectives**:
+  - `LO-1`：能描述 Python 原始碼經過 AST、code object／bytecode 到 eval loop 的編譯與執行邊界。
+  - `LO-2`：能解釋 `.pyc` 快取失效、import 啟動成本、版本／平台差異與部署一致性的關聯。
+  - `LO-3`：能用 import trace、bytecode／啟動 profiling 與環境差異建立可驗證的 runtime 診斷。
+- **Prerequisites**: [Python 類型系統與鴨子類型](./type_system_and_duck_typing.md)
+- **Quick Quiz**: [Python Q60](../../../../QUIZ/05_Python.md#q60)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 當我們運行一個 Python 程式時，它並不是直接逐行解釋原始碼。相反地，CPython 經歷了一個“編譯”再“執行”的過程。這個過程可以分為三個主要階段：語法解析、編譯為位元組碼以及在 Python 虛擬機 (PVM) 中執行位元組碼。

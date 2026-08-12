@@ -8,6 +8,18 @@
 
 探討如何在 Python 中設計和實施集成測試，驗證多個組件協同工作的正確性，包括測試策略、測試環境管理、外部依賴處理和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.integration-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能區分 unit、component、integration、contract 與 E2E 測試各自驗證的邊界。
+  - `LO-2`：能選擇真實依賴、fake、stub 或 containerized service，並控制資料、網路與環境隔離。
+  - `LO-3`：能用 schema、transaction、重試、慢下游與故障注入測試證明跨組件行為，而非只驗證 happy path。
+- **Prerequisites**: [單元測試最佳實踐](./unit_testing_best_practices.md)、[pytest 框架深入解析](./pytest_framework.md)
+- **Quick Quiz**: [Python Q63](../../../../QUIZ/05_Python.md#q63)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 集成測試的概念

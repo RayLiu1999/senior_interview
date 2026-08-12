@@ -8,6 +8,18 @@
 
 pytest 是 Python 最流行的測試框架，相比 unittest 更加簡潔和強大。如何充分利用 pytest 的特性編寫高質量的測試代碼？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.pytest-framework`
+- **Learning Objectives**:
+  - `LO-1`：能說明 pytest 的 discovery、fixture、marker、plugin 與 assertion model 如何組合。
+  - `LO-2`：能設計可讀、可隔離、可並行且有明確設定來源的 pytest test suite。
+  - `LO-3`：能從 collection、執行時間、flake、plugin 相容與失敗重現證據診斷 CI 品質問題。
+- **Prerequisites**: [Python 類型系統與鴨子類型](../Internals/type_system_and_duck_typing.md)
+- **Quick Quiz**: [Python Q66](../../../../QUIZ/05_Python.md#q66)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### pytest 核心特性

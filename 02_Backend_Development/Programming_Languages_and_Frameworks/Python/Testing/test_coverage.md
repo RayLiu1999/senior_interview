@@ -8,6 +8,18 @@
 
 探討如何在 Python 中衡量和分析測試覆蓋率，使用 coverage.py 和 pytest-cov 工具生成詳細的覆蓋率報告，以及如何正確理解和使用覆蓋率指標來提升代碼質量。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.coverage-signal`
+- **Learning Objectives**:
+  - `LO-1`：能區分 line、branch、function 與 changed-code coverage 的訊息和盲點。
+  - `LO-2`：能把 coverage threshold 與風險、關鍵路徑、測試品質和排除規則一起解讀，而非追逐單一百分比。
+  - `LO-3`：能用 branch gap、mutation／故障注入與 CI 趨勢驗證 coverage 是否代表有效信心。
+- **Prerequisites**: [單元測試最佳實踐](./unit_testing_best_practices.md)、[集成測試策略](./integration_testing.md)
+- **Quick Quiz**: [Python Q67](../../../../QUIZ/05_Python.md#q67)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 測試覆蓋率的概念

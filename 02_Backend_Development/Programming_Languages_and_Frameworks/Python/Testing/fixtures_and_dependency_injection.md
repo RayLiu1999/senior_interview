@@ -8,6 +8,18 @@
 
 探討 pytest 中 fixture 機制的工作原理及其在測試中的應用，包括 fixture 的作用域、依賴注入、參數化以及如何使用 fixture 來管理測試資源和共享測試邏輯。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.testing.fixture-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能解釋 pytest fixture 的依賴解析、scope、autouse 與 teardown 順序。
+  - `LO-2`：能依資源成本、可變狀態與隔離要求選擇 function、module、session 等 scope，避免共享污染。
+  - `LO-3`：能用失敗、取消、並行與重試實驗驗證 fixture 的 ownership、清理和測試可重複性。
+- **Prerequisites**: [pytest 框架深入解析](./pytest_framework.md)、[單元測試最佳實踐](./unit_testing_best_practices.md)
+- **Quick Quiz**: [Python Q62](../../../../QUIZ/05_Python.md#q62)
+- **Hard Assessment**: [Python Testing Quality Incident](../../../../QUIZ/Hard_Assessments/python_testing_quality_incident.md) (`assessment.python.testing-quality.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Fixture 的核心概念
