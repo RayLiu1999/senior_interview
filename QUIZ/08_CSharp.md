@@ -771,6 +771,52 @@ int unboxed = (int)boxed;   // 拆箱：型別檢查 + 複製
 
 ---
 
+## 🧰 Toolchain 與測試品質
+
+<a id="q18"></a>
+### Q18: dotnet CLI 與 NuGet 如何建立可重現、可驗證的 .NET build？
+<!-- Concept ID: concept.csharp.tooling.dotnet-cli-nuget-reproducibility; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 dotnet restore、build、test、publish 的保證，並說明 NuGet transitive dependency、package source、lock file、cache 與 SDK 或 runtime drift 如何造成 CI 或 release 差異。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- restore 解析並取得套件，build 編譯，test 還要通過 runner 和 fixture，publish 才產生可部署輸出；前一階段成功不代表後一階段一定成功。
+- 依賴衝突要查看 assets graph、direct 或 transitive package、central version、source order 與 lock state；不能只刪除 cache 或把所有套件升到最新。
+- 可重現性需要固定 SDK、runtime、NuGet source、package version、RID、環境變數與 cache key，並驗證產物 checksum 和內容。
+- CI 需把 restore cache 視為加速層而非信任根；cache 失效、私有 registry 變更與 runner image 更新都要能被偵測和回滾。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/CSharp/Tooling/dotnet_cli_and_nuget.md)
+
+---
+
+<a id="q19"></a>
+### Q19: xUnit 與 NUnit 如何避免測試順序、fixture 與平行化造成的 flaky test？
+<!-- Concept ID: concept.csharp.testing.xunit-nunit-isolation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 xUnit／NUnit 的 test instance、fixture、setup／teardown、data-driven test 與 parallel execution，並說明如何診斷 CI 才失敗的測試。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- xUnit 通常為每個測試建立新 instance，NUnit 的 fixture lifecycle 與 setup 行為則需依設定確認；不能只依框架名稱推測隔離。
+- 共用資料庫、檔案、port、clock、環境變數、static cache 或 singleton service 都可能讓測試依賴順序；fixture 必須有明確 ownership 和 async cleanup。
+- runner adapter、target framework、SDK、test filter、parallelization 設定與 retry 也會影響觀察；應保留 seed、順序、thread、log 和失敗資源。
+- 修復順序是先消除共享狀態與非 deterministic 時間，再針對真正安全的 fixture 設定平行度，而不是全域關閉測試或無限 retry。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/CSharp/Testing/xunit_nunit.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：
@@ -794,5 +840,7 @@ int unboxed = (int)boxed;   // 拆箱：型別檢查 + 複製
 | 知道如何管理 DbContext 生命週期 | ⬜ |
 | 能避免 async/await 死鎖 | ⬜ |
 | 理解裝箱/拆箱的效能影響 | ⬜ |
+| 能建立可重現的 dotnet／NuGet build | ⬜ |
+| 能設計 xUnit／NUnit 測試隔離 | ⬜ |
 
 **建議**：未能完整回答的題目，請回到對應的詳細文章深入學習。

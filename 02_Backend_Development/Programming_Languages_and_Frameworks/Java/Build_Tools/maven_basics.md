@@ -8,6 +8,21 @@
 
 Maven 是 Java 生態系統中最廣泛使用的構建工具和依賴管理工具。理解其核心概念（POM、生命週期、插件、依賴傳遞）是 Java 後端工程師的必備知識，面試中常被問及與 Gradle 的比較及依賴衝突的解決方式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.build.maven-reproducibility-dependency`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Maven lifecycle、phase、plugin、scope 與 artifact identity 的關係。
+  - `LO-2`: 能使用 dependency tree、dependencyManagement、lock／BOM 與 repository policy 處理衝突。
+  - `LO-3`: 能設計可重現、可快取、可驗證且可回滾的 Java build 與 release pipeline。
+- **Prerequisites**:
+  - Java 編譯、JAR／WAR、版本號與基本 CI pipeline。
+  - 依賴傳遞、semantic versioning 與測試階段的基本概念。
+- **Quick Quiz**: [Q11](../../../../QUIZ/18_Java.md#q11)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q11，並能從 dependency graph、artifact checksum、cache key 與環境差異說明 build 是否可重現。
+- **覆蓋題型**: `Maven Lifecycle`、`Dependency Conflict`、`Repository`、`Reproducible Build`
+
 ## 核心理論與詳解
 
 ### Maven 設計哲學：約定優於配置（Convention over Configuration）

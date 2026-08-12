@@ -8,6 +8,21 @@
 
 Java 8 是 Java 歷史上最重要的版本之一，引入了 Lambda 表達式、Stream API、Optional 等革命性特性。請詳細解釋這些新特性的使用和原理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.core.modern-language-features`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Lambda、函數式介面、method reference 與 effectively final capture 的語意。
+  - `LO-2`: 能區分 Stream 的 lazy／terminal boundary、順序、平行化與 side effect 風險。
+  - `LO-3`: 能在 Optional、Date/Time API、default method 與效能取捨間做出可驗證的設計選擇。
+- **Prerequisites**:
+  - Java 物件導向、介面、例外處理與基本集合。
+  - 能讀懂 Java 方法簽章與泛型型別參數。
+- **Quick Quiz**: [Q6](../../../../QUIZ/18_Java.md#q6)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q6，並能解釋 lazy／eager 邊界、side effect 與平行 Stream 的容量風險後，再進入整合測驗。
+- **覆蓋題型**: `Lambda`、`Stream`、`Optional`、`Java 版本相容性`
+
 ## 核心理論與詳解
 
 ### Lambda 表達式

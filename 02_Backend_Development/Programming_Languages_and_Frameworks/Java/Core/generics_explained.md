@@ -8,6 +8,21 @@
 
 Java 泛型是 JDK 5 引入的重要特性，提供了編譯時類型安全。請深入解釋泛型的原理、類型擦除機制、通配符使用和常見限制。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.core.generics-type-erasure`
+- **Learning Objectives**:
+  - `LO-1`: 能說明泛型型別安全、型別擦除、raw type 與 unchecked warning 的關係。
+  - `LO-2`: 能使用 PECS、上／下界通配符與 type inference 設計可重用 API。
+  - `LO-3`: 能診斷泛型陣列、heap pollution、bridge method 與 runtime cast failure 的風險。
+- **Prerequisites**:
+  - Java 類別、介面、繼承與多型。
+  - Java 集合框架的基本使用。
+- **Quick Quiz**: [Q7](../../../../QUIZ/18_Java.md#q7)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q7，並能用一個 API 例子說明 producer／consumer 邊界與擦除後的 runtime 限制。
+- **覆蓋題型**: `Type Erasure`、`PECS`、`Wildcard`、`Heap Pollution`
+
 ## 核心理論與詳解
 
 ### 泛型概述

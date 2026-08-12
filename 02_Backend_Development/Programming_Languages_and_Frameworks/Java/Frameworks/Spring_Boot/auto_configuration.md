@@ -8,6 +8,21 @@
 
 Spring Boot 的自動配置（Auto Configuration）是其「開箱即用」特性的核心機制。理解它的工作原理——從 `@SpringBootApplication` 到 `spring.factories` 文件，再到 `@Conditional` 條件判斷——是資深 Java 工程師在面試中必須深入解析的知識點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.spring-boot.auto-configuration-conditions`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 auto-configuration discovery、condition evaluation、bean registration 與 property binding。
+  - `LO-2`: 能解釋 classpath、user-defined bean、profile、property 與 ordering 如何改變啟用結果。
+  - `LO-3`: 能用 condition report、dependency graph 與 startup evidence 診斷環境間配置漂移。
+- **Prerequisites**:
+  - Spring IoC、Bean lifecycle、classpath 與 Maven dependency management。
+  - application properties／profiles 與基本 Spring Boot 啟動流程。
+- **Quick Quiz**: [Q12](../../../../../QUIZ/18_Java.md#q12)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q12，並能說明「為何本機啟用、CI 或 production 卻未啟用」的取證順序與覆蓋策略。
+- **覆蓋題型**: `Auto-Configuration`、`Conditional Bean`、`Classpath`、`Configuration Drift`
+
 ## 核心理論與詳解
 
 ### 入口：@SpringBootApplication 的組成

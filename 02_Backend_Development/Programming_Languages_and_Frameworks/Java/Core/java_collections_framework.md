@@ -8,6 +8,21 @@
 
 Java 集合框架是 Java 開發的基礎，請深入解釋 ArrayList、HashMap、ConcurrentHashMap 等核心集合的實現原理、性能特徵和使用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.core.collections-selection-concurrency`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 List、Set、Map 的資料結構、複雜度、記憶體與迭代語意。
+  - `LO-2`: 能依順序、查找、寫入、LRU 與並發需求選擇具體集合實作。
+  - `LO-3`: 能診斷 hash collision、resize、fail-fast、弱一致性與共享集合的容量問題。
+- **Prerequisites**:
+  - Java equals／hashCode、迭代器與基本複雜度。
+  - 泛型與執行緒安全的基本概念。
+- **Quick Quiz**: [Q8](../../../../QUIZ/18_Java.md#q8)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q8，並能把集合選擇連到資料量、讀寫比例、併發模型與監控指標，而不只背複雜度。
+- **覆蓋題型**: `HashMap`、`ConcurrentHashMap`、`Collection Selection`、`Capacity`
+
 ## 核心理論與詳解
 
 ### 集合框架概覽

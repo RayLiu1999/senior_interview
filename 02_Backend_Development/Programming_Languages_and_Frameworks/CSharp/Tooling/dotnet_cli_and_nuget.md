@@ -8,6 +8,21 @@
 
 dotnet CLI 是 .NET 開發的核心命令列工具，NuGet 是 .NET 的官方套件管理系統。理解這兩者的使用方式、套件版本管理策略以及 `.csproj` 專案檔結構，是 C# 後端工程師的基礎工程素養。
 
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.tooling.dotnet-cli-nuget-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 dotnet restore／build／test／publish 的 artifact、cache 與 runtime 邊界。
+  - `LO-2`: 能從 NuGet dependency graph、central version、source policy 與 lock file 診斷套件衝突。
+  - `LO-3`: 能設計跨開發機、CI 與 release runner 可重現且可驗證的 .NET toolchain。
+- **Prerequisites**:
+  - C# 編譯、solution／project、NuGet package 與基本 CI/CD。
+  - 版本相容性、私有 registry 與測試命令的基本概念。
+- **Quick Quiz**: [Q18](../../../../QUIZ/08_CSharp.md#q18)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q18，並能區分 restore cache 命中、套件解析成功、編譯成功與可部署 artifact 的不同保證。
+- **覆蓋題型**: `dotnet CLI`、`NuGet`、`Dependency Graph`、`Toolchain Reproducibility`
+
 ## 核心理論與詳解
 
 ### dotnet CLI 核心命令

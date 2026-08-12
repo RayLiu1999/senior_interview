@@ -8,6 +8,21 @@
 
 xUnit 和 NUnit 是 .NET 生態系統中最主流的單元測試框架，搭配 Moq 進行 Mock，以及 FluentAssertions 提升斷言可讀性，構成 C# 後端測試的標準工具組合。資深 .NET 工程師需要理解兩者的設計哲學差異及各自的適用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.testing.xunit-nunit-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 xUnit／NUnit 的 fixture、lifecycle、data-driven test 與 parallelization。
+  - `LO-2`: 能設計不依賴執行順序、時間、共享檔案或資料庫狀態的測試隔離策略。
+  - `LO-3`: 能從 flaky test、runner adapter、test cache、async disposal 與 integration fixture 證據定位 CI 問題。
+- **Prerequisites**:
+  - C# async／await、DI、mock 與基本 .NET test runner。
+  - 能區分 unit、component 與 integration test 的成本和隔離需求。
+- **Quick Quiz**: [Q19](../../../../QUIZ/08_CSharp.md#q19)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q19，並能指出測試 fixture 的 ownership、平行執行限制、清理責任與失敗重現方法。
+- **覆蓋題型**: `xUnit`、`NUnit`、`Fixture Isolation`、`CI Flakiness`
+
 ## 核心理論與詳解
 
 ### 三大 .NET 測試框架比較

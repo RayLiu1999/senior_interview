@@ -8,6 +8,21 @@
 
 類加載是 JVM 將類加載到記憶體的過程。請深入解釋類加載的過程、雙親委派模型、類加載器和如何破壞雙親委派。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.jvm.class-loading-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能依序說明 loading、linking、initialization 與 initialization-on-first-use。
+  - `LO-2`: 能解釋 parent delegation、class identity 與多 ClassLoader 隔離的關係。
+  - `LO-3`: 能從 classpath、版本衝突、metaspace、plugin reload 與 thread context ClassLoader 證據診斷問題。
+- **Prerequisites**:
+  - Java bytecode、classpath、JAR 與 JVM runtime 基本概念。
+  - 能區分編譯期依賴與執行期類別解析。
+- **Quick Quiz**: [Q9](../../../../QUIZ/18_Java.md#q9)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q9，並能解釋「同名 class 為何仍不是同一型別」及其對 plugin／release 的影響。
+- **覆蓋題型**: `Class Loader`、`Parent Delegation`、`Class Identity`、`Metaspace`
+
 ## 核心理論與詳解
 
 ### 類加載過程

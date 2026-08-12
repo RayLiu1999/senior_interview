@@ -8,6 +8,21 @@
 
 JUnit 5 是 Java 生態系統中最主流的單元測試框架，搭配 Mockito 進行 Mock，構成 Java 後端測試的標準工具組合。理解 JUnit 5 的架構、核心注解和 Mockito 的使用是資深 Java 工程師必備的測試素養。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.testing.junit5-lifecycle-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 JUnit 5 extension、lifecycle、parameterized test 與 dynamic test 的執行邊界。
+  - `LO-2`: 能設計 deterministic、可並行且不共享污染的測試 fixture、mock 與 integration test。
+  - `LO-3`: 能從 flaky test、timeout、resource leak、test ordering 與 CI cache 證據定位測試品質問題。
+- **Prerequisites**:
+  - Java exception、泛型、集合與基本 Maven test lifecycle。
+  - 單元測試、mock 與 integration test 的基本差異。
+- **Quick Quiz**: [Q10](../../../../QUIZ/18_Java.md#q10)
+- **Hard Assessment**: [Java/.NET Toolchain Quality Incident](../../../../QUIZ/Hard_Assessments/java_dotnet_toolchain_quality_incident.md) (`assessment.java-dotnet.toolchain-quality.incident.v1`)
+- **Assessment Gate**: 完成 Q10，並能為一個 flaky test 指出隔離邊界、時間控制、資源清理與可重現證據。
+- **覆蓋題型**: `JUnit 5`、`Extension`、`Test Isolation`、`Flaky Test`
+
 ## 核心理論與詳解
 
 ### JUnit 5 架構：三個子項目
