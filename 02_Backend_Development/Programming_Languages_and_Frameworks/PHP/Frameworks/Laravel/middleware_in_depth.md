@@ -190,3 +190,4 @@ Route::get('/admin/dashboard', function () {
   - `LO-2`: 能夠追蹤 handle 在 next 前後的請求／回應流程，並判斷攔截、短路與回應修改的結果。
   - `LO-3`: 能夠建立、註冊別名並套用自訂中介層，依需求實作認證、授權、日誌或請求驗證。
 - **Quick Quiz**: [Q15](../../../../../QUIZ/09_PHP.md#q15-laravel-middleware-的執行順序和原理是什麼)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

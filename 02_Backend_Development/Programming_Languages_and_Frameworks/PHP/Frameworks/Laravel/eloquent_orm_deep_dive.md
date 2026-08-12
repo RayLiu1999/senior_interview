@@ -147,3 +147,4 @@ N+1 查詢是 ORM 開發中常見的效能瓶頸，但 Laravel Eloquent 提供�
   - `LO-2`: 能夠使用 with、巢狀與條件 eager loading，以及 load 在正確邊界預先取得關聯資料。
   - `LO-3`: 能夠用查詢觀測工具驗證 N+1 修正，並評估查詢數量、記憶體與載入資料範圍的取捨。
 - **Quick Quiz**: [Q14](../../../../../QUIZ/09_PHP.md#q14-eloquent-orm-的-n1-問題如何解決)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

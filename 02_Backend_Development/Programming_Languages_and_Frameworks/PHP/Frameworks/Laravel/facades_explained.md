@@ -122,3 +122,4 @@ Facade 是 Laravel 提供的一個強大工具，它在簡潔語法和可測試�
   - `LO-2`: 能夠比較 Facade、建構函式注入與 helper 在可讀性、明確依賴與測試替換上的差異。
   - `LO-3`: 能夠辨識 Facade 造成的隱藏依賴與範圍蠕變，並依使用頻率與類別責任選擇合適方式。
 - **Quick Quiz**: [Q13](../../../../../QUIZ/09_PHP.md#q13-laravel-facade-的原理是什麼)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

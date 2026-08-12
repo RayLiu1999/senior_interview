@@ -482,3 +482,4 @@ PHP 類型系統從 PHP 5 到 PHP 8 經歷了巨大的演進，從最初的類�
   - `LO-2`: 能夠判斷 strict_types=1 的檔案範圍、呼叫端型別轉換行為與 TypeError 差異。
   - `LO-3`: 能夠為 API 設計參數、返回型別與協變／逆變，並以靜態分析工具驗證型別契約。
 - **Quick Quiz**: [Q2](../../../../QUIZ/09_PHP.md#q2-請解釋-php-的類型系統演進什麼是-strict-mode)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

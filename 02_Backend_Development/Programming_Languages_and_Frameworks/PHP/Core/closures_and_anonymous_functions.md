@@ -489,3 +489,4 @@ foreach ($callbacks as $callback) {
   - `LO-2`: 能夠預測 use 以值或引用捕獲變數，以及箭頭函數自動捕獲對外部狀態的影響。
   - `LO-3`: 能夠使用閉包實作回調、延遲工廠與高階函數，並辨識 bindTo、call、迴圈捕獲與記憶體成本。
 - **Quick Quiz**: [Q17](../../../../QUIZ/09_PHP.md#q17-php-閉包-closure-如何使用use-關鍵字的作用是什麼)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

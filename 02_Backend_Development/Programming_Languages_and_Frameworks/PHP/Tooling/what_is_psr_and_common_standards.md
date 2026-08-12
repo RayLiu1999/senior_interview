@@ -149,3 +149,4 @@ class MyController
   - `LO-2`: 能夠比較 PSR-4 的自動載入映射、PSR-7 的不可變 HTTP 訊息與 PSR-12 的程式碼風格要求。
   - `LO-3`: 能夠在專案中依 PSR-12 組織命名空間、類別與格式，並使用檢查工具維持一致性。
 - **Quick Quiz**: [Q9](../../../../QUIZ/09_PHP.md#q9-什麼是-psr-標準有哪些常見的-psr)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

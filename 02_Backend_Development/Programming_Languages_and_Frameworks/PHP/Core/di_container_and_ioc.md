@@ -183,3 +183,4 @@ $userService->register('test@example.com'); // 輸出: Logging to file: User tes
   - `LO-2`: 能夠追蹤容器從 binding 到 resolving 的遞迴解析流程，包含介面綁定與反射建立。
   - `LO-3`: 能夠以 DI 容器替換實作並說明其對解耦、單元測試、集中管理與生命週期的影響。
 - **Quick Quiz**: [Q4](../../../../QUIZ/09_PHP.md#q4-php-如何實現依賴注入-di什麼是-ioc-容器)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

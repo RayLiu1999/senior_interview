@@ -181,3 +181,4 @@ $mysql->connect();
   - `LO-2`: 能夠依類別關係、可重用實作、契約需求與單一繼承限制選擇合適的抽象機制。
   - `LO-3`: 能夠處理多個 Trait 的方法衝突，並說明 use、implements 與 extends 對 API 與可測試性的影響。
 - **Quick Quiz**: [Q3](../../../../QUIZ/09_PHP.md#q3-trait-interface-和-abstract-class-有什麼區別何時使用)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

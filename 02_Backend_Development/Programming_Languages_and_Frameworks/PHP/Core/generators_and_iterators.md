@@ -451,3 +451,4 @@ function generateUsers(): Generator
   - `LO-2`: 能夠比較 Generator、Iterator 與 IteratorAggregate 在實作複雜度、可重用性與雙向通訊上的差異。
   - `LO-3`: 能夠為大型檔案、分頁資料庫查詢或資料管道選擇生成器／迭代器，並處理 send、throw 與資源清理。
 - **Quick Quiz**: [Q18](../../../../QUIZ/09_PHP.md#q18-php-生成器-generator-是什麼何時使用)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

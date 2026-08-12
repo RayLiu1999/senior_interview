@@ -205,3 +205,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   - `LO-2`: 能夠依輸出情境選擇 HTML 編碼，並說明 XSS 與 Cookie／Session 竊取的關係。
   - `LO-3`: 能夠追蹤 CSRF 的 Cookie 認證流程，並以同步權杖、hash_equals 與安全 Session 設定阻擋偽造請求。
 - **Quick Quiz**: [Q6](../../../../QUIZ/09_PHP.md#q6-php-常見的安全漏洞有哪些如何防範)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

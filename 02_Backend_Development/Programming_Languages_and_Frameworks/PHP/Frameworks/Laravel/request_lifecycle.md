@@ -101,3 +101,4 @@ $kernel->terminate($request, $response);
   - `LO-2`: 能夠追蹤服務提供者、路由、中介層、控制器與回應在請求及返回路徑中的責任與順序。
   - `LO-3`: 能夠區分 response send 與 terminate 階段，並據此定位啟動、路由、業務或收尾工作中的問題。
 - **Quick Quiz**: [Q11](../../../../../QUIZ/09_PHP.md#q11-請解釋-laravel-的請求生命週期)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

@@ -735,3 +735,4 @@ $value = match($property) {
   - `LO-2`: 能夠在實際 PHP 設計中選擇 Union Types、Attributes、Match、Enum、Readonly、Fibers 等特性。
   - `LO-3`: 能夠評估 JIT、嚴格型別與現代語法遷移對 CPU 密集工作、Web I/O 與可維護性的影響。
 - **Quick Quiz**: [Q1](../../../../QUIZ/09_PHP.md#q1-php-8-有哪些重要的新特性)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)

@@ -342,3 +342,4 @@ use App\Models\User;
   - `LO-2`: 能夠說明 Composer 依據 composer.json 生成 vendor/autoload.php，以及 PSR-4、classmap 與 files 的差異。
   - `LO-3`: 能夠診斷大小寫、命名空間與檔案路徑不一致造成的載入失敗，並選擇生產環境的 autoload 優化。
 - **Quick Quiz**: [Q5](../../../../QUIZ/09_PHP.md#q5-什麼是-psr-4-自動載入composer-如何管理依賴)
+- **Hard Assessment**: [PHP Core／Laravel Completion Incident](../../../../QUIZ/Hard_Assessments/php_core_laravel_completion_incident.md) (`assessment.php.core-laravel.completion-incident.v1`)
