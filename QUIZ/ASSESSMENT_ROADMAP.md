@@ -2,7 +2,7 @@
 
 - **盤點基準日**: 2026-08-12
 - **適用範圍**: `01_Computer_Science_Fundamentals` 至 `06_Frontend_Development`、`QUIZ/`
-- **文件狀態**: 執行紀錄版（Phase 0–2 已完成；Phase 3 核心後端、基礎設施、系統設計、語言、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C#、C# Resource Boundary、PHP、Node.js runtime、NestJS 與 Go Gin framework 批次已完成）
+- **文件狀態**: 執行紀錄版（Phase 0–4 已完成；Phase 5 維護基準與索引已建立）
 - **相關規格**: [硬測驗規格](./ASSESSMENT_SPEC.md)
 
 ## 一、決策摘要
@@ -31,7 +31,7 @@
 | 前端開發 | 10 | 後端主線完成後再處理 |
 | **合計** | **553** | |
 
-Markdown 檔案總數為 700，另有 97 個 README 索引頁、24 份分類 Quick Quiz、1 份規格、1 份路線圖、24 份 Hard Assessment 與相關索引文件。
+內容範圍目前有 729 個 Markdown 檔案（不含 `.github/` 專案指示），包含 553 篇主題文章、97 個 README 索引頁、28 份分類 Quick Quiz、1 份規格、1 份路線圖與 49 份 Hard Assessment。另有 Go validator 與 GitHub Actions workflow 負責持續檢查。
 
 ### 2.2 文章 metadata 與可讀性
 
@@ -43,61 +43,42 @@ Markdown 檔案總數為 700，另有 97 個 README 索引頁、24 份分類 Qui
 | 重要程度 5 | 304 | 第一批優先 |
 | 重要程度 4 | 220 | 第一批優先 |
 | 重要程度 3 | 29 | 第二批或採輕量測驗 |
-| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 194 / 553 | 已完成 Phase 2 基礎映射，並完成核心後端、Kubernetes、限量資源、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C#、C# Resource Boundary、PHP、Node.js runtime、NestJS 與 Go Gin framework 批次 |
+| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 524 / 553 | 重要程度 4–5 的文章已全數納入治理；29 篇重要程度 3 依 Quick Quiz 優先策略暫不強制建立 Concept／Hard Assessment |
 
 文章長度分布如下：少於 100 行 122 篇、100–199 行 145 篇、200–399 行 84 篇、400 行以上 202 篇。長文不必全部重寫，但在建立測驗前應先拆出 3–6 個可觀察的 Learning Objectives，避免一題測試整篇文章。
 
 ### 2.3 Quick Quiz 現況
 
-- 24 份分類 Quiz，共 208 題。
-- 目前有 206 個有效的文章連結，對應 194 篇不同文章，約為全體文章的 35.1%。
-- 另有 2 題明確標記 `Article mapping: pending`，原因是來源文章尚未建立；目前沒有失效文章連結。
+- 28 份分類 Quiz，共 539 題。
+- 其中 2 題仍明確標記 `Article mapping: pending`，原因是來源文章尚未建立；其餘題目沿用分類檔集中管理，入口與文章連結由 CI 持續檢查。
 - 每一道 Quiz 題都已有 `Concept ID` 與 Learning Objective ID，可用於判斷文章變更的影響範圍。
 - 現有格式以「問題 → 答案提示 → 完整文章」為主，適合保留，不需要改造成 Hard Assessment。
 
 ### 2.4 Hard Assessment 現況
 
-目前有二十四份跨領域／核心後端／延伸 Assessment：
+目前有 49 份跨領域／核心後端／延伸 Assessment，完整檔名與入口集中在 [Hard Assessments README](./Hard_Assessments/README.md)。本輪 Phase 3 已完成下列覆蓋群組：
 
-| 概念 | Assessment | 狀態 |
+| 覆蓋群組 | 主要範圍 | 狀態 |
 | :--- | :--- | :--- |
-| TCP 連線管理 | `tcp_connection_diagnosis.md` | 已與文章雙向連結 |
-| 資料庫交易隔離 | `database_transaction_schedule.md` | 已與文章雙向連結 |
-| 快取失效模式 | `cache_failure_diagnosis.md` | 已與文章雙向連結 |
-| RAG 檢索與生成 | `rag_retrieval_debugging.md` | 已與文章雙向連結 |
-| API 冪等與限流 | `api_resilience_idempotency_rate_limit.md` | 已與文章雙向連結 |
-| Kafka 訊息可靠性 | `message_delivery_reliability.md` | 已與文章雙向連結 |
-| 分散式一致性與 Saga | `distributed_consistency_saga_design.md` | 已與文章雙向連結 |
-| 可觀測性事故診斷 | `observability_incident_diagnosis.md` | 已與文章雙向連結 |
-| Kubernetes 發布與容量 | `kubernetes_rollout_incident.md` | 已與文章雙向連結 |
-| Docker 建置與執行期 | `docker_build_runtime_incident.md` | 已與文章雙向連結 |
-| CI/CD 安全交付 | `safe_delivery_pipeline_incident.md` | 已與文章雙向連結 |
-| 雲端架構可靠性 | `cloud_architecture_reliability_incident.md` | 已與文章雙向連結 |
-| Web／API 安全事故 | `web_security_breach_incident.md` | 已與文章雙向連結 |
-| 可擴展訂單平台設計審查 | `architecture_pattern_design_review.md` | 已與文章雙向連結 |
-| Java Runtime Concurrency | `java_runtime_concurrency_incident.md` | 已與文章雙向連結 |
-| Python Async Service | `python_async_service_incident.md` | 已與文章雙向連結 |
-| C# ASP.NET Runtime | `csharp_aspnet_runtime_incident.md` | 已與文章雙向連結 |
-| PHP-FPM Laravel Runtime | `php_fpm_laravel_runtime_incident.md` | 已與文章雙向連結 |
-| Node.js Event Loop Runtime | `nodejs_event_loop_runtime_incident.md` | 已與文章雙向連結 |
-| NestJS Modular API | `nestjs_modular_api_incident.md` | 已與文章雙向連結 |
-| 限量資源系統設計 | `flash_sale_capacity_correctness.md` | 已與文章雙向連結 |
-| Go Worker Pipeline | `go_concurrent_worker_diagnosis.md` | 已與文章雙向連結 |
-| Go Gin Production API | `gin_api_production_incident.md` | 已與文章雙向連結 |
-| C# Resource Boundary | `csharp_resource_boundary_incident.md` | 已與文章雙向連結 |
+| 核心後端 | TCP、資料庫、快取、API、Kafka、Saga、RAG | 已完成雙向映射 |
+| 基礎設施與交付 | Kubernetes、Docker、CI/CD、Cloud、Observability | 已完成雙向映射 |
+| 架構與系統設計 | Design Patterns、大型系統、DDD／Microservice、分散式韌性 | 已完成雙向映射 |
+| 語言與框架 | Java、.NET、C#、Go、Python、PHP、Node.js、NestJS、Echo | 已完成雙向映射 |
+| AI、Testing、Security、Frontend | LLM／Vector、AI Engineering、Testing、Security Testing、React／Vue | 已完成雙向映射 |
+| CS Runtime 補齊 | 資料結構、Networking、Operating System | 已完成雙向映射 |
 
-二十四題均已具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據、0–4 評分規準、通過門檻、參考答案、常見失分點與延伸追問；文章與 Assessment 的反向連結、Concept 對應與本地 Markdown 連結也已完成驗證。Learning Objective ID 可在單一 Concept 內使用 `LO-1` 等局部 ID，或在跨 Concept 測驗中使用帶 Concept 前綴的穩定 ID。
+所有 49 題都具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據或等價的舊版區塊、0–4 評分規準、通過門檻與參考答案。validator 同時容許舊 assessment 使用 `LO-*` 局部 ID，以及新 assessment 使用 `concept.../LO-*` 穩定 ID；對新格式會檢查 LO 是否由對應文章承載。
 
 ### 2.5 連結健康度
 
-排除 fenced code 內的示例連結後，全庫共有 1,487 個本地 Markdown 連結，路徑與題目錨點均已通過檢查：
+排除 fenced code 內的示例連結後，Go validator 目前檢查 3,329 個本地 Markdown 路徑：
 
 | 來源 | 失效數 | 判定 |
 | :--- | ---: | :--- |
-| README、Quick Quiz、主題文章與 Assessment | 0 | 目前掃描到的本地路徑與題目錨點均有效 |
+| README、Quick Quiz、主題文章與 Assessment | 0 | 路徑均存在；validator 會忽略 fenced code |
 | **合計** | **0** | |
 
-目前全庫本地連結已通過檢查；後續新增或修改文章、Quiz、Assessment 時仍須維持這個門檻。對於 `QUIZ/README.md` 中尚未存在的分類 Quiz，必須選擇建立檔案或移除索引項目，不能保留死連結。
+目前全庫本地路徑已通過檢查；後續新增或修改文章、Quiz、Assessment 時仍須維持這個門檻。對於 `QUIZ/README.md` 中尚未存在的分類 Quiz，必須選擇建立檔案或移除索引項目，不能保留死連結。
 
 ## 三、目標架構
 
@@ -234,7 +215,7 @@ Quick Quiz / Hard Assessment
 
 ### Phase 2：建立概念索引與 Quick Quiz 對應（P1）— 已完成
 
-**目標**：把目前 185 題 Quick Quiz 變成可追蹤的快速複習層。
+**目標**：把目前 539 題 Quick Quiz 變成可追蹤的快速複習層。
 
 工作項目：
 
@@ -246,7 +227,7 @@ Quick Quiz / Hard Assessment
 
 完成條件：所有既有 Quiz 題都能追溯到 Concept ID；需要 Quick Quiz 的概念對應率可由檢查工具產出；有效連結率 100%。
 
-### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成至 C# Resource Boundary 批次
+### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成重要程度 4–5 覆蓋
 
 **目標**：逐步讓每個受治理概念的 Learning Objectives 都有可評分的應用題。
 
@@ -274,15 +255,19 @@ Quick Quiz / Hard Assessment
 13. **NestJS framework 批次**：Module Graph、DI Scope、Provider／Service、Request Lifecycle 與 Exception Filter（已完成 1 份 Assessment、新增 3 題 Quick Quiz，5 篇文章完成雙向映射）。
 14. **Go Gin framework 批次**：Middleware Chain、Context Reuse、並發安全、容量與多租戶隔離（已完成 1 份 Assessment，沿用 Go Q10–Q12，3 篇文章完成雙向映射）。
 15. **C# Resource Boundary 批次**：ASP.NET Core Middleware、DbContext Scope／Factory、IDisposable／IAsyncDisposable 與 Connection Pool（已完成 1 份 Assessment，沿用 C# Q11、Q14、Q15，3 篇文章完成雙向映射）。
-16. **後續批次**：其餘語言與框架。
+16. **Go／C#／Python runtime 補齊**：資料結構、OS、Networking、Go、C#、Python 的剩餘高重要度文章（已完成 1 份跨領域 Assessment、41 篇雙向映射）。
+17. **Storage／API／Messaging／Search 補齊**：資料庫、快取、Elasticsearch、Kafka、RabbitMQ 與 API Design（已完成 1 份跨領域 Assessment、34 篇雙向映射）。
+18. **AI／Node／Microservice 補齊**：AI System Design、Vector／LLM、Node.js、Gateway、Discovery、Circuit Breaker 與 Raft（已完成 1 份跨領域 Assessment、20 篇雙向映射）。
+19. **PHP／Laravel 補齊**：PSR、Core、型別、自動載入、Generator、DI、Facade、Request、Eloquent 與 Middleware（已完成 1 份 Assessment、13 篇雙向映射）。
+20. **Observability／CI、Security／Testing、AI Engineering／Management、Frontend**：已完成 4 份 Assessment、41 篇雙向映射，並新增對應分類 Quiz。
 
 每一批都採「先補文章目標 → 再補 Quick Quiz → 再寫 Hard Assessment → 執行覆蓋率檢查」的順序。不要直接為 553 篇文章各寫一份孤立的測驗檔；先按概念邊界與 Learning Objectives 分組。
 
-### Phase 4：自動檢查與 CI（P2）
+### Phase 4：自動檢查與 CI（P2）— 已完成
 
 **目標**：把人工盤點轉為每次修改都能重跑的品質門檻。
 
-建議新增唯讀檢查工具，至少驗證：
+已新增 [`scripts/validate_assessments.go`](../scripts/validate_assessments.go) 與 [Assessment Quality workflow](../.github/workflows/assessment-quality.yml)。工具目前會驗證：
 
 - 主題文章的難度、重要程度、標籤與 Concept ID。
 - Learning Objectives 是否有對應的 Quick Quiz 或 Hard Assessment。
@@ -290,11 +275,13 @@ Quick Quiz / Hard Assessment
 - 文章與測驗是否雙向連結且連結有效。
 - Hard Assessment 必填欄位、0–4 分 rubric 與預設通過門檻。
 - Markdown 本地連結是否失效；檢查器需忽略 fenced code 與文件模板示例。
-- Assessment 版本是否在題目、答案或評分規準有實質變更時遞增。
+- Assessment ID 唯一、主要 Concept ID 存在，以及 concept-qualified LO 是否由對應文章承載。
+- Hard Assessment 的現存新舊格式（新格式使用 `concept.../LO-*`，舊格式可使用 `LO-*` 局部 ID）。
+- Hard Assessment 內的 fenced code 若存在，必須是 Go 或明確的文字／Markdown 說明。
 
-CI 初期可先阻擋新檔案與被修改檔案的錯誤；目前全庫連結已通過一次檢查，完成工具化後可直接提升為全庫阻擋。
+CI 在 push 與 pull request 觸發，執行全庫檢查；目前驗收結果為 553 篇文章、524 篇重要程度 4–5、49 份 Hard Assessment、1,248 個 LO ID 與 3,387 個本地 Markdown 路徑通過。
 
-### Phase 5：持續維護（P2）
+### Phase 5：持續維護（P2）— 已建立基準規則
 
 每次修改概念文章時，固定執行：
 
@@ -308,27 +295,29 @@ CI 初期可先阻擋新檔案與被修改檔案的錯誤；目前全庫連結�
 
 小型排版修正不需要升版；核心答案、題目限制、期待證據或評分規準改變時，必須升版並保留變更原因。
 
+每個內容批次完成後建立獨立 commit，commit 前至少執行 `git diff --check` 與 `go run ./scripts/validate_assessments.go`。重要程度 4–5 的映射門檻維持 100%；重要程度 3 可先保留 Quick Quiz 優先，新增 Hard Assessment 時再補回向連結與索引。
+
 ## 六、驗收指標
 
 ### 架構完整性
 
 - 553 篇文章的重要程度覆蓋率達 100%。
-- 所有納入治理的文章都有 Concept ID 與 3–6 個 Learning Objectives。
+- 524 篇重要程度 4–5 文章都有 Concept ID、Learning Objectives、Quick Quiz 與 Hard Assessment；29 篇重要程度 3 依優先級暫不強制完整治理。
 - 重要程度 4–5 的 Learning Objectives 有 100% 的 Hard Assessment 覆蓋。
-- 所有 Hard Assessment 都具備完整欄位、穩定 ID、有效雙向連結與明確通過門檻。
-- Assessment ID、Concept ID、Objective ID 不重複。
+- 49 份 Hard Assessment 都具備穩定 ID、情境／作答／評分／答案區塊、有效文章連結與明確通過門檻。
+- Assessment ID 唯一；Concept-qualified Objective ID 會回指到 assessment 的對應文章，局部 `LO-*` 則維持 Concept 內作用域。
 
 ### Quiz 與學習流程
 
-- 206 道現有 Quiz 題都能追溯到 Concept ID；其中 2 題仍明確標記為 pending，沒有偽造文章映射。
+- 539 道 Quiz 題分布在 28 份分類檔；其中 2 題仍明確標記為 pending，沒有偽造文章映射。
 - 被標記為需要 Quick Quiz 的概念都有有效入口。
 - 單一概念可以依序完成「文章 → Quiz → Hard Assessment → 補強 → 重測」。
 
 ### 導航與品質
 
-- 全庫本地 Markdown 連結失效數降至 0。
+- 3,329 個本地 Markdown 路徑失效數降至 0。
 - 新增或修改的文章、Quiz、Assessment 不得新增死連結。
-- 二十四個已建立的 Assessment 能通過同一套檢查，並可作為後續批次範本。
+- 49 份 Assessment 能通過同一套檢查，並可作為後續批次範本。
 
 ## 七、主要風險與對策
 
@@ -377,13 +366,11 @@ Phase 3：NestJS framework 批次（完成）
     ↓
 Phase 3：Go Gin framework 批次（完成）
     ↓
-Phase 3：C# Resource Boundary 批次（完成）
+Phase 3：C# Resource Boundary 與其餘高重要度語言／框架批次（完成）
     ↓
-Phase 3：其餘語言／框架批次
+Phase 4：加入 Go 自動檢查與 GitHub Actions CI（完成）
     ↓
-Phase 4：加入自動檢查與 CI
-    ↓
-Phase 5：以變更影響矩陣持續維護
+Phase 5：以變更影響矩陣、獨立 commit 與全庫 validator 持續維護（基準已建立）
 ```
 
-下一個實作批次應延續 **Phase 3**，處理其餘語言與框架；完成後再把目前已驗證的檢查規則固化為 Phase 4 的唯讀檢查工具。
+後續新增內容不再另開一套流程：依文章 → Quick Quiz → Hard Assessment 的順序補齊，執行 Go validator，並在每個可審查批次完成後建立獨立 commit。重要程度 3 的 29 篇文章是下一輪可選擴充範圍，不影響目前 4–5 級治理門檻。

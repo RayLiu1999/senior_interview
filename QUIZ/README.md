@@ -41,62 +41,91 @@
 | 限量資源系統設計 | [限量資源容量與一致性設計](./Hard_Assessments/flash_sale_capacity_correctness.md) | 秒殺、分散式鎖、購票與容量 |
 | Go Worker Pipeline | [Go Worker Pipeline 診斷](./Hard_Assessments/go_concurrent_worker_diagnosis.md) | 取消、背壓、Channel 與 Goroutine |
 | Go Gin Production API | [Gin API Production Incident](./Hard_Assessments/gin_api_production_incident.md) | Middleware Chain、Context Reuse、並發安全、容量與多租戶隔離 |
+| 資料結構與執行環境綜合事故 | [Core Runtime & Data Structures Incident](./Hard_Assessments/core_runtime_data_structures_incident.md) | 演算法、OS I/O、Go／C#／Python runtime、容量與正確性 |
+| 資料結構與演算法事故 | [Data Structures & Algorithms Incident](./Hard_Assessments/data_structures_algorithm_incident.md) | 演算法選擇、容量、延遲與正確性 |
+| 資料庫儲存與一致性 | [Database Storage & Consistency Incident](./Hard_Assessments/database_storage_consistency_incident.md) | SQL、NoSQL、MVCC、複寫、備份、分片與連線池 |
+| 儲存／API／訊息／搜尋邊界 | [Backend Storage／API／Messaging／Search Incident](./Hard_Assessments/storage_api_messaging_search_incident.md) | 跨系統一致性、容量、可靠性與 API 合約 |
+| API Contract Boundary | [API Contract Boundary Incident](./Hard_Assessments/api_contract_boundary_incident.md) | 版本演化、事件投遞、Webhook 與即時連線 |
+| 訊息佇列可靠性 | [訊息佇列可靠性事故](./Hard_Assessments/message_queue_reliability_incident.md) | Kafka、RabbitMQ、NATS、Redis、確認、重試與順序 |
+| 網路與作業系統韌性 | [Network + Operating System Resilience Incident](./Hard_Assessments/network_os_resilience_incident.md) | 跨層故障樹、容量推理、協定選擇與復原 |
+| 分散式系統設計總檢視 | [大型系統設計綜合檢視](./Hard_Assessments/large_scale_system_design_review.md) | 容量、一致性、即時性、故障診斷與成本 |
+| 分散式架構變更邊界 | [Architecture Change Boundary Review](./Hard_Assessments/architecture_change_boundary_review.md) | 設計原則、可測試性、一致性與漸進式演進 |
+| DDD／Microservice 交付 | [DDD／Microservice Delivery Incident](./Hard_Assessments/ddd_microservice_delivery_incident.md) | DDD 邊界、事件交付、架構權衡與回滾 |
+| Container／Kubernetes 邊界 | [Container Orchestration Boundary Incident](./Hard_Assessments/container_orchestration_boundary_incident.md) | Image Provenance、部署、網路、儲存、安全與容量 |
+| Go Runtime Framework | [Go Runtime Framework Incident](./Hard_Assessments/go_runtime_framework_incident.md) | Echo、Middleware、allocation／GC、Profiling 與安全 |
+| Java／.NET Toolchain | [Java/.NET Toolchain Quality Incident](./Hard_Assessments/java_dotnet_toolchain_quality_incident.md) | 依賴、測試隔離、build 與可重現發布 |
+| Node.js Tooling Fullstack | [Node.js Tooling Fullstack Boundary Incident](./Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) | 依賴、Runtime、TypeScript、Express 與 Nuxt |
+| PHP Framework Tooling | [PHP Framework Tooling Incident](./Hard_Assessments/php_framework_tooling_incident.md) | 依賴、自動載入、框架生命週期與隊列 |
+| PHP Core／Laravel 完整邊界 | [PHP Core／Laravel Completion Incident](./Hard_Assessments/php_core_laravel_completion_incident.md) | 型別、自動載入、請求、資料、安全與資源 |
+| Python FastAPI API Boundary | [Python FastAPI API Boundary Incident](./Hard_Assessments/python_fastapi_api_boundary_incident.md) | API 契約、非同步容量、安全與部署 |
+| Python Web Frameworks | [Python Web Frameworks Production Incident](./Hard_Assessments/python_web_frameworks_incident.md) | Django／Flask 邊界、容量、安全與選型 |
+| Python Testing Quality | [Python Testing Quality Incident](./Hard_Assessments/python_testing_quality_incident.md) | pytest、非同步生命週期、依賴與可重現交付 |
+| LLM／Vector Retrieval | [LLM／Vector Retrieval Incident](./Hard_Assessments/llm_vector_retrieval_incident.md) | Provider、LLM API、向量檢索、RAG 評測與安全 |
+| AI／Node／Microservice 韌性 | [AI／Node.js／Microservice Resilience Incident](./Hard_Assessments/ai_node_microservice_resilience_incident.md) | Prompt、Runtime、微服務、共識與回滾 |
+| 可觀測性與交付訊號 | [可觀測性與交付訊號事故診斷](./Hard_Assessments/observability_delivery_signal_incident.md) | Metrics、Logs、Traces、CI/CD 與供應鏈 |
+| Security Testing Quality | [Security Testing Quality Incident](./Hard_Assessments/security_testing_quality_incident.md) | 威脅模型、安全測試、品質事故與回復 |
+| AI／Engineering Management Delivery | [AI／Engineering Management Delivery Incident](./Hard_Assessments/ai_management_delivery_incident.md) | 模型品質、MLOps、團隊決策、培養與領導 |
+| Frontend State & Rendering | [Frontend State & Rendering Incident](./Hard_Assessments/frontend_state_rendering_incident.md) | React／Vue 狀態、渲染、SSR／CSR、效能與無障礙 |
 
-目前包含四題跨領域試點、四題核心後端批次與十六題 Phase 3 延伸批次；不代表所有文章都已完成硬測驗映射。
+目前共有 49 份 Hard Assessment；重要程度 4–5 的 524 篇文章均已完成至少一份硬測驗映射。重要程度 3 的 29 篇維持 Quick Quiz 優先策略，完整清單請見 [Hard Assessments 索引](./Hard_Assessments/README.md)。
 
 ---
 
 ## 📂 考題索引
 
-目前主要分類均已有分類 Quiz；Java、C# resource boundary、Node.js runtime、NestJS 與 Go Gin framework 已先完成第一批，其餘語言框架仍依 Phase 3 排程補齊。
+目前已有 28 份分類 Quiz；語言、基礎設施、AI／Testing／Management 與 Frontend 的新增分類也已納入同一套 Concept／LO 對應規則。
 
 ### 01. 電腦科學基礎
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [資料結構與演算法](./01_Data_Structures_and_Algorithms.md) | 12 | B+樹、雜湊表、堆、排序、DP |
-| [作業系統](./01_Operating_System.md) | 8 | 進程/線程、IPC、I/O模型、同步 |
-| [網路](./01_Networking.md) | 1 | TCP/IP、HTTP、DNS、WebSocket |
+| [資料結構與演算法](./01_Data_Structures_and_Algorithms.md) | 37 | B+樹、雜湊表、堆、排序、DP |
+| [作業系統](./01_Operating_System.md) | 17 | 進程/線程、IPC、I/O模型、同步 |
+| [網路](./01_Networking.md) | 18 | TCP/IP、HTTP、DNS、WebSocket |
 
 ### 02. 後端開發
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [API 設計](./02_API_Design.md) | 7 | REST、版本管理、冪等性、認證 |
+| [API 設計](./02_API_Design.md) | 13 | REST、版本管理、冪等性、認證 |
 | [快取](./02_Caching.md) | 7 | 策略、穿透/擊穿/雪崩、一致性 |
-| [資料庫](./02_Databases.md) | 9 | SQL/NoSQL、索引、事務、分片 |
-| [訊息佇列](./02_Message_Queues.md) | 10 | Kafka、RabbitMQ、可靠性、冪等 |
+| [資料庫](./02_Databases.md) | 49 | SQL/NoSQL、索引、事務、分片 |
+| [訊息佇列](./02_Message_Queues.md) | 23 | Kafka、RabbitMQ、可靠性、冪等 |
 | [Elasticsearch](./04_Elasticsearch.md) | 12 | Query DSL、分片、聚合、效能優化 |
-| [AI 與機器學習](./02_AI_and_Machine_Learning.md) | 10 | LLM、RAG、向量資料庫、系統設計 |
+| [AI 與機器學習](./02_AI_and_Machine_Learning.md) | 19 | LLM、RAG、向量資料庫、系統設計 |
 
 ### 03. 系統設計與架構
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [分散式系統與微服務](./03_Distributed_Systems_and_Microservices.md) | 8 | CAP、一致性、Raft、微服務模式 |
-| [大型系統設計](./12_System_Design.md) | 5 | 秒殺、分散式鎖、購票、容量與一致性 |
-| [架構模式與設計原則](./17_Architecture_Patterns.md) | 5 | DI、Strategy、Observer、Proxy、SOLID OCP |
+| [分散式系統與微服務](./03_Distributed_Systems_and_Microservices.md) | 17 | CAP、一致性、Raft、微服務模式 |
+| [大型系統設計](./12_System_Design.md) | 22 | 秒殺、分散式鎖、購票、容量與一致性 |
+| [架構模式與設計原則](./17_Architecture_Patterns.md) | 27 | DI、Strategy、Observer、Proxy、SOLID OCP |
 
 ### 04. 基礎設施與 DevOps
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [可觀測性](./10_Observability.md) | 5 | Metrics、Logs、Traces、SLO |
-| [Kubernetes](./11_Kubernetes.md) | 5 | Rolling Update、Probe、資源、HPA、Workload |
-| [Docker](./13_Docker.md) | 5 | Container、Dockerfile、映像層、安全、資源限制 |
-| [CI/CD](./14_CI_CD.md) | 5 | Pipeline、部署策略、Feature Flag、GitHub Actions、GitOps |
+| [可觀測性](./10_Observability.md) | 22 | Metrics、Logs、Traces、SLO |
+| [Kubernetes](./11_Kubernetes.md) | 14 | Rolling Update、Probe、資源、HPA、Workload |
+| [Docker](./13_Docker.md) | 10 | Container、Dockerfile、映像層、安全、資源限制 |
+| [CI/CD](./14_CI_CD.md) | 7 | Pipeline、部署策略、Feature Flag、GitHub Actions、GitOps |
 | [Cloud Computing](./15_Cloud_Computing.md) | 4 | AWS 服務、雲原生、責任邊界、Serverless |
 
 ### 05. 程式語言
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [Go](./06_Go.md) | 14 | Goroutine、Channel、GC、Gin |
-| [Java](./18_Java.md) | 5 | JVM、JMM、Thread Pool、GC、Spring IoC |
-| [Python](./05_Python.md) | 14 | GIL、裝飾器、生成器、asyncio、FastAPI |
-| [C#](./08_CSharp.md) | 17 | async/await、GC、LINQ、ASP.NET Core |
-| [PHP](./09_PHP.md) | 18 | PHP 8+、Laravel、安全、OPcache |
-| [Node.js](./07_Node.js.md) | 17 | Event Loop、非阻塞 I/O、Stream、Express、NestJS、TypeScript、V8 |
+| [Go](./06_Go.md) | 19 | Goroutine、Channel、GC、Gin |
+| [Java](./18_Java.md) | 12 | JVM、JMM、Thread Pool、GC、Spring IoC |
+| [Python](./05_Python.md) | 71 | GIL、裝飾器、生成器、asyncio、FastAPI |
+| [C#](./08_CSharp.md) | 19 | async/await、GC、LINQ、ASP.NET Core |
+| [PHP](./09_PHP.md) | 31 | PHP 8+、Laravel、安全、OPcache |
+| [Node.js](./07_Node.js.md) | 31 | Event Loop、非阻塞 I/O、Stream、Express、NestJS、TypeScript、V8 |
 
 ### 06. 特定領域
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [Web／API 安全](./16_Security.md) | 5 | 身份、JWT、API 防護、CSRF、TLS |
+| [Web／API 安全](./16_Security.md) | 10 | 身份、JWT、API 防護、CSRF、TLS |
+| [Testing](./19_Testing.md) | 9 | 測試分層、契約、效能、混沌與安全測試 |
+| [AI Engineering](./20_AI_Engineering.md) | 4 | MLOps、LLMOps、RAG 與評測 |
+| [Engineering Management](./21_Engineering_Management.md) | 4 | 領導、協作、招募、培養與事故學習 |
+| [Frontend Development](./22_Frontend_Development.md) | 10 | React／Vue 狀態、渲染、生命週期與路由 |
 
 ---
 
@@ -134,11 +163,12 @@
 
 | 分類 | 完成狀態 |
 |------|----------|
-| 電腦科學基礎 | ⬜ |
-| 後端開發 | ⬜ |
-| 系統設計與架構 | ⬜ |
-| 基礎設施與 DevOps | ⬜ |
-| 程式語言 | ⬜ |
+| 電腦科學基礎 | ✅（重要程度 4–5 已接入） |
+| 後端開發 | ✅（重要程度 4–5 已接入） |
+| 系統設計與架構 | ✅（重要程度 4–5 已接入） |
+| 基礎設施與 DevOps | ✅（重要程度 4–5 已接入） |
+| 程式語言 | ✅（重要程度 4–5 已接入） |
+| 特定領域／前端 | ✅（重要程度 4–5 已接入） |
 
 ---
 
