@@ -20,6 +20,7 @@
   - `LO-2`: 能夠區分 Readable、Writable、Duplex 與 Transform Stream 的資料流方向和責任。
   - `LO-3`: 能夠依資料量與生產／消費速度使用 pipe、`write()` 返回值與 `drain` 處理背壓。
 - **Quick Quiz**: [Node.js Q4](../../../../QUIZ/07_Node.js.md#q4)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

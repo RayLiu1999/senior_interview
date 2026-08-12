@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依認證授權、參數驗證轉換、日誌或回應轉換需求選擇正確組件。
   - `LO-3`: 能夠分析全局、Controller 與路由範圍的註冊順序，並預測錯誤在生命週期中的處理位置。
 - **Quick Quiz**: [Node.js Q10](../../../../../QUIZ/07_Node.js.md#q10)
+- **Hard Assessment**: [NestJS Modular API Incident](../../../../../QUIZ/Hard_Assessments/nestjs_modular_api_incident.md) (`assessment.nodejs.nestjs-modular-api.incident.v1`)
 
 ## 核心理論與詳解
 

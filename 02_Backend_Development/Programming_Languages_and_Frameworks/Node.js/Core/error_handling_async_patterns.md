@@ -16,6 +16,7 @@
   - `LO-2`: 能夠選擇 Promise 組合器與 async/await 的錯誤傳播方式，避免遺漏 rejection 或錯誤被吞掉。
   - `LO-3`: 能夠區分操作錯誤與程式錯誤，並設計記錄、恢復、重拋與程序退出策略。
 - **Quick Quiz**: [Node.js Q3](../../../../QUIZ/07_Node.js.md#q3)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

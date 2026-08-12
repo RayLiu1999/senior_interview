@@ -8,6 +8,16 @@
 
 請深入解釋 NestJS 中 Provider 的概念、Service 層的設計原則、不同類型的 Provider 以及它們的應用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nestjs.providers-services`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Service、Repository、Factory、Helper 與 custom provider token 的責任和替換方式。
+  - `LO-2`: 能夠以 Controller、Service、Repository 分層設計業務 ownership、測試替身與副作用邊界。
+  - `LO-3`: 能夠依 request state、cache、資料庫連線與外部 client 的生命週期選擇 provider scope，避免共享可變狀態。
+- **Quick Quiz**: [Node.js Q16](../../../../../QUIZ/07_Node.js.md#q16)
+- **Hard Assessment**: [NestJS Modular API Incident](../../../../../QUIZ/Hard_Assessments/nestjs_modular_api_incident.md) (`assessment.nodejs.nestjs-modular-api.incident.v1`)
+
 ## 核心理論與詳解
 
 ### Provider 概念

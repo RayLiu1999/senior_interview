@@ -35,16 +35,18 @@
 | Python Async Service | [Python Async Service Incident](./Hard_Assessments/python_async_service_incident.md) | FastAPI、事件循環、GIL、記憶體與依賴生命週期 |
 | C# ASP.NET Runtime | [C# ASP.NET Runtime Incident](./Hard_Assessments/csharp_aspnet_runtime_incident.md) | async、Task、鎖、GC、ASP.NET Core DI 與容量診斷 |
 | PHP-FPM Laravel Runtime | [PHP-FPM Laravel Runtime Incident](./Hard_Assessments/php_fpm_laravel_runtime_incident.md) | PHP-FPM、OPcache、GC、Laravel Service Container 與效能診斷 |
+| Node.js Event Loop Runtime | [Node.js Event Loop Runtime Incident](./Hard_Assessments/nodejs_event_loop_runtime_incident.md) | Event Loop、非阻塞 I/O、Stream 背壓、Express 錯誤與 V8 記憶體 |
+| NestJS Modular API | [NestJS Modular API Incident](./Hard_Assessments/nestjs_modular_api_incident.md) | Module Graph、DI Scope、Provider、Request Lifecycle 與 Exception Filter |
 | 限量資源系統設計 | [限量資源容量與一致性設計](./Hard_Assessments/flash_sale_capacity_correctness.md) | 秒殺、分散式鎖、購票與容量 |
 | Go Worker Pipeline | [Go Worker Pipeline 診斷](./Hard_Assessments/go_concurrent_worker_diagnosis.md) | 取消、背壓、Channel 與 Goroutine |
 
-目前包含四題跨領域試點、四題核心後端批次與十二題 Phase 3 延伸批次；不代表所有文章都已完成硬測驗映射。
+目前包含四題跨領域試點、四題核心後端批次與十四題 Phase 3 延伸批次；不代表所有文章都已完成硬測驗映射。
 
 ---
 
 ## 📂 考題索引
 
-目前主要分類均已有分類 Quiz；Java 先完成 JVM／並發／Spring runtime 第一批，其餘 Java 主題與其他語言框架仍依 Phase 3 排程補齊。
+目前主要分類均已有分類 Quiz；Java 與 Node.js runtime、NestJS framework 已先完成第一批，其餘語言框架仍依 Phase 3 排程補齊。
 
 ### 01. 電腦科學基礎
 | 主題 | 題數 | 說明 |
@@ -87,6 +89,7 @@
 | [Python](./05_Python.md) | 14 | GIL、裝飾器、生成器、asyncio、FastAPI |
 | [C#](./08_CSharp.md) | 17 | async/await、GC、LINQ、ASP.NET Core |
 | [PHP](./09_PHP.md) | 18 | PHP 8+、Laravel、安全、OPcache |
+| [Node.js](./07_Node.js.md) | 17 | Event Loop、非阻塞 I/O、Stream、Express、NestJS、TypeScript、V8 |
 
 ### 06. 特定領域
 | 主題 | 題數 | 說明 |

@@ -2,7 +2,7 @@
 
 - **盤點基準日**: 2026-08-12
 - **適用範圍**: `01_Computer_Science_Fundamentals` 至 `06_Frontend_Development`、`QUIZ/`
-- **文件狀態**: 執行紀錄版（Phase 0–2 已完成；Phase 3 核心後端、基礎設施、系統設計、語言、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C# 與 PHP 第一批已完成）
+- **文件狀態**: 執行紀錄版（Phase 0–2 已完成；Phase 3 核心後端、基礎設施、系統設計、語言、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C#、PHP、Node.js runtime 與 NestJS framework 批次已完成）
 - **相關規格**: [硬測驗規格](./ASSESSMENT_SPEC.md)
 
 ## 一、決策摘要
@@ -31,7 +31,7 @@
 | 前端開發 | 10 | 後端主線完成後再處理 |
 | **合計** | **553** | |
 
-Markdown 檔案總數為 696，另有 97 個 README 索引頁、24 份分類 Quick Quiz、1 份規格、1 份路線圖、20 份 Hard Assessment 與相關索引文件。
+Markdown 檔案總數為 698，另有 97 個 README 索引頁、24 份分類 Quick Quiz、1 份規格、1 份路線圖、22 份 Hard Assessment 與相關索引文件。
 
 ### 2.2 文章 metadata 與可讀性
 
@@ -43,21 +43,21 @@ Markdown 檔案總數為 696，另有 97 個 README 索引頁、24 份分類 Qui
 | 重要程度 5 | 304 | 第一批優先 |
 | 重要程度 4 | 220 | 第一批優先 |
 | 重要程度 3 | 29 | 第二批或採輕量測驗 |
-| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 191 / 553 | 已完成 Phase 2 基礎映射，並完成核心後端、Kubernetes、限量資源、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C# 與 PHP 第一批 |
+| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 194 / 553 | 已完成 Phase 2 基礎映射，並完成核心後端、Kubernetes、限量資源、Docker、CI/CD、雲端、安全、架構模式、Java、Python、C#、PHP、Node.js runtime 與 NestJS framework 批次 |
 
 文章長度分布如下：少於 100 行 122 篇、100–199 行 145 篇、200–399 行 84 篇、400 行以上 202 篇。長文不必全部重寫，但在建立測驗前應先拆出 3–6 個可觀察的 Learning Objectives，避免一題測試整篇文章。
 
 ### 2.3 Quick Quiz 現況
 
-- 24 份分類 Quiz，共 205 題。
-- 目前有 203 個有效的文章連結，對應 191 篇不同文章，約為全體文章的 34.5%。
+- 24 份分類 Quiz，共 208 題。
+- 目前有 206 個有效的文章連結，對應 194 篇不同文章，約為全體文章的 35.1%。
 - 另有 2 題明確標記 `Article mapping: pending`，原因是來源文章尚未建立；目前沒有失效文章連結。
 - 每一道 Quiz 題都已有 `Concept ID` 與 Learning Objective ID，可用於判斷文章變更的影響範圍。
 - 現有格式以「問題 → 答案提示 → 完整文章」為主，適合保留，不需要改造成 Hard Assessment。
 
 ### 2.4 Hard Assessment 現況
 
-目前有二十份跨領域／核心後端／延伸 Assessment：
+目前有二十二份跨領域／核心後端／延伸 Assessment：
 
 | 概念 | Assessment | 狀態 |
 | :--- | :--- | :--- |
@@ -79,14 +79,16 @@ Markdown 檔案總數為 696，另有 97 個 README 索引頁、24 份分類 Qui
 | Python Async Service | `python_async_service_incident.md` | 已與文章雙向連結 |
 | C# ASP.NET Runtime | `csharp_aspnet_runtime_incident.md` | 已與文章雙向連結 |
 | PHP-FPM Laravel Runtime | `php_fpm_laravel_runtime_incident.md` | 已與文章雙向連結 |
+| Node.js Event Loop Runtime | `nodejs_event_loop_runtime_incident.md` | 已與文章雙向連結 |
+| NestJS Modular API | `nestjs_modular_api_incident.md` | 已與文章雙向連結 |
 | 限量資源系統設計 | `flash_sale_capacity_correctness.md` | 已與文章雙向連結 |
 | Go Worker Pipeline | `go_concurrent_worker_diagnosis.md` | 已與文章雙向連結 |
 
-二十題均已具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據、0–4 評分規準、通過門檻、參考答案、常見失分點與延伸追問；文章與 Assessment 的反向連結、Concept 對應與本地 Markdown 連結也已完成驗證。Learning Objective ID 可在單一 Concept 內使用 `LO-1` 等局部 ID，或在跨 Concept 測驗中使用帶 Concept 前綴的穩定 ID。
+二十二題均已具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據、0–4 評分規準、通過門檻、參考答案、常見失分點與延伸追問；文章與 Assessment 的反向連結、Concept 對應與本地 Markdown 連結也已完成驗證。Learning Objective ID 可在單一 Concept 內使用 `LO-1` 等局部 ID，或在跨 Concept 測驗中使用帶 Concept 前綴的穩定 ID。
 
 ### 2.5 連結健康度
 
-排除 fenced code 內的示例連結後，全庫共有 1,438 個本地 Markdown 連結，路徑與題目錨點均已通過檢查：
+排除 fenced code 內的示例連結後，全庫共有 1,471 個本地 Markdown 連結，路徑與題目錨點均已通過檢查：
 
 | 來源 | 失效數 | 判定 |
 | :--- | ---: | :--- |
@@ -242,7 +244,7 @@ Quick Quiz / Hard Assessment
 
 完成條件：所有既有 Quiz 題都能追溯到 Concept ID；需要 Quick Quiz 的概念對應率可由檢查工具產出；有效連結率 100%。
 
-### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成至 PHP 第一批
+### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成至 NestJS framework 批次
 
 **目標**：逐步讓每個受治理概念的 Learning Objectives 都有可評分的應用題。
 
@@ -266,7 +268,9 @@ Quick Quiz / Hard Assessment
 9. **Python 第一批**：FastAPI async route、事件循環、併發模型、GIL、記憶體與 FastAPI DI（已完成 1 份 Assessment、補 1 題 Quick Quiz、5 篇文章接入；其中 4 篇沿用既有 Quick Quiz 映射）。
 10. **C# 第一批**：async/await、Task、lock／Monitor、.NET GC 與 ASP.NET Core DI（已完成 1 份 Assessment、沿用 5 題既有 Quick Quiz，5 篇既有映射文章新增 Hard Assessment 反向連結）。
 11. **PHP 第一批**：PHP-FPM、OPcache/JIT、PHP GC、Laravel Service Container 與效能（已完成 1 份 Assessment、沿用 5 題既有 Quick Quiz，5 篇既有映射文章新增 Hard Assessment 反向連結）。
-12. **後續批次**：Node.js 及其框架。
+12. **Node.js 第一批**：Event Loop、非阻塞 I/O、非同步錯誤、Stream 背壓、V8 記憶體與 Express 錯誤邊界（已完成 1 份 Assessment、沿用 6 題既有 Quick Quiz，6 篇既有映射文章新增 Hard Assessment 反向連結）。
+13. **NestJS framework 批次**：Module Graph、DI Scope、Provider／Service、Request Lifecycle 與 Exception Filter（已完成 1 份 Assessment、新增 3 題 Quick Quiz，5 篇文章完成雙向映射）。
+14. **後續批次**：其餘語言與框架。
 
 每一批都採「先補文章目標 → 再補 Quick Quiz → 再寫 Hard Assessment → 執行覆蓋率檢查」的順序。不要直接為 553 篇文章各寫一份孤立的測驗檔；先按概念邊界與 Learning Objectives 分組。
 
@@ -320,7 +324,7 @@ CI 初期可先阻擋新檔案與被修改檔案的錯誤；目前全庫連結�
 
 - 全庫本地 Markdown 連結失效數降至 0。
 - 新增或修改的文章、Quiz、Assessment 不得新增死連結。
-- 二十個已建立的 Assessment 能通過同一套檢查，並可作為後續批次範本。
+- 二十二個已建立的 Assessment 能通過同一套檢查，並可作為後續批次範本。
 
 ## 七、主要風險與對策
 
@@ -363,6 +367,10 @@ Phase 3：C# 第一批（完成）
     ↓
 Phase 3：PHP 第一批（完成）
     ↓
+Phase 3：Node.js 第一批（完成）
+    ↓
+Phase 3：NestJS framework 批次（完成）
+    ↓
 Phase 3：其餘語言／框架批次
     ↓
 Phase 4：加入自動檢查與 CI
@@ -370,4 +378,4 @@ Phase 4：加入自動檢查與 CI
 Phase 5：以變更影響矩陣持續維護
 ```
 
-下一個實作批次應延續 **Phase 3**，處理 Node.js 及其框架；完成後再把目前已驗證的檢查規則固化為 Phase 4 的唯讀檢查工具。
+下一個實作批次應延續 **Phase 3**，處理其餘語言與框架；完成後再把目前已驗證的檢查規則固化為 Phase 4 的唯讀檢查工具。

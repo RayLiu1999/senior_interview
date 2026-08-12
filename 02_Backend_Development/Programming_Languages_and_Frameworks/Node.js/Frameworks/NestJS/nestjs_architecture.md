@@ -16,6 +16,7 @@
   - `LO-2`: 能夠從依賴註冊到實例注入推導 NestJS 的依賴注入流程。
   - `LO-3`: 能夠依模組化、平台抽象與跨切面需求評估 NestJS 相對 Express 或 Koa 的架構取捨。
 - **Quick Quiz**: [Node.js Q9](../../../../../QUIZ/07_Node.js.md#q9)
+- **Hard Assessment**: [NestJS Modular API Incident](../../../../../QUIZ/Hard_Assessments/nestjs_modular_api_incident.md) (`assessment.nodejs.nestjs-modular-api.incident.v1`)
 
 ## 核心理論與詳解
 

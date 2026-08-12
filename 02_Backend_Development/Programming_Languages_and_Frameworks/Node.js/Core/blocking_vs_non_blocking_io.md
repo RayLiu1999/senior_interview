@@ -16,6 +16,7 @@
   - `LO-2`: 能夠辨識 Node.js 同步 API、Libuv 執行緒池與事件循環在請求處理中的角色。
   - `LO-3`: 能夠依高併發 I/O 或啟動腳本情境選擇 API，並說明主執行緒阻塞的吞吐量風險。
 - **Quick Quiz**: [Node.js Q2](../../../../QUIZ/07_Node.js.md#q2)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

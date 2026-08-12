@@ -734,6 +734,77 @@ const cache = new WeakMap();
 
 ---
 
+## 🏗️ NestJS 框架深入 (NestJS)
+
+<a id="q15"></a>
+### Q15: NestJS 的依賴注入與模組系統如何運作？
+<!-- Concept ID: concept.nodejs.nestjs.dependency-injection-modules; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 Module、imports、providers、controllers、exports 與 custom provider token 如何共同形成 NestJS 的依賴圖。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **Module 是邊界**：`controllers` 接收請求，`providers` 登記可注入實例，`exports` 決定哪些 provider 可被匯入模組使用。
+- **依賴解析**：容器先讀取 metadata 和 token，再沿著 imports 尋找可見 provider，依 scope 建立或重用實例。
+- **Custom provider**：`useClass`、`useValue`、`useFactory`、`useExisting` 適合替換實作、注入設定、建立外部 client 或提供別名。
+- **常見風險**：忘記 export、在多個模組重複註冊同一 provider、循環依賴、把 request state 放入 singleton。
+- **測試**：以 token 覆寫 provider，讓 controller／service 測試不必連接真實資料庫或外部服務。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/NestJS/dependency_injection_modules.md)
+
+---
+
+<a id="q16"></a>
+### Q16: NestJS Provider 與 Service 如何劃分責任？
+<!-- Concept ID: concept.nodejs.nestjs.providers-services; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 Service、Repository、Factory、Helper 與 custom provider，並說明如何設計 scope、測試替身與外部資源 ownership。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **Controller** 負責協定、輸入與輸出；**Service** 協調業務規則；**Repository** 負責資料存取；Factory／custom provider 負責建立或替換實作。
+- Provider 不只是「放工具函式的地方」；要讓每個 provider 有清楚的 ownership、錯誤邊界與副作用。
+- 無狀態且可安全共享的 client 可以使用 singleton；request context、租戶資料與可變工作狀態應使用 request scope 或明確傳入。
+- 使用 token 和 mock／fake 進行測試，避免測試因真實資料庫、Redis 或 HTTP client 而失去隔離。
+- 不要讓一個 Service 同時承擔 HTTP、資料庫、付款、通知和快取全部責任，否則變更與故障難以定位。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/NestJS/providers_and_services.md)
+
+---
+
+<a id="q17"></a>
+### Q17: NestJS Exception Filter 如何設計？
+<!-- Concept ID: concept.nodejs.nestjs.exception-handling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 Exception Filter 的捕獲範圍、HTTP status mapping、日誌與安全錯誤回應應如何設計。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- NestJS 可在 route、controller 或 global scope 套用 filter；要先區分 `HttpException`、domain／下游錯誤與未知 programmer error。
+- 統一錯誤回應通常包含 status、穩定 error code、correlation ID、timestamp 與 path，但 production 不應暴露 stack、SQL 或租戶敏感資料。
+- Filter 要記錄足夠的 server-side context，並把可預期的驗證／衝突／下游 timeout 映射成一致的 HTTP 語意。
+- 未知錯誤應回傳安全的 500，不能把原始 exception message 直接交給客戶端；若 response headers 已送出，也不能重複寫新的 body。
+- 錯誤處理還要配合 request lifecycle、取消、重試與監控，避免只改 response 格式而遺失故障證據。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/NestJS/exception_handling.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：
@@ -750,6 +821,9 @@ const cache = new WeakMap();
 | 掌握 Express 錯誤處理 | ⬜ |
 | 了解 NestJS 架構概念 | ⬜ |
 | 理解 NestJS 請求生命週期 | ⬜ |
+| 理解 NestJS 模組與依賴注入 | ⬜ |
+| 掌握 Provider／Service 分層與 scope | ⬜ |
+| 能設計 NestJS Exception Filter | ⬜ |
 | 能說明 TypeScript 優勢 | ⬜ |
 | 了解 V8 優化原理 | ⬜ |
 | 能診斷記憶體洩漏 | ⬜ |

@@ -16,6 +16,7 @@ Express.js 是如何處理錯誤的？請解釋同步和非同步程式碼中的
   - `LO-2`: 能夠設計位於路由之後的四參數集中式錯誤處理中介層。
   - `LO-3`: 能夠依環境安全地記錄錯誤、映射 HTTP 狀態碼並避免向生產客戶端暴露堆疊。
 - **Quick Quiz**: [Node.js Q8](../../../../../QUIZ/07_Node.js.md#q8)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

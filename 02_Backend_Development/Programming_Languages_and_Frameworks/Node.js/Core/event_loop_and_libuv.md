@@ -16,6 +16,7 @@ Node.js 的核心特性是其非阻塞、事件驅動的 I/O 模型，而事件�
   - `LO-2`: 能夠解釋 Node.js、V8 與 Libuv 如何分工處理 JavaScript、作業系統 I/O 與執行緒池工作。
   - `LO-3`: 能夠根據 `process.nextTick`、Promise、`setTimeout` 與 `setImmediate` 推導可觀察的執行順序。
 - **Quick Quiz**: [Node.js Q1](../../../../QUIZ/07_Node.js.md#q1)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

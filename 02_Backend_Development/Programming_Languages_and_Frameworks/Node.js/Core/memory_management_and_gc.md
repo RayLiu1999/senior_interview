@@ -16,6 +16,7 @@
   - `LO-2`: 能夠說明 Scavenge、Mark-Sweep、Mark-Compact、增量與並發標記的回收取捨。
   - `LO-3`: 能夠從全域引用、閉包、集合與事件監聽器等症狀設計記憶體洩漏的量測和排查流程。
 - **Quick Quiz**: [Node.js Q14](../../../../QUIZ/07_Node.js.md#q14)
+- **Hard Assessment**: [Node.js Event Loop Runtime Incident](../../../../QUIZ/Hard_Assessments/nodejs_event_loop_runtime_incident.md) (`assessment.nodejs.event-loop-runtime.incident.v1`)
 
 ## 核心理論與詳解
 

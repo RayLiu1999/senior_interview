@@ -8,6 +8,16 @@
 
 請深入解釋 NestJS 的異常處理機制、Exception Filters 的工作原理、內建異常類型以及如何實現自定義異常處理策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nestjs.exception-handling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依請求生命週期說明 HttpException、未知錯誤與 Exception Filter 的捕獲和格式化順序。
+  - `LO-2`: 能夠設計安全的 global／controller／route filter，統一狀態碼、錯誤代碼、correlation ID 與日誌欄位。
+  - `LO-3`: 能夠區分可恢復的 domain／下游錯誤與 programmer error，並處理租戶隔離、敏感資訊與 response headers 已送出的邊界。
+- **Quick Quiz**: [Node.js Q17](../../../../../QUIZ/07_Node.js.md#q17)
+- **Hard Assessment**: [NestJS Modular API Incident](../../../../../QUIZ/Hard_Assessments/nestjs_modular_api_incident.md) (`assessment.nodejs.nestjs-modular-api.incident.v1`)
+
 ## 核心理論與詳解
 
 ### 異常處理流程

@@ -8,6 +8,16 @@
 
 請深入解釋 NestJS 的依賴注入（DI）機制、IoC 容器的工作原理、模組的組織方式以及 Provider 的作用域管理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nestjs.dependency-injection-modules`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 NestJS Module metadata、imports、controllers、providers 與 exports 如何形成功能邊界。
+  - `LO-2`: 能夠從 token、custom provider 與 scope 推導 NestJS IoC 容器的依賴解析流程。
+  - `LO-3`: 能夠依模組重用、動態設定、循環依賴與測試替換需求設計穩定的 module graph。
+- **Quick Quiz**: [Node.js Q15](../../../../../QUIZ/07_Node.js.md#q15)
+- **Hard Assessment**: [NestJS Modular API Incident](../../../../../QUIZ/Hard_Assessments/nestjs_modular_api_incident.md) (`assessment.nodejs.nestjs-modular-api.incident.v1`)
+
 ## 核心理論與詳解
 
 ### 依賴注入（Dependency Injection）
