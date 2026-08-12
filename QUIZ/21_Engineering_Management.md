@@ -78,6 +78,60 @@
 
 📖 [查看完整答案](../05_Specialized_Topics/Engineering_Management/technical_leadership_and_influence.md)
 
+### Q5: Waterfall、Agile 與 Hybrid 應如何依風險選擇？
+<!-- Concept ID: concept.engineering-management.delivery-model-waterfall; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 waterfall、iterative、agile 與 hybrid 在需求不確定性、合規、依賴、回饋速度與變更成本上的取捨，並提出可驗證的交付節奏。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Waterfall 將階段、輸入、approval 與交付物排成較固定的依賴鏈，適合需求與治理邊界穩定的情境，但晚期回饋會放大變更成本。
+- Agile 以短週期增量取得回饋，並不代表放棄設計、文件或品質；hybrid 可將合規與架構 gate 固定化，同時讓可變需求以迭代方式驗證。
+- 用 decision record、risk burn-down、lead time、缺陷、變更失敗率、回滾時間與 customer outcome 檢查模型是否有效，而不是只看是否遵守流程名稱。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Software_Development_Models/waterfall_model.md)
+
+### Q6: Hiring interview 如何提高 signal 並降低 bias？
+<!-- Concept ID: concept.engineering-management.hiring-interviewing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計一個 senior engineer 的結構化面試 loop，說明 competency rubric、evidence、calibration、candidate experience 與 hiring decision 的 ownership。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先由職能與團隊需要定義可觀察的 competency，再讓每個 interview stage 只負責有限的 signal，使用相同問題骨架與行為錨點降低 interviewer variance。
+- 評估筆記應記錄具體行為、推理、限制與影響，不把「感覺適合」或單一強項替代整體證據；面試後做獨立評分再 calibration，避免權威或第一印象污染。
+- 清楚分離 interviewer recommendation、hiring manager decision、reference／background check 與 onboarding feedback，持續用 quality、drop-off、time-to-hire 與新人成效回顧流程。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Engineering_Management/hiring_and_interviewing.md)
+
+### Q7: Agile project management 如何把速度、品質與負荷放在同一個決策框架？
+<!-- Concept ID: concept.engineering-management.agile-delivery; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+當 backlog 持續膨脹、跨團隊依賴增加且 production incident 上升時，請說明如何調整 priority、WIP、iteration、capacity、風險與 rollback。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先把 outcome、must-not-break 的品質條件、依賴、unplanned work 與容量透明化，再按價值、風險、成本與可逆性排序，而不是用 velocity 直接承諾更多。
+- 限制 WIP、縮小 batch、保留 hardening／incident capacity，讓每個 increment 都有 Definition of Done、觀測、owner 與可回滾路徑。
+- 追蹤 cycle time、blocked time、deployment frequency、change failure rate、恢復時間、缺陷與團隊負荷，將數據用於調適而非個人績效排名。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Engineering_Management/project_management_agile.md)
+
 ## 學習進度檢核
 
 | 評估項目 | 自評 |

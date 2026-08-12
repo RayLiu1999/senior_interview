@@ -516,3 +516,22 @@
 </details>
 
 📖 [查看完整答案](../03_System_Design_and_Architecture/Software_Architecture/evolution_stage_1_monolith.md)
+
+<a id="q28"></a>
+### Q28: Repository 與 Factory 如何共同保護 Aggregate 邊界？
+<!-- Concept ID: concept.ddd.repository-factory-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請區分 Repository、Factory、Aggregate 與 application service 的責任，並說明如何避免 persistence model、ORM、transaction 與測試替身滲入 domain invariant。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Factory 負責在建立時驗證必要條件與 invariant；Repository 負責依 domain identity 取得或保存 aggregate，不能繞過 aggregate 直接修改內部狀態。
+- transaction boundary 應包住一次完整的 domain decision 與 repository unit of work；reconstitution 可使用專用方法，但仍要驗證版本、identity 與不變條件。
+- 以 domain contract test、fake／integration test、optimistic concurrency 與 persistence mapping test 證明 adapter 沒有把 ORM 欄位或 lazy loading 變成 domain API。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Domain_Driven_Design/repository_and_factory_patterns.md)

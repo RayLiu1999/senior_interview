@@ -108,3 +108,15 @@ func main() {
     fmt.Println("產品部署，進入維護階段。")
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.engineering-management.delivery-model-waterfall`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 waterfall 的階段、依賴、approval、feedback 與變更成本。
+  - `LO-2`: 能比較 waterfall、iterative、agile、hybrid 在風險、合規與回饋速度上的取捨。
+  - `LO-3`: 能在固定期限、未知需求與治理要求下設計可驗證的交付節奏。
+- **Prerequisites**: software delivery lifecycle、risk management、testing
+- **Quick Quiz**: [Engineering Management Quick Quiz：Delivery Models](../../QUIZ/21_Engineering_Management.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

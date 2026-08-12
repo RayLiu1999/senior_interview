@@ -48,3 +48,15 @@ Scrum 和 Kanban 有什麼區別？如何進行準確的工時估算 (Estimation
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+### 測驗對應
+
+- **Concept ID**: `concept.engineering-management.agile-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 backlog、迭代、increment、priority、risk 與 feedback loop。
+  - `LO-2`: 能從 cycle time、WIP、defect、unplanned work 與 outcome 評估流程健康。
+  - `LO-3`: 能設計兼顧 delivery、品質、團隊負荷、依賴與 rollback 的 agile operating model。
+- **Prerequisites**: software delivery、planning、observability
+- **Quick Quiz**: [Engineering Management Quick Quiz：Agile Project Management](../../QUIZ/21_Engineering_Management.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

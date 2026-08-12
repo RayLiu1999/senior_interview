@@ -48,3 +48,15 @@
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+### 測驗對應
+
+- **Concept ID**: `concept.engineering-management.hiring-interviewing`
+- **Learning Objectives**:
+  - `LO-1`: 能設計與職能相關、結構化且可重複的 senior engineering interview loop。
+  - `LO-2`: 能分析 signal、bias、rubric、calibration、candidate experience 與 hiring risk。
+  - `LO-3`: 能將面試證據連到 onboarding、team need、決策 ownership 與回顧改進。
+- **Prerequisites**: engineering competency、feedback、team design
+- **Quick Quiz**: [Engineering Management Quick Quiz：Hiring](../../QUIZ/21_Engineering_Management.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

@@ -85,3 +85,15 @@ func TestIsPositive(t *testing.T) {
 - **Go**: `go-mutesting`
 - **Java**: `Pitest`
 - **JavaScript**: `Stryker`
+
+### 測驗對應
+
+- **Concept ID**: `concept.testing.mutation.testing-signal`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 mutant、killed／survived、equivalent mutant 與 mutation score。
+  - **LO-2**: 能分析 mutation operator、測試弱點、成本、並行與 flaky interaction。
+  - **LO-3**: 能把 mutation evidence 連到測試優先級、release gate 與可維護的品質改善。
+- **Prerequisites**: unit testing、property／branch coverage、test design
+- **Quick Quiz**: [Testing Quick Quiz：Mutation Testing](../../QUIZ/19_Testing.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

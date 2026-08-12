@@ -65,3 +65,15 @@ ATDD 通常遵循一個稱為“三方會談 (The Three Amigos)”的協作模�
 4. **改善溝通**：打破了業務、開發和測試之間的壁壘，促進了跨職能團隊的協作。
 
 ATDD 將測試從開發後期的“質量保證”活動，轉變為開發前期的“需求定義”活動，是實現敏捷和 DevOps 文化的重要實踐。
+
+### 測驗對應
+
+- **Concept ID**: `concept.testing.atdd.acceptance-collaboration`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 ATDD、TDD、BDD、驗收條件與三方會談的責任。
+  - `LO-2`: 能把模糊需求轉成可觀察、可執行且涵蓋負面案例的 acceptance examples。
+  - `LO-3`: 能處理測試維護、flaky scenario、業務變更與 release evidence。
+- **Prerequisites**: testing pyramid、BDD、user story、acceptance criteria
+- **Quick Quiz**: [Testing Quick Quiz：ATDD](../../QUIZ/19_Testing.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

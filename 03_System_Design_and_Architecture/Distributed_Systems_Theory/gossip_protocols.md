@@ -142,3 +142,15 @@ func main() {
     ticker.Stop()
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.distributed.gossip.membership-convergence`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 push、pull、push-pull、fan-out、版本與 gossip convergence。
+  - `LO-2`: 能分析冗餘、網路分區、membership failure、false positive 與 bandwidth cost。
+  - `LO-3`: 能設計 anti-entropy、退化、可觀測與 rollback／repair 策略。
+- **Prerequisites**: distributed systems、failure detector、eventual consistency
+- **Quick Quiz**: [Distributed Systems Quick Quiz：Gossip](../../QUIZ/03_Distributed_Systems_and_Microservices.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

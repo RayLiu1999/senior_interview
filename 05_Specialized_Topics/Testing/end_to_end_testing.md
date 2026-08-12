@@ -66,3 +66,15 @@ E2E 測試是測試策略中有價值的一部分，但它是一把「雙面刃�
 -   持續監控 E2E 測試的穩定性，並積極解決任何不穩定的測試案例。
 
 通過這種方式，團隊可以在獲得足夠信心的同時，保持快速的回饋循環和高效的開發流程。
+
+### 測驗對應
+
+- **Concept ID**: `concept.testing.end-to-end.boundary-confidence`
+- **Learning Objectives**:
+  - **LO-1**: 能說明 E2E test 的系統邊界、使用者旅程、環境與依賴。
+  - **LO-2**: 能分析 flaky、test data、並行、外部 service、定位成本與 coverage blind spot。
+  - **LO-3**: 能設計少量高價值 E2E、contract／integration 補位與安全的 failure triage。
+- **Prerequisites**: integration testing、test isolation、CI pipeline
+- **Quick Quiz**: [Testing Quick Quiz：End-to-End Testing](../../QUIZ/19_Testing.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

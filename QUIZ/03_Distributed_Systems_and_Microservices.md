@@ -573,6 +573,25 @@ Client → Load Balancer → Service
 
 ---
 
+<a id="q18"></a>
+### Q18: Gossip protocol 如何在不依賴中央節點下維持 membership 收斂？
+<!-- Concept ID: concept.distributed.gossip.membership-convergence; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較 push、pull、push-pull 與 anti-entropy，並說明網路分區、失敗偵測誤判、重複訊息與 bandwidth cost 對收斂的影響。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Gossip 以週期性抽樣與有限 fan-out 傳播狀態，push 適合散播新資料，pull 適合補齊落後節點，push-pull 通常能兼顧傳播速度與修復能力。
+- membership 的 suspicion 不等於確定故障；要以 incarnation／version、quorum 或探測結果修正 false positive，並明確處理 partition 後的重新合併。
+- 以 anti-entropy、bounded message size、去重、TTL／tombstone 與 convergence lag 監控避免訊息重複或過期狀態無限累積。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Distributed_Systems_Theory/gossip_protocols.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

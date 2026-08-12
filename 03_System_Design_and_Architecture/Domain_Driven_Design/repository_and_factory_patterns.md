@@ -100,3 +100,15 @@ func main() {
     fmt.Printf("Found user: %s\n", foundUser.Name)
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.ddd.repository-factory-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Repository、Factory、Aggregate、application service 與 infrastructure adapter。
+  - `LO-2`: 能分析 transaction boundary、identity、reconstitution、mock／fake 與 persistence leakage。
+  - `LO-3`: 能設計可測試、可演進且不繞過 domain invariant 的 persistence boundary。
+- **Prerequisites**: DDD aggregate、dependency inversion、transaction
+- **Quick Quiz**: [Architecture Patterns Quick Quiz：Repository 與 Factory](../../QUIZ/17_Architecture_Patterns.md)
+- **Hard Assessment**: [Architecture／Delivery／Quality Completion Incident](../../QUIZ/Hard_Assessments/architecture_delivery_quality_completion_incident.md) (`assessment.architecture-delivery-quality.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

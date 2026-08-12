@@ -174,3 +174,60 @@
 </details>
 
 📖 [查看完整答案](../05_Specialized_Topics/Testing/unit_testing_and_mocking.md)
+
+<a id="q10"></a>
+### Q10: ATDD 如何把需求共識轉成可維護的 acceptance examples？
+<!-- Concept ID: concept.testing.atdd.acceptance-collaboration; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 ATDD、TDD 與 BDD，並說明如何透過三方協作把成功、拒絕、邊界與不可接受的行為寫成可執行且不脆弱的驗收案例。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- ATDD 先讓 business、development、testing 對可觀察的 acceptance criteria 達成共識；TDD 聚焦實作迴圈，BDD 強調以 domain language 描述行為，三者可以互補但責任不同。
+- 範例應描述使用者可驗證的結果與重要例外，不要把 private method、資料庫欄位或 UI 細節誤當成需求契約。
+- 將 scenario 執行時間、flake、變更責任與 release evidence 納入維護，對過時範例先重新協作再刪除，不用無限增加 retry。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Testing/atdd.md)
+
+<a id="q11"></a>
+### Q11: End-to-end test 應如何控制邊界、flaky 與定位成本？
+<!-- Concept ID: concept.testing.end-to-end.boundary-confidence; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請設計少量高價值的使用者旅程，說明環境、資料、外部依賴、並行執行與 failure triage 如何共同決定 E2E 的可信度。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- E2E 應驗證跨服務與真實使用者結果，數量保持在能代表關鍵風險的最小集合；較細的規則交給 unit、integration 或 contract test。
+- 測試資料要可隔離、可重建、可追蹤；固定時間、feature flag、第三方 sandbox 與並行策略，避免共享狀態製造假失敗。
+- 失敗時保留 trace、server log、browser／client evidence、依賴狀態與重現資訊，先分類產品缺陷、環境故障與 test flake，再決定修復或重跑。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Testing/end_to_end_testing.md)
+
+<a id="q12"></a>
+### Q12: Mutation testing 的分數如何轉成實際測試改善？
+<!-- Concept ID: concept.testing.mutation.testing-signal; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請解釋 mutant、killed、survived 與 equivalent mutant，並說明如何把 mutation evidence 連到測試缺口、成本與 release gate，而不是追逐單一分數。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Mutation testing 刻意改變條件、邊界或運算；若測試沒有失敗，代表該行為可能缺少可觀察的保護，但 survived 不必然都是缺陷，可能是 equivalent mutant 或測試範圍不適合。
+- 先按風險、變更範圍與 operator 分層執行，排除等價 mutant、flake 與環境噪音，再新增能表達 domain outcome 的測試，而不是只補 implementation detail。
+- 用 mutation score、缺陷逃逸、執行時間、穩定度與維護成本共同設門檻；高風險模組可作 release gate，低風險區域則採趨勢或抽樣。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Testing/mutation_testing.md)
