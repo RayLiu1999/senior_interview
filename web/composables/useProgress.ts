@@ -81,13 +81,15 @@ export function useProgress() {
     await hydrate()
     syncing.value = true
     try {
+      const syncToken = requestedToken || state.value.syncToken || undefined
       const response = await $fetch<{
         syncToken: string
         state: ProgressState
       }>('/api/progress/sync', {
         method: 'POST',
+        headers: syncToken ? { Authorization: `Bearer ${syncToken}` } : undefined,
         body: {
-          syncToken: requestedToken || state.value.syncToken || undefined,
+          syncToken,
           state: state.value,
         },
       })
