@@ -109,3 +109,15 @@ func main() {
     fmt.Printf("Order Total: %.2f\n", order.TotalAmount())
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ddd.aggregate.invariants-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能依 identity、value equality、生命週期與不可變性區分 Entity 與 Value Object。
+  - `LO-2`: 能以一致性邊界、Aggregate Root、invariant 與小聚合原則設計可併發修改的模型。
+  - `LO-3`: 能把聚合間的 ID／事件協作、交易範圍、重試與衝突處理轉成可測試的行為契約。
+- **Prerequisites**: Entity、Value Object、交易一致性、併發控制與 Domain Event 的基本概念。
+- **Quick Quiz**: [Q13](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q13)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能為一條 invariant 指定唯一 owner、交易範圍與跨聚合的事件邊界，再進入 Hard Assessment。

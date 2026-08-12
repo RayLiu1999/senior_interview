@@ -109,3 +109,15 @@ func main() {
     order.Place()
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ddd.domain-events.event-storming`
+- **Learning Objectives**:
+  - `LO-1`: 能以過去式、業務意義與交易邊界定義 Domain Event，區分事件事實、命令與通知。
+  - `LO-2`: 能用 Event Storming 從事件、命令、聚合與政策找出上下文邊界和遺漏的不變條件。
+  - `LO-3`: 能設計 outbox、冪等、版本、重試、順序與 poison event 處理，讓事件交付可驗證。
+- **Prerequisites**: DDD 聚合、交易、Pub/Sub、最終一致性與事件版本化的基本概念。
+- **Quick Quiz**: [Q11](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q11)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能從一個業務流程區分 command、event、policy 與 side effect，並提出至少一個可靠交付證據，再進入 Hard Assessment。

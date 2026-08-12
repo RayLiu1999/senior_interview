@@ -134,3 +134,15 @@ func main() {
     fmt.Println("\n--- Sprint 1 結束 ---")
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.software-development.scrum.delivery-flow`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Product Owner、Developers、Scrum Master、事件與三項產出物的責任。
+  - `LO-2`: 能用 Sprint Goal、Definition of Done、透明性、檢視與調適檢查一個增量是否可交付。
+  - `LO-3`: 能從 flow、阻塞、未完成工作、缺陷與回饋找出 Scrum 失效原因，並提出可量測的改善實驗。
+- **Prerequisites**: Agile 價值觀、產品待辦清單、持續交付、測試與團隊協作的基本概念。
+- **Quick Quiz**: [Q17](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q17)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能以 Sprint Goal 和 DoD 說明「完成」的可驗證證據，並提出一次改善實驗的成功／停止條件，再進入 Hard Assessment。

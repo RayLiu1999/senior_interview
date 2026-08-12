@@ -98,3 +98,15 @@ func main() {
     agileIteration(3)
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.software-development.agile.feedback-flow`
+- **Learning Objectives**:
+  - `LO-1`: 能說明敏捷價值觀與原則如何形成短週期、可工作的交付與持續回饋。
+  - `LO-2`: 能辨識需求變化、技術品質、文件與計畫之間的實際取捨，而不是把敏捷等同於少寫文件。
+  - `LO-3`: 能以 lead time、品質、回饋、返工與 rollback 證據檢查流程是否真的降低交付風險。
+- **Prerequisites**: 軟體交付生命週期、版本控制、測試自動化、持續整合與產品回饋的基本概念。
+- **Quick Quiz**: [Q16](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q16)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能把一項需求拆成可驗證增量，並同時說明品質門檻、回饋來源與停止／回滾條件，再進入 Hard Assessment。

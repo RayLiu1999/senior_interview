@@ -383,6 +383,196 @@ Client → Load Balancer → Service
 
 ---
 
+### Q9: 分散式時鐘如何判斷因果與並發？
+<!-- Concept ID: concept.distributed-systems.clocks-causal-ordering; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
+
+請比較物理時鐘、Lamport Clock、Vector Clock 與 TrueTime，說明它們能保證什麼、不能保證什麼，以及如何用於事件排序與衝突處理。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 物理時鐘受 clock skew、網路延遲與校時誤差影響，時間戳不能直接證明因果。
+- Lamport Clock 保證 `a -> b` 時 `C(a) < C(b)`，但反向不成立，因此無法單獨辨識並發。
+- Vector Clock 透過偏序比較辨識因果與並發，代價是 metadata 隨節點或版本數量增加。
+- TrueTime 以有界時間區間和 commit wait 支援外部一致性，但不是免費取得全域精確時鐘。
+- 設計時要先定義是需要全序、因果序、衝突偵測還是可重播，再選擇 metadata、儲存與延遲成本。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Distributed_Systems_Theory/distributed_clocks_and_ordering.md)
+
+---
+
+### Q10: 貧血模型與充血模型如何界定領域行為？
+<!-- Concept ID: concept.ddd.anemic-rich.domain-behavior; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較貧血模型與充血模型，並說明何時應把規則放入 Entity／Value Object，何時保留在 Application Service，以及如何安全遷移。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 貧血模型把資料放在 Entity、行為集中在 Service，簡單 CRUD 可以接受，但容易讓 invariant 散落和被 Setter 繞過。
+- 充血模型讓與狀態直接相關的規則由領域物件保護；Application Service 仍負責交易協調、權限與跨邊界流程。
+- 判斷責任的關鍵是「誰擁有不變條件」與「哪一種變更原因會一起發生」，不是盲目追求更多方法。
+- 遷移可先封裝一條高風險規則、保留既有 API、加入 contract／characterization test，再逐步移除繞過模型的寫入路徑。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Domain_Driven_Design/anemic_vs_rich_domain_model.md)
+
+---
+
+### Q11: Domain Event 與 Event Storming 如何形成可交付邊界？
+<!-- Concept ID: concept.ddd.domain-events.event-storming; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 Domain Event、Command、Policy、Aggregate 在 Event Storming 中的關係，並設計一條可靠的事件發布與消費路徑。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Domain Event 是已經發生且具有業務意義的事實；Command 是意圖；Policy 描述事件後的反應；Aggregate 負責保護寫入時的不變條件。
+- Event Storming 先以事件時間線探索流程，再反推命令、聚合、政策、外部系統與邊界，不是只列事件名稱。
+- 寫入與事件發布要有清楚的原子性策略，例如 outbox；消費端則以 event ID／業務 key 做冪等。
+- 事件必須治理 schema version、順序、重試、DLQ／poison event、lag 與 replay，並能追到原始 transaction。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Domain_Driven_Design/domain_events_and_event_storming.md)
+
+---
+
+### Q12: Bounded Context 如何成為真正的架構邊界？
+<!-- Concept ID: concept.ddd.bounded-context.strategic-boundaries; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請以同一個「Product」或「User」在不同業務場景的差異，說明 Ubiquitous Language、Context Mapping 與微服務拆分的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Bounded Context 是語意與模型的邊界，不是把每個名詞或資料表直接拆成一個服務。
+- 每個上下文應有自己的語言、模型與資料 owner；跨上下文只交換穩定契約或識別碼，避免共享大一統 Entity。
+- Shared Kernel、Customer-Supplier、Open Host Service 與 Anti-Corruption Layer 的選擇，取決於協作、相容性與轉換成本。
+- 只有在變更原因、部署需求、資料 ownership 與故障域都清楚時才拆服務；交易不變條件可能先留在模組化單體內。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Domain_Driven_Design/strategic_design_bounded_context.md)
+
+---
+
+### Q13: Aggregate 如何保護 invariant 又避免過大？
+<!-- Concept ID: concept.ddd.aggregate.invariants-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請區分 Entity、Value Object、Aggregate Root，並說明如何決定聚合大小、交易邊界與聚合間的協作方式。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Entity 以 identity 和生命週期辨識；Value Object 以值相等、不可變和自我驗證辨識。
+- Aggregate 是一致性邊界，外部只透過 Root 修改內部狀態；聚合內的 invariant 應能在一次交易中保護。
+- 聚合應小而有明確 owner，聚合間用 ID 或 Domain Event 協作，不用跨聚合物件引用製造隱形交易。
+- 若跨聚合流程需要最終一致性，必須設計冪等、版本／樂觀鎖、補償與可觀測的狀態轉移。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Domain_Driven_Design/tactical_design_aggregates_entities_value_objects.md)
+
+---
+
+### Q14: 事件驅動通訊何時優於同步 API？
+<!-- Concept ID: concept.microservices.event-driven.delivery; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較同步編排與非同步協同，並說明如何處理 at-least-once、亂序、重試、背壓與最終一致性。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 同步 API 直觀且適合需要立即結果或強一致性的短流程，但延遲與可用性會受下游串聯影響。
+- 非同步事件可降低耦合、隔離故障並提高吞吐，但流程分散，必須接受或明確補救最終一致性。
+- 不能把 broker 成功等同於 side effect 成功；要追蹤 producer、broker、consumer、資料庫與外部副作用各自的狀態。
+- 以穩定 key 保序、以 event ID／idempotency key 吸收重複、以 bounded retry／DLQ／backpressure 防止無限重試，並提供 reconciliation。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Micro_Service/event_driven_communication.md)
+
+---
+
+### Q15: Service Mesh 的控制平面與資料平面各自負責什麼？
+<!-- Concept ID: concept.microservices.service-mesh.control-data-plane; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請說明 sidecar、control plane、data plane 如何共同提供流量治理、安全與可觀測性，以及引入服務網格的風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Data plane 的 proxy 實際攔截與轉送流量；control plane 下發路由、憑證與 telemetry policy，不直接承擔每個請求。
+- mTLS、路由、timeout、retry、circuit breaking 與 tracing 應有明確 owner，避免應用和 mesh 同時無界重試或互相覆蓋。
+- 排障要把應用、sidecar、control plane、DNS、網路與 upstream trace 串起來，不能只看應用 log。
+- 評估 CPU／記憶體／延遲、配置收斂、故障注入與 canary rollback；服務少或延遲極敏感時，簡單 library／gateway 可能更合理。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Micro_Service/service_mesh.md)
+
+---
+
+### Q16: 敏捷開發如何把變化轉成可控的交付回饋？
+<!-- Concept ID: concept.software-development.agile.feedback-flow; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較敏捷與瀑布模型，並說明如何避免把「敏捷」簡化成少寫文件、沒有計畫或只追求更快交付。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 敏捷以個人互動、可工作的軟體、客戶合作與回應變化為價值，透過短週期增量取得回饋。
+- 敏捷不是拒絕文件或設計，而是讓文件、品質與計畫服務於可驗證的交付和學習。
+- 每個增量應有清楚的目標、測試、觀測與可回滾路徑；需求變更仍需檢查容量、依賴與風險。
+- 用 lead time、部署頻率、變更失敗率、恢復時間、缺陷、返工與客戶價值檢查流程，而非只看 velocity。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Software_Development_Models/agile_development.md)
+
+---
+
+### Q17: Scrum 如何用透明、檢視與調適改善交付流？
+<!-- Concept ID: concept.software-development.scrum.delivery-flow; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 Scrum 的角色、事件、產出物與 Definition of Done，並分析 Sprint 中大量未完成工作或品質下降時應如何處理。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Product Owner 對價值與 Product Backlog 負責；Developers 建立可用增量；Scrum Master 促進框架、移除障礙與改善。
+- Sprint、Planning、Daily Scrum、Review、Retrospective 形成 inspect-and-adapt 迴圈；Product Backlog、Sprint Backlog、Increment 是不同產出物。
+- Sprint Goal 聚焦成果，Definition of Done 定義可交付品質；未完成項目不能用報告或口頭承諾假裝完成。
+- 應查 blocked time、cycle time、WIP、缺陷、返工、DoD 違規與回饋，縮小批次或改善工程能力，而不是只提高承諾量。
+
+</details>
+
+📖 [查看完整答案](../03_System_Design_and_Architecture/Software_Development_Models/scrum_framework.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

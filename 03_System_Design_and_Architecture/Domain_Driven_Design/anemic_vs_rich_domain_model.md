@@ -91,3 +91,15 @@ func (a *RichAccount) Balance() float64 {
 ### 總結
 
 在 DDD 中，我們強烈建議使用**充血模型**。Service 層應該只負責應用邏輯 (Application Logic)，如交易控制、權限檢查、發送 Email 等；而核心的業務規則 (Domain Logic) 應該封裝在 Domain Model 中。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ddd.anemic-rich.domain-behavior`
+- **Learning Objectives**:
+  - `LO-1`: 能區分資料容器、領域行為、應用服務與基礎設施責任，說明貧血模型的風險與適用範圍。
+  - `LO-2`: 能把業務不變條件封裝在聚合或值物件中，避免公開 Setter 讓狀態繞過規則。
+  - `LO-3`: 能以測試、變更原因與交易邊界規劃從貧血模型到較高內聚模型的漸進式遷移。
+- **Prerequisites**: 物件導向封裝、服務分層、交易與業務不變條件的基本概念。
+- **Quick Quiz**: [Q10](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q10)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能指出一條實際 invariant 的擁有者，並說明如何在不造成大重寫的情況下移動行為，再進入 Hard Assessment。

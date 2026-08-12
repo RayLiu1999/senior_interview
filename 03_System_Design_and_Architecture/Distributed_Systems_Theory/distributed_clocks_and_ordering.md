@@ -120,3 +120,15 @@ func main() {
 	nodeA.ReceiveMessage(msgTimeB) // A: max(2, 4) + 1 = 5
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.distributed-systems.clocks-causal-ordering`
+- **Learning Objectives**:
+  - `LO-1`: 能區分物理時鐘、Lamport Clock、Vector Clock 與 happened-before 關係的保證範圍。
+  - `LO-2`: 能判斷事件是因果有序、並發或只是假設上有時間先後，並說明各種時鐘的成本與限制。
+  - `LO-3`: 能把順序、衝突偵測、重播與可觀測性需求連到實際的資料或事件處理設計。
+- **Prerequisites**: 分散式系統、訊息傳遞、一致性模型與事件驅動架構的基本概念。
+- **Quick Quiz**: [Q9](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q9)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能用具體事件序列說明 Lamport 與 Vector Clock 如何判斷因果與並發，再進入 Hard Assessment。

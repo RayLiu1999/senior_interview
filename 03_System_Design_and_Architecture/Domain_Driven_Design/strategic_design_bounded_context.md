@@ -83,3 +83,15 @@ func main() {
     customer.PlaceOrder()
 }
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ddd.bounded-context.strategic-boundaries`
+- **Learning Objectives**:
+  - `LO-1`: 能用 Ubiquitous Language、模型語意、資料 ownership 與變更原因界定 Bounded Context。
+  - `LO-2`: 能比較 Shared Kernel、Customer-Supplier、Open Host Service 與 Anti-Corruption Layer 的耦合與治理成本。
+  - `LO-3`: 能判斷何時保留模組化單體、何時拆成服務，並保留必要 transaction 與可回滾的整合路徑。
+- **Prerequisites**: DDD 戰略設計、模組化單體、微服務、API／事件整合與資料一致性的基本概念。
+- **Quick Quiz**: [Q12](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q12)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能為同一個業務名詞列出兩個不同語意與各自 owner，並解釋邊界的整合成本，再進入 Hard Assessment。

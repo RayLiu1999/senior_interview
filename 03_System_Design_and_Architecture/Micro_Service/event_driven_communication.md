@@ -86,3 +86,15 @@
 雖然同步 API 呼叫在流程簡單、需要強一致性的場景下仍然有用，但在現代複雜的微服務架構中，**非同步事件驅動通訊**通常是更優的選擇。它透過犧牲一點流程的直觀性，換來了服務之間的高度解耦、系統整體更高的彈性和可擴展性。
 
 理解這兩種模式的權衡，並根據業務需求選擇合適的通訊策略，是資深工程師和架構師的核心能力之一。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.microservices.event-driven.delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能比較同步編排與非同步協同在延遲、耦合、故障隔離與一致性上的取捨。
+  - `LO-2`: 能說明 at-least-once、重複、亂序、背壓、重試、DLQ、冪等與 outbox 的責任邊界。
+  - `LO-3`: 能用 trace、lag、delivery outcome、版本與回滾條件驗證事件流程，而不是只宣稱「解耦」。
+- **Prerequisites**: HTTP／RPC、Pub/Sub、訊息交付語意、最終一致性與微服務故障模型的基本概念。
+- **Quick Quiz**: [Q14](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q14)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能畫出一條事件從產生、儲存、投遞到 side effect 的完整責任鏈，並說明失敗後如何重試與回補，再進入 Hard Assessment。

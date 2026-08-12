@@ -151,3 +151,15 @@ spec:
 **不適用場景：**
 - 小型系統（< 5 個服務），引入服務網格是過度工程化
 - 對延遲極度敏感的系統（金融高頻交易），Sidecar 的額外 Hop 不可接受
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.microservices.service-mesh.control-data-plane`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 control plane、data plane、sidecar 與應用程式在服務間通訊中的責任。
+  - `LO-2`: 能針對 mTLS、路由、重試、逾時、斷路器與 telemetry 說明一致化治理的收益和風險。
+  - `LO-3`: 能用 proxy／應用 trace、資源成本、故障注入與 canary rollback 判斷服務網格是否真的改善可靠性。
+- **Prerequisites**: 微服務網路、服務發現、負載平衡、mTLS、可觀測性與故障隔離的基本概念。
+- **Quick Quiz**: [Q15](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q15)
+- **Hard Assessment**: [DDD／Microservice Delivery Incident](../../QUIZ/Hard_Assessments/ddd_microservice_delivery_incident.md) (`assessment.ddd-microservice.delivery-incident.v1`)
+- **Assessment Gate**: 能指出一次請求在應用、sidecar 與 control plane 間的責任邊界，並提出重試／逾時的停止條件，再進入 Hard Assessment。
