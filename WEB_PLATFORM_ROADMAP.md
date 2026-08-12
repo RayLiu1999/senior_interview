@@ -47,7 +47,7 @@
 
 ### 3.0 實作進度（2026-08-13）
 
-本規劃已依 W0 → W5 完成第一版垂直產品：
+本規劃已依 W0 → W5、H1 → H3 完成第一版垂直產品與第一輪 production hardening：
 
 | 階段 | 結果 | Commit |
 | :--- | :--- | :--- |
@@ -59,6 +59,7 @@
 | W5 | 匿名同步碼、sync API、file-backed adapter、跨裝置 merge | `c51c0c5` |
 | H1 | 同步 API 的輸入大小／結構驗證、Bearer token、client rate limit 與禁止快取 | `bd141ae` |
 | H2 | file-backed adapter 版本升級、retention／筆數上限、檔案權限與遠端刪除流程 | `075b7b4` |
+| H3 | Playwright 瀏覽器 smoke tests、SSR catalog endpoint、prerender memory guard 與 CI Chromium 驗收 | `e251bb4` |
 
 目前同步 adapter 仍是單機可替換實作；多 instance、正式身份、token 撤銷與共享資料庫仍是 production hardening 工作，不把它們假裝成 MVP 已解決的問題。
 
@@ -363,6 +364,8 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 - IndexedDB schema migration tests。
 - 手機版、鍵盤操作、焦點管理與色彩對比檢查。
 
+H3 已加入兩條可重現的 browser smoke flow：Quick Quiz → 結果 → Dashboard，以及 Hard Assessment → Rubric → 弱點 Dashboard；CI 會在 production build 後安裝 Chromium 並執行它們。
+
 ### CI 建議順序
 
 1. Go content validator。
@@ -399,7 +402,7 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 
 ## 十三、MVP 驗收標準
 
-以下條件已在 W0–W5 完成；其中最後一項以 production build、API round-trip 與前端測試／typecheck 驗證：
+以下條件已在 W0–W5、H1–H3 完成；其中最後一項以 production build、API round-trip、單元測試、typecheck 與 Playwright smoke tests 驗證：
 
 MVP 完成時必須滿足：
 
@@ -412,21 +415,19 @@ MVP 完成時必須滿足：
 - 內容更新不會產生重複 ID、失效連結或測驗孤兒資料。
 - 現有 Go validator 與新增 web test／build 全部通過。
 - 手機與鍵盤使用者能完成主要學習流程。
+- CI 具備 Quick Quiz 與 Hard Assessment 的最小瀏覽器驗收，且 production prerender 不會重複嵌入完整 catalog。
 
 實作後的網站另提供 553 篇文章、567 題 Quiz 與 52 份 Assessment 的全庫路由；目前測試套件共覆蓋內容 pipeline、Quiz scoring、Assessment parsing、Progress aggregation 與 cross-device merge。
 
-## 十四、第一批執行清單
+## 十四、後續執行清單（W0–W5、H1–H3 已完成）
 
-接下來不直接實作全部功能，而依以下順序建立可驗證垂直切片：
+第一版網站、學習紀錄、匿名同步、同步資料生命週期與瀏覽器驗收已完成。下一輪優先處理部署規模與治理：
 
-1. 建立 `web/` Nuxt 應用程式骨架與最小 CI。
-2. 定義 Article、Quiz、Assessment、Attempt 與 Progress 的 schema。
-3. 實作一個分類的 manifest 產生器與內容路由。
-4. 完成文章列表、文章頁與 Concept／LO 測驗入口。
-5. 將一個分類的 Quick Quiz 正規化成可自動計分格式。
-6. 實作 IndexedDB attempt 保存、恢復與匯出。
-7. 用一份 Hard Assessment 驗證開放式作答與 Rubric 流程。
-8. 先完成垂直切片驗收，再擴展到全庫。
+1. 將 file-backed adapter 替換成共享資料庫或持久化 KV，保留相同 `ProgressStore` 行為契約。
+2. 加入正式身份、token 撤銷、加密、備份與可稽核的資料刪除流程。
+3. 將 rate limit 與 progress retention 移到共享基礎設施，補上監控、告警與恢復演練。
+4. 補充鍵盤／手機／色彩對比的 visual regression 與 accessibility gate。
+5. 依內容治理流程持續更新文章、Quick Quiz 與 Hard Assessment 的 hash／關聯。
 
 每個可審查批次都應獨立 commit，並至少執行內容 validator、web build、測試與 `git diff --check`。
 
