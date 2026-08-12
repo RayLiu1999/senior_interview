@@ -16,6 +16,7 @@
   - `LO-2`: 能夠將標準二分搜尋改寫為左邊界、右邊界、旋轉陣列與峰值搜尋。
   - `LO-3`: 能夠辨識中點計算、迴圈終止與重複值處理造成的邊界錯誤。
 - **Quick Quiz**: [Q7](../../QUIZ/01_Data_Structures_and_Algorithms.md#q7-二分搜尋的變體題目)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

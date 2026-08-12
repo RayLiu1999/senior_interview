@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據資料是否可隨機存取、是否需要穩定排序及是否適合外部排序選擇演算法。
   - `LO-3`: 能夠說明快排分區、歸併與堆排序的核心流程，以及最壞情況對選型的影響。
 - **Quick Quiz**: [Q6](../../QUIZ/01_Data_Structures_and_Algorithms.md#q6-排序演算法比較快排歸併堆排序)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

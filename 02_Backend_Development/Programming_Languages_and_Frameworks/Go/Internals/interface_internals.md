@@ -16,6 +16,7 @@ Go 的接口（Interface）是其類型系統的核心。理解接口的**底層
   - `LO-2`: 能夠解釋介面賦值、方法動態分派與類型斷言的執行時流程。
   - `LO-3`: 能夠評估介面呼叫、裝箱與類型斷言在效能和設計上的取捨。
 - **Quick Quiz**: [Go Q14](../../../../QUIZ/06_Go.md#q14)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

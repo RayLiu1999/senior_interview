@@ -16,6 +16,7 @@
   - `LO-2`: 能夠推導 push、pop、peek 與 build heap 的時間複雜度及操作流程。
   - `LO-3`: 能夠依照 K、資料流大小與排序需求選擇大小為 K 的堆、完整堆或快速選擇解法。
 - **Quick Quiz**: [Q5](../../QUIZ/01_Data_Structures_and_Algorithms.md#q5-堆的實現及-top-k-問題)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據 fd 數量、活躍比例、平台限制與時間複雜度選擇合適的多路復用機制。
   - `LO-3`: 能夠正確說明 epoll 的 LT/ET、非阻塞讀取、EAGAIN 與 EPOLLONESHOT 使用要求。
 - **Quick Quiz**: [Q6](../../QUIZ/01_Operating_System.md#q6-epoll-vs-select-vs-poll-的區別)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

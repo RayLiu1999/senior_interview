@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計保留參數、返回值與例外傳播的 wrapper。
   - `LO-3`: 能夠說明 `functools.wraps` 對函數名稱、文件字串與除錯內省的作用。
 - **Quick Quiz**: [Python Q2](../../../../QUIZ/05_Python.md#q2)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

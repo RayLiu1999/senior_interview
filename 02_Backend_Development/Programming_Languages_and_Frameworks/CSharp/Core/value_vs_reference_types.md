@@ -161,3 +161,4 @@ public void DemoTypeDifferences()
   - `LO-2`: 能夠根據參數傳遞方式與裝箱／拆箱流程預測程式行為及其配置成本。
   - `LO-3`: 能夠依據資料大小、可變性、生命週期與 GC 壓力選擇 struct 或 class。
 - **Quick Quiz**: [Q1](../../../../QUIZ/08_CSharp.md#q1-值型別-value-type-和參考型別-reference-type-有什麼區別)、[Q17](../../../../QUIZ/08_CSharp.md#q17-裝箱-boxing-和拆箱-unboxing-的效能影響是什麼)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

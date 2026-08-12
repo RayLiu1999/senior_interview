@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 `yield` 與 `return` 在執行時機、狀態保存和結束語意上的差異。
   - `LO-3`: 能夠依資料量與消費模式判斷生成器或列表何者較適合，並說明記憶體取捨。
 - **Quick Quiz**: [Python Q3](../../../../QUIZ/05_Python.md#q3)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

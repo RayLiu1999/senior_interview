@@ -16,6 +16,7 @@ DFS（深度優先搜尋）、BFS（廣度優先搜尋）和回溯法（Backtrac
   - `LO-2`: 能夠根據圖是否加權、是否要求最短路徑與是否需要枚舉選擇 DFS 或 BFS。
   - `LO-3`: 能夠將走訪方法套用到回溯、層序遍歷、拓撲排序與多源擴散問題。
 - **Quick Quiz**: [Q9](../../QUIZ/01_Data_Structures_and_Algorithms.md#q9-dfs-和-bfs-的應用場景)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

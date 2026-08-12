@@ -259,3 +259,4 @@ public static class CsvParser
   - `LO-2`: 能夠使用切片、ReadOnlySpan<T> 與 stackalloc 在不複製資料的前提下處理字串或二進位資料。
   - `LO-3`: 能夠依同步邊界與分配壓力選擇 Span、Memory、ArrayPool 或 MemoryPool，並避開逃逸限制。
 - **Quick Quiz**: [Q12](../../../../QUIZ/08_CSharp.md#q12-spanltgt-和-memoryltgt-有什麼區別)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

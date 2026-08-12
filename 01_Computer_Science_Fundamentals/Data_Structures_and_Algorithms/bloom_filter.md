@@ -16,6 +16,7 @@
   - `LO-2`: 能夠區分假陽性與不漏判的保證，並說明刪除資料對一般布隆過濾器的限制。
   - `LO-3`: 能夠為快取穿透、去重或分片查詢選擇布隆過濾器，並評估誤判率與記憶體成本。
 - **Quick Quiz**: [Q3](../../QUIZ/01_Data_Structures_and_Algorithms.md#q3-布隆過濾器的原理和應用場景)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較傳統取模雜湊與一致性雜湊在節點增減時的資料遷移量。
   - `LO-3`: 能夠評估虛擬節點對負載均衡、熱點分布與管理複雜度的影響。
 - **Quick Quiz**: [Q10](../../QUIZ/01_Data_Structures_and_Algorithms.md#q10-一致性雜湊的原理和應用)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

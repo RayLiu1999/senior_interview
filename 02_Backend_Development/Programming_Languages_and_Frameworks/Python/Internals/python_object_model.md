@@ -16,6 +16,7 @@ Python 中常說“一切皆對象”(Everything is an object)。這句話的確
   - `LO-2`: 能夠從 `PyObject` 的 `ob_refcnt` 與 `ob_type` 說明 CPython 物件的共同表示。
   - `LO-3`: 能夠根據變數重新綁定、物件身份與類型資訊推導動態類型程式的行為。
 - **Quick Quiz**: [Python Q8](../../../../QUIZ/05_Python.md#q8)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

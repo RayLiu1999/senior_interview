@@ -16,6 +16,7 @@
   - `LO-2`: 能夠選擇 `select_related()`、`prefetch_related()`、欄位投影或批量操作降低資料庫往返。
   - `LO-3`: 能夠使用查詢分析工具、索引與資料庫層聚合驗證優化效果，並說明過度預取與寫入成本。
 - **Quick Quiz**: [Python Q10](../../../../QUIZ/05_Python.md#q10)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

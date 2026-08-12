@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據是否允許突發、是否需要平滑輸出與系統容量選擇合適演算法。
   - `LO-3`: 能夠設計分散式限流的共享狀態、原子操作、降級與拒絕回應策略。
 - **Quick Quiz**: [Q11](../../QUIZ/01_Data_Structures_and_Algorithms.md#q11-限流演算法令牌桶漏桶)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據資料量、通信方向、是否跨網路與延遲需求選擇 IPC 機制。
   - `LO-3`: 能夠說明共享記憶體需要額外同步，以及不同 IPC 的拷貝、緩衝區與資源生命週期成本。
 - **Quick Quiz**: [Q2](../../QUIZ/01_Operating_System.md#q2-進程間通信-ipc-有哪些方式)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

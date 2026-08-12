@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較鏈結法、開放定址與雙重雜湊在空間、快取區域性與刪除操作上的取捨。
   - `LO-3`: 能夠根據負載因子與溢位情況判斷擴容時機，並解釋漸進式 rehash 如何降低阻塞。
 - **Quick Quiz**: [Q2](../../QUIZ/01_Data_Structures_and_Algorithms.md#q2-雜湊表的原理碰撞處理和負載因子)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

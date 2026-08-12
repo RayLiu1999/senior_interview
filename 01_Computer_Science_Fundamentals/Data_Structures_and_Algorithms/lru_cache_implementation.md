@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依照命中、更新、插入及容量滿載的流程維護最近使用順序。
   - `LO-3`: 能夠比較 LRU-K、2Q 等變體對偶發熱點與快取污染的改善，以及其額外成本。
 - **Quick Quiz**: [Q4](../../QUIZ/01_Data_Structures_and_Algorithms.md#q4-lru-快取的實現原理)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

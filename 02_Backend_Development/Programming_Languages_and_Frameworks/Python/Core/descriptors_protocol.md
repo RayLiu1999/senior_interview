@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依資料描述符、實例字典與非資料描述符的優先序推導屬性查找結果。
   - `LO-3`: 能夠說明 `property`、`staticmethod` 與 `classmethod` 如何利用描述符協議。
 - **Quick Quiz**: [Python Q12](../../../../QUIZ/05_Python.md#q12)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

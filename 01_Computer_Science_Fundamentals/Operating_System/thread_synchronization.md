@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據臨界區長度、讀寫比例、資源數量與等待方式選擇同步機制。
   - `LO-3`: 能夠透過鎖排序、縮小臨界區、原子操作或條件重試降低死鎖、飢餓與鎖競爭風險。
 - **Quick Quiz**: [Q8](../../QUIZ/01_Operating_System.md#q8-線程同步機制有哪些)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

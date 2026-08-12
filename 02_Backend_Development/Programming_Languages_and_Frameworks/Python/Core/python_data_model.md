@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計自訂物件的 `__repr__`、`__str__`、`__iter__` 或運算子方法並處理不支援的型別。
   - `LO-3`: 能夠說明 `__enter__` 與 `__exit__` 如何讓物件成為上下文管理器並可靠清理資源。
 - **Quick Quiz**: [Python Q4](../../../../QUIZ/05_Python.md#q4)、[Python Q13](../../../../QUIZ/05_Python.md#q13)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

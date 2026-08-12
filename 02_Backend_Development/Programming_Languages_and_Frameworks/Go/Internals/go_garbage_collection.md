@@ -16,6 +16,7 @@
   - `LO-2`: 能夠說明寫屏障如何維持三色不變性，避免可達物件被錯誤回收。
   - `LO-3`: 能夠解釋 GOGC 對觸發時機的影響，並評估低延遲與記憶體使用的取捨。
 - **Quick Quiz**: [Go Q6](../../../../QUIZ/06_Go.md#q6)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

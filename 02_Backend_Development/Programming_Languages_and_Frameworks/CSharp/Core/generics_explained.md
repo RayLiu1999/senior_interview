@@ -170,3 +170,4 @@ var user = Cache<User>.GetOrAdd("user:123", () => LoadUserFromDb(123));
   - `LO-2`: 能夠比較 CLR 泛型具體化與 Java 型別擦除在執行期型別資訊、值型別與效能上的差異。
   - `LO-3`: 能夠依據輸入／輸出位置使用協變與逆變，並以反射建立或檢查泛型型別。
 - **Quick Quiz**: [Q4](../../../../QUIZ/08_CSharp.md#q4-c-泛型和-java-泛型有什麼區別)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

@@ -16,6 +16,7 @@ Django, Flask, 和 FastAPI 是 Python 生態系統中最主流的三個 Web 框�
   - `LO-2`: 能夠依功能完整度、彈性、同步／異步模型與團隊能力選擇框架。
   - `LO-3`: 能夠在高併發 API、大型網站與小型服務情境中說明性能、生態和維護成本的取捨。
 - **Quick Quiz**: [Python Q9](../../../../QUIZ/05_Python.md#q9)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

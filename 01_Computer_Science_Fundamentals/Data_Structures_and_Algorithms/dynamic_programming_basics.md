@@ -16,6 +16,7 @@
   - `LO-2`: 能夠定義狀態、寫出狀態轉移方程與初始條件，並安排正確的計算順序。
   - `LO-3`: 能夠在不改變正確性的前提下以滾動陣列或狀態壓縮降低空間複雜度。
 - **Quick Quiz**: [Q8](../../QUIZ/01_Data_Structures_and_Algorithms.md#q8-動態規劃的解題思路)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

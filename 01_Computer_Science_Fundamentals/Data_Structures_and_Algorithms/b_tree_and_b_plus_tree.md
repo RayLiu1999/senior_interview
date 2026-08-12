@@ -16,6 +16,7 @@ B 樹和 B+ 樹是**多路平衡查找樹**，專為**磁碟存儲系統**設計
   - `LO-2`: 能夠根據磁碟頁、樹高與範圍查詢需求，解釋 InnoDB 選擇 B+ 樹的原因。
   - `LO-3`: 能夠比較 B+ 樹、雜湊索引與紅黑樹在點查詢、範圍查詢及 I/O 成本上的取捨。
 - **Quick Quiz**: [Q1](../../QUIZ/01_Data_Structures_and_Algorithms.md#q1-b-樹的原理及為何適合資料庫索引)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

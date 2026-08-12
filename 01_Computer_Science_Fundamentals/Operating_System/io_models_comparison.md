@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較阻塞、非阻塞、多路復用、信號驅動與異步 I/O 的併發能力、CPU 成本與複雜度。
   - `LO-3`: 能夠根據連線數、平台支援、延遲與吞吐量需求選擇 I/O 模型並說明代價。
 - **Quick Quiz**: [Q5](../../QUIZ/01_Operating_System.md#q5-五種-io-模型的區別是什麼)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

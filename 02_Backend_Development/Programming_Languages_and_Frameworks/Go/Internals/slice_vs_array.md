@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據 Data、Len、Cap 推導切片索引、共享資料與 `append` 擴容結果。
   - `LO-3`: 能夠在傳參、預分配與擴容情境中評估複製、別名與記憶體配置成本。
 - **Quick Quiz**: [Go Q8](../../../../QUIZ/06_Go.md#q8)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較破壞必要條件、銀行家演算法、檢測恢復與忽略策略的適用情境和代價。
   - `LO-3`: 能夠在鎖或資源申請設計中建立全域順序、檢查安全狀態並提出可執行的恢復方案。
 - **Quick Quiz**: [Q3](../../QUIZ/01_Operating_System.md#q3-什麼是死鎖如何預防和解決)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

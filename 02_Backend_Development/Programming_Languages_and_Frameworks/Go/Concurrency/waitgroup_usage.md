@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計在啟動 Goroutine 前加計數、以 `defer Done` 收尾的正確使用流程。
   - `LO-3`: 能夠從負計數、過早 `Wait`、panic 與複製 WaitGroup 判斷同步錯誤。
 - **Quick Quiz**: [Go Q5](../../../../QUIZ/06_Go.md#q5)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

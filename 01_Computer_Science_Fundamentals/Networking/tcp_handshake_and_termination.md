@@ -17,6 +17,7 @@ TCP (Transmission Control Protocol) 是面向連接的可靠傳輸協定。在�
   - `LO-3`: 能根據連接指標設計分層排查流程，並評估連接重用與核心調校的取捨。
 - **硬測驗**: [TCP 連接診斷](../../QUIZ/Hard_Assessments/tcp_connection_diagnosis.md)
 - **Quick Quiz**: [Q1](../../QUIZ/01_Networking.md#q1-tcp-三次握手與四次揮手)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 - **覆蓋題型**: `追蹤`, `故障診斷`, `權衡取捨`
 
 ## 核心理論與詳解

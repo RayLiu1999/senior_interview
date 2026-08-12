@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依讀寫比例、臨界區大小與鎖協調成本選擇合適的鎖。
   - `LO-3`: 能夠辨識複製鎖、忘記解鎖、鎖順序不一致與寫者飢餓等併發風險。
 - **Quick Quiz**: [Go Q4](../../../../QUIZ/06_Go.md#q4)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

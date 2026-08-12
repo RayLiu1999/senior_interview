@@ -260,3 +260,4 @@ public class WorkQueue : IDisposable
   - `LO-2`: 能夠說明 GetOrAdd 等原子操作的工廠可能重複執行，並使用 Lazy<T> 控制昂貴初始化。
   - `LO-3`: 能夠依複合交易語意、並發程度與背壓需求選擇並行集合或 lock 加標準集合。
 - **Quick Quiz**: [Q9](../../../../QUIZ/08_CSharp.md#q9-concurrentdictionary-和普通-dictionary-lock-有什麼區別)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

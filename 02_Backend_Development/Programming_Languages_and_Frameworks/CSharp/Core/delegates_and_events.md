@@ -228,3 +228,4 @@ public class StockPriceChangedEventArgs : EventArgs
   - `LO-2`: 能夠比較委派欄位與事件的外部操作權限，並依 EventHandler 模式設計發布／訂閱介面。
   - `LO-3`: 能夠辨識事件訂閱造成的生命週期洩漏，並選擇取消訂閱、弱事件或 IDisposable 等處理方式。
 - **Quick Quiz**: [Q3](../../../../QUIZ/08_CSharp.md#q3-委派-delegate-和事件-event-有什麼區別)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠說明進程與線程建立、上下文切換及通信成本如何影響效能。
   - `LO-3`: 能夠根據故障隔離、共享資料、I/O 或 CPU 密集等需求選擇進程、線程或 goroutine。
 - **Quick Quiz**: [Q1](../../QUIZ/01_Operating_System.md#q1-進程與線程的區別是什麼)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

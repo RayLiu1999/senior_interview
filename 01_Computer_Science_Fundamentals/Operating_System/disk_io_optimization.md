@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較頁緩存、預讀、I/O 調度、Direct I/O、sendfile 與 mmap 的適用情境。
   - `LO-3`: 能夠根據吞吐量、延遲、持久性與 CPU 拷貝成本設計批次、緩衝或零拷貝優化方案。
 - **Quick Quiz**: [Q7](../../QUIZ/01_Operating_System.md#q7-什麼是零拷貝-zero-copy)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

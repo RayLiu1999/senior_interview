@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 UUID、資料庫號段、Snowflake 與 Redis 等方案的結構與取捨。
   - `LO-3`: 能夠根據節點數、時鐘可靠性、排序需求與故障情境選擇 ID 生成方案。
 - **Quick Quiz**: [Q12](../../QUIZ/01_Data_Structures_and_Algorithms.md#q12-分散式-id-生成方案)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

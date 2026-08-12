@@ -215,3 +215,4 @@ public class CollectionDemo
   - `LO-2`: 能夠計算常見集合操作的平均與最壞時間複雜度，並指出可變 Key 與遍歷順序的風險。
   - `LO-3`: 能夠依據查詢、排序、唯一性、FIFO／LIFO 與執行緒安全需求選擇合適的集合。
 - **Quick Quiz**: [Q5](../../../../QUIZ/08_CSharp.md#q5-dictionary-的內部實作原理是什麼)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)

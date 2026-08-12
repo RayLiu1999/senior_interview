@@ -16,6 +16,7 @@
   - `LO-2`: 能夠區分匿名與命名返回值在 `defer` 修改最終結果時的差異。
   - `LO-3`: 能夠使用 `defer` 實作資源清理，並辨識延遲過多、作用域錯誤與返回值副作用。
 - **Quick Quiz**: [Go Q7](../../../../QUIZ/06_Go.md#q7)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
 
 ## 核心理論與詳解
 

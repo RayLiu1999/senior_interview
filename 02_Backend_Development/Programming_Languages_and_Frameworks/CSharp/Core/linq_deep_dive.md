@@ -210,3 +210,4 @@ var customerSummary = orders
   - `LO-2`: 能夠區分 IEnumerable、IQueryable 與 Expression Tree 的執行位置和查詢表示方式。
   - `LO-3`: 能夠診斷多次枚舉或多次資料庫查詢，並選擇適當的物化與集合操作降低成本。
 - **Quick Quiz**: [Q2](../../../../QUIZ/08_CSharp.md#q2-請解釋-linq-的延遲執行-deferred-execution-特性)
+- **Hard Assessment**: [Core Runtime & Data Structures Incident](../../../../QUIZ/Hard_Assessments/core_runtime_data_structures_incident.md) (`assessment.core-runtime.data-structures.incident.v1`)
