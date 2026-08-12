@@ -7,6 +7,8 @@
     "dev": "pnpm content:generate && nuxt dev",
     "build": "pnpm content:generate && nuxt build",
     "generate": "pnpm content:generate && nuxt generate",
+    "preview": "pnpm build && node .output/server/index.mjs",
+    "e2e": "playwright test",
     "typecheck": "nuxt typecheck",
     "test": "vitest run --config ../vitest.config.ts",
     "test:watch": "vitest --config ../vitest.config.ts"
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^26.2.0",
+    "@playwright/test": "^1.62.1",
     "@vue/test-utils": "^2.4.6",
     "happy-dom": "^16.7.2",
     "typescript": "^5.7.3",

@@ -16,7 +16,10 @@ pnpm dev
 pnpm test
 pnpm typecheck
 pnpm build
+pnpm e2e
 ```
+
+`pnpm e2e` 會在需要時先啟動 production server；第一次執行前請以 `pnpm exec playwright install chromium` 安裝 Chromium。
 
 `pnpm dev`、`pnpm build` 與 `pnpm generate` 都會先重新產生 `public/content/catalog.json` 與 `generated/routes.json`。生成結果包含 553 篇文章、567 題 Quick Quiz 與 52 份 Hard Assessment；內容版本以 `contentVersion` 固定，沒有內容變更時重複建置不會製造無意義 diff。
 

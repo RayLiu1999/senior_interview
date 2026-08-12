@@ -48,3 +48,13 @@ jobs:
       - name: Build web app
         working-directory: web
         run: pnpm build
+
+      - name: Install Chromium for browser smoke tests
+        working-directory: web
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run browser smoke tests
+        working-directory: web
+        env:
+          PLAYWRIGHT_SERVER_COMMAND: node .output/server/index.mjs
+        run: pnpm e2e
