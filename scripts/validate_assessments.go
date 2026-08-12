@@ -1,10 +1,9 @@
 // validate_assessments checks the durable links between concept articles,
 // Quick Quizzes, and Hard Assessments.
 //
-// It intentionally validates assessment artifacts and high-importance topic
-// articles rather than trying to reinterpret every legacy Markdown example in
-// the repository.  This keeps the CI gate useful while allowing existing
-// language/configuration snippets to remain in their own documentation.
+// It validates assessment artifacts and every topic article rather than trying
+// to reinterpret fenced Markdown examples in the repository. This keeps the
+// CI gate focused on the durable article-to-assessment contract.
 package main
 
 import (
@@ -24,14 +23,15 @@ type markdownFile struct {
 }
 
 type validation struct {
-	errors       []string
-	linksChecked int
-	topics       int
-	highTopics   int
-	hardTopics   int
-	assessments  int
-	concepts     int
-	learningObjs int
+	errors         []string
+	linksChecked   int
+	topics         int
+	highTopics     int
+	governedTopics int
+	hardTopics     int
+	assessments    int
+	concepts       int
+	learningObjs   int
 }
 
 var (
@@ -165,11 +165,9 @@ func (v *validation) validateTopic(file markdownFile) {
 	if !hasImportance || importance < 1 || importance > 5 {
 		v.addError("%s: importance must be an integer from 1 to 5", file.rel)
 	}
-	if importance < 4 {
-		return
+	if importance >= 4 {
+		v.highTopics++
 	}
-
-	v.highTopics++
 	hasConcept := len(conceptIDRE.FindAllString(file.body, -1)) > 0
 	hasLearning := strings.Contains(strings.ToLower(file.body), "learning objective") &&
 		len(localLORE.FindAllString(file.body, -1)) > 0
@@ -177,6 +175,9 @@ func (v *validation) validateTopic(file markdownFile) {
 	hasHard := strings.Contains(strings.ToLower(file.body), "hard assessment") || strings.Contains(file.body, "硬測驗")
 	if hasHard {
 		v.hardTopics++
+	}
+	if hasConcept && hasLearning && hasQuick && hasHard {
+		v.governedTopics++
 	}
 	if !hasConcept {
 		v.addError("%s: importance %d requires a Concept ID", file.rel, importance)
@@ -454,7 +455,7 @@ func (v *validation) addError(format string, args ...any) {
 }
 
 func (v validation) printSummary() {
-	fmt.Printf("Topic articles: %d (importance 4/5: %d, Hard Assessment mapped: %d)\n", v.topics, v.highTopics, v.hardTopics)
+	fmt.Printf("Topic articles: %d (importance 4/5: %d, fully mapped: %d, Hard Assessment mapped: %d)\n", v.topics, v.highTopics, v.governedTopics, v.hardTopics)
 	fmt.Printf("Hard Assessments: %d (unique IDs checked)\n", v.assessments)
 	fmt.Printf("Learning Objective IDs checked: %d\n", v.learningObjs)
 	fmt.Printf("Local Markdown links checked: %d\n", v.linksChecked)

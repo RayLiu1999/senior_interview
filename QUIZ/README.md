@@ -1,6 +1,6 @@
 # 📝 重點考題 (Quiz)
 
-> 這個資料夾收集了各主題中**重要程度 4-5** 的核心題目，設計成自我測驗的形式，幫助您快速檢驗學習成效。
+> 這個資料夾收集了各主題中**重要程度 3-5** 的核心題目，設計成自我測驗的形式，幫助您快速檢驗學習成效。
 
 ## 使用方式
 
@@ -66,8 +66,11 @@
 | Security Testing Quality | [Security Testing Quality Incident](./Hard_Assessments/security_testing_quality_incident.md) | 威脅模型、安全測試、品質事故與回復 |
 | AI／Engineering Management Delivery | [AI／Engineering Management Delivery Incident](./Hard_Assessments/ai_management_delivery_incident.md) | 模型品質、MLOps、團隊決策、培養與領導 |
 | Frontend State & Rendering | [Frontend State & Rendering Incident](./Hard_Assessments/frontend_state_rendering_incident.md) | React／Vue 狀態、渲染、SSR／CSR、效能與無障礙 |
+| Foundations／Storage／Tooling | [Foundations／Storage／Tooling Completion Incident](./Hard_Assessments/foundations_storage_tooling_completion_incident.md) | OS、資料庫、Kafka、Go modules、容量與可重現交付 |
+| Language／Tooling／Framework | [Language／Tooling／Framework Completion Incident](./Hard_Assessments/language_tooling_framework_completion_incident.md) | Runtime、依賴、框架安全、benchmark 與回滾 |
+| Architecture／Delivery／Quality | [Architecture／Delivery／Quality Completion Incident](./Hard_Assessments/architecture_delivery_quality_completion_incident.md) | Gossip、DDD、交付治理、招聘與測試品質 |
 
-目前共有 49 份 Hard Assessment；重要程度 4–5 的 524 篇文章均已完成至少一份硬測驗映射。重要程度 3 的 29 篇維持 Quick Quiz 優先策略，完整清單請見 [Hard Assessments 索引](./Hard_Assessments/README.md)。
+目前共有 52 份 Hard Assessment；553 篇主題文章均已完成至少一份硬測驗映射，完整清單請見 [Hard Assessments 索引](./Hard_Assessments/README.md)。
 
 ---
 
@@ -79,7 +82,7 @@
 | 主題 | 題數 | 說明 |
 |------|------|------|
 | [資料結構與演算法](./01_Data_Structures_and_Algorithms.md) | 37 | B+樹、雜湊表、堆、排序、DP |
-| [作業系統](./01_Operating_System.md) | 17 | 進程/線程、IPC、I/O模型、同步 |
+| [作業系統](./01_Operating_System.md) | 19 | 進程/線程、IPC、I/O模型、同步、中斷與信號 |
 | [網路](./01_Networking.md) | 18 | TCP/IP、HTTP、DNS、WebSocket |
 
 ### 02. 後端開發
@@ -87,17 +90,17 @@
 |------|------|------|
 | [API 設計](./02_API_Design.md) | 13 | REST、版本管理、冪等性、認證 |
 | [快取](./02_Caching.md) | 7 | 策略、穿透/擊穿/雪崩、一致性 |
-| [資料庫](./02_Databases.md) | 49 | SQL/NoSQL、索引、事務、分片 |
-| [訊息佇列](./02_Message_Queues.md) | 23 | Kafka、RabbitMQ、可靠性、冪等 |
+| [資料庫](./02_Databases.md) | 55 | SQL/NoSQL、索引、事務、分片、儲存與 schema |
+| [訊息佇列](./02_Message_Queues.md) | 26 | Kafka、RabbitMQ、可靠性、冪等、儲存與 metadata |
 | [Elasticsearch](./04_Elasticsearch.md) | 12 | Query DSL、分片、聚合、效能優化 |
 | [AI 與機器學習](./02_AI_and_Machine_Learning.md) | 19 | LLM、RAG、向量資料庫、系統設計 |
 
 ### 03. 系統設計與架構
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [分散式系統與微服務](./03_Distributed_Systems_and_Microservices.md) | 17 | CAP、一致性、Raft、微服務模式 |
+| [分散式系統與微服務](./03_Distributed_Systems_and_Microservices.md) | 18 | CAP、一致性、Raft、微服務模式、gossip |
 | [大型系統設計](./12_System_Design.md) | 22 | 秒殺、分散式鎖、購票、容量與一致性 |
-| [架構模式與設計原則](./17_Architecture_Patterns.md) | 27 | DI、Strategy、Observer、Proxy、SOLID OCP |
+| [架構模式與設計原則](./17_Architecture_Patterns.md) | 28 | DI、Strategy、Observer、Proxy、SOLID OCP、DDD 邊界 |
 
 ### 04. 基礎設施與 DevOps
 | 主題 | 題數 | 說明 |
@@ -111,20 +114,20 @@
 ### 05. 程式語言
 | 主題 | 題數 | 說明 |
 |------|------|------|
-| [Go](./06_Go.md) | 19 | Goroutine、Channel、GC、Gin |
+| [Go](./06_Go.md) | 20 | Goroutine、Channel、GC、Gin、Modules |
 | [Java](./18_Java.md) | 12 | JVM、JMM、Thread Pool、GC、Spring IoC |
-| [Python](./05_Python.md) | 71 | GIL、裝飾器、生成器、asyncio、FastAPI |
+| [Python](./05_Python.md) | 75 | GIL、裝飾器、生成器、asyncio、FastAPI、Metaclass 與測試 |
 | [C#](./08_CSharp.md) | 19 | async/await、GC、LINQ、ASP.NET Core |
-| [PHP](./09_PHP.md) | 31 | PHP 8+、Laravel、安全、OPcache |
-| [Node.js](./07_Node.js.md) | 31 | Event Loop、非阻塞 I/O、Stream、Express、NestJS、TypeScript、V8 |
+| [PHP](./09_PHP.md) | 32 | PHP 8+、Laravel、安全、OPcache、include／require |
+| [Node.js](./07_Node.js.md) | 35 | Event Loop、非阻塞 I/O、Stream、Express、NestJS、TypeScript、Runtime 與 tooling |
 
 ### 06. 特定領域
 | 主題 | 題數 | 說明 |
 |------|------|------|
 | [Web／API 安全](./16_Security.md) | 10 | 身份、JWT、API 防護、CSRF、TLS |
-| [Testing](./19_Testing.md) | 9 | 測試分層、契約、效能、混沌與安全測試 |
+| [Testing](./19_Testing.md) | 12 | 測試分層、契約、效能、ATDD、E2E 與 mutation |
 | [AI Engineering](./20_AI_Engineering.md) | 4 | MLOps、LLMOps、RAG 與評測 |
-| [Engineering Management](./21_Engineering_Management.md) | 4 | 領導、協作、招募、培養與事故學習 |
+| [Engineering Management](./21_Engineering_Management.md) | 7 | 領導、協作、招募、培養、交付與事故學習 |
 | [Frontend Development](./22_Frontend_Development.md) | 10 | React／Vue 狀態、渲染、生命週期與路由 |
 
 ---
@@ -163,12 +166,12 @@
 
 | 分類 | 完成狀態 |
 |------|----------|
-| 電腦科學基礎 | ✅（重要程度 4–5 已接入） |
-| 後端開發 | ✅（重要程度 4–5 已接入） |
-| 系統設計與架構 | ✅（重要程度 4–5 已接入） |
-| 基礎設施與 DevOps | ✅（重要程度 4–5 已接入） |
-| 程式語言 | ✅（重要程度 4–5 已接入） |
-| 特定領域／前端 | ✅（重要程度 4–5 已接入） |
+| 電腦科學基礎 | ✅（全部文章已接入） |
+| 後端開發 | ✅（全部文章已接入） |
+| 系統設計與架構 | ✅（全部文章已接入） |
+| 基礎設施與 DevOps | ✅（全部文章已接入） |
+| 程式語言 | ✅（全部文章已接入） |
+| 特定領域／前端 | ✅（全部文章已接入） |
 
 ---
 

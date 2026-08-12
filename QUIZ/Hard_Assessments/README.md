@@ -55,6 +55,9 @@
 | Security Testing Quality | [Security Testing Quality Incident](./security_testing_quality_incident.md) | 10 | 威脅模型、安全測試、品質事故與回復 |
 | AI／Engineering Management Delivery | [AI／Engineering Management Delivery Incident](./ai_management_delivery_incident.md) | 9 | 模型品質、MLOps、團隊決策、培養與領導 |
 | Frontend State & Rendering | [Frontend State & Rendering Incident](./frontend_state_rendering_incident.md) | 9 | React／Vue 狀態、渲染、SSR／CSR、效能與無障礙 |
+| Foundations／Storage／Tooling | [Foundations／Storage／Tooling Completion Incident](./foundations_storage_tooling_completion_incident.md) | 9 | OS、資料庫、Kafka、Go modules、容量與可重現交付 |
+| Language／Tooling／Framework | [Language／Tooling／Framework Completion Incident](./language_tooling_framework_completion_incident.md) | 9 | Runtime、依賴、框架安全、benchmark 與回滾 |
+| Architecture／Delivery／Quality | [Architecture／Delivery／Quality Completion Incident](./architecture_delivery_quality_completion_incident.md) | 9 | Gossip、DDD、交付治理、招聘與測試品質 |
 
 ## 使用方式
 
@@ -63,4 +66,4 @@
 3. 依「期待證據」與評分規準自評，記錄失分點。
 4. 回到文章補強缺口，再回答延伸追問。
 
-目前共有 49 份 Hard Assessment。重要程度 4–5 的 524 篇文章均已完成至少一份硬測驗映射；重要程度 3 的 29 篇維持 Quick Quiz 優先策略。新增或修改 assessment 後，請執行 `go run ./scripts/validate_assessments.go`。
+目前共有 52 份 Hard Assessment；553 篇主題文章均已完成至少一份硬測驗映射。新增或修改 assessment 後，請執行 `go run ./scripts/validate_assessments.go`。

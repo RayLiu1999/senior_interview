@@ -2,7 +2,7 @@
 
 - **盤點基準日**: 2026-08-12
 - **適用範圍**: `01_Computer_Science_Fundamentals` 至 `06_Frontend_Development`、`QUIZ/`
-- **文件狀態**: 執行紀錄版（Phase 0–4 已完成；Phase 5 維護基準與索引已建立）
+- **文件狀態**: 執行紀錄版（Phase 0–5 已完成；全庫進入持續維護）
 - **相關規格**: [硬測驗規格](./ASSESSMENT_SPEC.md)
 
 ## 一、決策摘要
@@ -31,7 +31,7 @@
 | 前端開發 | 10 | 後端主線完成後再處理 |
 | **合計** | **553** | |
 
-內容範圍目前有 729 個 Markdown 檔案（不含 `.github/` 專案指示），包含 553 篇主題文章、97 個 README 索引頁、28 份分類 Quick Quiz、1 份規格、1 份路線圖與 49 份 Hard Assessment。另有 Go validator 與 GitHub Actions workflow 負責持續檢查。
+內容範圍目前有 732 個 Markdown 檔案（不含 `.github/` 專案指示），包含 553 篇主題文章、97 個 README 索引頁、28 份分類 Quick Quiz、1 份規格、1 份路線圖與 52 份 Hard Assessment。另有 Go validator 與 GitHub Actions workflow 負責持續檢查。
 
 ### 2.2 文章 metadata 與可讀性
 
@@ -42,21 +42,21 @@
 | 重要程度 metadata | 553 / 553 | 已完整，可用於排序遷移 |
 | 重要程度 5 | 304 | 第一批優先 |
 | 重要程度 4 | 220 | 第一批優先 |
-| 重要程度 3 | 29 | 第二批或採輕量測驗 |
-| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 524 / 553 | 重要程度 4–5 的文章已全數納入治理；29 篇重要程度 3 依 Quick Quiz 優先策略暫不強制建立 Concept／Hard Assessment |
+| 重要程度 3 | 29 | 已完成補齊，與 4–5 級採同一套治理 |
+| 文章含 `Concept ID`、Learning Objectives 與測驗對應 | 553 / 553 | 全數文章均已納入 Concept／Quick Quiz／Hard Assessment 治理 |
 
 文章長度分布如下：少於 100 行 122 篇、100–199 行 145 篇、200–399 行 84 篇、400 行以上 202 篇。長文不必全部重寫，但在建立測驗前應先拆出 3–6 個可觀察的 Learning Objectives，避免一題測試整篇文章。
 
 ### 2.3 Quick Quiz 現況
 
-- 28 份分類 Quiz，共 539 題。
+- 28 份分類 Quiz，共 567 題。
 - 其中 2 題仍明確標記 `Article mapping: pending`，原因是來源文章尚未建立；其餘題目沿用分類檔集中管理，入口與文章連結由 CI 持續檢查。
 - 每一道 Quiz 題都已有 `Concept ID` 與 Learning Objective ID，可用於判斷文章變更的影響範圍。
 - 現有格式以「問題 → 答案提示 → 完整文章」為主，適合保留，不需要改造成 Hard Assessment。
 
 ### 2.4 Hard Assessment 現況
 
-目前有 49 份跨領域／核心後端／延伸 Assessment，完整檔名與入口集中在 [Hard Assessments README](./Hard_Assessments/README.md)。本輪 Phase 3 已完成下列覆蓋群組：
+目前有 52 份跨領域／核心後端／延伸 Assessment，完整檔名與入口集中在 [Hard Assessments README](./Hard_Assessments/README.md)。本輪 Phase 3 已完成下列覆蓋群組：
 
 | 覆蓋群組 | 主要範圍 | 狀態 |
 | :--- | :--- | :--- |
@@ -66,12 +66,13 @@
 | 語言與框架 | Java、.NET、C#、Go、Python、PHP、Node.js、NestJS、Echo | 已完成雙向映射 |
 | AI、Testing、Security、Frontend | LLM／Vector、AI Engineering、Testing、Security Testing、React／Vue | 已完成雙向映射 |
 | CS Runtime 補齊 | 資料結構、Networking、Operating System | 已完成雙向映射 |
+| 重要程度 3 補齊 | OS、資料庫、Kafka、Go／Node／PHP／Python tooling、分散式、DDD、交付管理與 Testing | 已完成 3 份 Completion Incident、29 篇雙向映射 |
 
-所有 49 題都具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據或等價的舊版區塊、0–4 評分規準、通過門檻與參考答案。validator 同時容許舊 assessment 使用 `LO-*` 局部 ID，以及新 assessment 使用 `concept.../LO-*` 穩定 ID；對新格式會檢查 LO 是否由對應文章承載。
+所有 52 題都具備 Assessment ID、主要／次要 Concept ID、情境、作答要求、期待證據或等價的舊版區塊、0–4 評分規準、通過門檻與參考答案。validator 同時容許舊 assessment 使用 `LO-*` 局部 ID，以及新 assessment 使用 `concept.../LO-*` 穩定 ID；對新格式會檢查 LO 是否由對應文章承載。
 
 ### 2.5 連結健康度
 
-排除 fenced code 內的示例連結後，Go validator 目前檢查 3,329 個本地 Markdown 路徑：
+排除 fenced code 內的示例連結後，Go validator 目前檢查 3,517 個本地 Markdown 路徑：
 
 | 來源 | 失效數 | 判定 |
 | :--- | ---: | :--- |
@@ -215,7 +216,7 @@ Quick Quiz / Hard Assessment
 
 ### Phase 2：建立概念索引與 Quick Quiz 對應（P1）— 已完成
 
-**目標**：把目前 539 題 Quick Quiz 變成可追蹤的快速複習層。
+**目標**：把目前 567 題 Quick Quiz 變成可追蹤的快速複習層。
 
 工作項目：
 
@@ -223,11 +224,11 @@ Quick Quiz / Hard Assessment
 2. 為每一道既有 Quiz 題補上 Concept ID 與目標對應。
 3. 保留一個分類 Quiz 檔集中多題的現況，不強迫每個概念拆成獨立檔案。
 4. 清理重複或只連到同一文章但測試角度完全相同的題目。
-5. 讓重要程度 4–5 的概念至少有一個可用的 Quick Quiz 入口；低重要程度文章可暫不建立 Quick Quiz。
+5. 讓所有受治理概念至少有一個可用的 Quick Quiz 入口；新增文章需在同一批次決定是否建立對應題目。
 
 完成條件：所有既有 Quiz 題都能追溯到 Concept ID；需要 Quick Quiz 的概念對應率可由檢查工具產出；有效連結率 100%。
 
-### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成重要程度 4–5 覆蓋
+### Phase 3：Hard Assessment 擴展（P1 → P2）— 已完成全庫覆蓋
 
 **目標**：逐步讓每個受治理概念的 Learning Objectives 都有可評分的應用題。
 
@@ -235,8 +236,8 @@ Quick Quiz / Hard Assessment
 
 - 重要程度 5：至少一個 Hard Assessment Item，且必須包含情境、診斷、追蹤或取捨。
 - 重要程度 4：至少一個 Hard Assessment Item；若涉及併發、可靠性、效能或系統設計，必須使用情境題。
-- 重要程度 3：先由 Quick Quiz 覆蓋，依面試價值再補 Hard Assessment。
-- 尚未分級的文章：完成 Phase 1 後再排程，不先猜測重要程度。
+- 重要程度 3：與 4–5 級採同一套 Concept、Quick Quiz 與 Hard Assessment 治理。
+- 尚未分級的文章：目前為 0；新增文章先完成 Phase 1 metadata，再進入測驗治理。
 
 建議批次：
 
@@ -260,6 +261,7 @@ Quick Quiz / Hard Assessment
 18. **AI／Node／Microservice 補齊**：AI System Design、Vector／LLM、Node.js、Gateway、Discovery、Circuit Breaker 與 Raft（已完成 1 份跨領域 Assessment、20 篇雙向映射）。
 19. **PHP／Laravel 補齊**：PSR、Core、型別、自動載入、Generator、DI、Facade、Request、Eloquent 與 Middleware（已完成 1 份 Assessment、13 篇雙向映射）。
 20. **Observability／CI、Security／Testing、AI Engineering／Management、Frontend**：已完成 4 份 Assessment、41 篇雙向映射，並新增對應分類 Quiz。
+21. **剩餘重要程度 3 補齊**：OS interrupt／signal、資料庫／Kafka／Go modules、Node／PHP／Python tooling、分散式／DDD／交付／Engineering Management／Testing（已完成 3 份 Completion Incident、29 篇雙向映射、29 題 Quick Quiz）。
 
 每一批都採「先補文章目標 → 再補 Quick Quiz → 再寫 Hard Assessment → 執行覆蓋率檢查」的順序。不要直接為 553 篇文章各寫一份孤立的測驗檔；先按概念邊界與 Learning Objectives 分組。
 
@@ -279,9 +281,9 @@ Quick Quiz / Hard Assessment
 - Hard Assessment 的現存新舊格式（新格式使用 `concept.../LO-*`，舊格式可使用 `LO-*` 局部 ID）。
 - Hard Assessment 內的 fenced code 若存在，必須是 Go 或明確的文字／Markdown 說明。
 
-CI 在 push 與 pull request 觸發，執行全庫檢查；目前驗收結果為 553 篇文章、524 篇重要程度 4–5、49 份 Hard Assessment、1,248 個 LO ID 與 3,387 個本地 Markdown 路徑通過。
+CI 在 push 與 pull request 觸發，執行全庫檢查；目前驗收結果為 553 篇文章、553 篇完整治理、52 份 Hard Assessment、1,335 個 LO ID 與 3,517 個本地 Markdown 路徑通過。
 
-### Phase 5：持續維護（P2）— 已建立基準規則
+### Phase 5：持續維護（P2）— 全庫治理後維護規則
 
 每次修改概念文章時，固定執行：
 
@@ -295,29 +297,29 @@ CI 在 push 與 pull request 觸發，執行全庫檢查；目前驗收結果為
 
 小型排版修正不需要升版；核心答案、題目限制、期待證據或評分規準改變時，必須升版並保留變更原因。
 
-每個內容批次完成後建立獨立 commit，commit 前至少執行 `git diff --check` 與 `go run ./scripts/validate_assessments.go`。重要程度 4–5 的映射門檻維持 100%；重要程度 3 可先保留 Quick Quiz 優先，新增 Hard Assessment 時再補回向連結與索引。
+每個內容批次完成後建立獨立 commit，commit 前至少執行 `git diff --check` 與 `go run ./scripts/validate_assessments.go`。全數 553 篇文章的 Concept、Learning Objectives、Quick Quiz 與 Hard Assessment 映射門檻維持 100%。
 
 ## 六、驗收指標
 
 ### 架構完整性
 
-- 553 篇文章的重要程度覆蓋率達 100%。
-- 524 篇重要程度 4–5 文章都有 Concept ID、Learning Objectives、Quick Quiz 與 Hard Assessment；29 篇重要程度 3 依優先級暫不強制完整治理。
-- 重要程度 4–5 的 Learning Objectives 有 100% 的 Hard Assessment 覆蓋。
-- 49 份 Hard Assessment 都具備穩定 ID、情境／作答／評分／答案區塊、有效文章連結與明確通過門檻。
+- 553 篇文章的重要程度與完整治理覆蓋率均達 100%。
+- 553 篇文章都有 Concept ID、Learning Objectives、Quick Quiz 與 Hard Assessment。
+- 553 篇文章的 Learning Objectives 有 100% 的 Hard Assessment 覆蓋。
+- 52 份 Hard Assessment 都具備穩定 ID、情境／作答／評分／答案區塊、有效文章連結與明確通過門檻。
 - Assessment ID 唯一；Concept-qualified Objective ID 會回指到 assessment 的對應文章，局部 `LO-*` 則維持 Concept 內作用域。
 
 ### Quiz 與學習流程
 
-- 539 道 Quiz 題分布在 28 份分類檔；其中 2 題仍明確標記為 pending，沒有偽造文章映射。
+- 567 道 Quiz 題分布在 28 份分類檔；其中 2 題仍明確標記為 pending，沒有偽造文章映射。
 - 被標記為需要 Quick Quiz 的概念都有有效入口。
 - 單一概念可以依序完成「文章 → Quiz → Hard Assessment → 補強 → 重測」。
 
 ### 導航與品質
 
-- 3,329 個本地 Markdown 路徑失效數降至 0。
+- 3,517 個本地 Markdown 路徑失效數降至 0。
 - 新增或修改的文章、Quiz、Assessment 不得新增死連結。
-- 49 份 Assessment 能通過同一套檢查，並可作為後續批次範本。
+- 52 份 Assessment 能通過同一套檢查，並可作為後續批次範本。
 
 ## 七、主要風險與對策
 
@@ -370,7 +372,9 @@ Phase 3：C# Resource Boundary 與其餘高重要度語言／框架批次（完�
     ↓
 Phase 4：加入 Go 自動檢查與 GitHub Actions CI（完成）
     ↓
-Phase 5：以變更影響矩陣、獨立 commit 與全庫 validator 持續維護（基準已建立）
+Phase 3：剩餘重要程度 3 內容補齊（完成）
+    ↓
+Phase 5：以變更影響矩陣、獨立 commit 與全庫 validator 持續維護（全庫治理完成）
 ```
 
-後續新增內容不再另開一套流程：依文章 → Quick Quiz → Hard Assessment 的順序補齊，執行 Go validator，並在每個可審查批次完成後建立獨立 commit。重要程度 3 的 29 篇文章是下一輪可選擴充範圍，不影響目前 4–5 級治理門檻。
+後續新增內容不再另開一套流程：依文章 → Quick Quiz → Hard Assessment 的順序補齊，執行 Go validator，並在每個可審查批次完成後建立獨立 commit。現有 553 篇文章已完成治理，後續只需依變更影響矩陣維護受影響的 Quiz 與 Assessment。
