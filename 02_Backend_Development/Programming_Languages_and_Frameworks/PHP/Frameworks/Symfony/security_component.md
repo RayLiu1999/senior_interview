@@ -707,3 +707,15 @@ framework:
 - ✅ 安全 Headers
 
 Symfony Security 組件提供了企業級的安全保障。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.symfony.security-component`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 firewall、authenticator、user provider、token、access control 與 voter 在認證授權流程中的責任。
+  - `LO-2`: 能夠設計 stateless API、session-based web、CSRF、密碼雜湊、租戶隔離與最小權限的安全邊界。
+  - `LO-3`: 能夠以 negative test、審計事件、敏感資料遮罩與失敗安全的 rollout 證明未授權請求不會繞過 security component。
+- **Prerequisites**: [Symfony 框架基礎](./symfony_framework_basics.md)、[Symfony 依賴注入容器](./dependency_injection_container.md)
+- **Quick Quiz**: [Q26](../../../../../QUIZ/09_PHP.md#q26-symfony-security-component-如何劃分認證與授權)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

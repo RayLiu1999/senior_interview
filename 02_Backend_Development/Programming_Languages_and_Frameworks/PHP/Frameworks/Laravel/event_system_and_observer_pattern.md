@@ -515,3 +515,15 @@ Laravel 事件系統與觀察者模式的核心價值：
 5. **可維護**：清晰的職責劃分，降低維護成本
 
 關鍵設計原則是「事件描述發生了什麼，監聽器決定如何回應」，這種設計讓系統更靈活、更容易演進。在實際應用中，應根據業務複雜度選擇合適的抽象層級，避免過度設計。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.events-observers`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Laravel event、listener、subscriber、model observer 與 queued listener 的觸發及執行責任。
+  - `LO-2`: 能夠設計 after-commit、冪等、重試、失敗任務與 transaction 邊界，避免事件副作用重複或讀到未提交資料。
+  - `LO-3`: 能夠以 event／queue fake、integration test、trace 與業務 invariant 驗證事件順序、租戶 context 和最終一致性。
+- **Prerequisites**: [Laravel Request Lifecycle](./request_lifecycle.md)、[Laravel Service Container](./service_container_and_ioc.md)
+- **Quick Quiz**: [Q30](../../../../../QUIZ/09_PHP.md#q30-laravel-事件與-observer-如何處理交易與重試)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

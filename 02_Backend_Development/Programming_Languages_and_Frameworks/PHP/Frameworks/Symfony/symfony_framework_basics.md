@@ -654,3 +654,15 @@ class ProductController extends AbstractController
 3. **深入**：Bundle 開發、自定義組件
 
 掌握 Symfony 能讓你構建高度靈活、可維護的企業級應用。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.symfony.framework-basics`
+- **Learning Objectives**:
+  - `LO-1`: 能夠追蹤 Symfony request 從 Kernel、routing、controller、service container 到 response 的主要生命週期。
+  - `LO-2`: 能夠依問題選擇 HttpFoundation、Routing、DependencyInjection、EventDispatcher、Console 等 component，而非無條件引入整個 framework。
+  - `LO-3`: 能夠以環境設定、cache warmup、bundle／service wiring、CLI 與可回滾部署建立可維護的 Symfony 應用骨架。
+- **Prerequisites**: [PHP 命名空間與自動載入](../../Core/namespaces_and_autoloading.md)、[PHP 服務容器與 IoC](../../Core/di_container_and_ioc.md)
+- **Quick Quiz**: [Q27](../../../../../QUIZ/09_PHP.md#q27-symfony-框架基礎如何串起-request-生命週期與-components)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

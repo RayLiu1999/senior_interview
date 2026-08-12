@@ -693,3 +693,15 @@ public static function getSubscribedEvents(): array
 - **內核事件**：Symfony 更豐富完整
 
 掌握 Symfony 事件系統能讓你構建高度解耦、易於擴展的應用。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.symfony.event-dispatcher-listeners`
+- **Learning Objectives**:
+  - `LO-1`: 能夠追蹤 Symfony EventDispatcher 從 dispatch 到 listener／subscriber 執行、優先級排序與短路的流程。
+  - `LO-2`: 能夠判斷同步 listener、kernel event、domain event 與非同步訊息的邊界，並處理交易提交及失敗語意。
+  - `LO-3`: 能夠用 listener trace、冪等鍵、錯誤分類與 contract test 驗證事件順序、重試和副作用的一致性。
+- **Prerequisites**: [Symfony 框架基礎](./symfony_framework_basics.md)、[Symfony 依賴注入容器](./dependency_injection_container.md)
+- **Quick Quiz**: [Q24](../../../../../QUIZ/09_PHP.md#q24-symfony-事件系統如何控制-listener-順序與副作用)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

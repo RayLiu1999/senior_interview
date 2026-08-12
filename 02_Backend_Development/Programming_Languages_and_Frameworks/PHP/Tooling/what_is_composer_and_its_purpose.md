@@ -83,3 +83,15 @@ Composer 的主要作用可以歸納為以下幾點：
 3. 只有當需要升級專案的依賴時，才由指定的開發者執行 `composer update`，然後將更新後的 `composer.lock` 檔案提交，通知團隊其他成員再次執行 `composer install` 以同步更新。
 
 遵循這個流程，可以最大限度地保證開發、測試和部署環境的一致性，減少因依賴版本不同而導致的潛在問題。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.tooling.composer-dependency-management`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 `composer.json`、`composer.lock`、依賴解析結果與 `vendor/autoload.php` 在開發及部署中的責任。
+  - `LO-2`: 能夠比較 `composer install`、`composer update`、版本約束、平台需求與 transitive dependency 對可重現建置的影響。
+  - `LO-3`: 能夠診斷 autoload、大小寫、lock drift 與 production artifact 不一致，並設計可驗證且可回滾的依賴發布流程。
+- **Prerequisites**: [PHP 命名空間與自動載入](../Core/namespaces_and_autoloading.md)、[PSR 標準](./what_is_psr_and_common_standards.md)
+- **Quick Quiz**: [Q19](../../../../QUIZ/09_PHP.md#q19-composer-依賴管理與自動載入如何確保部署一致)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

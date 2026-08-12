@@ -710,3 +710,15 @@ php bin/console cache:warmup --env=prod
 - **編譯器傳遞**：Symfony 獨有，可深度定制
 
 掌握 Symfony 的 DI 容器是構建可維護、可測試應用的關鍵。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.symfony.dependency-injection-container`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Symfony 容器如何透過 autowiring、autoconfiguration、alias、tag 與編譯階段建立服務圖。
+  - `LO-2`: 能夠比較 shared service、prototype、lazy service 與 request-specific state 的生命週期及 ownership。
+  - `LO-3`: 能夠診斷循環依賴、錯誤介面綁定、container cache 與 service locator 使用，並以 wiring validation 和 contract test 驗證部署。
+- **Prerequisites**: [Symfony 框架基礎](./symfony_framework_basics.md)、[PHP 反射機制](../../Core/reflection_api.md)
+- **Quick Quiz**: [Q25](../../../../../QUIZ/09_PHP.md#q25-symfony-di-容器如何從自動注入走到可驗證的服務圖)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

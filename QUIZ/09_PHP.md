@@ -1033,6 +1033,269 @@ function gen() {
 
 ---
 
+## 🧰 工具與框架邊界 (Tooling & Framework Boundaries)
+
+### Q19: Composer 依賴管理與自動載入如何確保部署一致？
+<!-- Concept ID: concept.php.tooling.composer-dependency-management; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 `composer.json`、`composer.lock`、`vendor/autoload.php` 以及 `install`／`update` 在可重現部署中的責任。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `composer.json` 描述直接依賴與版本約束，`composer.lock` 鎖定完整依賴圖的實際版本與 hash。
+- CI／production 通常使用 `composer install` 依 lock 安裝；`composer update` 應在受控升級流程中重新解析並審查 lock diff。
+- `vendor/autoload.php` 是 Composer 產生的載入入口，PSR-4、classmap 與 files autoload 的適用情境不同。
+- 發布時還要驗證 PHP／extension platform requirements、大小寫與路徑、autoload dump、artifact fingerprint，以及 `--no-dev` 是否移除了 runtime 必需套件。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Tooling/what_is_composer_and_its_purpose.md)
+
+---
+
+### Q20: PHP 反射在框架中解決什麼問題？
+<!-- Concept ID: concept.php.core.reflection-api; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 PHP Reflection 如何支援 DI、路由、Attributes、ORM 或序列化，並分析其代價。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `ReflectionClass`、`ReflectionMethod`、`ReflectionProperty` 能在執行期讀取型別、可見性、參數與 Attributes metadata。
+- 框架可用這些資訊建立依賴圖、註冊路由、讀取 serializer／validator metadata，但反射不應取代明確的 domain contract。
+- 每請求重複反射會增加 CPU 與 allocation；可在 container compile／啟動階段建立 metadata cache，並對動態方法與屬性加上白名單和權限檢查。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Core/reflection_api.md)
+
+---
+
+### Q21: PHP Error Exception Throwable 如何劃分處理邊界？
+<!-- Concept ID: concept.php.core.error-exception-boundaries; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 PHP `Error`、`Exception` 與 `Throwable` 的關係，以及 Web、CLI、queue 應如何記錄、轉換與重試錯誤。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `Throwable` 是 `Error` 與 `Exception` 的共同介面；兩者都能被捕捉，但不代表所有低階錯誤都適合吞掉或重試。
+- domain／validation exception 應映射成穩定的 4xx 或業務結果；未預期錯誤應記錄 correlation ID、回傳泛化的 5xx，不能洩漏 stack trace 和 secrets。
+- queue 要區分 transient、permanent、non-idempotent failure；錯誤 handler、shutdown handler 和 framework exception listener 要避免重複寫 response 或重複副作用。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Core/error_and_exception_handling.md)
+
+---
+
+### Q22: PHP 寬鬆比較與嚴格比較如何避免 type juggling？
+<!-- Concept ID: concept.php.core.equality-type-juggling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 `==` 與 `===`，並說明外部輸入如何在授權、狀態轉換和集合查找中造成型別戲法風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `==` 允許型別轉換，`===` 同時要求型別與值一致；未正規化的 query、form、JSON 輸入不應直接參與安全判斷。
+- `in_array`、`array_search` 與 `switch` 若使用鬆散比較，可能把數字字串、布林值、`null` 或空值誤認成合法狀態。
+- 先做明確 schema／型別驗證，再使用嚴格比較；集合查找要選擇 strict mode，並用邊界值與惡意輸入測試授權和狀態機。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Core/equality_and_type_juggling.md)
+
+---
+
+### Q23: PHP 魔術方法何時有用又有哪些隱性風險？
+<!-- Concept ID: concept.php.core.magic-methods; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請解釋常見魔術方法的觸發時機，並分析它們對 API 可讀性、序列化、效能和安全性的影響。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `__get`／`__set` 處理不可直接存取的屬性，`__call`／`__callStatic` 處理不存在的方法，`__invoke` 讓物件可呼叫，`__serialize`／`__unserialize` 定義序列化邊界。
+- 隱式資料庫查詢、動態方法 fallback 或任意屬性寫入會讓 N+1、錯誤和授權問題難以追蹤。
+- 只在需要的抽象邊界使用 magic method，限制可用名稱與輸入，將反射／metadata 快取化，並以明確介面及測試保護序列化相容性。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Core/magic_methods.md)
+
+---
+
+### Q24: Symfony 事件系統如何控制 listener 順序與副作用？
+<!-- Concept ID: concept.php.symfony.event-dispatcher-listeners; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 listener、subscriber、priority、同步事件與非同步訊息，並說明交易與失敗邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- EventDispatcher 依事件名稱找到 listener／subscriber，priority 影響執行順序；listener 可修改事件、停止後續處理或產生副作用。
+- 讀取 request／security context 的 kernel event 適合同步處理；跨服務、通知與重工作業應考慮 outbox／message queue，而不是在 transaction 內無界執行。
+- 事件要定義 after-commit 語意、冪等鍵、重試與觀測 trace；不能讓 listener 在資料尚未提交時讀取或對外宣稱成功。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Symfony/event_system_and_listeners.md)
+
+---
+
+### Q25: Symfony DI 容器如何從自動注入走到可驗證的服務圖？
+<!-- Concept ID: concept.php.symfony.dependency-injection-container; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 Symfony container 的 autowiring、autoconfiguration、tag、alias、shared service 與編譯階段，並指出常見邊界錯誤。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- container 依型別與 alias 解析依賴，autoconfiguration 可依介面或 attribute 加入 tag；編譯器會把服務圖具體化並產生 cache。
+- shared service 適合無狀態或明確共享資源；request／tenant state 不應被長生命週期服務持有，避免跨請求污染。
+- 以 lint、container compile、scope／wiring validation、contract test 和 production cache fingerprint 捕捉循環依賴、錯誤 binding、service locator 與 stale cache。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Symfony/dependency_injection_container.md)
+
+---
+
+### Q26: Symfony Security Component 如何劃分認證與授權？
+<!-- Concept ID: concept.php.symfony.security-component; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 firewall、authenticator、user provider、token、access control 與 voter 的責任，並比較 session 與 stateless API。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 認證回答「你是誰」，由 firewall／authenticator／provider 建立或驗證 token；授權回答「你能做什麼」，由 access control、voter 和業務 policy 判斷。
+- stateless API 要驗證每次請求的 token、scope、audience、expiry 與 tenant context；session web 還要處理 CSRF、session fixation 和 logout／rotation。
+- 安全失敗要 default deny，錯誤回應不能洩漏帳號存在性或 secrets，並用 negative tests 驗證跨租戶、過期 token、角色邊界與直接 endpoint 存取。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Symfony/security_component.md)
+
+---
+
+### Q27: Symfony 框架基礎如何串起 request 生命週期與 components？
+<!-- Concept ID: concept.php.symfony.framework-basics; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請從 Kernel、routing、controller、service container、event dispatcher 到 response 說明 Symfony 應用的基本組成與選擇原則。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Kernel 建立應用上下文並處理 request；Routing 找到 controller，container 提供服務，事件在生命週期節點擴充，controller 產生 response。
+- 可按需求選擇 HttpFoundation、Routing、DependencyInjection、EventDispatcher、Console 等 components；完整 framework 帶來 convention、bundle 與 cache 管理成本。
+- production 需要環境設定隔離、container／route／template cache warmup、可觀測錯誤邊界與可回滾的 schema／code 發布順序。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Symfony/symfony_framework_basics.md)
+
+---
+
+### Q28: Symfony 效能優化應如何從證據而非猜測開始？
+<!-- Concept ID: concept.php.symfony.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 Symfony production cache、Composer autoload、OPcache、資料庫、HTTP cache、listener 與 profiler 應如何一起診斷。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先用 trace 拆分 framework bootstrap、container／reflection、autoload、listener、database、serialization 與 network，再對應 P50／P99、CPU、memory 和下游 saturation。
+- production 要使用受控的 config／container／route／template cache、Composer autoload optimization、OPcache warmup；debug profiler 不應直接帶入尖峰流量。
+- 每次只改主要變因，以代表性負載比較 latency、throughput、錯誤率、資源使用與資料正確性，保留 feature flag 和 rollback。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Symfony/performance_optimization.md)
+
+---
+
+### Q29: Laravel 測試與除錯如何涵蓋非同步與授權邊界？
+<!-- Concept ID: concept.php.laravel.testing-debugging; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 unit、feature、integration、database、queue／event 測試，並說明 fake 與真實整合測試各自能證明什麼。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- unit 驗證純商業規則；feature／HTTP 驗證 middleware、routing、validation、authorization 與 response；integration 驗證 database、cache、queue、外部契約和 transaction。
+- `Event::fake`／`Queue::fake` 能驗證 dispatch intent，但不能證明 listener、serialization、worker retry 或 after-commit 行為；這些需要 integration／contract test。
+- 除錯要保留 correlation ID、query／queue／event trace，遮罩個資與 secrets，並用失敗重試、租戶隔離、timeout 和 race case 讓問題可重現。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Laravel/testing_and_debugging.md)
+
+---
+
+### Q30: Laravel 事件與 observer 如何處理交易與重試？
+<!-- Concept ID: concept.php.laravel.events-observers; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 event、listener、subscriber、model observer 與 queued listener，並說明如何避免未提交資料與重複副作用。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- event 描述發生了什麼，listener／observer 負責反應；同步 listener 會增加 request latency，queued listener 會引入 retry、順序與最終一致性。
+- 對需要資料已提交的事件使用 after-commit 或 outbox；listener 必須以 event ID／業務 key 做冪等，不能假設只執行一次。
+- 用 fake 驗證 dispatch，用 integration 測試驗證 transaction、queue worker、失敗重試、租戶 context、通知與資料 invariant。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Laravel/event_system_and_observer_pattern.md)
+
+---
+
+### Q31: Laravel queue 與 task scheduling 如何保證可重試與冪等？
+<!-- Concept ID: concept.php.laravel.queues-scheduling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 Laravel queue worker 的 timeout、tries、backoff、failed job、unique job 與 scheduler lock，並提出可靠任務設計。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 任務 payload 應小且可序列化；worker 取出任務後可能因 timeout、process crash 或 broker redelivery 重複執行，因此業務副作用必須冪等。
+- `tries`、timeout、backoff、visibility timeout 與外部 API deadline 要互相配合；永久失敗應進 failed jobs／DLQ，不能無限重試污染下游。
+- scheduler 要有 distributed lock 與 overlap policy；用 queue age、attempts、success／failure rate、throughput、worker memory 和外部副作用驗證容量與 rollout。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/PHP/Frameworks/Laravel/queue_and_task_scheduling.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

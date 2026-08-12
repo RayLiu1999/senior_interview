@@ -658,3 +658,15 @@ class GoodJob implements ShouldQueue
 - 🚀 避免在任務中進行 I/O 操作
 
 掌握 Laravel 隊列系統能大幅提升應用的性能和用戶體驗。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.queues-scheduling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Laravel queue payload、worker、tries、timeout、backoff、failed job 與 scheduler lock 的執行模型。
+  - `LO-2`: 能夠設計可重試且冪等的任務，處理 after-commit、去重、租戶隔離、部分完成、毒性任務與 queue lag。
+  - `LO-3`: 能夠以 throughput、queue age、attempts、失敗率、外部副作用與 worker recycling 指標規劃容量、部署和回滾。
+- **Prerequisites**: [Laravel Request Lifecycle](./request_lifecycle.md)、[Laravel Service Container](./service_container_and_ioc.md)、[Laravel 事件系統與觀察者模式](./event_system_and_observer_pattern.md)
+- **Quick Quiz**: [Q31](../../../../../QUIZ/09_PHP.md#q31-laravel-queue-與-task-scheduling-如何保證可重試與冪等)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

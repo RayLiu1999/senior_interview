@@ -473,3 +473,15 @@ class Good
 ## 總結
 
 PHP 魔術方法提供了強大的元編程能力，允許開發者自定義對象在特定情況下的行為。合理使用魔術方法可以實現優雅的 API 設計和強大的功能，如屬性延遲加載、方法動態調用、對象序列化等。但需要注意，魔術方法會帶來性能開銷和代碼可讀性的降低，應該在真正需要時才使用，並在文檔中清楚說明其行為。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.magic-methods`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 `__get`、`__set`、`__call`、`__invoke`、`__serialize` 等魔術方法的觸發條件與生命週期。
+  - `LO-2`: 能夠評估 magic dispatch、延遲載入與自訂序列化對可讀性、效能、除錯和相容性的影響。
+  - `LO-3`: 能夠以明確的公開契約、白名單與測試限制動態屬性／方法，避免把授權或資料完整性藏在隱式行為中。
+- **Prerequisites**: [PHP 反射機制](./reflection_api.md)、[PHP 類型系統與 Strict Mode](./type_system_evolution.md)
+- **Quick Quiz**: [Q23](../../../../QUIZ/09_PHP.md#q23-php-魔術方法何時有用又有哪些隱性風險)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

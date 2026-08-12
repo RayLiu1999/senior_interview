@@ -787,3 +787,15 @@ OPcache+JIT     底層：PHP 性能
 - ✅ CDN 配置
 
 Symfony 的性能優化是一個系統工程，需要從多個層面綜合考慮。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.symfony.performance-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從 request trace、container compile、reflection、autoload、資料庫、cache、OPcache 與 listener latency 定位瓶頸。
+  - `LO-2`: 能夠比較 production cache、warmup、Composer autoload optimization、HTTP cache、query／serialization 與非同步工作的效益及成本。
+  - `LO-3`: 能夠以代表性負載、P50／P99、CPU／memory、錯誤率與下游飽和度驗證效能修正，並保留單一變因與回滾路徑。
+- **Prerequisites**: [Symfony 框架基礎](./symfony_framework_basics.md)、[Composer 依賴管理](../../Tooling/what_is_composer_and_its_purpose.md)
+- **Quick Quiz**: [Q28](../../../../../QUIZ/09_PHP.md#q28-symfony-效能優化應如何從證據而非猜測開始)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

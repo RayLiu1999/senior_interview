@@ -138,3 +138,15 @@ switch (true) {
 - **注意內建函式**: 在使用 `in_array()`, `array_search()`, `switch` 等內建功能時，要特別留意它們預設的鬆散比較行為，並在需要時啟用嚴格模式。
 
 總之，理解 `==` 和 `===` 的區別以及型別戲法的陷阱，是每一位 PHP 開發者都必須掌握的基礎知識，這對於編寫出健壯和安全的程式碼至關重要。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.equality-type-juggling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠解釋 `==`、`===`、型別轉換與常見輸入值在比較時的差異。
+  - `LO-2`: 能夠辨識 `in_array`、`array_search`、`switch`、表單與 JSON 輸入中的鬆散比較風險。
+  - `LO-3`: 能夠以嚴格比較、明確正規化、型別宣告與測試案例避免授權、狀態機及資料驗證被 type juggling 繞過。
+- **Prerequisites**: [PHP 類型系統與 Strict Mode](./type_system_evolution.md)、[PHP 常見安全漏洞](./common_security_vulnerabilities.md)
+- **Quick Quiz**: [Q22](../../../../QUIZ/09_PHP.md#q22-php-寬鬆比較與嚴格比較如何避免-type-juggling)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

@@ -446,3 +446,15 @@ class ResourceTransformer
 ## 總結
 
 PHP 反射 API 是實現高級框架功能的基礎，如依賴注入、ORM、路由系統等都依賴反射來動態處理類和對象。雖然反射有一定的性能開銷，但通過合理使用快取和在初始化階段執行反射操作，可以將影響降到最低。理解反射機制不僅有助於使用現有框架，也是開發高質量 PHP 應用和框架的必備技能。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.reflection-api`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 ReflectionClass、ReflectionMethod、ReflectionProperty 與 Attributes 如何取得執行期型別與 metadata。
+  - `LO-2`: 能夠判斷反射在 DI、路由、序列化與 ORM 中的適用邊界，並區分初始化期與每請求重複反射的成本。
+  - `LO-3`: 能夠以快取、明確契約與權限檢查降低動態反射及 magic dispatch 帶來的效能與安全風險。
+- **Prerequisites**: [PHP 8+ 新特性](./php8_new_features.md)、[PHP 類型系統與 Strict Mode](./type_system_evolution.md)
+- **Quick Quiz**: [Q20](../../../../QUIZ/09_PHP.md#q20-php-反射在框架中解決什麼問題)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

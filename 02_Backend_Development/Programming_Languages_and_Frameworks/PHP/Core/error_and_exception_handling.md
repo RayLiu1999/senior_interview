@@ -414,3 +414,15 @@ class Handler extends ExceptionHandler
 ## 總結
 
 PHP 的錯誤和異常處理機制在 PHP 7+ 中得到了顯著改進，通過 Throwable 接口統一了錯誤和異常的處理。理解這兩種機制的區別和適用場景，合理使用自定義異常，配置環境相關的錯誤顯示和日誌記錄，是構建穩定可靠 PHP 應用的關鍵。在生產環境中，應該隱藏詳細錯誤信息，記錄到日誌，並提供友好的錯誤頁面，同時建立完善的監控和告警機制。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.error-exception-boundaries`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 PHP `Error`、`Exception`、`Throwable`、可恢復錯誤與不可恢復錯誤的處理責任。
+  - `LO-2`: 能夠設計從 domain exception 到 HTTP／CLI／queue failure 的錯誤映射、記錄、遮罩與重試邊界。
+  - `LO-3`: 能夠在 production、測試與開發環境中建立不洩漏敏感資訊且可追蹤的錯誤處理與告警流程。
+- **Prerequisites**: [PHP 類型系統與 Strict Mode](./type_system_evolution.md)、[PHP 8+ 新特性](./php8_new_features.md)
+- **Quick Quiz**: [Q21](../../../../QUIZ/09_PHP.md#q21-php-error-exception-throwable-如何劃分處理邊界)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。

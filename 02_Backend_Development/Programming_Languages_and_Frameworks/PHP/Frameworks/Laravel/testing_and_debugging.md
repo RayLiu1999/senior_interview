@@ -790,3 +790,15 @@ php artisan test --coverage
 - ✅ 定期執行測試（CI/CD）
 
 掌握測試與調試能力是構建高質量 Laravel 應用的關鍵。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.testing-debugging`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 unit、feature、integration、HTTP、database、queue／event contract test 的責任與隔離邊界。
+  - `LO-2`: 能夠判斷 `Event::fake`、`Queue::fake`、factory、transaction、Telescope 與 log／trace 對測試證據的限制。
+  - `LO-3`: 能夠設計涵蓋授權、失敗重試、資料一致性、非同步副作用與 production redaction 的可重現除錯流程。
+- **Prerequisites**: [Laravel Request Lifecycle](./request_lifecycle.md)、[Laravel Service Container](./service_container_and_ioc.md)、[Laravel Middleware](./middleware_in_depth.md)
+- **Quick Quiz**: [Q29](../../../../../QUIZ/09_PHP.md#q29-laravel-測試與除錯如何涵蓋非同步與授權邊界)
+- **Hard Assessment**: [PHP Framework Tooling Incident](../../../../../QUIZ/Hard_Assessments/php_framework_tooling_incident.md) (`assessment.php.framework-tooling.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
