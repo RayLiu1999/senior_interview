@@ -27,6 +27,8 @@
 
 本專案另外提供兩條自測路徑：`QUIZ/` 中的題目適合快速複習與口頭回答；[硬測驗軌道](./QUIZ/Hard_Assessments/README.md) 則以學習目標、故障情境、權衡取捨與評分規準驗證實際應用能力。
 
+網站化與互動測驗的後續規劃請參考 [Web Platform Roadmap](./WEB_PLATFORM_ROADMAP.md)，內容涵蓋 Vue／Nuxt 架構、分類瀏覽、測驗紀錄、弱點分析與分階段交付。
+
 ## 目錄
 
 | 分類 | 說明 |

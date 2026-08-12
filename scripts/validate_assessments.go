@@ -148,6 +148,11 @@ func isTopic(rel string) bool {
 	if !strings.HasSuffix(strings.ToLower(rel), ".md") || filepath.Base(rel) == "README.md" {
 		return false
 	}
+	// Root-level documents such as roadmaps and contribution guides are
+	// project documentation, not interview topic articles.
+	if !strings.Contains(rel, "/") {
+		return false
+	}
 	return !strings.HasPrefix(rel, "QUIZ/") && !strings.HasPrefix(rel, ".github/")
 }
 
