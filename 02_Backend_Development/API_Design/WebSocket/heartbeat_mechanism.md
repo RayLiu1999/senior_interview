@@ -8,6 +8,18 @@
 
 為什麼 WebSocket 需要心跳機制？它的主要作用是什麼？請解釋心跳機制的實現原理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.websocket.heartbeat-liveness`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Ping／Pong 控制幀、TCP keepalive、應用層 heartbeat，以及 keepalive 與 liveness 的不同目的。
+  - `LO-2`: 能依 NAT／Proxy idle timeout、網路延遲、連線成本與誤判風險選擇 heartbeat interval 和 timeout。
+  - `LO-3`: 能設計單一寫入者、背壓、取消、清理、重連與心跳指標，避免慢客戶端和死連線耗盡資源。
+- **Prerequisites**: `concept.api.websocket.handshake-upgrade`, `concept.api.realtime.websocket-long-polling`
+- **Quick Quiz**: [Q13](../../../QUIZ/02_API_Design.md#q13-websocket-heartbeat-liveness)
+- **Hard Assessment**: [API Contract Boundary Incident](../../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能以網路設備、Pong 時序與連線資源證據調整心跳策略，並在事故 track 中達到 3/4。
+
 ## 核心理論與詳解
 
 WebSocket 提供了一個持久化的 TCP 連線，允許伺服器和客戶端隨時進行雙向通訊。然而，在實際的網路環境中，一個長時間處於「靜默」狀態（即沒有數據傳輸）的 TCP 連線可能會被中間的網路設備（如 NAT 路由器、防火牆）單方面斷開，而通訊的雙方卻毫不知情。

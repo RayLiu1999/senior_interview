@@ -8,6 +8,18 @@
 
 分頁是 API 設計中的基礎問題：當資料量大時，不可能一次返回所有記錄，必須通過分頁機制讓客戶端按需獲取。常見的分頁策略有 Offset/Limit 分頁和游標（Cursor）分頁，兩者在效能、一致性和使用體驗上有本質差異。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.pagination.consistency-performance`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Offset、頁碼與 Cursor／Keyset 分頁在深分頁效能、隨機跳頁和資料一致性上的取捨。
+  - `LO-2`: 能設計具備穩定排序、唯一 tie-breaker、不透明游標與明確 snapshot 邊界的分頁契約。
+  - `LO-3`: 能處理 limit 上限、游標失效、空頁、has_next／count 語義、索引與查詢觀測，並說明錯誤回應。
+- **Prerequisites**: `concept.api.rest.architectural-constraints`, `concept.api.backward-compatibility.evolution`
+- **Quick Quiz**: [Q10](../../QUIZ/02_API_Design.md#q10-cursor-pagination-consistency)
+- **Hard Assessment**: [API Contract Boundary Incident](../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能依資料變動、查詢深度與 Consumer 需求選擇分頁策略，並在事故 track 中達到 3/4。
+
 ## 核心理論與詳解
 
 ### Offset/Limit 分頁（偏移量分頁）

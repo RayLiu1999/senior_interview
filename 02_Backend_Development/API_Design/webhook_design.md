@@ -8,6 +8,18 @@
 
 Webhook 是一種**事件驅動的 HTTP 回調機制**：當系統中發生特定事件時，伺服器主動向預先配置的 URL 發送 HTTP 請求通知客戶端，實現反向通信（Server-to-Server Push），是現代 API 整合的核心模式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.webhook.delivery-reliability`
+- **Learning Objectives**:
+  - `LO-1`: 能設計 Webhook 發送、接收、確認、超時、重試與指數退避，並明確說明至少一次投遞語義。
+  - `LO-2`: 能以原始 body 驗證 HMAC、時間戳與 replay protection，並用事件 ID、冪等儲存和版本欄位處理重複與亂序。
+  - `LO-3`: 能以 outbox／佇列、DLQ、人工重播、停用門檻與端到端指標建立可恢復的投遞邊界。
+- **Prerequisites**: `concept.api.idempotency.safe-retry`, `concept.api.authentication.authorization-mechanisms`
+- **Quick Quiz**: [Q11](../../QUIZ/02_API_Design.md#q11-webhook-delivery-reliability)
+- **Hard Assessment**: [API Contract Boundary Incident](../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能在不重複副作用的前提下說明 Webhook 的安全、重試與恢復邊界，並在事故 track 中達到 3/4。
+
 ## 核心理論與詳解
 
 ### Webhook vs Polling 的核心差異

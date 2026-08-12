@@ -8,11 +8,23 @@
 
 請詳細描述 WebSocket 的握手過程。這個過程是如何從一個 HTTP 請求升級到一個 WebSocket 連線的？其中涉及了哪些關鍵的 HTTP 標頭？
 
-## 核心理論與詳解
-
 WebSocket 的一個巧妙之處在於，它**重用**了 HTTP 協議作為其初始化的「引導」協議。這意味著 WebSocket 連線是從一個標準的 HTTP 請求開始的，然後透過一個「升級」機制，將底層的 TCP 連線從 HTTP 協議轉換為 WebSocket 協議。這個過程被稱為 WebSocket 握手 (Handshake)。
 
 這個設計使得 WebSocket 流量可以通過標準的 80 和 443 埠，從而更容易地穿透防火牆。
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.websocket.handshake-upgrade`
+- **Learning Objectives**:
+  - `LO-1`: 能解釋 HTTP Upgrade、101、Sec-WebSocket-Key／Accept、Version 與 Origin 在握手中的責任。
+  - `LO-2`: 能區分協議升級、認證授權、TLS、Proxy 與 subprotocol 協商，避免把握手驗證誤當成身份驗證。
+  - `LO-3`: 能設計握手失敗、超時、關閉碼、重連與觀測事件的診斷方案，並保留可回滾的相容策略。
+- **Prerequisites**: `concept.api.realtime.websocket-long-polling`, `concept.api.authentication.authorization-mechanisms`
+- **Quick Quiz**: [Q12](../../../QUIZ/02_API_Design.md#q12-websocket-handshake-upgrade)
+- **Hard Assessment**: [API Contract Boundary Incident](../../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能從握手請求、回應與代理證據定位連線建立問題，並在事故 track 中達到 3/4。
+
+## 核心理論與詳解
 
 ---
 

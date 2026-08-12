@@ -8,6 +8,18 @@
 
 優質的 API 文件是 API 可用性的核心組成部分，決定了開發者整合 API 的效率。OpenAPI 規範（原 Swagger）是業界標準的 API 描述格式，支援自動生成文件、SDK 和測試代碼。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.openapi.contract-first`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 OpenAPI 的路徑、參數、Schema、回應、認證與 Webhook 描述如何組成可執行契約。
+  - `LO-2`: 能比較 contract-first 與 code-first，並讓錯誤、分頁、版本與內容協商在文件中保持準確。
+  - `LO-3`: 能以 lint、schema diff、Mock、SDK／Server Stub 生成與契約測試降低文件漂移和安全暴露風險。
+- **Prerequisites**: `concept.api.rest.architectural-constraints`, `concept.api.versioning.compatibility-strategy`
+- **Quick Quiz**: [Q9](../../QUIZ/02_API_Design.md#q9-openapi-contract-first-design)
+- **Hard Assessment**: [API Contract Boundary Incident](../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能把 OpenAPI 契約、驗證與 Consumer 交付流程連成可驗證的治理方案，並在事故 track 中達到 3/4。
+
 ## 核心理論與詳解
 
 ### OpenAPI 規範

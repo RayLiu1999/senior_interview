@@ -8,6 +8,18 @@
 
 API 在演化過程中必須保持**向後相容性（Backward Compatibility）**：新版本 API 的行為應與舊版本相容，既有客戶端無需修改即可繼續正常使用。如何在不破壞現有客戶端的前提下持續演化 API，是資深工程師必須掌握的核心設計能力。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.backward-compatibility.evolution`
+- **Learning Objectives**:
+  - `LO-1`: 能分類請求、回應與行為層面的變更，判斷哪些變更會破壞既有 Consumer。
+  - `LO-2`: 能設計只增不刪、欄位廢棄、版本遷移與未知枚舉值容忍的演化策略。
+  - `LO-3`: 能以 schema diff、Consumer-Driven Contract Test、流量監控與回滾方案控制相容性風險。
+- **Prerequisites**: `concept.api.versioning.compatibility-strategy`, `concept.api.rest.architectural-constraints`
+- **Quick Quiz**: [Q8](../../QUIZ/02_API_Design.md#q8-api-backward-compatibility-boundary)
+- **Hard Assessment**: [API Contract Boundary Incident](../../QUIZ/Hard_Assessments/api_contract_boundary_incident.md) (`assessment.api.contract-boundary.incident.v1`)
+- **Assessment Gate**: 能從契約差異與 Consumer 證據判斷破壞性變更，並在事故 track 中達到 3/4。
+
 ## 核心理論與詳解
 
 ### 破壞性變更（Breaking Changes）的識別
