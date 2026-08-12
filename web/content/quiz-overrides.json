@@ -1,0 +1,35 @@
+{
+  "quiz-01-operating-system-q1": {
+    "type": "single-choice",
+    "options": [
+      { "id": "a", "label": "Process 與 Thread 都有完全獨立的地址空間" },
+      { "id": "b", "label": "Process 通常提供較強隔離；Thread 通常共享同一 Process 的地址空間" },
+      { "id": "c", "label": "Thread 一定比 Process 更適合跨機器通訊" },
+      { "id": "d", "label": "Process 不能建立多個執行單位" }
+    ],
+    "correctOptionIds": ["b"],
+    "explanationMarkdown": "Process 通常是資源與隔離邊界，Thread 是在同一 Process 內共享地址空間的執行單位；實際成本與語意仍取決於作業系統與執行環境。"
+  },
+  "quiz-01-operating-system-q2": {
+    "type": "single-choice",
+    "options": [
+      { "id": "a", "label": "只有共享記憶體能用於 IPC" },
+      { "id": "b", "label": "Socket 只能用在同一台機器" },
+      { "id": "c", "label": "共享記憶體速度快，但需要額外同步來保護共同狀態" },
+      { "id": "d", "label": "Signal 適合傳送大量資料內容" }
+    ],
+    "correctOptionIds": ["c"],
+    "explanationMarkdown": "共享記憶體避免重複拷貝，通常具有效能優勢，但它不會自動提供一致性或同步；Signal 比較適合通知與控制，不是大量資料通道。"
+  },
+  "quiz-01-operating-system-q3": {
+    "type": "multiple-choice",
+    "options": [
+      { "id": "a", "label": "互斥" },
+      { "id": "b", "label": "持有並等待" },
+      { "id": "c", "label": "循環等待" },
+      { "id": "d", "label": "無限記憶體" }
+    ],
+    "correctOptionIds": ["a", "b", "c"],
+    "explanationMarkdown": "死鎖的四個必要條件是互斥、持有並等待、不可剝奪與循環等待；破壞其中任一條件即可降低死鎖成立的可能。"
+  }
+}
