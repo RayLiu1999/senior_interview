@@ -84,3 +84,15 @@ JetStream 是建立在 Core NATS 之上的持久化層，它為 NATS 增加了�
 - 如果你需要 **可靠的訊息傳遞**、**資料持久化** 和 **訊息重播** 能力，那麼你應該使用 **NATS JetStream**。
 
 在實際應用中，兩者經常結合使用。例如，使用 Core NATS 進行頻繁的狀態更新和心跳檢測，同時使用 JetStream 處理關鍵的業務交易。這正是 NATS 設計的優雅之處。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.nats.core-jetstream-durability`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Core NATS 的 at-most-once 與 JetStream 的持久化、ack、重播和至少一次語義。
+  - `LO-2`: 能依 Stream、Consumer、retention、replication 與 ack timeout 分析訊息遺失或重複風險。
+  - `LO-3`: 能在低延遲、durability、容量、重播與運維複雜度之間選擇 Core NATS 或 JetStream。
+- **Prerequisites**: `concept.messaging.nats.core-architecture`, `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q17](../../../QUIZ/02_Message_Queues.md#q17-nats-core-and-jetstream-durability)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能指出 Core NATS 離線遺失與 JetStream 未 ack 重送的不同邊界，並在事故測驗中達到 3/4。

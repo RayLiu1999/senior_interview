@@ -654,3 +654,15 @@ Kafka 是現代分散式系統的核心組件，其核心優勢包括：
 理解 Kafka 的核心概念（Topic、Partition、Replica、Producer、Consumer、Consumer Group）和架構設計，是掌握現代後端系統的關鍵，也是資深後端面試的必考內容。
 
 在實際使用中，需要根據業務需求合理設計 Topic 和分區數量，平衡可靠性和效能，並監控叢集的健康狀態。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.fundamentals`
+- **Learning Objectives**:
+  - `LO-1`: 能從 Topic、Partition、Broker、Producer、Consumer 與 Offset 描述 Kafka 的提交日誌模型。
+  - `LO-2`: 能比較 Kafka 的保留、重播、順序與 Consumer Group 語義和傳統訊息代理的差異。
+  - `LO-3`: 能依吞吐量、持久化、事件重播、順序與操作能力選擇 Kafka，並說明主要風險。
+- **Prerequisites**: `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q16](../../../QUIZ/02_Message_Queues.md#q16-kafka-fundamentals-and-log-model)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能用 Kafka 的 log、Partition 與 Consumer Group 模型解釋可靠性事故，不把 Kafka 當成無條件 exactly-once 佇列，並在事故測驗中達到 3/4。

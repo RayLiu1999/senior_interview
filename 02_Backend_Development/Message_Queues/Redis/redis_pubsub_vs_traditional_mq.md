@@ -67,3 +67,15 @@ Redis Pub/Sub 是一個輕量級的訊息廣播機制，其核心優勢在於：
 當您需要一個極其快速、輕量的即時通知系統，並且業務邏輯可以容忍或自行處理訊息丟失的風險時，Redis Pub/Sub 是最佳選擇。
 
 當您的業務需要確保每一條訊息都得到可靠處理，需要服務解耦、流量緩衝、或複雜的訊息路由時，就必須選擇像 Kafka 或 RabbitMQ 這樣更重量級、功能更全面的訊息佇列。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.redis.pubsub-delivery-tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Redis Pub/Sub 的即時廣播、at-most-once、離線遺失與無 replay 邊界。
+  - `LO-2`: 能比較 Pub/Sub、Redis Streams、Kafka 與 RabbitMQ 在 durability、backpressure、ack、容量和操作成本上的取捨。
+  - `LO-3`: 能設計通知遺失後的 API 回補、容量保護與升級到持久化訊息模型的方案。
+- **Prerequisites**: `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q23](../../../QUIZ/02_Message_Queues.md#q23-redis-pubsub-delivery-and-capacity-tradeoffs)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能明確說出 Redis Pub/Sub 不承擔可靠任務處理，並提出可回補或改用持久化模型的容量方案，在事故測驗中達到 3/4。

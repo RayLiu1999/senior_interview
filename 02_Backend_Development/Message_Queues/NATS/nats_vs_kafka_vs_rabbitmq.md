@@ -104,3 +104,15 @@ NATS、Apache Kafka 和 RabbitMQ 是訊息傳遞領域三個非常流行但設�
 - **RabbitMQ** 是一個成熟、功能豐富的「瑞士軍刀」，適用於需要複雜路由的傳統企業應用。
 - **Kafka** 是一個為處理海量資料串流而生的「巨獸」，是構建現代資料管道和事件驅動架構的基石。
 - **NATS** 則是一個輕量、極速的「神經系統」，專為現代雲端原生和邊緣計算應用設計，兼具簡單性和強大功能。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.nats.platform-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Kafka、RabbitMQ、Core NATS 與 JetStream 的訊息模型、durability、replay、routing 和 ordering。
+  - `LO-2`: 能將吞吐量、延遲、ack、重試、消費模型與運維能力映射到實際選型需求。
+  - `LO-3`: 能提出具備容量、故障退化、遷移與可觀測性邊界的訊息平台選型決策。
+- **Prerequisites**: `concept.messaging.kafka.fundamentals`, `concept.messaging.rabbitmq.core-architecture`, `concept.messaging.nats.core-jetstream-durability`
+- **Quick Quiz**: [Q19](../../../QUIZ/02_Message_Queues.md#q19-message-platform-selection-kafka-rabbitmq-and-nats)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能以傳遞語義與故障證據而非單一吞吐量數字做選型，並在事故測驗中達到 3/4。

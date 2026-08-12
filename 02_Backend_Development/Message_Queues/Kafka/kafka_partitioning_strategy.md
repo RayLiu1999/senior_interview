@@ -90,3 +90,15 @@ Consumer Group 重新平衡時，如何將 Partition 分配給 Consumer Members�
 ```properties
 partition.assignment.strategy=org.apache.kafka.clients.consumer.CooperativeStickyAssignor
 ```
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.partitioning-strategy`
+- **Learning Objectives**:
+  - `LO-1`: 能依業務 Key、Partition 數與 Consumer 數說明 Kafka 的路由與有效並行度。
+  - `LO-2`: 能分析 key skew、hot partition、跨 Partition 順序與擴容造成的資料路由風險。
+  - `LO-3`: 能在順序、吞吐量、負載均衡與遷移成本之間提出可驗證的分區方案。
+- **Prerequisites**: `concept.messaging.kafka.core-components`, `concept.messaging.kafka.message-ordering`
+- **Quick Quiz**: [Q12](../../../QUIZ/02_Message_Queues.md#q12-kafka-partitioning-key-and-capacity-design)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能將業務順序需求轉成穩定分區 Key，並說明 hot key 與增加 Partition 的退化行為，在事故測驗中達到 3/4。

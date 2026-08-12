@@ -85,3 +85,15 @@ min.insync.replicas = 2  （含 Leader 在內，至少 2 個副本確認）
 | 1 個 Broker 宕機 | Leader 切換，服務正常，ISR = 2（仍滿足） |
 | 2 個 Broker 宕機 | ISR = 1，`acks=all` 的寫入失敗；`acks=1` 仍可寫 |
 | 3 個 Broker 全宕機 | 服務不可用 |
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.replication-isr`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Leader、Follower、ISR、HW、LEO 與 replication factor 在資料路徑中的角色。
+  - `LO-2`: 能比較 clean／unclean leader election、ISR 收縮與 `min.insync.replicas` 對 RPO 和可用性的影響。
+  - `LO-3`: 能依跨 Broker 故障、ack 設定與 under-replicated 指標設計故障轉移和告警方案。
+- **Prerequisites**: `concept.messaging.kafka.core-components`, `concept.messaging.kafka.message-reliability`
+- **Quick Quiz**: [Q15](../../../QUIZ/02_Message_Queues.md#q15-kafka-replication-isr-and-failover)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能說明 `acks=all` 等待當下 ISR 而非盲目等待所有副本，並在事故測驗中達到 3/4。

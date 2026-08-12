@@ -699,3 +699,15 @@ Kafka 效能優化是多層次的：
 - **逐步調整**：一次改一個參數，觀察效果
 
 理解這些優化策略，能夠幫助你構建高效能的 Kafka 系統，也是資深後端面試的重要考點。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.performance-tuning`
+- **Learning Objectives**:
+  - `LO-1`: 能從 producer、broker、consumer、磁碟與網路指標定位吞吐量或延遲瓶頸。
+  - `LO-2`: 能比較 batching、compression、fetch、Partition 與並行度對 CPU、網路、磁碟和延遲的影響。
+  - `LO-3`: 能在可靠性、容量、P99 延遲與成本之間提出有基準線、可回滾的調優計畫。
+- **Prerequisites**: `concept.messaging.kafka.core-components`, `concept.messaging.kafka.message-reliability`
+- **Quick Quiz**: [Q13](../../../QUIZ/02_Message_Queues.md#q13-kafka-performance-tuning-with-reliability-bounds)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能用 workload 與 P95/P99、lag、ISR、CPU、磁碟和網路證據說明調優效果，並在事故測驗中達到 3/4。

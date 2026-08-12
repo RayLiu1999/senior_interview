@@ -169,3 +169,15 @@ func failOnError(err error, msg string) {
     }
 }
 ```
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.rabbitmq.core-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能追蹤 Producer、Exchange、Binding、Queue 與 Consumer 的訊息路由與生命週期。
+  - `LO-2`: 能區分 routing、durability、publisher confirm、consumer ack 與 requeue 的責任。
+  - `LO-3`: 能依工作佇列、廣播、複雜路由與故障恢復需求設計 RabbitMQ 拓撲。
+- **Prerequisites**: `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q22](../../../QUIZ/02_Message_Queues.md#q22-rabbitmq-core-architecture)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能從 Exchange 到 ACK 說明 RabbitMQ 的可靠傳遞邊界，而非只背元件名稱，並在事故測驗中達到 3/4。

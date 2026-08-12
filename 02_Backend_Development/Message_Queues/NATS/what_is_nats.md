@@ -55,3 +55,15 @@ NATS 的核心設計理念可以總結為 **PSS**：
 ### 總結
 
 NATS 是一個以 **簡潔** 和 **高效能** 為核心的訊息系統。它的 **Core NATS** 部分提供了閃電般快速但「最多一次」傳遞保證的 Pub-Sub 和 Request-Reply 功能，非常適合需要低延遲的即時通訊場景。而其內建的 **JetStream** 元件則在其基礎上增加了持久化和更強的傳遞保證（至少一次），使其能夠應對需要高可靠性的關鍵業務場景，成為一個功能全面且極具擴展性的現代訊息平台。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.nats.core-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Subject、Pub/Sub、Request-Reply 與 Queue Group 的基本訊息流向。
+  - `LO-2`: 能解釋 NATS 的 Performance、Simplicity、Security 設計取向，以及 Core NATS 的遺失邊界。
+  - `LO-3`: 能判斷何時使用 Core NATS、何時使用 JetStream，並將持久化、重播、授權和容量需求說清楚。
+- **Prerequisites**: `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q20](../../../QUIZ/02_Message_Queues.md#q20-nats-core-architecture-and-delivery-semantics)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能將 NATS 的 API 模型連到 at-most-once／持久化選擇與故障恢復邊界，並在事故測驗中達到 3/4。

@@ -72,3 +72,15 @@ NATS 的核心是一個一對多的發布-訂閱 (Pub-Sub) 系統。預設情況
 ### 總結
 
 佇列群組 (Queue Groups) 是 NATS 在其核心的發布-訂閱模型之上提供負載平衡能力的關鍵機制。它通過讓多個訂閱者共享一個佇列名，使得 NATS 伺服器能夠在這些訂閱者之間隨機分發訊息，從而將 Pub-Sub 的廣播模型巧妙地轉換為多對一的佇列模型。這個簡單而強大的功能是 NATS 能夠在現代微服務架構中作為高效服務通訊骨幹的核心原因之一。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.nats.queue-groups-load-balancing`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Queue Group 如何讓同一 Subject 的訊息只交付給一個成員，並區分群組負載平衡與廣播。
+  - `LO-2`: 能分析成員加入、離線、慢消費者與 Core NATS at-most-once 語義對請求和訊息的影響。
+  - `LO-3`: 能依吞吐量、熱點 Subject、重試與持久化需求設計 Queue Group 或 JetStream Consumer 方案。
+- **Prerequisites**: `concept.messaging.nats.core-architecture`, `concept.messaging.nats.core-jetstream-durability`
+- **Quick Quiz**: [Q18](../../../QUIZ/02_Message_Queues.md#q18-nats-queue-groups-and-load-balancing)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能明確區分 NATS Queue Group 的分流與可靠佇列的重送能力，並在事故測驗中達到 3/4。

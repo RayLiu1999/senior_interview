@@ -102,3 +102,15 @@ enable.idempotence=true
 - 默認 5：允許 Producer 有最多 5 個未確認的請求批次同時在飛（in-flight）
 - 設為 1：嚴格按順序發送（牺牲吞吐量換取嚴格順序）
 - **開啟冪等性時**：允許最大 5，Broker 端排序保證每個 Partition 的順序（Kafka 的特殊排序算法）
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.producer-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Producer batching、buffer、partitioner、acks 與 delivery timeout 的訊息路徑。
+  - `LO-2`: 能比較 retries、idempotence、max in-flight 與 key 對重複、亂序、延遲和吞吐量的影響。
+  - `LO-3`: 能設計包含 delivery error、retry、request latency 與容量上限的 Producer 可靠性方案。
+- **Prerequisites**: `concept.messaging.kafka.core-components`, `concept.messaging.kafka.message-reliability`
+- **Quick Quiz**: [Q14](../../../QUIZ/02_Message_Queues.md#q14-kafka-producer-ack-retry-and-idempotence)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能把 ACK、ISR、重試與冪等 Producer 的責任邊界連到故障時間線，並在事故測驗中達到 3/4。

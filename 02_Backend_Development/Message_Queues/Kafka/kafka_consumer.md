@@ -107,3 +107,15 @@ Kafka 本身只能在 Producer 端保証冪等（同一 Partition），Consumer 
 1. **冪等消費**：確保相同訊息處理多次結果相同（自然冪等）
 2. **事務性消費 + 儲存**：將「處理業務」和「提交 Offset」放在一個原子事務中（如 Kafka Streams 的 EOS 模式）
 3. **外部去重**：使用 Redis SET 記錄已處理的 Message ID（`SET msg_id EX 86400 NX`）
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.consumer-offset`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Consumer Group、Partition、Poll 與 Offset 的分工，並計算同一 Group 的有效並行度。
+  - `LO-2`: 能設計 side effect 成功後提交、以每個 Partition 最高連續完成位置為準的手動提交策略。
+  - `LO-3`: 能從 lag、poll interval、generation、assignment 與重平衡證據診斷重放、跳過與重複處理風險。
+- **Prerequisites**: `concept.messaging.kafka.core-components`, `concept.messaging.kafka.consumer-rebalance`
+- **Quick Quiz**: [Q11](../../../QUIZ/02_Message_Queues.md#q11-kafka-consumer-offset-and-consumer-group-design)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能以 Offset、Consumer Group 與重平衡證據提出可重放且不靜默跳過的消費設計，並在事故測驗中達到 3/4。

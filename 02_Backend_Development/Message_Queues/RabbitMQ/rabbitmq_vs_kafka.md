@@ -77,3 +77,15 @@ Kafka 的核心是一個**不可變的、僅追加的日誌 (Immutable, Append-o
 - **選擇 Kafka** 如果你的核心是處理大規模的即時數據流，並希望將其作為整個數據架構的中心。它是一個**戰略性**的選擇，通常被用作企業級的「數據中樞 (Data Hub)」。
 
 簡單來說：**RabbitMQ 是為了「訊息傳遞 (Messaging)」而生，而 Kafka 是為了「數據串流 (Streaming)」而生。** 雖然它們在某些功能上有所重疊，但其設計初衷和最佳應用場景有著本質的區別。
+
+## 測驗對應
+
+- **Concept ID**: `concept.messaging.rabbitmq.kafka-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 RabbitMQ 的 Exchange／Queue／ACK 與 Kafka 的 Topic／Partition／Offset 模型。
+  - `LO-2`: 能依 routing、重播、吞吐量、延遲、backpressure 與可靠性需求選擇平台。
+  - `LO-3`: 能說明兩者在 retry、DLQ、consumer failure、擴展和操作維運上的退化與成本。
+- **Prerequisites**: `concept.messaging.rabbitmq.core-architecture`, `concept.messaging.kafka.fundamentals`, `concept.messaging.message-queue.selection`
+- **Quick Quiz**: [Q21](../../../QUIZ/02_Message_Queues.md#q21-rabbitmq-and-kafka-selection)
+- **Hard Assessment**: [Message Queue Reliability Incident](../../../QUIZ/Hard_Assessments/message_queue_reliability_incident.md) (`assessment.messaging.message-queue.reliability-incident.v1`)
+- **Assessment Gate**: 能以傳遞語義、路由與故障恢復證據做 RabbitMQ／Kafka 選型，並在事故測驗中達到 3/4。
