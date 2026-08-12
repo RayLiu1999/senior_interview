@@ -156,3 +156,15 @@ Builder 可在最後的 `Build()` 步驟才建立最終物件，該物件可以�
 | **建立步驟** | 一步完成 | 多步完成 |
 | **適用場景** | 物件類型的選擇 | 物件配置的組合 |
 | **可選參數** | 不擅長處理 | 天然優勢 |
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.builder.construct-valid-state`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Builder 如何把複雜建構、可選欄位與不變條件分離。
+  - `LO-2`: 能比較 Builder、factory、functional options 與直接建構在 API 可讀性和演進成本上的取捨。
+  - `LO-3`: 能讓建構失敗、預設值、驗證與測試資料建立具有明確且可重現的語意。
+- **Prerequisites**: 介面、不可變資料、不變條件、工廠與輸入驗證的基本概念。
+- **Quick Quiz**: [Q17](../../QUIZ/17_Architecture_Patterns.md#q17)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以有效狀態、相容性與測試成本評估 Builder 是否值得引入，而不是只看參數數量後，再進入 Hard Assessment。

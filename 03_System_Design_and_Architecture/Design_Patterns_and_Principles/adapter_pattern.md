@@ -1340,3 +1340,15 @@ type RabbitMQAdapter struct {
 - 微服務協定轉換
 
 在實際開發中,適配器模式廣泛應用於系統整合、框架設計和微服務架構,是後端工程師必須掌握的重要模式之一。善用適配器模式可以提高程式碼的可重用性、靈活性和可維護性。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.adapter.compatibility-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能區分客戶端契約、既有元件介面與 adapter 轉換的責任。
+  - `LO-2`: 能處理錯誤、timeout、重試、資料語意與版本差異，不把不相容性藏在轉換層。
+  - `LO-3`: 能以 contract test、metrics 和 feature flag 驗證 adapter 的替換與退場成本。
+- **Prerequisites**: 介面、依賴反轉、錯誤語意、HTTP／外部服務整合的基本概念。
+- **Quick Quiz**: [Q10](../../QUIZ/17_Architecture_Patterns.md#q10)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能指出 adapter 保護的內部契約與外部變化軸，並列出轉換測試與退場條件後，再進入 Hard Assessment。

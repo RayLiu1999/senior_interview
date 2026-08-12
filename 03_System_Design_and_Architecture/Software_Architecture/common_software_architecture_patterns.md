@@ -107,3 +107,15 @@
 ## 總結
 
 沒有一種架構模式是萬能的。選擇哪種模式取決於多種因素，包括業務需求、團隊技能、預算、專案規模和預期的系統品質屬性。在實際的系統設計中，也常常會混合使用多種架構模式。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.patterns.selection-tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能以品質屬性、業務邊界、團隊 ownership 與運維能力比較分層、事件驅動、微核心、微服務和 space-based 模式。
+  - `LO-2`: 能辨識模式組合的耦合、資料一致性、部署與除錯成本，而不是把模式當成互斥清單。
+  - `LO-3`: 能提出可驗證的 architecture decision record、容量假設與退場／回滾策略。
+- **Prerequisites**: 單體與分散式演進、CAP、事件驅動、模組化與品質屬性的基本概念。
+- **Quick Quiz**: [Q26](../../QUIZ/17_Architecture_Patterns.md#q26)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從需求和限制選擇模式組合，並以指標和失敗情境驗證取捨後，再進入 Hard Assessment。

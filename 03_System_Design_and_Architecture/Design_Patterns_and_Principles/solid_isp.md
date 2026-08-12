@@ -565,3 +565,15 @@ func SaveData(writer Writer) { /* ... */ }
 **與 SRP 的區別**：
 - SRP: 類別只有一個變化的原因
 - ISP: 介面只服務一類客戶端
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.solid.isp.interface-segregation`
+- **Learning Objectives**:
+  - `LO-1`: 能從 client 使用面辨識胖介面造成的依賴與變更擴散。
+  - `LO-2`: 能以角色介面、組合與能力邊界拆分契約，而不把每個方法機械地拆成一個介面。
+  - `LO-3`: 能用編譯影響面、測試矩陣和版本相容性驗證 ISP 重構的收益與成本。
+- **Prerequisites**: 介面設計、依賴反轉、SRP 與契約測試的基本概念。
+- **Quick Quiz**: [Q9](../../QUIZ/17_Architecture_Patterns.md#q9)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以不同 client 的變更原因和能力需求拆出最小契約，並說明相容策略後，再進入 Hard Assessment。

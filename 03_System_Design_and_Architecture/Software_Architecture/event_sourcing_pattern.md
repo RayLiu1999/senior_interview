@@ -82,3 +82,15 @@
 事件溯源是一個非常強大的模式，它透過儲存事件而非狀態，為系統帶來了前所未有的審計能力、時間旅行功能和架構靈活性。然而，它的這些優點是以更高的架構複雜性、陡峭的學習曲線以及必須處理最終一致性為代價的。
 
 它通常不適用於簡單的 CRUD 應用。但在業務邏輯複雜、需要完整追溯歷史、並且對未來擴展性有高要求的領域（如金融、保險、電子商務核心系統），事件溯源與 CQRS 的組合拳能夠構建出極其健壯和靈活的系統。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.event-sourcing.audit-replay`
+- **Learning Objectives**:
+  - `LO-1`: 能區分事件作為事實、目前狀態快照與一般 domain event／audit log 的責任。
+  - `LO-2`: 能設計事件版本、順序、冪等、快照、重播、修正事件與投影重建策略。
+  - `LO-3`: 能評估事件溯源對資料治理、除錯、隱私刪除、查詢模型與運維恢復的取捨。
+- **Prerequisites**: CQRS、事件驅動、交易一致性、schema evolution 與快照的基本概念。
+- **Quick Quiz**: [Q24](../../QUIZ/17_Architecture_Patterns.md#q24)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從事件不變條件與重建證據說明何時使用 event sourcing，而非只因需要 audit 後，再進入 Hard Assessment。

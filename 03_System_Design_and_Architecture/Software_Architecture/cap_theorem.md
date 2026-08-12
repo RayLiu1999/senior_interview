@@ -75,3 +75,15 @@ CAP 定理為分散式系統的設計提供了根本性的指導。它迫使架�
 -   對於追求高可用性和可擴展性的場景（如社交網路的動態、電商的商品評論），通常會選擇 **AP** 架構，並接受最終一致性。
 
 理解這個權衡是設計和評估任何一個分散式系統的第一步。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.cap.partition-tradeoff`
+- **Learning Objectives**:
+  - `LO-1`: 能正確描述 partition、consistency、availability 與 CAP 的適用前提。
+  - `LO-2`: 能把 CAP 取捨連到 quorum、timeout、failover、資料語意與使用者可接受的不一致窗口。
+  - `LO-3`: 能以故障注入、讀寫路徑和業務不變條件證明選擇，而非用 AP／CP 標籤代替設計。
+- **Prerequisites**: 分散式系統、複製、故障模型、最終一致性與 quorum 的基本概念。
+- **Quick Quiz**: [Q22](../../QUIZ/17_Architecture_Patterns.md#q22)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能把 partition 情境、業務 invariant 和可量測的 consistency／availability 目標連起來後，再進入 Hard Assessment。

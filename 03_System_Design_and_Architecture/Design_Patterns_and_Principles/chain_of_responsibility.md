@@ -178,3 +178,15 @@ Prometheus 的 AlertManager 路由樹（routing tree）就是責任鏈的樹狀�
 - 鏈過長時，追蹤請求流向困難（需要完善的日誌）
 - 不保證請求一定會被處理（需要在鏈尾設置預設處理者）
 - Middleware 模式下，執行順序可能影響行為（如 Auth 應在 Rate Limit 之前）
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.chain-of-responsibility.pipeline-composition`
+- **Learning Objectives**:
+  - `LO-1`: 能用責任鏈或 pipeline 的控制流說明傳遞、處理、短路與後置行為。
+  - `LO-2`: 能治理順序、timeout、錯誤邊界、重試與 handler 的責任，避免鏈條變成不可追蹤的隱式流程。
+  - `LO-3`: 能以 trace、contract test 和故障注入驗證每個 handler 的組合與隔離性。
+- **Prerequisites**: middleware、Decorator、請求生命週期、錯誤處理與可觀測性的基本概念。
+- **Quick Quiz**: [Q13](../../QUIZ/17_Architecture_Patterns.md#q13)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能重建 handler 順序與短路語意，並提出可定位順序回歸的測試和 telemetry 後，再進入 Hard Assessment。

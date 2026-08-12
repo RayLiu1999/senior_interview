@@ -146,3 +146,15 @@ func main() {
     - 然後使用這個工廠來創建所需的所有產品（上衣和褲子）。
     - 客戶端不直接與 `NikeShirt` 或 `AdidasPants` 等具體產品耦合，只依賴於 `Shirt` 和 `Pants` 介面。
     - 這保證了從同一個工廠獲得的產品（`nikeShirt` 和 `nikePants`）必然屬於同一個家族（Nike）。如果想換成 Adidas，只需更換工廠即可。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.abstract-factory.product-family-consistency`
+- **Learning Objectives**:
+  - `LO-1`: 能以產品家族與相容性約束說明抽象工廠的變化軸，而不是只描述工廠名稱。
+  - `LO-2`: 能比較抽象工廠、工廠方法與直接建構在擴展成本、組合和測試上的取捨。
+  - `LO-3`: 能設計可替換的 composition root，避免具體產品穿透 domain 或造成錯配。
+- **Prerequisites**: 介面、工廠方法、依賴反轉與組合優於繼承的基本概念。
+- **Quick Quiz**: [Q7](../../QUIZ/17_Architecture_Patterns.md#q7)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從產品家族一致性、版本相容與測試替身說明抽象工廠何時值得採用後，再進入 Hard Assessment。

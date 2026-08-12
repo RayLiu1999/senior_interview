@@ -69,3 +69,15 @@ App Server 擴展了，壓力全到了 Database。
 - **業務領域過於複雜**: 領域模型 (Domain Model) 太大，腦容量無法理解整個系統。
 - **獨立擴展需求**: 某個小功能需要極高的資源 (如影音轉碼)，但被迫連著整個龐大的單體一起擴展，資源浪費。
 - **發布頻率要求**: 需要每天發布多次，但單體編譯部署一次要 1 小時。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.evolution.horizontal-scaling-stage`
+- **Learning Objectives**:
+  - `LO-1`: 能說明從單體到多副本的主要瓶頸、前提條件與新增故障模式。
+  - `LO-2`: 能設計 session、cache、queue、database 與 deployment 的共享或分片策略。
+  - `LO-3`: 能以成本、可靠性、尾延遲與團隊運維能力決定是否進入下一個演進階段。
+- **Prerequisites**: [單體架構](./evolution_stage_1_monolith.md)、水平擴展、無狀態服務與負載平衡。
+- **Quick Quiz**: [Q21](../../QUIZ/17_Architecture_Patterns.md#q21)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能提出多副本 rollout、狀態外移與故障回復的量化指標後，再進入 Hard Assessment。

@@ -668,3 +668,15 @@ func Logger(next http.Handler) http.Handler {
 - 在 Go 中充分利用接口和組合的優勢
 
 **記住**: 裝飾器模式就像給物件穿衣服,一件一件疊加,每件衣服都增加新的功能或外觀,但核心的物件始終不變。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.decorator.composable-behavior`
+- **Learning Objectives**:
+  - `LO-1`: 能說明裝飾器如何以組合疊加行為，並辨識每一層的責任與順序。
+  - `LO-2`: 能比較裝飾器、繼承、Proxy 與 middleware，在可替換性、除錯和效能上的取捨。
+  - `LO-3`: 能為失敗、取消、重試與資源釋放定義可測試且不重複套用的裝飾邊界。
+- **Prerequisites**: 介面、組合、Proxy、責任鏈與橫切關注點的基本概念。
+- **Quick Quiz**: [Q8](../../QUIZ/17_Architecture_Patterns.md#q8)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以變化軸和 wrapper 順序解釋何時採用裝飾器，並提出隔離測試後，再進入 Hard Assessment。

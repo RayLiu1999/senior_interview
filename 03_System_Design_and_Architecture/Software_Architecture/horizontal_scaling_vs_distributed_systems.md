@@ -67,3 +67,15 @@
 | **分散式系統** | 一種**系統狀態** (State)。 | 多個節點協同工作的環境。 |
 
 **結論**: 水平擴展是通往分散式系統的入口。即使只是簡單的將 Web Server 擴展成 3 台，你也必須開始用分散式系統的思維（無狀態設計、集中式存儲、冪等性）來設計你的程式。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.scaling.horizontal-distribution`
+- **Learning Objectives**:
+  - `LO-1`: 能區分水平擴展、垂直擴展與分散式系統的定義及其關係。
+  - `LO-2`: 能分析無狀態、共享資料、冪等、session、快取與一致性在多節點下的影響。
+  - `LO-3`: 能用流量、瓶頸、故障域與運維證據判斷何時只是加節點，何時已進入分散式取捨。
+- **Prerequisites**: 單體架構、負載平衡、資料庫一致性、冪等性與 CAP 的基本概念。
+- **Quick Quiz**: [Q20](../../QUIZ/17_Architecture_Patterns.md#q20)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能用容量與故障情境說明水平擴展引入的分散式狀態後，再進入 Hard Assessment。

@@ -126,3 +126,15 @@ Request → [Auth Middleware] → [Logging Middleware] → [Handler] → Respons
 - 演算法骨架越固定，擴展靈活性越低
 - 在 Go 中需要介面 + struct 的配合，比傳統 OOP 稍複雜
 - 如果步驟太多，介面定義會變得龐大
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.template-method.inheritance-skeleton`
+- **Learning Objectives**:
+  - `LO-1`: 能辨識固定流程骨架、可變 hook 與由誰控制步驟順序。
+  - `LO-2`: 能比較 template method 的繼承耦合與 pipeline／Strategy 組合在演進和測試上的取捨。
+  - `LO-3`: 能處理 hook 失敗、取消、資源清理與版本演進，避免子類別破壞不變條件。
+- **Prerequisites**: 組合與繼承、LSP、責任鏈、Strategy 與不變條件的基本概念。
+- **Quick Quiz**: [Q15](../../QUIZ/17_Architecture_Patterns.md#q15)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以實際變更需求判斷固定骨架是否穩定、hook 是否應改為組合，並提出替換測試後，再進入 Hard Assessment。

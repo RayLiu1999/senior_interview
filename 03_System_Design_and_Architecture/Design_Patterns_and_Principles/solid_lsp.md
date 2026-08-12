@@ -708,3 +708,15 @@ var _ Writer = (*strings.Builder)(nil)
 4. **收益**: 提高代碼的可維護性、可擴展性和可靠性
 
 **記住**: "Is-A" 關係不等於繼承關係,繼承必須是"行為兼容的 Is-A"。當不確定時,使用組合或接口是更安全的選擇。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.solid.lsp.substitutability`
+- **Learning Objectives**:
+  - `LO-1`: 能用前置條件、後置條件、不變量與錯誤語意判斷替代是否保持行為契約。
+  - `LO-2`: 能辨識繼承、adapter、decorator 與組合在相容性和變更隔離上的差異。
+  - `LO-3`: 能以契約測試、consumer expectations 與故障案例證明替代實作沒有偷偷收窄契約。
+- **Prerequisites**: 介面契約、組合與繼承、adapter、錯誤處理與契約測試的基本概念。
+- **Quick Quiz**: [Q18](../../QUIZ/17_Architecture_Patterns.md#q18)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以 caller 可觀察的契約判斷繼承是否安全，並提出組合替代與回歸證據後，再進入 Hard Assessment。

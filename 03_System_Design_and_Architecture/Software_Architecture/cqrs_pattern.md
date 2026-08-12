@@ -94,3 +94,15 @@ CQRS 並非萬靈丹。它最適合用於以下場景：
 ### 結論
 
 CQRS 是一種強大的架構模式，它透過分離讀寫責任，為系統的效能、擴展性和可維護性帶來了巨大的潛力。然而，這種潛力是以增加架構複雜性和接受最終一致性為代價的。在決定是否採用 CQRS 之前，必須仔細評估業務需求的複雜性以及團隊對分散式系統概念的熟悉程度。對於大多數簡單的應用，傳統的 CRUD 模型仍然是更務實的選擇。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.cqrs.read-write-separation`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 command、query、write model、read model 與同步／非同步投影責任。
+  - `LO-2`: 能處理 read-your-own-write、重複事件、投影落後、rebuild 與 schema versioning。
+  - `LO-3`: 能以查詢負載、業務一致性、運維成本與測試證據判斷 CQRS 是否值得導入。
+- **Prerequisites**: CRUD、交易、事件驅動、最終一致性與 idempotency 的基本概念。
+- **Quick Quiz**: [Q23](../../QUIZ/17_Architecture_Patterns.md#q23)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從業務讀寫模型和一致性需求提出投影、補償與重建策略後，再進入 Hard Assessment。

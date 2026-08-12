@@ -370,3 +370,15 @@ type UserValidator struct {
 - 如果一個類別的修改需要通知多個團隊 → 違反 SRP
 - 如果一個類別難以命名或需要"和"來描述 → 違反 SRP  
 - 如果一個類別的測試需要大量 setup → 違反 SRP
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.solid.srp.change-reasons`
+- **Learning Objectives**:
+  - `LO-1`: 能以變更原因與 actor，而不是方法數量，界定模組的單一職責。
+  - `LO-2`: 能在拆分 cohesion、部署邊界、交易一致性與認知成本之間做出取捨。
+  - `LO-3`: 能用變更歷史、測試 setup、依賴圖和回歸證據驗證 SRP 重構是否降低風險。
+- **Prerequisites**: 模組化、內聚與耦合、OCP、ISP 與測試設計的基本概念。
+- **Quick Quiz**: [Q16](../../QUIZ/17_Architecture_Patterns.md#q16)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從變更原因、資料邊界與部署需求找出真正的責任切割，而非機械拆類別後，再進入 Hard Assessment。

@@ -138,3 +138,15 @@ func main() {
 5. 客戶端程式碼（`main` 函數）首先決定需要哪種工廠，然後使用該工廠來創建對應的產品。它不直接與具體的產品類別（`Tea`, `Coffee`）耦合，而是與抽象的工廠和產品介面耦合。
 
 這種結構完美地體現了工廠方法模式的核心思想：將物件的創建委託給專門的子工廠，從而實現系統的解耦和高擴展性。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.factory-method.creation-extension`
+- **Learning Objectives**:
+  - `LO-1`: 能說明工廠方法如何把建立流程與具體產品選擇分離。
+  - `LO-2`: 能比較工廠方法、抽象工廠、Builder 與直接建構在擴展點數量和複雜度上的取捨。
+  - `LO-3`: 能讓工廠選擇、失敗、版本與測試替身由 composition root 明確治理。
+- **Prerequisites**: 介面、依賴反轉、抽象工廠、Builder 與 composition root 的基本概念。
+- **Quick Quiz**: [Q19](../../QUIZ/17_Architecture_Patterns.md#q19)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以真正的變更軸判斷工廠方法是否降低耦合，並說明註冊與故障測試後，再進入 Hard Assessment。

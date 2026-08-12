@@ -183,3 +183,15 @@ func TestGetUser(t *testing.T) {
 - **前期成本高**：需要定義大量介面，對小型或短生命週期項目過度設計
 - **目錄結構複雜**：需要嚴格規劃 domain/、port/、adapter/ 等目錄
 - **資料模型轉換**：Domain Entity 和 DB Model（GORM struct）之間需要 Mapper 轉換，增加樣板程式碼
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.hexagonal.ports-adapters`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 domain、application service、port 與 driving／driven adapter 的依賴方向。
+  - `LO-2`: 能在資料庫、HTTP、訊息與外部服務替換時維持核心規則和交易邊界。
+  - `LO-3`: 能用 in-memory adapter、contract test 與 integration test 證明架構隔離沒有變成空洞介面。
+- **Prerequisites**: DIP、依賴注入、交易邊界、domain model 與測試替身的基本概念。
+- **Quick Quiz**: [Q11](../../QUIZ/17_Architecture_Patterns.md#q11)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能從一個外部整合變更畫出 port、adapter 與 composition root 的依賴方向，並列出整合證據後，再進入 Hard Assessment。

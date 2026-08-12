@@ -659,3 +659,15 @@ service := NewService(
 - 讓系統依賴穩定的抽象
 - 而非依賴易變的具體實現
 - 從而實現高內聚、低耦合的架構
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.solid.dip.dependency-inversion`
+- **Learning Objectives**:
+  - `LO-1`: 能說明高層政策、低層細節與穩定抽象的依賴方向。
+  - `LO-2`: 能把 port、adapter、composition root 與 dependency injection 分工，避免把 DIP 簡化成容器註冊。
+  - `LO-3`: 能以替身測試、啟動 wiring、runtime health 與變更影響面驗證反轉是否真的成立。
+- **Prerequisites**: 介面、依賴注入、六邊形架構、單元測試與模組化的基本概念。
+- **Quick Quiz**: [Q14](../../QUIZ/17_Architecture_Patterns.md#q14)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能指出哪一側擁有抽象、哪一側承擔外部變化，以及如何測試 composition root 後，再進入 Hard Assessment。

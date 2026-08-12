@@ -70,3 +70,15 @@
 1. **單體 (Monolith)**: 活下來，快速驗證。
 2. **水平擴展 (Horizontal Scaling)**: 活得更好，解決流量問題。
 3. **微服務 (Microservices)**: 活得更久，解決組織和複雜度問題。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.architecture.evolution.distributed-stage`
+- **Learning Objectives**:
+  - `LO-1`: 能說明從多副本單體進入分散式／微服務時新增的網路、資料、部署與組織邊界。
+  - `LO-2`: 能用 bounded context、ownership、API、事件、observability 與故障隔離判斷服務切分。
+  - `LO-3`: 能提出漸進式拆分、資料遷移、雙寫／回填、回滾與團隊準備度的證據。
+- **Prerequisites**: [水平擴展階段](./evolution_stage_2_horizontal_scaling.md)、CAP、分散式一致性與服務治理。
+- **Quick Quiz**: [Q25](../../QUIZ/17_Architecture_Patterns.md#q25)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能以資料 ownership、故障域與可回滾的 migration plan 證明拆分必要性後，再進入 Hard Assessment。

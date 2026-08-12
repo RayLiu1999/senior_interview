@@ -120,3 +120,15 @@ func main() {
 - 第一次呼叫 `GetInstance` 時，匿名函數會被執行，實例被創建。後續所有的呼叫 `GetInstance`，`once.Do()` 內部的函數都不會再執行，而是直接返回已經創建好的 `instance`。
 
 這種使用 `sync.Once` 的方法是 Go 中實現單例模式最慣用、最簡潔且最高效的方式。
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.singleton.shared-state-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能區分單例、process-wide cache、依賴注入 singleton 與真正的共享狀態需求。
+  - `LO-2`: 能分析初始化、並發、租戶隔離、測試重置與 shutdown 對單例生命週期的影響。
+  - `LO-3`: 能在需要共享資源時提出更可測試的替代方案，並以觀測和容量界線控制風險。
+- **Prerequisites**: 並發、生命週期、依賴注入、快取一致性與測試隔離的基本概念。
+- **Quick Quiz**: [Q12](../../QUIZ/17_Architecture_Patterns.md#q12)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能說明全域狀態的實際需求、隔離風險與可重置測試策略，而不是只背 `sync.Once` 後，再進入 Hard Assessment。

@@ -148,3 +148,15 @@ func (m *CommandManager) Undo() {
 **缺點：**
 - 每個操作都需要一個具體命令類別，程式碼量增加
 - 簡單場景使用此模式可能過度設計
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.patterns.command.request-encapsulation`
+- **Learning Objectives**:
+  - `LO-1`: 能區分命令、接收者、呼叫者與策略，說明封裝請求如何改變耦合方向。
+  - `LO-2`: 能評估佇列化、撤銷、重做與重試對冪等、交易和可觀測性的影響。
+  - `LO-3`: 能在不過度設計的前提下，以組合與明確生命週期建立可測試的命令流程。
+- **Prerequisites**: 介面與函數型別、依賴注入、交易與冪等性的基本概念。
+- **Quick Quiz**: [Q6](../../QUIZ/17_Architecture_Patterns.md#q6)
+- **Hard Assessment**: [Architecture Change Boundary Review](../../QUIZ/Hard_Assessments/architecture_change_boundary_review.md) (`assessment.architecture.change-boundary.review.v1`)
+- **Assessment Gate**: 能說明 command 與 strategy 的變化軸，並指出佇列、重試與 undo 的一致性邊界後，再進入 Hard Assessment。
