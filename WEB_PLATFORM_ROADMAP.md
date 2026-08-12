@@ -58,8 +58,9 @@
 | W4 | Dashboard、LO 弱點排序、Review queue、JSON 匯出／匯入 | `aaec4a6` |
 | W5 | 匿名同步碼、sync API、file-backed adapter、跨裝置 merge | `c51c0c5` |
 | H1 | 同步 API 的輸入大小／結構驗證、Bearer token、client rate limit 與禁止快取 | `bd141ae` |
+| H2 | file-backed adapter 版本升級、retention／筆數上限、檔案權限與遠端刪除流程 | `075b7b4` |
 
-目前同步 adapter 仍是單機可替換實作；多 instance、正式身份、token 撤銷、共享資料庫與完整資料生命週期仍是 production hardening 工作，不把它們假裝成 MVP 已解決的問題。
+目前同步 adapter 仍是單機可替換實作；多 instance、正式身份、token 撤銷與共享資料庫仍是 production hardening 工作，不把它們假裝成 MVP 已解決的問題。
 
 ### 3.1 產品目標
 
@@ -329,7 +330,7 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 
 ### 9.2 後續：Optional Sync
 
-目前已提供 Nuxt server API 與單機 file-backed adapter；伺服器不重新解讀 Markdown，只保存嘗試紀錄、學習狀態與同步版本。H1 已補上 state 輸入驗證、大小上限、Bearer token、client rate limit 與禁止快取。正式多 instance 部署時，仍應把 adapter 替換成共享資料庫或持久化 KV，並補上身份、token 撤銷、加密與資料刪除流程。
+目前已提供 Nuxt server API 與單機 file-backed adapter；伺服器不重新解讀 Markdown，只保存嘗試紀錄、學習狀態與同步版本。H1 已補上 state 輸入驗證、大小上限、Bearer token、client rate limit 與禁止快取；H2 再補上版本升級、retention／筆數上限、檔案權限與遠端刪除流程。正式多 instance 部署時，仍應把 adapter 替換成共享資料庫或持久化 KV，並補上身份、token 撤銷與加密。
 
 同步優先採 append-only attempt：
 
