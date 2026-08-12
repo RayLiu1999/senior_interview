@@ -17,6 +17,7 @@ RAG（Retrieval-Augmented Generation，檢索增強生成）是常見的 LLM 應
   - `LO-3`: 能在正確率、可追溯性、延遲與 Token 成本之間設計可驗證的取捨。
 - **硬測驗**: [RAG 故障診斷](../../../QUIZ/Hard_Assessments/rag_retrieval_debugging.md)
 - **Quick Quiz**: [Quick Quiz Q1](../../../QUIZ/02_AI_and_Machine_Learning.md#q1)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 - **覆蓋題型**: `故障診斷`, `檢索評估`, `成本與延遲權衡`
 
 ## 核心理論與詳解

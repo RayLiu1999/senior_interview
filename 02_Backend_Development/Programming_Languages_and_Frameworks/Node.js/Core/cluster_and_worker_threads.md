@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依多核 HTTP 服務、CPU 密集計算與共享資料需求選擇並行方案。
   - `LO-3`: 能夠說明 IPC、SharedArrayBuffer、Worker Pool、故障重啟與資源開銷的取捨。
 - **Quick Quiz**: [Node.js Q5](../../../../QUIZ/07_Node.js.md#q5)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

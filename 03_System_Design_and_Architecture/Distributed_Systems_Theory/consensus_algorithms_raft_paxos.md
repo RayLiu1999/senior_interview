@@ -18,6 +18,7 @@
   - `LO-2`: 能夠追蹤 Leader 將日誌複製到多數節點、提交並套用狀態機的流程，並指出安全性限制。
   - `LO-3`: 能夠比較 Raft 與 Paxos 的設計目標、日誌模型與實作取捨，並判斷共識叢集的故障邊界。
 - **Quick Quiz**: [Quick Quiz Q3](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q3)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 共識演算法是 CP 系統（如 Zookeeper, Etcd, Consul）的基石，確保在部分節點故障的情況下，系統仍能對資料狀態達成一致。
 

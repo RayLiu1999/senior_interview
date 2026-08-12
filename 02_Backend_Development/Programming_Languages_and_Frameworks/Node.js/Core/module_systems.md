@@ -16,6 +16,7 @@ Node.js 最初使用 CommonJS (CJS) 作為其模組系統。然而，隨著 ECMA
   - `LO-2`: 能夠解釋 CJS 快取／值引用與 ESM live binding、靜態分析和 tree shaking 的差異。
   - `LO-3`: 能夠在 CJS 與 ESM 共存時選擇互通方式，並辨識 `require` 與動態 `import()` 的限制。
 - **Quick Quiz**: [Node.js Q6](../../../../QUIZ/07_Node.js.md#q6)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

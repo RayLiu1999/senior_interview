@@ -18,6 +18,7 @@
   - `LO-2`: 能夠設計 FAQ、RAG、LLM 與人工轉接的分層路由，包含快取、置信度門檻、來源引用與降級。
   - `LO-3`: 能夠提出回答品質、延遲、錯誤率、成本與用戶回饋的可觀測指標，並說明擴展和故障處理方式。
 - **Quick Quiz**: [Quick Quiz Q8](../../../QUIZ/02_AI_and_Machine_Learning.md#q8)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 需求澄清
 

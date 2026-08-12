@@ -18,6 +18,7 @@
   - `LO-2`: 能夠描述 Closed、Open、Half-Open 的請求行為、轉移條件與快速失敗作用。
   - `LO-3`: 能夠依失敗率、時間窗口、逾時、Retry、Fallback 與探測請求設定斷路器，並評估誤開啟風險。
 - **Quick Quiz**: [Quick Quiz Q7](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q7)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 在複雜的微服務網路中，服務之間的同步調用（例如透過 REST API）非常普遍。想像一個場景：`服務 A` 調用 `服務 B`，而 `服務 B` 又調用 `服務 C`。如果 `服務 C` 因為過載而回應緩慢，`服務 B` 的請求執行緒會被佔用並等待。如果此時有大量請求湧入 `服務 A`，`服務 A` 會繼續向 `服務 B` 發起調用，導致 `服務 B` 的執行緒池被耗盡。最終，`服務 B` 變得無法回應，這種失敗會進一步向上游傳播到 `服務 A`，最終可能導致整個請求鏈路上的所有服務都崩潰。這就是**級聯失敗**。
 

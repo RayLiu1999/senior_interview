@@ -16,6 +16,7 @@
   - `LO-2`: 能夠用 Hidden Class、Inline Cache 與 monomorphic／polymorphic／megamorphic 解釋物件存取性能。
   - `LO-3`: 能夠辨識觸發 deoptimization 的程式型態，並以一致屬性結構和穩定型別驗證優化假設。
 - **Quick Quiz**: [Node.js Q13](../../../../QUIZ/07_Node.js.md#q13)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

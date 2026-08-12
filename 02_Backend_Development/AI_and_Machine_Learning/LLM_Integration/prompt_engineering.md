@@ -18,6 +18,7 @@ Prompt Engineering（提示工程）是與 LLM 交互的藝術和科學。一個
   - `LO-2`: 能夠依任務特性選擇 zero-shot、few-shot、Chain-of-Thought 或 prompt chaining 等技巧，並說明取捨。
   - `LO-3`: 能夠透過測試與輸出驗證迭代 Prompt，辨識常見失敗模式並降低錯誤或 Prompt Injection 風險。
 - **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/02_AI_and_Machine_Learning.md#q2)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是 Prompt Engineering
 

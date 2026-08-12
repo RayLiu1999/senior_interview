@@ -18,6 +18,7 @@
   - `LO-2`: 能夠依語言、領域、維度、相似度指標與成本選擇 Embedding 模型和生成流程。
   - `LO-3`: 能夠設計可重現的向量化管線，處理批次生成、版本變更、品質評估與索引更新。
 - **Quick Quiz**: [Quick Quiz Q6](../../../QUIZ/02_AI_and_Machine_Learning.md#q6)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是向量嵌入
 

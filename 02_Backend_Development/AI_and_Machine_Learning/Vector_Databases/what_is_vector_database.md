@@ -18,6 +18,7 @@
   - `LO-2`: 能夠說明向量儲存、ANN 索引、相似度搜尋與元資料過濾如何共同支援語義搜尋或 RAG。
   - `LO-3`: 能夠依資料規模、延遲、召回率、記憶體與成本選擇索引和部署策略，並提出監控方式。
 - **Quick Quiz**: [Quick Quiz Q5](../../../QUIZ/02_AI_and_Machine_Learning.md#q5)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是向量資料庫
 

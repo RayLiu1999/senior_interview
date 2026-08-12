@@ -18,6 +18,7 @@
   - `LO-2`: 能夠比較客戶端發現與伺服器端發現的請求流程、負載平衡位置、耦合與延遲。
   - `LO-3`: 能夠依語言異質性、運維能力、可用性與彈性需求選擇 Registry、Gateway、Load Balancer 或 Kubernetes Service 方案。
 - **Quick Quiz**: [Quick Quiz Q8](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q8)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是服務發現？
 

@@ -18,6 +18,7 @@
   - `LO-2`: 能夠將預算、託管程度、團隊運維能力與既有 PostgreSQL 整合需求轉換為選型判斷。
   - `LO-3`: 能夠說明選型對效能、擴展性、成本、供應商鎖定與運維複雜度的影響，並提出驗證方案。
 - **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/02_AI_and_Machine_Learning.md#q7)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 主流產品對比表
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 ts-node、tsx、tsc 與 esbuild 在開發速度、型別檢查和生產編譯上的角色。
   - `LO-3`: 能夠設計從 TypeScript 原始碼到可部署 JavaScript、source map 與型別宣告的工作流程。
 - **Quick Quiz**: [Node.js Q11](../../../../QUIZ/07_Node.js.md#q11)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

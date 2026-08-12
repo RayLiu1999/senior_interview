@@ -18,6 +18,7 @@ Function Calling（函數調用）允許 LLM 調用外部函數或工具，從�
   - `LO-2`: 能夠設計工具 Schema 驗證、權限檢查、逾時、錯誤回傳與重試，避免不安全或不可控的外部操作。
   - `LO-3`: 能夠為多步驟 Agent 設定狀態、停止條件與降級策略，並評估其正確性、可追蹤性與成本。
 - **Quick Quiz**: [Quick Quiz Q4](../../../QUIZ/02_AI_and_Machine_Learning.md#q4)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是 Function Calling
 

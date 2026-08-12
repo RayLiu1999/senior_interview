@@ -16,6 +16,7 @@
   - `LO-2`: 能夠推導條件類型、`infer` 與分布式條件類型的結果。
   - `LO-3`: 能夠使用映射類型與工具類型建模唯讀、可選、欄位挑選和型別轉換需求。
 - **Quick Quiz**: [Node.js Q12](../../../../QUIZ/07_Node.js.md#q12)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

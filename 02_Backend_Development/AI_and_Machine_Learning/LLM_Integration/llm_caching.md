@@ -18,6 +18,7 @@ LLM API 調用成本高、延遲大，合理的快取策略可以顯著降低成
   - `LO-2`: 能夠設計快取鍵、相似度閾值、TTL、失效與回填策略，處理 Prompt、模型或知識變更。
   - `LO-3`: 能夠用命中率、正確性、延遲與成本衡量快取效果，並判斷哪些請求不應使用快取。
 - **Quick Quiz**: [Quick Quiz Q3](../../../QUIZ/02_AI_and_Machine_Learning.md#q3)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 為什麼需要 LLM 快取
 

@@ -18,6 +18,7 @@
   - `LO-2`: 能夠組合關鍵字與向量混合搜尋、重排序、權限過濾與引用來源，提升百萬級文件的召回與答案品質。
   - `LO-3`: 能夠依多租戶、QPS、延遲、成本與一致性需求設計快取、增量更新、擴展與評估指標。
 - **Quick Quiz**: [Quick Quiz Q9](../../../QUIZ/02_AI_and_Machine_Learning.md#q9)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 需求澄清
 

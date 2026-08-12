@@ -16,6 +16,7 @@
   - `LO-2`: 能夠區分應用層、路由層、錯誤處理、內建與第三方中介層的註冊範圍。
   - `LO-3`: 能夠判斷何時呼叫 `next()`、結束回應或傳遞 `next(error)`，避免請求掛起。
 - **Quick Quiz**: [Node.js Q7](../../../../../QUIZ/07_Node.js.md#q7)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../../../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ## 核心理論與詳解
 

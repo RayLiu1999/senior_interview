@@ -18,6 +18,7 @@
   - `LO-2`: 能夠將認證授權、限流、快取、SSL 終止、日誌與監控等橫切關注點放在適當邊界。
   - `LO-3`: 能夠針對 Gateway 的單點故障、效能瓶頸與業務邏輯膨脹提出高可用和擴展方案。
 - **Quick Quiz**: [Quick Quiz Q5](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q5)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 什麼是 API Gateway？
 

@@ -18,6 +18,7 @@
   - `LO-2`: 能夠依團隊規模、業務邊界、負載與獨立交付需求判斷何時採用單體或微服務。
   - `LO-3`: 能夠評估微服務引入的網路、分散式事務、測試與運維成本，並提出漸進式演進考量。
 - **Quick Quiz**: [Quick Quiz Q4](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q4)
+- **Hard Assessment**: [AI／Node.js／Microservice Resilience Incident](../../QUIZ/Hard_Assessments/ai_node_microservice_resilience_incident.md) (`assessment.ai-node-microservice.resilience-incident.v1`)
 
 ### 單體架構 (Monolithic Architecture)
 
