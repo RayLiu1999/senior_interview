@@ -8,6 +8,18 @@
 
 貪心算法 (Greedy Algorithm) 是一種在每一步選擇中都採取當前狀態下**最優選擇**的算法策略。貪心算法不保證全局最優,但在某些問題中可以得到最優解,且通常比動態規劃更高效。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.greedy.correctness`
+- **Learning Objectives**:
+  - `LO-1`: 能夠辨識貪心選擇性質與最優子結構，而不是只因局部選擇看似合理就採用貪心。
+  - `LO-2`: 能夠用交換論證、切割性質或保持領先論證說明貪心策略的正確性。
+  - `LO-3`: 能夠用反例區分貪心、動態規劃與回溯，並評估時間、空間與可維護性取捨。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q24](../../QUIZ/01_Data_Structures_and_Algorithms.md#q24-貪心演算法何時能保證全域最優)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 貪心算法基本原理

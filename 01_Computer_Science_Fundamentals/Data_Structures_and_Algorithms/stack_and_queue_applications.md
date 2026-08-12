@@ -8,6 +8,18 @@
 
 堆疊 (Stack) 和佇列 (Queue) 是兩種基本的線性資料結構。堆疊遵循 LIFO (Last In First Out，後進先出)，佇列遵循 FIFO (First In First Out，先進先出)。理解它們的原理和應用場景是解決許多演算法問題的關鍵。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.stack-queue.application`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依 LIFO、FIFO 與工作流順序選擇堆疊、佇列或雙端佇列。
+  - `LO-2`: 能夠將堆疊／佇列套用到單調結構、BFS、解析與緩衝場景，維護正確不變量。
+  - `LO-3`: 能夠評估容量上限、背壓、佇列滯留與配置成本對延遲和記憶體的影響。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q32](../../QUIZ/01_Data_Structures_and_Algorithms.md#q32-堆疊與佇列的應用選擇與記憶體界線)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 堆疊 (Stack)

@@ -8,6 +8,18 @@
 
 二元樹遍歷是樹結構操作的基礎，分為**深度優先遍歷**（前序、中序、後序）和**廣度優先遍歷**（層序）。理解各種遍歷方式的原理、遞迴與迭代實現，以及實際應用場景，是解決樹結構問題的關鍵。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.tree-traversal.binary-order`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依前序、中序、後序與層序的訪問順序判斷輸出與適用問題。
+  - `LO-2`: 能夠以遞迴或顯式堆疊／佇列實作遍歷，並說明 O(n) 時間與 O(h)／O(w) 空間成本。
+  - `LO-3`: 能夠處理空樹、深樹與寬樹的邊界，避免遞迴深度或遍歷佇列造成的記憶體風險。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q17](../../QUIZ/01_Data_Structures_and_Algorithms.md#q17-二元樹遍歷順序與記憶體成本)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 深度優先遍歷 (DFS)

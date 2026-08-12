@@ -8,6 +8,18 @@
 
 圖 (Graph) 是一種非線性資料結構，由頂點 (Vertices) 和邊 (Edges) 組成。理解圖的表示方式（鄰接表、鄰接矩陣）和遍歷算法（DFS、BFS）是解決社交網路、路徑規劃、依賴分析等問題的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph.representation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依頂點數、邊數與查詢型態選擇鄰接矩陣、鄰接表或邊集合。
+  - `LO-2`: 能夠正確表示有向／無向、加權／無權圖，並在遍歷中維護 visited 與邊界。
+  - `LO-3`: 能夠比較不同表示法的記憶體、快取區域性、建圖成本與更新延遲。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q23](../../QUIZ/01_Data_Structures_and_Algorithms.md#q23-圖表示法與遍歷的記憶體取捨)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 圖的基本概念

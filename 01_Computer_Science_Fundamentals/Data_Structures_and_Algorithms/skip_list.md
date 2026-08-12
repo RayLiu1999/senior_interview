@@ -8,6 +8,18 @@
 
 跳躍表是一種概率性的資料結構，透過多層索引實現快速的插入、刪除和查找操作，效能接近平衡樹 O(log n)，但實現更簡單。Redis 的有序集合 (ZSet) 就是用跳躍表實現的。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.skip-list.probabilistic-index`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明多層索引、隨機層高與查找／插入／刪除的期望 O(log n) 成本。
+  - `LO-2`: 能夠分析隨機分布、最壞情況與重建策略對延遲尾端的影響。
+  - `LO-3`: 能夠比較跳躍表與平衡樹在記憶體開銷、快取區域性、實作複雜度與併發更新上的取捨。
+- **Prerequisites**: [鏈結串列經典問題](linked_list_problems.md)
+- **Quick Quiz**: [Q29](../../QUIZ/01_Data_Structures_and_Algorithms.md#q29-跳躍表的隨機層級與效能風險)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要跳躍表？

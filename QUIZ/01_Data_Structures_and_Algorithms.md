@@ -553,6 +553,433 @@ hash(key) % N
 
 ---
 
+## 🧱 DSA Phase 3 延伸題
+
+### Q13: 陣列與動態陣列的擴容與記憶體權衡
+<!-- Concept ID: concept.data-structures.array.dynamic-growth; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+說明連續陣列與動態陣列的存取、擴容搬移與攤銷複雜度，並說明何時應預先配置容量。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 連續記憶體提供 O(1) 索引與快取區域性；中間插入／刪除通常需要搬移元素。
+- 擴容單次可能是 O(n)，但長期追加可達攤銷 O(1)；預先配置能降低重配延遲，也可能造成容量滯留。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/array_and_dynamic_array.md)
+
+---
+
+### Q14: 回溯法的剪枝與狀態還原
+<!-- Concept ID: concept.algorithms.backtracking.pruning; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+如何設計回溯搜尋的狀態、剪枝條件與還原流程？請同時說明最壞時間與結果空間。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 狀態需包含目前路徑、選擇位置與必要的 used／剩餘資源；剪枝必須證明被排除的子樹不可能有解。
+- 返回前要還原共享狀態；時間通常呈指數成長，並要把答案複製成本算入。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/backtracking_algorithm.md)
+
+---
+
+### Q15: 海量資料處理的分治與近似取捨
+<!-- Concept ID: concept.algorithms.big-data.external-memory; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+資料量超過單機記憶體時，如何在精確度、磁碟 I/O、網路傳輸與處理時間之間做選擇？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先界定是否需要精確結果，再選外部排序、分片聚合、Bitmap 或近似資料結構。
+- 估算記憶體、磁碟、shuffle、資料傾斜與重試成本，並處理重複輸入、checkpoint 和部分失敗。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/big_data_processing.md)
+
+---
+
+### Q16: BST 退化與平衡樹選擇
+<!-- Concept ID: concept.data-structures.binary-search-tree.balance; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+為何 BST 可能退化成鏈結串列？查詢密集與更新密集的系統應如何選擇 AVL 或紅黑樹？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 偏斜或已排序插入會讓高度變成 O(n)，失去 O(log n) 保證。
+- AVL 平衡較嚴格、查詢高度較低；紅黑樹更新旋轉通常較少，仍需考慮 range scan、快取與讀寫比例。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/binary_search_tree.md)
+
+---
+
+### Q17: 二元樹遍歷順序與記憶體成本
+<!-- Concept ID: concept.algorithms.tree-traversal.binary-order; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+比較前序、中序、後序與層序遍歷的用途，以及遞迴和迭代實作對深度／寬度記憶體的影響。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 中序可產生 BST 排序結果；前序先處理根；後序先取得子樹結果；層序按深度處理。
+- DFS 約需 O(h)，BFS 可能需 O(w)；深樹要防遞迴溢位，寬樹要控制佇列峰值。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/binary_tree_traversal.md)
+
+---
+
+### Q18: 位運算與位元旗標的安全使用
+<!-- Concept ID: concept.data-structures.bit-manipulation.flags; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+如何用位元遮罩保存多個權限或狀態？請說明 signed integer、位寬與序列化造成的風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- OR 設定、AND 加反向遮罩清除、AND 檢查、XOR 切換；旗標必須使用不重疊位元。
+- 固定整數寬度與 signed／unsigned 語意，並定義未使用位元、版本化和跨平台序列化規則。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/bit_manipulation.md)
+
+---
+
+### Q19: BFS 如何在無權圖保證最短路徑
+<!-- Concept ID: concept.algorithms.graph-traversal.bfs-shortest-path; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+為何 BFS 能在無權圖找到邊數最少的路徑？若圖很寬或有多個起點，如何控制記憶體？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 佇列保證距離 d 的節點先於 d+1 出隊；入隊時標記 visited，並用 parent 重建路徑。
+- 多源 BFS 可先放入所有起點；鄰接表為 O(V+E)，但前緣寬度決定峰值記憶體。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/breadth_first_search.md)
+
+---
+
+### Q20: 延遲佇列在取消與重啟下的正確性
+<!-- Concept ID: concept.data-structures.delayed-queue.scheduling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+訂單逾時取消服務支援不同到期時間、取消與重啟恢復時，應如何選擇延遲佇列並避免重複執行？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 精確排序可用最小堆；大量時間槽可用時間輪；跨程序持久化則要考慮有序儲存。
+- 取消要用版本或 tombstone 並在消費前再驗證；執行端仍需冪等，且要定義崩潰、重試與積壓行為。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/delayed_queue_implementation.md)
+
+---
+
+### Q21: DFS 的堆疊深度與圖遍歷正確性
+<!-- Concept ID: concept.algorithms.graph-traversal.dfs-structure; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+比較遞迴 DFS 與顯式堆疊 DFS，並說明在有環、深鏈與共享子圖中如何避免錯誤。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- DFS 沿堆疊深入；visited 的標記時機要配合找路徑、找環或連通分量的語意。
+- 遞迴簡潔但受呼叫堆疊限制；顯式堆疊可控制深度並攜帶 parent 或進出狀態。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/depth_first_search.md)
+
+---
+
+### Q22: 進階 DP 的狀態設計與空間壓縮
+<!-- Concept ID: concept.algorithms.dynamic-programming.advanced-state; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+面對區間 DP、狀態壓縮 DP 或樹形 DP，如何定義狀態、轉移順序並安全地壓縮空間？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 狀態需保留未來決策所需的最小資訊；先畫依賴，再決定 base case 和填表順序。
+- 壓縮前要確認覆寫不會破壞尚未使用的值，並比較時間／空間與貪心、回溯的取捨。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/dynamic_programming_advanced.md)
+
+---
+
+### Q23: 圖表示法與遍歷的記憶體取捨
+<!-- Concept ID: concept.algorithms.graph.representation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+如何依圖的稀疏／稠密程度與查詢型態選擇鄰接矩陣、鄰接表或邊集合？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 矩陣的相鄰查詢快但耗 O(V²)；鄰接表對稀疏圖約 O(V+E)；邊集合適合排序或批次處理。
+- 需明確保存方向、權重與 visited，並考慮快取區域性、更新頻率與序列化成本。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/graph_representation_traversal.md)
+
+---
+
+### Q24: 貪心演算法何時能保證全域最優
+<!-- Concept ID: concept.algorithms.greedy.correctness; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+為何某些問題可以採用貪心，而另一些問題必須使用 DP 或回溯？請給出正確性論證或反例。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 必須證明貪心選擇性質與最優子結構，可使用交換論證、切割性質或 stay-ahead 論證。
+- 若局部選擇會阻礙未來，應用反例否定貪心；不能只依賴少數測資。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/greedy_algorithm.md)
+
+---
+
+### Q25: 鏈結串列指針不變量與邊界處理
+<!-- Concept ID: concept.data-structures.linked-list.pointer-invariants; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+在反轉、合併、刪除與環檢測時，如何維護鏈結串列指針不變量並處理空串列？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 更新前先保存下一個節點；dummy node 可統一頭節點刪除；快慢指針需說明相遇條件。
+- 局部插入刪除可為 O(1)，但節點配置與快取區域性通常比連續陣列差。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/linked_list_problems.md)
+
+---
+
+### Q26: Kruskal 與 Prim 的圖結構選擇
+<!-- Concept ID: concept.algorithms.graph.minimum-spanning-tree; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+如何在稀疏圖、稠密圖與非連通圖中選擇 Kruskal 或 Prim，並確認結果是 MST 或生成森林？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- MST 要覆蓋頂點且無環，總權重最小；它與單源最短路徑不同。
+- Kruskal 排邊並用並查集避環；Prim 從頂點擴張；非連通圖應明確回報森林或無單一 MST。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/minimum_spanning_tree.md)
+
+---
+
+### Q27: 優先佇列在 Top K 與任務排程的取捨
+<!-- Concept ID: concept.data-structures.priority-queue.heap-ordering; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+比較優先佇列與 FIFO，並說明它在 Top K、合併排序來源與任務排程中的容量和延遲取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 二元堆通常 peek O(1)、push／pop O(log n)；Top K 可維護大小 K 的小頂堆以控制空間。
+- 排程還需定義平手、飢餓、過期項目、容量與背壓，不能只回答「使用堆」。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/priority_queue_practice.md)
+
+---
+
+### Q28: 最短路徑演算法如何依權重與圖密度選擇
+<!-- Concept ID: concept.algorithms.graph.shortest-path-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+依邊權是否為負、單源或全點對，以及圖的稀疏／稠密程度選擇最短路徑演算法。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Dijkstra 需非負權；Bellman-Ford 可處理負權並偵測負權環；Floyd-Warshall 適合小型稠密全點對。
+- 需維護 relaxation、前驅和不可達狀態，並避免距離加總溢位；MST 不能取代最短路徑。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/shortest_path_algorithms.md)
+
+---
+
+### Q29: 跳躍表的隨機層級與效能風險
+<!-- Concept ID: concept.data-structures.skip-list.probabilistic-index; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+跳躍表為何平均能達到 O(log n)？如何評估它與平衡樹的延遲尾端和記憶體差異？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 多層索引與隨機層高帶來期望 O(log n) 查找、插入和刪除，但最壞情況仍可能退化。
+- 要納入額外指標、節點配置、快取區域性、隨機種子與併發更新成本。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/skip_list.md)
+
+---
+
+### Q30: 滑動窗口的不變量與線性複雜度
+<!-- Concept ID: concept.algorithms.sliding-window.invariant; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+如何設計滑動窗口解決最長／最短合法子區間，並證明時間複雜度可以是 O(n)？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先定義窗口合法條件，再擴張右界、違規時收縮左界，於正確時機更新答案。
+- 左右指針各自只前進，總移動為 O(n)；頻率表、集合或單調佇列要依問題選擇。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/sliding_window_algorithm.md)
+
+---
+
+### Q31: 生產環境排序的外部記憶體與分散式取捨
+<!-- Concept ID: concept.algorithms.sorting.production-scale; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+TB 級資料無法放入單機記憶體時，如何選擇外部排序、分散式排序或 Top K，並處理穩定性與故障？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 外部排序建立 runs 再多路合併；只需前 K 名時不必全量排序。
+- 分散式方案要估算 shuffle、分區傾斜、磁碟、網路、checkpoint、重試與去重，並定義同鍵順序。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/sorting_practical_applications.md)
+
+---
+
+### Q32: 堆疊與佇列的應用選擇與記憶體界線
+<!-- Concept ID: concept.data-structures.stack-queue.application; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+比較堆疊、佇列、雙端佇列與單調結構在解析、BFS、緩衝和區間最值中的使用時機。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- LIFO 適合解析與回溯；FIFO 適合 BFS 和順序處理；雙端佇列和單調結構能支援區間最值。
+- 實務上要設定容量、背壓、阻塞或丟棄策略，避免無界緩衝把延遲轉成記憶體事故。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/stack_and_queue_applications.md)
+
+---
+
+### Q33: 字串搜尋演算法與碰撞驗證
+<!-- Concept ID: concept.algorithms.string-search.pattern-matching; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+比較樸素搜尋、KMP 與 Rabin-Karp，並說明雜湊碰撞、Unicode 與串流分塊如何影響實作。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- KMP 以前綴函數避免文本指標回退；Rabin-Karp 命中後必須驗證，不能把雜湊相等當成字串相等。
+- 需考慮 n、m、模式是否重複使用、位元組／Unicode 邊界與跨 chunk 匹配。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/string_search_algorithms.md)
+
+---
+
+### Q34: 拓撲排序如何處理循環依賴
+<!-- Concept ID: concept.algorithms.graph.topological-order; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+在任務依賴圖中如何產生拓撲順序並辨識循環？若只得到部分節點，應如何回報？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Kahn 處理入度 0 節點；處理數量小於 V 表示有循環。DFS 可用白／灰／黑狀態辨識回邊。
+- 多個入度 0 節點代表多個合法順序；應回報循環依賴鏈與可完成、不可排程的部分。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/topological_sort.md)
+
+---
+
+### Q35: Trie 前綴查詢與記憶體取捨
+<!-- Concept ID: concept.data-structures.trie.prefix-index; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+Trie 為何適合自動補全？在字母表大、Unicode 多且前綴分布不均時，如何選擇子節點表示？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 沿字元路徑查找前綴約為 O(L)；固定陣列快但稀疏浪費空間，Map 較省但有雜湊和配置成本。
+- 需處理終止標記、Unicode 正規化、刪除、熱點前綴結果排序與最大結果數。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/trie_applications.md)
+
+---
+
+### Q36: 雙指針技巧的前提與不變量
+<!-- Concept ID: concept.algorithms.two-pointers.invariant; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+對撞、同向與快慢雙指針各需要什麼前提？如何證明沒有漏解且能達到 O(n)？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 對撞通常依賴排序或單調性；同向維護已處理區間；快慢利用速度差尋找環或壓縮元素。
+- 要寫出移動後仍成立的不變量，並處理重複值、空輸入、單元素與索引邊界。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/two_pointers_technique.md)
+
+---
+
+### Q37: 並查集如何維護動態連通性
+<!-- Concept ID: concept.data-structures.union-find.connectivity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+說明路徑壓縮與按秩／大小合併如何降低並查集成本，以及它為何適合 Kruskal 但不適合所有圖更新。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- parent 指向代表元；Find 壓縮路徑，Union 將較小樹接到較大樹，攤銷成本接近常數。
+- 它適合只增加連結和查詢同集合，不自然支援刪邊、完整路徑查詢或頻繁拆分。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Data_Structures_and_Algorithms/union_find.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

@@ -8,6 +8,18 @@
 
 海量資料處理是指對超出單機記憶體容量的大規模數據進行處理。這類問題在面試中用於考察候選人對分散式思維、算法優化、系統設計的綜合能力。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.big-data.external-memory`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依資料量、可用記憶體與精確度需求選擇分治、外部排序、Bitmap 或近似資料結構。
+  - `LO-2`: 能夠量化磁碟 I/O、網路傳輸、分片與記憶體預算對延遲和吞吐量的影響。
+  - `LO-3`: 能夠設計面對資料傾斜、重試、重複輸入與部分失敗的多階段資料處理流程。
+- **Prerequisites**: [陣列與動態陣列](array_and_dynamic_array.md)、[排序算法實際應用](sorting_practical_applications.md)
+- **Quick Quiz**: [Q15](../../QUIZ/01_Data_Structures_and_Algorithms.md#q15-海量資料處理的分治與近似取捨)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 海量數據處理核心思路

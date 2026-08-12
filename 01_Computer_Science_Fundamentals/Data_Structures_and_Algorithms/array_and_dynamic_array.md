@@ -8,6 +8,18 @@
 
 陣列是最基礎且最重要的資料結構，靜態陣列大小固定，而動態陣列（如 Go 的 slice、Java 的 ArrayList、Python 的 list）能自動擴容。理解陣列的底層原理和擴容機制對於效能優化至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.array.dynamic-growth`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明連續記憶體、O(1) 隨機存取與快取區域性之間的關係。
+  - `LO-2`: 能夠解釋動態陣列擴容、元素搬移與攤銷 O(1) 追加成本。
+  - `LO-3`: 能夠依照插入刪除位置、容量預估與記憶體保留風險選擇陣列或動態陣列。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q13](../../QUIZ/01_Data_Structures_and_Algorithms.md#q13-陣列與動態陣列的擴容與記憶體權衡)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 靜態陣列 (Static Array)

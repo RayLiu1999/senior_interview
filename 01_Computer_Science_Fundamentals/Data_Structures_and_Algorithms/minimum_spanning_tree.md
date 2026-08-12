@@ -8,6 +8,18 @@
 
 最小生成樹（MST）是連通加權圖中，**邊的總權重最小的生成樹**。生成樹包含圖中所有 n 個節點，恰好有 n-1 條邊，且無環。MST 在網路設計、城市規劃、電路連接等領域有廣泛應用。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph.minimum-spanning-tree`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 MST 與單源最短路徑，並說明切割性質和無環條件。
+  - `LO-2`: 能夠依圖的稀疏／稠密程度與可用資料結構比較 Kruskal 和 Prim 的成本。
+  - `LO-3`: 能夠處理非連通圖、同權重邊、整數溢位與邊數很大的輸入，驗證結果是否完整。
+- **Prerequisites**: [並查集](union_find.md)
+- **Quick Quiz**: [Q26](../../QUIZ/01_Data_Structures_and_Algorithms.md#q26-kruskal-與-prim-的圖結構選擇)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 切割定理（Cut Property）

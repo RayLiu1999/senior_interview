@@ -8,6 +8,18 @@
 
 在有向無環圖 (DAG) 中，如何找到一個線性排序，使得對於任意有向邊 (u, v)，u 都排在 v 之前？這在處理任務依賴、編譯順序、課程安排等實際問題中非常重要。如何檢測環的存在？有哪些高效的實現方法？
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph.topological-order`
+- **Learning Objectives**:
+  - `LO-1`: 能夠以入度佇列或 DFS 著色維護拓撲排序的不變量與 O(V+E) 成本。
+  - `LO-2`: 能夠辨識循環依賴、輸出部分結果，並說明為何含環圖不存在完整拓撲序。
+  - `LO-3`: 能夠處理多個合法順序、穩定輸出、增量依賴變更與大圖的記憶體上限。
+- **Prerequisites**: [圖的表示與遍歷](graph_representation_traversal.md)
+- **Quick Quiz**: [Q34](../../QUIZ/01_Data_Structures_and_Algorithms.md#q34-拓撲排序如何處理循環依賴)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 基本概念

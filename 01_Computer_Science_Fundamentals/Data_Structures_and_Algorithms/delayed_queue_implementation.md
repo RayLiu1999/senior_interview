@@ -8,6 +8,18 @@
 
 延遲佇列用於延遲處理任務,在指定時間後才執行任務。常見於訂單超時取消、消息延遲發送、定時任務調度等場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.delayed-queue.scheduling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依到期分布、精度與吞吐需求比較最小堆、時間輪與有序集合。
+  - `LO-2`: 能夠設計取消、重複投遞、時鐘偏移與消費者重試下仍可觀測的任務生命週期。
+  - `LO-3`: 能夠量化喚醒頻率、待處理任務記憶體、持久化與重啟恢復對延遲和正確性的影響。
+- **Prerequisites**: [優先佇列實戰](priority_queue_practice.md)
+- **Quick Quiz**: [Q20](../../QUIZ/01_Data_Structures_and_Algorithms.md#q20-延遲佇列在取消與重啟下的正確性)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 延遲佇列基本原理

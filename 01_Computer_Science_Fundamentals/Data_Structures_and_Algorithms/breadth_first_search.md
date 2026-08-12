@@ -8,6 +8,18 @@
 
 廣度優先搜尋 (Breadth-First Search, BFS) 是圖和樹的基本遍歷算法,採用「層層推進」的策略。BFS 的核心特點是**逐層遍歷**,保證先訪問距離起點較近的節點,因此常用於求**最短路徑**和**層級遍歷**問題。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph-traversal.bfs-shortest-path`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 BFS 的佇列、visited 與分層不變量，並分析 O(V+E) 成本。
+  - `LO-2`: 能夠判斷無權圖最短路徑、多源擴散與狀態圖問題何時適合 BFS。
+  - `LO-3`: 能夠控制前緣寬度、避免重複入隊，並處理不可達節點與記憶體上限。
+- **Prerequisites**: [圖的表示與遍歷](graph_representation_traversal.md)
+- **Quick Quiz**: [Q19](../../QUIZ/01_Data_Structures_and_Algorithms.md#q19-bfs-如何在無權圖保證最短路徑)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. BFS 基本原理

@@ -8,6 +8,18 @@
 
 並查集（Union-Find 或 Disjoint Set Union，DSU）是一種高效處理**動態連通性問題**的資料結構，能夠以近乎 O(1) 的均攤時間合併集合與查詢元素所屬集合。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.union-find.connectivity`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 parent、Find、Union、路徑壓縮與按秩／大小合併的不變量。
+  - `LO-2`: 能夠解釋近乎常數的攤銷成本，並辨識並查集不適合支援刪邊或完整路徑查詢的情況。
+  - `LO-3`: 能夠將並查集套用到 Kruskal 和動態連通性問題，處理節點編號、重複邊與集合生命週期。
+- **Prerequisites**: [圖的表示與遍歷](graph_representation_traversal.md)
+- **Quick Quiz**: [Q37](../../QUIZ/01_Data_Structures_and_Algorithms.md#q37-並查集如何維護動態連通性)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 核心操作

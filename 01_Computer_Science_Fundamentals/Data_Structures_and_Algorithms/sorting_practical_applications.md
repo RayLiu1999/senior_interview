@@ -8,6 +8,18 @@
 
 在實際後端系統中，排序問題遠比 LeetCode 複雜：資料量可能達到 TB 級別（無法全部載入記憶體）、資料分散在多台機器上、需要穩定性保證等。如何在這些實際場景中選擇和優化排序算法？外部排序、分散式排序、Top K 問題有哪些高效解法？
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.sorting.production-scale`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依資料量、記憶體、排序穩定性與結果需求選擇外部排序、分散式排序或 Top K。
+  - `LO-2`: 能夠量化磁碟 I/O、網路 shuffle、分區傾斜、合併佇列與故障重試對尾端延遲的影響。
+  - `LO-3`: 能夠設計可重跑、可驗證且不重複輸出的排序流程，並說明何時需要近似或部分排序。
+- **Prerequisites**: [排序演算法比較](sorting_algorithms_comparison.md)
+- **Quick Quiz**: [Q31](../../QUIZ/01_Data_Structures_and_Algorithms.md#q31-生產環境排序的外部記憶體與分散式取捨)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 外部排序（External Sorting）

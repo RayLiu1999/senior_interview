@@ -8,6 +8,18 @@
 
 深度優先搜尋 (Depth-First Search, DFS) 是圖和樹的基本遍歷算法之一,採用「一路到底,遇到死路回頭」的策略。在後端面試中,DFS 常用於解決排列組合、路徑搜尋、連通性判斷等問題,是必須精通的核心算法。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph-traversal.dfs-structure`
+- **Learning Objectives**:
+  - `LO-1`: 能夠以遞迴或顯式堆疊描述 DFS 的走訪不變量、visited 與 O(V+E) 成本。
+  - `LO-2`: 能夠依問題是否需要回溯、連通性、環檢測或完整路徑枚舉選擇 DFS。
+  - `LO-3`: 能夠處理圖中的環、深度上限與堆疊記憶體，避免重複走訪或遞迴溢位。
+- **Prerequisites**: [圖的表示與遍歷](graph_representation_traversal.md)
+- **Quick Quiz**: [Q21](../../QUIZ/01_Data_Structures_and_Algorithms.md#q21-dfs-的堆疊深度與圖遍歷正確性)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. DFS 基本原理

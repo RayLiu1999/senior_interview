@@ -8,6 +8,18 @@
 
 動態規劃進階題型包含區間DP、狀態壓縮DP、樹形DP等複雜場景,需要更深入的理解狀態設計和轉移方程。這些題型在高級面試中常見,用於考察候選人的算法深度和思維能力。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.dynamic-programming.advanced-state`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將區間、子集合或樹的子問題轉成足以描述未來決策的狀態。
+  - `LO-2`: 能夠推導轉移方程、初始條件與合法計算順序，並說明狀態之間的依賴。
+  - `LO-3`: 能夠在正確性不變下評估時間／空間優化，並與貪心或回溯方案比較。
+- **Prerequisites**: [動態規劃基礎](dynamic_programming_basics.md)
+- **Quick Quiz**: [Q22](../../QUIZ/01_Data_Structures_and_Algorithms.md#q22-進階-dp-的狀態設計與空間壓縮)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 區間DP (Interval DP)

@@ -8,6 +8,18 @@
 
 優先佇列 (Priority Queue) 是一種特殊的佇列，元素出隊順序由優先級決定而非 FIFO。通常用**堆 (Heap)** 實現，廣泛應用於任務調度、Top K 問題、圖算法等場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.priority-queue.heap-ordering`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明優先佇列與 FIFO 佇列的順序不變量，以及堆操作的時間複雜度。
+  - `LO-2`: 能夠依最小／最大優先級、平手順序與更新需求設計比較器和資料結構。
+  - `LO-3`: 能夠把優先佇列套用到 Top K、合併 K 個排序來源與任務調度，量化記憶體和延遲。
+- **Prerequisites**: [堆的實現及 Top K 問題](heap_implementation.md)
+- **Quick Quiz**: [Q27](../../QUIZ/01_Data_Structures_and_Algorithms.md#q27-優先佇列在-top-k-與任務排程的取捨)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 優先佇列基礎

@@ -8,6 +8,18 @@
 
 位運算是對整數的二進制表示進行操作的技巧,具有執行速度快、記憶體佔用少的優點。在後端開發中,位運算廣泛應用於權限管理、狀態標記、加密算法等場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.bit-manipulation.flags`
+- **Learning Objectives**:
+  - `LO-1`: 能夠使用 AND、OR、XOR、NOT 與位移建立並驗證位元遮罩。
+  - `LO-2`: 能夠將位元旗標套用到權限或狀態集合，正確完成設定、清除、切換與檢查。
+  - `LO-3`: 能夠評估整數寬度、符號位、溢位、序列化與可讀性對跨平台實作的風險。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q18](../../QUIZ/01_Data_Structures_and_Algorithms.md#q18-位運算與位元旗標的安全使用)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 基本位運算符

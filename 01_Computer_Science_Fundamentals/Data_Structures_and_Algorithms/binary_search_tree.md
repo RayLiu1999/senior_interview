@@ -8,6 +8,18 @@
 
 二元搜尋樹 (Binary Search Tree, BST) 是一種有序的樹狀資料結構，左子樹所有節點值小於根節點，右子樹所有節點值大於根節點。理解 BST 及其平衡變體（紅黑樹、AVL 樹）是掌握資料庫索引、記憶體資料庫（如 Redis）等核心技術的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.binary-search-tree.balance`
+- **Learning Objectives**:
+  - `LO-1`: 能夠維護 BST 的順序不變量，並分析查找、插入與刪除在平衡和退化情況下的成本。
+  - `LO-2`: 能夠比較 AVL、紅黑樹等平衡策略在查詢、更新與旋轉成本上的差異。
+  - `LO-3`: 能夠依照資料分布、更新頻率、快取區域性與排序查詢需求選擇適合的有序結構。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q16](../../QUIZ/01_Data_Structures_and_Algorithms.md#q16-bst-退化與平衡樹選擇)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 二元搜尋樹基礎

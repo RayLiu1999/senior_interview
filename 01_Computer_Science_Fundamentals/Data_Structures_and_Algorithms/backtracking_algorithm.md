@@ -8,6 +8,18 @@
 
 回溯法是一種通過**遞迴地構建候選解**，並在確定候選不可能成為有效解時立即**放棄（剪枝）**的算法策略。它本質上是一種系統化的窮舉，但透過剪枝大幅減少搜尋空間，是解決排列、組合、子集、棋盤問題的標準範式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.backtracking.pruning`
+- **Learning Objectives**:
+  - `LO-1`: 能夠把候選解、決策樹、終止條件與目前路徑轉成明確的搜尋狀態。
+  - `LO-2`: 能夠設計不破壞正確性的剪枝，並在遞迴返回時完整還原共享狀態。
+  - `LO-3`: 能夠估算回溯的指數時間與堆疊／結果空間，並說明何時應改用 DP 或其他策略。
+- **Prerequisites**: [DFS/BFS 與回溯法](dfs_bfs_comprehensive.md)
+- **Quick Quiz**: [Q14](../../QUIZ/01_Data_Structures_and_Algorithms.md#q14-回溯法的剪枝與狀態還原)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 搜索空間樹（Decision Tree）

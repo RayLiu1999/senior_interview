@@ -8,6 +8,18 @@
 
 滑動窗口是一種高效處理陣列/字串**子區間**問題的算法技巧。核心思想是維護一個「窗口」在陣列上滑動,通過動態調整窗口大小和位置來求解問題,時間複雜度通常可優化到 O(n)。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.sliding-window.invariant`
+- **Learning Objectives**:
+  - `LO-1`: 能夠定義窗口的合法不變量，並說明何時擴張右界、收縮左界與更新答案。
+  - `LO-2`: 能夠選擇計數表、集合、單調佇列或其他輔助結構處理長度、頻率與區間最值。
+  - `LO-3`: 能夠證明雙指針各自單調前進帶來的攤銷 O(n)，並處理重複值、空輸入與邊界。
+- **Prerequisites**: [雙指針與滑動窗口技巧](two_pointers_technique.md)
+- **Quick Quiz**: [Q30](../../QUIZ/01_Data_Structures_and_Algorithms.md#q30-滑動窗口的不變量與線性複雜度)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 滑動窗口基本原理

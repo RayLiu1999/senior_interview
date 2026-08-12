@@ -8,6 +8,18 @@
 
 字串搜尋（模式匹配）是在**文本字串 T**（長度 n）中尋找**模式字串 P**（長度 m）所有出現位置的問題。樸素算法時間複雜度為 O(nm)，而 KMP 和 Rabin-Karp 算法能將其優化到線性時間。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.string-search.pattern-matching`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較樸素搜尋、KMP 與 Rabin-Karp 的前處理、時間與空間成本。
+  - `LO-2`: 能夠依文本／模式長度、串流需求與碰撞風險選擇演算法，並在雜湊命中後做必要驗證。
+  - `LO-3`: 能夠處理位元組與 Unicode 邊界、重複匹配、串流分塊與記憶體限制。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q33](../../QUIZ/01_Data_Structures_and_Algorithms.md#q33-字串搜尋演算法與碰撞驗證)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 樸素算法（Brute Force）

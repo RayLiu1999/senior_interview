@@ -8,6 +8,18 @@
 
 在圖論中，如何高效地找到從一個頂點到另一個頂點的最短路徑？不同的算法適用於哪些場景（單源 vs 多源、負權邊、稠密圖 vs 稀疏圖）？在實際後端系統中有哪些應用？
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph.shortest-path-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依邊權限制、查詢範圍與圖密度選擇 Dijkstra、Bellman-Ford 或 Floyd-Warshall。
+  - `LO-2`: 能夠維護鬆弛不變量、優先佇列與前驅資訊，並辨識負權環或不可達節點。
+  - `LO-3`: 能夠估算稀疏／稠密圖的時間與空間成本，處理路徑重建、溢位和輸入規模。
+- **Prerequisites**: [圖的表示與遍歷](graph_representation_traversal.md)、[優先佇列實戰](priority_queue_practice.md)
+- **Quick Quiz**: [Q28](../../QUIZ/01_Data_Structures_and_Algorithms.md#q28-最短路徑演算法如何依權重與圖密度選擇)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. Dijkstra 算法（單源最短路徑）

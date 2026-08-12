@@ -8,6 +8,18 @@
 
 鏈結串列是面試中最常考的資料結構之一，涉及指針操作、邊界處理、空間優化等多個考點。本文總結鏈結串列的**經典題型**和**解題套路**。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.linked-list.pointer-invariants`
+- **Learning Objectives**:
+  - `LO-1`: 能夠在反轉、合併、刪除與環檢測時維護指標不變量和節點所有權。
+  - `LO-2`: 能夠正確使用 dummy node、快慢指針與多指針技巧，處理空串列和單節點邊界。
+  - `LO-3`: 能夠比較鏈結串列與連續陣列在插入刪除、快取區域性、配置成本與記憶體上的取捨。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q25](../../QUIZ/01_Data_Structures_and_Algorithms.md#q25-鏈結串列指針不變量與邊界處理)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 鏈結串列基礎

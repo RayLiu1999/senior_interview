@@ -8,6 +8,18 @@
 
 字典樹（Trie，又稱前綴樹）是一種專門用於處理字串的樹狀資料結構。它能高效地插入、查找字串，特別擅長**前綴匹配**。在自動補全、拼寫檢查、敏感詞過濾等場景中廣泛應用。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.trie.prefix-index`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明字元路徑、終止標記與精確查找／前綴查詢的複雜度。
+  - `LO-2`: 能夠依字母表大小、Unicode、熱點前綴與更新需求選擇陣列、Map 或壓縮節點表示。
+  - `LO-3`: 能夠估算節點記憶體、刪除與自動補全結果排序的成本，並處理空字串和前綴衝突。
+- **Prerequisites**: 無
+- **Quick Quiz**: [Q35](../../QUIZ/01_Data_Structures_and_Algorithms.md#q35-trie-前綴查詢與記憶體取捨)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. Trie 基本概念

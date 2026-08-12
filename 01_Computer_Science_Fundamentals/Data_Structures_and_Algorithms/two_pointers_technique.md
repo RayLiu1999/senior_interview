@@ -8,6 +8,18 @@
 
 雙指針（Two Pointers）和滑動窗口（Sliding Window）是處理**陣列、字串、鏈表**問題的高效技巧。這些技巧能將暴力 O(n²) 的解法優化到 O(n)，是面試中的高頻考點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.two-pointers.invariant`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分對撞、同向與快慢指針，並為每種模式定義可維護的不變量。
+  - `LO-2`: 能夠說明排序、單調性或相遇條件等前提，避免在不適用的輸入上誤用雙指針。
+  - `LO-3`: 能夠證明指針總移動次數為 O(n)，並處理重複值、空輸入與索引邊界。
+- **Prerequisites**: [陣列與動態陣列](array_and_dynamic_array.md)
+- **Quick Quiz**: [Q36](../../QUIZ/01_Data_Structures_and_Algorithms.md#q36-雙指針技巧的前提與不變量)
+- **Hard Assessment**: [Data Structures Algorithm Incident](../../QUIZ/Hard_Assessments/data_structures_algorithm_incident.md) (`assessment.data-structures.algorithm-incident.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且複雜度、資料結構選擇、記憶體與延遲、正確性與邊界四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 雙指針技巧
