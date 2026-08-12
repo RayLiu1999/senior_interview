@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const { hydrate } = useProgress()
+
+onMounted(() => {
+  void hydrate()
+})
+</script>
+
 <template>
   <div class="app-shell">
     <AppHeader />

@@ -168,6 +168,7 @@ function stripQuestionComment(text) {
     .replace(/<!--[^]*?-->/g, '')
     .replace(/<a[^>]*><\/a>/g, '')
     .replace(/\*\*難度\*\*[^\n]*\n?/g, '')
+    .replace(/\*\*重要程度\*\*[^\n]*\n?/g, '')
     .replace(/📖\s*\[[^\]]+\]\([^)]*\)\s*$/gm, '')
     .trim()
 }

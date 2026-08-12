@@ -1,0 +1,62 @@
+import type { ProgressState, QuizAttempt } from '~/types/content'
+import { createAttemptId, createEmptyProgress, loadProgress, saveProgress } from '~/utils/progress'
+
+export function useProgress() {
+  const state = useState<ProgressState>('learning-progress', createEmptyProgress)
+  const ready = useState('learning-progress-ready', () => false)
+  const saving = useState('learning-progress-saving', () => false)
+
+  async function hydrate() {
+    if (!import.meta.client || ready.value) return
+    try {
+      state.value = await loadProgress()
+    } catch {
+      // Progress is a convenience feature; a blocked or unavailable browser
+      // store must not prevent the content and quizzes from rendering.
+      state.value = createEmptyProgress()
+    } finally {
+      ready.value = true
+    }
+  }
+
+  async function persist(nextState: ProgressState) {
+    state.value = { ...nextState, updatedAt: new Date().toISOString() }
+    if (!import.meta.client) return
+    saving.value = true
+    try {
+      await saveProgress(state.value)
+    } catch {
+      // Keep the in-memory result even when persistence is unavailable.
+    } finally {
+      saving.value = false
+    }
+  }
+
+  async function recordQuizAttempt(input: Omit<QuizAttempt, 'id' | 'completedAt'>) {
+    await hydrate()
+    await persist({
+      ...state.value,
+      quizAttempts: [
+        ...state.value.quizAttempts,
+        { ...input, id: createAttemptId('quiz'), completedAt: new Date().toISOString() },
+      ],
+    })
+  }
+
+  function markArticleViewed(articleId: string) {
+    const completedArticleIds = state.value.completedArticleIds.includes(articleId)
+      ? state.value.completedArticleIds
+      : [...state.value.completedArticleIds, articleId]
+    void persist({ ...state.value, completedArticleIds, lastViewedArticleId: articleId })
+  }
+
+  return {
+    state,
+    ready,
+    saving,
+    hydrate,
+    persist,
+    recordQuizAttempt,
+    markArticleViewed,
+  }
+}
