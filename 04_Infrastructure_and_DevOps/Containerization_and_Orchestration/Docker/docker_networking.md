@@ -8,6 +8,18 @@
 
 請解釋 Docker 的網路模型，包括 Bridge、Host、Overlay 等網路模式的工作原理、使用場景和差異。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.networking.mode-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 bridge、host、overlay 與 macvlan 的連通性、隔離邊界、效能與適用拓撲。
+  - `LO-2`: 能從 DNS、port publishing、NAT、路由與網路分段推導容器無法互通或意外暴露的原因。
+  - `LO-3`: 能以 network inspect、封包、iptables／路由與服務指標證明網路修復沒有擴大攻擊面或延遲。
+- **Prerequisites**: [Container 與 VM 的隔離和資源取捨](./container_vs_vm.md)、[Docker 內部原理與實現機制](./docker_internals.md)
+- **Quick Quiz**: [Docker Q6](../../../QUIZ/13_Docker.md#q6)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Docker 網路概述

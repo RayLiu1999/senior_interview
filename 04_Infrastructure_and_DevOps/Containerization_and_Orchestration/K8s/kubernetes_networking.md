@@ -8,6 +8,18 @@
 
 請解釋 Kubernetes 的網路模型、CNI (Container Network Interface) 的作用，以及常見的 CNI 插件（如 Calico、Flannel）的工作原理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.networking.cni-policy`
+- **Learning Objectives**:
+  - `LO-1`: 能描述 Pod、Node、Service、CNI、kube-proxy 與 NetworkPolicy 的連通性和責任邊界。
+  - `LO-2`: 能比較 overlay、routing、iptables／IPVS、DNS 與 NetworkPolicy 的效能、可觀測性與隔離取捨。
+  - `LO-3`: 能以 Pod／Service IP、路由、CNI log、封包、policy 與 endpoint 證據診斷跨節點或分段網路故障。
+- **Prerequisites**: [Pod 是什麼](./what_is_pod.md)、[Service 的類型](./kubernetes_service_types.md)
+- **Quick Quiz**: [Kubernetes Q13](../../../QUIZ/11_Kubernetes.md#q13)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Kubernetes 網路基本要求

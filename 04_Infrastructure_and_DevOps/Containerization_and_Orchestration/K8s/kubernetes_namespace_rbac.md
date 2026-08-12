@@ -8,6 +8,18 @@
 
 請解釋 Kubernetes 中 Namespace 的作用，以及如何使用 RBAC（Role-Based Access Control）進行權限管理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.security.namespace-rbac`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Namespace 資源隔離與 RBAC 授權，並比較 Role、ClusterRole、RoleBinding 與 ClusterRoleBinding 的作用域。
+  - `LO-2`: 能為應用、操作者與 ServiceAccount 設計最小權限、Secret 存取與跨 Namespace 的明確授權邊界。
+  - `LO-3`: 能利用 `auth can-i`、audit log、binding、ServiceAccount token 與 API denied event 診斷 403 或權限過寬。
+- **Prerequisites**: [Kubernetes 核心架構](./kubernetes_architecture.md)、[ConfigMap 與 Secret 的使用](./configmap_and_secret.md)
+- **Quick Quiz**: [Kubernetes Q12](../../../QUIZ/11_Kubernetes.md#q12)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Namespace

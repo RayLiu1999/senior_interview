@@ -8,6 +8,18 @@
 
 請解釋 Kubernetes 中的存儲抽象：Persistent Volume (PV)、Persistent Volume Claim (PVC) 和 StorageClass 的概念、關係和使用方式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.storage.pv-pvc-provisioning`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 PV、PVC、StorageClass、provisioner、access mode 與 reclaim policy 的責任和生命週期。
+  - `LO-2`: 能依資料一致性、拓撲、擴容、備份、成本與故障恢復需求設計動態配置與掛載策略。
+  - `LO-3`: 能從 PVC events、binding、CSI／provisioner log、Node topology、mount 與 I/O 指標診斷 Pending 或資料不可用。
+- **Prerequisites**: [Pod 是什麼](./what_is_pod.md)、[Deployment、StatefulSet 與 DaemonSet](./deployment_statefulset_daemonset.md)
+- **Quick Quiz**: [Kubernetes Q14](../../../QUIZ/11_Kubernetes.md#q14)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 為什麼需要持久化存儲

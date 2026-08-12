@@ -8,6 +8,18 @@
 
 請說明 Docker Compose 的工作原理、使用場景和最佳實踐,包括服務定義、網路配置、Volume 管理和生產環境部署。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.compose.service-topology`
+- **Learning Objectives**:
+  - `LO-1`: 能以 Compose 的 service、network、volume、dependency 與 profile 描述多容器應用的拓撲與生命週期。
+  - `LO-2`: 能區分啟動順序與真正的 readiness，並評估環境變數、Volume、資源限制與單主機部署的取捨。
+  - `LO-3`: 能從 Compose config、服務日誌、健康檢查、網路與 Volume 證據診斷依賴、資料遺失或重啟風暴。
+- **Prerequisites**: [Docker 網路模型](./docker_networking.md)、[Docker Volume 與資料持久化](./docker_volume.md)
+- **Quick Quiz**: [Docker Q7](../../../QUIZ/13_Docker.md#q7)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 什麼是 Docker Compose

@@ -8,6 +8,18 @@
 
 請詳細解釋 Kubernetes Service 的三種主要類型：ClusterIP、NodePort 和 LoadBalancer，以及它們的適用場景和實現原理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.networking.service-discovery`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 ClusterIP、NodePort、LoadBalancer、ExternalName 與 Headless Service 的流量入口、DNS 與故障邊界。
+  - `LO-2`: 能依內外部暴露、成本、可用性、來源 IP 與有狀態服務需求選擇 Service 類型，並連結 Ingress 與 Endpoint。
+  - `LO-3`: 能以 selector、EndpointSlice、DNS、kube-proxy 與雲端 LB 證據診斷連線、路由或健康檢查異常。
+- **Prerequisites**: [Pod 是什麼](./what_is_pod.md)、[Kubernetes 網路模型與 CNI](./kubernetes_networking.md)
+- **Quick Quiz**: [Kubernetes Q9](../../../QUIZ/11_Kubernetes.md#q9)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 什麼是 Kubernetes Service

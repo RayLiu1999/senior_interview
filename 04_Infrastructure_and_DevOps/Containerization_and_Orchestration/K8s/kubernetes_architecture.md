@@ -8,6 +8,18 @@
 
 請詳細解釋 Kubernetes 的架構組成，特別是 Master Node 和 Worker Node 的角色及其內部組件。
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.control-plane.architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能描述 API Server、etcd、Scheduler、Controller Manager、Kubelet、kube-proxy 與 container runtime 的責任邊界。
+  - `LO-2`: 能沿著期望狀態、控制器、排程、節點執行與 Service 網路規則追蹤 Pod 部署流程及故障域。
+  - `LO-3`: 能以 control-plane latency、事件、節點狀態、runtime 與 controller metrics 判斷控制面或資料面的瓶頸。
+- **Prerequisites**: [什麼是 Kubernetes](./what_is_kubernetes.md)、[Pod 是什麼](./what_is_pod.md)
+- **Quick Quiz**: [Kubernetes Q8](../../../QUIZ/11_Kubernetes.md#q8)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Kubernetes 架構概覽

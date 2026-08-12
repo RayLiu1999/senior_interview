@@ -8,6 +8,18 @@
 
 Kubernetes（簡稱 K8s）是什麼？它在現代雲原生架構中扮演什麼角色？它主要解決了哪些問題？
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.fundamentals.cluster-orchestration`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Kubernetes 的聲明式 API、控制器、排程、自我修復與服務發現解決的問題。
+  - `LO-2`: 能區分容器執行、編排平台與雲端基礎設施的責任，並說明採用 Kubernetes 的運維與複雜度成本。
+  - `LO-3`: 能從期望狀態、事件、Pod／Service 狀態與部署指標建立故障診斷和回滾的基本證據鏈。
+- **Prerequisites**: [Container 與 VM 的隔離和資源取捨](../Docker/container_vs_vm.md)、[Docker 內部原理與實現機制](../Docker/docker_internals.md)
+- **Quick Quiz**: [Kubernetes Q6](../../../QUIZ/11_Kubernetes.md#q6)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 什麼是 Kubernetes

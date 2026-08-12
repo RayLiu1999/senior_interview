@@ -8,6 +8,18 @@
 
 請解釋 Kubernetes 中 Ingress 和 Ingress Controller 的作用、工作原理，以及與 Service 的區別。如何配置 Ingress 實現 HTTP 路由和 TLS 終止？
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.networking.ingress-routing`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Ingress 資源、Ingress Controller、Service 與外部 Load Balancer 的責任與流量邊界。
+  - `LO-2`: 能設計 host／path routing、TLS、rewrite、timeout 與安全策略，並說明 controller 實作差異與成本。
+  - `LO-3`: 能從 DNS、入口日誌、Ingress status、Service endpoints、TLS 與後端延遲證據診斷 404、502 或憑證事故。
+- **Prerequisites**: [Service 的類型](./kubernetes_service_types.md)、[Kubernetes 網路模型與 CNI](./kubernetes_networking.md)
+- **Quick Quiz**: [Kubernetes Q10](../../../QUIZ/11_Kubernetes.md#q10)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 為什麼需要 Ingress

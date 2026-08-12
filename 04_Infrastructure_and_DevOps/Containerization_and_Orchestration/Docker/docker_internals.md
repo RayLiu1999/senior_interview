@@ -8,6 +8,18 @@
 
 請深入解釋 Docker 的底層實現機制，包括 Namespace、Cgroups、Union Filesystem 和容器運行時的工作原理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.runtime.namespace-cgroup`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 namespaces、cgroups、Union Filesystem、containerd 與 OCI runtime 在容器生命週期中的責任邊界。
+  - `LO-2`: 能把程序、網路、掛載、使用者與資源隔離現象連回核心機制，並判斷隔離不是完整 VM 安全邊界。
+  - `LO-3`: 能利用 inspect、cgroup、namespace、runtime event 與 host pressure 證據診斷容器資源或隔離異常。
+- **Prerequisites**: [Container 與 VM 的隔離和資源取捨](./container_vs_vm.md)、[Docker image layer 與 build cache](./docker_image_layers.md)
+- **Quick Quiz**: [Docker Q8](../../../QUIZ/13_Docker.md#q8)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Docker 架構概覽

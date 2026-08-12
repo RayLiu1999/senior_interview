@@ -8,6 +8,18 @@
 
 請解釋 Kubernetes 中 ConfigMap 和 Secret 的作用、使用方式以及兩者的差異。如何在 Pod 中使用它們？
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.configuration.configmap-secret`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 ConfigMap 與 Secret 的資料敏感度、注入方式、更新語意與儲存安全邊界。
+  - `LO-2`: 能設計環境配置、輪替、版本化與 rollout 觸發策略，避免 secret 進入 image、日誌或不必要的 Pod。
+  - `LO-3`: 能以 API audit、RBAC、掛載內容、Pod template、加密設定與應用讀取行為診斷配置不一致或 secret 洩漏。
+- **Prerequisites**: [什麼是 Kubernetes](./what_is_kubernetes.md)、[Pod 是什麼](./what_is_pod.md)
+- **Quick Quiz**: [Kubernetes Q11](../../../QUIZ/11_Kubernetes.md#q11)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 為什麼需要 ConfigMap 和 Secret

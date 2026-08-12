@@ -8,6 +8,18 @@
 
 在 Kubernetes 中，Pod 是什麼？為什麼不直接管理容器，而是引入 Pod 這個抽象層？一個 Pod 中可以有多個容器嗎？
 
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.fundamentals.pod-scheduling-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Pod 作為最小調度單元時共享網路、儲存、生命週期與安全上下文的語意。
+  - `LO-2`: 能判斷單容器、sidecar、init container 與多容器 Pod 的耦合、資源、更新與故障取捨。
+  - `LO-3`: 能以 Pod phase、container state、events、IP、volume mount 與重啟證據診斷啟動或調度問題。
+- **Prerequisites**: [什麼是 Kubernetes](./what_is_kubernetes.md)、[Container 與 VM 的隔離和資源取捨](../Docker/container_vs_vm.md)
+- **Quick Quiz**: [Kubernetes Q7](../../../QUIZ/11_Kubernetes.md#q7)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 什麼是 Pod

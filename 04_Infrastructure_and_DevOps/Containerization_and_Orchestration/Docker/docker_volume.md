@@ -8,6 +8,18 @@
 
 請解釋 Docker 中的資料持久化方案，包括 Volume、Bind Mount 和 tmpfs Mount 的工作原理、使用場景和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.storage.volume-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 named volume、bind mount 與 tmpfs 的生命週期、效能、權限與可攜性。
+  - `LO-2`: 能為資料庫、暫存檔、配置與備份設計掛載模式、唯讀邊界、回收策略與還原流程。
+  - `LO-3`: 能以 mount、磁碟用量、I/O、備份驗證與容器重建證據診斷資料遺失、權限錯誤或容量耗盡。
+- **Prerequisites**: [Docker 內部原理與實現機制](./docker_internals.md)、[Docker Compose 與多容器編排](./docker_compose.md)
+- **Quick Quiz**: [Docker Q9](../../../QUIZ/13_Docker.md#q9)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 為什麼需要資料持久化

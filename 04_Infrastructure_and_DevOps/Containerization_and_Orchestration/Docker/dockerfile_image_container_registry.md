@@ -8,6 +8,18 @@
 
 請解釋 Docker 的四個核心概念：`Dockerfile`, `Image`, `Container` 和 `Registry`，並闡述它們之間的關係。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.build.image-container-registry`
+- **Learning Objectives**:
+  - `LO-1`: 能沿著 Dockerfile、image、container、registry 的定義、建置、執行與分發流程追蹤 artifact 身分。
+  - `LO-2`: 能以 digest、tag、layer、build context 與 registry provenance 評估可重現性、快取與回滾風險。
+  - `LO-3`: 能從 image inspect、manifest、registry audit 與 runtime 行為證明部署使用的是預期映像，而非漂移或未授權產物。
+- **Prerequisites**: [Dockerfile 最佳實踐](./dockerfile_best_practices.md)、[Docker image layer 與 build cache](./docker_image_layers.md)
+- **Quick Quiz**: [Docker Q10](../../../QUIZ/13_Docker.md#q10)
+- **Hard Assessment**: [Container Orchestration Boundary Incident](../../../QUIZ/Hard_Assessments/container_orchestration_boundary_incident.md) (`assessment.container-orchestration.boundary-incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 這四個概念是 Docker 工作流程的基石，理解它們的關係對於掌握 Docker 至關重要。它們構成了一個從 **定義** -> **建置** -> **執行** -> **分發** 的完整生命週期。
