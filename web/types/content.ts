@@ -131,4 +131,6 @@ export interface ProgressState {
   completedArticleIds: string[]
   lastViewedArticleId: string | null
   updatedAt: string | null
+  syncToken: string | null
+  lastSyncedAt: string | null
 }

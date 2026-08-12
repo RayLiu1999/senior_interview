@@ -5,6 +5,7 @@ export function useProgress() {
   const state = useState<ProgressState>('learning-progress', createEmptyProgress)
   const ready = useState('learning-progress-ready', () => false)
   const saving = useState('learning-progress-saving', () => false)
+  const syncing = useState('learning-progress-syncing', () => false)
 
   async function hydrate() {
     if (!import.meta.client || ready.value) return
@@ -75,15 +76,45 @@ export function useProgress() {
     }
   }
 
+  async function syncWithServer(requestedToken?: string | null) {
+    if (!import.meta.client) throw new Error('Progress sync is only available in the browser.')
+    await hydrate()
+    syncing.value = true
+    try {
+      const response = await $fetch<{
+        syncToken: string
+        state: ProgressState
+      }>('/api/progress/sync', {
+        method: 'POST',
+        body: {
+          syncToken: requestedToken || state.value.syncToken || undefined,
+          state: state.value,
+        },
+      })
+      const syncedAt = new Date().toISOString()
+      const nextState = {
+        ...response.state,
+        syncToken: response.syncToken,
+        lastSyncedAt: syncedAt,
+      }
+      await persist(nextState)
+      return nextState
+    } finally {
+      syncing.value = false
+    }
+  }
+
   return {
     state,
     ready,
     saving,
+    syncing,
     hydrate,
     persist,
     recordQuizAttempt,
     recordAssessmentAttempt,
     markArticleViewed,
     resetProgress,
+    syncWithServer,
   }
 }

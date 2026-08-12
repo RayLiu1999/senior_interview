@@ -8,15 +8,18 @@ const databaseName = 'senior-interview-progress'
 const databaseVersion = 1
 const storeName = 'progress'
 const stateKey = 'current'
+const progressSchemaVersion = 2
 
 export function createEmptyProgress(): ProgressState {
   return {
-    schemaVersion: 1,
+    schemaVersion: progressSchemaVersion,
     quizAttempts: [],
     assessmentAttempts: [],
     completedArticleIds: [],
     lastViewedArticleId: null,
     updatedAt: null,
+    syncToken: null,
+    lastSyncedAt: null,
   }
 }
 
@@ -75,7 +78,7 @@ export function normalizeProgress(value: unknown): ProgressState {
   if (!value || typeof value !== 'object') return createEmptyProgress()
   const candidate = value as Partial<ProgressState>
   return {
-    schemaVersion: 1,
+    schemaVersion: progressSchemaVersion,
     quizAttempts: Array.isArray(candidate.quizAttempts) ? candidate.quizAttempts as QuizAttempt[] : [],
     assessmentAttempts: Array.isArray(candidate.assessmentAttempts)
       ? (candidate.assessmentAttempts as AssessmentAttempt[]).map((attempt) => ({
@@ -89,6 +92,8 @@ export function normalizeProgress(value: unknown): ProgressState {
     completedArticleIds: Array.isArray(candidate.completedArticleIds) ? candidate.completedArticleIds.map(String) : [],
     lastViewedArticleId: candidate.lastViewedArticleId ? String(candidate.lastViewedArticleId) : null,
     updatedAt: candidate.updatedAt ? String(candidate.updatedAt) : null,
+    syncToken: candidate.syncToken ? String(candidate.syncToken) : null,
+    lastSyncedAt: candidate.lastSyncedAt ? String(candidate.lastSyncedAt) : null,
   }
 }
 

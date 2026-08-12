@@ -4,9 +4,12 @@ import { exportProgress, importProgress } from '~/utils/progress'
 const { state, ready, saving, hydrate, persist, resetProgress } = useProgress()
 const fileInput = ref<HTMLInputElement | null>(null)
 const status = ref<{ type: 'success' | 'error'; message: string } | null>(null)
+const syncCode = ref('')
+const { syncing, syncWithServer } = useProgress()
 
-onMounted(() => {
-  void hydrate()
+onMounted(async () => {
+  await hydrate()
+  syncCode.value = state.value.syncToken ?? ''
 })
 
 function downloadProgress() {
@@ -39,6 +42,23 @@ async function clearAllProgress() {
   if (!window.confirm('確定要清除這個瀏覽器的所有學習紀錄嗎？此操作前請先匯出備份。')) return
   await resetProgress()
   status.value = { type: 'success', message: '本機學習紀錄已清除。' }
+  syncCode.value = ''
+}
+
+async function syncProgress() {
+  try {
+    const nextState = await syncWithServer(syncCode.value.trim() || null)
+    syncCode.value = nextState.syncToken ?? ''
+    status.value = { type: 'success', message: '同步完成；此同步碼可在其他裝置再次使用。' }
+  } catch {
+    status.value = { type: 'error', message: '同步失敗：請確認目前使用的是 Nuxt server build，且同步碼格式正確。' }
+  }
+}
+
+async function copySyncCode() {
+  if (!syncCode.value || !navigator.clipboard) return
+  await navigator.clipboard.writeText(syncCode.value)
+  status.value = { type: 'success', message: '同步碼已複製。請把它安全地帶到另一台裝置。' }
 }
 </script>
 
@@ -48,7 +68,7 @@ async function clearAllProgress() {
       <div>
         <span class="eyebrow">Settings & data</span>
         <h1>你的學習紀錄，留在你手上。</h1>
-        <p>目前紀錄只儲存在瀏覽器 IndexedDB。你可以隨時匯出 JSON，在另一台裝置匯入；後續再接上匿名同步服務。</p>
+        <p>紀錄預設儲存在瀏覽器 IndexedDB。你可以匯出 JSON，也可以產生匿名同步碼，將學習狀態帶到另一台裝置。</p>
       </div>
       <div class="settings-status"><span :class="{ online: ready }" />{{ ready ? '本機儲存可用' : '正在載入…' }}</div>
     </section>
@@ -75,10 +95,28 @@ async function clearAllProgress() {
       </article>
     </section>
 
+    <section class="settings-sync">
+      <div>
+        <span class="eyebrow">Anonymous sync</span>
+        <h2>跨裝置同步碼</h2>
+        <p>同步碼是可攜式 bearer token；拿到它的人可以讀寫這份紀錄，請只分享給自己。此版本使用單機 file-backed adapter，部署到多台 server 前應替換成共享資料庫。</p>
+      </div>
+      <div class="sync-controls">
+        <label class="field">同步碼
+          <input v-model="syncCode" type="text" inputmode="text" autocomplete="off" placeholder="留白可產生新的同步碼" />
+        </label>
+        <div class="sync-actions">
+          <button class="button button-primary" type="button" :disabled="syncing || !ready" @click="syncProgress">{{ syncing ? '同步中…' : syncCode ? '同步此紀錄' : '產生同步碼並同步' }}</button>
+          <button v-if="syncCode" class="button button-quiet" type="button" @click="copySyncCode">複製同步碼</button>
+        </div>
+        <small v-if="state.lastSyncedAt" class="muted">上次同步：{{ new Date(state.lastSyncedAt).toLocaleString('zh-TW') }}</small>
+      </div>
+    </section>
+
     <section class="settings-note">
       <span class="eyebrow">Cross-device sync</span>
-      <h2>跨裝置同步會在下一階段接入</h2>
-      <p>W5 會加入匿名同步碼與可替換的 server adapter；在那之前，匯出／匯入是最可靠的跨裝置轉移方式。</p>
+      <h2>同步採 append-only merge</h2>
+      <p>作答紀錄以 attempt ID 去重、已讀文章取聯集、最近檢視文章以時間較新的狀態為準；因此不同裝置離線作答後仍可安全合併。</p>
     </section>
   </main>
 </template>
