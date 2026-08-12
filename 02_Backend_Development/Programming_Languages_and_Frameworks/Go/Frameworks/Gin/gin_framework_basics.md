@@ -16,6 +16,7 @@
   - `LO-2`: 能夠依路由範圍選擇全局、群組或單一路由中間件，並說明 `gin.Default()` 的預設組成。
   - `LO-3`: 能夠使用參數綁定、Context 與 `Abort` 設計可維護的 HTTP API。
 - **Quick Quiz**: [Go Q10](../../../../../QUIZ/06_Go.md#q10)
+- **Hard Assessment**: [Gin API Production Incident](../../../../../QUIZ/Hard_Assessments/gin_api_production_incident.md) (`assessment.go.gin-api-production.incident.v1`)
 
 ## 核心理論與詳解
 

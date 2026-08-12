@@ -16,6 +16,7 @@
   - `LO-2`: 能夠辨識跨 Goroutine 使用未複製 Context、物件池與中間件配置造成的安全或正確性問題。
   - `LO-3`: 能夠以基準、連接池與查詢指標驗證優化，並說明低分配與可讀性、資源上限的取捨。
 - **Quick Quiz**: [Go Q12](../../../../../QUIZ/06_Go.md#q12)
+- **Hard Assessment**: [Gin API Production Incident](../../../../../QUIZ/Hard_Assessments/gin_api_production_incident.md) (`assessment.go.gin-api-production.incident.v1`)
 
 ## 核心理論與詳解
 

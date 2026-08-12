@@ -16,6 +16,7 @@
   - `LO-2`: 能夠實作認證、RBAC、日誌、CORS 或限流中間件，並在拒絕請求時正確 `Abort`。
   - `LO-3`: 能夠評估中間件註冊範圍、共享狀態、錯誤傳遞與請求延遲的取捨。
 - **Quick Quiz**: [Go Q11](../../../../../QUIZ/06_Go.md#q11)
+- **Hard Assessment**: [Gin API Production Incident](../../../../../QUIZ/Hard_Assessments/gin_api_production_incident.md) (`assessment.go.gin-api-production.incident.v1`)
 
 ## 核心理論與詳解
 

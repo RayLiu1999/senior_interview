@@ -23,11 +23,13 @@
 | Java Runtime Concurrency | [Java Runtime Concurrency Incident](./java_runtime_concurrency_incident.md) | 9 | Thread Pool、JMM、鎖競爭、GC、Spring IoC 與延遲診斷 |
 | Python Async Service | [Python Async Service Incident](./python_async_service_incident.md) | 9 | FastAPI、事件循環、GIL、記憶體與依賴生命週期 |
 | C# ASP.NET Runtime | [C# ASP.NET Runtime Incident](./csharp_aspnet_runtime_incident.md) | 9 | async、Task、鎖、GC、ASP.NET Core DI 與容量診斷 |
+| C# Resource Boundary | [C# Resource Boundary Incident](./csharp_resource_boundary_incident.md) | 9 | Middleware、DbContext、IDisposable、Connection Pool 與資源生命週期 |
 | PHP-FPM Laravel Runtime | [PHP-FPM Laravel Runtime Incident](./php_fpm_laravel_runtime_incident.md) | 9 | PHP-FPM、OPcache、GC、Laravel Service Container 與效能診斷 |
 | Node.js Event Loop Runtime | [Node.js Event Loop Runtime Incident](./nodejs_event_loop_runtime_incident.md) | 9 | Event Loop、非阻塞 I/O、Stream 背壓、Express 錯誤與 V8 記憶體 |
 | NestJS Modular API | [NestJS Modular API Incident](./nestjs_modular_api_incident.md) | 9 | Module Graph、DI Scope、Provider、Request Lifecycle 與 Exception Filter |
 | 限量資源系統設計 | [限量資源容量與一致性設計](./flash_sale_capacity_correctness.md) | 9 | 秒殺、分散式鎖、購票與容量 |
 | Go Worker Pipeline | [Go Worker Pipeline 診斷](./go_concurrent_worker_diagnosis.md) | 9 | 取消、背壓、Channel 與 Goroutine |
+| Go Gin Production API | [Gin API Production Incident](./gin_api_production_incident.md) | 9 | Middleware Chain、Context Reuse、並發安全、容量與多租戶隔離 |
 
 ## 使用方式
 
@@ -36,4 +38,4 @@
 3. 依「期待證據」與評分規準自評，記錄失分點。
 4. 回到文章補強缺口，再回答延伸追問。
 
-硬測驗目前已涵蓋四題跨領域試點、四題核心後端批次與十四題 Phase 3 延伸批次；後續會依同一規格擴展到其他語言與框架。
+硬測驗目前已涵蓋四題跨領域試點、四題核心後端批次與十六題 Phase 3 延伸批次；後續會依同一規格擴展到其他語言與框架。

@@ -247,3 +247,4 @@ builder.Services.AddDbContextPool<AppDbContext>((sp, options) =>
   - `LO-2`: 能夠依 HTTP 請求、背景服務、多執行緒與高流量場景選擇 Scoped、池化或 DbContextFactory。
   - `LO-3`: 能夠診斷 Singleton、長時間持有或跨執行緒共享 DbContext 的問題，並提出隔離與釋放方案。
 - **Quick Quiz**: [Q15](../../../../../QUIZ/08_CSharp.md#q15-entity-framework-core-的-dbcontext-生命週期應該如何管理)
+- **Hard Assessment**: [C# Resource Boundary Incident](../../../../../QUIZ/Hard_Assessments/csharp_resource_boundary_incident.md) (`assessment.csharp.resource-boundary.incident.v1`)

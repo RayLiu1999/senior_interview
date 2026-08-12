@@ -273,3 +273,4 @@ public class DatabaseService : IDisposable, IAsyncDisposable
   - `LO-2`: 能夠實作 Dispose(bool)、冪等釋放、GC.SuppressFinalize 與 disposed guard，避免重複或越界使用。
   - `LO-3`: 能夠解釋 using／await using 如何轉換為 try-finally，並判斷何時需要終結器安全網。
 - **Quick Quiz**: [Q11](../../../../QUIZ/08_CSharp.md#q11-idisposable-模式如何正確實作)
+- **Hard Assessment**: [C# Resource Boundary Incident](../../../../QUIZ/Hard_Assessments/csharp_resource_boundary_incident.md) (`assessment.csharp.resource-boundary.incident.v1`)

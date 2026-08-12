@@ -295,3 +295,4 @@ public class RequestLoggingMiddleware
   - `LO-2`: 能夠安排例外、路由、CORS、認證與授權的順序，並判斷短路、Run、Map 與 MapWhen 的結果。
   - `LO-3`: 能夠以 RequestDelegate 實作可觀測且能正確處理例外的自訂中介軟體，並區分其與 MVC 篩選器的邊界。
 - **Quick Quiz**: [Q14](../../../../../QUIZ/08_CSharp.md#q14-aspnet-core-中介軟體管線是如何運作的)
+- **Hard Assessment**: [C# Resource Boundary Incident](../../../../../QUIZ/Hard_Assessments/csharp_resource_boundary_incident.md) (`assessment.csharp.resource-boundary.incident.v1`)
