@@ -1,0 +1,50 @@
+name: Web Quality
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  web-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Validate content governance
+        run: go run ./scripts/validate_assessments.go
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install web dependencies
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate content manifest
+        working-directory: web
+        run: pnpm content:generate
+
+      - name: Run web tests
+        working-directory: web
+        run: pnpm test
+
+      - name: Typecheck web app
+        working-directory: web
+        run: pnpm typecheck
+
+      - name: Build web app
+        working-directory: web
+        run: pnpm build

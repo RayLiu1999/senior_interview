@@ -88,6 +88,7 @@ export interface AssessmentRecord {
 
 export interface ContentCatalog {
   generatedAt: string
+  contentVersion: string
   schemaVersion: number
   categories: CategoryRecord[]
   articles: ArticleRecord[]

@@ -29,6 +29,8 @@
 
 網站化與互動測驗的後續規劃請參考 [Web Platform Roadmap](./WEB_PLATFORM_ROADMAP.md)，內容涵蓋 Vue／Nuxt 架構、分類瀏覽、測驗紀錄、弱點分析與分階段交付。
 
+網站目前已實作於 [`web/`](./web/)。執行 `cd web && pnpm install && pnpm dev` 可啟動本地網站；網站開發、測試、建置、local-first 紀錄與匿名同步 API 的說明請見 [web/README.md](./web/README.md)。
+
 ## 目錄
 
 | 分類 | 說明 |

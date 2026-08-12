@@ -349,13 +349,29 @@ async function main() {
     description: categoryDescriptions[id],
     articleCount: articles.filter((article) => article.categoryId === id).length,
   }))
-  const catalog = {
-    generatedAt: new Date().toISOString(),
+  const catalogBase = {
     schemaVersion: 1,
     categories,
     articles,
     quizzes,
     assessments,
+  }
+  const contentVersion = contentHash(JSON.stringify(catalogBase))
+  let generatedAt = new Date().toISOString()
+  if (existsSync(path.join(publicContentDir, 'catalog.json'))) {
+    try {
+      const previousCatalog = JSON.parse(await readFile(path.join(publicContentDir, 'catalog.json'), 'utf8'))
+      if (previousCatalog.contentVersion === contentVersion && typeof previousCatalog.generatedAt === 'string') {
+        generatedAt = previousCatalog.generatedAt
+      }
+    } catch {
+      // A malformed or missing previous catalog is regenerated from source below.
+    }
+  }
+  const catalog = {
+    generatedAt,
+    contentVersion,
+    ...catalogBase,
   }
   const routes = [
     '/',

@@ -39,11 +39,26 @@
 | Concept／Learning Objectives | 553 篇文章均已建立 |
 | Article → Quiz → Assessment | 553 篇文章均已完成對應 |
 | 品質檢查 | Go validator、Markdown 連結檢查與 GitHub Actions CI |
-| 現有前端 | 尚未建立 Vue／Nuxt 應用程式 |
+| 現有前端 | `web/` Nuxt 3 + Vue 3 + TypeScript 應用程式，已完成瀏覽、測驗、紀錄、Dashboard 與同步 MVP |
 
-目前專案沒有既有 `package.json`、Vite／Nuxt 設定或前端 `src/`。因此應先建立清楚的網站邊界，再逐步接入內容，而不是把前端檔案散落到現有文章目錄。
+網站程式集中在獨立的 `web/` 目錄，內容與前端工具鏈保持邊界；這個隔離延續了原始規劃，避免建置檔散落到文章目錄。
 
 ## 三、產品目標與非目標
+
+### 3.0 實作進度（2026-08-12）
+
+本規劃已依 W0 → W5 完成第一版垂直產品：
+
+| 階段 | 結果 | Commit |
+| :--- | :--- | :--- |
+| W0 | 內容 schema、manifest 產生器、553／567／52 全庫索引與 pipeline tests | `03a9945` |
+| W1 | Nuxt 分類、搜尋、文章、Quiz／Assessment 路由 | `cd648d9` |
+| W2 | Quick Quiz 評分、反思題、IndexedDB attempt 紀錄 | `3912a9d` |
+| W3 | Hard Assessment 分段作答、Rubric、自評與參考答案 | `90605fd` |
+| W4 | Dashboard、LO 弱點排序、Review queue、JSON 匯出／匯入 | `aaec4a6` |
+| W5 | 匿名同步碼、sync API、file-backed adapter、跨裝置 merge | `c51c0c5` |
+
+目前同步 adapter 是單機可替換實作；多 instance、正式身份、速率限制、token 撤銷與共享資料庫仍是 production hardening 工作，不把它們假裝成 MVP 已解決的問題。
 
 ### 3.1 產品目標
 
@@ -294,7 +309,7 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 ### Phase W5：帳號與跨裝置同步
 
 - 加入登入與匿名本地資料轉移。
-- 建立 sync API 與雲端資料庫。
+- 建立 sync API 與可替換的持久化 adapter；正式多 instance 的共享資料庫列為 hardening。
 - 為嘗試紀錄使用 append-only 或版本化同步策略。
 - 處理同一筆紀錄在多個裝置上的衝突。
 - 保留離線操作與恢復上傳能力。
@@ -313,7 +328,7 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 
 ### 9.2 後續：Optional Sync
 
-未來可採 Nuxt server API 加關聯式資料庫，但同步層必須晚於本地資料模型穩定後建立。伺服器不應重新解讀 Markdown；它只保存使用者、嘗試紀錄、學習狀態與同步版本。
+目前已提供 Nuxt server API 與單機 file-backed adapter；伺服器不重新解讀 Markdown，只保存嘗試紀錄、學習狀態與同步版本。正式多 instance 部署時，應把 adapter 替換成共享資料庫或持久化 KV，並補上身份、速率限制、token 撤銷、加密與資料刪除流程。
 
 同步優先採 append-only attempt：
 
@@ -382,6 +397,8 @@ Dashboard 應清楚說明「為什麼被判定為弱點」，例如「最近三�
 
 ## 十三、MVP 驗收標準
 
+以下條件已在 W0–W5 完成；其中最後一項以 production build、API round-trip 與前端測試／typecheck 驗證：
+
 MVP 完成時必須滿足：
 
 - 553 篇文章都能依分類與搜尋找到。
@@ -393,6 +410,8 @@ MVP 完成時必須滿足：
 - 內容更新不會產生重複 ID、失效連結或測驗孤兒資料。
 - 現有 Go validator 與新增 web test／build 全部通過。
 - 手機與鍵盤使用者能完成主要學習流程。
+
+實作後的網站另提供 553 篇文章、567 題 Quiz 與 52 份 Assessment 的全庫路由；目前測試套件共覆蓋內容 pipeline、Quiz scoring、Assessment parsing、Progress aggregation 與 cross-device merge。
 
 ## 十四、第一批執行清單
 
