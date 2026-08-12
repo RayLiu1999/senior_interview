@@ -80,3 +80,15 @@ query = "我們公司的退貨政策是什麼？"
 result = qa.run(query)
 print(result)
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ai.rag.retrieval-generation-quality`
+- **Learning Objectives**:
+  - `LO-1`: 能描述 indexing、retrieval、reranking、context construction 與 generation 的責任邊界。
+  - `LO-2`: 能以 recall、precision、faithfulness、citation correctness、freshness 與延遲評估 RAG 品質。
+  - `LO-3`: 能在 tenant／ACL 過濾、embedding 版本、候選數與成本之間做出可驗證且可回滾的取捨。
+- **Prerequisites**: `concept.ai.llm.foundation-and-capabilities`, `concept.ai.vector-database.fundamentals`, `concept.ai.vector.similarity-search-algorithms`
+- **Quick Quiz**: [Q3](../../QUIZ/20_AI_Engineering.md#q3-rag-evaluation-and-retrieval-quality)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能把 retrieval 品質、生成品質、權限隔離與文件新鮮度分層量測，並提出至少一個可執行的 index 或資料回滾方案，再進入 Hard Assessment。

@@ -86,3 +86,15 @@ response = openai.ChatCompletion.create(
 print(response.choices[0].message.content)
 # 預期輸出: 混合 (或具體分析，取決於模型理解)
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ai.prompt.version-cost-safety-controls`
+- **Learning Objectives**:
+  - `LO-1`: 能將 system prompt、user input、retrieved context、tool output 與 output schema 劃分責任邊界。
+  - `LO-2`: 能用 prompt version、token budget、品質評估與成本追蹤控制提示變更的回歸風險。
+  - `LO-3`: 能辨識 prompt injection、資料外洩與不安全輸出的失敗模式，並設計分層防護與 rollback。
+- **Prerequisites**: `concept.ai.prompt.engineering`, `concept.ai.llm.foundation-and-capabilities`, `concept.ai.llm.token-prompt-optimization`
+- **Quick Quiz**: [Q2](../../QUIZ/20_AI_Engineering.md#q2-prompt-version-cost-and-safety-controls)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能為一個 prompt 變更定義版本、token 預算、安全測試、輸出驗證與回滾條件，再進入 Hard Assessment。

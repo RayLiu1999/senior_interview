@@ -53,3 +53,15 @@
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.engineering-management.mentoring-team-growth`
+- **Learning Objectives**:
+  - `LO-1`: 能依成員的能力、動機與職涯方向設計具體且可觀測的成長目標。
+  - `LO-2`: 能用 coaching、delegation、pairing、feedback 與安全的 ownership 邊界培養獨立判斷力。
+  - `LO-3`: 能在交付壓力與培養新人之間安排風險分層、review、升級與學習回饋迴圈。
+- **Prerequisites**: Feedback、coaching、delegation、心理安全感與職涯框架的基本概念。
+- **Quick Quiz**: [Q3](../../QUIZ/21_Engineering_Management.md#q3-mentoring-and-team-growth)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能為一位正在承擔高風險工作的工程師設計帶 guardrail、review 與回饋節點的成長任務，再進入 Hard Assessment。

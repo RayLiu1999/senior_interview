@@ -46,3 +46,15 @@
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.engineering-management.cross-team.influence-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能辨識跨團隊依賴、決策 owner、共同目標與資訊落差，建立可執行的協作契約。
+  - `LO-2`: 能用範圍、時間、資源、品質與風險證據提出多個交付選項，而不是只接受或拒絕需求。
+  - `LO-3`: 能在衝突中促成決策、記錄 trade-off、設定 escalation 路徑並維持下游團隊的信任。
+- **Prerequisites**: 利害關係人管理、需求拆解、依賴追蹤、風險溝通與基本 delivery metrics。
+- **Quick Quiz**: [Q1](../../QUIZ/21_Engineering_Management.md#q1-cross-team-influence-and-delivery-trade-offs)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能把一個跨團隊 deadline 轉成至少兩個含成本、風險、品質門檻與 owner 的方案，再進入 Hard Assessment。

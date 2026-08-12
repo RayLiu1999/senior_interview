@@ -93,3 +93,15 @@ print(evaluation)
 # Score: 2
 # Reason: AI 回答過於簡化，雖然提到了搜尋資料，但沒有準確描述 RAG 的檢索與生成結合的機制。
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ai.mlops-llmops.evaluation-release-operations`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 MLOps 與 LLMOps 的核心資產、版本 lineage、評估邊界與生產運維責任。
+  - `LO-2`: 能設計同時涵蓋品質、安全、成本、延遲、漂移與新鮮度的 AI 評估基線。
+  - `LO-3`: 能以 canary、分階段部署、監控證據與 rollback 條件管理模型或 prompt 變更。
+- **Prerequisites**: `concept.ai.llm.api-integration-reliability`, `concept.ai.llm.rate-limit-cost-control`, `concept.ai.rag.retrieval-generation-pipeline`
+- **Quick Quiz**: [Q1](../../QUIZ/20_AI_Engineering.md#q1-mlops-and-llmops-evaluation)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能把模型、prompt、retriever、資料集與部署版本串成可回溯的 lineage，並提出帶品質與成本 rollback 門檻的 rollout，再進入 Hard Assessment。

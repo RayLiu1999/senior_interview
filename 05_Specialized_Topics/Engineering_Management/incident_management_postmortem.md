@@ -50,3 +50,15 @@
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.engineering-management.incident-learning.postmortem`
+- **Learning Objectives**:
+  - `LO-1`: 能在事故中建立時間線、影響範圍、角色分工、決策紀錄與溝通節奏。
+  - `LO-2`: 能以 blameless postmortem 找出系統性促成因素、修復 owner、優先級與驗證方式。
+  - `LO-3`: 能把 incident action items 接回演練、監控、變更門檻與後續學習，而不是只完成文件。
+- **Prerequisites**: Incident command、service SLO、觀測性、風險分級與故障復原的基本概念。
+- **Quick Quiz**: [Q2](../../QUIZ/21_Engineering_Management.md#q2-incident-learning-and-blameless-postmortems)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能區分觸發事件、促成條件與控制缺口，並把每項改善連到 owner、期限、驗證證據與 rollback，再進入 Hard Assessment。

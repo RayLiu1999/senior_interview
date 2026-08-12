@@ -47,3 +47,15 @@ RFC 是推動重大技術決策的標準工具。
 ## 程式碼範例
 
 (此主題為軟實力，無程式碼範例)
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.engineering-management.technical-leadership.influence-tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能把技術選項翻譯成商業結果、風險、時間、成本與可逆性的決策材料。
+  - `LO-2`: 能在沒有正式職權時建立共識、處理異議、明確化 decision owner 並推動執行。
+  - `LO-3`: 能以架構原則、可觀測證據、分階段 rollout 與 rollback 維持長期技術方向。
+- **Prerequisites**: 系統設計、技術債、決策紀錄、利益相關者溝通與變更管理的基本概念。
+- **Quick Quiz**: [Q4](../../QUIZ/21_Engineering_Management.md#q4-technical-leadership-and-influence)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能把一次技術爭議寫成含選項、證據、決策 owner、分階段 rollout 與 rollback 條件的決策紀錄，再進入 Hard Assessment。

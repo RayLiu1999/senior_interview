@@ -99,3 +99,15 @@ response = qa_chain.run(query)
 print(f"Q: {query}")
 print(f"A: {response}")
 ```
+
+## 學習與評量對應
+
+- **Concept ID**: `concept.ai.ai-engineer.production-capability-map`
+- **Learning Objectives**:
+  - `LO-1`: 能把模型、資料、prompt、RAG、agent、部署與產品需求連成可交付的系統能力圖。
+  - `LO-2`: 能針對品質、安全、成本、延遲、可觀測性與資料治理安排學習和工程優先順序。
+  - `LO-3`: 能以實驗、評估集、canary、incident learning 與 rollback 證據判斷 AI 功能是否達到 production-ready。
+- **Prerequisites**: `concept.ai.llm.foundation-and-capabilities`, `concept.ai.prompt.engineering`, `concept.ai.rag.retrieval-generation-pipeline`
+- **Quick Quiz**: [Q4](../../QUIZ/20_AI_Engineering.md#q4-ai-engineer-production-capabilities)
+- **Hard Assessment**: [AI／Engineering Management Delivery Incident](../../QUIZ/Hard_Assessments/ai_management_delivery_incident.md) (`assessment.ai-management.delivery-incident.v1`)
+- **Assessment Gate**: 能為一項 AI 功能畫出從資料到上線後學習的責任鏈，說明品質／安全／成本門檻與回滾方式，再進入 Hard Assessment。
