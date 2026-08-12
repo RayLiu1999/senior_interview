@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中的認證和授權機制，包括 OAuth2、JWT、API Key 等多種安全方案的實現方式和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.authentication-security`
+- **Learning Objectives**:
+  - `LO-1`：能區分 authentication、authorization、OAuth2、JWT、API key、scope 與 claims 的責任邊界。
+  - `LO-2`：能設計 token／key 的有效期、受眾、輪替、撤銷與錯誤回應，避免把認證狀態誤當成授權。
+  - `LO-3`：能從重放、暴力嘗試、權限提升、秘密外洩、CORS／CSRF 與過度授權建立 API 安全防線。
+- **Prerequisites**: [FastAPI 依賴注入系統](./dependency_injection_system.md)
+- **Quick Quiz**: [Python Q19](../../../../../QUIZ/05_Python.md#q19)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### FastAPI 安全模組概述

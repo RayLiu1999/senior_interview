@@ -8,6 +8,18 @@
 
 FastAPI 如何自動生成交互式 API 文檔？解釋 OpenAPI、Swagger UI 和 ReDoc 的作用及其配置方式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.openapi-contract`
+- **Learning Objectives**:
+  - `LO-1`：能說明路由宣告、型別提示、Pydantic schema 與 OpenAPI 文件之間的生成關係。
+  - `LO-2`：能讓認證、錯誤、分頁、版本與內容協商等 API 契約在產出的 schema 中保持準確。
+  - `LO-3`：能以 schema diff、client generation 與安全審查發現破壞性變更，並避免暴露內部欄位。
+- **Prerequisites**: [FastAPI 路徑操作與參數](./path_operations_and_parameters.md)、[FastAPI 請求與響應模型](./request_and_response_models.md)
+- **Quick Quiz**: [Python Q28](../../../../../QUIZ/05_Python.md#q28)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### OpenAPI 規範基礎

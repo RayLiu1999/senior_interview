@@ -8,6 +8,18 @@
 
 深入探討 Pydantic 在 FastAPI 中的核心作用，包括數據模型定義、自動驗證、序列化/反序列化、類型強制轉換以及高級驗證技巧。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.validation-contract`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Pydantic runtime validation、型別強制轉換、strict mode 與 nested model 的行為。
+  - `LO-2`：能組合 Field constraints、custom／model validator 與清楚的 4xx／422 錯誤契約。
+  - `LO-3`：能為輸入大小、深度、格式與計算成本設界，避免 validation mismatch、資料污染與驗證型 DoS。
+- **Prerequisites**: [FastAPI 路徑操作與參數](./path_operations_and_parameters.md)
+- **Quick Quiz**: [Python Q18](../../../../../QUIZ/05_Python.md#q18)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Pydantic 的核心概念

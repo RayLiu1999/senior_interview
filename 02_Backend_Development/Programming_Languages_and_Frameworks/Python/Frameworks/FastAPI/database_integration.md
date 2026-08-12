@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中數據庫集成的方式，包括同步和異步 ORM 的使用、連接池管理、事務處理以及最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.database-integration`
+- **Learning Objectives**:
+  - `LO-1`：能依事件循環、driver 能力與查詢型態選擇同步／非同步 ORM 或 driver，並說明連線池邊界。
+  - `LO-2`：能界定 session、transaction、commit／rollback 與 request lifecycle 的 ownership，並確保例外與取消時釋放資源。
+  - `LO-3`：能診斷 N+1、pool saturation、隔離等級、慢查詢與重試造成的容量及一致性問題。
+- **Prerequisites**: [FastAPI 異步路由處理](./async_route_handlers.md)、[FastAPI 依賴注入系統](./dependency_injection_system.md)
+- **Quick Quiz**: [Python Q22](../../../../../QUIZ/05_Python.md#q22)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 數據庫集成方式

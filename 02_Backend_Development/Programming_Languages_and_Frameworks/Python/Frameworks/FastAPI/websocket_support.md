@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中 WebSocket 的實現機制，如何建立全雙工通信，以及在實時應用中的最佳實踐和應用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.websocket-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能說明 WebSocket handshake、全雙工訊息流程、connection state 與 backpressure 的邊界。
+  - `LO-2`：能設計連線認證、心跳、斷線、取消與資源清理，並處理半開連線。
+  - `LO-3`：能評估 broadcast、順序、慢客戶端隔離、連線上限與租戶公平性的容量取捨。
+- **Prerequisites**: [FastAPI 中間件機制](./middleware_mechanism.md)、[FastAPI 認證與安全](./authentication_and_security.md)
+- **Quick Quiz**: [Python Q24](../../../../../QUIZ/05_Python.md#q24)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### WebSocket 基本概念

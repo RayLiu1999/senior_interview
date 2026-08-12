@@ -8,6 +8,18 @@
 
 解釋 FastAPI 應用的測試策略，包括單元測試、集成測試、TestClient 使用、數據庫測試以及測試最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.testing-strategy`
+- **Learning Objectives**:
+  - `LO-1`：能為 route、依賴、資料庫、認證、WebSocket 與 deployment contract 選擇適當的測試層級。
+  - `LO-2`：能隔離 dependency override、資料庫 transaction、async cancellation 與外部服務，避免測試 scope 偽造。
+  - `LO-3`：能設計可重現的測試資料、故障注入、contract／load test 與 CI gate，並解釋 coverage 的限制。
+- **Prerequisites**: [FastAPI 依賴注入系統](./dependency_injection_system.md)、[FastAPI 數據庫集成](./database_integration.md)
+- **Quick Quiz**: [Python Q27](../../../../../QUIZ/05_Python.md#q27)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### TestClient 基礎

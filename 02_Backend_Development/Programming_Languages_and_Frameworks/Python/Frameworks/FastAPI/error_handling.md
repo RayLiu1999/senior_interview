@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中的異常處理機制，包括內建異常類型、自定義異常處理器、驗證錯誤處理以及統一錯誤響應的最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.error-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能區分 HTTPException、請求驗證錯誤、domain error 與未預期例外的處理責任。
+  - `LO-2`：能設計一致的錯誤 envelope、狀態碼、correlation ID、敏感資訊遮罩與可重試語意。
+  - `LO-3`：能推導 middleware、streaming response、background task 與取消路徑中的錯誤可見性和資源清理。
+- **Prerequisites**: [FastAPI 中間件機制](./middleware_mechanism.md)、[FastAPI 請求與響應模型](./request_and_response_models.md)
+- **Quick Quiz**: [Python Q21](../../../../../QUIZ/05_Python.md#q21)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### FastAPI 異常處理概述

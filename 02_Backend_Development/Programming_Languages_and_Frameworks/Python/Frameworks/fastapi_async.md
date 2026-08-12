@@ -8,6 +8,18 @@
 
 FastAPI 是一個現代的、高性能的 Python Web 框架，原生支援異步處理。它的非同步機制如何運作？相較於傳統的同步框架有什麼優勢？如何正確使用異步功能？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.async-architecture`
+- **Learning Objectives**:
+  - `LO-1`：能說明 ASGI、Starlette、事件循環與 coroutine 如何界定 FastAPI 同步／非同步路由的執行邊界。
+  - `LO-2`：能辨識同步 I/O、CPU-bound 工作與真正 async client 對事件循環吞吐量的影響，並選擇合理的執行模型。
+  - `LO-3`：能用 event-loop lag、請求延遲、併發數與下游飽和度評估非同步服務的容量取捨。
+- **Prerequisites**: [Python 併發模型](../Concurrency/threading_vs_multiprocessing_vs_asyncio.md)
+- **Quick Quiz**: [Python Q15](../../../../QUIZ/05_Python.md#q15)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### FastAPI 異步的底層基礎

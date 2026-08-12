@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中後台任務的機制，如何在響應返回後執行異步任務，以及與 Celery 等任務隊列的區別和適用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.background-task-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能區分 FastAPI BackgroundTasks、程序內 task 與具備持久化／重試能力的任務佇列。
+  - `LO-2`：能處理背景工作的 scope、取消、重試、冪等、失敗觀測與請求資源不可再使用的邊界。
+  - `LO-3`：能設計有界併發、背壓與 shutdown 行為，並說明「已回應」不等於「背景工作已可靠完成」。
+- **Prerequisites**: [FastAPI 依賴注入系統](./dependency_injection_system.md)、[FastAPI 數據庫集成](./database_integration.md)
+- **Quick Quiz**: [Python Q23](../../../../../QUIZ/05_Python.md#q23)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 後台任務基本概念

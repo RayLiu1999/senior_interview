@@ -573,6 +573,275 @@ def file_manager(filename):
 
 ---
 
+## 🧩 FastAPI API 邊界
+
+<a id="q15"></a>
+### Q15: FastAPI 的 ASGI 與非同步事件循環如何影響 API 容量？
+<!-- Concept ID: concept.python.fastapi.async-architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 ASGI、Starlette、事件循環與同步／非同步路由的執行邊界，並解釋為什麼 async endpoint 仍可能阻塞整個 worker。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- ASGI 提供非同步 server／application 邊界，事件循環會在可等待的 I/O 期間切換協程。
+- 同步 SDK、阻塞 sleep、CPU-heavy 工作或大型 serialization 放進 async route 仍會阻塞事件循環。
+- 應以 async client、受控 thread pool 或 process／獨立 worker 對應 I/O 與 CPU 工作。
+- event-loop lag、request P99、task backlog、thread pool 與下游 saturation 要一起觀察。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/fastapi_async.md)
+
+<a id="q16"></a>
+### Q16: FastAPI 路徑操作中的參數如何形成可靠的 API 契約？
+<!-- Concept ID: concept.python.fastapi.routing-parameter-contract; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 path、query、header、cookie、body、form 與 file 參數，並說明如何加入限制、冪等性與相容性。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 參數位置應符合 HTTP 語意：資源識別、篩選、metadata、狀態或命令資料不能混用。
+- 型別、範圍、長度、批次數量、檔案大小與路由順序要明確，並同步反映到 OpenAPI。
+- POST、PUT、PATCH 的重試與冪等性要分別設計，錯誤回應需有穩定語意。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/path_operations_and_parameters.md)
+
+<a id="q17"></a>
+### Q17: FastAPI 的 request／response model 如何保護 API 邊界？
+<!-- Concept ID: concept.python.fastapi.api-schema; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 request parsing、Pydantic validation、response_model 過濾與 serialization 的關係，並設計讀寫模型。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- request model 定義輸入契約，response model 定義輸出契約，兩者不應直接共用 ORM entity。
+- 讀寫模型要分離，明確處理 required、nullable、default、nested schema 與敏感欄位。
+- 大 payload 與深層巢狀結構會增加 validation／serialization 成本，應設定上限並以 schema diff 檢查相容性。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/request_and_response_models.md)
+
+<a id="q18"></a>
+### Q18: Pydantic 的 coercion 與 strict validation 應如何取捨？
+<!-- Concept ID: concept.python.fastapi.validation-contract; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請解釋 Pydantic runtime validation、型別轉換、Field／model validator 與輸入限制，並說明如何避免驗證型 DoS。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- coercion 可維持部分相容性，但可能把 client 的錯誤輸入靜默轉成另一種語意；金額、身份與狀態欄位通常需要更嚴格。
+- 應為欄位、巢狀深度、字串長度、集合數量與 payload 計算成本設界。
+- 驗證錯誤要有一致的 4xx／422 契約，並以版本化 schema 漸進收緊規則。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/pydantic_models_and_validation.md)
+
+<a id="q19"></a>
+### Q19: FastAPI 中 authentication 與 authorization 有什麼差別？
+<!-- Concept ID: concept.python.fastapi.authentication-security; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 OAuth2、JWT、API key、scope 與 claims，並提出 token lifecycle 與租戶隔離的安全設計。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- authentication 確認呼叫者身份，authorization 再依角色、scope、租戶與資源關係判斷能否操作。
+- JWT 不只驗簽章，還要檢查 issuer、audience、expiry、scope、rotation 與撤銷／重放策略。
+- bearer token 不應進入一般日誌；登入、發送與 WebSocket handshake 應有 rate limit 和錯誤遮罩。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/authentication_and_security.md)
+
+<a id="q20"></a>
+### Q20: FastAPI middleware 的 onion model 如何影響短路與錯誤處理？
+<!-- Concept ID: concept.python.fastapi.middleware-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 middleware 的進入／離開順序，以及 trace、CORS、認證、timeout、例外處理的配置取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- middleware 形成 onion：請求由外往內，response 由內往外；註冊順序會影響短路與 header。
+- trace 和例外邊界要能涵蓋拒絕與錯誤回應，認證／授權要在受保護 route 或 WebSocket handshake 前執行。
+- response 已開始後不能再寫第二個 body；timeout 應傳遞取消並完成資源清理。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/middleware_mechanism.md)
+
+<a id="q21"></a>
+### Q21: FastAPI 如何設計一致且可觀測的錯誤回應？
+<!-- Concept ID: concept.python.fastapi.error-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 HTTPException、validation error、domain error 與未預期例外，並說明 streaming／background task 的錯誤邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 不同錯誤要有穩定的狀態碼、錯誤類型、correlation ID 與可重試語意。
+- 對外錯誤需遮罩內部 stack trace、SQL、token 與 provider 細節，內部 log 仍要保留可追查資訊。
+- response started 後只能中止串流或關閉連線；背景工作失敗要透過任務狀態／queue 觀測，不能假裝成同步回應錯誤。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/error_handling.md)
+
+<a id="q22"></a>
+### Q22: FastAPI 的資料庫整合如何界定 session、transaction 與連線池？
+<!-- Concept ID: concept.python.fastapi.database-integration; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較同步／非同步 ORM 與 driver，並說明如何處理 session lifecycle、pool saturation、rollback、N+1 與取消。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- async route 應搭配真正非同步 driver；同步 driver 需要明確的 thread pool 邊界，不能阻塞事件循環。
+- 一個 request／transaction 擁有自己的 session 邊界，不能把同一 AsyncSession 跨平行 task 共用。
+- 要觀察 pool active／wait、query latency、transaction time、rollback、timeout 與 N+1；取消路徑也必須歸還連線。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/database_integration.md)
+
+<a id="q23"></a>
+### Q23: FastAPI BackgroundTasks 何時不應取代 durable task queue？
+<!-- Concept ID: concept.python.fastapi.background-task-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較 response 後的輕量工作與需要可靠投遞的背景工作，並說明取消、重試、冪等與 shutdown。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- BackgroundTasks 仍在 web process 生命週期內，process crash、部署或資源限制都可能丟失工作。
+- 可靠通知需要 durable queue、attempt 狀態、有限 retry、dead-letter、idempotency key 與可觀測性。
+- request-scoped session 不應被背景工作捕捉；shutdown 要停止接收並排空或交由 queue 恢復。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/background_tasks.md)
+
+<a id="q24"></a>
+### Q24: FastAPI WebSocket 如何處理長連線的生命週期與背壓？
+<!-- Concept ID: concept.python.fastapi.websocket-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請說明 handshake、認證、heartbeat、斷線清理、broadcast 與慢客戶端隔離。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- WebSocket 是長時間全雙工資源，handshake 的 auth／scope、連線狀態與 disconnect cleanup 都要明確。
+- 每連線送出 queue、每租戶連線數與總連線數要有上限；慢客戶端不可阻塞所有 broadcast。
+- heartbeat、timeout、取消與有界 queue 可避免半開連線和 RSS 無界上升，訊息順序要按租戶需求設計。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/websocket_support.md)
+
+<a id="q25"></a>
+### Q25: FastAPI 性能優化如何從指標而不是直覺開始？
+<!-- Concept ID: concept.python.fastapi.performance-capacity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請設計一套定位 event loop、serialization、資料庫、cache、worker 與下游瓶頸的容量分析方法。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 把 P99 拆成 queue、validation、route CPU、下游 I/O、DB pool wait、serialization 和 response write。
+- 快取、批次、併發、pool 和 worker 都有一致性、記憶體、下游壓力或 tail latency 代價，不是越大越好。
+- 以固定 workload、錯誤注入、容量預算、backpressure 和 rollback threshold 驗證改善。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/performance_optimization.md)
+
+<a id="q26"></a>
+### Q26: FastAPI 生產部署如何設計 worker、健康檢查與 graceful shutdown？
+<!-- Concept ID: concept.python.fastapi.deployment-runtime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請說明 container、worker、事件循環、pool、readiness／liveness、autoscaling 與 rolling rollback 的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 每個 worker 都可能有自己的 DB／HTTP pool、cache 與 task backlog，總容量會隨 process 和 replica 相乘。
+- readiness 要在 drain 時停止新流量，graceful shutdown 要排空 HTTP、WebSocket 與 queue；liveness 不應把慢下游誤判成需重啟。
+- worker 和 pool 要依 CPU、記憶體、下游 QPS、連線上限與 timeout 共同 sizing，秘密不能靠 image 或公開文件管理。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/deployment_and_containerization.md)
+
+<a id="q27"></a>
+### Q27: FastAPI 應如何組合 unit、integration、contract、WebSocket 與負載測試？
+<!-- Concept ID: concept.python.fastapi.testing-strategy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計涵蓋 dependency scope、資料庫 transaction、取消、認證、schema、WebSocket 與 deployment drain 的測試矩陣。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- unit test 適合 domain／validator；integration test 驗證真實 lifecycle、DB transaction、middleware 與依賴清理。
+- contract／schema test 防止 OpenAPI 和 client drift；WebSocket、慢下游、取消、重試與 process shutdown 要有故障注入。
+- dependency override 不能取代 production scope 驗證；load／soak test 要觀察 P99、pool、task、RSS、租戶公平性。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/testing_strategies.md)
+
+<a id="q28"></a>
+### Q28: FastAPI 自動 API 文檔如何成為可驗證的 OpenAPI 契約？
+<!-- Concept ID: concept.python.fastapi.openapi-contract; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 FastAPI 如何由 route metadata、型別提示與 Pydantic schema 產生 OpenAPI，並提出 schema review 與安全策略。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- OpenAPI 應準確反映參數、request／response、錯誤、認證、分頁與版本，而不是只服務 Swagger UI。
+- 以 schema diff、client generation、contract test 和破壞性變更審查維持相容性。
+- 內部管理 endpoint、debug 欄位、秘密與不應公開的 provider metadata 不應出現在外部 schema。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/automatic_api_documentation.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

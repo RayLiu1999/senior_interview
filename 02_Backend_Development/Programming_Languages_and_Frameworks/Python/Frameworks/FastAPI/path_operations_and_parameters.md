@@ -8,6 +8,18 @@
 
 深入探討 FastAPI 中的路徑操作定義、各種參數類型（路徑參數、查詢參數、請求體、表單、文件等）的使用方法、數據驗證以及最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.routing-parameter-contract`
+- **Learning Objectives**:
+  - `LO-1`：能分類 path、query、header、cookie、body、form 與 file 參數，並說明其 HTTP 語意。
+  - `LO-2`：能用型別、限制、路由順序與 OpenAPI metadata 建立可預期的輸入契約。
+  - `LO-3`：能設計具備冪等性、相容性、大小上限與清楚錯誤語意的 path operation。
+- **Prerequisites**: [FastAPI 的非同步處理機制](../fastapi_async.md)
+- **Quick Quiz**: [Python Q16](../../../../../QUIZ/05_Python.md#q16)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 路徑操作基礎

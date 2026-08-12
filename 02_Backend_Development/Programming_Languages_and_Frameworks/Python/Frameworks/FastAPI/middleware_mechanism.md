@@ -8,6 +8,18 @@
 
 解釋 FastAPI 中間件的工作原理、類型以及如何自定義中間件來處理跨切面關注點（如日誌、認證、CORS 等）。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.middleware-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能依 onion model 追蹤 ASGI middleware 的進入／離開順序、短路與 response lifecycle。
+  - `LO-2`：能安排 CORS、認證、timeout、trace、logging 與錯誤處理的層次，並保留 context、取消與安全標頭。
+  - `LO-3`：能從 trace、response started、錯誤率與延遲診斷 middleware 順序錯誤、重複回應或資源未清理。
+- **Prerequisites**: [FastAPI 異步路由處理](./async_route_handlers.md)、[FastAPI 依賴注入系統](./dependency_injection_system.md)
+- **Quick Quiz**: [Python Q20](../../../../../QUIZ/05_Python.md#q20)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 中間件基本概念

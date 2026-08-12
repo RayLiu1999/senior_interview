@@ -8,6 +8,18 @@
 
 解釋 FastAPI 應用的性能優化策略，包括異步編程、數據庫查詢優化、緩存策略、連接池管理以及性能監控。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.performance-capacity`
+- **Learning Objectives**:
+  - `LO-1`：能從 event-loop lag、serialization、DB、cache、network、worker 與下游指標定位主要瓶頸。
+  - `LO-2`：能比較快取、批次、併發、連線池與 worker 調整對 latency、throughput、成本及一致性的取捨。
+  - `LO-3`：能設計含容量預算、背壓、tail latency、負載模型與回滾條件的性能驗證計畫。
+- **Prerequisites**: [FastAPI 異步路由處理](./async_route_handlers.md)、[FastAPI 數據庫集成](./database_integration.md)
+- **Quick Quiz**: [Python Q25](../../../../../QUIZ/05_Python.md#q25)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 異步編程優化

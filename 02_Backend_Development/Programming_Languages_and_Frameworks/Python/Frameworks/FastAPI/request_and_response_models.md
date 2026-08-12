@@ -8,6 +8,18 @@
 
 深入探討 FastAPI 中請求和響應模型的設計、驗證、序列化、異常處理，以及如何使用 Pydantic 模型構建健壯的 API 接口。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.api-schema`
+- **Learning Objectives**:
+  - `LO-1`：能區分 request parsing、Pydantic validation、response_model 過濾與 serialization 的責任。
+  - `LO-2`：能設計讀寫分離、optional／nullable、default、敏感欄位與 nested schema，避免過度暴露資料。
+  - `LO-3`：能評估版本相容性、向後相容、錯誤格式與大 payload 對效能及容量的影響。
+- **Prerequisites**: [FastAPI 路徑操作與參數](./path_operations_and_parameters.md)
+- **Quick Quiz**: [Python Q17](../../../../../QUIZ/05_Python.md#q17)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 請求模型基礎

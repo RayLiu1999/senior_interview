@@ -8,6 +8,18 @@
 
 解釋 FastAPI 應用的部署策略，包括 Docker 容器化、生產環境配置、負載均衡、CI/CD 流程以及雲平台部署。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.deployment-runtime`
+- **Learning Objectives**:
+  - `LO-1`：能說明 worker、事件循環、process、container、readiness／liveness 與 graceful shutdown 的部署邊界。
+  - `LO-2`：能依 CPU、記憶體、下游連線池、timeout 與流量預算配置 worker、資源限制與 autoscaling。
+  - `LO-3`：能設計秘密管理、觀測性、滾動部署、健康檢查與可回滾發布，避免只靠重啟掩蓋容量問題。
+- **Prerequisites**: [FastAPI 性能優化](./performance_optimization.md)、[FastAPI 中間件機制](./middleware_mechanism.md)
+- **Quick Quiz**: [Python Q26](../../../../../QUIZ/05_Python.md#q26)
+- **Hard Assessment**: [Python FastAPI API Boundary Incident](../../../../../QUIZ/Hard_Assessments/python_fastapi_api_boundary_incident.md) (`assessment.python.fastapi.api-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Uvicorn 生產配置
