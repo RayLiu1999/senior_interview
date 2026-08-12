@@ -8,6 +8,18 @@
 
 ELK Stack 是目前最流行的開源日誌管理解決方案，由 Elasticsearch、Logstash 和 Kibana 三個組件組成。理解 ELK Stack 的架構和使用方式，是構建現代日誌系統的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.logging.elk-stack`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Elasticsearch、Logstash、Kibana 與 Beats 在集中式日誌管線中的責任與資料流。
+  - `LO-2`: 能比較 ELK、EFK、PLG 等方案在搜尋能力、成本、背壓、保留與運維複雜度上的差異。
+  - `LO-3`: 能從日誌延遲、索引失敗、解析錯誤與儲存壓力證據切分管線故障邊界。
+- **Prerequisites**: [可觀測性三大支柱](./observability_three_pillars.md)、[集中式日誌系統架構](./centralized_logging_architecture.md)
+- **Quick Quiz**: [Observability Q11](../../QUIZ/10_Observability.md#q11)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### ELK Stack 簡介
