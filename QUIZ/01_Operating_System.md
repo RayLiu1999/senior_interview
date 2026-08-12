@@ -348,6 +348,186 @@ ch := make(chan struct{}, 10) // 限制並發為 10
 
 ---
 
+### Q9: 上下文切換與排程成本
+<!-- Concept ID: concept.operating-system.cpu.context-switch-cost; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能說明進程／線程上下文保存、恢復、排程與 user／kernel transition 的成本。
+- **LO-2**: 能連結 cache、TLB、run queue、CPU affinity、softirq 與 context switch 對延遲的影響。
+- **LO-3**: 能從 per-core CPU、switch rate、scheduler latency、runnable backlog 與 p99 判斷過度切換。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/context_switch_overhead.md)
+
+---
+
+### Q10: Copy-on-Write 與記憶體放大
+<!-- Concept ID: concept.operating-system.memory.copy-on-write; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能說明 fork／snapshot 後共享頁、寫入 page fault 與 private copy 的形成。
+- **LO-2**: 能比較 COW 帶來的啟動效率、共享收益、RSS、dirty page 與 page fault 代價。
+- **LO-3**: 能從 private dirty、minor fault、working set、reload 時序與 reclaim 判斷記憶體放大原因。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/copy_on_write.md)
+
+---
+
+### Q11: 協程調度與阻塞
+<!-- Concept ID: concept.operating-system.concurrency.coroutine-scheduling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能比較協程、OS thread 與 process 的執行上下文、隔離性、stack 與調度邊界。
+- **LO-2**: 能評估 blocking I/O、搶占／協作、公平性、worker 數與 runnable backlog 的取捨。
+- **LO-3**: 能從 event loop starvation、blocked worker、queue、context switch 與 tail latency 設計隔離方案。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/coroutine_principle.md)
+
+---
+
+### Q12: 文件系統與 fd inode 資源
+<!-- Concept ID: concept.operating-system.filesystem.inode-descriptor; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能區分 inode、dentry、file descriptor、open file description、硬鏈接與軟鏈接。
+- **LO-2**: 能比較 page cache、writeback、持久性、fd limit、inode limit 與 socket／file 資源。
+- **LO-3**: 能從 fd、inode、socket、epoll、disk queue 與 close／unlink 行為定位資源耗盡。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/file_system_basics.md)
+
+---
+
+### Q13: 垃圾回收與延遲
+<!-- Concept ID: concept.operating-system.memory.garbage-collection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能比較 reference counting、mark-sweep、mark-compact、copying 與 generational GC。
+- **LO-2**: 能評估 pause、throughput、allocation rate、heap、fragmentation 與回收頻率的取捨。
+- **LO-3**: 能從 GC pause、heap growth、live set、allocation profile 與 RSS 判斷回收壓力或真正 leak。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/garbage_collection.md)
+
+---
+
+### Q14: 記憶體分配與碎片化
+<!-- Concept ID: concept.operating-system.memory.allocator-fragmentation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能說明 free list、first／best fit、buddy、slab 與 thread／arena allocator 的配置路徑。
+- **LO-2**: 能比較內部／外部碎片、locality、鎖競爭、pool、arena 保留與釋放成本。
+- **LO-3**: 能區分 allocator retained bytes、working set、page cache 與 live object leak，提出可驗證的緩解。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/memory_allocation_algorithms.md)
+
+---
+
+### Q15: mmap 與 page fault
+<!-- Concept ID: concept.operating-system.io.mmap-memory-mapping; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能說明 file-backed／anonymous mapping、虛擬位址、page fault 與 page cache 的關係。
+- **LO-2**: 能比較 MAP_SHARED／MAP_PRIVATE、mmap、read／write、msync、durability 與 address-space 成本。
+- **LO-3**: 能從 mapping 數量、minor／major fault、dirty page、reclaim、I/O latency 與 RSS 排錯。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/mmap_memory_mapping.md)
+
+---
+
+### Q16: 進程調度與公平性
+<!-- Concept ID: concept.operating-system.cpu.process-scheduling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能說明 throughput、turnaround、response、fairness、deadline 與 CPU utilization 等調度目標。
+- **LO-2**: 能比較 FCFS、SJF、priority、RR、MLFQ、preemption、starvation 與 time slice。
+- **LO-3**: 能從 run queue、per-core utilization、priority、CPU steal、scheduler latency 與 p99 設計調度緩解。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/process_scheduling_algorithms.md)
+
+---
+
+### Q17: 系統調用與 user kernel 邊界
+<!-- Concept ID: concept.operating-system.kernel.system-call-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請用 incident 或設計情境說明此主題的核心機制、主要取捨，以及如何以觀測證據判斷故障方向。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- **LO-1**: 能描述 user／kernel mode、syscall instruction、參數傳遞、權限檢查與返回路徑。
+- **LO-2**: 能評估 syscall 次數、context transition、copy、batching、buffer、非同步與 I/O 模型的成本。
+- **LO-3**: 能從 syscall profile、read/write、poll／epoll、send／recv、page fault 與 CPU time 將症狀連回根因。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/system_call_mechanism.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

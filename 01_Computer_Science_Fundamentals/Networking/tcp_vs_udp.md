@@ -8,6 +8,19 @@
 
 TCP 和 UDP 是傳輸層的兩大核心協定。TCP 提供可靠、有序的連接導向服務,UDP 提供不可靠的無連接服務。理解它們的特性差異和適用場景,是後端開發的基礎知識。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.transport.protocol-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 TCP 與 UDP 的連線、可靠性、順序、資料邊界、流量控制與擁塞控制。
+  - `LO-2`: 能依延遲、MTU、遺失、排序、公平性、廣播／多播與應用複雜度選擇傳輸。
+  - `LO-3`: 能為採用 UDP 的設計補上序號、重排、重傳、速率、放大防護與可觀測性責任。
+- **Prerequisites**: 可先閱讀 [OSI 模型 vs TCP/IP 模型](./osi_vs_tcpip_model.md)。
+- **Quick Quiz**: [Q17](../../QUIZ/01_Networking.md#q17-tcp-與-udp-傳輸選擇)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `傳輸選擇、可靠性責任、反濫用`
+
 ## 核心理論與詳解
 
 ### 1. TCP vs UDP 核心特性對比

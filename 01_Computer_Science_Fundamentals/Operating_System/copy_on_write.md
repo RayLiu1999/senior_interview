@@ -8,6 +8,19 @@
 
 Copy-on-Write（寫時複製，COW）是一種**延遲複製**的優化策略：多個調用者共享同一份資源，只有當某方嘗試**修改**時，才真正複製出一份私有副本。COW 廣泛應用於 OS 的進程 fork、Redis 的 RDB 快照，以及各種語言的字串和容器實現。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.memory.copy-on-write`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 fork／snapshot 後共享頁、寫入 page fault 與 private copy 的形成。
+  - `LO-2`: 能比較 COW 帶來的啟動效率、共享收益、RSS、dirty page 與 page fault 代價。
+  - `LO-3`: 能從 private dirty、minor fault、working set、reload 時序與 reclaim 判斷記憶體放大原因。
+- **Prerequisites**: 可先閱讀 [虛擬內存與分頁機制](./virtual_memory_paging.md)。
+- **Quick Quiz**: [Q10](../../QUIZ/01_Operating_System.md#q10-copy-on-write-與記憶體放大)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `記憶體、頁面、reload 故障`
+
 ## 核心理論與詳解
 
 ### 核心思想

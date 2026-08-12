@@ -8,6 +8,19 @@
 
 HTTP 是無狀態協定，伺服器無法區分連續請求是否來自同一個使用者，因此需要額外機制來維護**用戶身份狀態**。Cookie、Session 和 Token（JWT）是三種主流的身份追蹤方案，各有適用場景與取捨。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.http.session-authentication`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Cookie、集中式 Session 與簽發式 Token 的狀態位置、信任邊界與撤銷方式。
+  - `LO-2`: 能依 HttpOnly、Secure、SameSite、CSRF、XSS、輪替與過期需求選擇身份承載方案。
+  - `LO-3`: 能在多區部署、重試、快取或金鑰輪替事故中維持身份正確性與可用性。
+- **Prerequisites**: 可先閱讀 [HTTP 狀態碼完整解析](./http_status_codes.md)。
+- **Quick Quiz**: [Q3](../../QUIZ/01_Networking.md#q3-cookie-session-token-身份狀態選擇)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `身份狀態、信任邊界、故障取捨`
+
 ## 核心理論與詳解
 
 ### Cookie

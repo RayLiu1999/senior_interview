@@ -8,6 +8,19 @@
 
 OSI 七層模型和 TCP/IP 四層模型是理解計算機網路的兩種重要參考模型。面試中常被問到這兩個模型的區別、各層的功能、以及實際應用中的協定對應關係。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.model.layer-mapping`
+- **Learning Objectives**:
+  - `LO-1`: 能將常見協定與故障症狀映射到 OSI／TCP-IP 層次，並說明每層的輸入輸出。
+  - `LO-2`: 能解釋分層抽象的邊界、封裝／解封裝與跨層最佳化的觀測限制。
+  - `LO-3`: 能以 DNS、TLS、HTTP、TCP、socket 與 host metrics 排除錯誤歸因，而非只背層級名稱。
+- **Prerequisites**: 無額外前置；需能區分應用、傳輸與網路層責任。
+- **Quick Quiz**: [Q13](../../QUIZ/01_Networking.md#q13-osi-與-tcpip-分層排錯)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `分層模型、故障定位、跨層推理`
+
 ## 核心理論與詳解
 
 ### 1. 兩種模型概述

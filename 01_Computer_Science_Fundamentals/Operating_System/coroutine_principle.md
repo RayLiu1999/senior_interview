@@ -8,6 +8,19 @@
 
 協程（Coroutine）是一種**用戶態的輕量級並發單元**，能夠在不陷入核心態的情況下實現協作式或搶占式調度，是 Go、Python asyncio、Kotlin、Lua 等語言實現高並發的核心機制。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.concurrency.coroutine-scheduling`
+- **Learning Objectives**:
+  - `LO-1`: 能比較協程、OS thread 與 process 的執行上下文、隔離性、stack 與調度邊界。
+  - `LO-2`: 能評估 blocking I/O、搶占／協作、公平性、worker 數與 runnable backlog 的取捨。
+  - `LO-3`: 能從 event loop starvation、blocked worker、queue、context switch 與 tail latency 設計隔離方案。
+- **Prerequisites**: 可先閱讀 [進程 vs 線程對比](./process_vs_thread.md)。
+- **Quick Quiz**: [Q11](../../QUIZ/01_Operating_System.md#q11-協程調度與阻塞)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `並發模型、阻塞、事件迴圈`
+
 ## 核心理論與詳解
 
 ### 協程 vs 線程 vs 進程

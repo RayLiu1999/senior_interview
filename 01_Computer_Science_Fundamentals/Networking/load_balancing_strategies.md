@@ -8,6 +8,19 @@
 
 解釋負載均衡的概念、常見的負載均衡算法、L4 vs L7 負載均衡的差異，以及在實際生產環境中如何設計和實現高可用的負載均衡架構。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.load-balancing.traffic-distribution`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 L4／L7 負載均衡、round robin、least connection、hash、健康檢查與 draining。
+  - `LO-2`: 能評估 sticky session、連線重用、重試、zone failure、權重與 backend capacity 的取捨。
+  - `LO-3`: 能從 backend skew、queue、health check、connection state 與錯誤分布設計安全的流量轉移。
+- **Prerequisites**: 可先閱讀 [正向代理 vs 反向代理](./proxy_vs_reverse_proxy.md)。
+- **Quick Quiz**: [Q9](../../QUIZ/01_Networking.md#q9-負載均衡與流量轉移)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `流量分配、健康檢查、高可用`
+
 ## 核心理論與詳解
 
 ### 1. 負載均衡基本概念

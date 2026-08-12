@@ -8,6 +8,19 @@
 
 深入解釋 HTTPS 的工作原理、TLS/SSL 握手過程、加密機制，以及如何確保 Web 通信的安全性。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.tls.handshake-security`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 TLS handshake、伺服器身份驗證、金鑰交換、對稱加密與完整性保護。
+  - `LO-2`: 能比較憑證鏈、SNI、TLS 版本、cipher、session resumption 與 mTLS 的安全和效能取捨。
+  - `LO-3`: 能從憑證過期、trust chain、SNI、handshake latency、alert 與 client 差異設計排錯流程。
+- **Prerequisites**: 可先閱讀 [TCP 三次握手與四次揮手](./tcp_handshake_and_termination.md)。
+- **Quick Quiz**: [Q8](../../QUIZ/01_Networking.md#q8-https-tls-握手與憑證排錯)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `安全協定、握手、容量與故障排查`
+
 ## 核心理論與詳解
 
 ### 1. HTTPS 基本概念

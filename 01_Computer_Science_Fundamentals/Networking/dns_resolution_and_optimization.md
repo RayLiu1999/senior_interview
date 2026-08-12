@@ -8,6 +8,19 @@
 
 解釋 DNS (Domain Name System) 的完整解析流程、快取機制，以及如何優化 DNS 查詢效能以降低網站訪問延遲。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.dns.resolution-caching`
+- **Learning Objectives**:
+  - `LO-1`: 能描述 stub resolver、遞迴 resolver、root、TLD、authoritative server、record 與 TTL 的解析路徑。
+  - `LO-2`: 能比較正／負快取、低 TTL、健康檢查、加權解析與 failover 的延遲和一致性代價。
+  - `LO-3`: 能從 NXDOMAIN、SERVFAIL、stale record、解析延遲與區域差異設計可回滾的切換流程。
+- **Prerequisites**: 可先閱讀 [OSI 模型 vs TCP/IP 模型](./osi_vs_tcpip_model.md)。
+- **Quick Quiz**: [Q5](../../QUIZ/01_Networking.md#q5-dns-解析與快取故障)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `名稱解析、快取、流量切換`
+
 ## 核心理論與詳解
 
 ### 1. DNS 基本概念

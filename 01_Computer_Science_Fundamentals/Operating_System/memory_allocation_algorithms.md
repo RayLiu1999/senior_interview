@@ -8,6 +8,19 @@
 
 解釋動態內存分配的各種算法（如首次適配、最佳適配、夥伴系統等），內存碎片化問題，以及現代內存分配器（如 TCMalloc、jemalloc）的優化策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.memory.allocator-fragmentation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 free list、first／best fit、buddy、slab 與 thread／arena allocator 的配置路徑。
+  - `LO-2`: 能比較內部／外部碎片、locality、鎖競爭、pool、arena 保留與釋放成本。
+  - `LO-3`: 能區分 allocator retained bytes、working set、page cache 與 live object leak，提出可驗證的緩解。
+- **Prerequisites**: 可先閱讀 [虛擬內存與分頁機制](./virtual_memory_paging.md)。
+- **Quick Quiz**: [Q14](../../QUIZ/01_Operating_System.md#q14-記憶體分配與碎片化)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `配置器、碎片、RSS 分析`
+
 ## 核心理論與詳解
 
 ### 1. 內存分配基礎

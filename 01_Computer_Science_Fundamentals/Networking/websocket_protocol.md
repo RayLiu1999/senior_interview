@@ -8,6 +8,19 @@
 
 解釋 WebSocket 協定的工作原理、與 HTTP 的區別、握手過程，以及在即時應用中的實際應用場景和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.websocket.connection-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能追蹤 HTTP upgrade、WebSocket frame、ping／pong、close code 與 half-open connection。
+  - `LO-2`: 能評估 proxy、負載均衡、sticky state、heartbeat、慢客戶端、buffer 與 reconnect。
+  - `LO-3`: 能從連線數、fd、close code、queue、heartbeat 與 backpressure 設計可恢復的即時服務。
+- **Prerequisites**: 可先閱讀 [長輪詢、SSE 與 WebSocket 對比](./long_polling_sse_vs_websocket.md)。
+- **Quick Quiz**: [Q18](../../QUIZ/01_Networking.md#q18-websocket-長連線生命週期)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `協定生命週期、長連線、背壓與復原`
+
 ## 核心理論與詳解
 
 ### 1. WebSocket 基本概念

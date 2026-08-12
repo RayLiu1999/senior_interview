@@ -8,6 +8,19 @@
 
 HTTP 協定是 Web 的基礎,從 HTTP/1.1 到 HTTP/2 再到 HTTP/3,每次升級都帶來顯著的效能提升。理解各版本的特性差異、優化機制和適用場景,是後端開發的核心知識。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.http.protocol-evolution`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 HTTP/1.1、HTTP/2、HTTP/3 的連線、串流、多路復用、頭部壓縮與傳輸邊界。
+  - `LO-2`: 能依封包遺失、延遲、連線數、部署支援、MTU 與 fallback 成本選擇版本。
+  - `LO-3`: 能從 handshake、stream reset、flow control、TCP loss、QUIC path 與 HOL 症狀定位版本問題。
+- **Prerequisites**: 可先閱讀 [TCP 可靠傳輸機制](./tcp_reliable_transmission.md) 與 [TCP vs UDP 對比與選擇](./tcp_vs_udp.md)。
+- **Quick Quiz**: [Q7](../../QUIZ/01_Networking.md#q7-http-版本與傳輸選擇)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `協定演進、傳輸取捨、容量診斷`
+
 ## 核心理論與詳解
 
 ### 1. HTTP 版本演進概覽

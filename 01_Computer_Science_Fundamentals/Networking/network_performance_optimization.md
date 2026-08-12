@@ -8,6 +8,19 @@
 
 解釋網路效能的關鍵指標（延遲、吞吐量、封包遺失）、常見的網路效能瓶頸，以及在不同層級（協定層、應用層、架構層）進行效能優化的策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.performance.latency-throughput`
+- **Learning Objectives**:
+  - `LO-1`: 能拆解傳播、傳輸、處理、排隊延遲，並區分 latency、throughput、loss、jitter 與可用性。
+  - `LO-2`: 能依 bandwidth-delay product、封包大小、批次、壓縮、連線重用與 queue 取捨優化。
+  - `LO-3`: 能從 p50／p99、RTT、retransmission、queue、bytes 與 per-hop trace 定位瓶頸。
+- **Prerequisites**: 可先閱讀 [TCP 可靠傳輸機制](./tcp_reliable_transmission.md)。
+- **Quick Quiz**: [Q11](../../QUIZ/01_Networking.md#q11-網路效能瓶頸與容量推理)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `效能模型、容量估算、可觀測性`
+
 ## 核心理論與詳解
 
 ### 1. 關鍵效能指標

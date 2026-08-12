@@ -8,6 +8,19 @@
 
 HTTP 狀態碼是伺服器回應請求時，傳遞處理結果語義的標準方式。正確理解並使用狀態碼是 REST API 設計的基礎，也是後端工程師日常排查問題和設計介面的必備知識。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.http.status-semantics`
+- **Learning Objectives**:
+  - `LO-1`: 能正確解讀 2xx、3xx、4xx、5xx 類別與常見狀態碼的責任歸屬。
+  - `LO-2`: 能依 method 冪等性、deadline、錯誤來源與 Retry-After 判斷是否可重試。
+  - `LO-3`: 能將錯誤分類映射到限流、降級、重試、告警與資料正確性策略，避免 retry amplification。
+- **Prerequisites**: 無額外前置；需能閱讀 HTTP request／response。
+- **Quick Quiz**: [Q6](../../QUIZ/01_Networking.md#q6-http-狀態碼與重試語意)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `協定語意、錯誤分類、重試安全`
+
 ## 核心理論與詳解
 
 ### 狀態碼分類

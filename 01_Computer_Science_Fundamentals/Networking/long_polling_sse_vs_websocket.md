@@ -8,6 +8,19 @@
 
 在 HTTP 無狀態的基礎上實現伺服器向客戶端的**即時推播（Server Push）**，是構建即時通知、聊天、直播彈幕等功能的核心挑戰。長輪詢、SSE 和 WebSocket 是三種主流解決方案，各有不同的技術代價和適用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.realtime.push-transport-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較長輪詢、SSE 與 WebSocket 的資料方向、連線生命週期、代理相容性與延遲。
+  - `LO-2`: 能評估 fan-out、重連、heartbeat、慢客戶端、背壓、buffer 與 fd 成本。
+  - `LO-3`: 能在長連線資源緊張或代理不支援時設計可觀測、可降級、可恢復的傳輸策略。
+- **Prerequisites**: 可先閱讀 [HTTP/1.1 vs HTTP/2 vs HTTP/3](./http_versions_comparison.md)。
+- **Quick Quiz**: [Q10](../../QUIZ/01_Networking.md#q10-長輪詢-sse-與-websocket-選擇)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `即時傳輸、長連線、背壓`
+
 ## 核心理論與詳解
 
 ### 問題背景：HTTP 的局限性

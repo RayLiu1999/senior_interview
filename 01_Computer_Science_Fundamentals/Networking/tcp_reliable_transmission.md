@@ -8,6 +8,19 @@
 
 TCP 作為可靠傳輸協定,通過**滑動窗口**、**流量控制**、**擁塞控制**、**超時重傳**等機制,確保數據能夠完整、有序、無重複地從發送方傳輸到接收方。理解這些機制是掌握 TCP 的關鍵。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.tcp.reliable-transport`
+- **Learning Objectives**:
+  - `LO-1`: 能說明序號、ACK、滑動窗口、重傳、RTO 與資料重組如何提供可靠、有序傳輸。
+  - `LO-2`: 能區分接收窗口造成的流量控制與 cwnd、慢啟動、擁塞避免造成的擁塞控制。
+  - `LO-3`: 能從 RTT、retransmission、cwnd、zero-window、duplicate ACK 與 throughput 設計排錯。
+- **Prerequisites**: 可先閱讀 [TCP 三次握手與四次揮手](./tcp_handshake_and_termination.md)。
+- **Quick Quiz**: [Q16](../../QUIZ/01_Networking.md#q16-tcp-可靠傳輸與擁塞控制)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `可靠傳輸、流量控制、擁塞診斷`
+
 ## 核心理論與詳解
 
 ### 1. 滑動窗口機制 (Sliding Window)

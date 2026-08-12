@@ -8,6 +8,19 @@
 
 比較 RESTful API 和 gRPC 兩種主流 API 設計風格的差異、各自的優勢和適用場景，以及在實際項目中如何選擇。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.api.rest-grpc-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 REST 資源語意、HTTP cache 與 gRPC RPC、protobuf、streaming 的模型差異。
+  - `LO-2`: 能依 schema evolution、錯誤映射、deadline、retry、idempotency 與觀測能力選擇介面。
+  - `LO-3`: 能在下游 timeout／partial failure 中設計不重複副作用且可降級的 API 互動。
+- **Prerequisites**: 可先閱讀 [HTTP/1.1 vs HTTP/2 vs HTTP/3](./http_versions_comparison.md)。
+- **Quick Quiz**: [Q15](../../QUIZ/01_Networking.md#q15-restful-與-grpc-韌性選擇)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `API 契約、錯誤語意、跨服務韌性`
+
 ## 核心理論與詳解
 
 ### 1. 基本概念

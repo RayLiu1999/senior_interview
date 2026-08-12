@@ -8,6 +8,19 @@
 
 解釋系統調用的工作原理，包括用戶態與內核態的切換、系統調用的實現機制（中斷、syscall 指令）、參數傳遞、以及系統調用的性能開銷。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.kernel.system-call-boundary`
+- **Learning Objectives**:
+  - `LO-1`: 能描述 user／kernel mode、syscall instruction、參數傳遞、權限檢查與返回路徑。
+  - `LO-2`: 能評估 syscall 次數、context transition、copy、batching、buffer、非同步與 I/O 模型的成本。
+  - `LO-3`: 能從 syscall profile、read/write、poll／epoll、send／recv、page fault 與 CPU time 將症狀連回根因。
+- **Prerequisites**: 可先閱讀 [OSI 模型 vs TCP/IP 模型](../Networking/osi_vs_tcpip_model.md)。
+- **Quick Quiz**: [Q17](../../QUIZ/01_Operating_System.md#q17-系統調用與-user-kernel-邊界)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `核心邊界、I/O、效能剖析`
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要系統調用

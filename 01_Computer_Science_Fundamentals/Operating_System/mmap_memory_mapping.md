@@ -8,6 +8,19 @@
 
 `mmap`（Memory Map）是一種將**文件或設備映射到進程虛擬地址空間**的機制，使得對文件的讀寫可以像訪問記憶體一樣直接進行指針操作，同時避免傳統 `read()/write()` 系統調用中的多次數據拷貝。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.io.mmap-memory-mapping`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 file-backed／anonymous mapping、虛擬位址、page fault 與 page cache 的關係。
+  - `LO-2`: 能比較 MAP_SHARED／MAP_PRIVATE、mmap、read／write、msync、durability 與 address-space 成本。
+  - `LO-3`: 能從 mapping 數量、minor／major fault、dirty page、reclaim、I/O latency 與 RSS 排錯。
+- **Prerequisites**: 可先閱讀 [虛擬內存與分頁機制](./virtual_memory_paging.md) 與 [Copy-on-Write](./copy_on_write.md)。
+- **Quick Quiz**: [Q15](../../QUIZ/01_Operating_System.md#q15-mmap-與-page-fault)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `記憶體映射、I/O、頁面壓力`
+
 ## 核心理論與詳解
 
 ### 傳統 I/O 的問題：多次拷貝

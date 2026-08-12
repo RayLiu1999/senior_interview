@@ -8,6 +8,19 @@
 
 解釋操作系統中的進程調度算法，包括先來先服務（FCFS）、最短作業優先（SJF）、優先級調度、時間片輪轉（RR）、多級反饋隊列（MLFQ），以及現代調度器（如 Linux CFS）的設計。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.cpu.process-scheduling`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 throughput、turnaround、response、fairness、deadline 與 CPU utilization 等調度目標。
+  - `LO-2`: 能比較 FCFS、SJF、priority、RR、MLFQ、preemption、starvation 與 time slice。
+  - `LO-3`: 能從 run queue、per-core utilization、priority、CPU steal、scheduler latency 與 p99 設計調度緩解。
+- **Prerequisites**: 可先閱讀 [進程 vs 線程對比](./process_vs_thread.md)。
+- **Quick Quiz**: [Q16](../../QUIZ/01_Operating_System.md#q16-進程調度與公平性)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `排程策略、尾延遲、資源公平`
+
 ## 核心理論與詳解
 
 ### 1. 調度目標

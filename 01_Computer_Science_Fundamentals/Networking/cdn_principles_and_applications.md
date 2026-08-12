@@ -8,6 +8,19 @@
 
 解釋 CDN (Content Delivery Network) 的工作原理、快取策略、回源機制，以及如何利用 CDN 提升全球用戶的訪問速度和網站可用性。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.cdn.cache-routing`
+- **Learning Objectives**:
+  - `LO-1`: 能追蹤 cache key、命中／miss、TTL、驗證、回源與 stale 回應的資料路徑。
+  - `LO-2`: 能依一致性、延遲、來源站容量與內容個人化需求比較 TTL、失效、預熱與 revalidate。
+  - `LO-3`: 能從 hit ratio、origin bytes、回源延遲與錯誤率設計快取故障的分層止血與驗證流程。
+- **Prerequisites**: 可先閱讀 [DNS 解析流程與優化](./dns_resolution_and_optimization.md) 與 [HTTP 狀態碼完整解析](./http_status_codes.md)。
+- **Quick Quiz**: [Q2](../../QUIZ/01_Networking.md#q2-cdn-原理與回源策略)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `快取路徑、容量推理、故障診斷`
+
 ## 核心理論與詳解
 
 ### 1. CDN 基本概念

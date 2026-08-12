@@ -8,6 +8,19 @@
 
 解釋進程/線程上下文切換的過程、開銷來源（寄存器保存/恢復、緩存失效、TLB 刷新），以及如何減少上下文切換對性能的影響。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.cpu.context-switch-cost`
+- **Learning Objectives**:
+  - `LO-1`: 能說明進程／線程上下文保存、恢復、排程與 user／kernel transition 的成本。
+  - `LO-2`: 能連結 cache、TLB、run queue、CPU affinity、softirq 與 context switch 對延遲的影響。
+  - `LO-3`: 能從 per-core CPU、switch rate、scheduler latency、runnable backlog 與 p99 判斷過度切換。
+- **Prerequisites**: 可先閱讀 [進程 vs 線程對比](./process_vs_thread.md)。
+- **Quick Quiz**: [Q9](../../QUIZ/01_Operating_System.md#q9-上下文切換與排程成本)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `CPU、排程、延遲診斷`
+
 ## 核心理論與詳解
 
 ### 1. 什麼是上下文切換

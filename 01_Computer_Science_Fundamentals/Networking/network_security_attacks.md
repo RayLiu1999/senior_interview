@@ -8,6 +8,19 @@
 
 解釋常見的網路安全攻擊類型（如 DDoS、XSS、CSRF、SQL Injection）的原理、危害，以及在實際系統中如何實施有效的防護措施。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.security.attack-mitigation`
+- **Learning Objectives**:
+  - `LO-1`: 能辨識 volumetric、protocol、application、SYN flood、XSS、CSRF 與注入的資源耗盡路徑。
+  - `LO-2`: 能比較 anycast／清洗、WAF、rate limit、challenge、驗證、隔離與誤殺成本。
+  - `LO-3`: 能在攻擊與合法尖峰混合時，以來源、租戶、端點與資源層級設計分層防禦和回復。
+- **Prerequisites**: 可先閱讀 [HTTPS 與 TLS/SSL 原理](./https_tls_ssl.md)。
+- **Quick Quiz**: [Q12](../../QUIZ/01_Networking.md#q12-網路攻擊與資源防護)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `威脅模型、容量保護、分層防禦`
+
 ## 核心理論與詳解
 
 ### 1. 拒絕服務攻擊 (DoS/DDoS)

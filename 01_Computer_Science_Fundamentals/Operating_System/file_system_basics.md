@@ -8,6 +8,19 @@
 
 解釋文件系統的基本原理，包括 inode、目錄結構、文件描述符、硬鏈接與軟鏈接的區別，以及常見文件系統（ext4、XFS、Btrfs）的特點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.filesystem.inode-descriptor`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 inode、dentry、file descriptor、open file description、硬鏈接與軟鏈接。
+  - `LO-2`: 能比較 page cache、writeback、持久性、fd limit、inode limit 與 socket／file 資源。
+  - `LO-3`: 能從 fd、inode、socket、epoll、disk queue 與 close／unlink 行為定位資源耗盡。
+- **Prerequisites**: 可先閱讀 [系統調用原理](./system_call_mechanism.md)。
+- **Quick Quiz**: [Q12](../../QUIZ/01_Operating_System.md#q12-文件系統與-fd-inode-資源)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `檔案系統、fd、容量上限`
+
 ## 核心理論與詳解
 
 ### 1. 文件系統架構

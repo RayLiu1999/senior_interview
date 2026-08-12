@@ -8,6 +8,19 @@
 
 代理（Proxy）是一種位於客戶端與伺服器之間的中間層，用於轉發請求和回應。正向代理（Forward Proxy）和反向代理（Reverse Proxy）的核心差別在於**代理的服務對象**，這一差別衍生出完全不同的應用場景和安全模型。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.proxy.forward-reverse`
+- **Learning Objectives**:
+  - `LO-1`: 能分辨正向代理與反向代理代表的對象、信任邊界、流量方向與可見身份。
+  - `LO-2`: 能評估 X-Forwarded-*、TLS termination、upstream connection pool、buffer、timeout 與 retry。
+  - `LO-3`: 能從多層 proxy 的 request ID、header、queue、backend error 與 client disconnect 定位故障。
+- **Prerequisites**: 可先閱讀 [OSI 模型 vs TCP/IP 模型](./osi_vs_tcpip_model.md)。
+- **Quick Quiz**: [Q14](../../QUIZ/01_Networking.md#q14-正向代理與反向代理邊界)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `代理邊界、連線池、故障追蹤`
+
 ## 核心理論與詳解
 
 ### 正向代理（Forward Proxy）

@@ -8,6 +8,19 @@
 
 解釋同源策略 (Same-Origin Policy) 的概念、為什麼需要跨域限制、CORS (Cross-Origin Resource Sharing) 的工作原理，以及在實際開發中如何正確處理跨域問題。
 
+### 測驗對應
+
+- **Concept ID**: `concept.network.http.cors-origin-policy`
+- **Learning Objectives**:
+  - `LO-1`: 能依 scheme、host、port 判斷 origin，並說明 simple request、preflight 與實際請求的順序。
+  - `LO-2`: 能區分瀏覽器同源限制、伺服器授權、credentials、wildcard 與 preflight cache 的語意。
+  - `LO-3`: 能從瀏覽器錯誤、OPTIONS status、Origin／Allow 標頭與代理快取證據修正跨域政策。
+- **Prerequisites**: 可先閱讀 [HTTP 狀態碼完整解析](./http_status_codes.md)。
+- **Quick Quiz**: [Q4](../../QUIZ/01_Networking.md#q4-cors-同源策略與預檢)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `瀏覽器策略、授權邊界、故障排查`
+
 ## 核心理論與詳解
 
 ### 1. 同源策略 (Same-Origin Policy)

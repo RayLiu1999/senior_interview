@@ -8,6 +8,19 @@
 
 解釋垃圾回收的主要算法（引用計數、標記清除、標記整理、複製算法），分代回收策略，以及現代 GC 的優化（如 Go 的三色標記、Java 的 G1/ZGC）。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.memory.garbage-collection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 reference counting、mark-sweep、mark-compact、copying 與 generational GC。
+  - `LO-2`: 能評估 pause、throughput、allocation rate、heap、fragmentation 與回收頻率的取捨。
+  - `LO-3`: 能從 GC pause、heap growth、live set、allocation profile 與 RSS 判斷回收壓力或真正 leak。
+- **Prerequisites**: 無額外前置；需能區分 live set 與暫時配置。
+- **Quick Quiz**: [Q13](../../QUIZ/01_Operating_System.md#q13-垃圾回收與延遲)
+- **Hard Assessment**: [Network + OS Resilience Incident](../../QUIZ/Hard_Assessments/network_os_resilience_incident.md) (`assessment.network-os.resilience-incident.v1`)
+- **Assessment Gate**: 完成本文與 Quick Quiz，並在 Hard Assessment 中以可驗證證據覆蓋本文的三項 Learning Objectives。
+- **覆蓋題型**: `記憶體管理、延遲、容量診斷`
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要 GC
