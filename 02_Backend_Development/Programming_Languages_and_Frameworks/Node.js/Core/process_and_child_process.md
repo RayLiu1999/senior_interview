@@ -8,6 +8,18 @@
 
 請深入解釋 Node.js 中的 Process 物件、Child Process 模組、進程間通訊（IPC）以及多進程管理的最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.process-child-process`
+- **Learning Objectives**:
+  - `LO-1`：能說明 `process` 的 signal、環境變數、標準輸入輸出、exit 與 graceful shutdown 邊界。
+  - `LO-2`：能比較 `spawn`、`exec`、`execFile` 與 `fork` 的 shell、buffer／stream、IPC、錯誤與資源語意。
+  - `LO-3`：能設計 child process 的取消、timeout、reaping、backpressure、權限與可觀測性，避免命令注入與孤兒程序。
+- **Prerequisites**: [Node.js 事件循環與 Libuv](./event_loop_and_libuv.md)、[Cluster 與 Worker Threads](./cluster_and_worker_threads.md)
+- **Quick Quiz**: [Node.js Q22](../../../../QUIZ/07_Node.js.md#q22)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Process 物件

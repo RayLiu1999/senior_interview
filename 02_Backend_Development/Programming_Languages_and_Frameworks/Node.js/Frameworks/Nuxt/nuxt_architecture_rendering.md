@@ -8,6 +8,18 @@
 
 請深入解釋 Nuxt.js 的架構設計、不同渲染模式（SSR、SSG、SPA、ISR）的原理、優缺點以及選擇標準。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nuxt.rendering-architecture`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Vue client、Nuxt runtime、Nitro server、payload 與 browser hydration 的責任分界。
+  - `LO-2`：能依 route 的 SEO、個人化、資料新鮮度、互動性與成本選擇 SSR、SSG、SPA、ISR 或 hybrid rendering。
+  - `LO-3`：能以 HTML／payload、hydration、TTFB、CWV、cache hit、部署成本與 rollback 測試驗證渲染策略。
+- **Prerequisites**: [Nuxt.js 目錄結構與約定](./directory_structure_conventions.md)、[Nuxt.js 資料獲取與狀態管理](./data_fetching_state_management.md)
+- **Quick Quiz**: [Node.js Q30](../../../../../QUIZ/07_Node.js.md#q30)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Nuxt.js 是什麼？

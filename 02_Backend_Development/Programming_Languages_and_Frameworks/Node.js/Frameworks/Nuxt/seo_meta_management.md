@@ -8,6 +8,18 @@
 
 請深入解釋 Nuxt.js 中的 SEO 優化技術，包括 Meta 標籤管理、Open Graph、Twitter Cards、結構化資料、Sitemap 生成以及性能優化。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nuxt.seo-meta`
+- **Learning Objectives**:
+  - `LO-1`：能設計每個 route 的 title、description、canonical、Open Graph、Twitter Card 與結構化資料邊界。
+  - `LO-2`：能解釋 SSR、hydration、動態資料、sitemap 與 robots 如何影響 crawler、分享預覽與快取新鮮度。
+  - `LO-3`：能用 crawler HTML、head snapshot、Core Web Vitals、canonical／structured-data 檢查與部署環境診斷 SEO 回歸。
+- **Prerequisites**: [Nuxt.js 架構與渲染模式](./nuxt_architecture_rendering.md)、[Nuxt.js 目錄結構與約定](./directory_structure_conventions.md)
+- **Quick Quiz**: [Node.js Q27](../../../../../QUIZ/07_Node.js.md#q27)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 1. useHead - 動態 Meta 管理

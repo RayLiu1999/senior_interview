@@ -8,6 +8,18 @@
 
 Express.js 和 Node.js 之間是什麼關係？為什麼我們通常在使用 Node.js 建立 Web 伺服器時會選擇使用 Express.js？
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.express.runtime-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能區分 Node.js runtime／`http` 模組與 Express abstraction、middleware、routing、request／response helper 的責任。
+  - `LO-2`：能從 lifecycle、錯誤邊界、效能、相容性與生態評估 Express 在不同服務中的取捨。
+  - `LO-3`：能以 route contract、middleware trace、錯誤率、event-loop／P99 與部署指標驗證 framework boundary，而不是只比較 API 便利性。
+- **Prerequisites**: [Node.js 事件循環與 Libuv](../../Core/event_loop_and_libuv.md)、[Express.js Middleware 詳解](./middleware_in_depth.md)
+- **Quick Quiz**: [Node.js Q26](../../../../../QUIZ/07_Node.js.md#q26)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 要理解 Express.js，首先必須明白它與 Node.js 的關係：**Node.js 是執行環境，而 Express.js 是執行在該環境之上的框架**。

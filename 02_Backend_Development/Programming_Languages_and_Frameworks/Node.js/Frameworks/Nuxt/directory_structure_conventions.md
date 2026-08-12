@@ -8,6 +8,18 @@
 
 請深入解釋 Nuxt.js 的約定式目錄結構、基於文件的路由系統、自動導入機制以及各目錄的作用。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nuxt.directory-conventions`
+- **Learning Objectives**:
+  - `LO-1`：能說明 `pages`、`components`、`composables`、`server`、`public`、`assets` 與 `middleware` 的責任邊界。
+  - `LO-2`：能由檔名與目錄推導 file-based routing、自動導入、`.client`／`.server`／`.global` 與參數路由行為。
+  - `LO-3`：能用 route map、build output、import trace、lint／ownership 規則與 server／client 測試維持可演進的目錄約定。
+- **Prerequisites**: [Node.js 與 TypeScript 整合](../../TypeScript/typescript_with_nodejs.md)、[Express.js 與 Node.js 的關係](../Express/express_and_nodejs.md)
+- **Quick Quiz**: [Node.js Q31](../../../../../QUIZ/07_Node.js.md#q31)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Nuxt 3 目錄結構

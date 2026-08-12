@@ -8,6 +8,18 @@
 
 請深入解釋 package.json 的各個欄位、依賴管理（dependencies、devDependencies、peerDependencies 等）、版本範圍、scripts 腳本以及最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.tooling.package-manifest-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`：能區分 dependencies、devDependencies、peerDependencies、optionalDependencies、exports 與 scripts 對套件邊界的責任。
+  - `LO-2`：能說明 SemVer、lockfile、engines、overrides 與 CI 安裝流程如何共同建立可重現的依賴圖。
+  - `LO-3`：能設計 package metadata、建置、稽核與發布流程，隔離 runtime 依賴、開發工具與供應鏈風險。
+- **Prerequisites**: [Node.js 模組系統](../Core/module_systems.md)、[Node.js 與 TypeScript 整合](../TypeScript/typescript_with_nodejs.md)
+- **Quick Quiz**: [Node.js Q18](../../../../QUIZ/07_Node.js.md#q18)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 1. package.json 完整結構

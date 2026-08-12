@@ -8,6 +8,18 @@
 
 請詳細解釋 Express.js 中的路由 (Routing) 機制。這包括如何定義基本路由、處理路由參數、使用路由處理器，以及如何使用 `express.Router` 來模組化路由。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.express.routing-dispatch`
+- **Learning Objectives**:
+  - `LO-1`：能依 HTTP method、path pattern、參數、註冊順序與 Router mount point 推導 Express route dispatch。
+  - `LO-2`：能設計模組化 Router、版本化、認證 middleware、404／error boundary 與 route handler responsibility。
+  - `LO-3`：能用 route map、contract test、404／405 分布與 trace 診斷 route shadowing、auth bypass、參數錯配與 async error。
+- **Prerequisites**: [Express.js Middleware 詳解](./middleware_in_depth.md)、[Express.js 與 Node.js 的關係](./express_and_nodejs.md)
+- **Quick Quiz**: [Node.js Q25](../../../../../QUIZ/07_Node.js.md#q25)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 路由是指應用程式如何回應客戶端對特定端點 (Endpoint) 的請求，這個端點由一個 URI（或路徑）和一個特定的 HTTP 請求方法（GET、POST 等）組成。Express.js 提供了非常靈活且富有表現力的路由系統。

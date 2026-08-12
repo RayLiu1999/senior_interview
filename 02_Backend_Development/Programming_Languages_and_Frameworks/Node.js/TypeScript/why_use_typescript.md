@@ -8,6 +8,18 @@
 
 TypeScript 已成為現代 JavaScript 開發的熱門選擇。請解釋為什麼要在 Node.js 專案中引入 TypeScript？它帶來了哪些主要的好處和潛在的挑戰？
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.typescript.adoption-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能區分 TypeScript 編譯期型別、JavaScript runtime 與型別擦除，並說明 `strict` 設定的保護範圍。
+  - `LO-2`：能在 HTTP、環境變數、JSON、JavaScript 套件與資料庫邊界設計 runtime validation、型別宣告與模組／target 設定。
+  - `LO-3`：能評估遷移成本、source map、`any` 債務、build／typecheck CI 與 API contract 對長期維護的取捨。
+- **Prerequisites**: [Node.js 與 TypeScript 整合](./typescript_with_nodejs.md)、[TypeScript 進階型別系統](./advanced_type_system.md)
+- **Quick Quiz**: [Node.js Q24](../../../../QUIZ/07_Node.js.md#q24)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 TypeScript 是 JavaScript 的一個超集 (superset)，由微軟開發。它在 JavaScript 的基礎上增加了一個強大的 **靜態類型系統**，以及對最新 ECMAScript 功能的支援。雖然最終會被編譯成純 JavaScript 執行，但在開發階段，TypeScript 提供了諸多好處。

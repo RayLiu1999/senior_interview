@@ -8,6 +8,18 @@
 
 請深入解釋 Nuxt.js 應用的部署策略（SSR、SSG、Serverless）、性能優化技術（代碼分割、懶加載、快取）以及生產環境最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nuxt.deployment-performance`
+- **Learning Objectives**:
+  - `LO-1`：能比較 Nuxt SSR、SSG、serverless／edge 與 container／Nitro runtime 的部署責任、限制與成本。
+  - `LO-2`：能把 code splitting、lazy loading、圖片、CDN、compression 與 cache 策略連到 TTFB、瀏覽器效能與內容新鮮度。
+  - `LO-3`：能設計 production build、runtime config、health check、graceful rollout、監控與 rollback，並用 P99、CWV、CPU／RSS 驗證。
+- **Prerequisites**: [Nuxt.js 架構與渲染模式](./nuxt_architecture_rendering.md)、[Nuxt.js 資料獲取與狀態管理](./data_fetching_state_management.md)
+- **Quick Quiz**: [Node.js Q28](../../../../../QUIZ/07_Node.js.md#q28)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 1. 部署模式概覽

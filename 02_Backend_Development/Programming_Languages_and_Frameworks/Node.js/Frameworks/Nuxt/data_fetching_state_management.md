@@ -8,6 +8,18 @@
 
 請深入解釋 Nuxt.js 中的資料獲取方式（useFetch、useAsyncData、$fetch）、SSR 資料水合、狀態管理（useState、Pinia）以及快取策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nuxt.data-fetching-state`
+- **Learning Objectives**:
+  - `LO-1`：能比較 `useFetch`、`useAsyncData` 與 `$fetch` 在 SSR、payload、hydration、client navigation 與事件處理中的責任。
+  - `LO-2`：能設計 `useState`／Pinia ownership、cache key、失效、樂觀更新、錯誤與取消，避免跨 request 或跨使用者污染。
+  - `LO-3`：能用 server trace、payload、hydration warning、cache hit／miss、重複請求與 stale data 證據診斷資料流問題。
+- **Prerequisites**: [Nuxt.js 架構與渲染模式](./nuxt_architecture_rendering.md)、[Nuxt.js 目錄結構與約定](./directory_structure_conventions.md)
+- **Quick Quiz**: [Node.js Q29](../../../../../QUIZ/07_Node.js.md#q29)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Nuxt 3 資料獲取概覽

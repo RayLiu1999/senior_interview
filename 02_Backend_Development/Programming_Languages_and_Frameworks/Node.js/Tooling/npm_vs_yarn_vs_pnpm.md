@@ -8,6 +8,18 @@
 
 `npm` 是 Node.js 的預設套件管理器，但社群也發展出了 Yarn 和 pnpm 等替代方案。請比較這三者在 `node_modules` 結構、性能、磁碟空間使用和功能特性上的主要差異。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.tooling.package-manager-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`：能比較 npm、Yarn Classic／Berry 與 pnpm 的依賴解析、node_modules／PnP 結構、lockfile 與內容可定址儲存。
+  - `LO-2`：能依 workspace、CI cache、幽靈依賴、工具相容性與磁碟／安裝成本選擇套件管理策略。
+  - `LO-3`：能用 clean install、lockfile diff、依賴圖與建置結果診斷非確定性，並證明修復後可重現。
+- **Prerequisites**: [package.json 深入解析](./package_json_deep_dive.md)、[Node.js 模組系統](../Core/module_systems.md)
+- **Quick Quiz**: [Node.js Q19](../../../../QUIZ/07_Node.js.md#q19)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 套件管理器是 Node.js 生態系統的支柱，它負責處理專案的依賴安裝、版本控制和腳本執行。雖然它們的目標相同，但實現方式卻大相徑庭，尤其是在處理 `node_modules` 目錄結構方面。

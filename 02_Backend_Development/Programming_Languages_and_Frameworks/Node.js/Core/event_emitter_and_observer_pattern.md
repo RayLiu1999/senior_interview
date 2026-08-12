@@ -12,6 +12,18 @@ Node.js 的核心 API 大量使用了基於事件的異步模型，而 `EventEmi
 2. `EventEmitter` 與設計模式中的「觀察者模式」(Observer Pattern) 有何關聯？
 3. 請舉例說明如何自定義一個繼承自 `EventEmitter` 的類。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.event-emitter-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能說明 `emit` 的同步執行、listener 註冊順序、`once`、`off` 與特殊 `error` 事件的行為。
+  - `LO-2`：能設計 listener ownership、生命週期 cleanup、最大 listener 警告、非同步錯誤傳播與慢 listener 隔離。
+  - `LO-3`：能用 listener count、heap／retainer、事件 trace 與 shutdown 測試定位重複訂閱、listener leak 與事件遺失。
+- **Prerequisites**: [Node.js 事件循環與 Libuv](./event_loop_and_libuv.md)、[Node.js 非同步錯誤處理模式](./error_handling_async_patterns.md)
+- **Quick Quiz**: [Node.js Q21](../../../../QUIZ/07_Node.js.md#q21)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 在 Node.js 中，許多對象都會觸發事件。例如，一個 `net.Server` 物件會在每次有新連接時觸發 `connection` 事件，一個 `fs.ReadStream` 會在檔案被打開時觸發 `open` 事件。所有能觸發事件的對象都是 `EventEmitter` 類的實例。

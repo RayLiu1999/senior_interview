@@ -8,6 +8,18 @@
 
 請深入解釋 Node.js 的測試工具（Jest、Vitest、Mocha）、測試策略（單元測試、整合測試、E2E 測試）、測試覆蓋率以及最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.tooling.testing-strategy`
+- **Learning Objectives**:
+  - `LO-1`：能區分單元、整合、契約、端對端與負載測試所驗證的邊界，而不是只用 coverage 代表品質。
+  - `LO-2`：能依 Node.js runtime、TypeScript、外部服務與測試速度選擇 Jest、Vitest 或 Mocha，並設計隔離的 fixture 與替身。
+  - `LO-3`：能建立可重現的 CI 測試門檻，追蹤 flaky test、測試資料、故障注入、coverage 趨勢與部署風險。
+- **Prerequisites**: [package.json 深入解析](./package_json_deep_dive.md)、[Node.js 與 TypeScript 整合](../TypeScript/typescript_with_nodejs.md)
+- **Quick Quiz**: [Node.js Q20](../../../../QUIZ/07_Node.js.md#q20)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 1. 測試金字塔

@@ -805,6 +805,308 @@ const cache = new WeakMap();
 
 ---
 
+## 📦 Tooling
+
+<a id="q18"></a>
+### Q18: 如何利用 package.json 建立可重現且安全的 Node.js 依賴邊界？
+<!-- Concept ID: concept.nodejs.tooling.package-manifest-reproducibility; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 dependencies 類型、exports、scripts、SemVer、lockfile 與 CI 安裝流程如何共同影響生產結果。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `dependencies` 是 runtime 需要的套件，`devDependencies` 是建置／測試工具；`peerDependencies` 表達由宿主提供且需要相容版本的契約。
+- 版本範圍只是選擇條件，lockfile 才保存具體解析結果；CI 應使用對應的 frozen／clean install，不任意改寫 lockfile。
+- `exports` 可限制公開入口，`engines`、overrides、scripts 與 lifecycle hook 也要納入審查。
+- 要把套件清單、lockfile、Node／套件管理器版本與 audit／license 結果一起視為可部署 artifact 的證據。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Tooling/package_json_deep_dive.md)
+
+<a id="q19"></a>
+### Q19: npm、Yarn 與 pnpm 如何影響依賴可重現性？
+<!-- Concept ID: concept.nodejs.tooling.package-manager-reproducibility; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較三種套件管理器的依賴解析、node_modules／PnP 結構、workspace、幽靈依賴與 CI 策略。
+
+<details>
+<summary>💡 答案提示</summary>
+
+| 面向 | 要回答的問題 |
+|------|--------------|
+| **lockfile** | 是否固定完整 dependency graph、registry integrity 與 manager 版本 |
+| **解析結構** | npm／Yarn node_modules、Yarn PnP、pnpm symlink 與 content-addressable store 的差異 |
+| **隔離性** | flat hoisting 是否讓程式非法使用未宣告的 phantom dependency |
+| **CI** | 是否固定 Node／manager、使用 frozen install、驗證 lockfile diff 並從乾淨環境重建 |
+
+選型不能只看安裝速度；要用 clean install、workspace build、依賴圖與 artifact checksum 證明結果一致。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Tooling/npm_vs_yarn_vs_pnpm.md)
+
+<a id="q20"></a>
+### Q20: Node.js 專案如何設計可信的測試策略？
+<!-- Concept ID: concept.nodejs.tooling.testing-strategy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 Jest、Vitest、Mocha 與 unit、integration、contract、E2E 測試應如何分工，以及 coverage 的限制。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Unit 驗證純邏輯，integration 驗證資料庫／檔案／HTTP 邊界，contract 驗證服務契約，E2E 驗證少量關鍵使用者流程。
+- 工具選擇要配合 module system、TypeScript transform、fake timer、worker isolation 與 runtime，不只比較 benchmark。
+- Mock 應放在真正的 ownership boundary；過度 mock 會讓 production module graph、router 或 SSR 行為失真。
+- Coverage 是未執行路徑的訊號，不等於資料正確性、併發安全、部署可重現或故障恢復；要搭配 flaky rate、故障注入與 CI gate。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Tooling/testing_tools_strategies.md)
+
+## ⚙️ Node.js Core
+
+<a id="q21"></a>
+### Q21: EventEmitter 的 listener 生命週期與錯誤邊界如何管理？
+<!-- Concept ID: concept.nodejs.core.event-emitter-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 `emit` 的同步語意、`on`／`once`／`off`、`error` 事件，以及如何避免 listener leak 與重複訂閱。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `emit` 依註冊順序同步呼叫 listener；`once` 只消費一次，`off`／`removeListener` 必須使用相同的函式參照。
+- 沒有 `error` listener 可能讓錯誤升成未捕獲例外；非同步 listener 的 rejected Promise 也要明確處理。
+- 每次訂閱都要有 owner、cleanup 與 shutdown 路徑；`MaxListenersExceededWarning` 是要調查的訊號，不是單純把上限調大。
+- 用 listener count、heap snapshot、event trace、重複初始化與 graceful shutdown 測試證明沒有累積或遺失事件。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Core/event_emitter_and_observer_pattern.md)
+
+<a id="q22"></a>
+### Q22: Node.js Process 與 Child Process 的選擇和資源管理有什麼差異？
+<!-- Concept ID: concept.nodejs.core.process-child-process; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 `spawn`、`exec`、`execFile`、`fork` 的輸出、shell、IPC、取消與安全性，並說明 graceful shutdown。
+
+<details>
+<summary>💡 答案提示</summary>
+
+| 方法 | 典型語意 | 主要風險 |
+|------|----------|----------|
+| `spawn` | stream、大量或長時間輸出 | 忽略 backpressure、未回收 child |
+| `exec` | shell command、buffered output | shell injection、buffer 上限 |
+| `execFile` | 直接執行檔案 | 參數與權限仍需驗證 |
+| `fork` | Node.js module 加 IPC | message、shutdown 與 instance 管理 |
+
+要處理 signal、timeout、abort、exit／close、stderr、孤兒程序與權限；不要把使用者輸入直接拼進 shell command。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Core/process_and_child_process.md)
+
+<a id="q23"></a>
+### Q23: Node.js 檔案系統 API 如何在效能與可靠性間取捨？
+<!-- Concept ID: concept.nodejs.core.filesystem-io; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請說明 callback、Promise、sync API、stream、backpressure、原子寫入與檔案錯誤處理的適用邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- request path 不應任意使用同步 API；啟動設定或小型一次性操作才可能接受同步成本。
+- 大檔案應使用 bounded stream 並處理 `write()`、`drain`、client abort、file descriptor 與 cleanup，避免一次載入記憶體。
+- 寫入重要資料要考慮暫存檔、fsync／rename 的原子性、權限、path traversal、並發競態與磁碟滿錯誤。
+- 用 event-loop delay、open handles、RSS、I/O latency、錯誤碼與中斷／重試測試驗證設計。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Core/file_system_operations.md)
+
+## 📘 TypeScript
+
+<a id="q24"></a>
+### Q24: TypeScript 在 Node.js 中的型別安全邊界在哪裡？
+<!-- Concept ID: concept.nodejs.typescript.adoption-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請說明 TypeScript 的編譯期保護、型別擦除、runtime validation、module／target 設定與遷移成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- TypeScript 只能在編譯期檢查原始碼；interface、generic 與 type assertion 不會在 runtime 自動驗證 JSON、環境變數或外部回應。
+- HTTP、queue、檔案、資料庫與 JavaScript 套件都是 trust boundary；需用 schema、type guard 或 validated config 建立 runtime contract。
+- `strict`、`module`、`moduleResolution`、`target`、source map、ESM／CommonJS 與 build runner 必須和 Node runtime 及部署一致。
+- 遷移要追蹤 `any`、declaration、typecheck CI、測試與 source map；型別覆蓋率不能取代契約測試。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/TypeScript/why_use_typescript.md)
+
+## 🌐 Express
+
+<a id="q25"></a>
+### Q25: Express 路由匹配與 Router 模組化如何避免邊界錯誤？
+<!-- Concept ID: concept.nodejs.express.routing-dispatch; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 method、path、參數、註冊順序、Router mount、middleware 與 404／error boundary 的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Express 依 stack 的註冊順序尋找符合 method／path 的 layer；寬鬆的動態路徑可能先吃掉更具體的靜態路徑。
+- `express.Router` 應依 bounded context 或 API version 組織，mount prefix、`mergeParams`、auth middleware 與輸入驗證要有明確 ownership。
+- 404 應在所有可匹配路由之後，error middleware 要處理 async rejection、headers sent 與取消。
+- 用 route map、404／405 分布、auth bypass case、版本 contract test 與 request trace 驗證，而不是只測 happy path。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Express/routing_in_depth.md)
+
+<a id="q26"></a>
+### Q26: Express.js 與 Node.js 的 runtime 邊界應如何理解？
+<!-- Concept ID: concept.nodejs.express.runtime-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較原生 Node.js `http` 與 Express 在 routing、middleware、request／response、錯誤處理、效能與維運上的責任。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Node.js 是 runtime，提供 V8、事件循環、`http`、stream 與 process；Express 建立在其上，提供 router、middleware 與較方便的 request／response API。
+- Express 的便利不代表自動具備 validation、auth、timeout、backpressure 或錯誤分類；這些仍需在應用邊界設計。
+- 選型要看團隊能力、middleware、生態、版本相容、P99、event-loop、可觀測性與升級成本，不只看程式碼行數。
+- 以 route contract、middleware trace、壓測、錯誤注入與 graceful shutdown test 驗證 abstraction 沒有掩蓋 runtime 行為。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Express/express_and_nodejs.md)
+
+## 🟢 Nuxt
+
+<a id="q27"></a>
+### Q27: Nuxt 的 SEO 與 Meta 管理如何跨越 SSR、hydration 與部署快取？
+<!-- Concept ID: concept.nodejs.nuxt.seo-meta; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 `useHead`、Open Graph、canonical、structured data、sitemap 與 SSR／CSR 對 crawler 的影響。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 公開頁面應在 crawler 可取得的 HTML 中產生唯一 title、description、canonical、Open Graph／Twitter Card 與必要結構化資料。
+- 動態資料若只在 client mount 後才填 head，可能造成分享預覽與搜尋索引缺欄位；SSR、payload、hydration 與 route cache 要一起驗證。
+- sitemap、robots、canonical domain、locale／alternate URL 與 cache invalidation 必須和部署環境一致。
+- 以 raw HTML、head snapshot、crawler、Search Console、structured-data validator 與 Core Web Vitals 檢查，而非只在瀏覽器看畫面。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/seo_meta_management.md)
+
+<a id="q28"></a>
+### Q28: Nuxt 生產部署與性能優化如何建立可量測的取捨？
+<!-- Concept ID: concept.nodejs.nuxt.deployment-performance; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 SSR、SSG、serverless／edge 與 container 部署，並說明 code splitting、cache、CDN、health check 與 rollback。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- SSR 保持動態與 SEO，但有 server CPU／memory／下游成本；SSG 成本低但需要 revalidation 或 rebuild；serverless／edge 還要考慮 cold start 與 runtime API。
+- 優化應拆分 TTFB、HTML、JS、圖片、第三方資源與 hydration，使用 lazy loading、compression、CDN 與有失效語意的 cache。
+- runtime config 不應把 secret 打進 client bundle；readiness、liveness、graceful shutdown、錯誤追蹤與 artifact checksum 要納入發布。
+- 用 P50／P99、CWV、CPU／RSS、cache hit、錯誤率、cold start、成本與 rollback time 驗證，而不是只看 Lighthouse 單次分數。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/deployment_performance.md)
+
+<a id="q29"></a>
+### Q29: Nuxt 的 useFetch、useAsyncData、$fetch 與狀態管理如何避免重複請求和資料污染？
+<!-- Concept ID: concept.nodejs.nuxt.data-fetching-state; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較三種資料獲取 API、SSR payload／hydration、useState／Pinia、cache key、失效與 optimistic update。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `useFetch`／`useAsyncData` 會參與 SSR 與 payload，`$fetch` 適合事件或明確 client request；混用不當會造成 SSR 後 client 重抓。
+- key 必須包含 route、tenant、locale、使用者權限或資料版本等隔離維度；request-local state 不能被 server singleton 共享。
+- `useState` 適合簡單共享狀態，Pinia 適合複雜 domain store；都要定義 hydration、失效、錯誤、取消與 optimistic rollback。
+- 用 server／browser trace、payload、hydration warning、cache hit／miss 與交錯使用者請求測試證明不重複、不過期、不跨使用者污染。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/data_fetching_state_management.md)
+
+<a id="q30"></a>
+### Q30: Nuxt SSR、SSG、SPA、ISR 與 Hybrid Rendering 如何選擇？
+<!-- Concept ID: concept.nodejs.nuxt.rendering-architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請從 SEO、個人化、資料新鮮度、hydration、成本與部署限制說明不同渲染模式的適用邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+| 模式 | 優勢 | 主要代價 |
+|------|------|----------|
+| **SSR** | 動態、初始 HTML 與 SEO | 每次 request 的 server／下游成本 |
+| **SSG** | 快、便宜、易用 CDN | 內容要 rebuild 或 revalidate |
+| **SPA** | 互動與個人化靈活 | 初始 SEO、JS／hydration 成本 |
+| **ISR／Hybrid** | 在 route 層平衡新鮮度與成本 | cache／失效與部署更複雜 |
+
+選擇要落到每個 route 的資料與快取契約，並用 HTML／payload、hydration、TTFB、CWV、cache hit、內容新鮮度與 rollback 測試驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/nuxt_architecture_rendering.md)
+
+<a id="q31"></a>
+### Q31: Nuxt 的目錄結構與自動導入約定如何形成清楚的程式碼邊界？
+<!-- Concept ID: concept.nodejs.nuxt.directory-conventions; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請說明 pages、components、composables、server、public、assets、plugins 與 middleware 的責任，以及 `.client`／`.server`／`.global` 命名。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `pages` 產生 file-based routes，`components`／`composables`／`utils` 支援自動導入，`server/api` 與 `server/routes` 是 server-only 邊界，`public` 不經 bundler 處理。
+- `.client`／`.server` 限制執行環境，`.global` 表示全域 middleware；命名與巢狀目錄會影響 route、import 與 bundle。
+- 應避免把 secret、資料庫 client 或 server-only module 從自動導入路徑帶進 client bundle，也要避免頁面與 API 名稱碰撞。
+- 用 route map、build output、import trace、lint／ownership rule 與 server／client smoke test 驗證約定。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Node.js/Frameworks/Nuxt/directory_structure_conventions.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

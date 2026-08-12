@@ -8,6 +8,18 @@
 
 請深入解釋 Node.js 的檔案系統模組（fs），包括同步/非同步操作、Stream 操作、檔案監控以及最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.filesystem-io`
+- **Learning Objectives**:
+  - `LO-1`：能比較 callback、Promise 與 synchronous `fs` API 對事件循環、啟動流程與錯誤處理的影響。
+  - `LO-2`：能設計大檔案 stream、backpressure、原子寫入、watch、path／permission 與檔案描述元生命週期。
+  - `LO-3`：能以 I/O latency、open handles、記憶體、錯誤碼與中斷測試診斷檔案操作的效能、可靠性與安全邊界。
+- **Prerequisites**: [Node.js 阻塞與非阻塞 I/O](./blocking_vs_non_blocking_io.md)、[Node.js Stream 與 Buffer](./stream_and_buffer.md)
+- **Quick Quiz**: [Node.js Q23](../../../../QUIZ/07_Node.js.md#q23)
+- **Hard Assessment**: [Node.js Tooling Fullstack Boundary Incident](../../../../QUIZ/Hard_Assessments/nodejs_tooling_fullstack_boundary_incident.md) (`assessment.nodejs.tooling-fullstack-boundary.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### fs 模組概述
