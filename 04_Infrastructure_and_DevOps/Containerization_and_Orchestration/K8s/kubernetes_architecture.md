@@ -1,6 +1,7 @@
 # Kubernetes 核心架構：Master 與 Worker Node
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Architecture`, `Master`, `Node`
 
 ## 問題詳述

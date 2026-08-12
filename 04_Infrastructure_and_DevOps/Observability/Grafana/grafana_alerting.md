@@ -1,6 +1,7 @@
 # Grafana Alerting (Grafana 告警)
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Grafana`, `Alerting`, `Prometheus`, `OpsGenie`, `PagerDuty`
 
 ## 問題詳述

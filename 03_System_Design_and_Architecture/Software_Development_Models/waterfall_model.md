@@ -1,6 +1,7 @@
 # 瀑布模型 (Waterfall Model)
 
 - **難度**: 4
+- **重要程度**: 3
 - **標籤**: `Waterfall`, `Software Development Models`, `Methodology`
 
 ## 問題詳述

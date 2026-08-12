@@ -8,11 +8,6 @@
 |------|------|----------|------|
 | [Composer 與依賴管理](./what_is_composer_and_its_purpose.md) | 7 | 5 | `Composer`, `Dependency Management` |
 | [PSR 標準詳解](./what_is_psr_and_common_standards.md) | 8 | 4 | `PSR`, `Coding Standards` |
-| [PHP 版本管理](./php_version_management.md) | 5 | 4 | `Environment`, `Version Control` |
-| [靜態分析工具](./static_analysis_tools.md) | 7 | 4 | `PHPStan`, `Psalm`, `Quality` |
-| [程式碼格式化與規範](./code_formatting_and_standards.md) | 5 | 4 | `PHP-CS-Fixer`, `Code Style` |
-| [除錯工具與技巧](./debugging_tools_and_techniques.md) | 6 | 5 | `Xdebug`, `Debugging` |
-| [效能分析工具](./performance_profiling_tools.md) | 7 | 4 | `Blackfire`, `XHProf`, `Profiling` |
 
 ## 核心工具
 

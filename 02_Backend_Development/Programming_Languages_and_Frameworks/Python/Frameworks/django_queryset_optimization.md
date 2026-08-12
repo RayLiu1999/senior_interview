@@ -1,11 +1,21 @@
 # 如何優化 Django 查詢性能 (QuerySet Optimization)？
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Django`, `ORM`, `Performance`, `Database`
 
 ## 問題詳述
 
 在 Django 應用中，低效的資料庫查詢是造成性能問題的主要原因之一。如何有效優化 Django 的 QuerySet 查詢，避免常見的性能陷阱？
+
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.queryset-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從查詢次數與關聯類型辨識 Django ORM 的 N+1 問題。
+  - `LO-2`: 能夠選擇 `select_related()`、`prefetch_related()`、欄位投影或批量操作降低資料庫往返。
+  - `LO-3`: 能夠使用查詢分析工具、索引與資料庫層聚合驗證優化效果，並說明過度預取與寫入成本。
+- **Quick Quiz**: [Python Q10](../../../../QUIZ/05_Python.md#q10)
 
 ## 核心理論與詳解
 

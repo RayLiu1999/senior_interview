@@ -8,6 +8,15 @@
 
 請深入解釋 NestJS 的架構設計、核心概念、設計哲學，以及它與其他 Node.js 框架（如 Express、Koa）的本質區別。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nestjs.architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 NestJS 的模組、Controller、Provider 與 IoC 容器如何組織功能邊界。
+  - `LO-2`: 能夠從依賴註冊到實例注入推導 NestJS 的依賴注入流程。
+  - `LO-3`: 能夠依模組化、平台抽象與跨切面需求評估 NestJS 相對 Express 或 Koa 的架構取捨。
+- **Quick Quiz**: [Node.js Q9](../../../../../QUIZ/07_Node.js.md#q9)
+
 ## 核心理論與詳解
 
 ### NestJS 是什麼？

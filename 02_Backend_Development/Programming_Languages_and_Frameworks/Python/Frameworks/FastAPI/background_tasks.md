@@ -1,7 +1,7 @@
 # FastAPI 後台任務
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Background Tasks`, `Async Tasks`
 
 ## 問題詳述

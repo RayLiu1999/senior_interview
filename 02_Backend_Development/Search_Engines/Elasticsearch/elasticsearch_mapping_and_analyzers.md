@@ -1,7 +1,7 @@
 # Elasticsearch 索引 Mapping 與分析器
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Elasticsearch`, `Mapping`, `Analyzer`, `Text Processing`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 請解釋 Elasticsearch 的 Mapping 機制，以及分析器 (Analyzer) 如何影響索引和搜尋行為。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.mapping.text-keyword`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 `text` 與 `keyword` 的分詞、查詢、排序、聚合與儲存行為。
+  - `LO-2`: 能夠設計包含 Mapping、Analyzer 組件與 Multi-fields 的欄位定義，讓全文搜尋和精確過濾共存。
+  - `LO-3`: 能夠從查詢需求、語言分詞、動態 Mapping 風險與索引大小選擇分析器和生產環境設定。
+- **Quick Quiz**: [Quick Quiz Q3](../../../QUIZ/04_Elasticsearch.md#q3)
 
 ### Mapping 概念
 

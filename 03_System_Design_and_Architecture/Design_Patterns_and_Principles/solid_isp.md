@@ -1,7 +1,7 @@
 # 什麼是介面隔離原則 (Interface Segregation Principle, ISP)？
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `SOLID`, `ISP`, `Design Principles`
 
 ## 問題詳述

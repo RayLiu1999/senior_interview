@@ -1,11 +1,23 @@
 # Centralized Logging Architecture (集中式日誌系統架構)
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Logging`, `Architecture`, `ELK`, `EFK`, `System Design`
 
 ## 問題詳述
 
 在微服務架構中，服務分散在數十甚至數百個容器中，登入每台機器查看日誌是不可能的。如何設計一個高效、可擴展的集中式日誌系統？ELK 和 EFK 架構有什麼區別？
+
+### 測驗對應
+
+- **Concept ID**: `concept.observability.logging.centralized-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能夠設計 Collect、Transport、Buffer、Parse、Store、Analyze 的日誌管線，並比較 ELK、EFK 與 PLG 的取捨。
+  - `LO-2`: 能夠規定包含時間、服務、版本、事件、嚴重度與 `trace_id` 的結構化日誌，並處理脫敏與可搜尋性。
+  - `LO-3`: 能夠在日誌突增、後端背壓或儲存成本受限時選擇緩衝、採樣、保留與降級策略，維持跨訊號關聯。
+- **Hard Assessment**: [多服務 Checkout 事故診斷](../../QUIZ/Hard_Assessments/observability_incident_diagnosis.md)
+- **Quick Quiz**: [Q4](../../QUIZ/10_Observability.md#q4)
+- **覆蓋題型**: `架構設計`, `故障診斷`, `權衡取捨`
 
 ## 核心理論與詳解
 

@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.core.inverted-index`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Elasticsearch 的 Index、Document 與倒排索引，並對應到傳統資料庫的基本概念。
+  - `LO-2`: 能夠追蹤文本經分析、分詞到 term 對應文件 ID 的索引流程，說明其搜尋效率來源。
+  - `LO-3`: 能夠依全文搜尋、日誌分析或近即時查詢需求判斷 Elasticsearch 的適用性與基本架構。
+- **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/04_Elasticsearch.md#q2)
+
 Elasticsearch 是一個基於 Apache Lucene 函式庫開發的、分散式的、開源的搜尋與分析引擎。它以其 **速度**、**可擴展性** 和 **易用性** 而聞名，能夠對各種類型的資料（包括結構化、非結構化、地理空間、數值等）進行近乎即時的儲存、搜尋和分析。
 
 Elasticsearch 通常與 Logstash（資料收集與處理）和 Kibana（資料視覺化）一起構成 **Elastic Stack (ELK Stack)**，為日誌分析、即時應用監控、商業智慧等場景提供完整的解決方案。

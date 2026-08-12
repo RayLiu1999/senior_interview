@@ -1,7 +1,7 @@
 # 什麼是單一職責原則 (Single Responsibility Principle, SRP)？
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `SOLID`, `SRP`, `Design Principles`
 
 ## 問題詳述

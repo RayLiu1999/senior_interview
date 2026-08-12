@@ -1,11 +1,23 @@
 # Dockerfile 最佳實踐
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Docker`, `Dockerfile`, `Optimization`
 
 ## 問題詳述
 
 請說明編寫 Dockerfile 的最佳實踐，包括多階段構建、層快取優化、映像大小優化和安全性考量。
+
+### 測驗對應
+
+- **Concept ID**: `concept.docker.build.dockerfile-practices`
+- **Learning Objectives**:
+  - `LO-1`: 能以多階段建置、最小 runtime 與非 root 使用者設計可部署 Dockerfile。
+  - `LO-2`: 能依 Docker layer cache、build context 與 dependency 變更順序縮短可重現建置時間。
+  - `LO-3`: 能從 build log、image history、漏洞掃描與 runtime 權限證據診斷映像問題。
+- **Quick Quiz**: [Q2](../../../QUIZ/13_Docker.md#q2)
+- **Hard Assessment**: [Docker Build／Runtime 事故診斷](../../../QUIZ/Hard_Assessments/docker_build_runtime_incident.md) (`assessment.docker.build-runtime.incident.v1`)
+- **覆蓋題型**: `建置`, `最佳實踐`, `安全與效能`
 
 ## 核心理論與詳解
 

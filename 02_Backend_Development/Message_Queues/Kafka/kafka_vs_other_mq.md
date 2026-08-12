@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.message-queue.selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Kafka、RabbitMQ 與 Redis 在訊息模型、持久化、順序、重播與路由能力上的差異。
+  - `LO-2`: 能夠根據吞吐量、延遲、消費模式、可靠性與運維條件選擇適合的訊息中介軟體。
+  - `LO-3`: 能夠說明選型對擴展性、成本、故障處理與混合架構的取捨，並提出可驗證的決策依據。
+- **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/02_Message_Queues.md#q2)
+
 ### 四大訊息中介軟體概覽
 
 | 特性 | Kafka | RabbitMQ | Redis | NATS |

@@ -7,15 +7,6 @@ Spring 是 Java 企業級開發的事實標準框架。本節涵蓋 IoC 容器�
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [IoC 容器原理](./ioc_container.md) | 8 | 5 | `IoC`, `DI`, `Container` |
-| [Bean 生命週期](./bean_lifecycle.md) | 8 | 5 | `Bean`, `Lifecycle` |
-| [AOP 實現原理](./aop_implementation.md) | 8 | 5 | `AOP`, `Proxy` |
-| [事務管理](./transaction_management.md) | 8 | 5 | `Transaction`, `@Transactional` |
-| [循環依賴](./circular_dependency.md) | 9 | 4 | `Circular Dependency` |
-| [Spring MVC 流程](./spring_mvc_flow.md) | 7 | 5 | `MVC`, `DispatcherServlet` |
-| [BeanPostProcessor](./bean_post_processor.md) | 7 | 4 | `Extension`, `Hook` |
-| [ApplicationContext](./application_context.md) | 7 | 4 | `Context`, `Container` |
-| [Spring 註解](./spring_annotations.md) | 6 | 5 | `Annotations` |
-| [Spring 事件機制](./spring_events.md) | 6 | 3 | `Events`, `Observer` |
 
 ## 核心知識點
 

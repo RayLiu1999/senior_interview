@@ -1,7 +1,7 @@
 # Dockerfile, Image, Container, Registry：它們是什麼關係？
 
 - **難度**: 3
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Docker`, `Container`
 
 ## 問題詳述

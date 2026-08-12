@@ -1,6 +1,7 @@
 # 貧血模型 vs 充血模型 (Anemic vs Rich Domain Model)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `DDD`, `Domain Model`, `Anti-Pattern`, `Refactoring`
 
 ## 問題詳述

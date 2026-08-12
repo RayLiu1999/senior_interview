@@ -8,6 +8,15 @@
 
 解釋虛擬內存的工作原理，包括地址轉換、分頁機制、TLB（轉換後備緩衝區）、缺頁中斷處理，以及為什麼虛擬內存對現代操作系統至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.virtual-memory.paging`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明虛擬頁、頁表、頁框與 TLB 如何完成虛擬地址到物理地址的轉換。
+  - `LO-2`: 能夠依照缺頁中斷、按需分頁、頁面置換與 swap 流程分析記憶體行為。
+  - `LO-3`: 能夠評估 mmap、Copy-on-Write、Huge Pages 與 working set 對效能和記憶體使用的影響。
+- **Quick Quiz**: [Q4](../../QUIZ/01_Operating_System.md#q4-解釋虛擬記憶體和分頁機制)
+
 ## 核心理論與詳解
 
 ### 1. 虛擬內存的概念與優勢

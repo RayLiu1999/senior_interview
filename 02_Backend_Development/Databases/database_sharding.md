@@ -1,12 +1,21 @@
 # 資料庫分片 (Database Sharding)
 
 - **難度**: 8
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Databases`, `Sharding`, `Scalability`, `System Design`
 
 ## 問題詳述
 
 什麼是資料庫分片 (Sharding)？為什麼需要分片？請解釋幾種常見的分片策略（如範圍分片、雜湊分片）及其優缺點。分片會帶來哪些複雜性？
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.sharding.distribution-strategies`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明水平分片、分片鍵與資料庫分片解決容量、吞吐量及資源競爭的方式。
+  - `LO-2`: 能夠比較範圍、雜湊與目錄分片在均衡性、範圍查詢、擴容與路由複雜度上的取捨。
+  - `LO-3`: 能夠評估跨分片交易、聚合、重平衡、全域 ID 與運維帶來的系統複雜性。
+- **Quick Quiz**: [Q4](../../QUIZ/02_Databases.md#q4-什麼是資料庫分片-sharding有哪些策略)
 
 ## 核心理論與詳解
 

@@ -1,7 +1,7 @@
 # RabbitMQ vs. Kafka：如何選擇？
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `RabbitMQ`, `Kafka`, `Message Queue`, `System Design`
 
 ## 問題詳述

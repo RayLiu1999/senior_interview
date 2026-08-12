@@ -1,7 +1,7 @@
 # FastAPI 數據庫集成
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Database`, `SQLAlchemy`, `Async ORM`
 
 ## 問題詳述

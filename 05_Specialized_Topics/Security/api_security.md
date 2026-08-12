@@ -1,12 +1,23 @@
 # API 安全性最佳實踐
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Security`, `API`, `Rate Limiting`
 
 ## 問題詳述
 
 在設計和實現 RESTful API 時,有哪些關鍵的安全性考量？請解釋速率限制 (Rate Limiting)、API 金鑰管理、CORS 配置等安全機制的重要性和實現方式。
+
+### 測驗對應
+
+- **Concept ID**: `concept.security.api.defense`
+- **Learning Objectives**:
+  - `LO-1`: 能從 authentication、authorization、input validation、rate limit、CORS 與 audit 角度建立 API 威脅模型。
+  - `LO-2`: 能設計分層防護、租戶隔離、敏感操作保護、密鑰管理與安全的錯誤回應。
+  - `LO-3`: 能以 abuse rate、拒絕率、權限事件、延遲、trace 與 audit log 驗證防護效果。
+- **Quick Quiz**: [Q3](../../QUIZ/16_Security.md#q3)
+- **Hard Assessment**: [Web Security Breach Incident](../../QUIZ/Hard_Assessments/web_security_breach_incident.md) (`assessment.security.web-breach.api-incident.v1`)
+- **覆蓋題型**: `API 威脅模型`, `濫用防護`, `安全治理`
 
 ## 核心理論與詳解
 

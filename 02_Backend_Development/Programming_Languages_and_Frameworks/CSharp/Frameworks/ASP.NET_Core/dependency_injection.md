@@ -1,6 +1,7 @@
 # 依賴注入容器
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `DI`, `IoC`, `Container`
 
 ## 問題詳述
@@ -268,3 +269,13 @@ public static class ServiceCollectionExtensions
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.aspnet-core.di-lifetimes`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Transient、Scoped 與 Singleton 的建立時機、共享範圍與適用服務。
+  - `LO-2`: 能夠使用介面、工廠、Options、具名服務與 IEnumerable 註冊並注入依賴。
+  - `LO-3`: 能夠診斷 Singleton 捕獲 Scoped 的生命週期錯誤，並以 scope factory 與容器驗證修正。
+- **Quick Quiz**: [Q13](../../../../../QUIZ/08_CSharp.md#q13-aspnet-core-的依賴注入生命週期有哪些)
+- **Hard Assessment**: [C# ASP.NET Runtime Incident](../../../../../QUIZ/Hard_Assessments/csharp_aspnet_runtime_incident.md) (`assessment.csharp.aspnet-runtime.incident.v1`)

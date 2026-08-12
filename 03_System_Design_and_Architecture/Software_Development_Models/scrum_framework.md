@@ -1,6 +1,7 @@
 # Scrum 框架
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Scrum`, `Agile`, `Framework`, `Methodology`
 
 ## 問題詳述

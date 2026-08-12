@@ -10,6 +10,7 @@
 ## 🤖 LLM 整合
 
 ### Q1: 什麼是 RAG (Retrieval-Augmented Generation)？
+<!-- Concept ID: concept.ai.rag.retrieval-generation-pipeline; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -49,6 +50,7 @@
 ---
 
 ### Q2: 什麼是 Prompt Engineering？有哪些最佳實踐？
+<!-- Concept ID: concept.ai.prompt.engineering; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -92,6 +94,7 @@
 ---
 
 ### Q3: 如何設計 LLM 的快取策略以降低成本？
+<!-- Concept ID: concept.ai.llm.caching; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -130,6 +133,7 @@
 ---
 
 ### Q4: 什麼是 Function Calling / Tool Use？
+<!-- Concept ID: concept.ai.llm.function-calling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -179,6 +183,7 @@
 ## 🗄️ 向量資料庫
 
 ### Q5: 什麼是向量資料庫？與傳統資料庫有何不同？
+<!-- Concept ID: concept.ai.vector-database.fundamentals; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -217,6 +222,7 @@
 ---
 
 ### Q6: 什麼是向量嵌入 (Embeddings)？如何生成？
+<!-- Concept ID: concept.ai.embeddings.generation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -255,6 +261,7 @@
 ---
 
 ### Q7: 比較主流向量資料庫的特點和選型考量
+<!-- Concept ID: concept.ai.vector-database.selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -286,6 +293,7 @@
 ## 🏗️ AI 系統設計
 
 ### Q8: 設計一個智能客服系統 (FAQ + LLM)
+<!-- Concept ID: concept.ai.ai-system-design.customer-service; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -337,6 +345,7 @@
 ---
 
 ### Q9: 設計一個文件搜尋與問答系統
+<!-- Concept ID: concept.ai.ai-system-design.document-qa; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -383,6 +392,8 @@
 ---
 
 ### Q10: 模型監控與 LLM 可觀測性
+<!-- Concept ID: concept.ai.llm.observability; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+<!-- Article mapping: pending -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -425,8 +436,6 @@
 - 負面反饋增加
 
 </details>
-
-📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/AI_Infrastructure/ml_observability.md)
 
 ---
 

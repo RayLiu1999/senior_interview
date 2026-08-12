@@ -1,12 +1,21 @@
 # WebSocket vs. HTTP Polling/Long-Polling
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `WebSocket`, `HTTP`, `Polling`, `Real-time`
 
 ## 問題詳述
 
 請比較 WebSocket 與傳統的 HTTP 輪詢 (Polling) 和長輪詢 (Long-Polling) 在實現即時通訊時的差異。它們各自的優缺點和適用場景是什麼？
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.realtime.websocket-long-polling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 WebSocket 從 HTTP 升級、持久連線到全雙工訊息傳遞的基本流程。
+  - `LO-2`: 能夠比較 WebSocket、HTTP 長輪詢與 SSE 在延遲、連線成本、方向性與相容性上的差異。
+  - `LO-3`: 能夠根據更新頻率、即時性、斷線重連、心跳與水平擴展需求選擇即時通訊方案。
+- **Quick Quiz**: [Q7](../../../QUIZ/02_API_Design.md#q7-websocket-與-http-長輪詢的差異是什麼)
 
 ## 核心理論與詳解
 

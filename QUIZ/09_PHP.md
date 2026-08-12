@@ -9,6 +9,7 @@
 ## 🎯 核心特性 (Core)
 
 ### Q1: PHP 8+ 有哪些重要的新特性？
+<!-- Concept ID: concept.php.core.php8-features; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -49,6 +50,7 @@
 ---
 
 ### Q2: 請解釋 PHP 的類型系統演進，什麼是 Strict Mode？
+<!-- Concept ID: concept.php.core.type-system-strict-mode; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -93,6 +95,7 @@ add("1", "2"); // TypeError！嚴格模式下不自動轉型
 ---
 
 ### Q3: Trait、Interface 和 Abstract Class 有什麼區別？何時使用？
+<!-- Concept ID: concept.php.core.trait-interface-abstract-class; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -144,6 +147,7 @@ add("1", "2"); // TypeError！嚴格模式下不自動轉型
 ---
 
 ### Q4: PHP 如何實現依賴注入 (DI)？什麼是 IoC 容器？
+<!-- Concept ID: concept.php.core.di-container-ioc; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -200,6 +204,7 @@ public function __construct(MailerInterface $mailer) {}
 ---
 
 ### Q5: 什麼是 PSR-4 自動載入？Composer 如何管理依賴？
+<!-- Concept ID: concept.php.core.psr4-autoloading; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🔴 必考
 
@@ -252,6 +257,7 @@ class UserService {} // 全名：App\Services\UserService
 ---
 
 ### Q6: PHP 常見的安全漏洞有哪些？如何防範？
+<!-- Concept ID: concept.php.core.web-security-vulnerabilities; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -307,6 +313,7 @@ if (password_verify($input, $hash)) { /* 成功 */ }
 ---
 
 ### Q7: 什麼是 OPcache 和 JIT？它們如何提升 PHP 效能？
+<!-- Concept ID: concept.php.core.opcache-jit; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -358,6 +365,7 @@ opcache.jit=1255  ; Tracing JIT
 ---
 
 ### Q8: PHP 的垃圾回收機制是如何運作的？
+<!-- Concept ID: concept.php.core.garbage-collection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -414,6 +422,7 @@ gc_collect_cycles(); // 強制執行
 ## 🔧 工具鏈 (Tooling)
 
 ### Q9: 什麼是 PSR 標準？有哪些常見的 PSR？
+<!-- Concept ID: concept.php.tooling.psr-standards; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -460,6 +469,7 @@ interface MiddlewareInterface {
 ## 🌐 Web 伺服器
 
 ### Q10: 什麼是 PHP-FPM？它如何與 Nginx 配合？
+<!-- Concept ID: concept.php.web-servers.php-fpm; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -515,6 +525,7 @@ location ~ \.php$ {
 ## 🚀 Laravel 框架
 
 ### Q11: 請解釋 Laravel 的請求生命週期
+<!-- Concept ID: concept.php.laravel.request-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -568,6 +579,7 @@ location ~ \.php$ {
 ---
 
 ### Q12: Laravel Service Container 是如何運作的？
+<!-- Concept ID: concept.php.laravel.service-container-ioc; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -629,6 +641,7 @@ public function store(Request $request, OrderService $service) {
 ---
 
 ### Q13: Laravel Facade 的原理是什麼？
+<!-- Concept ID: concept.php.laravel.facades; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -692,6 +705,7 @@ PaymentService::process($order);
 ---
 
 ### Q14: Eloquent ORM 的 N+1 問題如何解決？
+<!-- Concept ID: concept.php.laravel.eloquent-n-plus-one; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -758,6 +772,7 @@ Model::preventLazyLoading(! app()->isProduction());
 ---
 
 ### Q15: Laravel Middleware 的執行順序和原理是什麼？
+<!-- Concept ID: concept.php.laravel.middleware; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -823,6 +838,7 @@ public function handle($request, Closure $next, ...$roles) {
 ---
 
 ### Q16: Laravel 如何進行效能優化？
+<!-- Concept ID: concept.php.laravel.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -887,6 +903,7 @@ $value = Cache::remember('key', 3600, function () {
 ## 🔬 進階主題
 
 ### Q17: PHP 閉包 (Closure) 如何使用？use 關鍵字的作用是什麼？
+<!-- Concept ID: concept.php.core.closures; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
 
@@ -944,6 +961,7 @@ $callable = Closure::fromCallable([$obj, 'method']);
 ---
 
 ### Q18: PHP 生成器 (Generator) 是什麼？何時使用？
+<!-- Concept ID: concept.php.core.generators-iterators; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 

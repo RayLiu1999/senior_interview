@@ -395,4 +395,3 @@ def test_api_load():
 
 - [單元測試最佳實踐](./unit_testing_best_practices.md)
 - [pytest 框架深入解析](./pytest_framework.md)
-- [Python 性能優化](../Core/performance_optimization.md)

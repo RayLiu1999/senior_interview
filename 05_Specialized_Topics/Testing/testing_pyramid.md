@@ -1,7 +1,7 @@
 # 測試金字塔 (Testing Pyramid)
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Testing`, `Testing Pyramid`, `Best Practices`
 
 ## 問題詳述

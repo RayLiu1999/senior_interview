@@ -8,6 +8,16 @@
 
 本問題考察面試者對 Go 語言中處理請求生命週期、傳遞上下文資訊以及控制併發流程的理解。`context` 套件是現代 Go 服務端編程的基石，熟練掌握它是編寫健壯、可維護的分散式系統的必要條件。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.standard-library.context-cancellation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 `Done`、`Err`、`Deadline` 與 `Value` 的用途及可觀察結果。
+  - `LO-2`: 能夠建立帶取消、超時或截止時間的 Context 樹，並在下游用 `select` 響應取消。
+  - `LO-3`: 能夠遵循 `ctx` 首參數、明確傳遞與及時 `cancel` 的實踐，並評估 request-scoped value 的邊界。
+- **Quick Quiz**: [Go Q9](../../../../QUIZ/06_Go.md#q9)
+- **Hard Assessment**: [Go Worker Pipeline 診斷](../../../../QUIZ/Hard_Assessments/go_concurrent_worker_diagnosis.md) (`assessment.go.concurrent.worker-pipeline.v1`)
+
 ## 核心理論與詳解
 
 `context.Context` 是一個標準庫中的介面，它定義了一種在 API 邊界之間以及在多個 Goroutine 之間傳遞請求範圍內的截止日期（deadlines）、取消信號（cancellation signals）和其他上下文值的方法。

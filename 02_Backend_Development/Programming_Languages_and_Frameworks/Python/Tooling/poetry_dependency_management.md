@@ -1,6 +1,7 @@
 # Poetry 現代依賴管理
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Poetry`, `Dependency`, `Lock File`
 
 ## 問題詳述

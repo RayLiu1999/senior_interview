@@ -1,11 +1,23 @@
 # Docker 安全性最佳實踐
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Docker`, `Security`, `Best Practices`
 
 ## 問題詳述
 
 請深入解釋 Docker 的安全機制和最佳實踐，包括映像安全、容器隔離、權限管理、密鑰管理和漏洞掃描。
+
+### 測驗對應
+
+- **Concept ID**: `concept.docker.security.supply-chain-runtime`
+- **Learning Objectives**:
+  - `LO-1`: 能建立從 base image、dependency、registry 到 runtime capability 的威脅模型。
+  - `LO-2`: 能設計非 root、最小 capability、secret injection、簽章與漏洞修補流程。
+  - `LO-3`: 能從 SBOM、scan、runtime audit 與 image provenance 證據判斷風險與發布門檻。
+- **Quick Quiz**: [Q4](../../../QUIZ/13_Docker.md#q4)
+- **Hard Assessment**: [Docker Build／Runtime 事故診斷](../../../QUIZ/Hard_Assessments/docker_build_runtime_incident.md) (`assessment.docker.build-runtime.incident.v1`)
+- **覆蓋題型**: `供應鏈`, `隔離`, `安全診斷`
 
 ## 核心理論與詳解
 

@@ -1,6 +1,7 @@
 # 系統演進第三階段：分散式架構與微服務 (Distributed Architecture & Microservices)
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `Architecture`, `Microservices`, `Distributed Systems`, `Trade-offs`
 
 ## 問題詳述

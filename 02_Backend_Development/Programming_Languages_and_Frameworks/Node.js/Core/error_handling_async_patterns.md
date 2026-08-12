@@ -8,6 +8,15 @@
 
 請深入解釋 Node.js 中的錯誤處理機制、非同步模式的演進（Callback → Promise → Async/Await），以及如何正確處理各種場景下的錯誤。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.async-error-handling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分同步 throw、callback error-first、Promise rejection 與 async/await 例外的捕獲邊界。
+  - `LO-2`: 能夠選擇 Promise 組合器與 async/await 的錯誤傳播方式，避免遺漏 rejection 或錯誤被吞掉。
+  - `LO-3`: 能夠區分操作錯誤與程式錯誤，並設計記錄、恢復、重拋與程序退出策略。
+- **Quick Quiz**: [Node.js Q3](../../../../QUIZ/07_Node.js.md#q3)
+
 ## 核心理論與詳解
 
 ### 錯誤類型

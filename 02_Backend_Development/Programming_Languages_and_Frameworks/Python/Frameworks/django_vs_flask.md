@@ -1,6 +1,7 @@
 # Django 與 Flask 的差異與選擇？
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Django`, `Flask`, `Framework`, `Comparison`
 
 ## 問題詳述

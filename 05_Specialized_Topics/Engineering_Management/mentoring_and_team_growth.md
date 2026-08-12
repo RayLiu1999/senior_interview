@@ -1,6 +1,7 @@
 # Mentoring & Team Growth (導師制度與團隊成長)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Mentoring`, `Feedback`, `Career Growth`, `1:1`
 
 ## 問題詳述

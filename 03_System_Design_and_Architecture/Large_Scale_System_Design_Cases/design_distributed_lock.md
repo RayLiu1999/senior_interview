@@ -8,6 +8,17 @@
 
 設計一個分散式鎖系統，用於分散式環境下的資源協調和互斥訪問。系統需要保證互斥性、避免死鎖、支援鎖超時和續期，並處理網路分區等異常情況。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.distributed-lock.correctness`
+- **Learning Objectives**:
+  - **LO-1**: 能區分互斥、活性、租約、ownership token 與 fencing token 的保證邊界。
+  - **LO-2**: 能比較 Redis lease、ZooKeeper／共識服務與資料庫鎖在延遲、可用性與分區行為上的取捨。
+  - **LO-3**: 能從持有者失聯、GC pause、網路延遲與續期競爭的證據設計安全恢復流程。
+- **Quick Quiz**: [Q2](../../QUIZ/12_System_Design.md#q2)
+- **Hard Assessment**: [限量資源容量與一致性設計](../../QUIZ/Hard_Assessments/flash_sale_capacity_correctness.md) (`assessment.system-design.limited-resource-capacity.v1`)
+- **覆蓋題型**: `一致性`, `故障診斷`, `系統設計`
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要分散式鎖

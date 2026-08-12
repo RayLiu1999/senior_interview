@@ -1,6 +1,7 @@
 # Prompt Engineering 基礎與進階
 
 - **難度**: 4
+- **重要程度**: 4
 - **標籤**: `AI`, `Prompt Engineering`, `LLM`, `CoT`
 
 ## 問題詳述

@@ -726,3 +726,12 @@ $value = match($property) {
 6. 啟用 JIT
 
 現代 PHP 已經是一門高性能、類型安全的語言！
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.php8-features`
+- **Learning Objectives**:
+  - `LO-1`: 能夠按 PHP 8.0、8.1、8.2 與 8.3 分類說明主要語言特性及其解決的問題。
+  - `LO-2`: 能夠在實際 PHP 設計中選擇 Union Types、Attributes、Match、Enum、Readonly、Fibers 等特性。
+  - `LO-3`: 能夠評估 JIT、嚴格型別與現代語法遷移對 CPU 密集工作、Web I/O 與可維護性的影響。
+- **Quick Quiz**: [Q1](../../../../QUIZ/09_PHP.md#q1-php-8-有哪些重要的新特性)

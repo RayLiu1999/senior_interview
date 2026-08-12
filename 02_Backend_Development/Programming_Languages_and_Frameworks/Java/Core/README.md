@@ -8,19 +8,7 @@
 |------|------|----------|------|
 | [Java 集合框架深入解析](./java_collections_framework.md) | 8 | 5 | `Collections`, `Data Structures` |
 | [泛型機制詳解](./generics_explained.md) | 7 | 5 | `Generics`, `Type System` |
-| [異常處理最佳實踐](./exception_handling.md) | 6 | 5 | `Exception`, `Error Handling` |
 | [Java 8+ 新特性](./java8_plus_features.md) | 7 | 5 | `Lambda`, `Stream API`, `Modern Java` |
-| [反射與註解](./reflection_and_annotations.md) | 8 | 4 | `Reflection`, `Annotations`, `Metaprogramming` |
-| [IO 與 NIO](./io_and_nio.md) | 7 | 4 | `IO`, `NIO`, `Network` |
-| [序列化機制](./serialization.md) | 6 | 4 | `Serialization`, `Persistence` |
-| [內部類與匿名類](./inner_classes.md) | 6 | 3 | `Inner Classes`, `Anonymous Classes` |
-| [String 與不可變性](./string_immutability.md) | 6 | 5 | `String`, `Immutability` |
-| [equals 與 hashCode](./equals_and_hashcode.md) | 7 | 5 | `Object Methods`, `Hash` |
-| [克隆機制](./cloning.md) | 6 | 3 | `Clone`, `Copy` |
-| [枚舉類型](./enum_types.md) | 5 | 4 | `Enum`, `Type Safety` |
-| [接口與抽象類](./interface_vs_abstract.md) | 6 | 5 | `OOP`, `Design` |
-| [Java 模組系統](./java_module_system.md) | 7 | 3 | `JPMS`, `Modules`, `Java 9+` |
-| [函數式編程](./functional_programming.md) | 7 | 5 | `Functional`, `Lambda`, `Stream` |
 
 ## 核心知識點
 

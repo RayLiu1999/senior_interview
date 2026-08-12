@@ -8,6 +8,15 @@
 
 請解釋 Node.js 中的 Cluster 模組和 Worker Threads 的工作原理、使用場景和區別，以及如何利用多核 CPU 提升應用性能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.cluster-worker-threads`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Cluster 的多進程隔離與 Worker Threads 的同進程執行、通訊和記憶體模型。
+  - `LO-2`: 能夠依多核 HTTP 服務、CPU 密集計算與共享資料需求選擇並行方案。
+  - `LO-3`: 能夠說明 IPC、SharedArrayBuffer、Worker Pool、故障重啟與資源開銷的取捨。
+- **Quick Quiz**: [Node.js Q5](../../../../QUIZ/07_Node.js.md#q5)
+
 ## 核心理論與詳解
 
 ### Node.js 的單線程模型

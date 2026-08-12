@@ -1,6 +1,7 @@
 # 垃圾回收機制
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `GC`, `Memory Management`, `Generations`
 
 ## 問題詳述
@@ -207,3 +208,13 @@ public class MemoryMonitor
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.clr.garbage-collection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 GC Roots、可達性、Gen 0／1／2、LOH 與壓縮回收的關係。
+  - `LO-2`: 能夠比較 Workstation、Server、Background GC 與終結器對吞吐量、停頓和生命週期的影響。
+  - `LO-3`: 能夠從分配量、集合次數、快取與事件訂閱判斷 GC 壓力或記憶體洩漏，並選擇池化與監控手段。
+- **Quick Quiz**: [Q10](../../../../QUIZ/08_CSharp.md#q10-net-垃圾回收機制是如何工作的)
+- **Hard Assessment**: [C# ASP.NET Runtime Incident](../../../../QUIZ/Hard_Assessments/csharp_aspnet_runtime_incident.md) (`assessment.csharp.aspnet-runtime.incident.v1`)

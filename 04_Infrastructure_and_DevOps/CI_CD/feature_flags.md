@@ -8,6 +8,17 @@
 
 功能旗標（Feature Flags，又稱 Feature Toggles 或 Feature Switches）是一種軟體開發技術，允許在**不重新部署程式碼**的情況下，動態地開啟或關閉特定功能。它是實現漸進式發布（Progressive Delivery）、持續部署與低風險上線的核心工具。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.delivery.feature-flags`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 release、experiment、ops 與 permission flag 的生命週期與風險。
+  - `LO-2`: 能設計有審計、owner、預設值、targeting 與 kill switch 的旗標治理。
+  - `LO-3`: 能從 flag exposure、版本、錯誤率與業務指標診斷漸進發布問題。
+- **Quick Quiz**: [Q3](../../QUIZ/14_CI_CD.md#q3)
+- **Hard Assessment**: [安全交付 Pipeline 事故診斷](../../QUIZ/Hard_Assessments/safe_delivery_pipeline_incident.md) (`assessment.cicd.safe-delivery.pipeline-incident.v1`)
+- **覆蓋題型**: `漸進發布`, `治理`, `故障診斷`
+
 ## 核心理論與詳解
 
 ### 功能旗標解決的核心問題

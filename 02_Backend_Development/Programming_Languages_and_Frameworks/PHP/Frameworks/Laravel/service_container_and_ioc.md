@@ -1,7 +1,7 @@
 # Laravel 服務容器 (Service Container) 與 依賴注入 (IoC)
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Laravel`, `IoC`, `Service Container`, `Dependency Injection`
 
 ## 問題詳述
@@ -153,3 +153,13 @@ class UserController extends Controller
 ### 結論
 
 Laravel 的服務容器透過實現控制反轉和依賴注入，極大地降低了應用程式各元件之間的耦合度，提高了程式碼的可測試性、可維護性和靈活性。理解其「綁定」和「解析」的核心概念，是掌握 Laravel 框架精髓的關鍵一步。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.service-container-ioc`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Laravel 如何以服務容器把 IoC 與建構函式依賴注入落實為可替換的元件關係。
+  - `LO-2`: 能夠比較 bind、singleton 與 instance 的生命週期，並追蹤介面綁定到解析實例的流程。
+  - `LO-3`: 能夠使用服務提供者、反射與手動解析處理控制器、路由、中介層、事件或隊列的依賴。
+- **Quick Quiz**: [Q12](../../../../../QUIZ/09_PHP.md#q12-laravel-service-container-是如何運作的)
+- **Hard Assessment**: [PHP-FPM Laravel Runtime Incident](../../../../../QUIZ/Hard_Assessments/php_fpm_laravel_runtime_incident.md) (`assessment.php.fpm-laravel-runtime.incident.v1`)

@@ -8,6 +8,17 @@
 
 GitHub Actions 是 GitHub 原生的 CI/CD 平台，允許在 GitHub 倉庫中定義自動化工作流程（Workflow）。它是目前業界最廣泛使用的 CI/CD 工具之一，在面試中高頻考察其核心概念、Workflow 設計，以及 Secret 管理與安全實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.pipeline.github-actions-quality-gates`
+- **Learning Objectives**:
+  - `LO-1`: 能拆分 workflow、job、step、artifact 與 environment 的責任邊界。
+  - `LO-2`: 能設計可重現、可平行、具 quality gate、secret protection 與最小權限的 CI pipeline。
+  - `LO-3`: 能用 build、test、scan、artifact 與 deployment evidence 診斷 pipeline 或 promotion 失敗。
+- **Quick Quiz**: [Q4](../../QUIZ/14_CI_CD.md#q4)
+- **Hard Assessment**: [安全交付 Pipeline 事故診斷](../../QUIZ/Hard_Assessments/safe_delivery_pipeline_incident.md) (`assessment.cicd.safe-delivery.pipeline-incident.v1`)
+- **覆蓋題型**: `CI`, `品質閘門`, `供應鏈安全`
+
 ## 核心理論與詳解
 
 ### 核心概念層次結構

@@ -9,6 +9,7 @@
 ## 🔄 進程與線程
 
 ### Q1: 進程與線程的區別是什麼？
+<!-- Concept ID: concept.operating-system.process-thread.concurrency-model; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🔴 必考
 
@@ -42,6 +43,7 @@
 ---
 
 ### Q2: 進程間通信 (IPC) 有哪些方式？
+<!-- Concept ID: concept.operating-system.ipc.mechanism-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -76,6 +78,7 @@
 ---
 
 ### Q3: 什麼是死鎖？如何預防和解決？
+<!-- Concept ID: concept.operating-system.deadlock.prevention-avoidance; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -117,6 +120,7 @@
 ## 💾 記憶體管理
 
 ### Q4: 解釋虛擬記憶體和分頁機制
+<!-- Concept ID: concept.operating-system.virtual-memory.paging; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -163,6 +167,7 @@
 ## 📁 I/O 模型
 
 ### Q5: 五種 I/O 模型的區別是什麼？
+<!-- Concept ID: concept.operating-system.io-models.model-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -199,6 +204,7 @@
 ---
 
 ### Q6: epoll vs select vs poll 的區別
+<!-- Concept ID: concept.operating-system.io-multiplexing.epoll-select-poll; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -236,6 +242,7 @@
 ---
 
 ### Q7: 什麼是零拷貝 (Zero-Copy)？
+<!-- Concept ID: concept.operating-system.disk-io.zero-copy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -285,6 +292,7 @@
 ## 🔐 線程同步
 
 ### Q8: 線程同步機制有哪些？
+<!-- Concept ID: concept.operating-system.thread-synchronization.lock-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 

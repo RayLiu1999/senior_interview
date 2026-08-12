@@ -8,6 +8,15 @@
 
 請深入解釋 TypeScript 的進階類型系統，包括泛型、條件類型、映射類型、工具類型以及類型推斷等概念。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.typescript.advanced-types`
+- **Learning Objectives**:
+  - `LO-1`: 能夠使用泛型與 `keyof` 約束表達可重用且保留型別關係的 API。
+  - `LO-2`: 能夠推導條件類型、`infer` 與分布式條件類型的結果。
+  - `LO-3`: 能夠使用映射類型與工具類型建模唯讀、可選、欄位挑選和型別轉換需求。
+- **Quick Quiz**: [Node.js Q12](../../../../QUIZ/07_Node.js.md#q12)
+
 ## 核心理論與詳解
 
 ### 1. 泛型（Generics）

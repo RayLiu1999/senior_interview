@@ -1,7 +1,7 @@
 # PHP 的垃圾回收 (Garbage Collection) 機制是如何運作的？
 
 - **難度**: 7
-- **重要程度**: 3
+- **重要程度**: 4
 - **標籤**: `PHP`, `Core`, `Internals`, `Memory Management`
 
 ## 問題詳述
@@ -96,3 +96,13 @@ PHP 的 GC 機制專門用來檢測並清理那些 `refcount` 大於 0 但實際
 - 這個演算法不是實時的，它會在一個包含潛在垃圾的緩衝區滿了之後觸發。
 - 演算法通過「模擬刪除」和「模擬恢復」來識別出那些雖然 `refcount` > 0 但實際上已經脫離主程式作用域的循環引用結構，並將其清理。
 - 開發者可以通過 `gc_enable()`, `gc_disable()` 和 `gc_collect_cycles()` 函式來手動控制 GC 的行為，但在絕大多數情況下，讓 PHP 自動管理是最佳選擇。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.garbage-collection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 zval、refcount 與引用在 PHP 變數生命週期中的角色。
+  - `LO-2`: 能夠追蹤循環引用如何讓引用計數無法歸零，並描述根緩衝區、模擬刪除與模擬恢復的週期回收流程。
+  - `LO-3`: 能夠辨識長生命週期程式中的循環引用風險，並選擇自動 GC 或 gc_collect_cycles 等診斷與控制手段。
+- **Quick Quiz**: [Q8](../../../../QUIZ/09_PHP.md#q8-php-的垃圾回收機制是如何運作的)
+- **Hard Assessment**: [PHP-FPM Laravel Runtime Incident](../../../../QUIZ/Hard_Assessments/php_fpm_laravel_runtime_incident.md) (`assessment.php.fpm-laravel-runtime.incident.v1`)

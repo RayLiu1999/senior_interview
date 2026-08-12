@@ -25,6 +25,8 @@
 - **核心理論與詳解**: 深入淺出的結構化解釋。
 - **程式碼範例 (可選)**: 輔助理解核心概念的簡潔程式碼。
 
+本專案另外提供兩條自測路徑：`QUIZ/` 中的題目適合快速複習與口頭回答；[硬測驗軌道](./QUIZ/Hard_Assessments/README.md) 則以學習目標、故障情境、權衡取捨與評分規準驗證實際應用能力。
+
 ## 目錄
 
 | 分類 | 說明 |
@@ -35,6 +37,7 @@
 | [**`04_Infrastructure_and_DevOps`**](./04_Infrastructure_and_DevOps/) | 基礎設施與 DevOps，涉及雲端運算、容器化、CI/CD 和可觀測性。 |
 | [**`05_Specialized_Topics`**](./05_Specialized_Topics/) | 特定領域主題，如資訊安全和軟體測試。 |
 | [**`06_Frontend_Development`**](./06_Frontend_Development/) | 前端開發，涵蓋使用者介面設計、前端框架和效能優化。 |
+| [**`QUIZ`**](./QUIZ/) | 重點考題與硬測驗，將概念連結到快速自測或情境診斷。 |
 
 ## 貢獻指南
 

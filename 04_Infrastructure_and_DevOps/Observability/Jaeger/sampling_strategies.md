@@ -1,6 +1,7 @@
 # Sampling Strategies (採樣策略)
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Jaeger`, `Tracing`, `Sampling`, `Performance`
 
 ## 問題詳述

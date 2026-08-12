@@ -1,6 +1,7 @@
 # Docker 網路模型：Bridge、Host、Overlay
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Docker`, `Networking`, `Bridge`, `Overlay`
 
 ## 問題詳述

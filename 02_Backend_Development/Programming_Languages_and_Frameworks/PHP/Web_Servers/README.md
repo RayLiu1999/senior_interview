@@ -7,11 +7,6 @@
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [PHP-FPM 架構與角色](./php_fpm_and_its_role.md) | 9 | 5 | `PHP-FPM`, `Process Management` |
-| [Nginx 與 PHP-FPM 整合](./nginx_php_fpm_integration.md) | 7 | 5 | `Nginx`, `FastCGI` |
-| [Apache mod_php vs PHP-FPM](./apache_modphp_vs_phpfpm.md) | 6 | 4 | `Apache`, `Comparison` |
-| [PHP-FPM 進程管理模式](./phpfpm_process_management_modes.md) | 8 | 5 | `Process Pool`, `Configuration` |
-| [PHP-FPM 性能調優](./phpfpm_performance_tuning.md) | 8 | 5 | `Performance`, `Optimization` |
-| [FastCGI 協議詳解](./fastcgi_protocol.md) | 7 | 3 | `FastCGI`, `Protocol` |
 
 ## 核心概念
 

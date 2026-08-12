@@ -1,7 +1,7 @@
 # Flask 性能優化
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Performance`, `Caching`, `Optimization`
 
 ## 問題詳述

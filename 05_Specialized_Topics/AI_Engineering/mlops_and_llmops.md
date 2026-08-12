@@ -1,6 +1,7 @@
 # MLOps vs LLMOps (MLOps 與 LLMOps)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `MLOps`, `LLMOps`, `DevOps`, `AI Engineering`
 
 ## 問題詳述

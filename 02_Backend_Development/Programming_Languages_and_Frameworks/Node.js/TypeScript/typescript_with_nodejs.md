@@ -8,6 +8,15 @@
 
 請深入解釋如何在 Node.js 專案中整合 TypeScript，包括設定、編譯策略、開發工作流程以及生產環境部署。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.typescript.node-integration`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依 Node.js 執行環境設定 `target`、`module`、`moduleResolution`、輸出目錄與嚴格檢查。
+  - `LO-2`: 能夠比較 ts-node、tsx、tsc 與 esbuild 在開發速度、型別檢查和生產編譯上的角色。
+  - `LO-3`: 能夠設計從 TypeScript 原始碼到可部署 JavaScript、source map 與型別宣告的工作流程。
+- **Quick Quiz**: [Node.js Q11](../../../../QUIZ/07_Node.js.md#q11)
+
 ## 核心理論與詳解
 
 ### 1. 為什麼在 Node.js 中使用 TypeScript

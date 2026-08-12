@@ -1,7 +1,7 @@
 # Indexing in MongoDB
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `MongoDB`, `Indexing`, `Performance`
 
 ## 問題詳述

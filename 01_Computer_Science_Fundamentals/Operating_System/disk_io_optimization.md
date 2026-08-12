@@ -8,6 +8,15 @@
 
 解釋磁盤 I/O 的性能瓶頸、操作系統層面的優化技術（I/O 調度算法、頁緩存、預讀）、零拷貝技術（sendfile、mmap），以及應用層的優化策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.disk-io.zero-copy`
+- **Learning Objectives**:
+  - `LO-1`: 能夠拆解磁碟 I/O 從應用、頁緩存、檔案系統、塊層到 DMA 的資料路徑與瓶頸。
+  - `LO-2`: 能夠比較頁緩存、預讀、I/O 調度、Direct I/O、sendfile 與 mmap 的適用情境。
+  - `LO-3`: 能夠根據吞吐量、延遲、持久性與 CPU 拷貝成本設計批次、緩衝或零拷貝優化方案。
+- **Quick Quiz**: [Q7](../../QUIZ/01_Operating_System.md#q7-什麼是零拷貝-zero-copy)
+
 ## 核心理論與詳解
 
 ### 1. 磁盤 I/O 性能特徵

@@ -1,7 +1,7 @@
 # Elasticsearch 與關聯式資料庫的資料同步
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Elasticsearch`, `Data Sync`, `Database`, `CDC`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 在實際專案中，如何將 MySQL 等關聯式資料庫的資料同步到 Elasticsearch？有哪些常見方案和各自的優缺點？
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.data-sync`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較雙寫、Outbox、訊息佇列、CDC 與定時同步在即時性、一致性、複雜度與適用場景上的差異。
+  - `LO-2`: 能夠設計 MySQL 變更經由事件或 Binlog 傳到 Elasticsearch 的可靠同步流程，包含重試、冪等與刪除處理。
+  - `LO-3`: 能夠依資料規模、故障恢復、延遲與應用程式改動成本選擇方案，並定義一致性驗證方式。
+- **Quick Quiz**: [Quick Quiz Q10](../../../QUIZ/04_Elasticsearch.md#q10)
 
 資料同步是 Elasticsearch 實際應用中最常見的挑戰之一。主要需要解決：資料一致性、同步延遲、故障恢復等問題。
 

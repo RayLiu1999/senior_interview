@@ -8,6 +8,16 @@
 
 本問題旨在考察面試者對 Go 語言處理多路併發通訊的能力。`select` 是 Go 併發編程中一個非常核心且強大的工具，理解它的工作原理和應用場景是編寫複雜併發邏輯的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.concurrency.select-multiplexing`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 `select` 如何等待多個 Channel 操作並在多個就緒 case 中做選擇。
+  - `LO-2`: 能夠使用 `default` 與計時器設計非阻塞操作、超時控制和取消流程。
+  - `LO-3`: 能夠評估 select loop 的退出條件，避免忙等、飢餓或 Goroutine 無法終止。
+- **Quick Quiz**: [Go Q3](../../../../QUIZ/06_Go.md#q3)
+- **Hard Assessment**: [Go Worker Pipeline 診斷](../../../../QUIZ/Hard_Assessments/go_concurrent_worker_diagnosis.md) (`assessment.go.concurrent.worker-pipeline.v1`)
+
 ## 核心理論與詳解
 
 `select` 陳述式是 Go 語言中一種專門用於處理多個 Channel 讀寫操作的控制結構。它允許一個 Goroutine 同時等待多個通訊操作，並在其中一個可以進行時執行對應的程式碼塊。

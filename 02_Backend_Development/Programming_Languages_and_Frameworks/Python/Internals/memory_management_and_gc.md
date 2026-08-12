@@ -8,6 +8,16 @@
 
 請詳細解釋 CPython 的記憶體管理機制，包括小物件和大物件的記憶體池 (Memory Pools)。此外，請闡述 Python 的垃圾回收 (Garbage Collection, GC) 是如何運作的，特別是引用計數 (Reference Counting) 的角色，以及分代回收 (Generational GC) 是如何解決循環引用 (Reference Cycles) 問題的。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.internals.memory-management-gc`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 CPython 對小物件使用的 Arena、Pool、Block 記憶體層級與大物件分配方式。
+  - `LO-2`: 能夠說明引用計數歸零時的即時回收，以及它無法處理循環引用的原因。
+  - `LO-3`: 能夠描述分代 GC 偵測不可達循環的流程，並判斷其與引用計數的互補關係。
+- **Quick Quiz**: [Python Q7](../../../../QUIZ/05_Python.md#q7)
+- **Hard Assessment**: [Python Async Service Incident](../../../../QUIZ/Hard_Assessments/python_async_service_incident.md) (`assessment.python.async-service.incident.v1`)
+
 ## 核心理論與詳解
 
 CPython 的記憶體管理和垃圾回收是一個複雜但設計精良的系統，旨在為 Python 開發者提供一個自動且高效的記憶體使用環境。其核心由兩部分組成：一個是管理原始記憶體分配的記憶體管理器，另一個是負責回收不再使用的物件的垃圾回收器。

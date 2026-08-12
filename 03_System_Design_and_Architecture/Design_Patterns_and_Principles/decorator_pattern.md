@@ -1,7 +1,7 @@
 # 什麼是裝飾器模式 (Decorator Pattern)？
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Design Pattern`, `Decorator`, `Structural`, `Dynamic Extension`
 
 ## 問題詳述

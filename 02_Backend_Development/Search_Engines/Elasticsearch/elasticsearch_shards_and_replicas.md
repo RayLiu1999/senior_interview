@@ -1,7 +1,7 @@
 # Elasticsearch 分片與副本機制
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Elasticsearch`, `Sharding`, `Replica`, `Distributed`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 請解釋 Elasticsearch 的分片 (Shard) 和副本 (Replica) 機制，以及如何根據業務需求設計合適的分片策略。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.shards-replicas.routing`
+- **Learning Objectives**:
+  - `LO-1`: 能夠用 `hash(routing) % number_of_primary_shards` 解釋文件路由，以及主分片數建立後不可直接修改的原因。
+  - `LO-2`: 能夠說明副本如何提供故障切換與讀取並行，並遵守主分片與副本不可置於同一節點的規則。
+  - `LO-3`: 能夠依資料量、節點數、查詢模式與可用性需求規劃分片、副本、Routing 與 ILM，並辨識 over-sharding。
+- **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/04_Elasticsearch.md#q7)、[Quick Quiz Q8](../../../QUIZ/04_Elasticsearch.md#q8)
 
 ### 分片 (Shard) 概念
 

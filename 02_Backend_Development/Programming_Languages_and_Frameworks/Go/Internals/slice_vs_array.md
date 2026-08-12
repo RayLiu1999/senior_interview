@@ -8,6 +8,15 @@
 
 本問題考察面試者對 Go 語言中最常用的兩種複合類型——陣列（array）和切片（slice）的理解。這不僅包括它們在使用上的差異，更重要的是切片作為 Go 的核心資料結構之一，其底層實現原理是每位 Go 開發者都必須掌握的知識。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.internals.slice-array-representation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Array 的固定長度值語意與 Slice 描述符共享底層陣列的行為。
+  - `LO-2`: 能夠根據 Data、Len、Cap 推導切片索引、共享資料與 `append` 擴容結果。
+  - `LO-3`: 能夠在傳參、預分配與擴容情境中評估複製、別名與記憶體配置成本。
+- **Quick Quiz**: [Go Q8](../../../../QUIZ/06_Go.md#q8)
+
 ## 核心理論與詳解
 
 `array` 和 `slice` 都是用來管理一系列相同型別元素的資料結構，但它們在設計哲學、靈活性和使用方式上有著本質的區別。

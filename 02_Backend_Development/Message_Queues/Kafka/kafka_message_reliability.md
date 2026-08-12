@@ -10,6 +10,16 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.message-reliability`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 acks、ISR、min.insync.replicas、副本與 Consumer Offset 如何共同影響訊息可靠性。
+  - `LO-2`: 能夠為 Producer、Broker 與 Consumer 設計避免丟失的配置，並在處理成功後提交 Offset。
+  - `LO-3`: 能夠在可靠性、吞吐量、延遲與 Exactly-Once 需求間做取捨，並指出配置失效時的故障風險。
+- **Quick Quiz**: [Quick Quiz Q4](../../../QUIZ/02_Message_Queues.md#q4)
+- **Hard Assessment**: [Kafka 訂單事件可靠性診斷](../../../QUIZ/Hard_Assessments/message_delivery_reliability.md) (`assessment.messaging.kafka.message-delivery-reliability.v1`)
+
 ### 訊息可靠性的三個層面
 
 1. **不丟失（No Data Loss）**：發送的訊息一定能夠被消費

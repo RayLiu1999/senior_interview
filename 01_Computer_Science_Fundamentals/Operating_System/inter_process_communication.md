@@ -8,6 +8,15 @@
 
 解釋進程間通信（Inter-Process Communication, IPC）的各種機制，包括管道、消息隊列、共享內存、信號量、信號和套接字，對比它們的優缺點和適用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.ipc.mechanism-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較管道、訊息佇列、共享記憶體、信號量、信號與 socket 的資料傳遞和同步特性。
+  - `LO-2`: 能夠根據資料量、通信方向、是否跨網路與延遲需求選擇 IPC 機制。
+  - `LO-3`: 能夠說明共享記憶體需要額外同步，以及不同 IPC 的拷貝、緩衝區與資源生命週期成本。
+- **Quick Quiz**: [Q2](../../QUIZ/01_Operating_System.md#q2-進程間通信-ipc-有哪些方式)
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要 IPC

@@ -1,6 +1,7 @@
 # CAP 定理與 PACELC 理論
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `Distributed Systems`, `CAP`, `PACELC`, `System Design`
 
 ## 問題詳述
@@ -8,6 +9,16 @@
 在分散式系統設計中，CAP 定理是最著名的基礎理論，但它常被誤解。而 PACELC 則是對 CAP 的補充與延伸，更貼近實際的工程決策。請解釋這兩個理論的核心內容，並說明它們如何指導系統設計。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.cap.tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能夠定義 CAP 的 Consistency、Availability 與 Partition Tolerance，並說明分區發生時的實際選擇。
+  - `LO-2`: 能夠用 CP/AP 與 PACELC 分析分區期間及正常運作時的一致性、可用性與延遲取捨。
+  - `LO-3`: 能夠依金融、社交或一般業務的讀寫需求選擇一致性策略，並指出同步或非同步複製的代價。
+- **Quick Quiz**: [Quick Quiz Q1](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q1)
+- **Hard Assessment**: [跨服務訂單一致性與 Saga 設計](../../QUIZ/Hard_Assessments/distributed_consistency_saga_design.md) (`assessment.distributed-systems.order-consistency-saga.v1`)
 
 ### CAP 定理 (CAP Theorem)
 

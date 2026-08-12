@@ -1,6 +1,7 @@
 # 系統演進第二階段：水平擴展 (Horizontal Scaling)
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Architecture`, `Scaling`, `Load Balancing`, `Stateless`
 
 ## 問題詳述

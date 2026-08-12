@@ -174,3 +174,12 @@ $userService->register('test@example.com'); // 輸出: Logging to file: User tes
 - **自動化**: 容器自動處理複雜的依賴樹，將開發者從繁瑣的手動創建工作中解放出來。
 
 現代框架的 DI 容器（如 Laravel）更加強大，它們利用 **PHP 的反射 (Reflection) API** 來自動分析類別的建構函式需要什麼依賴，從而省去了大量手動綁定的設定，實現了「零設定解析 (Zero-configuration Resolution)」。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.di-container-ioc`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 IoC 原則、建構函式／Setter／屬性注入與物件自行建立依賴的差異。
+  - `LO-2`: 能夠追蹤容器從 binding 到 resolving 的遞迴解析流程，包含介面綁定與反射建立。
+  - `LO-3`: 能夠以 DI 容器替換實作並說明其對解耦、單元測試、集中管理與生命週期的影響。
+- **Quick Quiz**: [Q4](../../../../QUIZ/09_PHP.md#q4-php-如何實現依賴注入-di什麼是-ioc-容器)

@@ -1,6 +1,7 @@
 # Mock 與 Patch 技巧
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Mock`, `unittest.mock`, `Patching`
 
 ## 問題詳述

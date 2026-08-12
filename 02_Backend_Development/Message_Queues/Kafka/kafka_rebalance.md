@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.consumer-rebalance`
+- **Learning Objectives**:
+  - `LO-1`: 能夠辨識 Consumer 加入、離開、失活、處理超時、分區或訂閱變更等 Rebalance 觸發條件。
+  - `LO-2`: 能夠從消費延遲、重複處理與停止消費症狀定位 eager Rebalance 的影響和超時設定問題。
+  - `LO-3`: 能夠運用 CooperativeStickyAssignor、合理的 poll/heartbeat 參數與 Static Membership 降低 Rebalance 風暴。
+- **Quick Quiz**: [Quick Quiz Q3](../../../QUIZ/02_Message_Queues.md#q3)
+
 ### Rebalance 的觸發條件
 
 1. **Consumer 加入**：新 Consumer 啟動並加入 Group

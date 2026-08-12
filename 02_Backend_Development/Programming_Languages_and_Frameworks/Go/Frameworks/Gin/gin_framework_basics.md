@@ -8,6 +8,15 @@
 
 請解釋 Gin 框架的核心特性、架構設計、中間件機制以及為什麼它是 Go 生態系統中最受歡迎的 Web 框架之一。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.gin.framework-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 Gin Engine、RouterGroup、路由樹、Context 與 Handler 之間的請求流程。
+  - `LO-2`: 能夠依路由範圍選擇全局、群組或單一路由中間件，並說明 `gin.Default()` 的預設組成。
+  - `LO-3`: 能夠使用參數綁定、Context 與 `Abort` 設計可維護的 HTTP API。
+- **Quick Quiz**: [Go Q10](../../../../../QUIZ/06_Go.md#q10)
+
 ## 核心理論與詳解
 
 ### 1. Gin 框架概述

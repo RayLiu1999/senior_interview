@@ -689,3 +689,13 @@ composer require fightbulc/laravel-benchmark
 - ✅ 監控性能指標
 
 性能優化是一個持續的過程，需要根據實際情況不斷調整和改進。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.performance-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠以響應時間、吞吐量、記憶體、查詢數與命中率等指標定位 Laravel 的主要瓶頸層級。
+  - `LO-2`: 能夠選擇 eager loading、索引、欄位裁剪、chunk／cursor、快取與批次寫入改善資料庫及應用效能。
+  - `LO-3`: 能夠依任務延遲與部署環境選擇 queue、OPcache、PHP-FPM、Nginx 與 framework cache，並以監控和壓測驗證成效。
+- **Quick Quiz**: [Q16](../../../../../QUIZ/09_PHP.md#q16-laravel-如何進行效能優化)
+- **Hard Assessment**: [PHP-FPM Laravel Runtime Incident](../../../../../QUIZ/Hard_Assessments/php_fpm_laravel_runtime_incident.md) (`assessment.php.fpm-laravel-runtime.incident.v1`)

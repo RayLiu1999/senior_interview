@@ -8,6 +8,15 @@
 
 布隆過濾器（Bloom Filter）是一種**空間效率極高的概率型數據結構**，用於判斷元素**是否存在於集合中**。在後端系統中，主要用於解決 **Redis 快取穿透**問題和**大規模去重**場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.bloom-filter.false-positive`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依照 bit 陣列、多個雜湊函數與查詢結果推導布隆過濾器的判定流程。
+  - `LO-2`: 能夠區分假陽性與不漏判的保證，並說明刪除資料對一般布隆過濾器的限制。
+  - `LO-3`: 能夠為快取穿透、去重或分片查詢選擇布隆過濾器，並評估誤判率與記憶體成本。
+- **Quick Quiz**: [Q3](../../QUIZ/01_Data_Structures_and_Algorithms.md#q3-布隆過濾器的原理和應用場景)
+
 ## 核心理論與詳解
 
 ### 1. 布隆過濾器的基本原理

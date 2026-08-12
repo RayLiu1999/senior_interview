@@ -1,6 +1,7 @@
 # Service 的類型：ClusterIP、NodePort、LoadBalancer
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Service`, `Networking`
 
 ## 問題詳述

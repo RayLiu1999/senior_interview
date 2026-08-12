@@ -453,3 +453,13 @@ systemctl restart php-fpm
 ## 總結
 
 OPcache 和 JIT 是 PHP 性能優化的兩大利器。OPcache 通過快取 opcode 避免重複編譯，提供 30%-50% 的性能提升，是所有 PHP 應用都應該啟用的。JIT 編譯器進一步將熱點代碼編譯為機器碼，對 CPU 密集型任務提供顯著性能提升。合理配置這兩項技術，配合預載入和持續監控，可以讓 PHP 應用達到最佳性能。在生產環境中，應該禁用 `validate_timestamps` 以獲得最佳性能，並建立完善的部署流程來管理快取更新。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.opcache-jit`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 PHP 從原始碼、opcode 到 Zend VM 的流程，並解釋 OPcache 如何跳過重複編譯。
+  - `LO-2`: 能夠區分 OPcache 與 JIT 的優化層次，依 CPU／I/O 工作負載選擇配置與部署策略。
+  - `LO-3`: 能夠從命中率、記憶體、JIT buffer 與檔案變更行為診斷效能問題，並設計安全的快取失效流程。
+- **Quick Quiz**: [Q7](../../../../QUIZ/09_PHP.md#q7-什麼是-opcache-和-jit它們如何提升-php-效能)
+- **Hard Assessment**: [PHP-FPM Laravel Runtime Incident](../../../../QUIZ/Hard_Assessments/php_fpm_laravel_runtime_incident.md) (`assessment.php.fpm-laravel-runtime.incident.v1`)

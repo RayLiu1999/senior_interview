@@ -1,6 +1,7 @@
 # Span&lt;T&gt; 與 Memory&lt;T&gt;
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `Span`, `Memory`, `Performance`
 
 ## 問題詳述
@@ -249,3 +250,12 @@ public static class CsvParser
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.clr.span-memory`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Span<T> 與 Memory<T> 的 ref struct 限制、欄位／async 可用性與生命週期。
+  - `LO-2`: 能夠使用切片、ReadOnlySpan<T> 與 stackalloc 在不複製資料的前提下處理字串或二進位資料。
+  - `LO-3`: 能夠依同步邊界與分配壓力選擇 Span、Memory、ArrayPool 或 MemoryPool，並避開逃逸限制。
+- **Quick Quiz**: [Q12](../../../../QUIZ/08_CSharp.md#q12-spanltgt-和-memoryltgt-有什麼區別)

@@ -8,6 +8,16 @@
 
 什麼是 Python 的全域直譯器鎖 (Global Interpreter Lock, GIL)？為什麼它會存在於 CPython 中？它對多執行緒 (multi-threading) 的性能有什麼影響，特別是在 CPU 密集型和 I/O 密集型任務中？我們有哪些策略可以繞過 GIL 的限制？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.core.gil`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 GIL 如何保護 CPython 物件與引用計數操作。
+  - `LO-2`: 能夠比較 GIL 對 CPU 密集與 I/O 密集多執行緒工作的影響。
+  - `LO-3`: 能夠依任務特性選擇多進程、異步或釋放 GIL 的 C 擴充方案，並說明代價。
+- **Quick Quiz**: [Python Q1](../../../../QUIZ/05_Python.md#q1)
+- **Hard Assessment**: [Python Async Service Incident](../../../../QUIZ/Hard_Assessments/python_async_service_incident.md) (`assessment.python.async-service.incident.v1`)
+
 ## 核心理論與詳解
 
 全域直譯器鎖 (GIL) 是 CPython (官方的 Python 直譯器) 中的一個互斥鎖 (mutex)，它保護對 Python 物件的訪問，確保在任何時候只有一個執行緒能夠執行 Python 的位元組碼 (bytecode)。這有效地防止了多個執行緒同時並行執行 Python 代碼，即使在多核心的處理器上也是如此。

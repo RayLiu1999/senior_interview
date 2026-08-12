@@ -8,6 +8,15 @@
 
 請深入解釋 NestJS 請求生命週期中的各個組件（Middleware、Guards、Interceptors、Pipes）的執行順序、工作原理和應用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.nestjs.request-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序推導 Middleware、Guards、Interceptors、Pipes、Handler 與 Exception Filters 的生命週期。
+  - `LO-2`: 能夠依認證授權、參數驗證轉換、日誌或回應轉換需求選擇正確組件。
+  - `LO-3`: 能夠分析全局、Controller 與路由範圍的註冊順序，並預測錯誤在生命週期中的處理位置。
+- **Quick Quiz**: [Node.js Q10](../../../../../QUIZ/07_Node.js.md#q10)
+
 ## 核心理論與詳解
 
 ### 請求生命週期完整流程

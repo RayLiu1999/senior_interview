@@ -6,9 +6,36 @@
 
 ## 問題詳述
 
-TCP (Transmission Control Protocol) 是面向連接的可靠傳輸協定,在建立連接時需要進行**三次握手** (Three-Way Handshake),在斷開連接時需要進行**四次揮手** (Four-Way Wavehand)。這是後端工程師面試中的必考題,需要深入理解其原理、狀態轉換以及可能遇到的問題。
+TCP (Transmission Control Protocol) 是面向連接的可靠傳輸協定。在建立連接時，雙方會進行**三次握手** (Three-Way Handshake)；在關閉連接時，通常會進行**四次揮手** (Four-Way Termination)。這是後端工程師面試中的常見題目，重點是理解訊息交換、狀態轉換，以及這些機制要解決的問題。
+
+### 測驗對應
+
+- **Concept ID**: `concept.network.tcp.connection-management`
+- **Learning Objectives**:
+  - `LO-1`: 能依序說明三次握手與四次揮手中的訊息、序列號與狀態轉換。
+  - `LO-2`: 能區分 `SYN-RECV`、`TIME_WAIT` 與 `CLOSE_WAIT` 所代表的故障方向。
+  - `LO-3`: 能根據連接指標設計分層排查流程，並評估連接重用與核心調校的取捨。
+- **硬測驗**: [TCP 連接診斷](../../QUIZ/Hard_Assessments/tcp_connection_diagnosis.md)
+- **Quick Quiz**: [Q1](../../QUIZ/01_Networking.md#q1-tcp-三次握手與四次揮手)
+- **覆蓋題型**: `追蹤`, `故障診斷`, `權衡取捨`
 
 ## 核心理論與詳解
+
+### 先用 30 秒建立模型
+
+TCP 的連接管理可以先記成兩條主線：
+
+- **三次握手**：雙方交換並確認初始序列號，確認彼此具備發送與接收能力，然後進入 `ESTABLISHED`。
+- **四次揮手**：TCP 是全雙工連接，兩個傳輸方向必須分別關閉，因此通常需要分開傳送 `FIN` 與 `ACK`。
+
+| 階段 | 主要訊息 | 需要回答的問題 |
+| :--- | :--- | :--- |
+| 建立連接 | `SYN`、`SYN+ACK`、`ACK` | 雙方是否準備好通信？初始序列號是多少？ |
+| 關閉連接 | `FIN`、`ACK`、`FIN`、`ACK` | 哪個方向停止發送？另一個方向何時也完成關閉？ |
+
+### 閱讀路線
+
+如果目標是面試快速複習，先讀三次握手、四次揮手與狀態轉換圖；只有在需要診斷高併發連接問題時，再閱讀 `TIME_WAIT`、連接佇列與 SYN Flood。最下方的 Go 程式碼是觀察工具，不是 TCP 握手本身的實作。
 
 ### 1. TCP 三次握手 (Connection Establishment)
 
@@ -299,6 +326,8 @@ TIME_WAIT 等待 2MSL (Maximum Segment Lifetime):
 
 **解決方案**:
 
+> 以下 `sysctl` 設定僅用於說明可調整的方向，不是通用的最佳值。實際調整前，應先確認作業系統版本、流量特徵、核心參數與監控數據，並在測試環境驗證影響。
+
 ```bash
 # Linux 系統優化
 
@@ -436,7 +465,9 @@ net.ipv4.tcp_synack_retries = 2
 - **IP 黑名單**: 封鎖攻擊來源
 - **SYN Proxy**: 防火牆代替伺服器完成三次握手
 
-## 程式碼範例
+## 程式碼範例 (可選)
+
+以下程式碼只示範如何建立 TCP 連接、觀察狀態與設定 Socket 選項。三次握手與四次揮手由作業系統的 TCP 協定棧自動完成，應將這段程式碼視為觀察工具，而不是握手流程的手動實作。
 
 ```go
 package main

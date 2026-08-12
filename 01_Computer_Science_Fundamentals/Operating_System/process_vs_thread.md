@@ -8,6 +8,15 @@
 
 深入解釋進程和線程的概念、兩者的核心差異、各自的優缺點，以及在實際開發中如何選擇使用進程還是線程。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.process-thread.concurrency-model`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較進程與線程在地址空間、資源擁有權、隔離性及排程單位上的差異。
+  - `LO-2`: 能夠說明進程與線程建立、上下文切換及通信成本如何影響效能。
+  - `LO-3`: 能夠根據故障隔離、共享資料、I/O 或 CPU 密集等需求選擇進程、線程或 goroutine。
+- **Quick Quiz**: [Q1](../../QUIZ/01_Operating_System.md#q1-進程與線程的區別是什麼)
+
 ## 核心理論與詳解
 
 ### 1. 基本概念

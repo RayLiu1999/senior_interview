@@ -442,3 +442,12 @@ function generateUsers(): Generator
 ## 總結
 
 生成器和迭代器是 PHP 中處理大量數據的強大工具，它們通過延遲計算和按需生成數據來大幅降低記憶體占用。生成器提供了簡潔的語法來實現迭代器模式，適合大多數場景。迭代器則提供了更高的靈活性，適合需要複雜迭代邏輯的場景。在處理大文件、大數據集或需要構建數據處理管道時，合理使用這些特性可以顯著提升應用的性能和穩定性。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.generators-iterators`
+- **Learning Objectives**:
+  - `LO-1`: 能夠追蹤 yield 的產生、暫停、保存狀態與恢復流程，並解釋其按需生成的記憶體優勢。
+  - `LO-2`: 能夠比較 Generator、Iterator 與 IteratorAggregate 在實作複雜度、可重用性與雙向通訊上的差異。
+  - `LO-3`: 能夠為大型檔案、分頁資料庫查詢或資料管道選擇生成器／迭代器，並處理 send、throw 與資源清理。
+- **Quick Quiz**: [Q18](../../../../QUIZ/09_PHP.md#q18-php-生成器-generator-是什麼何時使用)

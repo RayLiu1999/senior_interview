@@ -1,7 +1,7 @@
 # Laravel 中介層 (Middleware) 詳解
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Laravel`, `Middleware`, `HTTP`
 
 ## 問題詳述
@@ -181,3 +181,12 @@ Route::get('/admin/dashboard', function () {
 ### 結論
 
 中介層是 Laravel 中一個優雅且強大的設計，它允許開發者以一種乾淨、可組合的方式來過濾和處理 HTTP 請求。透過理解不同類型的中介層以及如何建立和註冊它們，您可以更有效地構建安全、模組化的 Laravel 應用程式。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.middleware`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分全域、路由群組與單一路由中介層的適用範圍、註冊位置與執行順序。
+  - `LO-2`: 能夠追蹤 handle 在 next 前後的請求／回應流程，並判斷攔截、短路與回應修改的結果。
+  - `LO-3`: 能夠建立、註冊別名並套用自訂中介層，依需求實作認證、授權、日誌或請求驗證。
+- **Quick Quiz**: [Q15](../../../../../QUIZ/09_PHP.md#q15-laravel-middleware-的執行順序和原理是什麼)

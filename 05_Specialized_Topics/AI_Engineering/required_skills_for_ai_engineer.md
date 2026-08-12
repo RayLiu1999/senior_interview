@@ -1,6 +1,7 @@
 # AI Engineer 必備技能圖譜 (Skills Required for AI Engineers)
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `AI`, `LLM`, `Career`, `Roadmap`, `RAG`
 
 ## 問題詳述

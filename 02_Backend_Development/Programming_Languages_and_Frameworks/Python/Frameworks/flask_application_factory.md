@@ -1,6 +1,7 @@
 # Flask 的 Application Factory 模式是什麼？
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Flask`, `Design Pattern`, `Application Structure`, `Best Practice`
 
 ## 問題詳述

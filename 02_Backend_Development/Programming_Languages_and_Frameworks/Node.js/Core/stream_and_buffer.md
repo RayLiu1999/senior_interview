@@ -12,6 +12,15 @@
 2. `Stream` 是什麼？它有哪幾種類型？
 3. `Buffer` 和 `Stream` 是如何協同工作的？請舉例說明。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.stream-buffer`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Buffer 如何表示二進制資料，以及它與字串編碼和記憶體配置的關係。
+  - `LO-2`: 能夠區分 Readable、Writable、Duplex 與 Transform Stream 的資料流方向和責任。
+  - `LO-3`: 能夠依資料量與生產／消費速度使用 pipe、`write()` 返回值與 `drain` 處理背壓。
+- **Quick Quiz**: [Node.js Q4](../../../../QUIZ/07_Node.js.md#q4)
+
 ## 核心理論與詳解
 
 在 Node.js 中處理 I/O 操作（如讀寫檔案、網路請求）時，我們實際上是在處理連續的數據流。`Buffer` 和 `Stream` 為高效處理這些數據流提供了底層的記憶體管理和高層的抽象介面。

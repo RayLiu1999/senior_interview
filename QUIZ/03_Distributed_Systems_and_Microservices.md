@@ -9,6 +9,7 @@
 ## 🌐 分散式系統理論
 
 ### Q1: 什麼是 CAP 定理？如何做取捨？
+<!-- Concept ID: concept.distributed-systems.cap.tradeoffs; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -45,6 +46,7 @@
 ---
 
 ### Q2: 解釋不同的一致性模型
+<!-- Concept ID: concept.distributed-systems.consistency.models; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
 
@@ -85,6 +87,7 @@
 ---
 
 ### Q3: Raft 共識演算法的原理
+<!-- Concept ID: concept.distributed-systems.raft.consensus; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10) | **重要性**: 🔴 必考
 
@@ -131,6 +134,7 @@
 ## 🏗️ 微服務架構
 
 ### Q4: 單體架構 vs 微服務架構
+<!-- Concept ID: concept.microservices.architecture.tradeoffs; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -173,6 +177,7 @@
 ---
 
 ### Q5: 什麼是 API Gateway？
+<!-- Concept ID: concept.microservices.api-gateway; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -220,6 +225,7 @@ Client → API Gateway → Service A
 ---
 
 ### Q6: 分散式事務與 Saga 模式
+<!-- Concept ID: concept.microservices.saga.transactions; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -270,6 +276,7 @@ Client → API Gateway → Service A
 ---
 
 ### Q7: 什麼是斷路器模式 (Circuit Breaker)？
+<!-- Concept ID: concept.microservices.circuit-breaker; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -324,6 +331,7 @@ Closed ──故障率高──► Open ──超時──► Half-Open
 ---
 
 ### Q8: 什麼是服務發現 (Service Discovery)？
+<!-- Concept ID: concept.microservices.service-discovery; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 

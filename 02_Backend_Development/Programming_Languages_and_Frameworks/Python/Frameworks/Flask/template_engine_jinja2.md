@@ -1,7 +1,7 @@
 # Flask 模板引擎 (Jinja2)
 
 - **難度**: 5
-- **重要性**: 3
+- **重要程度**: 3
 - **標籤**: `Jinja2`, `Templates`, `Rendering`
 
 ## 問題詳述

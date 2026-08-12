@@ -1,11 +1,23 @@
 # Observability vs Monitoring (可觀測性與監控)
 
 - **難度**: 4
+- **重要程度**: 4
 - **標籤**: `Observability`, `Monitoring`, `SRE`, `DevOps`
 
 ## 問題詳述
 
 「可觀測性 (Observability)」和「監控 (Monitoring)」這兩個詞經常被混用，但它們代表了不同的理念。請解釋兩者的核心區別，以及為什麼現代微服務架構更強調可觀測性？
+
+### 測驗對應
+
+- **Concept ID**: `concept.observability.monitoring.observability-vs-monitoring`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分以預定義檢查回答已知問題的監控，與從外部輸出推斷內部狀態的可觀測性。
+  - `LO-2`: 能夠依照事故問題選擇 Metrics、Logs、Traces，並說明三者如何互相關聯。
+  - `LO-3`: 能夠解釋微服務的動態部署、分散式依賴與故障傳播為何需要探索式診斷。
+- **Hard Assessment**: [多服務 Checkout 事故診斷](../../QUIZ/Hard_Assessments/observability_incident_diagnosis.md)
+- **Quick Quiz**: [Q1](../../QUIZ/10_Observability.md#q1)
+- **覆蓋題型**: `概念檢查`, `故障診斷`, `情境／取捨`
 
 ## 核心理論與詳解
 

@@ -9,6 +9,7 @@
 ## 📊 基礎概念
 
 ### Q1: SQL vs. NoSQL 該如何選擇？
+<!-- Concept ID: concept.database.selection.sql-nosql-tradeoffs; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -45,6 +46,7 @@
 ---
 
 ### Q2: 什麼是資料庫索引？解釋 B+ Tree 的原理
+<!-- Concept ID: concept.database.indexing.b-tree-lsm-tree; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -79,6 +81,7 @@
 ---
 
 ### Q3: 解釋 ACID 特性和隔離級別
+<!-- Concept ID: concept.database.transaction-isolation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -119,6 +122,7 @@
 ## 🔧 擴展與效能
 
 ### Q4: 什麼是資料庫分片 (Sharding)？有哪些策略？
+<!-- Concept ID: concept.database.sharding.distribution-strategies; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -160,6 +164,7 @@
 ---
 
 ### Q5: 資料庫高可用方案有哪些？
+<!-- Concept ID: concept.database.high-availability.replication-failover; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -196,6 +201,7 @@
 ---
 
 ### Q6: 如何進行資料庫效能調優？
+<!-- Concept ID: concept.database.performance-tuning.query-index-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -238,6 +244,7 @@
 ---
 
 ### Q7: 什麼是讀寫分離？如何處理主從延遲？
+<!-- Concept ID: concept.database.read-write-splitting.replication-lag; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -278,6 +285,7 @@ Client ────────► Master (主庫)
 ---
 
 ### Q8: 資料庫正規化的概念和適用場景
+<!-- Concept ID: concept.database.normalization.normal-forms; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -311,6 +319,7 @@ Client ────────► Master (主庫)
 ---
 
 ### Q9: 資料庫遷移的策略和注意事項
+<!-- Concept ID: concept.database.migration.zero-downtime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 

@@ -1,7 +1,7 @@
 # Django Cache 框架
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Cache`, `Performance`, `Redis`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # Jaeger Architecture (Jaeger 架構)
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Jaeger`, `Tracing`, `Microservices`, `Architecture`
 
 ## 問題詳述

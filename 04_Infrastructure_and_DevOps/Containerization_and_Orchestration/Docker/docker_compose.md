@@ -1,6 +1,7 @@
 # Docker Compose 與多容器編排
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Docker`, `Docker Compose`, `Orchestration`
 
 ## 問題詳述

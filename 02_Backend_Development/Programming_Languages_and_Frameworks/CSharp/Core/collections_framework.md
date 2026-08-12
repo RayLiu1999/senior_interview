@@ -1,6 +1,7 @@
 # 集合框架深入解析
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Collections`, `List`, `Dictionary`
 
 ## 問題詳述
@@ -205,3 +206,12 @@ public class CollectionDemo
     private Stack<Operation> _undoStack = new();
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.core.dictionary-hashing`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序說明 Dictionary 透過雜湊碼、bucket、碰撞處理與 Equals 完成查詢的流程。
+  - `LO-2`: 能夠計算常見集合操作的平均與最壞時間複雜度，並指出可變 Key 與遍歷順序的風險。
+  - `LO-3`: 能夠依據查詢、排序、唯一性、FIFO／LIFO 與執行緒安全需求選擇合適的集合。
+- **Quick Quiz**: [Q5](../../../../QUIZ/08_CSharp.md#q5-dictionary-的內部實作原理是什麼)

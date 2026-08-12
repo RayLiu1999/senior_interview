@@ -8,6 +8,17 @@
 
 IaaS（基礎設施即服務）、PaaS（平台即服務）和 SaaS（軟體即服務）是雲端計算的三種主要服務模式。請解釋它們的定義，並比較它們之間的區別，特別是從**管理職責**和**適用場景**的角度。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cloud.service-model.responsibility`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 IaaS、PaaS、SaaS 在基礎設施、runtime、資料與應用責任上的差異。
+  - `LO-2`: 能依客製化程度、遷移成本、合規、可攜性與運維能力進行服務模式選型。
+  - `LO-3`: 能在供應商中斷、責任邊界誤判或成本失控時提出可驗證的退化與遷移方案。
+- **Quick Quiz**: [Q3](../../QUIZ/15_Cloud_Computing.md#q3)
+- **Hard Assessment**: [Cloud Architecture Reliability Incident](../../QUIZ/Hard_Assessments/cloud_architecture_reliability_incident.md) (`assessment.cloud.architecture.reliability-incident.v1`)
+- **覆蓋題型**: `責任模型`, `服務選型`, `遷移取捨`
+
 ## 核心理論與詳解
 
 理解 IaaS, PaaS, 和 SaaS 的最佳方式是通過一個經典的比喻：**吃披薩**。

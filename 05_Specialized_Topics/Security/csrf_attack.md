@@ -1,12 +1,23 @@
 # CSRF 跨站請求偽造
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Security`, `CSRF`, `Web Security`
 
 ## 問題詳述
 
 什麼是 CSRF (Cross-Site Request Forgery) 跨站請求偽造攻擊？請解釋其攻擊原理,並說明後端開發者應該如何防禦這類攻擊。CSRF 與 XSS 有什麼區別？
+
+### 測驗對應
+
+- **Concept ID**: `concept.security.web.csrf`
+- **Learning Objectives**:
+  - `LO-1`: 能說明瀏覽器自動攜帶 cookie、跨站請求與 CSRF token／SameSite 的因果關係。
+  - `LO-2`: 能依 cookie、token、Origin／Referer、SameSite 與 API 使用情境設計縱深防禦。
+  - `LO-3`: 能從請求來源、session、審計事件與業務副作用證據區分 CSRF、XSS 與一般重放。
+- **Quick Quiz**: [Q4](../../QUIZ/16_Security.md#q4)
+- **Hard Assessment**: [Web Security Breach Incident](../../QUIZ/Hard_Assessments/web_security_breach_incident.md) (`assessment.security.web-breach.api-incident.v1`)
+- **覆蓋題型**: `Web 攻擊`, `瀏覽器邊界`, `事故診斷`
 
 ## 核心理論與詳解
 

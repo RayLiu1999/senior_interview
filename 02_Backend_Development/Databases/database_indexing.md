@@ -1,12 +1,21 @@
 # 資料庫索引的奧秘：B-Tree 與 LSM-Tree
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Databases`, `Indexing`, `B-Tree`, `LSM-Tree`
 
 ## 問題詳述
 
 什麼是資料庫索引？為什麼它能加速查詢？請比較兩種主流的索引結構：B-Tree 和 LSM-Tree，並說明它們各自的優缺點和適用場景。
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.indexing.b-tree-lsm-tree`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明索引如何以額外空間與寫入成本換取較低的查詢複雜度。
+  - `LO-2`: 能夠比較 B+ Tree 與 LSM-Tree 在讀寫流程、範圍查詢、寫入放大與讀取放大上的差異。
+  - `LO-3`: 能夠根據讀寫比例、一致性、資料規模與 Compaction 成本選擇索引結構。
+- **Quick Quiz**: [Q2](../../QUIZ/02_Databases.md#q2-什麼是資料庫索引解釋-b-tree-的原理)
 
 ## 核心理論與詳解
 

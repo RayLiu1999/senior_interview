@@ -1,6 +1,7 @@
 # 泛型機制詳解
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Generics`, `Type Safety`, `Constraints`
 
 ## 問題詳述
@@ -160,3 +161,12 @@ public static class Cache<T> where T : class
 // 使用方式
 var user = Cache<User>.GetOrAdd("user:123", () => LoadUserFromDb(123));
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.core.generics-reification`
+- **Learning Objectives**:
+  - `LO-1`: 能夠使用泛型型別、方法與約束表達型別安全的重用邏輯。
+  - `LO-2`: 能夠比較 CLR 泛型具體化與 Java 型別擦除在執行期型別資訊、值型別與效能上的差異。
+  - `LO-3`: 能夠依據輸入／輸出位置使用協變與逆變，並以反射建立或檢查泛型型別。
+- **Quick Quiz**: [Q4](../../../../QUIZ/08_CSharp.md#q4-c-泛型和-java-泛型有什麼區別)

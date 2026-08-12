@@ -1,7 +1,7 @@
 # 單元測試、模擬 (Mock) 與樁 (Stub)
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Testing`, `Unit Testing`, `Mocking`, `Stubbing`
 
 ## 問題詳述

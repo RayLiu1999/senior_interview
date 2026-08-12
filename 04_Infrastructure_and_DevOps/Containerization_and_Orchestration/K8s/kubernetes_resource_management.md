@@ -1,11 +1,23 @@
 # 資源管理：Requests、Limits 與 ResourceQuota
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Resource Management`, `QoS`
 
 ## 問題詳述
 
 請解釋 Kubernetes 中的資源管理機制，包括 Requests 和 Limits 的作用、QoS 類別，以及如何使用 ResourceQuota 和 LimitRange 進行資源控制。
+
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.resources.requests-limits-qos`
+- **Learning Objectives**:
+  - `LO-1`: 能根據 Requests、Limits 與 CPU／Memory 的行為差異推導調度、CPU throttling、OOMKilled 與節點壓力下的風險。
+  - `LO-2`: 能選擇合適的 QoS，並使用 ResourceQuota 與 LimitRange 建立命名空間和容器層級的容量護欄。
+  - `LO-3`: 能從 Pending、驅逐、OOMKilled、throttling 與 quota 事件定位資源瓶頸，提出以使用量與可分配容量驗證過的調整方案。
+- **Quick Quiz**: [Q3](../../../QUIZ/11_Kubernetes.md#q3)
+- **Hard Assessment**: [Kubernetes Production Rollout Incident](../../../QUIZ/Hard_Assessments/kubernetes_rollout_incident.md) (`assessment.kubernetes.rollout.incident-diagnosis.v1`)
+- **覆蓋題型**: `故障診斷`, `容量保護`, `權衡取捨`
 
 ## 核心理論與詳解
 

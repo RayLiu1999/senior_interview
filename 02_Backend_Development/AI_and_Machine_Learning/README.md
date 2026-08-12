@@ -17,7 +17,6 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 | 3 | [Prompt Engineering 完整指南](./LLM_Integration/prompt_engineering.md) | 5 | 5 | `Prompt`, `LLM`, `最佳實踐` |
 | 4 | [RAG 架構設計與實現](./LLM_Integration/rag_architecture.md) | 7 | 5 | `RAG`, `架構設計`, `向量搜尋` |
 | 5 | [LLM 的限流與成本控制](./LLM_Integration/llm_rate_limiting_and_cost.md) | 6 | 4 | `限流`, `成本優化`, `配額管理` |
-| 6 | [LLM 回應的串流處理](./LLM_Integration/llm_streaming.md) | 5 | 4 | `Streaming`, `SSE`, `WebSocket` |
 | 7 | [Token 計算與優化策略](./LLM_Integration/token_optimization.md) | 5 | 4 | `Token`, `成本優化`, `效能` |
 | 8 | [LLM 快取策略設計](./LLM_Integration/llm_caching.md) | 6 | 4 | `快取`, `效能優化`, `成本` |
 | 9 | [模型選型與對比](./LLM_Integration/llm_model_comparison.md) | 6 | 4 | `GPT`, `Claude`, `開源模型` |
@@ -31,12 +30,11 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [什麼是向量資料庫](./Vector_Databases/what_is_vector_database.md) | 5 | 5 | `向量資料庫`, `語義搜尋`, `AI基礎設施` |
 | 2 | [向量嵌入 (Embeddings) 原理](./Vector_Databases/vector_embeddings.md) | 6 | 5 | `Embeddings`, `向量化`, `語義理解` |
-| 3 | [相似度搜尋算法詳解](./Vector_Databases/similarity_search.md) | 6 | 4 | `相似度`, `Cosine`, `歐幾里得距離` |
+| 3 | [相似度搜尋算法詳解](./Vector_Databases/similarity_search_algorithms.md) | 6 | 4 | `相似度`, `Cosine`, `歐幾里得距離` |
 | 4 | [向量索引技術 (HNSW, IVF)](./Vector_Databases/vector_indexing.md) | 7 | 3 | `HNSW`, `IVF`, `索引優化` |
 | 5 | [主流向量資料庫對比與選型](./Vector_Databases/vector_db_comparison.md) | 7 | 4 | `Pinecone`, `Weaviate`, `Milvus`, `Qdrant` |
-| 6 | [pgvector：PostgreSQL 的向量擴展](./Vector_Databases/pgvector.md) | 6 | 4 | `PostgreSQL`, `pgvector`, `SQL擴展` |
-| 7 | [向量資料庫效能優化](./Vector_Databases/vector_db_optimization.md) | 7 | 3 | `效能優化`, `索引`, `查詢優化` |
-| 8 | [混合搜尋：向量 + 關鍵字](./Vector_Databases/hybrid_search.md) | 7 | 4 | `混合搜尋`, `BM25`, `重排序` |
+| 6 | [pgvector：PostgreSQL 的向量擴展](./Vector_Databases/pgvector_guide.md) | 6 | 4 | `PostgreSQL`, `pgvector`, `SQL擴展` |
+| 7 | [向量資料庫效能優化](./Vector_Databases/vector_db_performance.md) | 7 | 3 | `效能優化`, `索引`, `查詢優化` |
 
 ### 3. ML_Model_Serving (機器學習模型服務)
 
@@ -44,13 +42,6 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | [什麼是模型推理與模型服務](./ML_Model_Serving/model_inference.md) | 4 | 4 | `推理`, `模型服務`, `部署` |
-| 2 | [REST API vs gRPC 用於模型服務](./ML_Model_Serving/api_for_ml.md) | 5 | 4 | `REST`, `gRPC`, `API設計` |
-| 3 | [模型版本管理與 A/B 測試](./ML_Model_Serving/model_versioning.md) | 7 | 4 | `版本管理`, `A/B測試`, `灰度發布` |
-| 4 | [模型推理的效能優化](./ML_Model_Serving/inference_optimization.md) | 7 | 3 | `效能優化`, `批次處理`, `快取` |
-| 5 | [TensorFlow Serving 與 TorchServe](./ML_Model_Serving/ml_serving_tools.md) | 6 | 3 | `TensorFlow`, `PyTorch`, `模型服務` |
-| 6 | [ONNX：跨框架模型部署](./ML_Model_Serving/onnx.md) | 6 | 3 | `ONNX`, `跨框架`, `互操作性` |
-| 7 | [邊緣運算與模型量化](./ML_Model_Serving/edge_computing_quantization.md) | 7 | 2 | `邊緣運算`, `量化`, `模型壓縮` |
 
 ### 4. AI_Infrastructure (AI 基礎設施)
 
@@ -58,12 +49,6 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | [GPU vs CPU：何時需要 GPU](./AI_Infrastructure/gpu_vs_cpu.md) | 5 | 4 | `GPU`, `CPU`, `硬體選型` |
-| 2 | [AI 服務的容器化 (Docker + CUDA)](./AI_Infrastructure/ai_containerization.md) | 6 | 4 | `Docker`, `CUDA`, `容器化` |
-| 3 | [模型監控與可觀測性](./AI_Infrastructure/ml_observability.md) | 7 | 4 | `監控`, `可觀測性`, `模型漂移` |
-| 4 | [AI 服務的自動擴展策略](./AI_Infrastructure/ai_autoscaling.md) | 7 | 3 | `自動擴展`, `彈性`, `成本優化` |
-| 5 | [資料隱私與模型安全](./AI_Infrastructure/ai_security.md) | 6 | 4 | `安全`, `隱私`, `GDPR` |
-| 6 | [MLOps 基礎概念](./AI_Infrastructure/mlops_basics.md) | 6 | 3 | `MLOps`, `CI/CD`, `自動化` |
 
 ### 5. AI_System_Design_Cases (AI 系統設計案例)
 
@@ -73,10 +58,6 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [設計智能客服系統 (FAQ + LLM)](./AI_System_Design_Cases/design_ai_customer_service.md) | 8 | 5 | `系統設計`, `客服`, `RAG` |
 | 2 | [設計文件搜尋與問答系統](./AI_System_Design_Cases/design_document_qa.md) | 8 | 5 | `系統設計`, `RAG`, `文件處理` |
-| 3 | [設計推薦系統的後端架構](./AI_System_Design_Cases/design_recommendation_system.md) | 8 | 4 | `系統設計`, `推薦`, `協同過濾` |
-| 4 | [設計內容審核系統](./AI_System_Design_Cases/design_content_moderation.md) | 7 | 3 | `系統設計`, `審核`, `分類` |
-| 5 | [設計語義搜尋引擎](./AI_System_Design_Cases/design_semantic_search.md) | 8 | 4 | `系統設計`, `搜尋`, `向量資料庫` |
-| 6 | [設計 AI 驅動的 Code Review 工具](./AI_System_Design_Cases/design_ai_code_review.md) | 8 | 3 | `系統設計`, `代碼分析`, `LLM` |
 
 ### 6. ML_Basics_for_Backend (後端工程師必備的 ML 基礎)
 
@@ -84,11 +65,6 @@ AI 與機器學習正在深刻改變後端開發的格局。作為資深後端�
 
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | [監督學習 vs 非監督學習 vs 強化學習](./ML_Basics_for_Backend/learning_types.md) | 3 | 3 | `ML基礎`, `學習類型`, `概念` |
-| 2 | [訓練集、驗證集、測試集](./ML_Basics_for_Backend/dataset_split.md) | 3 | 3 | `ML基礎`, `資料集`, `評估` |
-| 3 | [過擬合與欠擬合](./ML_Basics_for_Backend/overfitting_underfitting.md) | 4 | 3 | `ML基礎`, `模型評估`, `正則化` |
-| 4 | [特徵工程基礎](./ML_Basics_for_Backend/feature_engineering.md) | 5 | 2 | `特徵工程`, `資料處理`, `預處理` |
-| 5 | [模型評估指標 (準確率、召回率、F1)](./ML_Basics_for_Backend/evaluation_metrics.md) | 5 | 3 | `評估指標`, `準確率`, `召回率` |
 
 ---
 

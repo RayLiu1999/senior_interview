@@ -1,6 +1,7 @@
 # FastAPI 的非同步處理機制？
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `FastAPI`, `Async`, `Concurrency`, `Performance`
 
 ## 問題詳述

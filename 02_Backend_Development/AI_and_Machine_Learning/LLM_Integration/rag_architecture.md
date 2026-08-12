@@ -1,13 +1,48 @@
 # RAG 架構設計與實現
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `RAG`, `架構設計`, `向量搜尋`, `檢索增強生成`
 
 ## 問題詳述
 
-RAG（Retrieval-Augmented Generation，檢索增強生成）是當前最重要的 LLM 應用架構之一。它通過結合外部知識檢索和 LLM 生成能力，解決了 LLM 的知識截止、幻覺、專有知識等問題。作為後端工程師，理解 RAG 的原理、架構設計和實現細節是構建智能應用的核心能力。
+RAG（Retrieval-Augmented Generation，檢索增強生成）是常見的 LLM 應用架構之一。它透過結合外部知識檢索和 LLM 生成能力，緩解 LLM 的知識截止與幻覺風險，並讓系統能使用專有知識。作為後端工程師，理解 RAG 的原理、架構設計和實作細節是構建智能應用的核心能力。
+
+### 測驗對應
+
+- **Concept ID**: `concept.ai.rag.retrieval-generation-pipeline`
+- **Learning Objectives**:
+  - `LO-1`: 能區分索引階段與查詢階段，說明每個階段的輸入、輸出與失敗點。
+  - `LO-2`: 能從檢索結果與最終回答判斷問題發生在 Retrieval、Ranking、Prompt 或 Generation 層。
+  - `LO-3`: 能在正確率、可追溯性、延遲與 Token 成本之間設計可驗證的取捨。
+- **硬測驗**: [RAG 故障診斷](../../../QUIZ/Hard_Assessments/rag_retrieval_debugging.md)
+- **Quick Quiz**: [Quick Quiz Q1](../../../QUIZ/02_AI_and_Machine_Learning.md#q1)
+- **覆蓋題型**: `故障診斷`, `檢索評估`, `成本與延遲權衡`
 
 ## 核心理論與詳解
+
+### 先用 30 秒建立模型
+
+RAG 不是單一模型，而是一條把「文件準備、檢索、生成」串起來的處理流程。理解它時，先分清楚兩個階段：
+
+#### 1. 索引階段：把知識準備好
+
+1. 載入文件並切成適當大小的 Chunk。
+2. 為每個 Chunk 產生 Embedding。
+3. 將 Embedding、原文與來源 metadata 存入向量資料庫。
+
+#### 2. 查詢階段：找資料再回答
+
+1. 將使用者問題轉成 Query Embedding。
+2. 從向量資料庫檢索相關 Chunk，必要時加入關鍵字搜尋或重排序。
+3. 把查到的內容放入 Prompt，交給 LLM 生成回答。
+4. 回傳回答與來源，並處理找不到資料、超時或低相關度的情況。
+
+> 最重要的心智模型：RAG 能提供「可參考的上下文」，但不能自動保證答案正確；資料品質、檢索品質與生成模型仍需分別評估。
+
+### 閱讀路線
+
+若只需要面試快速複習，先讀「什麼是 RAG」、「核心架構」與「關鍵組件」；接著再依需求閱讀檢索優化、成本、評估指標與 Agentic RAG。文件分塊參數、模型維度與供應商清單都是示意，應視資料語言、文件型態、流量與模型版本重新驗證。
 
 ### 什麼是 RAG
 
@@ -124,7 +159,7 @@ supportedFormats := []string{".pdf", ".docx", ".md", ".txt", ".html"}
 | **滑動窗口** | 重疊的固定大小塊 | 避免邊界問題 | 存儲冗餘 |
 | **語義分塊** | 基於內容相似度 | 語義最優 | 計算複雜 |
 
-**典型參數**：
+**典型參數（起始假設，不是通用最佳值）**：
 - **Chunk Size**：512-1024 tokens（約 400-800 英文字）
 - **Overlap**：50-100 tokens（避免關鍵資訊被切斷）
 
@@ -180,7 +215,7 @@ metadata := map[string]interface{}{
 **Embedding 流程**：
 ```go
 // 生成文檔嵌入
-chunks := SplitDocument(document, chunkSize=500)
+chunks := SplitDocument(document, 500)
 for _, chunk := range chunks {
     embedding := GetEmbedding(chunk.Content) // 調用 Embedding API
     chunk.Embedding = embedding
@@ -316,7 +351,7 @@ similarity = (A · B) / (||A|| × ||B||)
 **生成**：
 ```go
 prompt := ConstructPrompt(query, retrievedDocs)
-response, _ := CallLLM(prompt, temperature=0.3) // 較低的 temperature 減少創造性
+response, _ := CallLLMWithTemperature(prompt, 0.3) // 較低的 temperature 通常會降低輸出的隨機性
 ```
 
 **後處理**：
@@ -570,7 +605,9 @@ func ProcessFeedback(fb Feedback) {
 - 採用 Graph RAG，建立文檔間的關聯
 - 使用更強的推理模型（如 GPT-4）
 
-## 程式碼範例
+## 程式碼範例 (可選)
+
+以下程式碼是簡化的 Go 介面示意，用來說明索引與查詢的責任分工；實際的分塊、Embedding、向量搜尋與 LLM 呼叫，仍需依選用的服務或 SDK 補上錯誤處理、逾時、重試與觀測性。
 
 以下是一個簡化的 RAG 系統實現：
 

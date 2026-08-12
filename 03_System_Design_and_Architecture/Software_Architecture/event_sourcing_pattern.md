@@ -1,7 +1,7 @@
 # 事件溯源 (Event Sourcing)
 
 - **難度**: 9
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Software Architecture`, `Event Sourcing`, `CQRS`, `System Design`
 
 ## 問題詳述

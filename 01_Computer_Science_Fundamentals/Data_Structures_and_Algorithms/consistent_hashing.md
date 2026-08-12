@@ -8,6 +8,15 @@
 
 在分散式系統中，如何將資料均勻分佈到多個節點，並在節點增減時最小化資料遷移？一致性雜湊是解決這個問題的經典算法，廣泛應用於 **分散式快取 (Memcached、Redis Cluster)**、**負載均衡**、**分散式儲存**等場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.consistent-hashing.virtual-nodes`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述雜湊環、節點定位與 key 順時針映射的流程。
+  - `LO-2`: 能夠比較傳統取模雜湊與一致性雜湊在節點增減時的資料遷移量。
+  - `LO-3`: 能夠評估虛擬節點對負載均衡、熱點分布與管理複雜度的影響。
+- **Quick Quiz**: [Q10](../../QUIZ/01_Data_Structures_and_Algorithms.md#q10-一致性雜湊的原理和應用)
+
 ## 核心理論與詳解
 
 ### 1. 問題背景

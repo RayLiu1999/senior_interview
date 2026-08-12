@@ -8,6 +8,17 @@
 
 選擇合適的部署策略對於確保服務的可用性和穩定性至關重要。不同的部署策略有不同的特點、優勢和適用場景。理解這些策略及其權衡，是資深後端工程師和 DevOps 工程師的核心能力。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.delivery.deployment-strategies`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 rolling、blue-green、canary 與 recreate 在容量、回滾速度與風險上的差異。
+  - `LO-2`: 能設計以健康指標、流量切分與自動停止條件為核心的 progressive delivery。
+  - `LO-3`: 能從版本、錯誤率、延遲、容量與回滾事件診斷發布事故。
+- **Quick Quiz**: [Q2](../../QUIZ/14_CI_CD.md#q2)
+- **Hard Assessment**: [安全交付 Pipeline 事故診斷](../../QUIZ/Hard_Assessments/safe_delivery_pipeline_incident.md) (`assessment.cicd.safe-delivery.pipeline-incident.v1`)
+- **覆蓋題型**: `發布策略`, `故障診斷`, `權衡取捨`
+
 ## 核心理論與詳解
 
 ### 部署策略概覽

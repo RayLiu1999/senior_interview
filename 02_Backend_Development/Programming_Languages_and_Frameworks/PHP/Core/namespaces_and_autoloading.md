@@ -333,3 +333,12 @@ use App\Models\User;
 ## 總結
 
 命名空間和自動載入是現代 PHP 開發的基石，理解並正確使用它們能夠顯著提升代碼的組織性和可維護性。PSR-4 標準和 Composer 的自動載入功能讓依賴管理變得簡單高效，是每個 PHP 開發者必須掌握的核心技能。在生產環境中，合理使用 classmap 優化和 APCu 快取可以顯著提升應用性能。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.psr4-autoloading`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將命名空間前綴、子命名空間與類別名稱正確映射到 PSR-4 的目錄與檔案路徑。
+  - `LO-2`: 能夠說明 Composer 依據 composer.json 生成 vendor/autoload.php，以及 PSR-4、classmap 與 files 的差異。
+  - `LO-3`: 能夠診斷大小寫、命名空間與檔案路徑不一致造成的載入失敗，並選擇生產環境的 autoload 優化。
+- **Quick Quiz**: [Q5](../../../../QUIZ/09_PHP.md#q5-什麼是-psr-4-自動載入composer-如何管理依賴)

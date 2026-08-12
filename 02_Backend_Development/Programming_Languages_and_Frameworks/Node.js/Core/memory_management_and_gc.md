@@ -8,6 +8,15 @@
 
 請深入解釋 Node.js 的記憶體管理機制、V8 垃圾回收演算法、記憶體洩漏的常見原因和排查方法。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.memory-management-gc`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 V8 New Space、Old Space、Large Object Space 與 Stack 的用途。
+  - `LO-2`: 能夠說明 Scavenge、Mark-Sweep、Mark-Compact、增量與並發標記的回收取捨。
+  - `LO-3`: 能夠從全域引用、閉包、集合與事件監聽器等症狀設計記憶體洩漏的量測和排查流程。
+- **Quick Quiz**: [Node.js Q14](../../../../QUIZ/07_Node.js.md#q14)
+
 ## 核心理論與詳解
 
 ### V8 記憶體結構

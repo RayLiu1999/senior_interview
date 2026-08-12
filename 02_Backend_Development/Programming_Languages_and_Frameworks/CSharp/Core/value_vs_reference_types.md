@@ -1,6 +1,7 @@
 # 值型別與參考型別
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Value Type`, `Reference Type`, `Stack`, `Heap`
 
 ## 問題詳述
@@ -151,3 +152,12 @@ public void DemoTypeDifferences()
     Console.WriteLine($"rp1.X = {rp1.X}"); // 輸出: 999（被修改了）
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.core.value-reference-types`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分值型別與參考型別的儲存位置、複製行為、預設值與相等性語意。
+  - `LO-2`: 能夠根據參數傳遞方式與裝箱／拆箱流程預測程式行為及其配置成本。
+  - `LO-3`: 能夠依據資料大小、可變性、生命週期與 GC 壓力選擇 struct 或 class。
+- **Quick Quiz**: [Q1](../../../../QUIZ/08_CSharp.md#q1-值型別-value-type-和參考型別-reference-type-有什麼區別)、[Q17](../../../../QUIZ/08_CSharp.md#q17-裝箱-boxing-和拆箱-unboxing-的效能影響是什麼)

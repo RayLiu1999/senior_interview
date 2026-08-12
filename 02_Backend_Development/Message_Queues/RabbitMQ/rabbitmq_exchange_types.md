@@ -1,7 +1,7 @@
 # RabbitMQ Exchange 類型詳解：Direct, Fanout, Topic, Headers
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `RabbitMQ`, `Exchange`, `AMQP`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 RabbitMQ 中的 Exchange 有哪些主要類型？它們各自的路由策略是什麼？請詳細解釋 Direct, Fanout, Topic, 和 Headers 交換機的運作方式和適用場景。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.rabbitmq.exchange-routing`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Direct、Fanout、Topic 與 Headers Exchange 的路由規則和萬用字元或標頭條件。
+  - `LO-2`: 能夠從點對點、廣播、多維訂閱與複雜條件路由需求選擇適合的 Exchange 類型。
+  - `LO-3`: 能夠追蹤 Producer、Exchange、Binding、Queue 與 Consumer 的訊息流向，並辨識未匹配路由的處理風險。
+- **Quick Quiz**: [Quick Quiz Q6](../../../QUIZ/02_Message_Queues.md#q6)
 
 在 RabbitMQ 中，**Exchange (交換機)** 是訊息傳遞模型的核心。生產者 (Producer) 並不直接將訊息發送到佇列 (Queue)，而是將訊息發送到交換機。交換機接收到訊息後，根據其類型和綁定 (Binding) 規則，將訊息路由到一個或多個佇列中。
 

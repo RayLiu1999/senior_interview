@@ -1,6 +1,7 @@
 # Cross-Team Collaboration (跨團隊協作)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Communication`, `Stakeholder Management`, `Negotiation`
 
 ## 問題詳述

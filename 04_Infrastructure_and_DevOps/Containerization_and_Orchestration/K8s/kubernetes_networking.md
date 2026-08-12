@@ -1,6 +1,7 @@
 # Kubernetes 網路模型與 CNI
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Kubernetes`, `Networking`, `CNI`
 
 ## 問題詳述

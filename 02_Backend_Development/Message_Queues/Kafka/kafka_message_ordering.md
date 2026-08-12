@@ -10,6 +10,16 @@ Kafka 的訊息順序保證是其最常被誤解的特性之一：Kafka **只在
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.message-ordering`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Kafka 的 Partition 內順序、跨 Partition 順序與全域順序保證。
+  - `LO-2`: 能夠使用業務 Key 將同一實體事件路由到同一 Partition，並分析重試、Partition 擴容與並行消費造成的亂序風險。
+  - `LO-3`: 能夠在業務順序、吞吐量與並行度之間選擇單 Partition、Key 分區或消費者序列化方案。
+- **Quick Quiz**: [Quick Quiz Q5](../../../QUIZ/02_Message_Queues.md#q5)
+- **Hard Assessment**: [Kafka 訂單事件可靠性診斷](../../../QUIZ/Hard_Assessments/message_delivery_reliability.md) (`assessment.messaging.kafka.message-delivery-reliability.v1`)
+
 ### Kafka 的順序保證範圍
 
 ```

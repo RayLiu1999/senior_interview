@@ -1,11 +1,23 @@
 # Horizontal Pod Autoscaler (HPA) 與 Vertical Pod Autoscaler (VPA)
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Kubernetes`, `Auto Scaling`, `HPA`, `VPA`
 
 ## 問題詳述
 
 請解釋 Kubernetes 中的自動擴縮容機制：HPA（水平擴縮容）和 VPA（垂直擴縮容）的原理、配置方式和使用場景。
+
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.autoscaling.hpa-vpa-signal-control`
+- **Learning Objectives**:
+  - `LO-1`: 能用 HPA 的指標、Requests 分母與期望副本數公式解釋擴容、縮容或無法計算的狀態。
+  - `LO-2`: 能在 HPA、VPA 與 Cluster Autoscaler 之間選擇責任邊界，並設計自訂指標、穩定窗口與擴縮速率控制。
+  - `LO-3`: 能從 metrics API、HPA conditions、Pod readiness、Pending 與資源使用量診斷不擴容、抖動或擴到上限的 production 事故。
+- **Quick Quiz**: [Q4](../../../QUIZ/11_Kubernetes.md#q4)
+- **Hard Assessment**: [Kubernetes Production Rollout Incident](../../../QUIZ/Hard_Assessments/kubernetes_rollout_incident.md) (`assessment.kubernetes.rollout.incident-diagnosis.v1`)
+- **覆蓋題型**: `指標診斷`, `容量決策`, `權衡取捨`
 
 ## 核心理論與詳解
 

@@ -1,6 +1,7 @@
 # NewSQL Databases (NewSQL 資料庫)
 
 - **難度**: 7
+- **重要程度**: 3
 - **標籤**: `NewSQL`, `TiDB`, `CockroachDB`, `Spanner`, `Distributed SQL`
 
 ## 問題詳述

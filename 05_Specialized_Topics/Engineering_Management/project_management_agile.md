@@ -1,6 +1,7 @@
 # Project Management & Agile (專案管理與敏捷開發)
 
 - **難度**: 5
+- **重要程度**: 3
 - **標籤**: `Agile`, `Scrum`, `Kanban`, `Estimation`, `Project Management`
 
 ## 問題詳述

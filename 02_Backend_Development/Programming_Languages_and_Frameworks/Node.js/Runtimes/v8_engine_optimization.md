@@ -8,6 +8,15 @@
 
 請深入解釋 V8 JavaScript 引擎的工作原理、JIT 編譯流程、優化與反優化機制、隱藏類（Hidden Classes）以及性能優化技巧。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.v8.jit-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 V8 從解析、Ignition bytecode、profiling 到 TurboFan 優化機器碼的流程。
+  - `LO-2`: 能夠用 Hidden Class、Inline Cache 與 monomorphic／polymorphic／megamorphic 解釋物件存取性能。
+  - `LO-3`: 能夠辨識觸發 deoptimization 的程式型態，並以一致屬性結構和穩定型別驗證優化假設。
+- **Quick Quiz**: [Node.js Q13](../../../../QUIZ/07_Node.js.md#q13)
+
 ## 核心理論與詳解
 
 ### 1. V8 引擎架構

@@ -8,6 +8,17 @@
 
 AWS（Amazon Web Services）是目前市場佔有率最高的雲平台，提供超過 200 項服務。了解 AWS 的核心服務及其使用場景，是現代後端工程師的必備技能。本文重點介紹七個最核心的服務：EC2、ECS、Lambda、S3、RDS、SQS 和 CloudFront。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cloud.aws.service-boundaries`
+- **Learning Objectives**:
+  - `LO-1`: 能比較計算、儲存、資料庫、訊息與邊緣服務的責任邊界與基本語意。
+  - `LO-2`: 能依延遲、可用性、擴縮、資料持久性、運維負擔與成本選擇合適的雲端服務。
+  - `LO-3`: 能從 quota、throttling、retry、故障轉移與服務指標定位雲端依賴造成的事故。
+- **Quick Quiz**: [Q1](../../QUIZ/15_Cloud_Computing.md#q1)
+- **Hard Assessment**: [Cloud Architecture Reliability Incident](../../QUIZ/Hard_Assessments/cloud_architecture_reliability_incident.md) (`assessment.cloud.architecture.reliability-incident.v1`)
+- **覆蓋題型**: `服務選型`, `責任邊界`, `故障診斷`
+
 ## 核心理論與詳解
 
 ### AWS 服務全景

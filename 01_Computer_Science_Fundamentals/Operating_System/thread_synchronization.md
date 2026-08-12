@@ -8,6 +8,15 @@
 
 解釋多線程環境下的各種同步機制，包括互斥鎖（Mutex）、信號量（Semaphore）、條件變量（Condition Variable）、讀寫鎖（RWLock）、自旋鎖（Spinlock）等，以及它們的適用場景和死鎖問題。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.thread-synchronization.lock-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠辨識競爭條件與臨界區，並說明 mutex、spinlock、RWLock、semaphore 與 condition variable 的保護語意。
+  - `LO-2`: 能夠根據臨界區長度、讀寫比例、資源數量與等待方式選擇同步機制。
+  - `LO-3`: 能夠透過鎖排序、縮小臨界區、原子操作或條件重試降低死鎖、飢餓與鎖競爭風險。
+- **Quick Quiz**: [Q8](../../QUIZ/01_Operating_System.md#q8-線程同步機制有哪些)
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要線程同步

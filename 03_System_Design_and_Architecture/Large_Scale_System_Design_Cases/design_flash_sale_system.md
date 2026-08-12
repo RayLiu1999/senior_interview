@@ -8,6 +8,17 @@
 
 設計一個秒殺系統，在極短時間內（如10秒）處理數百萬使用者對少量商品（如1000件）的搶購請求。系統需要保證庫存準確、不超賣、高可用，並能承受瞬間流量沖擊。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.flash-sale.capacity-protection`
+- **Learning Objectives**:
+  - `LO-1`: 能將流量洪峰拆成 admission、排隊、庫存 reservation 與非同步處理邊界，推導各層容量與延遲。
+  - `LO-2`: 能設計原子扣減、冪等訂單、背壓與補償流程，避免超賣、重複扣減與無限堆積。
+  - `LO-3`: 能以 queue age、consumer throughput、庫存差異、成功率與下游容量驗證方案，並說明可用性取捨。
+- **Quick Quiz**: [Q1](../../QUIZ/12_System_Design.md#q1)、[Q4](../../QUIZ/12_System_Design.md#q4)
+- **Hard Assessment**: [限量資源容量與一致性設計](../../QUIZ/Hard_Assessments/flash_sale_capacity_correctness.md) (`assessment.system-design.limited-resource-capacity.v1`)
+- **覆蓋題型**: `容量設計`, `故障診斷`, `權衡取捨`
+
 ## 核心理論與詳解
 
 ### 1. 秒殺系統的獨特性與挑戰

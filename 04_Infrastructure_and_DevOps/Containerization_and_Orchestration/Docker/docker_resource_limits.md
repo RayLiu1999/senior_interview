@@ -1,11 +1,23 @@
 # Docker 資源限制與管理
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Docker`, `Resource Management`, `Cgroups`
 
 ## 問題詳述
 
 請深入解釋 Docker 的資源限制機制，包括 CPU、記憶體、磁碟 I/O 和網路的限制策略，以及如何監控和優化資源使用。
+
+### 測驗對應
+
+- **Concept ID**: `concept.docker.runtime.resource-limits`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 cgroup CPU quota、memory limit、I/O throttle 與 host capacity 的行為。
+  - `LO-2`: 能依 workload 的 latency、throughput 與 OOM 風險設定限制和 headroom。
+  - `LO-3`: 能用 container／host 指標定位 throttling、OOM、eviction 與 noisy neighbor 問題。
+- **Quick Quiz**: [Q5](../../../QUIZ/13_Docker.md#q5)
+- **Hard Assessment**: [Docker Build／Runtime 事故診斷](../../../QUIZ/Hard_Assessments/docker_build_runtime_incident.md) (`assessment.docker.build-runtime.incident.v1`)
+- **覆蓋題型**: `資源管理`, `效能診斷`, `容量取捨`
 
 ## 核心理論與詳解
 

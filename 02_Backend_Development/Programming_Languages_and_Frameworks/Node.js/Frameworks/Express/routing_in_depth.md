@@ -1,7 +1,7 @@
 # Express.js 路由 (Routing) 詳解
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Express.js`, `Node.js`, `Routing`
 
 ## 問題詳述

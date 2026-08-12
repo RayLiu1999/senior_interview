@@ -1,7 +1,7 @@
 # Flask 中間件與鉤子
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Middleware`, `before_request`, `after_request`
 
 ## 問題詳述

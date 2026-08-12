@@ -1,6 +1,7 @@
 # Incident Management & Postmortem (事故管理與事後檢討)
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `SRE`, `Incident`, `Postmortem`, `Reliability`
 
 ## 問題詳述

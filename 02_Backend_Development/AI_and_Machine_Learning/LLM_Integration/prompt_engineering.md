@@ -1,6 +1,7 @@
 # Prompt Engineering 完整指南
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Prompt Engineering`, `LLM`, `最佳實踐`, `提示工程`
 
 ## 問題詳述
@@ -8,6 +9,15 @@
 Prompt Engineering（提示工程）是與 LLM 交互的藝術和科學。一個好的 Prompt 可以讓模型輸出高質量、準確、符合期望的回應；而糟糕的 Prompt 則可能導致錯誤、模糊或無關的輸出。作為後端工程師，掌握 Prompt Engineering 是有效使用 LLM 的關鍵技能。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.ai.prompt.engineering`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將模糊需求拆解為角色、任務、上下文、範例、輸出格式與限制條件。
+  - `LO-2`: 能夠依任務特性選擇 zero-shot、few-shot、Chain-of-Thought 或 prompt chaining 等技巧，並說明取捨。
+  - `LO-3`: 能夠透過測試與輸出驗證迭代 Prompt，辨識常見失敗模式並降低錯誤或 Prompt Injection 風險。
+- **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/02_AI_and_Machine_Learning.md#q2)
 
 ### 什麼是 Prompt Engineering
 

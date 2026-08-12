@@ -1,7 +1,7 @@
 # 使用 Pub/Sub 建立可靠的聊天系統
 
 - **難度**: 8
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `System Design`, `Chat`, `Redis`, `Pub/Sub`, `Architecture`
 
 ## 問題詳述

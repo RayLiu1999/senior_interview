@@ -1,12 +1,21 @@
 # API 驗證與授權機制
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `API Design`, `Security`, `Authentication`, `Authorization`
 
 ## 問題詳述
 
 請解釋 API 中的驗證 (Authentication) 和授權 (Authorization) 有何不同。並比較幾種常見的 API 驗證機制，如 API Key, Basic Auth, OAuth 2.0, 和 JWT。
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.authentication.authorization-mechanisms`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分驗證與授權，並說明身份、角色或 scope 如何影響資源存取決策。
+  - `LO-2`: 能夠比較 API Key、Basic Auth、OAuth 2.0 與 JWT 的憑證生命週期、狀態與撤銷特性。
+  - `LO-3`: 能夠根據使用者授權、服務間呼叫、HTTPS、權限範圍與水平擴展需求選擇機制。
+- **Quick Quiz**: [Q4](../../QUIZ/02_API_Design.md#q4-比較-oauth-20jwt-和-api-key-的使用場景)
 
 ## 核心理論與詳解
 

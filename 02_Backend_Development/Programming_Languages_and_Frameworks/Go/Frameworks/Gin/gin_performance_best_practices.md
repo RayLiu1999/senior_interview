@@ -8,6 +8,15 @@
 
 請深入解釋 Gin 框架的性能優化技巧、最佳實踐以及在生產環境中需要注意的要點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.gin.performance-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Gin 的 Context 池、路由查找與 JSON 序列化如何影響請求成本。
+  - `LO-2`: 能夠辨識跨 Goroutine 使用未複製 Context、物件池與中間件配置造成的安全或正確性問題。
+  - `LO-3`: 能夠以基準、連接池與查詢指標驗證優化，並說明低分配與可讀性、資源上限的取捨。
+- **Quick Quiz**: [Go Q12](../../../../../QUIZ/06_Go.md#q12)
+
 ## 核心理論與詳解
 
 ### 1. Gin 性能優勢

@@ -8,6 +8,15 @@
 
 當快取空間滿載時,需要選擇合適的淘汰演算法來移除部分資料,為新資料騰出空間。請詳細解釋常見的快取淘汰演算法 (如 LRU、LFU、FIFO 等),並說明它們的實現原理、適用場景以及優缺點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.backend.cache.eviction-algorithms`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 FIFO、LRU、LFU、LRU-K、2Q 與 ARC 的淘汰依據和資料結構。
+  - `LO-2`: 能夠根據時間局部性、長期頻率、偶發流量與容量限制選擇淘汰演算法。
+  - `LO-3`: 能夠評估淘汰策略的命中率、時間空間複雜度、冷啟動與歷史資料偏差。
+- **Quick Quiz**: [Q4](../../QUIZ/02_Caching.md#q4-比較-lrulfufifo-等快取淘汰演算法)
+
 ## 核心理論與詳解
 
 快取淘汰演算法 (Cache Eviction Algorithm) 決定了當快取容量達到上限時,應該移除哪些資料。一個好的淘汰演算法應該能夠保留最有價值的資料,從而維持較高的快取命中率。

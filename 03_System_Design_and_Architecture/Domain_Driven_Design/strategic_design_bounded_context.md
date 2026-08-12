@@ -1,6 +1,7 @@
 # 戰略設計：Bounded Context 與 Ubiquitous Language
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `DDD`, `Strategic Design`, `Bounded Context`, `Ubiquitous Language`, `Microservices`
 
 ## 問題詳述

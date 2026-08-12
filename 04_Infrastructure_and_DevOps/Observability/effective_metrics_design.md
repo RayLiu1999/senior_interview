@@ -1,11 +1,23 @@
 # Effective Metrics Design (高效指標設計)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Metrics`, `Monitoring`, `Best Practices`, `USE Method`, `RED Method`
 
 ## 問題詳述
 
 在設計監控系統時，我們經常面臨「指標太多，告警太吵」或「關鍵時刻找不到有用指標」的困境。請介紹業界常用的指標設計方法論 (如 USE, RED, Four Golden Signals)，並說明如何設計高質量的指標。
+
+### 測驗對應
+
+- **Concept ID**: `concept.observability.metrics.red-use-golden-signals`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將請求驅動服務的問題映射到 RED，並將資源瓶頸映射到 USE 與 Four Golden Signals。
+  - `LO-2`: 能夠設計使用基本單位、延遲分佈與低基數標籤的可分析指標，並避免基數爆炸。
+  - `LO-3`: 能夠依照使用者症狀設計可操作的告警，區分告警訊號與用於找根因的診斷指標。
+- **Hard Assessment**: [多服務 Checkout 事故診斷](../../QUIZ/Hard_Assessments/observability_incident_diagnosis.md)
+- **Quick Quiz**: [Q2](../../QUIZ/10_Observability.md#q2)
+- **覆蓋題型**: `概念檢查`, `指標設計`, `故障診斷`
 
 ## 核心理論與詳解
 

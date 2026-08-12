@@ -1,7 +1,7 @@
 # RabbitMQ 的訊息確認機制：ack, nack, reject
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `RabbitMQ`, `Reliability`, `AMQP`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 在 RabbitMQ 中，訊息的確認 (Acknowledgement) 機制是什麼？`ack`, `nack`, 和 `reject` 三種確認方式有什麼區別？它們如何保證訊息的可靠傳遞？
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.rabbitmq.message-acknowledgement`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分自動確認、手動 `ack`、`nack` 與 `reject` 的語義、批次能力與 `requeue` 行為。
+  - `LO-2`: 能夠設計在成功處理後確認、暫時性失敗重排隊、永久性失敗進 DLX 的消費流程。
+  - `LO-3`: 能夠從消費者崩潰、無限重試與 prefetch 設定分析重複、延遲與資源耗盡風險。
+- **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/02_Message_Queues.md#q7)
 
 訊息確認機制是 RabbitMQ 實現可靠訊息傳遞的核心。它確保了即使消費者在處理訊息的過程中發生故障，訊息也不會丟失，而是可以被重新傳遞給另一個健康的消費者。
 

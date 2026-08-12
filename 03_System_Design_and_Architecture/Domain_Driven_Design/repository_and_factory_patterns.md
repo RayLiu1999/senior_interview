@@ -1,6 +1,7 @@
 # Repository 與 Factory 模式
 
 - **難度**: 5
+- **重要程度**: 3
 - **標籤**: `DDD`, `Repository`, `Factory`, `Design Pattern`
 
 ## 問題詳述

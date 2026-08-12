@@ -1,14 +1,16 @@
 # Python - 重點考題 (Quiz)
 
 > 這份考題是從 Python 章節中挑選出**重要程度 4-5** 的核心題目，設計成自我測驗的形式。
-> 
+>
 > **使用方式**：先嘗試自己回答問題，再展開「答案提示」核對重點，最後點擊連結查看完整解答。
 
 ---
 
 ## 🐍 核心特性
 
+<a id="q1"></a>
 ### Q1: 什麼是 GIL（全域直譯器鎖）？它對多執行緒有什麼影響？
+<!-- Concept ID: concept.python.core.gil; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -43,7 +45,9 @@
 
 ---
 
+<a id="q2"></a>
 ### Q2: 請解釋 Python 裝飾器的工作原理
+<!-- Concept ID: concept.python.core.decorators; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -79,7 +83,9 @@ my_func = my_decorator(my_func)
 
 ---
 
+<a id="q3"></a>
 ### Q3: 生成器 (Generator) 和普通函數有什麼區別？
+<!-- Concept ID: concept.python.core.generators; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -121,7 +127,9 @@ squares_gen = (x**2 for x in range(1000000))
 
 ---
 
+<a id="q4"></a>
 ### Q4: 請解釋 Python 的數據模型和魔法方法
+<!-- Concept ID: concept.python.core.data-model; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -155,7 +163,9 @@ squares_gen = (x**2 for x in range(1000000))
 
 ## ⚡ 併發模型
 
+<a id="q5"></a>
 ### Q5: 比較 threading、multiprocessing、asyncio 三種併發模型
+<!-- Concept ID: concept.python.concurrency.model-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -189,7 +199,9 @@ I/O 密集型 → asyncio（首選）或 threading
 
 ---
 
+<a id="q6"></a>
 ### Q6: async/await 的工作原理是什麼？
+<!-- Concept ID: concept.python.concurrency.model-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -228,7 +240,9 @@ I/O 密集型 → asyncio（首選）或 threading
 
 ## 🔧 底層原理
 
+<a id="q7"></a>
 ### Q7: 請解釋 Python 的記憶體管理和垃圾回收機制
+<!-- Concept ID: concept.python.internals.memory-management-gc; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 
@@ -266,7 +280,9 @@ Arena (256KB) → Pool (4KB) → Block (8-512 bytes)
 
 ---
 
+<a id="q8"></a>
 ### Q8: is 和 == 的區別是什麼？什麼是小整數池？
+<!-- Concept ID: concept.python.internals.object-identity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
 
@@ -311,7 +327,9 @@ a is b  # False（不同物件）
 
 ## 🌐 Web 框架
 
+<a id="q9"></a>
 ### Q9: 比較 Django、Flask、FastAPI 三個框架
+<!-- Concept ID: concept.python.frameworks.web-framework-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -343,7 +361,9 @@ a is b  # False（不同物件）
 
 ---
 
+<a id="q10"></a>
 ### Q10: Django 的 N+1 查詢問題是什麼？如何解決？
+<!-- Concept ID: concept.python.django.queryset-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -387,7 +407,9 @@ authors = Author.objects.prefetch_related('books').all()
 
 ---
 
+<a id="q11"></a>
 ### Q11: FastAPI 的依賴注入系統是如何工作的？
+<!-- Concept ID: concept.python.fastapi.dependency-injection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -434,7 +456,9 @@ async def read_items(db = Depends(get_db)):
 
 ## 🔬 進階主題
 
+<a id="q12"></a>
 ### Q12: Python 中的描述符 (Descriptor) 協議是什麼？
+<!-- Concept ID: concept.python.core.descriptor-protocol; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟢 加分
 
@@ -470,7 +494,9 @@ class Descriptor:
 
 ---
 
+<a id="q13"></a>
 ### Q13: 什麼是上下文管理器？with 語句如何工作？
+<!-- Concept ID: concept.python.core.data-model; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -523,6 +549,30 @@ def file_manager(filename):
 
 ---
 
+## ⚡ FastAPI Runtime
+
+<a id="q14"></a>
+### Q14: FastAPI 的 async route 為什麼仍可能阻塞整個事件循環？
+<!-- Concept ID: concept.python.fastapi.async-route-runtime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 ASGI、事件循環、`await` 與同步／異步 route 的執行邊界，並設計一套定位 event-loop lag 與請求延遲的方式。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- `async def` route 會在事件循環中執行；只有在真正等待可 await 的非阻塞 I/O 時，控制權才會回到事件循環處理其他請求。
+- 在 async route 內呼叫 `time.sleep`、同步 HTTP／資料庫 client、CPU-heavy serialization 或長時間 Python 計算，會阻塞 event loop；`await` 不是把任意同步函式變成非阻塞。
+- 普通 `def` route 通常由框架放入 thread pool，但 thread pool 也有容量、排隊、context switch 與下游連線池限制；CPU-bound 工作通常需要 process pool、獨立 worker 或批次化。
+- 應同時觀察 event-loop lag、request P99、task backlog、thread pool queue／active、CPU、GC、下游 latency 與 trace，並以同步 client／慢 I/O／CPU 負載實驗驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/async_route_handlers.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：
@@ -541,5 +591,6 @@ def file_manager(filename):
 | 知道如何解決 N+1 問題 | ⬜ |
 | 理解 FastAPI 依賴注入 | ⬜ |
 | 理解上下文管理器 | ⬜ |
+| 能診斷 FastAPI async route 的事件循環阻塞 | ⬜ |
 
 **建議**：未能完整回答的題目，請回到對應的詳細文章深入學習。

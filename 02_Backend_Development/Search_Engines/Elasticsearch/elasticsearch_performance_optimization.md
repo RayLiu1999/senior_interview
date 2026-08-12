@@ -1,7 +1,7 @@
 # Elasticsearch 效能優化與最佳實踐
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Elasticsearch`, `Performance`, `Optimization`, `Best Practices`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 請說明 Elasticsearch 在生產環境中的效能優化策略和最佳實踐。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.performance-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠解釋 JVM Heap 32GB、作業系統檔案快取、分片數與副本對記憶體和吞吐量的影響。
+  - `LO-2`: 能夠依查詢深度、寫入量與可搜尋延遲選擇 Search After、Scroll、PIT、Bulk 與 Refresh Interval 策略。
+  - `LO-3`: 能夠設計 Hot/Warm/Cold 與 ILM 的資料分層，並用延遲、資源、成本與可靠性指標驗證優化效果。
+- **Quick Quiz**: [Quick Quiz Q5](../../../QUIZ/04_Elasticsearch.md#q5)、[Quick Quiz Q9](../../../QUIZ/04_Elasticsearch.md#q9)、[Quick Quiz Q11](../../../QUIZ/04_Elasticsearch.md#q11)、[Quick Quiz Q12](../../../QUIZ/04_Elasticsearch.md#q12)
 
 Elasticsearch 效能優化涵蓋多個層面：硬體配置、索引設計、查詢優化、叢集調優等。
 

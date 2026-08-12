@@ -8,6 +8,17 @@
 
 依賴注入(DI)和控制反轉(IoC)是現代軟體開發中的核心設計原則,它們透過將物件的建立和依賴關係管理從類別內部移到外部,實現鬆耦合和高可測試性的程式碼架構。
 
+### 測驗對應
+
+- **Concept ID**: `concept.patterns.dependency-injection.testability`
+- **Learning Objectives**:
+  - `LO-1`: 能區分依賴、控制反轉、composition root 與 service locator 的責任邊界。
+  - `LO-2`: 能以介面、建構子注入與明確生命週期設計可測試、可替換的服務組合。
+  - `LO-3`: 能從耦合、啟動、測試隔離與 runtime scope 證據診斷 DI 容器造成的問題。
+- **Quick Quiz**: [Q1](../../QUIZ/17_Architecture_Patterns.md#q1)
+- **Hard Assessment**: [Extensible Order Platform Design Review](../../QUIZ/Hard_Assessments/architecture_pattern_design_review.md) (`assessment.patterns.extensible-order-platform.v1`)
+- **覆蓋題型**: `解耦`, `可測試性`, `生命週期`
+
 ## 核心理論與詳解
 
 ### 1. 基本概念

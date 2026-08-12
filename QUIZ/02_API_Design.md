@@ -9,6 +9,7 @@
 ## 📝 核心概念題
 
 ### Q1: RESTful API 的六大架構約束是什麼？
+<!-- Concept ID: concept.api.rest.architectural-constraints; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -37,6 +38,7 @@
 ---
 
 ### Q2: 什麼是 API 的冪等性？為什麼它很重要？
+<!-- Concept ID: concept.api.idempotency.safe-retry; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -71,6 +73,7 @@
 ---
 
 ### Q3: 比較四種 API 版本管理策略的優缺點
+<!-- Concept ID: concept.api.versioning.compatibility-strategy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -99,6 +102,7 @@
 ## 🔐 安全與效能題
 
 ### Q4: 比較 OAuth 2.0、JWT 和 API Key 的使用場景
+<!-- Concept ID: concept.api.authentication.authorization-mechanisms; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -129,6 +133,7 @@
 ---
 
 ### Q5: 說明常見的 API 限流演算法及其差異
+<!-- Concept ID: concept.api.rate-limiting.degradation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -158,6 +163,7 @@
 ## 🆚 比較分析題
 
 ### Q6: GraphQL vs REST - 如何選擇？
+<!-- Concept ID: concept.api.graphql-rest.selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -187,6 +193,7 @@
 ---
 
 ### Q7: WebSocket 與 HTTP 長輪詢的差異是什麼？
+<!-- Concept ID: concept.api.realtime.websocket-long-polling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -212,7 +219,7 @@
 
 </details>
 
-📖 [查看完整答案](../02_Backend_Development/API_Design/WebSocket/README.md)
+📖 [查看完整答案](../02_Backend_Development/API_Design/WebSocket/websocket_vs_polling.md)
 
 ---
 

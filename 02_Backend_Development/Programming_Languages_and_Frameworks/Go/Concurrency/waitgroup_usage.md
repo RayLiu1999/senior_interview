@@ -8,6 +8,15 @@
 
 本問題考察面試者對 Go 中基礎同步原語的掌握程度。`sync.WaitGroup` 是在併發編程中一個極其常見的工具，用於協調多個 Goroutine 的完成時機。理解其用法是編寫清晰、正確併發代碼的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.concurrency.waitgroup-synchronization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 `Add`、`Done` 與 `Wait` 如何共同維護 Goroutine 完成計數。
+  - `LO-2`: 能夠設計在啟動 Goroutine 前加計數、以 `defer Done` 收尾的正確使用流程。
+  - `LO-3`: 能夠從負計數、過早 `Wait`、panic 與複製 WaitGroup 判斷同步錯誤。
+- **Quick Quiz**: [Go Q5](../../../../QUIZ/06_Go.md#q5)
+
 ## 核心理論與詳解
 
 `sync.WaitGroup` 是一個計數信號量，可以用來等待一組 Goroutine 的集合完成它們的工作。它內部維護著一個計數器，當計數器歸零時，等待的 Goroutine 將被喚醒。

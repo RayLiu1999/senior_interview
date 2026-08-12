@@ -1,11 +1,23 @@
 # Liveness Probe、Readiness Probe 與 Startup Probe
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Health Check`, `Probe`
 
 ## 問題詳述
 
 請詳細解釋 Kubernetes 中的三種探針（Probe）：Liveness Probe、Readiness Probe 和 Startup Probe，以及它們的作用、使用場景和配置方式。
+
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.probes.liveness-readiness-startup`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Liveness、Readiness 與 Startup Probe 的判定語意、失敗後果與適用時機。
+  - `LO-2`: 能為慢啟動、依賴故障與暫時過載的服務設計獨立端點、檢查方式與探針參數，避免把可恢復問題變成重啟風暴。
+  - `LO-3`: 能利用 Pod 事件、重啟次數、端點狀態與服務端點變化診斷探針事故，並驗證流量隔離與恢復是否安全。
+- **Quick Quiz**: [Q2](../../../QUIZ/11_Kubernetes.md#q2)
+- **Hard Assessment**: [Kubernetes Production Rollout Incident](../../../QUIZ/Hard_Assessments/kubernetes_rollout_incident.md) (`assessment.kubernetes.rollout.incident-diagnosis.v1`)
+- **覆蓋題型**: `概念檢查`, `故障診斷`, `生產取捨`
 
 ## 核心理論與詳解
 

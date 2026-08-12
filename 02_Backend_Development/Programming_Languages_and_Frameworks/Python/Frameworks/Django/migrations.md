@@ -1,7 +1,7 @@
 # Django 遷移 (Migrations)
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Migrations`, `Schema`, `Database`
 
 ## 問題詳述

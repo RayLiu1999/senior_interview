@@ -8,6 +8,15 @@
 
 請深入解釋 Gin 框架中間件的工作原理、開發模式以及常見的中間件實現（如認證、日誌、CORS、限流等）。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.gin.middleware-chain`
+- **Learning Objectives**:
+  - `LO-1`: 能夠推導 Gin 中間件在 `c.Next()` 前後的洋蔥式執行順序。
+  - `LO-2`: 能夠實作認證、RBAC、日誌、CORS 或限流中間件，並在拒絕請求時正確 `Abort`。
+  - `LO-3`: 能夠評估中間件註冊範圍、共享狀態、錯誤傳遞與請求延遲的取捨。
+- **Quick Quiz**: [Go Q11](../../../../../QUIZ/06_Go.md#q11)
+
 ## 核心理論與詳解
 
 ### 1. 中間件執行原理

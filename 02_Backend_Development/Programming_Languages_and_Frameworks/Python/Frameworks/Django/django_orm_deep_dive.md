@@ -1,6 +1,7 @@
 # Django ORM 深入解析
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `ORM`, `QuerySet`, `Database`
 
 ## 問題詳述

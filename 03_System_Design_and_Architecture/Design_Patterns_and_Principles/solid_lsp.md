@@ -1,7 +1,7 @@
 # 什麼是里氏替換原則 (Liskov Substitution Principle, LSP)？
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `SOLID`, `LSP`, `Design Principles`, `Inheritance`
 
 ## 問題詳述

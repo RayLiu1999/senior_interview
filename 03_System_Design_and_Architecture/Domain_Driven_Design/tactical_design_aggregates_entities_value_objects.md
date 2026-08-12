@@ -1,6 +1,7 @@
 # 戰術設計：Aggregate, Entity 與 Value Object
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `DDD`, `Tactical Design`, `Aggregate`, `Entity`, `Value Object`
 
 ## 問題詳述

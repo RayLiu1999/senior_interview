@@ -1,6 +1,7 @@
 # Logstash vs Fluentd (日誌收集器對比)
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Logstash`, `Fluentd`, `Logging`, `Comparison`
 
 ## 問題詳述

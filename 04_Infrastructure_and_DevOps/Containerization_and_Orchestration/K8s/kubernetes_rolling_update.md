@@ -1,11 +1,23 @@
 # Rolling Update 與 Rollback 策略
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Deployment`, `Rolling Update`, `Rollback`
 
 ## 問題詳述
 
 請解釋 Kubernetes 中 Deployment 的滾動更新（Rolling Update）機制、更新策略的配置，以及如何進行版本回滾（Rollback）。
+
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.rollout.rolling-update-rollback`
+- **Learning Objectives**:
+  - `LO-1`: 能以 `maxSurge`、`maxUnavailable`、Readiness Probe 與 `progressDeadlineSeconds` 推導滾動更新的可用性、容量與停滯狀態。
+  - `LO-2`: 能從 Deployment、ReplicaSet、Pod 事件與版本指標定位更新或回滾的故障，並提出可驗證的恢復步驟。
+  - `LO-3`: 能在 production rollout、canary 或 blue-green 發布中設計健康閘門、容量餘裕與安全的 rollback 決策，說明速度與風險取捨。
+- **Quick Quiz**: [Q1](../../../QUIZ/11_Kubernetes.md#q1)
+- **Hard Assessment**: [Kubernetes Production Rollout Incident](../../../QUIZ/Hard_Assessments/kubernetes_rollout_incident.md) (`assessment.kubernetes.rollout.incident-diagnosis.v1`)
+- **覆蓋題型**: `故障診斷`, `發布決策`, `權衡取捨`
 
 ## 核心理論與詳解
 

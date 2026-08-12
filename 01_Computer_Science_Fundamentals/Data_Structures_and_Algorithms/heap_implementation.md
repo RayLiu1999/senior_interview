@@ -8,6 +8,15 @@
 
 堆（Heap）是一種特殊的完全二元樹結構，主要用於實現**優先佇列（Priority Queue）**。在面試中，堆最常用於解決 **TopK 問題**（找出最大/最小的 K 個元素），也廣泛應用於任務調度、即時數據流中位數等場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.heap.top-k`
+- **Learning Objectives**:
+  - `LO-1`: 能夠根據完全二元樹的陣列索引規則說明大頂堆與小頂堆的維護方式。
+  - `LO-2`: 能夠推導 push、pop、peek 與 build heap 的時間複雜度及操作流程。
+  - `LO-3`: 能夠依照 K、資料流大小與排序需求選擇大小為 K 的堆、完整堆或快速選擇解法。
+- **Quick Quiz**: [Q5](../../QUIZ/01_Data_Structures_and_Algorithms.md#q5-堆的實現及-top-k-問題)
+
 ## 核心理論與詳解
 
 ### 1. 堆的基本概念

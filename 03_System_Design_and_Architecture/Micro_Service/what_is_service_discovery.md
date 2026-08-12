@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.microservices.service-discovery`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明服務註冊、心跳、健康檢查、查詢與實例選擇如何解決動態位址問題。
+  - `LO-2`: 能夠比較客戶端發現與伺服器端發現的請求流程、負載平衡位置、耦合與延遲。
+  - `LO-3`: 能夠依語言異質性、運維能力、可用性與彈性需求選擇 Registry、Gateway、Load Balancer 或 Kubernetes Service 方案。
+- **Quick Quiz**: [Quick Quiz Q8](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q8)
+
 ### 什麼是服務發現？
 
 服務發現 (Service Discovery) 是微服務架構中的一個核心元件，它解決了一個基本問題：**一個服務（客戶端或 API Gateway）如何找到另一個服務的網路位址（IP 和埠號）？**

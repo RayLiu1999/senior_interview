@@ -1,6 +1,7 @@
 # 水平擴展與分散式系統的關係 (Horizontal Scaling vs. Distributed Systems)
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `System Design`, `Scaling`, `Distributed Systems`, `Concepts`
 
 ## 問題詳述

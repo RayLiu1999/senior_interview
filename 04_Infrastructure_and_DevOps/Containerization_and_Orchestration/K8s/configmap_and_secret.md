@@ -1,6 +1,7 @@
 # ConfigMap 與 Secret 的使用
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `ConfigMap`, `Secret`, `Configuration`
 
 ## 問題詳述

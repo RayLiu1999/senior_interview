@@ -1,7 +1,7 @@
 # Express.js 與 Node.js 的關係
 
 - **難度**: 3
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Express.js`, `Node.js`, `Framework`
 
 ## 問題詳述

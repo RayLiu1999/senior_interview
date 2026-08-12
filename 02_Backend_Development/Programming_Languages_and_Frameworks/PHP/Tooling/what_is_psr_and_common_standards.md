@@ -140,3 +140,12 @@ class MyController
 ```
 
 遵循 PSR-12 可以極大地提高程式碼的可讀性和團隊協作效率。像 PHP-CS-Fixer 和 PHP_CodeSniffer 這樣的工具可以自動檢查和修正程式碼以符合 PSR-12 標準。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.tooling.psr-standards`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 PHP-FIG 與 PSR 的互操作性目標，以及標準建議與強制規則的差異。
+  - `LO-2`: 能夠比較 PSR-4 的自動載入映射、PSR-7 的不可變 HTTP 訊息與 PSR-12 的程式碼風格要求。
+  - `LO-3`: 能夠在專案中依 PSR-12 組織命名空間、類別與格式，並使用檢查工具維持一致性。
+- **Quick Quiz**: [Q9](../../../../QUIZ/09_PHP.md#q9-什麼是-psr-標準有哪些常見的-psr)

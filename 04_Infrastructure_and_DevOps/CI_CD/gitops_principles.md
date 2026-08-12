@@ -8,6 +8,17 @@
 
 GitOps 是一種以 Git 作為基礎設施和應用部署**唯一事實來源（Single Source of Truth）**的運維模式。透過 Git 來宣告式（Declaratively）管理基礎設施和應用的期望狀態，並由自動化工具持續確保實際狀態與期望狀態一致。ArgoCD 是目前最主流的 GitOps 工具之一。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.delivery.gitops-drift-reconciliation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 desired state、reconciliation、drift、sync 與 rollback 的關係。
+  - `LO-2`: 能設計 Git change、artifact promotion、environment policy 與 emergency recovery 的責任邊界。
+  - `LO-3`: 能從 sync status、diff、controller event、版本與 runtime health 證據診斷 GitOps 事故。
+- **Quick Quiz**: [Q5](../../QUIZ/14_CI_CD.md#q5)
+- **Hard Assessment**: [安全交付 Pipeline 事故診斷](../../QUIZ/Hard_Assessments/safe_delivery_pipeline_incident.md) (`assessment.cicd.safe-delivery.pipeline-incident.v1`)
+- **覆蓋題型**: `GitOps`, `漂移診斷`, `回復`
+
 ## 核心理論與詳解
 
 ### GitOps 的四大核心原則

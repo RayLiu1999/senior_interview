@@ -1,11 +1,23 @@
 # Deployment vs. StatefulSet vs. DaemonSet
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Deployment`, `StatefulSet`, `DaemonSet`
 
 ## 問題詳述
 
 請詳細比較 Kubernetes 中的 Deployment、StatefulSet 和 DaemonSet 三種工作負載資源，說明它們的適用場景、特點和差異。
+
+### 測驗對應
+
+- **Concept ID**: `concept.kubernetes.workloads.deployment-statefulset-daemonset`
+- **Learning Objectives**:
+  - `LO-1`: 能依據狀態、穩定身份、持久化儲存、有序更新與每節點覆蓋需求選擇 Deployment、StatefulSet 或 DaemonSet。
+  - `LO-2`: 能推導三種 controller 的擴縮、更新、Service／DNS、PVC 與節點 taint／toleration 行為及其運維代價。
+  - `LO-3`: 能在 production 事故中保留有狀態資料與節點級覆蓋，從 controller、PVC、端點與節點事件驗證安全的恢復方案。
+- **Quick Quiz**: [Q5](../../../QUIZ/11_Kubernetes.md#q5)
+- **Hard Assessment**: [Kubernetes Production Rollout Incident](../../../QUIZ/Hard_Assessments/kubernetes_rollout_incident.md) (`assessment.kubernetes.rollout.incident-diagnosis.v1`)
+- **覆蓋題型**: `架構選型`, `故障診斷`, `恢復取捨`
 
 ## 核心理論與詳解
 

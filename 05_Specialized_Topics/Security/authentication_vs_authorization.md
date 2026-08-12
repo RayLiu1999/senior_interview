@@ -1,12 +1,23 @@
 # 身份驗證與授權 (Authentication vs. Authorization)
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Security`, `Authentication`, `Authorization`
 
 ## 問題詳述
 
 請解釋身份驗證 (Authentication) 和授權 (Authorization) 的區別。它們在系統安全中各自扮演什麼角色？請舉例說明常見的身份驗證和授權機制。
+
+### 測驗對應
+
+- **Concept ID**: `concept.security.identity.authentication-authorization`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 authentication、authorization、session、token 與 policy enforcement 的責任邊界。
+  - `LO-2`: 能設計最小權限、角色／屬性授權、租戶隔離與高風險操作再驗證流程。
+  - `LO-3`: 能從登入、token、權限決策、audit log 與越權事件證據定位存取控制缺口。
+- **Quick Quiz**: [Q1](../../QUIZ/16_Security.md#q1)
+- **Hard Assessment**: [Web Security Breach Incident](../../QUIZ/Hard_Assessments/web_security_breach_incident.md) (`assessment.security.web-breach.api-incident.v1`)
+- **覆蓋題型**: `身份與授權`, `最小權限`, `事故診斷`
 
 ## 核心理論與詳解
 

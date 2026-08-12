@@ -1,7 +1,7 @@
 # Laravel 門面 (Facades) 深度解析
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Laravel`, `Facades`, `Design Pattern`
 
 ## 問題詳述
@@ -113,3 +113,12 @@ $value = Cache::get('key');
 ### 結論
 
 Facade 是 Laravel 提供的一個強大工具，它在簡潔語法和可測試性之間取得了巧妙的平衡。然而，它也是一把雙面刃。過度或不當使用 Facade 可能會導致程式碼的依賴關係混亂。一個好的經驗法則是：在類別的核心和頻繁使用的依賴上，優先使用建構子注入；對於次要的、偶爾使用的服務，或是在框架的非核心部分（如路由檔案），可以考慮使用 Facade 來提升開發效率和程式碼可讀性。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.facades`
+- **Learning Objectives**:
+  - `LO-1`: 能夠追蹤 Facade 的靜態呼叫如何經由 __callStatic、accessor 與服務容器轉發到實例。
+  - `LO-2`: 能夠比較 Facade、建構函式注入與 helper 在可讀性、明確依賴與測試替換上的差異。
+  - `LO-3`: 能夠辨識 Facade 造成的隱藏依賴與範圍蠕變，並依使用頻率與類別責任選擇合適方式。
+- **Quick Quiz**: [Q13](../../../../../QUIZ/09_PHP.md#q13-laravel-facade-的原理是什麼)

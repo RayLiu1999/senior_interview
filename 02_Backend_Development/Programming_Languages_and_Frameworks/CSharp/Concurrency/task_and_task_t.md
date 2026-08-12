@@ -1,6 +1,7 @@
 # Task 與 Task&lt;T&gt;
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Task`, `TPL`, `Asynchronous`
 
 ## 問題詳述
@@ -246,3 +247,13 @@ public async Task<IEnumerable<Result>> ProcessBatchAsync(
     return await Task.WhenAll(tasks);
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.concurrency.task-thread`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Task 與 Thread 的抽象層級、執行緒管理、結果傳遞與適用場景。
+  - `LO-2`: 能夠依 CPU／I/O 工作選擇 Task.Run、async、Task.FromResult 或 TaskCompletionSource，並組合 WhenAll／WhenAny。
+  - `LO-3`: 能夠追蹤 Task 狀態、取消與例外傳播，並避免未啟動的 Task、async void 與未等待操作。
+- **Quick Quiz**: [Q7](../../../../QUIZ/08_CSharp.md#q7-task-和-thread-有什麼區別)
+- **Hard Assessment**: [C# ASP.NET Runtime Incident](../../../../QUIZ/Hard_Assessments/csharp_aspnet_runtime_incident.md) (`assessment.csharp.aspnet-runtime.incident.v1`)

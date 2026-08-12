@@ -8,6 +8,16 @@
 
 在高併發場景下，API 可能面臨過載風險。限流和降級是保護系統穩定性的重要手段。理解各種限流算法、降級策略和熔斷機制，是資深後端工程師必備的技能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.api.rate-limiting.degradation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較固定窗口、滑動窗口、漏桶與令牌桶對突發流量、平滑性與資源成本的影響。
+  - `LO-2`: 能夠設計按使用者、IP、端點或租戶維度執行的分散式限流，並確保共享狀態的原子性。
+  - `LO-3`: 能夠在過載或下游故障時結合 429、排隊、降級與熔斷保護核心功能。
+- **Quick Quiz**: [Q5](../../QUIZ/02_API_Design.md#q5-說明常見的-api-限流演算法及其差異)
+- **Hard Assessment**: [付款／訂單 API 韌性設計](../../QUIZ/Hard_Assessments/api_resilience_idempotency_rate_limit.md)
+
 ## 核心理論與詳解
 
 ### 為什麼需要限流

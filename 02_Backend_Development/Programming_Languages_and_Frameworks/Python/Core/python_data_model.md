@@ -8,6 +8,15 @@
 
 什麼是 Python 的資料模型 (Data Model)？它與“魔法方法”(Magic Methods) 有什麼關係？請舉例說明，如何通過實現特定的魔法方法，讓我們自訂的類能夠支持 Python 的內建語法和操作（如 `len()`, `+`, `for...in` 等）。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.core.data-model`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將 `len()`、運算子、迭代與 `with` 等語法對應到相應的特殊方法協議。
+  - `LO-2`: 能夠設計自訂物件的 `__repr__`、`__str__`、`__iter__` 或運算子方法並處理不支援的型別。
+  - `LO-3`: 能夠說明 `__enter__` 與 `__exit__` 如何讓物件成為上下文管理器並可靠清理資源。
+- **Quick Quiz**: [Python Q4](../../../../QUIZ/05_Python.md#q4)、[Python Q13](../../../../QUIZ/05_Python.md#q13)
+
 ## 核心理論與詳解
 
 Python 資料模型是一套描述 Python 物件如何與語言本身進行交互的“協議”或“框架”。它定義了一系列具有特殊名稱的方法（通常以雙底線開頭和結尾，如 `__init__`、`__len__`），這些方法被稱為“魔法方法”或“雙底線方法 (dunder methods)”。

@@ -1,7 +1,7 @@
 # Elasticsearch 聚合查詢詳解
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Elasticsearch`, `Aggregations`, `Analytics`, `Data Analysis`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 請詳細解釋 Elasticsearch 的聚合 (Aggregations) 功能，包括不同類型的聚合以及如何用於數據分析。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.aggregations.cardinality`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Metric、Bucket 與 Pipeline Aggregation，並將其組合為分組與統計查詢。
+  - `LO-2`: 能夠解釋 Cardinality 使用 HyperLogLog++ 產生近似去重數，以及 `precision_threshold` 的精度與記憶體取捨。
+  - `LO-3`: 能夠依資料量、誤差容忍度與查詢成本選擇聚合策略，並用 filter、桶數與抽樣控制效能。
+- **Quick Quiz**: [Quick Quiz Q6](../../../QUIZ/04_Elasticsearch.md#q6)
 
 聚合 (Aggregations) 是 Elasticsearch 強大的數據分析功能，允許對搜尋結果進行統計、分組和計算。它相當於 SQL 中的 `GROUP BY` 和聚合函數。
 

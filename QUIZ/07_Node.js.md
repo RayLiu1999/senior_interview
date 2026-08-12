@@ -8,7 +8,9 @@
 
 ## 🔄 核心概念 (Core)
 
+<a id="q1"></a>
 ### Q1: 請詳細解釋 Node.js 的 Event Loop
+<!-- Concept ID: concept.nodejs.core.event-loop; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -48,7 +50,9 @@ Promise.resolve().then(() => console.log('promise'));
 
 ---
 
+<a id="q2"></a>
 ### Q2: 阻塞 I/O 和非阻塞 I/O 有什麼區別？
+<!-- Concept ID: concept.nodejs.core.nonblocking-io; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -82,7 +86,9 @@ Promise.resolve().then(() => console.log('promise'));
 
 ---
 
+<a id="q3"></a>
 ### Q3: 如何正確處理 Node.js 中的錯誤？
+<!-- Concept ID: concept.nodejs.core.async-error-handling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -142,7 +148,9 @@ process.on('unhandledRejection', (reason) => {
 
 ---
 
+<a id="q4"></a>
 ### Q4: Stream 和 Buffer 是什麼？
+<!-- Concept ID: concept.nodejs.core.stream-buffer; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -187,7 +195,9 @@ fs.createReadStream('large-file.txt')
 
 ---
 
+<a id="q5"></a>
 ### Q5: Cluster 和 Worker Threads 有什麼區別？
+<!-- Concept ID: concept.nodejs.core.cluster-worker-threads; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -232,7 +242,9 @@ worker.on('message', (result) => { ... });
 
 ---
 
+<a id="q6"></a>
 ### Q6: CommonJS 和 ES Modules 有什麼區別？
+<!-- Concept ID: concept.nodejs.core.module-systems; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -277,7 +289,9 @@ export const myFunc = () => {};
 
 ## 🌐 Express 框架
 
+<a id="q7"></a>
 ### Q7: Express Middleware 的執行機制是什麼？
+<!-- Concept ID: concept.nodejs.express.middleware; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -331,7 +345,9 @@ app.use((err, req, res, next) => {
 
 ---
 
+<a id="q8"></a>
 ### Q8: Express 錯誤處理的最佳實踐是什麼？
+<!-- Concept ID: concept.nodejs.express.error-handling; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -390,7 +406,9 @@ class AppError extends Error {
 
 ## 🏗️ NestJS 框架
 
+<a id="q9"></a>
 ### Q9: NestJS 的核心架構概念是什麼？
+<!-- Concept ID: concept.nodejs.nestjs.architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -443,7 +461,9 @@ export class UserController {
 
 ---
 
+<a id="q10"></a>
 ### Q10: NestJS 的請求生命週期是什麼？
+<!-- Concept ID: concept.nodejs.nestjs.request-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 
@@ -500,7 +520,9 @@ export class UserController {}
 
 ## 📘 TypeScript
 
+<a id="q11"></a>
 ### Q11: 為什麼在 Node.js 專案中使用 TypeScript？
+<!-- Concept ID: concept.nodejs.typescript.node-integration; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -557,7 +579,9 @@ function isUser(obj: any): obj is User {
 
 ---
 
+<a id="q12"></a>
 ### Q12: TypeScript 的進階型別系統有哪些重要概念？
+<!-- Concept ID: concept.nodejs.typescript.advanced-types; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 
@@ -610,7 +634,9 @@ type Readonly<T> = {
 
 ## ⚡ 性能與運行時
 
+<a id="q13"></a>
 ### Q13: V8 引擎如何優化 JavaScript 執行？
+<!-- Concept ID: concept.nodejs.v8.jit-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 
@@ -655,7 +681,9 @@ JavaScript 源碼
 
 ---
 
+<a id="q14"></a>
 ### Q14: 如何檢測和解決 Node.js 記憶體洩漏？
+<!-- Concept ID: concept.nodejs.core.memory-management-gc; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 

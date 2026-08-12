@@ -6,14 +6,7 @@ Node.js 的核心特性和內部機制，包括事件循環、非同步編程、
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [事件循環機制](./event_loop_explained.md) | 8 | 5 | `Event Loop`, `Async` |
-| [Stream 流式處理](./streams_in_nodejs.md) | 7 | 5 | `Stream`, `I/O` |
-| [Buffer 與二進制數據](./buffer_and_binary_data.md) | 6 | 4 | `Buffer`, `Binary` |
 | [模組系統 CommonJS vs ESM](./module_systems.md) | 6 | 5 | `Modules`, `Import/Export` |
-| [錯誤處理最佳實踐](./error_handling_best_practices.md) | 7 | 5 | `Error Handling`, `Best Practices` |
-| [記憶體管理與洩漏](./memory_management_and_leaks.md) | 8 | 4 | `Memory`, `Garbage Collection` |
-| [Child Process 子進程](./child_process_usage.md) | 7 | 4 | `Child Process`, `Concurrency` |
-| [Cluster 叢集模式](./cluster_mode.md) | 7 | 5 | `Cluster`, `Scaling` |
 
 ## 核心概念
 

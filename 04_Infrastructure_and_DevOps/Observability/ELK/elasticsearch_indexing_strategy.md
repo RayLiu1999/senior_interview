@@ -1,6 +1,7 @@
 # Elasticsearch Indexing Strategy (Elasticsearch 索引策略)
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `Elasticsearch`, `ELK`, `Performance`, `Indexing`
 
 ## 問題詳述

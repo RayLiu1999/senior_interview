@@ -8,6 +8,17 @@
 
 IoC（控制反轉）是 Spring 框架的核心，實現了依賴注入（DI）。請深入解釋 Spring IoC 容器的工作原理、Bean 的創建過程和依賴注入機制。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.spring.ioc-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Bean definition、建立、注入、初始化、scope、proxy 與 destroy lifecycle。
+  - `LO-2`: 能設計 constructor injection、明確 scope 與條件化配置，避免循環依賴和共享 mutable singleton。
+  - `LO-3`: 能從 startup、bean graph、scope、memory、lock 與 request latency 證據診斷容器問題。
+- **Quick Quiz**: [Q5](../../../../../QUIZ/18_Java.md#q5)
+- **Hard Assessment**: [Java Runtime Concurrency Incident](../../../../../QUIZ/Hard_Assessments/java_runtime_concurrency_incident.md) (`assessment.java.runtime-concurrency.incident.v1`)
+- **覆蓋題型**: `Spring IoC`, `Bean Lifecycle`, `Scope`
+
 ## 核心理論與詳解
 
 ### 什麼是 IoC

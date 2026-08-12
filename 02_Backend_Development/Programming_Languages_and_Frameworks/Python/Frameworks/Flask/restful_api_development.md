@@ -1,7 +1,7 @@
 # Flask RESTful API 開發
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `REST API`, `Flask-RESTful`
 
 ## 問題詳述

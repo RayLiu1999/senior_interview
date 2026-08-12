@@ -8,6 +8,15 @@
 
 Go 的接口（Interface）是其類型系統的核心。理解接口的**底層資料結構（iface vs eface）**、**動態分派機制**，以及接口帶來的**效能影響**，是深入理解 Go 執行時行為的關鍵。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.internals.interface-representation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 `iface`、`eface` 與 `itab` 的資料結構及其角色。
+  - `LO-2`: 能夠解釋介面賦值、方法動態分派與類型斷言的執行時流程。
+  - `LO-3`: 能夠評估介面呼叫、裝箱與類型斷言在效能和設計上的取捨。
+- **Quick Quiz**: [Go Q14](../../../../QUIZ/06_Go.md#q14)
+
 ## 核心理論與詳解
 
 ### 接口的兩種底層結構

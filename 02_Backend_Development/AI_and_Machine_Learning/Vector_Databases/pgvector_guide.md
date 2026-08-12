@@ -1,6 +1,7 @@
 # pgvector：PostgreSQL 的向量擴展
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `pgvector`, `PostgreSQL`, `向量資料庫`, `SQL`
 
 ## 問題詳述

@@ -1,12 +1,21 @@
 # 資料庫正規化 (Database Normalization)
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Databases`, `Normalization`, `SQL`
 
 ## 問題詳述
 
 什麼是資料庫正規化？請解釋第一正規化 (1NF)、第二正規化 (2NF) 和第三正規化 (3NF) 的定義、目標和範例。正規化會帶來哪些優缺點？
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.normalization.normal-forms`
+- **Learning Objectives**:
+  - `LO-1`: 能夠用原子值、部分依賴與傳遞依賴判斷資料表是否符合 1NF、2NF 與 3NF。
+  - `LO-2`: 能夠將含有冗餘或更新異常的表格拆分為具備清晰主鍵與關係的正規化結構。
+  - `LO-3`: 能夠根據 JOIN 成本、讀寫比例與資料一致性需求決定是否採取受控反正規化。
+- **Quick Quiz**: [Q8](../../QUIZ/02_Databases.md#q8-資料庫正規化的概念和適用場景)
 
 ## 核心理論與詳解
 

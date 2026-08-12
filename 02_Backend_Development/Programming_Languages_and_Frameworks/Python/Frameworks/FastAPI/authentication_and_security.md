@@ -1,7 +1,7 @@
 # FastAPI 認證與安全
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Authentication`, `JWT`, `OAuth2`, `Security`
 
 ## 問題詳述

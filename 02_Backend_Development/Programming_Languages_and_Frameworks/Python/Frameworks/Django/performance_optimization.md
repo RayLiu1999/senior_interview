@@ -1,7 +1,7 @@
 # Django 性能優化
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Performance`, `Optimization`, `Scaling`
 
 ## 問題詳述

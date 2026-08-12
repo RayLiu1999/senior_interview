@@ -1,7 +1,7 @@
 # Laravel 請求生命週期 (Request Lifecycle)
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Laravel`, `Framework`, `Lifecycle`
 
 ## 問題詳述
@@ -92,3 +92,12 @@ $response->send();
 // 6. 執行終止任務
 $kernel->terminate($request, $response);
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.request-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序說明 Laravel 從 public/index.php、Composer、Application、Kernel 到 Bootstrappers 的啟動流程。
+  - `LO-2`: 能夠追蹤服務提供者、路由、中介層、控制器與回應在請求及返回路徑中的責任與順序。
+  - `LO-3`: 能夠區分 response send 與 terminate 階段，並據此定位啟動、路由、業務或收尾工作中的問題。
+- **Quick Quiz**: [Q11](../../../../../QUIZ/09_PHP.md#q11-請解釋-laravel-的請求生命週期)

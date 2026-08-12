@@ -1,11 +1,23 @@
 # Docker 映像層與優化策略
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Docker`, `Image`, `Optimization`
 
 ## 問題詳述
 
 請深入解釋 Docker 映像的分層機制、層快取原理和優化策略，包括如何減小映像大小和提升構建效率。
+
+### 測驗對應
+
+- **Concept ID**: `concept.docker.build.image-layers-cache`
+- **Learning Objectives**:
+  - `LO-1`: 能說明唯讀 layer、container writable layer、digest 與 cache invalidation 的關係。
+  - `LO-2`: 能設計不洩漏 secret 且可重現的 layer／cache 策略，降低 build 與 pull 成本。
+  - `LO-3`: 能以 image history、digest、cache hit rate 與 registry 流量驗證優化是否有效。
+- **Quick Quiz**: [Q3](../../../QUIZ/13_Docker.md#q3)
+- **Hard Assessment**: [Docker Build／Runtime 事故診斷](../../../QUIZ/Hard_Assessments/docker_build_runtime_incident.md) (`assessment.docker.build-runtime.incident.v1`)
+- **覆蓋題型**: `底層原理`, `建置診斷`, `成本取捨`
 
 ## 核心理論與詳解
 

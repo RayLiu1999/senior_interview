@@ -1,12 +1,23 @@
 # HTTPS 與 TLS/SSL
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Security`, `HTTPS`, `TLS`, `SSL`
 
 ## 問題詳述
 
 什麼是 HTTPS？請解釋 TLS/SSL 的工作原理以及它如何保護資料在網路傳輸中的安全。HTTPS 握手 (Handshake) 過程是怎樣的？
+
+### 測驗對應
+
+- **Concept ID**: `concept.security.transport.tls`
+- **Learning Objectives**:
+  - `LO-1`: 能說明憑證鏈、hostname 驗證、握手協商、密鑰交換與對稱加密的關係。
+  - `LO-2`: 能設計 TLS 版本、cipher／policy、憑證輪替、終止點與內外部流量的安全配置。
+  - `LO-3`: 能從 handshake error、憑證、SNI、延遲、加密套件與 proxy log 證據定位 TLS 事故。
+- **Quick Quiz**: [Q5](../../QUIZ/16_Security.md#q5)
+- **Hard Assessment**: [Web Security Breach Incident](../../QUIZ/Hard_Assessments/web_security_breach_incident.md) (`assessment.security.web-breach.api-incident.v1`)
+- **覆蓋題型**: `傳輸安全`, `憑證治理`, `故障診斷`
 
 ## 核心理論與詳解
 

@@ -473,3 +473,12 @@ function findUser(int $id): ?User {
 ## 總結
 
 PHP 類型系統從 PHP 5 到 PHP 8 經歷了巨大的演進，從最初的類和陣列類型提示，到現在支持標量類型、聯合類型、交集類型、never 類型等豐富的類型特性。嚴格模式的引入讓 PHP 可以在編譯時捕獲更多類型錯誤，顯著提升了代碼的健壯性和可維護性。現代 PHP 開發應該充分利用類型系統，配合靜態分析工具，構建類型安全的應用程式。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.type-system-strict-mode`
+- **Learning Objectives**:
+  - `LO-1`: 能夠按版本說明 PHP 從類別與陣列提示到 scalar、nullable、union、intersection、never 與 DNF 的演進。
+  - `LO-2`: 能夠判斷 strict_types=1 的檔案範圍、呼叫端型別轉換行為與 TypeError 差異。
+  - `LO-3`: 能夠為 API 設計參數、返回型別與協變／逆變，並以靜態分析工具驗證型別契約。
+- **Quick Quiz**: [Q2](../../../../QUIZ/09_PHP.md#q2-請解釋-php-的類型系統演進什麼是-strict-mode)

@@ -1,7 +1,7 @@
 # Sharding in MongoDB
 
 - **難度**: 8
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `MongoDB`, `Sharding`, `Scalability`, `System Design`
 
 ## 問題詳述

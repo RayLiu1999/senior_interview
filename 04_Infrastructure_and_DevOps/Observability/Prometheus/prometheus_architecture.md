@@ -1,6 +1,7 @@
 # Prometheus Architecture (Prometheus 架構)
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Prometheus`, `Monitoring`, `TimeSeriesDB`, `Pull Model`
 
 ## 問題詳述

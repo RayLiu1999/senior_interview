@@ -8,6 +8,17 @@
 
 synchronized 是 Java 最基本的同步機制，請深入解釋其實現原理、鎖升級過程、與 Lock 的區別以及使用注意事項。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.concurrency.monitor-locks`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 synchronized 的 monitor、互斥、可見性、reentrancy 與鎖競爭行為。
+  - `LO-2`: 能比較 synchronized、Lock、ReadWriteLock 與無鎖資料結構在正確性和吞吐量上的取捨。
+  - `LO-3`: 能從 blocked threads、lock contention、critical section 與 deadlock evidence 診斷鎖問題。
+- **Quick Quiz**: [Q2](../../../../QUIZ/18_Java.md#q2)
+- **Hard Assessment**: [Java Runtime Concurrency Incident](../../../../QUIZ/Hard_Assessments/java_runtime_concurrency_incident.md) (`assessment.java.runtime-concurrency.incident.v1`)
+- **覆蓋題型**: `Monitor`, `鎖競爭`, `死結診斷`
+
 ## 核心理論與詳解
 
 ### synchronized 基本使用

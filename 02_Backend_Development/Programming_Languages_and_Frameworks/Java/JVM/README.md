@@ -6,16 +6,8 @@
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [JVM 記憶體結構](./memory_structure.md) | 8 | 5 | `Memory`, `Heap`, `Stack` |
 | [垃圾回收機制](./garbage_collection.md) | 9 | 5 | `GC`, `Algorithm` |
-| [垃圾回收器對比](./gc_collectors.md) | 8 | 5 | `Serial`, `Parallel`, `CMS`, `G1`, `ZGC` |
 | [類加載機制](./class_loading.md) | 8 | 5 | `ClassLoader`, `Double Delegation` |
-| [JVM 調優](./jvm_tuning.md) | 9 | 5 | `Tuning`, `Performance` |
-| [記憶體洩漏排查](./memory_leak.md) | 8 | 5 | `Memory Leak`, `Debugging` |
-| [字節碼與 ASM](./bytecode_and_asm.md) | 8 | 3 | `Bytecode`, `ASM` |
-| [即時編譯器](./jit_compiler.md) | 8 | 4 | `JIT`, `C1`, `C2` |
-| [對象記憶體佈局](./object_memory_layout.md) | 7 | 4 | `Object Layout`, `Memory` |
-| [引用類型](./reference_types.md) | 7 | 4 | `Strong`, `Soft`, `Weak`, `Phantom` |
 
 ## 核心知識點
 

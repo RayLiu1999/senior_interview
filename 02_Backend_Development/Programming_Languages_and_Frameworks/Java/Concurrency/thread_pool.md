@@ -8,6 +8,17 @@
 
 線程池是 Java 並發編程的核心組件，能夠有效管理和復用線程。請深入解釋 ThreadPoolExecutor 的工作原理、核心參數、拒絕策略和調優方法。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.concurrency.thread-pool-capacity`
+- **Learning Objectives**:
+  - `LO-1`: 能解釋 core／maximum pool size、queue、keep-alive、拒絕策略與 task lifecycle 的關係。
+  - `LO-2`: 能依 CPU／I/O workload、下游容量、延遲目標與背壓設計有界 thread pool。
+  - `LO-3`: 能從 queue depth、active threads、rejection、task latency 與 downstream saturation 定位併發瓶頸。
+- **Quick Quiz**: [Q3](../../../../QUIZ/18_Java.md#q3)
+- **Hard Assessment**: [Java Runtime Concurrency Incident](../../../../QUIZ/Hard_Assessments/java_runtime_concurrency_incident.md) (`assessment.java.runtime-concurrency.incident.v1`)
+- **覆蓋題型**: `ThreadPoolExecutor`, `容量`, `背壓`
+
 ## 核心理論與詳解
 
 ### 為什麼需要線程池

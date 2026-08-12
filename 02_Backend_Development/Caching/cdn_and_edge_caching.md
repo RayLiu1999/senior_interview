@@ -8,6 +8,15 @@
 
 CDN (Content Delivery Network) 是現代 Web 應用中提升全域訊問速度的關鍵技術。請詳細解釋 CDN 的工作原理、邊緣節點的快取策略、回源機制、HTTP 快取控制頭 (Cache-Control, ETag) 的使用,以及 CDN 在實務中的應用場景和最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.backend.cache.cdn-edge-caching`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 DNS 導流、邊緣快取命中、回源與後續快取回應的完整流程。
+  - `LO-2`: 能夠使用 Cache-Control、max-age、s-maxage、ETag 與條件請求控制內容新鮮度。
+  - `LO-3`: 能夠根據內容是否靜態、個人化、即時與回源失敗風險設計 CDN 快取、預熱與刷新策略。
+- **Quick Quiz**: [Q7](../../QUIZ/02_Caching.md#q7-cdn-快取的工作原理是什麼)
+
 ## 核心理論與詳解
 
 CDN (內容分發網路) 是一種分散式架構,通過在全球各地部署**邊緣節點** (Edge Server),將內容快取到離使用者最近的節點,從而大幅降低延遲、減少頻寬成本、提高內容可用性。

@@ -1,6 +1,7 @@
 # 什麼是 Kubernetes？它解決了什麼問題？
 
 - **難度**: 4
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Container Orchestration`, `Cloud Native`
 
 ## 問題詳述

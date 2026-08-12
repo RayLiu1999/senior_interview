@@ -9,6 +9,7 @@
 ## 🔍 基礎概念
 
 ### Q1: Term Query 和 Match Query 有什麼區別？
+<!-- Concept ID: concept.elasticsearch.query-dsl.search-clauses; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -38,6 +39,7 @@
 ---
 
 ### Q2: 請解釋 Elasticsearch 的倒排索引（Inverted Index）原理
+<!-- Concept ID: concept.elasticsearch.core.inverted-index; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -75,6 +77,7 @@ Doc2 → ["quick", "red", "dog"]
 ---
 
 ### Q3: text 和 keyword 欄位類型有什麼區別？
+<!-- Concept ID: concept.elasticsearch.mapping.text-keyword; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -113,6 +116,7 @@ Doc2 → ["quick", "red", "dog"]
 ## 🔧 查詢與聚合
 
 ### Q4: Bool Query 的 must、should、must_not、filter 有什麼區別？
+<!-- Concept ID: concept.elasticsearch.query-dsl.search-clauses; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -140,6 +144,7 @@ Doc2 → ["quick", "red", "dog"]
 ---
 
 ### Q5: 如何解決 Elasticsearch 深分頁問題？
+<!-- Concept ID: concept.elasticsearch.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -169,6 +174,7 @@ Doc2 → ["quick", "red", "dog"]
 ---
 
 ### Q6: Cardinality 聚合為什麼是近似值？
+<!-- Concept ID: concept.elasticsearch.aggregations.cardinality; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -201,6 +207,7 @@ Doc2 → ["quick", "red", "dog"]
 ## 🌐 分散式架構
 
 ### Q7: 為什麼 Elasticsearch 的主分片數量在索引建立後不能修改？
+<!-- Concept ID: concept.elasticsearch.shards-replicas.routing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -232,6 +239,7 @@ shard = hash(routing) % number_of_primary_shards
 ---
 
 ### Q8: 請解釋 Elasticsearch 的副本機制及其作用
+<!-- Concept ID: concept.elasticsearch.shards-replicas.routing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -263,6 +271,7 @@ shard = hash(routing) % number_of_primary_shards
 ## ⚡ 效能優化
 
 ### Q9: JVM Heap 為什麼建議不超過 32GB？
+<!-- Concept ID: concept.elasticsearch.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -297,6 +306,7 @@ shard = hash(routing) % number_of_primary_shards
 ---
 
 ### Q10: 如何將 MySQL 資料同步到 Elasticsearch？
+<!-- Concept ID: concept.elasticsearch.data-sync; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -325,6 +335,7 @@ shard = hash(routing) % number_of_primary_shards
 ---
 
 ### Q11: 什麼是 Refresh Interval？它如何影響效能？
+<!-- Concept ID: concept.elasticsearch.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -355,6 +366,7 @@ shard = hash(routing) % number_of_primary_shards
 ---
 
 ### Q12: 如何設計 Elasticsearch 的熱溫冷架構？
+<!-- Concept ID: concept.elasticsearch.performance-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 

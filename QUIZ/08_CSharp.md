@@ -9,6 +9,7 @@
 ## 🎯 核心特性 (Core)
 
 ### Q1: 值型別 (Value Type) 和參考型別 (Reference Type) 有什麼區別？
+<!-- Concept ID: concept.csharp.core.value-reference-types; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -45,6 +46,7 @@
 ---
 
 ### Q2: 請解釋 LINQ 的延遲執行 (Deferred Execution) 特性
+<!-- Concept ID: concept.csharp.core.linq-deferred-execution; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -84,6 +86,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ---
 
 ### Q3: 委派 (Delegate) 和事件 (Event) 有什麼區別？
+<!-- Concept ID: concept.csharp.core.delegates-events; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -118,6 +121,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ---
 
 ### Q4: C# 泛型和 Java 泛型有什麼區別？
+<!-- Concept ID: concept.csharp.core.generics-reification; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -155,6 +159,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ---
 
 ### Q5: Dictionary 的內部實作原理是什麼？
+<!-- Concept ID: concept.csharp.core.dictionary-hashing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 
@@ -191,6 +196,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ## ⚡ 非同步與並行 (Concurrency)
 
 ### Q6: async/await 的工作原理是什麼？
+<!-- Concept ID: concept.csharp.concurrency.async-await; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -229,6 +235,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ---
 
 ### Q7: Task 和 Thread 有什麼區別？
+<!-- Concept ID: concept.csharp.concurrency.task-thread; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -266,6 +273,7 @@ foreach (var user in query) // 此時才真正執行查詢
 ---
 
 ### Q8: lock 關鍵字的工作原理是什麼？在 async 方法中能使用嗎？
+<!-- Concept ID: concept.csharp.concurrency.lock-monitor; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -320,6 +328,7 @@ finally
 ---
 
 ### Q9: ConcurrentDictionary 和普通 Dictionary + lock 有什麼區別？
+<!-- Concept ID: concept.csharp.concurrency.concurrent-collections; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -366,6 +375,7 @@ var value = lazy.Value;
 ## 🔧 CLR 與記憶體管理
 
 ### Q10: .NET 垃圾回收機制是如何工作的？
+<!-- Concept ID: concept.csharp.clr.garbage-collection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -408,6 +418,7 @@ var value = lazy.Value;
 ---
 
 ### Q11: IDisposable 模式如何正確實作？
+<!-- Concept ID: concept.csharp.clr.disposable-resource-management; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -465,6 +476,7 @@ await using var resource = new AsyncResource();
 ---
 
 ### Q12: Span&lt;T&gt; 和 Memory&lt;T&gt; 有什麼區別？
+<!-- Concept ID: concept.csharp.clr.span-memory; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 
@@ -509,6 +521,7 @@ ReadOnlySpan<char> hello = span.Slice(0, 5); // 無分配
 ## 🌐 ASP.NET Core
 
 ### Q13: ASP.NET Core 的依賴注入生命週期有哪些？
+<!-- Concept ID: concept.csharp.aspnet-core.di-lifetimes; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -564,6 +577,7 @@ builder.Host.UseDefaultServiceProvider(options =>
 ---
 
 ### Q14: ASP.NET Core 中介軟體管線是如何運作的？
+<!-- Concept ID: concept.csharp.aspnet-core.middleware-pipeline; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -617,6 +631,7 @@ public class TimingMiddleware
 ---
 
 ### Q15: Entity Framework Core 的 DbContext 生命週期應該如何管理？
+<!-- Concept ID: concept.csharp.ef-core.dbcontext-lifetime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -666,6 +681,7 @@ await using var context = await _factory.CreateDbContextAsync();
 ## 🔬 進階主題
 
 ### Q16: 如何避免 async/await 的死鎖？
+<!-- Concept ID: concept.csharp.concurrency.async-await; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -715,6 +731,7 @@ var data = await httpClient.GetStringAsync(url).ConfigureAwait(false);
 ---
 
 ### Q17: 裝箱 (Boxing) 和拆箱 (Unboxing) 的效能影響是什麼？
+<!-- Concept ID: concept.csharp.core.value-reference-types; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
 

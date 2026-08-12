@@ -1,6 +1,7 @@
 # 向量嵌入 (Embeddings) 原理
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Embeddings`, `向量化`, `語義理解`, `NLP`
 
 ## 問題詳述
@@ -8,6 +9,15 @@
 向量嵌入（Vector Embeddings）是將文本、圖片、音頻等非結構化資料轉換為高維向量的技術，是實現語義搜尋、RAG、推薦系統的基礎。理解 Embedding 的原理、選擇合適的模型，以及優化 Embedding 的生成和使用，是構建 AI 應用的核心技能。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.ai.embeddings.generation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠解釋 Embedding 如何把非結構化資料映射為稠密向量，並比較它與 One-Hot 表示的差異。
+  - `LO-2`: 能夠依語言、領域、維度、相似度指標與成本選擇 Embedding 模型和生成流程。
+  - `LO-3`: 能夠設計可重現的向量化管線，處理批次生成、版本變更、品質評估與索引更新。
+- **Quick Quiz**: [Quick Quiz Q6](../../../QUIZ/02_AI_and_Machine_Learning.md#q6)
 
 ### 什麼是向量嵌入
 

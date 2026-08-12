@@ -10,17 +10,7 @@ C# 核心特性涵蓋了語言的基礎語法、型別系統、物件導向程�
 | 2 | [泛型機制詳解](./generics_explained.md) | 6 | 5 | `Generics`, `Type Safety`, `Constraints` |
 | 3 | [LINQ 深入解析](./linq_deep_dive.md) | 7 | 5 | `LINQ`, `IEnumerable`, `Expression Tree` |
 | 4 | [委派與事件](./delegates_and_events.md) | 6 | 5 | `Delegate`, `Event`, `Callback` |
-| 5 | [Lambda 與閉包](./lambda_and_closures.md) | 5 | 4 | `Lambda`, `Closure`, `Func`, `Action` |
-| 6 | [介面與抽象類別](./interface_vs_abstract.md) | 4 | 4 | `Interface`, `Abstract Class`, `Polymorphism` |
-| 7 | [擴充方法](./extension_methods.md) | 4 | 4 | `Extension Method`, `Static` |
-| 8 | [Nullable 型別](./nullable_types.md) | 5 | 4 | `Nullable`, `Null Safety` |
-| 9 | [反射與特性](./reflection_and_attributes.md) | 7 | 4 | `Reflection`, `Attribute`, `Metadata` |
-| 10 | [例外處理最佳實踐](./exception_handling.md) | 4 | 4 | `Exception`, `Error Handling` |
-| 11 | [字串處理與不可變性](./string_immutability.md) | 4 | 3 | `String`, `StringBuilder`, `Immutability` |
 | 12 | [集合框架深入解析](./collections_framework.md) | 6 | 5 | `Collections`, `List`, `Dictionary` |
-| 13 | [結構與類別的選擇](./struct_vs_class.md) | 5 | 4 | `Struct`, `Class`, `Memory` |
-| 14 | [屬性與索引子](./properties_and_indexers.md) | 3 | 3 | `Property`, `Indexer` |
-| 15 | [運算子多載](./operator_overloading.md) | 5 | 2 | `Operator`, `Overloading` |
 
 ---
 

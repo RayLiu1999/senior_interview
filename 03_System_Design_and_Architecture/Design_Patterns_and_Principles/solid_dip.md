@@ -1,7 +1,7 @@
 # 什麼是依賴反轉原則 (Dependency Inversion Principle, DIP)？
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `SOLID`, `DIP`, `Design Principles`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # 中介軟體管線
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Middleware`, `Pipeline`, `Request`
 
 ## 問題詳述
@@ -285,3 +286,12 @@ public class RequestLoggingMiddleware
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.aspnet-core.middleware-pipeline`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依洋蔥模型追蹤中介軟體在 next 前後的請求與回應執行順序。
+  - `LO-2`: 能夠安排例外、路由、CORS、認證與授權的順序，並判斷短路、Run、Map 與 MapWhen 的結果。
+  - `LO-3`: 能夠以 RequestDelegate 實作可觀測且能正確處理例外的自訂中介軟體，並區分其與 MVC 篩選器的邊界。
+- **Quick Quiz**: [Q14](../../../../../QUIZ/08_CSharp.md#q14-aspnet-core-中介軟體管線是如何運作的)

@@ -1,6 +1,7 @@
 # Histogram vs Summary (直方圖與摘要)
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Prometheus`, `Metrics`, `Quantile`, `P99`
 
 ## 問題詳述

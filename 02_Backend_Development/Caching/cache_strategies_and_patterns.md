@@ -1,12 +1,21 @@
 # 快取策略與常見問題
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Caching`, `System Design`, `Performance`, `Reliability`
 
 ## 問題詳述
 
 請解釋什麼是快取通讀 (Read-Through)、快取穿透 (Cache Penetration)、快取擊穿 (Cache Breakdown) 和快取雪崩 (Cache Avalanche)。並說明針對這些問題的典型解決方案。
+
+### 測驗對應
+
+- **Concept ID**: `concept.backend.cache.access-strategies-read-write-patterns`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依照讀取命中、未命中與寫入流程區分 Cache-Aside、Read-Through、Write-Through 與 Write-Back。
+  - `LO-2`: 能夠比較四種策略在資料一致性、寫入延遲、資料遺失風險與應用耦合上的取捨。
+  - `LO-3`: 能夠根據讀寫比例、快取提供者能力與可接受的陳舊程度選擇快取策略。
+- **Quick Quiz**: [Q1](../../QUIZ/02_Caching.md#q1-比較-cache-asideread-throughwrite-throughwrite-back-四種快取策略)
 
 ## 核心理論與詳解
 

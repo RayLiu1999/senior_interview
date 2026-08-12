@@ -1,11 +1,21 @@
 # Database Migration Strategies (資料庫遷移策略)
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `Database`, `Migration`, `System Design`, `High Availability`
 
 ## 問題詳述
 
 如何將數 TB 的資料從一個資料庫遷移到另一個 (例如 MySQL -> PostgreSQL，或單庫 -> 分庫分表)，且不中斷服務 (Zero Downtime)？什麼是雙寫策略 (Dual Write)？
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.migration.zero-downtime`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序規劃雙寫、回填、資料校驗、讀切換、寫切換與舊庫下線階段。
+  - `LO-2`: 能夠比較應用雙寫與 CDC 在延遲、一致性、失敗重試、回滾與運維成本上的取捨。
+  - `LO-3`: 能夠設計主鍵衝突、增量同步、校驗修復與 Reverse Sync 的零停機遷移安全網。
+- **Quick Quiz**: [Q9](../../QUIZ/02_Databases.md#q9-資料庫遷移的策略和注意事項)
 
 ## 核心理論與詳解
 

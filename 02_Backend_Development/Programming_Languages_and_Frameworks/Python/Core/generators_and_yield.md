@@ -8,6 +8,15 @@
 
 什麼是 Python 的生成器 (Generator)？`yield` 關鍵字的作用是什麼，它與 `return` 有何不同？使用生成器相比於一次性返回一個完整的列表，有哪些優勢？請解釋生成器表達式 (Generator Expressions)。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.core.generators`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述生成器函數從呼叫、`yield` 暫停到下一次迭代恢復的狀態變化。
+  - `LO-2`: 能夠比較 `yield` 與 `return` 在執行時機、狀態保存和結束語意上的差異。
+  - `LO-3`: 能夠依資料量與消費模式判斷生成器或列表何者較適合，並說明記憶體取捨。
+- **Quick Quiz**: [Python Q3](../../../../QUIZ/05_Python.md#q3)
+
 ## 核心理論與詳解
 
 生成器是 Python 中一種強大且節省記憶體的工具，用於創建迭代器。與常規函數一次性計算並返回所有結果不同，生成器允許你“惰性地”逐個產生結果，僅在需要時才計算下一個值。

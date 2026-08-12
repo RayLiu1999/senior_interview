@@ -1,6 +1,7 @@
 # Post-mortem Culture (事後復盤文化)
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `On-Call`, `Culture`, `Post-mortem`, `Blameless`
 
 ## 問題詳述

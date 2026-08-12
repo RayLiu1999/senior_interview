@@ -1,7 +1,7 @@
 # 整合測試 (Integration Testing)
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Testing`, `Integration Testing`
 
 ## 問題詳述

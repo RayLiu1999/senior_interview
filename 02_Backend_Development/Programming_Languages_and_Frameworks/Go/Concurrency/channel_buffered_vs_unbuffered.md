@@ -8,6 +8,16 @@
 
 本問題考察面試者對 Go 併發模型中關鍵部分—Channel 的理解。它不僅測試 Channel 的基本用途，還深入到其兩種不同緩衝策略的行為差異，這對於編寫正確、高效的併發程式至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.concurrency.channel-buffering`
+- **Learning Objectives**:
+  - `LO-1`: 能夠推導非緩衝與緩衝 Channel 在發送、接收及阻塞條件下的同步語意。
+  - `LO-2`: 能夠依生產者／消費者速率、背壓與信號需求選擇 Channel 容量。
+  - `LO-3`: 能夠辨識 Channel 關閉、滿／空緩衝與無接收者造成的阻塞或 panic 風險。
+- **Quick Quiz**: [Go Q2](../../../../QUIZ/06_Go.md#q2)
+- **Hard Assessment**: [Go Worker Pipeline 診斷](../../../../QUIZ/Hard_Assessments/go_concurrent_worker_diagnosis.md) (`assessment.go.concurrent.worker-pipeline.v1`)
+
 ## 核心理論與詳解
 
 Channel 是 Go 語言中專為 Goroutine 之間通訊而設計的管道（Conduit）。它是 Go 「不要通過共享記憶體來通訊，而要通過通訊來共享記憶體」這一核心哲學的具體實現。 Channel 確保了在不同 Goroutine 之間傳遞資料的線程安全性。

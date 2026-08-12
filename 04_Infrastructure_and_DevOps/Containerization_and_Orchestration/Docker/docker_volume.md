@@ -1,6 +1,7 @@
 # Docker Volume 與資料持久化
 
 - **難度**: 5
+- **重要程度**: 5
 - **標籤**: `Docker`, `Volume`, `Storage`
 
 ## 問題詳述

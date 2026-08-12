@@ -7,10 +7,6 @@ Entity Framework Core (EF Core) 是 .NET 的現代化物件關聯對映（ORM）
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [DbContext 生命週期](./dbcontext_lifecycle.md) | 6 | 5 | `DbContext`, `Lifetime`, `DI` |
-| 2 | [變更追蹤機制](./change_tracking.md) | 7 | 4 | `Change Tracking`, `Entity State` |
-| 3 | [延遲載入與積極載入](./loading_strategies.md) | 6 | 4 | `Lazy Loading`, `Eager Loading`, `Explicit Loading` |
-| 4 | [查詢效能優化](./query_optimization.md) | 8 | 5 | `Performance`, `Query`, `Index` |
-| 5 | [遷移策略](./migrations.md) | 5 | 4 | `Migration`, `Database First`, `Code First` |
 
 ---
 

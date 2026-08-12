@@ -8,6 +8,15 @@
 
 深入對比 Linux 系統中三種 I/O 多路復用機制（select、poll、epoll）的實現原理、性能差異、適用場景，以及如何在高並發服務器中正確使用 epoll。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.io-multiplexing.epoll-select-poll`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 select、poll 與 epoll 的註冊、就緒通知、掃描與資料結構差異。
+  - `LO-2`: 能夠根據 fd 數量、活躍比例、平台限制與時間複雜度選擇合適的多路復用機制。
+  - `LO-3`: 能夠正確說明 epoll 的 LT/ET、非阻塞讀取、EAGAIN 與 EPOLLONESHOT 使用要求。
+- **Quick Quiz**: [Q6](../../QUIZ/01_Operating_System.md#q6-epoll-vs-select-vs-poll-的區別)
+
 ## 核心理論與詳解
 
 ### 1. select

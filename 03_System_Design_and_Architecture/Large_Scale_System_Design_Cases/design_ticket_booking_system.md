@@ -14,6 +14,17 @@
 4. **支付流程**：如何設計可靠的支付流程，處理支付失敗和超時？
 5. **擴展性**：如何應對熱門活動開賣瞬間的流量峰值？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.ticket-booking.oversell-prevention`
+- **Learning Objectives**:
+  - **LO-1**: 能把座位 hold、付款、出票與釋放建模為可重放的狀態機，保證最多一個有效 reservation。
+  - **LO-2**: 能在強一致 reservation、最終一致通知與支付 unknown outcome 之間定義 authoritative source 與補償邊界。
+  - **LO-3**: 能以 reservation version、order／payment ID、對帳差異與 queue age 驗證尖峰下沒有超賣或靜默遺失。
+- **Quick Quiz**: [Q3](../../QUIZ/12_System_Design.md#q3)、[Q5](../../QUIZ/12_System_Design.md#q5)
+- **Hard Assessment**: [限量資源容量與一致性設計](../../QUIZ/Hard_Assessments/flash_sale_capacity_correctness.md) (`assessment.system-design.limited-resource-capacity.v1`)
+- **覆蓋題型**: `高併發`, `一致性`, `支付與補償`
+
 ## 核心理論與詳解
 
 購票系統是典型的高併發、強一致性場景，需要在性能、一致性和用戶體驗之間取得平衡。

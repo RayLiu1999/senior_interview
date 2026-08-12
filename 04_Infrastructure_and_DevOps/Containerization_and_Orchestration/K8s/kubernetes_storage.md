@@ -1,6 +1,7 @@
 # Persistent Volume (PV)、Persistent Volume Claim (PVC) 與 StorageClass
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Kubernetes`, `Storage`, `PV`, `PVC`
 
 ## 問題詳述

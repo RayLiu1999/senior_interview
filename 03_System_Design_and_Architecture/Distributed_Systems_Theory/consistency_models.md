@@ -1,6 +1,7 @@
 # 一致性模型 (Consistency Models)
 
 - **難度**: 9
+- **重要程度**: 5
 - **標籤**: `Distributed Systems`, `Consistency`, `Linearizability`, `Eventual Consistency`
 
 ## 問題詳述
@@ -8,6 +9,16 @@
 在分散式系統中，「一致性」並非只有「是」或「否」兩種狀態，而是一個連續的光譜。請解釋常見的一致性模型（如強一致性、順序一致性、因果一致性、最終一致性），並比較它們的強弱程度與效能影響。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.consistency.models`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較線性一致性、順序一致性、因果一致性與最終一致性的可見性保證。
+  - `LO-2`: 能夠根據並發讀寫、因果關係與副本延遲判斷某個讀取行為符合或違反哪一種模型。
+  - `LO-3`: 能夠在正確性、延遲、可用性與衝突處理複雜度之間選擇一致性模型，並說明用戶端一致性需求。
+- **Quick Quiz**: [Quick Quiz Q2](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q2)
+- **Hard Assessment**: [跨服務訂單一致性與 Saga 設計](../../QUIZ/Hard_Assessments/distributed_consistency_saga_design.md) (`assessment.distributed-systems.order-consistency-saga.v1`)
 
 一致性模型定義了系統在並發讀寫操作下的行為承諾。模型越「強」，應用程式開發越簡單，但系統的延遲通常越高，可用性越低。
 

@@ -1,11 +1,23 @@
 # Distributed Tracing Basics (分散式追蹤基礎)
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `Tracing`, `Microservices`, `Jaeger`, `OpenTelemetry`, `Observability`
 
 ## 問題詳述
 
 在微服務架構中，一個請求可能經過多個服務調用。當請求變慢或失敗時，如何快速定位是哪一個環節出了問題？請解釋分散式追蹤 (Distributed Tracing) 的核心概念 (Trace, Span, Context Propagation)。
+
+### 測驗對應
+
+- **Concept ID**: `concept.observability.tracing.context-propagation`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Trace、Span、Parent Span 與 Context，並用它們重建跨服務請求的時間線。
+  - `LO-2`: 能夠使用 W3C Trace Context 或 B3 在 HTTP／gRPC 邊界傳遞識別資訊，並辨識傳播中斷造成的盲區。
+  - `LO-3`: 能夠依據流量、錯誤率與延遲選擇 Head-based 或 Tail-based Sampling，並說明成本與漏失異常的取捨。
+- **Hard Assessment**: [多服務 Checkout 事故診斷](../../QUIZ/Hard_Assessments/observability_incident_diagnosis.md)
+- **Quick Quiz**: [Q3](../../QUIZ/10_Observability.md#q3)
+- **覆蓋題型**: `概念檢查`, `追蹤題`, `故障診斷`
 
 ## 核心理論與詳解
 

@@ -10,6 +10,16 @@ Kafka 預設提供 **At-Least-Once** 語義（可靠性優先，允許重複）�
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.consumer-idempotence`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 At-Most-Once、At-Least-Once 與 Exactly-Once 傳遞語義及其重複或丟失風險。
+  - `LO-2`: 能夠解釋 PID、Sequence Number、Idempotent Producer、Transaction Coordinator 與 `read_committed` 的作用。
+  - `LO-3`: 能夠判斷何時只需冪等 Producer、何時需要跨 Partition 事務，並評估事務對效能與複雜度的代價。
+- **Quick Quiz**: [Quick Quiz Q9](../../../QUIZ/02_Message_Queues.md#q9)
+- **Hard Assessment**: [Kafka 訂單事件可靠性診斷](../../../QUIZ/Hard_Assessments/message_delivery_reliability.md) (`assessment.messaging.kafka.message-delivery-reliability.v1`)
+
 ### 三種傳遞語義
 
 | 語義 | 含義 | Kafka 預設？ |

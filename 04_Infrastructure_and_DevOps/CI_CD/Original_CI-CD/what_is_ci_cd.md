@@ -8,6 +8,17 @@
 
 CI/CD 是現代軟體開發流程中的關鍵實踐。請解釋什麼是持續整合（CI）、什麼是持續交付（CD）和持續部署（CD），並說明它們之間的關係以及各自的核心概念。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.pipeline.delivery-fundamentals`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 continuous integration、delivery 與 deployment 的品質與發布責任。
+  - `LO-2`: 能設計從 commit、test、scan、artifact、promotion 到 production verification 的可追溯流程。
+  - `LO-3`: 能在速度、變更風險、回滾能力與環境差異間做出可驗證取捨。
+- **Quick Quiz**: [Q1](../../../QUIZ/14_CI_CD.md#q1)
+- **Hard Assessment**: [安全交付 Pipeline 事故診斷](../../../QUIZ/Hard_Assessments/safe_delivery_pipeline_incident.md) (`assessment.cicd.safe-delivery.pipeline-incident.v1`)
+- **覆蓋題型**: `流程設計`, `品質治理`, `發布取捨`
+
 ## 核心理論與詳解
 
 CI/CD 是一個統稱，代表了**持續整合 (Continuous Integration)**、**持續交付 (Continuous Delivery)** 和 **持續部署 (Continuous Deployment)** 的組合。它是一套通過自動化來頻繁、可靠地交付軟體的實踐。

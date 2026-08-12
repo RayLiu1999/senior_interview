@@ -8,12 +8,6 @@ ASP.NET Core 是微軟開發的跨平台、高效能 Web 框架，用於建構�
 | :---: | :--- | :---: | :---: | :--- |
 | 1 | [依賴注入容器](./dependency_injection.md) | 7 | 5 | `DI`, `IoC`, `Container` |
 | 2 | [中介軟體管線](./middleware_pipeline.md) | 7 | 5 | `Middleware`, `Pipeline`, `Request` |
-| 3 | [路由機制](./routing.md) | 5 | 4 | `Routing`, `Endpoint`, `Attribute Routing` |
-| 4 | [篩選器 (Filters)](./filters.md) | 6 | 4 | `Filter`, `ActionFilter`, `ExceptionFilter` |
-| 5 | [配置管理](./configuration.md) | 5 | 4 | `Configuration`, `Options Pattern` |
-| 6 | [健康檢查](./health_checks.md) | 4 | 3 | `Health Check`, `Monitoring` |
-| 7 | [身份驗證與授權](./authentication_authorization.md) | 7 | 5 | `Authentication`, `Authorization`, `JWT` |
-| 8 | [Minimal API](./minimal_api.md) | 5 | 4 | `Minimal API`, `Endpoint` |
 
 ---
 

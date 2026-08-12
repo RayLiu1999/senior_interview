@@ -1,6 +1,7 @@
 # React 組件生命週期
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `React`, `Lifecycle`, `Class Components`, `Functional Components`
 
 ## 問題詳述
@@ -111,4 +112,3 @@ export default LifecycleDemo;
 - **`useEffect` 搭配空依賴項 `[]`** 完美地模擬了 `componentDidMount`（執行副作用）和 `componentWillUnmount`（返回清理函式）。
 - **`useEffect` 搭配依賴項 `[count]`** 則模擬了 `componentDidUpdate`，它會監聽 `count` 的變化並在變化後執行相應的邏輯。
 - 函式組件的**主體**和**返回的 JSX** 就相當於類別組件的 `render` 方法。
-

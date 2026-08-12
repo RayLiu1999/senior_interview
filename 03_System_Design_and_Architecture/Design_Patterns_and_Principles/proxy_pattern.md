@@ -8,6 +8,17 @@
 
 代理模式是一種結構型設計模式,它為其他物件提供一個代理或佔位符,以控制對這個物件的存取。代理模式在不改變原始物件的情況下,提供額外的功能或控制存取權限。
 
+### 測驗對應
+
+- **Concept ID**: `concept.patterns.proxy.access-control`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 virtual、remote、protection、caching proxy 與真實物件的責任邊界。
+  - `LO-2`: 能在不污染核心服務的前提下加入授權、timeout、cache、audit 與 lazy initialization。
+  - `LO-3`: 能從額外延遲、cache consistency、權限決策、遠端錯誤與 trace 證據評估 proxy 風險。
+- **Quick Quiz**: [Q4](../../QUIZ/17_Architecture_Patterns.md#q4)
+- **Hard Assessment**: [Extensible Order Platform Design Review](../../QUIZ/Hard_Assessments/architecture_pattern_design_review.md) (`assessment.patterns.extensible-order-platform.v1`)
+- **覆蓋題型**: `存取控制`, `橫切關注點`, `效能取捨`
+
 ## 核心理論與詳解
 
 ### 1. 定義與核心概念

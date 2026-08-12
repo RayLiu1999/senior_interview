@@ -6,13 +6,6 @@ Node.js 開發中常用的工具、套件管理器和開發環境配置。
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [npm vs yarn vs pnpm](./package_managers_comparison.md) | 5 | 5 | `Package Manager`, `npm` |
-| [package.json 詳解](./package_json_explained.md) | 5 | 5 | `Configuration`, `Dependencies` |
-| [Node 版本管理](./node_version_management.md) | 4 | 4 | `nvm`, `Version Control` |
-| [ES Lint 與程式碼規範](./eslint_configuration.md) | 5 | 5 | `Code Quality`, `Linting` |
-| [Prettier 程式碼格式化](./prettier_setup.md) | 4 | 4 | `Formatting`, `Code Style` |
-| [除錯技巧與工具](./debugging_nodejs.md) | 6 | 5 | `Debugging`, `DevTools` |
-| [性能分析工具](./performance_profiling.md) | 7 | 4 | `Performance`, `Profiling` |
 
 ## 套件管理器
 

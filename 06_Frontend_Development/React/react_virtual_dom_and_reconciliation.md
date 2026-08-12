@@ -1,6 +1,7 @@
 # React 虛擬 DOM 與調節機制
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `React`, `Virtual DOM`, `Reconciliation`
 
 ## 問題詳述
@@ -82,4 +83,3 @@ export default ItemList;
 
 - **如果沒有 `key`**: React 會逐個比較新舊列表的 `<li>`。它會認為第一個 `<li>` 的內容從 "Apple" 變成了 "New Fruit"，第二個從 "Banana" 變成了 "Apple"，以此類推，導致所有 `<li>` 元素都被更新，效率低下。
 - **有了 `key`**: React 通過 `key` 知道 `id` 為 'a', 'b', 'c' 的 `<li>` 仍然存在，只是它們的位置需要向後移動。React 只需創建一個新的 `<li>` 用於 "New Fruit"，並將其插入到 DOM 的開頭。這極大地優化了性能，避免了不必要的 DOM 操作。
-

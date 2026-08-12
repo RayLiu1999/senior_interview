@@ -6,13 +6,6 @@ TypeScript 已成為 Node.js 開發的事實標準，本節涵蓋 TypeScript 在
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [TypeScript 基礎與型別系統](./typescript_basics.md) | 6 | 5 | `TypeScript`, `Type System` |
-| [泛型與高級類型](./generics_and_advanced_types.md) | 8 | 5 | `Generics`, `Advanced` |
-| [裝飾器（Decorators）](./decorators_explained.md) | 7 | 4 | `Decorators`, `Metaprogramming` |
-| [tsconfig.json 配置](./tsconfig_configuration.md) | 5 | 5 | `Configuration`, `Compiler` |
-| [與 Node.js 整合](./typescript_nodejs_integration.md) | 6 | 5 | `Integration`, `Setup` |
-| [類型定義檔案](./type_definitions.md) | 6 | 4 | `@types`, `DefinitelyTyped` |
-| [TypeScript 最佳實踐](./typescript_best_practices.md) | 7 | 5 | `Best Practices`, `Patterns` |
 
 ## 核心概念
 

@@ -6,10 +6,6 @@ Node.js 及其替代執行環境的特性和差異。
 
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [Node.js vs Deno vs Bun](./nodejs_vs_deno_vs_bun.md) | 7 | 4 | `Runtime`, `Comparison` |
-| [V8 引擎工作原理](./v8_engine_internals.md) | 8 | 4 | `V8`, `JavaScript Engine` |
-| [libuv 事件庫](./libuv_event_library.md) | 8 | 3 | `libuv`, `Event Loop` |
-| [Worker Threads 使用](./worker_threads.md) | 7 | 4 | `Worker Threads`, `Parallelism` |
 
 ## 執行環境對比
 

@@ -1,6 +1,7 @@
 # 系統演進第一階段：單體架構 (Monolithic Architecture)
 
 - **難度**: 4
+- **重要程度**: 5
 - **標籤**: `Architecture`, `Monolith`, `System Evolution`
 
 ## 問題詳述

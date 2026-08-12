@@ -8,6 +8,17 @@
 
 Serverless 架構是雲端運算的重要演進，讓開發者專注於業務邏輯而無需管理伺服器。理解 Serverless 的核心概念、適用場景和設計模式，是現代後端工程師的重要技能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cloud.serverless.event-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能說明事件觸發、無伺服器管理、按量計費、cold start 與 concurrency limit 的行為。
+  - `LO-2`: 能設計具備冪等、timeout、retry、dead-letter 與可觀測性的 Serverless 工作流。
+  - `LO-3`: 能以延遲、錯誤率、並發、重試風暴、成本與下游容量證據評估 Serverless 是否適合。
+- **Quick Quiz**: [Q4](../../QUIZ/15_Cloud_Computing.md#q4)
+- **Hard Assessment**: [Cloud Architecture Reliability Incident](../../QUIZ/Hard_Assessments/cloud_architecture_reliability_incident.md) (`assessment.cloud.architecture.reliability-incident.v1`)
+- **覆蓋題型**: `事件驅動`, `容量診斷`, `成本與可靠性`
+
 ## 核心理論與詳解
 
 ### Serverless 的定義

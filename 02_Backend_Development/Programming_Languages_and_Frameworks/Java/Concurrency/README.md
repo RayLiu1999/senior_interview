@@ -8,16 +8,7 @@ Java 並發編程是資深工程師必須精通的領域。本節涵蓋 Java 記
 |------|------|----------|------|
 | [Java 記憶體模型](./java_memory_model.md) | 9 | 5 | `JMM`, `happens-before`, `volatile` |
 | [synchronized 關鍵字](./synchronized_keyword.md) | 8 | 5 | `synchronized`, `Monitor`, `Lock` |
-| [ReentrantLock 詳解](./reentrant_lock.md) | 8 | 5 | `AQS`, `Lock`, `Condition` |
 | [線程池原理](./thread_pool.md) | 8 | 5 | `ThreadPoolExecutor`, `Executors` |
-| [並發容器](./concurrent_collections.md) | 8 | 5 | `ConcurrentHashMap`, `CopyOnWrite` |
-| [原子類](./atomic_classes.md) | 7 | 4 | `Atomic`, `CAS` |
-| [CountDownLatch 與 CyclicBarrier](./synchronizers.md) | 7 | 4 | `Synchronizer`, `Coordination` |
-| [ForkJoin 框架](./forkjoin_framework.md) | 7 | 3 | `ForkJoin`, `Work Stealing` |
-| [CompletableFuture](./completable_future.md) | 7 | 4 | `Async`, `Future` |
-| [ThreadLocal](./thread_local.md) | 7 | 4 | `ThreadLocal`, `Memory Leak` |
-| [線程安全](./thread_safety.md) | 7 | 5 | `Thread Safety`, `Immutability` |
-| [死鎖問題](./deadlock.md) | 7 | 5 | `Deadlock`, `Livelock` |
 
 ## 核心知識點
 

@@ -1,6 +1,7 @@
 # 分散式時鐘與事件順序 (Distributed Clocks)
 
 - **難度**: 9
+- **重要程度**: 4
 - **標籤**: `Distributed Systems`, `Time`, `Lamport Clock`, `Vector Clock`
 
 ## 問題詳述

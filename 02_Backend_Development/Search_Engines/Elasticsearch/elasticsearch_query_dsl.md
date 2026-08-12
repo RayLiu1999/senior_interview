@@ -1,7 +1,7 @@
 # Elasticsearch 查詢語法詳解：Match, Term, Bool Query
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Elasticsearch`, `Query DSL`, `Search`
 
 ## 問題詳述
@@ -9,6 +9,15 @@
 請詳細解釋 Elasticsearch 的查詢 DSL (Domain Specific Language)，包括 Match Query、Term Query、Bool Query 的區別和使用場景。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.elasticsearch.query-dsl.search-clauses`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依欄位類型與查詢目的選擇 Term、Match 或 Match Phrase Query，並解釋分詞造成的匹配差異。
+  - `LO-2`: 能夠組合 Bool Query 的 `must`、`should`、`must_not` 與 `filter`，說明相關性分數與快取影響。
+  - `LO-3`: 能夠從查詢結果、Mapping 與效能需求診斷錯誤查詢，並將精確條件移到合適的 Filter Context。
+- **Quick Quiz**: [Quick Quiz Q1](../../../QUIZ/04_Elasticsearch.md#q1)、[Quick Quiz Q4](../../../QUIZ/04_Elasticsearch.md#q4)
 
 Elasticsearch 的查詢 DSL 是一種基於 JSON 的查詢語言，提供了豐富的查詢能力。理解不同查詢類型的區別是使用 Elasticsearch 的基礎。
 

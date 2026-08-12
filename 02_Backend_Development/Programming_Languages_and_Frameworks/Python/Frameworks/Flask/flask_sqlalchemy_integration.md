@@ -1,7 +1,7 @@
 # Flask-SQLAlchemy 集成
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `SQLAlchemy`, `ORM`, `Database`
 
 ## 問題詳述

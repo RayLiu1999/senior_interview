@@ -9,6 +9,7 @@
 ## 📝 快取策略與模式
 
 ### Q1: 比較 Cache-Aside、Read-Through、Write-Through、Write-Back 四種快取策略
+<!-- Concept ID: concept.backend.cache.access-strategies-read-write-patterns; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -43,6 +44,7 @@
 ---
 
 ### Q2: 什麼是快取穿透、擊穿、雪崩？如何解決？
+<!-- Concept ID: concept.backend.cache.failure-modes; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -81,6 +83,7 @@
 ## 🔄 快取一致性
 
 ### Q3: 如何保證快取與資料庫的一致性？
+<!-- Concept ID: concept.backend.cache.consistency-invalidation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -116,6 +119,7 @@
 ## 📊 快取淘汰演算法
 
 ### Q4: 比較 LRU、LFU、FIFO 等快取淘汰演算法
+<!-- Concept ID: concept.backend.cache.eviction-algorithms; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -145,6 +149,7 @@
 ## 🏗️ 快取架構
 
 ### Q5: 什麼是延遲雙刪？什麼情況下需要使用？
+<!-- Concept ID: concept.backend.cache.warming-update-strategies; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -178,6 +183,7 @@
 ---
 
 ### Q6: 如何設計多層快取架構？
+<!-- Concept ID: concept.backend.cache.multi-tier-l1-l2-consistency; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -217,6 +223,7 @@ Client → L1 本地快取 → L2 分散式快取 → Database
 ---
 
 ### Q7: CDN 快取的工作原理是什麼？
+<!-- Concept ID: concept.backend.cache.cdn-edge-caching; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
 

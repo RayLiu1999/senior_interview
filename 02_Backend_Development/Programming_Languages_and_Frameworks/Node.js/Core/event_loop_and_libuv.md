@@ -8,6 +8,15 @@
 
 Node.js 的核心特性是其非阻塞、事件驅動的 I/O 模型，而事件循環 (Event Loop) 是實現這一模型的關鍵。請詳細解釋 Node.js 的事件循環是如何運作的？它包含哪些主要階段？並闡述 Libuv 在這個架構中扮演了什麼角色。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.event-loop`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序說明 Timers、Poll、Check 等事件循環階段及其回呼來源。
+  - `LO-2`: 能夠解釋 Node.js、V8 與 Libuv 如何分工處理 JavaScript、作業系統 I/O 與執行緒池工作。
+  - `LO-3`: 能夠根據 `process.nextTick`、Promise、`setTimeout` 與 `setImmediate` 推導可觀察的執行順序。
+- **Quick Quiz**: [Node.js Q1](../../../../QUIZ/07_Node.js.md#q1)
+
 ## 核心理論與詳解
 
 Node.js 的單線程非阻塞 I/O 模型使其能夠用相對較少的資源處理大量並發連接。這個模型的核心就是事件循環，但一個常見的誤解是認為事件循環是 V8 引擎的一部分。事實上，**事件循環是由 Node.js 的底層 C++ 函式庫 Libuv 提供的**。

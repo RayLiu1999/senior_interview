@@ -43,9 +43,6 @@ Apache Kafka 是目前最流行的分散式訊息串流平台，被廣泛應用�
 
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [Kafka 在實際系統中的應用場景](./kafka_use_cases.md) | 6 | 4 | `Kafka`, `應用場景`, `實踐` |
-| [Kafka 叢集的部署和運維](./kafka_cluster_deployment.md) | 8 | 3 | `Kafka`, `部署`, `運維` |
-| [Kafka 監控和故障排查](./kafka_monitoring_troubleshooting.md) | 7 | 4 | `Kafka`, `監控`, `故障排查` |
 
 ## 學習路徑建議
 

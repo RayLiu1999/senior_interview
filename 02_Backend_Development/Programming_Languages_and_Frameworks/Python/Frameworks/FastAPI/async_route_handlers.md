@@ -8,6 +8,17 @@
 
 深入探討 FastAPI 的異步路由處理機制，包括 async/await 語法的使用、異步與同步路由的區別、性能優勢、並發處理以及異步編程的最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.async-route-runtime`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 ASGI、事件循環、coroutine、`await` 與 FastAPI async／sync route 的執行邊界。
+  - `LO-2`: 能辨識阻塞同步 I/O、CPU-bound 工作、thread pool 與 async client 對事件循環吞吐量的影響。
+  - `LO-3`: 能從 event-loop lag、request latency、task backlog、thread pool 與下游指標定位 async service 的效能問題。
+- **Quick Quiz**: [Python Q14](../../../../../QUIZ/05_Python.md#q14)
+- **Hard Assessment**: [Python Async Service Incident](../../../../../QUIZ/Hard_Assessments/python_async_service_incident.md) (`assessment.python.async-service.incident.v1`)
+- **覆蓋題型**: `ASGI`, `asyncio`, `事件循環`, `阻塞診斷`
+
 ## 核心理論與詳解
 
 ### FastAPI 異步支持的核心

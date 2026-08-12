@@ -1,7 +1,7 @@
 # Flask 配置管理
 
 - **難度**: 5
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Configuration`, `Config`, `Environment`
 
 ## 問題詳述

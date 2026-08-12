@@ -1,6 +1,7 @@
 # Flask 應用上下文與請求上下文
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `Context`, `Application Context`, `Request Context`
 
 ## 問題詳述

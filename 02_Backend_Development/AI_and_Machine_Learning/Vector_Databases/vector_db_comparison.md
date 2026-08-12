@@ -1,6 +1,7 @@
 # 主流向量資料庫對比與選型
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `向量資料庫`, `選型`, `Pinecone`, `Milvus`, `Weaviate`, `Qdrant`
 
 ## 問題詳述
@@ -8,6 +9,15 @@
 市場上有眾多向量資料庫產品，從雲端服務到開源方案，從 PostgreSQL 擴展到專用資料庫。如何根據業務需求、規模、預算選擇合適的向量資料庫，是構建 AI 應用的重要決策。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.ai.vector-database.selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依資料量、QPS、延遲與查詢需求比較 pgvector、Qdrant、Weaviate、Milvus 與 Pinecone。
+  - `LO-2`: 能夠將預算、託管程度、團隊運維能力與既有 PostgreSQL 整合需求轉換為選型判斷。
+  - `LO-3`: 能夠說明選型對效能、擴展性、成本、供應商鎖定與運維複雜度的影響，並提出驗證方案。
+- **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/02_AI_and_Machine_Learning.md#q7)
 
 ### 主流產品對比表
 

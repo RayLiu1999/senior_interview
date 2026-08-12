@@ -1,6 +1,7 @@
 # Namespace 與 RBAC 權限管理
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Kubernetes`, `Namespace`, `RBAC`, `Security`
 
 ## 問題詳述

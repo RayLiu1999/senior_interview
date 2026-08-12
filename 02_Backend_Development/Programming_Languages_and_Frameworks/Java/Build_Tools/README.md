@@ -7,10 +7,6 @@ Java 項目的建構管理是開發流程的重要環節。本節涵蓋 Maven、
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [Maven 原理與最佳實踐](./maven_basics.md) | 6 | 5 | `Maven`, `Build` |
-| [依賴管理策略](./dependency_management.md) | 6 | 5 | `Dependency`, `Version` |
-| [多模組項目構建](./multi_module_project.md) | 7 | 4 | `Multi-Module`, `Project Structure` |
-| [Maven 生命週期](./maven_lifecycle.md) | 5 | 4 | `Lifecycle`, `Phases` |
-| [插件開發](./plugin_development.md) | 7 | 3 | `Plugin`, `Custom` |
 
 ## 核心知識點
 

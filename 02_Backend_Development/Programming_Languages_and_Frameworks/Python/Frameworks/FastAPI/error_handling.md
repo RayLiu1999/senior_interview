@@ -1,7 +1,7 @@
 # FastAPI 錯誤處理
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Error Handling`, `Exception`, `HTTPException`
 
 ## 問題詳述

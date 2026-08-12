@@ -1,6 +1,7 @@
 # Flask Blueprint 的用途與使用方式？
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Flask`, `Blueprint`, `Modularity`, `Application Structure`
 
 ## 問題詳述

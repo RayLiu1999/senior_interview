@@ -1,6 +1,7 @@
 # 領域事件與事件風暴 (Domain Events & Event Storming)
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `DDD`, `Domain Event`, `Event Storming`, `Event Driven Architecture`
 
 ## 問題詳述

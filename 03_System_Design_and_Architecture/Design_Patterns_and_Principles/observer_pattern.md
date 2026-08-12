@@ -1,12 +1,23 @@
 # 什麼是觀察者模式 (Observer Pattern)？
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Design Pattern`, `Observer`, `Behavioral`, `Pub-Sub`
 
 ## 問題詳述
 
 觀察者模式是一種行為型設計模式，它定義對象間的一對多依賴關係，當一個對象的狀態發生變化時，所有依賴它的對象都會收到通知並自動更新。這個模式如何解耦發布者與訂閱者？
+
+### 測驗對應
+
+- **Concept ID**: `concept.patterns.observer.event-decoupling`
+- **Learning Objectives**:
+  - `LO-1`: 能區分同步 observer、非同步 event bus、subscriber、事件順序與失敗傳播的語意。
+  - `LO-2`: 能設計有界佇列、重試、冪等、取消與 subscriber isolation，避免通知系統拖垮 publisher。
+  - `LO-3`: 能從 lag、duplicate、dropped event、handler latency 與 ordering 證據診斷事件流程問題。
+- **Quick Quiz**: [Q3](../../QUIZ/17_Architecture_Patterns.md#q3)
+- **Hard Assessment**: [Extensible Order Platform Design Review](../../QUIZ/Hard_Assessments/architecture_pattern_design_review.md) (`assessment.patterns.extensible-order-platform.v1`)
+- **覆蓋題型**: `事件解耦`, `可靠性`, `故障診斷`
 
 ## 核心理論與詳解
 

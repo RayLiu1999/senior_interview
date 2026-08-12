@@ -1,6 +1,7 @@
 # lock 與 Monitor
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `lock`, `Monitor`, `Critical Section`
 
 ## 問題詳述
@@ -280,3 +281,13 @@ public class InterlockedCounter
     public int Decrement() => Interlocked.Decrement(ref _count);
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.concurrency.lock-monitor`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 lock 如何透過 Monitor.Enter／Exit 保護臨界區，並正確處理例外與釋放。
+  - `LO-2`: 能夠依同步或非同步需求選擇專用鎖物件、SemaphoreSlim、ReaderWriterLockSlim、Mutex 或 Interlocked。
+  - `LO-3`: 能夠從鎖定順序、持有時間與 await 使用方式診斷死鎖或競爭，並縮小臨界區。
+- **Quick Quiz**: [Q8](../../../../QUIZ/08_CSharp.md#q8-lock-關鍵字的工作原理是什麼在-async-方法中能使用嗎)
+- **Hard Assessment**: [C# ASP.NET Runtime Incident](../../../../QUIZ/Hard_Assessments/csharp_aspnet_runtime_incident.md) (`assessment.csharp.aspnet-runtime.incident.v1`)

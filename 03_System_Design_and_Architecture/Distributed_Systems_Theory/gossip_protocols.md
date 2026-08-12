@@ -1,6 +1,7 @@
 # Gossip Protocols (流言協議)
 
 - **難度**: 8
+- **重要程度**: 3
 - **標籤**: `Distributed Systems`, `Gossip`, `Epidemic Algorithms`, `Cassandra`
 
 ## 問題詳述

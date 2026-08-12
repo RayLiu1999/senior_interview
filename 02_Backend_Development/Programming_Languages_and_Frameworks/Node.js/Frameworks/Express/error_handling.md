@@ -1,12 +1,21 @@
 # Express.js 錯誤處理 (Error Handling)
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Express.js`, `Node.js`, `Error Handling`
 
 ## 問題詳述
 
 Express.js 是如何處理錯誤的？請解釋同步和非同步程式碼中的錯誤處理方式，並說明如何建立一個集中的錯誤處理中介層。
+
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.express.error-handling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Express 同步、callback、Promise 與 async handler 的錯誤傳遞方式。
+  - `LO-2`: 能夠設計位於路由之後的四參數集中式錯誤處理中介層。
+  - `LO-3`: 能夠依環境安全地記錄錯誤、映射 HTTP 狀態碼並避免向生產客戶端暴露堆疊。
+- **Quick Quiz**: [Node.js Q8](../../../../../QUIZ/07_Node.js.md#q8)
 
 ## 核心理論與詳解
 

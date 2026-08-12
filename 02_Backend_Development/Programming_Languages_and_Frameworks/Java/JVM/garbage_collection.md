@@ -8,6 +8,17 @@
 
 垃圾回收是 JVM 自動記憶體管理的核心機制。請深入解釋 GC 的工作原理、主要算法、分代回收策略和各種 GC 器的特點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.jvm.gc-performance`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 GC Roots、可達性、分代、allocation rate、pause 與 concurrent collector 的關係。
+  - `LO-2`: 能依 heap、allocation、pause target、CPU headroom 與 workload 選擇調優方向，而不是盲目加大 heap。
+  - `LO-3`: 能從 GC log、heap／native memory、allocation、latency 與 CPU 證據區分 leak、壓力與錯誤配置。
+- **Quick Quiz**: [Q4](../../../../QUIZ/18_Java.md#q4)
+- **Hard Assessment**: [Java Runtime Concurrency Incident](../../../../QUIZ/Hard_Assessments/java_runtime_concurrency_incident.md) (`assessment.java.runtime-concurrency.incident.v1`)
+- **覆蓋題型**: `JVM`, `GC`, `延遲診斷`
+
 ## 核心理論與詳解
 
 ### 為什麼需要垃圾回收

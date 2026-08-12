@@ -1,7 +1,7 @@
 # CAP 定理
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Distributed Systems`, `System Design`, `CAP Theorem`
 
 ## 問題詳述

@@ -1,6 +1,7 @@
 # RAG (Retrieval-Augmented Generation) 核心原理
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `AI`, `RAG`, `Vector Database`, `Embeddings`, `Search`
 
 ## 問題詳述

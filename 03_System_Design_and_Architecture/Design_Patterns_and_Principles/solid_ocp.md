@@ -1,12 +1,23 @@
 # 什麼是開閉原則 (Open-Closed Principle, OCP)？
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `SOLID`, `OCP`, `Design Principles`
 
 ## 問題詳述
 
 開閉原則是 SOLID 原則中最重要也最具挑戰性的原則之一。它要求軟體實體應該對擴展開放，對修改封閉。這看似矛盾的要求在實際開發中如何實現？
+
+### 測驗對應
+
+- **Concept ID**: `concept.patterns.solid.ocp-change-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 OCP 的變化軸、穩定抽象與 extension point，而不是把它理解成禁止所有修改。
+  - `LO-2`: 能以策略、介面、組合或 plugin boundary 隔離變動，避免核心流程形成難以測試的條件分支。
+  - `LO-3`: 能用變更範圍、回歸風險、測試成本與 runtime 行為評估是否值得引入抽象。
+- **Quick Quiz**: [Q5](../../QUIZ/17_Architecture_Patterns.md#q5)
+- **Hard Assessment**: [Extensible Order Platform Design Review](../../QUIZ/Hard_Assessments/architecture_pattern_design_review.md) (`assessment.patterns.extensible-order-platform.v1`)
+- **覆蓋題型**: `SOLID`, `變化隔離`, `過度設計取捨`
 
 ## 核心理論與詳解
 

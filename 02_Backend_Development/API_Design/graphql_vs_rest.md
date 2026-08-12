@@ -1,12 +1,21 @@
 # GraphQL vs. REST: 一場 API 架構的對比
 
 - **難度**: 7
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `API Design`, `GraphQL`, `REST`
 
 ## 問題詳述
 
 請比較 GraphQL 和 REST 這兩種 API 設計架構。它們的核心思想是什麼？各自解決了什麼問題，又帶來了哪些新的挑戰？
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.graphql-rest.selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 REST 的資源導向與 GraphQL 的查詢導向、端點、型別與資料取得模型。
+  - `LO-2`: 能夠分析 over-fetching、under-fetching、伺服器端 N+1、查詢複雜度與快取差異。
+  - `LO-3`: 能夠根據客戶端多樣性、資料聚合、HTTP 快取、效能與安全限制選擇 REST、GraphQL 或混合方案。
+- **Quick Quiz**: [Q6](../../QUIZ/02_API_Design.md#q6-graphql-vs-rest---如何選擇)
 
 ## 核心理論與詳解
 

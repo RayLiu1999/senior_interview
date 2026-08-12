@@ -1,6 +1,7 @@
 # 常見 AWS CI/CD 部署流程 (Common AWS CI/CD Workflows)
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `CI/CD`, `AWS`, `GitHub Actions`, `Docker`, `ECS`, `DevOps`
 
 ## 問題詳述

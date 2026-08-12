@@ -8,6 +8,15 @@
 
 請解釋什麼是阻塞式 I/O (Blocking I/O) 和非阻塞式 I/O (Non-blocking I/O)，並舉例說明它們在 Node.js 中的體現。為什麼 Node.js 選擇非阻塞式 I/O 作為其核心模型？
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.nonblocking-io`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較阻塞與非阻塞 I/O 在執行緒等待、回傳時機與程式控制流上的差異。
+  - `LO-2`: 能夠辨識 Node.js 同步 API、Libuv 執行緒池與事件循環在請求處理中的角色。
+  - `LO-3`: 能夠依高併發 I/O 或啟動腳本情境選擇 API，並說明主執行緒阻塞的吞吐量風險。
+- **Quick Quiz**: [Node.js Q2](../../../../QUIZ/07_Node.js.md#q2)
+
 ## 核心理論與詳解
 
 I/O (Input/Output) 操作是程式與外部世界（如檔案系統、資料庫、網路）互動的通道。根據 I/O 操作在等待結果時是否會「卡住」主執行緒，可以將其分為阻塞式和非阻塞式兩種模型。

@@ -1,11 +1,21 @@
 # 資料庫讀寫分離 (Database Read/Write Splitting)
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Database`, `Scalability`, `Architecture`, `Replication`
 
 ## 問題詳述
 
 在系統擴展過程中，資料庫往往是最先遇到的瓶頸。請解釋什麼是「讀寫分離」，它是如何運作的？這是否意味著要將資料庫部署在不同的主機上？以及這種架構會帶來什麼樣的數據一致性問題？
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.read-write-splitting.replication-lag`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述主庫寫入、複製日誌、從庫重放與讀請求路由的讀寫分離流程。
+  - `LO-2`: 能夠分析複製延遲造成的寫後讀不一致，並選擇讀主、會話親和性或延遲路由策略。
+  - `LO-3`: 能夠評估讀寫分離對吞吐量、部署成本、事務路由與最終一致性的影響。
+- **Quick Quiz**: [Q7](../../QUIZ/02_Databases.md#q7-什麼是讀寫分離如何處理主從延遲)
 
 ## 核心理論與詳解
 

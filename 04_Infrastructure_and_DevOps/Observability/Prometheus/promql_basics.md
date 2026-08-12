@@ -1,6 +1,7 @@
 # PromQL Basics (PromQL 基礎)
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Prometheus`, `PromQL`, `Query Language`
 
 ## 問題詳述

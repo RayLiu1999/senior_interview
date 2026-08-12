@@ -1,6 +1,7 @@
 # Incident Management Process (事故管理流程)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `On-Call`, `SRE`, `Process`, `Incident`
 
 ## 問題詳述

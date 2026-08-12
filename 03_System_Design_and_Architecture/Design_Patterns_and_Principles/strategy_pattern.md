@@ -1,12 +1,23 @@
 # 什麼是策略模式 (Strategy Pattern)？
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Design Pattern`, `Strategy`, `Behavioral`
 
 ## 問題詳述
 
 策略模式是一種行為型設計模式，它定義了一系列算法，將每個算法封裝起來，並使它們可以互相替換。策略模式讓算法的變化獨立於使用算法的客戶端。在實際開發中如何應用這個模式？
+
+### 測驗對應
+
+- **Concept ID**: `concept.patterns.strategy.extensibility`
+- **Learning Objectives**:
+  - `LO-1`: 能辨識演算法變化、context、strategy interface 與條件分支的責任邊界。
+  - `LO-2`: 能用策略、組合與明確選擇規則擴展付款、定價或路由邏輯，而不讓核心流程膨脹。
+  - `LO-3`: 能以版本、選擇結果、延遲、錯誤率與業務指標驗證策略切換的安全性。
+- **Quick Quiz**: [Q2](../../QUIZ/17_Architecture_Patterns.md#q2)
+- **Hard Assessment**: [Extensible Order Platform Design Review](../../QUIZ/Hard_Assessments/architecture_pattern_design_review.md) (`assessment.patterns.extensible-order-platform.v1`)
+- **覆蓋題型**: `行為封裝`, `擴展性`, `選型取捨`
 
 ## 核心理論與詳解
 

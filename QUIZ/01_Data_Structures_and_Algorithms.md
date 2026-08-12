@@ -9,6 +9,7 @@
 ## 📊 核心資料結構
 
 ### Q1: B+ 樹的原理及為何適合資料庫索引？
+<!-- Concept ID: concept.data-structures.b-plus-tree.indexing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -46,6 +47,7 @@
 ---
 
 ### Q2: 雜湊表的原理、碰撞處理和負載因子
+<!-- Concept ID: concept.data-structures.hash-table.collision-resolution; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -85,6 +87,7 @@
 ---
 
 ### Q3: 布隆過濾器的原理和應用場景
+<!-- Concept ID: concept.data-structures.bloom-filter.false-positive; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -130,6 +133,7 @@
 ---
 
 ### Q4: LRU 快取的實現原理
+<!-- Concept ID: concept.data-structures.lru-cache.o1-operations; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -182,6 +186,7 @@ type Node struct {
 ---
 
 ### Q5: 堆的實現及 Top K 問題
+<!-- Concept ID: concept.data-structures.heap.top-k; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -228,6 +233,7 @@ type Node struct {
 ## 🔍 核心演算法
 
 ### Q6: 排序演算法比較（快排、歸併、堆排序）
+<!-- Concept ID: concept.algorithms.sorting.algorithm-tradeoffs; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -274,6 +280,7 @@ func partition(arr []int, lo, hi int) int {
 ---
 
 ### Q7: 二分搜尋的變體題目
+<!-- Concept ID: concept.algorithms.binary-search.boundaries; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
 
@@ -320,6 +327,7 @@ func binarySearch(nums []int, target int) int {
 ---
 
 ### Q8: 動態規劃的解題思路
+<!-- Concept ID: concept.algorithms.dynamic-programming.state-transition; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -359,6 +367,7 @@ func binarySearch(nums []int, target int) int {
 ---
 
 ### Q9: DFS 和 BFS 的應用場景
+<!-- Concept ID: concept.algorithms.graph-traversal.dfs-bfs-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -417,6 +426,7 @@ func bfs(root *TreeNode) {
 ## 🏗️ 實際應用
 
 ### Q10: 一致性雜湊的原理和應用
+<!-- Concept ID: concept.distributed-systems.consistent-hashing.virtual-nodes; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -459,6 +469,7 @@ hash(key) % N
 ---
 
 ### Q11: 限流演算法（令牌桶、漏桶）
+<!-- Concept ID: concept.distributed-systems.rate-limiting.token-leaky-bucket; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -502,6 +513,7 @@ hash(key) % N
 ---
 
 ### Q12: 分散式 ID 生成方案
+<!-- Concept ID: concept.distributed-systems.distributed-id.generation-strategies; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 

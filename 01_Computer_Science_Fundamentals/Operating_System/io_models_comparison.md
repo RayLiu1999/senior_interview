@@ -8,6 +8,15 @@
 
 深入解釋 Unix/Linux 系統中的五種 I/O 模型（阻塞 I/O、非阻塞 I/O、I/O 多路復用、信號驅動 I/O、異步 I/O）的工作原理、各自的優缺點，以及在高並發場景下如何選擇合適的 I/O 模型。
 
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.io-models.model-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 I/O 等待資料準備與資料拷貝兩個階段，並描述五種模型的阻塞位置。
+  - `LO-2`: 能夠比較阻塞、非阻塞、多路復用、信號驅動與異步 I/O 的併發能力、CPU 成本與複雜度。
+  - `LO-3`: 能夠根據連線數、平台支援、延遲與吞吐量需求選擇 I/O 模型並說明代價。
+- **Quick Quiz**: [Q5](../../QUIZ/01_Operating_System.md#q5-五種-io-模型的區別是什麼)
+
 ## 核心理論與詳解
 
 ### 1. I/O 操作的兩個階段

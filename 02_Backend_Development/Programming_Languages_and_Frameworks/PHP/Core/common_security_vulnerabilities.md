@@ -196,3 +196,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ```
 
 **注意**: `hash_equals()` 函式用於比較字串，可以防止時序攻擊 (Timing Attack)，比直接使用 `==` 更安全。現代框架通常都內建了 CSRF 保護中介軟體，自動處理 Token 的生成和驗證。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.web-security-vulnerabilities`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從輸入拼接與參數化查詢的差異判斷 SQL Injection 風險，並使用 prepared statement 防護。
+  - `LO-2`: 能夠依輸出情境選擇 HTML 編碼，並說明 XSS 與 Cookie／Session 竊取的關係。
+  - `LO-3`: 能夠追蹤 CSRF 的 Cookie 認證流程，並以同步權杖、hash_equals 與安全 Session 設定阻擋偽造請求。
+- **Quick Quiz**: [Q6](../../../../QUIZ/09_PHP.md#q6-php-常見的安全漏洞有哪些如何防範)

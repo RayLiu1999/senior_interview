@@ -1,6 +1,7 @@
 # IDisposable 與資源管理
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `IDisposable`, `using`, `Finalize`
 
 ## 問題詳述
@@ -263,3 +264,12 @@ public class DatabaseService : IDisposable, IAsyncDisposable
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.clr.disposable-resource-management`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分受控與非受控資源，並依資源所有權選擇 IDisposable 或 IAsyncDisposable。
+  - `LO-2`: 能夠實作 Dispose(bool)、冪等釋放、GC.SuppressFinalize 與 disposed guard，避免重複或越界使用。
+  - `LO-3`: 能夠解釋 using／await using 如何轉換為 try-finally，並判斷何時需要終結器安全網。
+- **Quick Quiz**: [Q11](../../../../QUIZ/08_CSharp.md#q11-idisposable-模式如何正確實作)

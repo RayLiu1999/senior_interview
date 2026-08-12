@@ -8,6 +8,15 @@
 
 Django, Flask, 和 FastAPI 是 Python 生態系統中最主流的三個 Web 框架。請從架構設計、性能、開發效率、社群生態等方面詳細比較它們的差異、優缺點，並說明它們各自最適合的應用場景。作為一個資深工程師，你會在什麼情況下選擇哪一個框架？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.frameworks.web-framework-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Django、Flask 與 FastAPI 的架構哲學、內建能力和擴充方式。
+  - `LO-2`: 能夠依功能完整度、彈性、同步／異步模型與團隊能力選擇框架。
+  - `LO-3`: 能夠在高併發 API、大型網站與小型服務情境中說明性能、生態和維護成本的取捨。
+- **Quick Quiz**: [Python Q9](../../../../QUIZ/05_Python.md#q9)
+
 ## 核心理論與詳解
 
 框架的選擇是技術選型中的重要一環，直接影響到專案的開發效率、可維護性和最終性能。Django、Flask 和 FastAPI 代表了三種不同的設計哲學，理解它們的差異是做出明智決策的基礎。

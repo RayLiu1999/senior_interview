@@ -1,6 +1,7 @@
 # async/await 深入解析
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `async`, `await`, `Task`
 
 ## 問題詳述
@@ -242,3 +243,13 @@ public class DataService
     }
 }
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.concurrency.async-await`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依序描述 async 方法遇到已完成或未完成 awaitable 時的狀態機與 continuation 行為。
+  - `LO-2`: 能夠依據返回型別、同步上下文與執行環境選擇 Task、ValueTask、ConfigureAwait 或 async void 的使用方式。
+  - `LO-3`: 能夠診斷同步阻塞造成的死鎖、遺失 await 與未觀察例外，並提出一路非同步與取消控制的修正方案。
+- **Quick Quiz**: [Q6](../../../../QUIZ/08_CSharp.md#q6-asyncawait-的工作原理是什麼)、[Q16](../../../../QUIZ/08_CSharp.md#q16-如何避免-asyncawait-的死鎖)
+- **Hard Assessment**: [C# ASP.NET Runtime Incident](../../../../QUIZ/Hard_Assessments/csharp_aspnet_runtime_incident.md) (`assessment.csharp.aspnet-runtime.incident.v1`)

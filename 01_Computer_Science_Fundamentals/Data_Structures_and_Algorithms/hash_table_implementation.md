@@ -8,6 +8,15 @@
 
 雜湊表（Hash Table）是實現鍵值對映射的高效資料結構，平均時間複雜度 O(1)。理解雜湊函數設計、碰撞解決、擴容機制是後端開發的基本功，在快取、資料庫、分散式系統中廣泛應用。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.hash-table.collision-resolution`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述雜湊函數、桶陣列與碰撞處理如何共同支援鍵值查找。
+  - `LO-2`: 能夠比較鏈結法、開放定址與雙重雜湊在空間、快取區域性與刪除操作上的取捨。
+  - `LO-3`: 能夠根據負載因子與溢位情況判斷擴容時機，並解釋漸進式 rehash 如何降低阻塞。
+- **Quick Quiz**: [Q2](../../QUIZ/01_Data_Structures_and_Algorithms.md#q2-雜湊表的原理碰撞處理和負載因子)
+
 ## 核心理論與詳解
 
 ### 1. 雜湊表基礎

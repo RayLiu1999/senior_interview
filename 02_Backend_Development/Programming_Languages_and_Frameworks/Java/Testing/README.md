@@ -7,11 +7,6 @@
 | 主題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [JUnit 5 高級特性](./junit5_advanced.md) | 6 | 5 | `JUnit 5`, `Testing` |
-| [Mockito 使用技巧](./mockito_usage.md) | 6 | 5 | `Mockito`, `Mock` |
-| [Spring Boot 測試](./spring_boot_test.md) | 7 | 5 | `Spring Boot`, `Integration Test` |
-| [測試覆蓋率](./test_coverage.md) | 5 | 4 | `Coverage`, `JaCoCo` |
-| [測試最佳實踐](./testing_best_practices.md) | 6 | 5 | `Best Practices`, `TDD` |
-| [集成測試策略](./integration_testing.md) | 7 | 4 | `Integration`, `TestContainers` |
 
 ## 核心知識點
 

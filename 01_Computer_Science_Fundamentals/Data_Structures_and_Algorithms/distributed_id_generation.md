@@ -8,6 +8,15 @@
 
 在分散式系統中,需要為海量數據生成全局唯一的ID。這些ID需要滿足唯一性、有序性、高性能等要求。分散式ID生成是後端系統設計的核心問題之一。
 
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.distributed-id.generation-strategies`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明分散式 ID 必須滿足的唯一性、趨勢遞增、可用性與效能需求。
+  - `LO-2`: 能夠比較 UUID、資料庫號段、Snowflake 與 Redis 等方案的結構與取捨。
+  - `LO-3`: 能夠根據節點數、時鐘可靠性、排序需求與故障情境選擇 ID 生成方案。
+- **Quick Quiz**: [Q12](../../QUIZ/01_Data_Structures_and_Algorithms.md#q12-分散式-id-生成方案)
+
 ## 核心理論與詳解
 
 ### 1. 分散式ID需求

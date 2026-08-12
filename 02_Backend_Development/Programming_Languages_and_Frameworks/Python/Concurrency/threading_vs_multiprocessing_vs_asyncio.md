@@ -8,6 +8,16 @@
 
 Python 提供了多種實現併發 (Concurrency) 的方式，主要是多執行緒 (`threading`)、多進程 (`multiprocessing`) 和異步 (`asyncio`)。請詳細比較這三種模型的運作原理、優缺點以及它們各自最適合的應用場景。在 CPython 的 GIL (全域直譯器鎖) 限制下，它們的表現有何不同？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.concurrency.model-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 threading、multiprocessing 與 asyncio 的執行單位、記憶體模型和切換成本。
+  - `LO-2`: 能夠說明協程在 `await`、事件循環與阻塞同步程式碼之間的互動。
+  - `LO-3`: 能夠依 CPU／I/O 特性、併發量與 IPC 成本選擇模型，並說明混合方案的限制。
+- **Quick Quiz**: [Python Q5](../../../../QUIZ/05_Python.md#q5)、[Python Q6](../../../../QUIZ/05_Python.md#q6)
+- **Hard Assessment**: [Python Async Service Incident](../../../../QUIZ/Hard_Assessments/python_async_service_incident.md) (`assessment.python.async-service.incident.v1`)
+
 ## 核心理論與詳解
 
 理解 Python 的併發模型以及如何根據任務類型做出正確的選擇，是資深後端工程師的必備技能。這三種模型解決了不同類型的問題，其選擇主要受到 GIL 和任務是 CPU 密集型還是 I/O 密集型的影響。

@@ -1,6 +1,7 @@
 # Ingress 與 Ingress Controller
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Kubernetes`, `Ingress`, `Load Balancer`
 
 ## 問題詳述

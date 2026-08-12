@@ -71,3 +71,13 @@ Web 伺服器（如 Nginx）本身只擅長處理靜態資源（HTML, CSS, 圖�
 8. **處理程序回收**: PHP-FPM 子處理程序在完成請求後不會立即銷毀，而是將自身標記為閒置狀態，放回處理程序池，等待下一個請求的到來。
 
 這個流程清晰地展示了 Nginx 和 PHP-FPM 之間的分工：**Nginx 負責「接客」和「傳菜」，而 PHP-FPM 則是負責「烹飪」的「廚師」**。這種分離的架構使得兩者都可以獨立擴展和優化，是現代 PHP 應用部署的標準實踐。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.web-servers.php-fpm`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 CGI、FastCGI 與 PHP-FPM 在程序建立、通訊與效能上的差異。
+  - `LO-2`: 能夠依序追蹤 Nginx 接收 PHP 請求、FastCGI 轉發、FPM worker 執行與回應返回的流程。
+  - `LO-3`: 能夠依流量與隔離需求選擇 dynamic、static 或 ondemand process pool，並使用狀態與重啟機制排查問題。
+- **Quick Quiz**: [Q10](../../../../QUIZ/09_PHP.md#q10-什麼是-php-fpm它如何與-nginx-配合)
+- **Hard Assessment**: [PHP-FPM Laravel Runtime Incident](../../../../QUIZ/Hard_Assessments/php_fpm_laravel_runtime_incident.md) (`assessment.php.fpm-laravel-runtime.incident.v1`)

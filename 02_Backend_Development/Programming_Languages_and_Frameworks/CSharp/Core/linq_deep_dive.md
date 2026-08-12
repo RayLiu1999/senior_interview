@@ -1,6 +1,7 @@
 # LINQ 深入解析
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `LINQ`, `IEnumerable`, `Expression Tree`
 
 ## 問題詳述
@@ -200,3 +201,12 @@ var customerSummary = orders
     .Where(s => s.TotalAmount > 1000)
     .OrderByDescending(s => s.TotalAmount);
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.csharp.core.linq-deferred-execution`
+- **Learning Objectives**:
+  - `LO-1`: 能夠判斷 LINQ 查詢在建立、枚舉與立即執行操作時何時真正執行。
+  - `LO-2`: 能夠區分 IEnumerable、IQueryable 與 Expression Tree 的執行位置和查詢表示方式。
+  - `LO-3`: 能夠診斷多次枚舉或多次資料庫查詢，並選擇適當的物化與集合操作降低成本。
+- **Quick Quiz**: [Q2](../../../../QUIZ/08_CSharp.md#q2-請解釋-linq-的延遲執行-deferred-execution-特性)

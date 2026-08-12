@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.microservices.architecture.tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較單體與微服務在部署、擴展、團隊自治、技術棧與故障隔離上的差異。
+  - `LO-2`: 能夠依團隊規模、業務邊界、負載與獨立交付需求判斷何時採用單體或微服務。
+  - `LO-3`: 能夠評估微服務引入的網路、分散式事務、測試與運維成本，並提出漸進式演進考量。
+- **Quick Quiz**: [Quick Quiz Q4](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q4)
+
 ### 單體架構 (Monolithic Architecture)
 
 單體架構是一種將應用程式的所有功能模組、元件（例如使用者介面、業務邏輯、資料存取層）都打包在一個單一的、獨立的部署單元（例如一個 WAR 檔、一個執行檔）中的軟體開發模式。

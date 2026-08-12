@@ -15,7 +15,7 @@
 | 7 | [如何設計分散式鎖？](./design_distributed_lock.md) | 8 | 5 | `System Design`, `Distributed Lock`, `Redis`, `ZooKeeper`, `Etcd` |
 | 8 | [如何設計購票系統？](./design_ticket_booking_system.md) | 9 | 5 | `System Design`, `Ticket Booking`, `Concurrency`, `Payment` |
 | 9 | [如何設計串流影音服務？](./design_video_streaming_service.md) | 9 | 5 | `System Design`, `Video Streaming`, `CDN`, `Encoding` |
-| 10 | [如何設計即時通訊系統？](./design_inㄊstant_messaging_system.md) | 8 | 5 | `System Design`, `Instant Messaging`, `WebSocket`, `Real-time` |
+| 10 | [如何設計即時通訊系統？](./design_instant_messaging_system.md) | 8 | 5 | `System Design`, `Instant Messaging`, `WebSocket`, `Real-time` |
 | 11 | [如何設計分散式鍵值儲存系統？](./design_distributed_key_value_store.md) | 9 | 5 | `System Design`, `Key-Value Store`, `Distributed`, `Consistency` |
 | 12 | [如何設計唯一識別碼產生器？](./design_unique_id_generator.md) | 7 | 5 | `System Design`, `ID Generator`, `Distributed`, `UUID` |
 | 13 | [如何設計支付系統？](./design_payment_system.md) | 9 | 5 | `System Design`, `Payment`, `Transaction`, `Security` |

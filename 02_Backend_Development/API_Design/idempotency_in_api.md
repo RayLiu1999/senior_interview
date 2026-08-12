@@ -1,12 +1,22 @@
 # API 中的冪等性
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `API Design`, `Idempotency`, `Reliability`
 
 ## 問題詳述
 
 什麼是 API 的冪等性 (Idempotency)？為什麼它在 API 設計中很重要？請舉例說明如何透過設計來確保 API 的冪等性。
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.idempotency.safe-retry`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分冪等與安全的 HTTP 方法，並以重複請求的最終狀態判斷操作是否冪等。
+  - `LO-2`: 能夠說明網路超時、回應遺失與重試如何造成重複副作用。
+  - `LO-3`: 能夠設計包含 Idempotency-Key、結果保存、TTL、並發去重與錯誤處理的可重試 POST API。
+- **Quick Quiz**: [Q2](../../QUIZ/02_API_Design.md#q2-什麼是-api-的冪等性為什麼它很重要)
+- **Hard Assessment**: [付款／訂單 API 韌性設計](../../QUIZ/Hard_Assessments/api_resilience_idempotency_rate_limit.md)
 
 ## 核心理論與詳解
 

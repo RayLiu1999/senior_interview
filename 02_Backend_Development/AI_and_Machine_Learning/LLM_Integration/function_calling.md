@@ -1,6 +1,7 @@
 # Function Calling 與 Tool Use
 
 - **難度**: 7
+- **重要程度**: 4
 - **標籤**: `Function Calling`, `Tool Use`, `Agent`, `LLM`
 
 ## 問題詳述
@@ -8,6 +9,15 @@
 Function Calling（函數調用）允許 LLM 調用外部函數或工具，從而擴展其能力。這是構建 AI Agent 的核心技術，使 LLM 能夠查詢資料庫、調用 API、執行計算等。理解 Function Calling 的原理和最佳實踐，是開發智能應用的關鍵。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.ai.llm.function-calling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明模型依工具描述選擇函數、產生結構化參數並接收工具結果的閉環流程。
+  - `LO-2`: 能夠設計工具 Schema 驗證、權限檢查、逾時、錯誤回傳與重試，避免不安全或不可控的外部操作。
+  - `LO-3`: 能夠為多步驟 Agent 設定狀態、停止條件與降級策略，並評估其正確性、可追蹤性與成本。
+- **Quick Quiz**: [Quick Quiz Q4](../../../QUIZ/02_AI_and_Machine_Learning.md#q4)
 
 ### 什麼是 Function Calling
 

@@ -1,12 +1,23 @@
 # JWT 原理與安全實踐
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Security`, `JWT`, `Token`
 
 ## 問題詳述
 
 什麼是 JWT (JSON Web Token)？請解釋 JWT 的結構和工作原理。在使用 JWT 進行身份驗證時,有哪些常見的安全隱患和最佳實踐？
+
+### 測驗對應
+
+- **Concept ID**: `concept.security.token.jwt`
+- **Learning Objectives**:
+  - `LO-1`: 能解釋 JWT header、payload、signature、claims、expiry 與驗證流程的安全邊界。
+  - `LO-2`: 能設計演算法限制、key rotation、audience／issuer 驗證、短期 access token 與 refresh token 策略。
+  - `LO-3`: 能從 token replay、錯誤驗簽、撤銷、時間偏差與 log 證據診斷身份事故。
+- **Quick Quiz**: [Q2](../../QUIZ/16_Security.md#q2)
+- **Hard Assessment**: [Web Security Breach Incident](../../QUIZ/Hard_Assessments/web_security_breach_incident.md) (`assessment.security.web-breach.api-incident.v1`)
+- **覆蓋題型**: `Token`, `驗簽`, `身份事故`
 
 ## 核心理論與詳解
 

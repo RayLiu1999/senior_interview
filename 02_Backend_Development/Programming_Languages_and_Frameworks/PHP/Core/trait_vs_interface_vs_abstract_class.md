@@ -172,3 +172,12 @@ $mysql->connect();
 - 當你想為一組不相關的類別添加相同的功能時（例如 `Loggable`, `Cacheable`），使用 **Trait**。
 - 當你想定義一個角色或能力，讓不同的類別都能扮演時（例如 `Serializable`, `Countable`），使用 **Interface**。
 - 當你想為一組緊密相關的類別創建一個共享的父類，並提供一些公共程式碼時（例如 `AbstractController`, `AbstractModel`），使用 **Abstract Class**。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.core.trait-interface-abstract-class`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 Trait 的水平程式碼重用、Interface 的行為契約與 Abstract Class 的共享模板。
+  - `LO-2`: 能夠依類別關係、可重用實作、契約需求與單一繼承限制選擇合適的抽象機制。
+  - `LO-3`: 能夠處理多個 Trait 的方法衝突，並說明 use、implements 與 extends 對 API 與可測試性的影響。
+- **Quick Quiz**: [Q3](../../../../QUIZ/09_PHP.md#q3-trait-interface-和-abstract-class-有什麼區別何時使用)

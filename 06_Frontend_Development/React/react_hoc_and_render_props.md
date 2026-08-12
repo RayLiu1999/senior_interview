@@ -1,6 +1,7 @@
 # React 高階組件與 Render Props
 
 - **難度**: 8
+- **重要程度**: 4
 - **標籤**: `React`, `Design Patterns`, `HOC`, `Render Props`
 
 ## 問題詳述
@@ -193,4 +194,3 @@ function AnotherComponent() {
     -   **無 Wrapper Hell**: 不會增加任何額外的組件嵌套。
     -   **無 Props 衝突**: 狀態是作為函式返回值直接賦給變數，而不是作為 prop 注入。
     -   **數據來源清晰**: `const windowWidth = useWindowWidth();` 這樣的寫法讓數據來源一目了然。
-

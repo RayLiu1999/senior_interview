@@ -10,6 +10,7 @@
 ## 🚀 Kafka 核心概念
 
 ### Q1: Kafka 的架構和核心概念是什麼？
+<!-- Concept ID: concept.messaging.kafka.core-components; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -40,6 +41,7 @@
 ---
 
 ### Q2: Kafka 與其他訊息佇列（RabbitMQ、Redis）的對比
+<!-- Concept ID: concept.messaging.message-queue.selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -69,6 +71,7 @@
 ---
 
 ### Q3: Kafka Consumer Group 和 Rebalance 機制
+<!-- Concept ID: concept.messaging.kafka.consumer-rebalance; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -104,6 +107,7 @@
 ---
 
 ### Q4: Kafka 如何保證訊息可靠性？
+<!-- Concept ID: concept.messaging.kafka.message-reliability; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -140,6 +144,7 @@
 ---
 
 ### Q5: Kafka 的訊息順序性如何保證？
+<!-- Concept ID: concept.messaging.kafka.message-ordering; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
 
@@ -181,6 +186,7 @@
 ## 🐰 RabbitMQ 核心概念
 
 ### Q6: RabbitMQ 的 Exchange 類型有哪些？
+<!-- Concept ID: concept.messaging.rabbitmq.exchange-routing; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -215,6 +221,7 @@ routing_key: logs.error.payment
 ---
 
 ### Q7: RabbitMQ 的訊息確認機制（ACK）
+<!-- Concept ID: concept.messaging.rabbitmq.message-acknowledgement; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
 
@@ -251,6 +258,7 @@ routing_key: logs.error.payment
 ---
 
 ### Q8: 什麼是死信佇列 (DLX)？
+<!-- Concept ID: concept.messaging.rabbitmq.dead-letter-exchange; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -294,6 +302,7 @@ x-dead-letter-routing-key: dlx.routing.key
 ## 📊 訊息佇列通用問題
 
 ### Q9: 如何保證訊息不重複消費（冪等性）？
+<!-- Concept ID: concept.messaging.kafka.consumer-idempotence; Learning Objective IDs: LO-1, LO-2, LO-3 -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
 
@@ -339,6 +348,8 @@ x-dead-letter-routing-key: dlx.routing.key
 ---
 
 ### Q10: 如何設計一個訊息佇列系統？
+<!-- Concept ID: concept.messaging.message-queue.system-design; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+<!-- Article mapping: pending -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
 

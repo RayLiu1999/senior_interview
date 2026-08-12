@@ -1,11 +1,23 @@
 # SLI, SLO, SLA 與錯誤預算 (Error Budget)
 
 - **難度**: 7
+- **重要程度**: 5
 - **標籤**: `SLI`, `SLO`, `SLA`, `SRE`, `Reliability`
 
 ## 問題詳述
 
 在 SRE (Site Reliability Engineering) 實踐中，SLI、SLO 和 SLA 是三個最核心的概念。它們分別代表什麼？有什麼區別？什麼是錯誤預算 (Error Budget)，它如何幫助團隊平衡「發布速度」與「系統穩定性」？
+
+### 測驗對應
+
+- **Concept ID**: `concept.observability.slo.error-budget`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 SLI、SLO 與 SLA，並從使用者體驗定義可用性、延遲與資料正確性 SLI。
+  - `LO-2`: 能夠由 SLO 計算錯誤預算與燃燒率，並解釋短期事故如何影響長期可靠性目標。
+  - `LO-3`: 能夠依據錯誤預算、核心路徑影響與資料正確性做出發布、凍結、回滾或修復優先順序。
+- **Hard Assessment**: [多服務 Checkout 事故診斷](../../QUIZ/Hard_Assessments/observability_incident_diagnosis.md)
+- **Quick Quiz**: [Q5](../../QUIZ/10_Observability.md#q5)
+- **覆蓋題型**: `概念檢查`, `情境／取捨`, `發布決策`
 
 ## 核心理論與詳解
 

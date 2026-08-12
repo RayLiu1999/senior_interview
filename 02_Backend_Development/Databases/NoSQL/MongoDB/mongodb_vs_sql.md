@@ -1,7 +1,7 @@
 # MongoDB vs. SQL Databases
 
 - **難度**: 4
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `MongoDB`, `SQL`, `NoSQL`, `Data Model`
 
 ## 問題詳述

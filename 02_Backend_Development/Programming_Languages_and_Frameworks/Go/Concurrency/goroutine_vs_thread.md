@@ -8,6 +8,16 @@
 
 本問題旨在考察面試者對 Go 語言併發核心—Goroutine 的理解，以及是否清楚其相較於作業系統線程的優勢與底層差異。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.concurrency.goroutine-scheduling`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 Goroutine 與 OS thread 的堆疊、建立成本、切換方式與可擴展數量。
+  - `LO-2`: 能夠說明 GMP 調度模型如何將 G、P 與 M 組合以多路復用執行資源。
+  - `LO-3`: 能夠從阻塞 I/O、退出協調與生命週期管理分析 Goroutine 卡住或洩漏的風險。
+- **Quick Quiz**: [Go Q1](../../../../QUIZ/06_Go.md#q1)、[Go Q13](../../../../QUIZ/06_Go.md#q13)
+- **Hard Assessment**: [Go Worker Pipeline 診斷](../../../../QUIZ/Hard_Assessments/go_concurrent_worker_diagnosis.md) (`assessment.go.concurrent.worker-pipeline.v1`)
+
 ## 核心理論與詳解
 
 

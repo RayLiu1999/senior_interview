@@ -1,12 +1,21 @@
 # RESTful API 的核心設計原則是什麼？
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `API Design`, `REST`, `Architecture`
 
 ## 問題詳述
 
 什麼是 REST (Representational State Transfer)？一個 API 被稱為「RESTful」需要滿足哪些核心的架構約束 (Architectural Constraints)？
+
+### 測驗對應
+
+- **Concept ID**: `concept.api.rest.architectural-constraints`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明資源、表徵、統一介面、無狀態、可快取、分層與按需編碼等 REST 約束。
+  - `LO-2`: 能夠用 HTTP 方法、媒體類型、Cache-Control 與 HATEOAS 判斷 API 是否符合 RESTful 設計。
+  - `LO-3`: 能夠分析無狀態與分層架構對可擴展性、故障轉移、快取及客戶端解耦的影響。
+- **Quick Quiz**: [Q1](../../QUIZ/02_API_Design.md#q1-restful-api-的六大架構約束是什麼)
 
 ## 核心理論與詳解
 

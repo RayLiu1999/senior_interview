@@ -10,6 +10,15 @@
 
 ## 核心理論與詳解
 
+### 測驗對應
+
+- **Concept ID**: `concept.microservices.api-gateway`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 API Gateway 如何作為統一入口執行路由、協議轉換與請求聚合。
+  - `LO-2`: 能夠將認證授權、限流、快取、SSL 終止、日誌與監控等橫切關注點放在適當邊界。
+  - `LO-3`: 能夠針對 Gateway 的單點故障、效能瓶頸與業務邏輯膨脹提出高可用和擴展方案。
+- **Quick Quiz**: [Quick Quiz Q5](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q5)
+
 ### 什麼是 API Gateway？
 
 API Gateway 是一個位於客戶端（Client）和後端微服務叢集之間的反向代理伺服器。它作為系統唯一的入口點，負責接收所有來自客戶端的請求，然後將這些請求路由到對應的後端微服務。在將請求轉發給微服務之前或之後，它還可以執行一系列的橫切關注點（Cross-Cutting Concerns）處理。

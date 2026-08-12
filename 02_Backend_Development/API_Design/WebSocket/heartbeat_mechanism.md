@@ -1,7 +1,7 @@
 # WebSocket 心跳機制
 
 - **難度**: 6
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `WebSocket`, `Keepalive`, `Heartbeat`
 
 ## 問題詳述

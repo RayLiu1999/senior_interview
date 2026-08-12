@@ -1,12 +1,23 @@
 # 資料庫交易與 ACID 原則
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Databases`, `ACID`, `Transaction`, `Concurrency`
 
 ## 問題詳述
 
 什麼是資料庫交易 (Transaction)？請詳細解釋 ACID 四大特性。並說明 SQL 標準中定義的四種交易隔離級別 (Isolation Levels) 及其可能解決的併發問題。
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.transaction-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能依照交易執行順序判斷髒讀、不可重複讀、幻讀與 lost update。
+  - `LO-2`: 能選擇適合的隔離、鎖定或原子更新方案，並說明等待、死鎖與重試成本。
+  - `LO-3`: 能區分 SQL 標準語意與特定資料庫引擎的 MVCC／鎖定實作。
+- **硬測驗**: [資料庫交易追蹤](../../QUIZ/Hard_Assessments/database_transaction_schedule.md)
+- **Quick Quiz**: [Q3](../../QUIZ/02_Databases.md#q3-解釋-acid-特性和隔離級別)
+- **覆蓋題型**: `追蹤`, `併發診斷`, `權衡取捨`
 
 ## 核心理論與詳解
 

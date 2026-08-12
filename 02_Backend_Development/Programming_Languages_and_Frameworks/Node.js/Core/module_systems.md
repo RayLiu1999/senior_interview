@@ -8,6 +8,15 @@
 
 Node.js 最初使用 CommonJS (CJS) 作為其模組系統。然而，隨著 ECMAScript 標準的發展，ES Modules (ESM) 已成為 JavaScript 的官方標準模組系統。請比較這兩種模組系統在語法、載入機制和互通性方面的核心差異。
 
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.core.module-systems`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 CommonJS 與 ESM 的匯入匯出語法、模組作用域和載入時機。
+  - `LO-2`: 能夠解釋 CJS 快取／值引用與 ESM live binding、靜態分析和 tree shaking 的差異。
+  - `LO-3`: 能夠在 CJS 與 ESM 共存時選擇互通方式，並辨識 `require` 與動態 `import()` 的限制。
+- **Quick Quiz**: [Node.js Q6](../../../../QUIZ/07_Node.js.md#q6)
+
 ## 核心理論與詳解
 
 模組化是現代軟體開發的基石，它允許我們將複雜的程式碼庫拆分成獨立、可重用的部分。Node.js 的演進過程中出現了兩種主要的模組系統：CommonJS 和 ES Modules。

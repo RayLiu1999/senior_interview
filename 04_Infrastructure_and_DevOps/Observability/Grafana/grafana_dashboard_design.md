@@ -1,6 +1,7 @@
 # Grafana Dashboard Design (Grafana 儀表板設計)
 
 - **難度**: 5
+- **重要程度**: 4
 - **標籤**: `Grafana`, `Visualization`, `Dashboard`, `UX`
 
 ## 問題詳述

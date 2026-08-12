@@ -1,12 +1,21 @@
 # SQL vs. NoSQL: 選擇現代應用的資料庫
 
 - **難度**: 5
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Databases`, `SQL`, `NoSQL`, `System Design`
 
 ## 問題詳述
 
 請比較 SQL 和 NoSQL 資料庫。它們的核心區別是什麼？各自的優缺點是什麼？在什麼樣的場景下應該選擇使用哪種類型的資料庫？
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.selection.sql-nosql-tradeoffs`
+- **Learning Objectives**:
+  - `LO-1`: 能夠比較 SQL 與 NoSQL 在資料模型、Schema、查詢、交易與一致性上的差異。
+  - `LO-2`: 能夠根據關聯複雜度、資料量、流量、擴展方式與一致性要求進行資料庫選型。
+  - `LO-3`: 能夠說明混合持久化如何讓訂單、搜尋、會話或評論分別使用適合的資料庫。
+- **Quick Quiz**: [Q1](../../QUIZ/02_Databases.md#q1-sql-vs-nosql-該如何選擇)
 
 ## 核心理論與詳解
 

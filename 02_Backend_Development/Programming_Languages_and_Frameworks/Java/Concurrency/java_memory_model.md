@@ -8,6 +8,17 @@
 
 Java 記憶體模型（Java Memory Model，JMM）是 Java 並發編程的理論基礎。請深入解釋 JMM 的核心概念、happens-before 規則、volatile 關鍵字的作用以及如何保證並發安全。
 
+### 測驗對應
+
+- **Concept ID**: `concept.java.concurrency.memory-model`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 visibility、atomicity、ordering、happens-before 與 data race 的語意。
+  - `LO-2`: 能選擇 volatile、synchronized、Lock 或 immutable／message passing 來建立正確的記憶體可見性。
+  - `LO-3`: 能從 stale read、重排序、CPU／GC pause 與 thread dump 證據定位並發錯誤。
+- **Quick Quiz**: [Q1](../../../../QUIZ/18_Java.md#q1)
+- **Hard Assessment**: [Java Runtime Concurrency Incident](../../../../QUIZ/Hard_Assessments/java_runtime_concurrency_incident.md) (`assessment.java.runtime-concurrency.incident.v1`)
+- **覆蓋題型**: `JMM`, `可見性`, `並發診斷`
+
 ## 核心理論與詳解
 
 ### JMM 概述

@@ -1,7 +1,7 @@
 # CQRS (命令查詢責任分離)
 
 - **難度**: 8
-- **重要性**: 4
+- **重要程度**: 4
 - **標籤**: `Software Architecture`, `CQRS`, `System Design`
 
 ## 問題詳述

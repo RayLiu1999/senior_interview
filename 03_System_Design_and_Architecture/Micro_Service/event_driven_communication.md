@@ -1,7 +1,7 @@
 # 微服務架構下的事件驅動通訊
 
 - **難度**: 8
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Microservices`, `Event-Driven Architecture`, `Pub/Sub`, `Decoupling`
 
 ## 問題詳述

@@ -11,8 +11,6 @@
 | 1 | [可觀測性與監控有什麼區別？](./observability_vs_monitoring.md) | 4 | 4 | `可觀測性`, `監控` |
 | 2 | [SLI、SLO、SLA 與錯誤預算](./sli_slo_sla.md) | 7 | 5 | `SLI`, `SLO`, `SLA`, `SRE` |
 | 3 | [如何設計有效的監控指標？](./effective_metrics_design.md) | 6 | 4 | `監控`, `指標設計`, `USE`, `RED` |
-| 4 | [OpenTelemetry 統一可觀測性標準](./opentelemetry_overview.md) | 7 | 4 | `OpenTelemetry`, `標準` |
-| 5 | [如何建立完整的可觀測性體系？](./building_observability_system.md) | 8 | 5 | `系統設計`, `架構` |
 
 ### Prometheus 監控系統
 
@@ -42,7 +40,6 @@
 | 編號 | 主題 | 難度 | 重要性 | 標籤 |
 | :---: | :--- | :---: | :---: | :--- |
 | 14 | [集中式日誌系統架構](./centralized_logging_architecture.md) | 6 | 5 | `Logging`, `ELK`, `EFK` |
-| 15 | [結構化日誌 vs 非結構化日誌](./structured_vs_unstructured_logs.md) | 4 | 4 | `Logging`, `JSON` |
 | 16 | [Logstash vs Fluentd vs Fluent Bit](./ELK/logstash_vs_fluentd.md) | 5 | 4 | `Logstash`, `Fluentd`, `K8s` |
 | 17 | [Elasticsearch 索引策略 (ILM, Rollover)](./ELK/elasticsearch_indexing_strategy.md) | 8 | 4 | `Elasticsearch`, `Performance`, `ILM` |
 
@@ -79,19 +76,13 @@
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [什麼是 Prometheus？它的架構和核心概念是什麼？](./Prometheus/what_is_prometheus.md) | 5 | 5 | `Prometheus`, `監控`, `時序資料庫` |
-| [Prometheus 的資料模型和指標類型](./Prometheus/prometheus_data_model.md) | 6 | 4 | `Prometheus`, `指標類型` |
 | [PromQL 查詢語言基礎](./Prometheus/promql_basics.md) | 7 | 4 | `Prometheus`, `PromQL`, `查詢` |
-| [Prometheus 告警規則設計](./Prometheus/prometheus_alerting_rules.md) | 7 | 5 | `Prometheus`, `告警`, `AlertManager` |
-| [Prometheus 的服務發現機制](./Prometheus/prometheus_service_discovery.md) | 6 | 3 | `Prometheus`, `服務發現` |
-| [Prometheus 高可用與聯邦架構](./Prometheus/prometheus_high_availability.md) | 8 | 3 | `Prometheus`, `高可用`, `聯邦` |
 
 ### Grafana 視覺化
 
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [什麼是 Grafana？如何使用它創建監控儀表板？](./Grafana/what_is_grafana.md) | 4 | 4 | `Grafana`, `視覺化`, `儀表板` |
-| [Grafana 資料源配置與管理](./Grafana/grafana_data_sources.md) | 5 | 3 | `Grafana`, `資料源` |
-| [Grafana 儀表板設計最佳實踐](./Grafana/grafana_dashboard_best_practices.md) | 6 | 4 | `Grafana`, `儀表板`, `最佳實踐` |
 | [Grafana 告警配置](./Grafana/grafana_alerting.md) | 6 | 4 | `Grafana`, `告警` |
 
 ### Jaeger 分散式追蹤
@@ -99,10 +90,6 @@
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
 | [什麼是分散式追蹤？為什麼需要它？](./Jaeger/what_is_distributed_tracing.md) | 5 | 5 | `分散式追蹤`, `APM` |
-| [什麼是 Jaeger？它的架構和核心概念](./Jaeger/what_is_jaeger.md) | 6 | 4 | `Jaeger`, `分散式追蹤`, `OpenTelemetry` |
-| [Span、Trace 和 Context Propagation](./Jaeger/span_trace_context.md) | 7 | 5 | `Jaeger`, `Span`, `Trace` |
-| [如何在應用中集成 Jaeger？](./Jaeger/jaeger_integration.md) | 6 | 4 | `Jaeger`, `集成`, `實踐` |
-| [分散式追蹤的效能影響與取樣策略](./Jaeger/tracing_performance_sampling.md) | 7 | 4 | `分散式追蹤`, `效能`, `取樣` |
 
 ### 日誌系統
 
@@ -110,18 +97,12 @@
 |------|------|----------|------|
 | [集中式日誌系統的架構設計](./centralized_logging_architecture.md) | 6 | 5 | `日誌`, `架構設計` |
 | [ELK Stack（Elasticsearch、Logstash、Kibana）概述](./elk_stack_overview.md) | 5 | 4 | `ELK`, `日誌`, `Elasticsearch` |
-| [結構化日誌 vs 非結構化日誌](./structured_vs_unstructured_logs.md) | 4 | 4 | `日誌`, `結構化` |
-| [日誌等級與最佳實踐](./log_levels_best_practices.md) | 3 | 4 | `日誌`, `最佳實踐` |
-| [日誌聚合與分析策略](./log_aggregation_analysis.md) | 6 | 4 | `日誌`, `聚合`, `分析` |
 
 ### 整合實踐
 
 | 問題 | 難度 | 重要程度 | 標籤 |
 |------|------|----------|------|
-| [如何建立完整的可觀測性體系？](./building_observability_system.md) | 8 | 5 | `可觀測性`, `系統設計`, `最佳實踐` |
-| [OpenTelemetry 統一可觀測性標準](./opentelemetry_overview.md) | 7 | 4 | `OpenTelemetry`, `標準`, `可觀測性` |
 | [SLI、SLO、SLA 與錯誤預算](./sli_slo_sla.md) | 7 | 5 | `SLI`, `SLO`, `SLA`, `可靠性` |
-| [On-Call 與事件響應流程](./oncall_incident_response.md) | 6 | 4 | `On-Call`, `事件響應`, `運維` |
 
 ## 學習路徑建議
 

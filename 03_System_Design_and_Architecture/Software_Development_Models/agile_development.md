@@ -1,6 +1,7 @@
 # 敏捷開發 (Agile Development)
 
 - **難度**: 6
+- **重要程度**: 5
 - **標籤**: `Agile`, `Software Development Models`, `Methodology`
 
 ## 問題詳述

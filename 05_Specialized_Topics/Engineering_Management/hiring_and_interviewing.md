@@ -1,6 +1,7 @@
 # Hiring & Interviewing (招募與面試技巧)
 
 - **難度**: 6
+- **重要程度**: 3
 - **標籤**: `Hiring`, `Interviewing`, `STAR`, `Soft Skills`
 
 ## 問題詳述

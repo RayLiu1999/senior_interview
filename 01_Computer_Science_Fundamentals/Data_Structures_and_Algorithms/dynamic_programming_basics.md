@@ -8,6 +8,15 @@
 
 動態規劃（Dynamic Programming, DP）是一種透過**分解問題、記憶化結果**來避免重複計算的算法思想。本題聚焦於兩類經典問題：**背包問題**（資源分配）和**最長子序列**（序列優化）。這些是面試中最常見的 DP 題型。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.dynamic-programming.state-transition`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從子問題重疊與最優子結構判斷問題是否適合動態規劃。
+  - `LO-2`: 能夠定義狀態、寫出狀態轉移方程與初始條件，並安排正確的計算順序。
+  - `LO-3`: 能夠在不改變正確性的前提下以滾動陣列或狀態壓縮降低空間複雜度。
+- **Quick Quiz**: [Q8](../../QUIZ/01_Data_Structures_and_Algorithms.md#q8-動態規劃的解題思路)
+
 ## 核心理論與詳解
 
 ### 1. 動態規劃的核心要素

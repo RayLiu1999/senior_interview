@@ -8,6 +8,15 @@
 
 什麼是 Python 的裝飾器 (Decorator)？它的語法糖 (`@`) 是如何運作的？為什麼在編寫裝飾器時，使用 `functools.wraps` 是一個好習慣？請提供一個實際的程式碼範例，例如日誌記錄或計時裝飾器。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.core.decorators`
+- **Learning Objectives**:
+  - `LO-1`: 能夠將 `@decorator` 語法還原成函數重新綁定的步驟。
+  - `LO-2`: 能夠設計保留參數、返回值與例外傳播的 wrapper。
+  - `LO-3`: 能夠說明 `functools.wraps` 對函數名稱、文件字串與除錯內省的作用。
+- **Quick Quiz**: [Python Q2](../../../../QUIZ/05_Python.md#q2)
+
 ## 核心理論與詳解
 
 裝飾器是 Python 中一個強大而優雅的特性，它允許我們在不修改原始函數定義的情況下，為其增加額外的功能。本質上，裝飾器是一個接收函數作為參數，並返回一個新函數的高階函數 (Higher-Order Function)。

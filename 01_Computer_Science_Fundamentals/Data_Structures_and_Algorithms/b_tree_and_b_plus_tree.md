@@ -8,6 +8,15 @@
 
 B 樹和 B+ 樹是**多路平衡查找樹**，專為**磁碟存儲系統**設計。MySQL 的 InnoDB 引擎使用 **B+ 樹**作為索引結構，理解其原理對於資料庫優化至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.data-structures.b-plus-tree.indexing`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 B 樹與 B+ 樹的節點配置、葉節點鏈結與平衡特性。
+  - `LO-2`: 能夠根據磁碟頁、樹高與範圍查詢需求，解釋 InnoDB 選擇 B+ 樹的原因。
+  - `LO-3`: 能夠比較 B+ 樹、雜湊索引與紅黑樹在點查詢、範圍查詢及 I/O 成本上的取捨。
+- **Quick Quiz**: [Q1](../../QUIZ/01_Data_Structures_and_Algorithms.md#q1-b-樹的原理及為何適合資料庫索引)
+
 ## 核心理論與詳解
 
 ### 1. 為什麼需要 B 樹/B+ 樹？

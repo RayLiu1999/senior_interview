@@ -8,6 +8,17 @@
 
 雲原生（Cloud Native）是一種構建和運行應用的方法論，充分利用雲端運算的優勢。12-Factor App 是雲原生應用的最佳實踐指南，由 Heroku 的工程師提出，已成為業界標準。理解這些原則對於設計現代化的雲端應用至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cloud.native.twelve-factor`
+- **Learning Objectives**:
+  - `LO-1`: 能說明設定、日誌、程序、依賴、port binding 與 disposable process 等 12-factor 原則。
+  - `LO-2`: 能把無狀態、可觀測、可水平擴展與環境一致性原則落到服務部署設計。
+  - `LO-3`: 能從設定漂移、不可重現部署、狀態遺失與擴縮異常的證據定位雲原生設計缺口。
+- **Quick Quiz**: [Q2](../../QUIZ/15_Cloud_Computing.md#q2)
+- **Hard Assessment**: [Cloud Architecture Reliability Incident](../../QUIZ/Hard_Assessments/cloud_architecture_reliability_incident.md) (`assessment.cloud.architecture.reliability-incident.v1`)
+- **覆蓋題型**: `方法論`, `部署設計`, `故障診斷`
+
 ## 核心理論與詳解
 
 ### 什麼是雲原生？

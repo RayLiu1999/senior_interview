@@ -1,7 +1,7 @@
 # 分散式交易與 Saga 模式
 
 - **難度**: 9
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Microservices`, `Distributed Systems`, `Saga Pattern`, `2PC`
 
 ## 問題詳述
@@ -9,6 +9,16 @@
 在微服務架構中，單體應用中的 ACID 交易不再適用。請解釋為什麼，並詳細闡述兩種解決跨服務資料一致性問題的方案：兩階段提交 (2PC) 和 Saga 模式。請比較它們的優缺點。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.microservices.saga.transactions`
+- **Learning Objectives**:
+  - `LO-1`: 能夠解釋資料庫隔離在服務邊界後造成的跨服務原子性與一致性問題。
+  - `LO-2`: 能夠比較 2PC 與 Saga 的協調流程、鎖定行為、一致性模型、可用性與效能代價。
+  - `LO-3`: 能夠設計含本地交易、補償交易、冪等性與狀態追蹤的 Choreography 或 Orchestration Saga。
+- **Quick Quiz**: [Quick Quiz Q6](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q6)
+- **Hard Assessment**: [跨服務訂單一致性與 Saga 設計](../../QUIZ/Hard_Assessments/distributed_consistency_saga_design.md) (`assessment.distributed-systems.order-consistency-saga.v1`)
 
 在微服務架構中，每個服務通常都有自己獨立的資料庫。這遵循了「關注點分離」和「鬆耦合」的原則。然而，當一個業務流程需要跨越多個服務時（例如，在電商系統中，「下訂單」操作需要同時更新 `訂單服務`、扣減 `庫存服務`、並通知 `物流服務`），我們就面臨了**分散式交易**的挑戰。
 

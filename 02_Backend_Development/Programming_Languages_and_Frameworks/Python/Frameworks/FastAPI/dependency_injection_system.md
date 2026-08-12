@@ -1,11 +1,22 @@
 # FastAPI 依賴注入系統
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `Dependency Injection`, `DI`, `Depends`
 
 ## 問題詳述
 
 FastAPI 的依賴注入系統是其核心特性之一，提供了優雅的方式來管理代碼依賴。如何充分利用這個系統來編寫可測試、可維護的代碼？
+
+### 測驗對應
+
+- **Concept ID**: `concept.python.fastapi.dependency-injection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依 `Depends` 標記推導 FastAPI 建立依賴樹、解析參數並注入結果的流程。
+  - `LO-2`: 能夠區分函數、類別、生成器、嵌套與全局依賴的適用情境及資源清理方式。
+  - `LO-3`: 能夠在測試中覆蓋依賴，並評估依賴快取、可測試性與依賴鏈複雜度的取捨。
+- **Quick Quiz**: [Python Q11](../../../../../QUIZ/05_Python.md#q11)
+- **Hard Assessment**: [Python Async Service Incident](../../../../../QUIZ/Hard_Assessments/python_async_service_incident.md) (`assessment.python.async-service.incident.v1`)
 
 ## 核心理論與詳解
 

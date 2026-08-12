@@ -1,6 +1,7 @@
 # Database Backup & Restore (資料庫備份與還原)
 
 - **難度**: 6
+- **重要程度**: 4
 - **標籤**: `Database`, `Backup`, `Disaster Recovery`, `DevOps`
 
 ## 問題詳述

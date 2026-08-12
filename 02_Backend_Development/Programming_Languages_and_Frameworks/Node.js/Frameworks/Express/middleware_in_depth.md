@@ -1,12 +1,21 @@
 # Express.js 中介層 (Middleware) 詳解
 
 - **難度**: 6
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Express.js`, `Node.js`, `Middleware`
 
 ## 問題詳述
 
 什麼是 Express.js 的中介層 (Middleware)？它的工作原理是什麼？請解釋不同類型的中介層（應用層、路由層、錯誤處理、內建、第三方）並提供程式碼範例。
+
+### 測驗對應
+
+- **Concept ID**: `concept.nodejs.express.middleware`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 Express 中介層如何透過 `req`、`res` 與 `next` 串接請求處理流程。
+  - `LO-2`: 能夠區分應用層、路由層、錯誤處理、內建與第三方中介層的註冊範圍。
+  - `LO-3`: 能夠判斷何時呼叫 `next()`、結束回應或傳遞 `next(error)`，避免請求掛起。
+- **Quick Quiz**: [Node.js Q7](../../../../../QUIZ/07_Node.js.md#q7)
 
 ## 核心理論與詳解
 

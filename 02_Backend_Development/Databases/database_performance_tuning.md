@@ -8,6 +8,15 @@
 
 資料庫效能是後端系統的核心瓶頸之一。隨著數據量增長和併發請求增加，資料庫效能問題會嚴重影響系統可用性。理解資料庫效能調優的方法和最佳實踐，是資深後端工程師的必備技能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.database.performance-tuning.query-index-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從慢查詢、CPU、I/O、鎖等待與連接池指標定位資料庫效能瓶頸。
+  - `LO-2`: 能夠使用 EXPLAIN、索引、查詢改寫、批次操作與游標分頁降低查詢與寫入成本。
+  - `LO-3`: 能夠在應用、SQL、Schema、配置與架構層之間排序優化順序，並以監控數據驗證效果。
+- **Quick Quiz**: [Q6](../../QUIZ/02_Databases.md#q6-如何進行資料庫效能調優)
+
 ## 核心理論與詳解
 
 ### 效能問題的常見症狀

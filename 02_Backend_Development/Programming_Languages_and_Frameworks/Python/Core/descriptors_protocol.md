@@ -1,12 +1,21 @@
 # Python 描述符協議
 
 - **難度**: 9
-- **重要程度**: 3
+- **重要程度**: 4
 - **標籤**: `Python`, `Core`, `Descriptors`, `Data Model`
 
 ## 問題詳述
 
 什麼是 Python 的描述符協議 (Descriptor Protocol)？它是如何運作的？Python 的屬性 (`property`)、靜態方法 (`staticmethod`) 和類別方法 (`classmethod`) 是如何基於描述符協議實現的？請提供一個自訂描述符的範例。
+
+### 測驗對應
+
+- **Concept ID**: `concept.python.core.descriptor-protocol`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 `__get__`、`__set__` 與 `__delete__` 在屬性存取中的觸發時機。
+  - `LO-2`: 能夠依資料描述符、實例字典與非資料描述符的優先序推導屬性查找結果。
+  - `LO-3`: 能夠說明 `property`、`staticmethod` 與 `classmethod` 如何利用描述符協議。
+- **Quick Quiz**: [Python Q12](../../../../QUIZ/05_Python.md#q12)
 
 ## 核心理論與詳解
 

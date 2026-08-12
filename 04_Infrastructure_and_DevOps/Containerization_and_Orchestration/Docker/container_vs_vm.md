@@ -8,6 +8,17 @@
 
 容器（Container）和虛擬機（Virtual Machine, VM）都是虛擬化技術，但它們在實現方式和資源利用上有著根本的區別。請解釋什麼是容器，並詳細比較它與虛擬機的異同。
 
+### 測驗對應
+
+- **Concept ID**: `concept.docker.runtime.container-vm-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能比較容器與 VM 的 kernel、隔離邊界、啟動成本與資源取捨。
+  - `LO-2`: 能依隔離強度、密度、相容性與運維需求選擇 container 或 VM。
+  - `LO-3`: 能在 production 故障中辨識共享 kernel、權限與資源競爭造成的風險。
+- **Quick Quiz**: [Q1](../../../QUIZ/13_Docker.md#q1)
+- **Hard Assessment**: [Docker Build／Runtime 事故診斷](../../../QUIZ/Hard_Assessments/docker_build_runtime_incident.md) (`assessment.docker.build-runtime.incident.v1`)
+- **覆蓋題型**: `概念比較`, `隔離取捨`, `故障診斷`
+
 ## 核心理論與詳解
 
 ### 虛擬機 (Virtual Machine, VM)

@@ -1,6 +1,7 @@
 # 共識演算法 (Consensus Algorithms): Raft 與 Paxos
 
 - **難度**: 10
+- **重要程度**: 5
 - **標籤**: `Distributed Systems`, `Consensus`, `Raft`, `Paxos`, `Leader Election`
 
 ## 問題詳述
@@ -8,6 +9,15 @@
 在分散式系統中，如何讓多個不可靠的節點對某個值（或日誌序列）達成一致？這是共識演算法要解決的核心問題。請解釋 Paxos 與 Raft 的基本原理，並比較它們的異同與應用場景。
 
 ## 核心理論與詳解
+
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.raft.consensus`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 Raft 的 Follower、Candidate、Leader 狀態及選舉逾時、投票和心跳流程。
+  - `LO-2`: 能夠追蹤 Leader 將日誌複製到多數節點、提交並套用狀態機的流程，並指出安全性限制。
+  - `LO-3`: 能夠比較 Raft 與 Paxos 的設計目標、日誌模型與實作取捨，並判斷共識叢集的故障邊界。
+- **Quick Quiz**: [Quick Quiz Q3](../../QUIZ/03_Distributed_Systems_and_Microservices.md#q3)
 
 共識演算法是 CP 系統（如 Zookeeper, Etcd, Consul）的基石，確保在部分節點故障的情況下，系統仍能對資料狀態達成一致。
 

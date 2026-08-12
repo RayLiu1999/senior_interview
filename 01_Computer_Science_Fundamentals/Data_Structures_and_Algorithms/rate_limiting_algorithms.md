@@ -8,6 +8,15 @@
 
 限流（Rate Limiting）是保護系統穩定性的重要手段，用於**控制請求速率**，防止流量洪峰導致系統崩潰。本題介紹四種經典限流算法：**固定窗口、滑動窗口、漏桶、令牌桶**。
 
+### 測驗對應
+
+- **Concept ID**: `concept.distributed-systems.rate-limiting.token-leaky-bucket`
+- **Learning Objectives**:
+  - `LO-1`: 能夠依照請求時間軸解釋固定窗口、滑動窗口、漏桶與令牌桶的限流行為。
+  - `LO-2`: 能夠根據是否允許突發、是否需要平滑輸出與系統容量選擇合適演算法。
+  - `LO-3`: 能夠設計分散式限流的共享狀態、原子操作、降級與拒絕回應策略。
+- **Quick Quiz**: [Q11](../../QUIZ/01_Data_Structures_and_Algorithms.md#q11-限流演算法令牌桶漏桶)
+
 ## 核心理論與詳解
 
 ### 1. 限流的應用場景

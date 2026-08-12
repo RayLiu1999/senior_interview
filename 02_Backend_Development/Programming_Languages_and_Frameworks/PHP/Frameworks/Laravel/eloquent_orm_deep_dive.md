@@ -1,7 +1,7 @@
 # Eloquent ORM 深度探討 (N+1 問題)
 
 - **難度**: 7
-- **重要性**: 5
+- **重要程度**: 5
 - **標籤**: `Laravel`, `Eloquent`, `ORM`, `N+1 Problem`, `Performance`
 
 ## 問題詳述
@@ -138,3 +138,12 @@ $authors->load('books'); // 這裡會執行第 2 次查詢
 ### 結論
 
 N+1 查詢是 ORM 開發中常見的效能瓶頸，但 Laravel Eloquent 提供了強大且易於使用的 `with()` 和 `load()` 方法來實現預加載，從而有效地解決這個問題。養成在查詢時思考並預加載所需關聯的習慣，是每一位 Laravel 開發者都應具備的關鍵技能。
+
+### 測驗對應
+
+- **Concept ID**: `concept.php.laravel.eloquent-n-plus-one`
+- **Learning Objectives**:
+  - `LO-1`: 能夠從 lazy loading 的逐筆關聯查詢推導 N+1 的查詢數量與效能影響。
+  - `LO-2`: 能夠使用 with、巢狀與條件 eager loading，以及 load 在正確邊界預先取得關聯資料。
+  - `LO-3`: 能夠用查詢觀測工具驗證 N+1 修正，並評估查詢數量、記憶體與載入資料範圍的取捨。
+- **Quick Quiz**: [Q14](../../../../../QUIZ/09_PHP.md#q14-eloquent-orm-的-n1-問題如何解決)

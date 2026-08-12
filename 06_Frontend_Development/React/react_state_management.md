@@ -1,6 +1,7 @@
 # React 狀態管理
 
 - **難度**: 8
+- **重要程度**: 5
 - **標籤**: `React`, `State Management`, `Context API`, `Redux`, `Zustand`
 
 ## 問題詳述

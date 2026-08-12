@@ -8,6 +8,15 @@
 
 Python 中常說“一切皆對象”(Everything is an object)。這句話的確切含義是什麼？請從 CPython 實現的角度，解釋 `PyObject` 結構體是什麼，以及它如何成為 Python 中所有對象的基礎。這個模型與 Python 的動態類型特性有何關聯？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.internals.object-identity`
+- **Learning Objectives**:
+  - `LO-1`: 能夠區分 `is` 的身份比較與 `==` 的值相等比較，並解釋小整數池造成的觀察差異。
+  - `LO-2`: 能夠從 `PyObject` 的 `ob_refcnt` 與 `ob_type` 說明 CPython 物件的共同表示。
+  - `LO-3`: 能夠根據變數重新綁定、物件身份與類型資訊推導動態類型程式的行為。
+- **Quick Quiz**: [Python Q8](../../../../QUIZ/05_Python.md#q8)
+
 ## 核心理論與詳解
 
 “一切皆對象”是 Python 語言最核心的設計哲學之一。這意味著不僅僅是我們通常認為的數據（如數字、字串、列表）是物件，就連函數、類別、模組，甚至類型本身，在 Python 的世界裡都是物件。每個物件都擁有一個身份 (identity)、一個類型 (type) 和一個值 (value)。

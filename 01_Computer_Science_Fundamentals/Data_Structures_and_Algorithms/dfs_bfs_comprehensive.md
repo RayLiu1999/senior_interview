@@ -8,6 +8,15 @@
 
 DFS（深度優先搜尋）、BFS（廣度優先搜尋）和回溯法（Backtracking）是解決**圖遍歷、路徑搜尋、組合問題**的核心算法。本題將深入探討這三種算法的原理、實現、應用場景及其在面試中的常見題型。
 
+### 測驗對應
+
+- **Concept ID**: `concept.algorithms.graph-traversal.dfs-bfs-selection`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 DFS 與 BFS 使用的資料結構、走訪順序及空間複雜度。
+  - `LO-2`: 能夠根據圖是否加權、是否要求最短路徑與是否需要枚舉選擇 DFS 或 BFS。
+  - `LO-3`: 能夠將走訪方法套用到回溯、層序遍歷、拓撲排序與多源擴散問題。
+- **Quick Quiz**: [Q9](../../QUIZ/01_Data_Structures_and_Algorithms.md#q9-dfs-和-bfs-的應用場景)
+
 ## 核心理論與詳解
 
 ### 1. DFS（深度優先搜尋）
