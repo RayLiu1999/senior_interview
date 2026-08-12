@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據時間局部性、長期頻率、偶發流量與容量限制選擇淘汰演算法。
   - `LO-3`: 能夠評估淘汰策略的命中率、時間空間複雜度、冷啟動與歷史資料偏差。
 - **Quick Quiz**: [Q4](../../QUIZ/02_Caching.md#q4-比較-lrulfufifo-等快取淘汰演算法)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

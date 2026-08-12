@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計命中、回填、失效與降級流程，並以 TTL、Pub/Sub 或版本號處理跨節點一致性。
   - `LO-3`: 能夠根據熱點比例、延遲目標、記憶體成本與強一致需求判斷是否採用多層快取。
 - **Quick Quiz**: [Q6](../../QUIZ/02_Caching.md#q6-如何設計多層快取架構)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

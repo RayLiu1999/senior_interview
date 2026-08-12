@@ -18,6 +18,7 @@
   - `LO-2`: 能夠從消費延遲、重複處理與停止消費症狀定位 eager Rebalance 的影響和超時設定問題。
   - `LO-3`: 能夠運用 CooperativeStickyAssignor、合理的 poll/heartbeat 參數與 Static Membership 降低 Rebalance 風暴。
 - **Quick Quiz**: [Quick Quiz Q3](../../../QUIZ/02_Message_Queues.md#q3)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ### Rebalance 的觸發條件
 

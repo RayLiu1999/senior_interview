@@ -16,6 +16,7 @@
   - `LO-2`: 能夠將含有冗餘或更新異常的表格拆分為具備清晰主鍵與關係的正規化結構。
   - `LO-3`: 能夠根據 JOIN 成本、讀寫比例與資料一致性需求決定是否採取受控反正規化。
 - **Quick Quiz**: [Q8](../../QUIZ/02_Databases.md#q8-資料庫正規化的概念和適用場景)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

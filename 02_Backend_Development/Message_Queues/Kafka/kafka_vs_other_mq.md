@@ -18,6 +18,7 @@
   - `LO-2`: 能夠根據吞吐量、延遲、消費模式、可靠性與運維條件選擇適合的訊息中介軟體。
   - `LO-3`: 能夠說明選型對擴展性、成本、故障處理與混合架構的取捨，並提出可驗證的決策依據。
 - **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/02_Message_Queues.md#q2)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ### 四大訊息中介軟體概覽
 

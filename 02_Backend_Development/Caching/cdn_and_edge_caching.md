@@ -16,6 +16,7 @@ CDN (Content Delivery Network) 是現代 Web 應用中提升全域訊問速度�
   - `LO-2`: 能夠使用 Cache-Control、max-age、s-maxage、ETag 與條件請求控制內容新鮮度。
   - `LO-3`: 能夠根據內容是否靜態、個人化、即時與回源失敗風險設計 CDN 快取、預熱與刷新策略。
 - **Quick Quiz**: [Q7](../../QUIZ/02_Caching.md#q7-cdn-快取的工作原理是什麼)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

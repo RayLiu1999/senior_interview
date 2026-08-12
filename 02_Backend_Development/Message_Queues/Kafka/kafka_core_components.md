@@ -18,6 +18,7 @@
   - `LO-2`: 能夠追蹤訊息從 Producer 寫入 Partition 到 Consumer Group 消費與提交 Offset 的流程，並指出並行與順序邊界。
   - `LO-3`: 能夠依吞吐量、保留、重播與可用性需求設計 Topic 分區、日誌儲存與叢集配置。
 - **Quick Quiz**: [Quick Quiz Q1](../../../QUIZ/02_Message_Queues.md#q1)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ### 整體架構圖
 

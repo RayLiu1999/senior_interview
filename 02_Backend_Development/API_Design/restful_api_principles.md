@@ -16,6 +16,7 @@
   - `LO-2`: 能夠用 HTTP 方法、媒體類型、Cache-Control 與 HATEOAS 判斷 API 是否符合 RESTful 設計。
   - `LO-3`: 能夠分析無狀態與分層架構對可擴展性、故障轉移、快取及客戶端解耦的影響。
 - **Quick Quiz**: [Q1](../../QUIZ/02_API_Design.md#q1-restful-api-的六大架構約束是什麼)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

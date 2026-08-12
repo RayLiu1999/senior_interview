@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較四種策略在資料一致性、寫入延遲、資料遺失風險與應用耦合上的取捨。
   - `LO-3`: 能夠根據讀寫比例、快取提供者能力與可接受的陳舊程度選擇快取策略。
 - **Quick Quiz**: [Q1](../../QUIZ/02_Caching.md#q1-比較-cache-asideread-throughwrite-throughwrite-back-四種快取策略)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

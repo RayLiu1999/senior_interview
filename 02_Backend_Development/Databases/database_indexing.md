@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 B+ Tree 與 LSM-Tree 在讀寫流程、範圍查詢、寫入放大與讀取放大上的差異。
   - `LO-3`: 能夠根據讀寫比例、一致性、資料規模與 Compaction 成本選擇索引結構。
 - **Quick Quiz**: [Q2](../../QUIZ/02_Databases.md#q2-什麼是資料庫索引解釋-b-tree-的原理)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

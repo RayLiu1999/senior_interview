@@ -18,6 +18,7 @@
   - `LO-2`: 能夠追蹤文本經分析、分詞到 term 對應文件 ID 的索引流程，說明其搜尋效率來源。
   - `LO-3`: 能夠依全文搜尋、日誌分析或近即時查詢需求判斷 Elasticsearch 的適用性與基本架構。
 - **Quick Quiz**: [Quick Quiz Q2](../../../QUIZ/04_Elasticsearch.md#q2)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 Elasticsearch 是一個基於 Apache Lucene 函式庫開發的、分散式的、開源的搜尋與分析引擎。它以其 **速度**、**可擴展性** 和 **易用性** 而聞名，能夠對各種類型的資料（包括結構化、非結構化、地理空間、數值等）進行近乎即時的儲存、搜尋和分析。
 

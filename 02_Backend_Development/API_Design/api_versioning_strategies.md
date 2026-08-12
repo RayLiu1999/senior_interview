@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 URI、查詢參數、自訂標頭與 Accept 標頭版本管理的可見性、快取與實作成本。
   - `LO-3`: 能夠根據公開性、客戶端數量、REST 約束與部署需求選擇版本策略並規劃棄用流程。
 - **Quick Quiz**: [Q3](../../QUIZ/02_API_Design.md#q3-比較四種-api-版本管理策略的優缺點)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

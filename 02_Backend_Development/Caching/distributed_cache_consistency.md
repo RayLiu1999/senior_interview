@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計延遲雙刪、重試、訊息佇列或 Binlog/CDC 流程，讓快取最終收斂到資料庫狀態。
   - `LO-3`: 能夠根據一致性要求、延遲、可用性與運維複雜度選擇強一致或最終一致方案。
 - **Quick Quiz**: [Q3](../../QUIZ/02_Caching.md#q3-如何保證快取與資料庫的一致性)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

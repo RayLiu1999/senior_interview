@@ -18,6 +18,7 @@
   - `LO-2`: 能夠解釋 Cardinality 使用 HyperLogLog++ 產生近似去重數，以及 `precision_threshold` 的精度與記憶體取捨。
   - `LO-3`: 能夠依資料量、誤差容忍度與查詢成本選擇聚合策略，並用 filter、桶數與抽樣控制效能。
 - **Quick Quiz**: [Quick Quiz Q6](../../../QUIZ/04_Elasticsearch.md#q6)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 聚合 (Aggregations) 是 Elasticsearch 強大的數據分析功能，允許對搜尋結果進行統計、分組和計算。它相當於 SQL 中的 `GROUP BY` 和聚合函數。
 

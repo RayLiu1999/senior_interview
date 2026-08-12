@@ -16,6 +16,7 @@
   - `LO-2`: 能夠設計主從、主主或多主架構的讀寫路由、故障轉移與讀取一致性策略。
   - `LO-3`: 能夠根據 SLA、RTO/RPO、複製延遲與衝突風險選擇高可用方案並規劃演練與監控。
 - **Quick Quiz**: [Q5](../../QUIZ/02_Databases.md#q5-資料庫高可用方案有哪些)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

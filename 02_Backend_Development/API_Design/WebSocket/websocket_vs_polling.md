@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 WebSocket、HTTP 長輪詢與 SSE 在延遲、連線成本、方向性與相容性上的差異。
   - `LO-3`: 能夠根據更新頻率、即時性、斷線重連、心跳與水平擴展需求選擇即時通訊方案。
 - **Quick Quiz**: [Q7](../../../QUIZ/02_API_Design.md#q7-websocket-與-http-長輪詢的差異是什麼)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

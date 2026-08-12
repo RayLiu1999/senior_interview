@@ -18,6 +18,7 @@
   - `LO-2`: 能夠設計 DLX、死信佇列與 routing key 的宣告、綁定和訊息流向。
   - `LO-3`: 能夠使用 DLX 實作錯誤收集、延遲重試與退避策略，並避免重試循環和無限堆積。
 - **Quick Quiz**: [Quick Quiz Q8](../../../QUIZ/02_Message_Queues.md#q8)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 **死信交換機 (Dead-Letter-Exchange, DLX)** 是一個普通的 RabbitMQ 交換機（可以是 Direct, Fanout, 或 Topic 類型），它被用來接收和路由那些來自其他佇列的「死信 (Dead-Lettered Messages)」。
 

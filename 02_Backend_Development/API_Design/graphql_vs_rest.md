@@ -16,6 +16,7 @@
   - `LO-2`: 能夠分析 over-fetching、under-fetching、伺服器端 N+1、查詢複雜度與快取差異。
   - `LO-3`: 能夠根據客戶端多樣性、資料聚合、HTTP 快取、效能與安全限制選擇 REST、GraphQL 或混合方案。
 - **Quick Quiz**: [Q6](../../QUIZ/02_API_Design.md#q6-graphql-vs-rest---如何選擇)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

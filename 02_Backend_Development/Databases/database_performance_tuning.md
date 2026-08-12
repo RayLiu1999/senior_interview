@@ -16,6 +16,7 @@
   - `LO-2`: 能夠使用 EXPLAIN、索引、查詢改寫、批次操作與游標分頁降低查詢與寫入成本。
   - `LO-3`: 能夠在應用、SQL、Schema、配置與架構層之間排序優化順序，並以監控數據驗證效果。
 - **Quick Quiz**: [Q6](../../QUIZ/02_Databases.md#q6-如何進行資料庫效能調優)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

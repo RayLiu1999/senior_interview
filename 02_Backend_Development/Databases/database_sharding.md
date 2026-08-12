@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較範圍、雜湊與目錄分片在均衡性、範圍查詢、擴容與路由複雜度上的取捨。
   - `LO-3`: 能夠評估跨分片交易、聚合、重平衡、全域 ID 與運維帶來的系統複雜性。
 - **Quick Quiz**: [Q4](../../QUIZ/02_Databases.md#q4-什麼是資料庫分片-sharding有哪些策略)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

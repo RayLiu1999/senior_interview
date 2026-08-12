@@ -18,6 +18,7 @@
   - `LO-2`: 能夠說明副本如何提供故障切換與讀取並行，並遵守主分片與副本不可置於同一節點的規則。
   - `LO-3`: 能夠依資料量、節點數、查詢模式與可用性需求規劃分片、副本、Routing 與 ILM，並辨識 over-sharding。
 - **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/04_Elasticsearch.md#q7)、[Quick Quiz Q8](../../../QUIZ/04_Elasticsearch.md#q8)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ### 分片 (Shard) 概念
 

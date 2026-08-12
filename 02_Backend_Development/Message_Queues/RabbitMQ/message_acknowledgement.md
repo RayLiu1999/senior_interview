@@ -18,6 +18,7 @@
   - `LO-2`: 能夠設計在成功處理後確認、暫時性失敗重排隊、永久性失敗進 DLX 的消費流程。
   - `LO-3`: 能夠從消費者崩潰、無限重試與 prefetch 設定分析重複、延遲與資源耗盡風險。
 - **Quick Quiz**: [Quick Quiz Q7](../../../QUIZ/02_Message_Queues.md#q7)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 訊息確認機制是 RabbitMQ 實現可靠訊息傳遞的核心。它確保了即使消費者在處理訊息的過程中發生故障，訊息也不會丟失，而是可以被重新傳遞給另一個健康的消費者。
 

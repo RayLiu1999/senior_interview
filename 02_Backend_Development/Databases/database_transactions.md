@@ -17,6 +17,7 @@
   - `LO-3`: 能區分 SQL 標準語意與特定資料庫引擎的 MVCC／鎖定實作。
 - **硬測驗**: [資料庫交易追蹤](../../QUIZ/Hard_Assessments/database_transaction_schedule.md)
 - **Quick Quiz**: [Q3](../../QUIZ/02_Databases.md#q3-解釋-acid-特性和隔離級別)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 - **覆蓋題型**: `追蹤`, `併發診斷`, `權衡取捨`
 
 ## 核心理論與詳解

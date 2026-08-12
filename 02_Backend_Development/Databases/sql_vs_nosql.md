@@ -16,6 +16,7 @@
   - `LO-2`: 能夠根據關聯複雜度、資料量、流量、擴展方式與一致性要求進行資料庫選型。
   - `LO-3`: 能夠說明混合持久化如何讓訂單、搜尋、會話或評論分別使用適合的資料庫。
 - **Quick Quiz**: [Q1](../../QUIZ/02_Databases.md#q1-sql-vs-nosql-該如何選擇)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

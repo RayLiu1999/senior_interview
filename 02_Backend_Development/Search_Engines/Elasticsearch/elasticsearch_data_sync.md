@@ -18,6 +18,7 @@
   - `LO-2`: 能夠設計 MySQL 變更經由事件或 Binlog 傳到 Elasticsearch 的可靠同步流程，包含重試、冪等與刪除處理。
   - `LO-3`: 能夠依資料規模、故障恢復、延遲與應用程式改動成本選擇方案，並定義一致性驗證方式。
 - **Quick Quiz**: [Quick Quiz Q10](../../../QUIZ/04_Elasticsearch.md#q10)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 資料同步是 Elasticsearch 實際應用中最常見的挑戰之一。主要需要解決：資料一致性、同步延遲、故障恢復等問題。
 

@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 API Key、Basic Auth、OAuth 2.0 與 JWT 的憑證生命週期、狀態與撤銷特性。
   - `LO-3`: 能夠根據使用者授權、服務間呼叫、HTTPS、權限範圍與水平擴展需求選擇機制。
 - **Quick Quiz**: [Q4](../../QUIZ/02_API_Design.md#q4-比較-oauth-20jwt-和-api-key-的使用場景)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

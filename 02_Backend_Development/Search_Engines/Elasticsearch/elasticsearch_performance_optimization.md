@@ -18,6 +18,7 @@
   - `LO-2`: 能夠依查詢深度、寫入量與可搜尋延遲選擇 Search After、Scroll、PIT、Bulk 與 Refresh Interval 策略。
   - `LO-3`: 能夠設計 Hot/Warm/Cold 與 ILM 的資料分層，並用延遲、資源、成本與可靠性指標驗證優化效果。
 - **Quick Quiz**: [Quick Quiz Q5](../../../QUIZ/04_Elasticsearch.md#q5)、[Quick Quiz Q9](../../../QUIZ/04_Elasticsearch.md#q9)、[Quick Quiz Q11](../../../QUIZ/04_Elasticsearch.md#q11)、[Quick Quiz Q12](../../../QUIZ/04_Elasticsearch.md#q12)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 Elasticsearch 效能優化涵蓋多個層面：硬體配置、索引設計、查詢優化、叢集調優等。
 

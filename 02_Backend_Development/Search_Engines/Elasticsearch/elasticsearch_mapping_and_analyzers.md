@@ -18,6 +18,7 @@
   - `LO-2`: 能夠設計包含 Mapping、Analyzer 組件與 Multi-fields 的欄位定義，讓全文搜尋和精確過濾共存。
   - `LO-3`: 能夠從查詢需求、語言分詞、動態 Mapping 風險與索引大小選擇分析器和生產環境設定。
 - **Quick Quiz**: [Quick Quiz Q3](../../../QUIZ/04_Elasticsearch.md#q3)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ### Mapping 概念
 

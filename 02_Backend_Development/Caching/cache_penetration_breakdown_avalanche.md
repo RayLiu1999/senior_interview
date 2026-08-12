@@ -17,6 +17,7 @@
   - `LO-3`: 能說明空值快取、布隆過濾器、邏輯過期與隨機 TTL 對一致性、記憶體與延遲的影響。
 - **硬測驗**: [快取故障診斷](../../QUIZ/Hard_Assessments/cache_failure_diagnosis.md)
 - **Quick Quiz**: [Q2](../../QUIZ/02_Caching.md#q2-什麼是快取穿透擊穿雪崩如何解決)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 - **覆蓋題型**: `故障診斷`, `容量保護`, `權衡取捨`
 
 ## 核心理論與詳解

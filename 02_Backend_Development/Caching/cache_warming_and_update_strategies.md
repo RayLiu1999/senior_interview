@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較 TTL、主動更新、刪除快取、定時刷新與 CDC 在新鮮度、負載與複雜度上的取捨。
   - `LO-3`: 能夠設計包含隨機 TTL、邏輯過期、限流與失敗重試的快取更新流程，降低擊穿與雪崩風險。
 - **Quick Quiz**: [Q5](../../QUIZ/02_Caching.md#q5-什麼是延遲雙刪什麼情況下需要使用)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

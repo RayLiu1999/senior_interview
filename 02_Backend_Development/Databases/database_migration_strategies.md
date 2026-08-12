@@ -16,6 +16,7 @@
   - `LO-2`: 能夠比較應用雙寫與 CDC 在延遲、一致性、失敗重試、回滾與運維成本上的取捨。
   - `LO-3`: 能夠設計主鍵衝突、增量同步、校驗修復與 Reverse Sync 的零停機遷移安全網。
 - **Quick Quiz**: [Q9](../../QUIZ/02_Databases.md#q9-資料庫遷移的策略和注意事項)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 

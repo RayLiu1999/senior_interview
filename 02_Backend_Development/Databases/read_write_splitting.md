@@ -16,6 +16,7 @@
   - `LO-2`: 能夠分析複製延遲造成的寫後讀不一致，並選擇讀主、會話親和性或延遲路由策略。
   - `LO-3`: 能夠評估讀寫分離對吞吐量、部署成本、事務路由與最終一致性的影響。
 - **Quick Quiz**: [Q7](../../QUIZ/02_Databases.md#q7-什麼是讀寫分離如何處理主從延遲)
+- **Hard Assessment**: [Backend Storage／API／Messaging／Search Incident](../../QUIZ/Hard_Assessments/storage_api_messaging_search_incident.md)（`assessment.backend.storage-api-messaging-search.incident.v1`）
 
 ## 核心理論與詳解
 
