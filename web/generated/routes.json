@@ -1,6 +1,12 @@
 [
   "/",
   "/catalog",
+  "/categories/01_Computer_Science_Fundamentals",
+  "/categories/02_Backend_Development",
+  "/categories/03_System_Design_and_Architecture",
+  "/categories/04_Infrastructure_and_DevOps",
+  "/categories/05_Specialized_Topics",
+  "/categories/06_Frontend_Development",
   "/dashboard",
   "/review",
   "/settings",

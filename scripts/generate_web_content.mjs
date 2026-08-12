@@ -359,6 +359,7 @@ async function main() {
   const routes = [
     '/',
     '/catalog',
+    ...categories.map((category) => `/categories/${category.id}`),
     '/dashboard',
     '/review',
     '/settings',
