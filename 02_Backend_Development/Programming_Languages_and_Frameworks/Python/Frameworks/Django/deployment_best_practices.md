@@ -8,6 +8,18 @@
 
 Django 應用的部署涉及 Web 服務器配置、WSGI 服務器選擇、靜態文件處理、資料庫遷移等多個環節，正確的部署策略能確保應用的穩定性和性能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.deployment-runtime`
+- **Learning Objectives**:
+  - `LO-1`：能描述 WSGI／ASGI、Gunicorn、反向代理、靜態檔案、資料庫與 migration 在部署邊界的責任。
+  - `LO-2`：能設計 health check、graceful shutdown、秘密管理、TLS、backup 與 rolling rollback。
+  - `LO-3`：能用 P99、worker、connection pool、錯誤率與 readiness 證據判斷部署設定是否放大事故。
+- **Prerequisites**: [Django 請求-響應週期](./request_response_cycle.md)、[Django 性能優化](./performance_optimization.md)
+- **Quick Quiz**: [Python Q31](../../../../../QUIZ/05_Python.md#q31)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Django 部署架構

@@ -8,6 +8,18 @@
 
 深入探討 Django 的認證（Authentication）和授權（Authorization）系統，包括用戶模型、認證後端、權限機制、裝飾器、中間件以及如何自定義和擴展這些系統。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.authentication-permissions`
+- **Learning Objectives**:
+  - `LO-1`：能區分 authentication、authorization、permission 與 object-level access control 的責任邊界。
+  - `LO-2`：能設計 session、token、CSRF、密碼與管理端點的安全策略，並避免在 middleware 或 view 中繞過權限。
+  - `LO-3`：能以拒絕率、越權測試、audit log 與敏感資料暴露證據診斷認證授權事故。
+- **Prerequisites**: [Django 請求-響應週期](./request_response_cycle.md)、[Django 安全最佳實踐](./security_best_practices.md)
+- **Quick Quiz**: [Python Q29](../../../../../QUIZ/05_Python.md#q29)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 認證 vs 授權

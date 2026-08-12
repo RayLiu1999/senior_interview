@@ -8,6 +8,18 @@
 
 Django 性能優化涉及資料庫查詢優化、緩存策略、異步處理等多個層面，目標是減少響應時間、提高吞吐量和降低資源消耗。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.performance-capacity`
+- **Learning Objectives**:
+  - `LO-1`：能把 Django 延遲拆成 middleware、view、ORM、cache、序列化、worker 與下游 I/O。
+  - `LO-2`：能比較 query optimization、cache、批次、非同步工作、streaming 與水平擴展的代價。
+  - `LO-3`：能用 P50／P99、query count、DB pool、cache hit、CPU／RSS 與容量測試驗證優化。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 快取框架](./caching_framework.md)
+- **Quick Quiz**: [Python Q37](../../../../../QUIZ/05_Python.md#q37)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 資料庫查詢優化

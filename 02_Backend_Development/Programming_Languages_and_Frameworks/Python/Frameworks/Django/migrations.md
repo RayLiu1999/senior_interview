@@ -8,6 +8,18 @@
 
 Django Migrations 是一個版本控制系統，用於管理資料庫架構的變更，讓團隊成員能夠同步資料庫結構，並在不同環境間保持一致性。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.migrations-safety`
+- **Learning Objectives**:
+  - `LO-1`：能說明 migration graph、schema operation、data migration 與部署版本之間的依賴。
+  - `LO-2`：能設計 expand／migrate／contract、可逆性、大表變更、鎖定與多版本相容策略。
+  - `LO-3`：能以 migration plan、DB lock、replica lag、錯誤率與 rollback evidence 評估生產遷移風險。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 測試策略](./testing_strategies.md)
+- **Quick Quiz**: [Python Q36](../../../../../QUIZ/05_Python.md#q36)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Migrations 的工作原理

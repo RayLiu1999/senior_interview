@@ -8,6 +8,18 @@
 
 解釋 Flask 中的錯誤處理機制，包括錯誤處理器註冊、自定義錯誤頁面、異常捕獲以及統一錯誤響應格式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.error-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能區分 HTTP error handler、domain exception、未預期例外、Blueprint handler 與 teardown 的責任。
+  - `LO-2`：能設計穩定錯誤 envelope、correlation ID、logging redaction 與 response-started 後的處理。
+  - `LO-3`：能以狀態碼分布、trace、錯誤分類、重試語意與故障注入驗證錯誤邊界。
+- **Prerequisites**: [Flask Request 與 Response 對象](./request_and_response_objects.md)、[Flask Middleware 與 Hooks](./middleware_and_hooks.md)
+- **Quick Quiz**: [Python Q47](../../../../../QUIZ/05_Python.md#q47)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 錯誤處理基礎

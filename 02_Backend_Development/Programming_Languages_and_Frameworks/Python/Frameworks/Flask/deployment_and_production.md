@@ -8,6 +8,18 @@
 
 解釋 Flask 應用的生產環境部署策略，包括 WSGI 服務器選擇、配置優化、容器化部署、監控日誌以及安全最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.deployment-runtime`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Flask app、WSGI server、worker、reverse proxy、static asset 與 process lifecycle 的分工。
+  - `LO-2`：能設計 readiness／liveness、graceful shutdown、logging、TLS、secrets、backup 與 rollback。
+  - `LO-3`：能以 worker capacity、P99、pool wait、memory、drain time 與錯誤率評估生產部署。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask 配置管理](./configuration_management.md)
+- **Quick Quiz**: [Python Q46](../../../../../QUIZ/05_Python.md#q46)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### WSGI 服務器

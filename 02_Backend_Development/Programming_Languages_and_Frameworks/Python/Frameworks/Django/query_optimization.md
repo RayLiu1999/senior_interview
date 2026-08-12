@@ -8,6 +8,18 @@
 
 深入探討 Django ORM 的查詢優化技術，包括 N+1 問題的識別和解決、select_related 和 prefetch_related 的使用、查詢分析工具以及各種優化策略。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.query-optimization`
+- **Learning Objectives**:
+  - `LO-1`：能辨識 N+1、過度查詢、錯誤 JOIN、欄位投影與 pagination 造成的資料庫成本。
+  - `LO-2`：能依關聯型態選擇 select_related、prefetch_related、annotate、bulk 與適當 index。
+  - `LO-3`：能用 EXPLAIN、query count、rows scanned、lock wait 與負載測試證明查詢改善。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 性能優化](./performance_optimization.md)
+- **Quick Quiz**: [Python Q38](../../../../../QUIZ/05_Python.md#q38)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### N+1 查詢問題

@@ -8,6 +8,18 @@
 
 深入探討 Flask 的路由系統，包括 URL 規則定義、動態路由、轉換器、HTTP 方法處理、URL 構建以及路由的最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.routing-dispatch`
+- **Learning Objectives**:
+  - `LO-1`：能說明 URL rule、converter、endpoint、method dispatch、strict slash 與 Blueprint prefix 的關係。
+  - `LO-2`：能處理 route precedence、參數驗證、版本化、反向 URL 與不應公開的管理路由。
+  - `LO-3`：能以 route map、404／405 分布、collision test、trace 與安全測試定位 routing 問題。
+- **Prerequisites**: [Flask Application 與 Request Context](./application_and_request_context.md)、[Flask Blueprint](../flask_blueprint.md)
+- **Quick Quiz**: [Python Q54](../../../../../QUIZ/05_Python.md#q54)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 路由的核心概念

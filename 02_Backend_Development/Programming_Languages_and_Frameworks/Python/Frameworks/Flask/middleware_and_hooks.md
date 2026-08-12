@@ -8,6 +8,18 @@
 
 解釋 Flask 中的請求生命週期鉤子和中間件機制，包括 before_request、after_request、teardown_request 等鉤子函數的使用場景和執行順序。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.middleware-hooks`
+- **Learning Objectives**:
+  - `LO-1`：能追蹤 before_request、after_request、teardown、Blueprint hook 與 WSGI middleware 的執行順序。
+  - `LO-2`：能安排 trace、auth、CORS、timeout、response headers、error boundary 與 resource cleanup。
+  - `LO-3`：能以短路回應、response mutation、teardown error、延遲與 correlation log 診斷 hook 事故。
+- **Prerequisites**: [Flask Application 與 Request Context](./application_and_request_context.md)、[Flask Request 與 Response 對象](./request_and_response_objects.md)
+- **Quick Quiz**: [Python Q50](../../../../../QUIZ/05_Python.md#q50)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 請求生命週期

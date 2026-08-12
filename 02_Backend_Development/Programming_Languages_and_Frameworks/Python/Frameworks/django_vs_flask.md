@@ -8,6 +8,18 @@
 
 Django 和 Flask 是 Python 生態系中最流行的兩個 Web 框架。它們在設計哲學、功能特性和使用場景上有何差異？如何根據專案需求選擇合適的框架？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.web-framework-selection`
+- **Learning Objectives**:
+  - `LO-1`：能比較 Django 的 batteries-included 與 Flask 的 microframework 責任邊界、預設約束與生態。
+  - `LO-2`：能依團隊、產品、合規、安全、流量、資料模型、部署與維運能力做框架選型。
+  - `LO-3`：能用可量測的交付速度、P99、缺陷率、依賴風險與 ownership 成本驗證選型，而不是只比 benchmark。
+- **Prerequisites**: [Django 請求-響應週期](./Django/request_response_cycle.md)、[Flask Application 與 Request Context](./Flask/application_and_request_context.md)
+- **Quick Quiz**: [Python Q57](../../../../QUIZ/05_Python.md#q57)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 設計哲學差異

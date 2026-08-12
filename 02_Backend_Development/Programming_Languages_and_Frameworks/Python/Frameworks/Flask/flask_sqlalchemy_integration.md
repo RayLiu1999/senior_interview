@@ -8,6 +8,18 @@
 
 Flask-SQLAlchemy 是 Flask 與 SQLAlchemy ORM 的集成擴展，提供了簡化的配置和使用方式，是 Flask 應用中最常用的資料庫解決方案。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.sqlalchemy-integration`
+- **Learning Objectives**:
+  - `LO-1`：能界定 Flask-SQLAlchemy session、application context、transaction 與 connection pool 的 ownership。
+  - `LO-2`：能處理 commit／rollback、scoped session、N+1、migration、timeout 與背景工作不可共用 request session。
+  - `LO-3`：能以 pool wait、query count、transaction duration、rollback 與 context teardown 證明資料層健康。
+- **Prerequisites**: [Flask Application 與 Request Context](./application_and_request_context.md)、[Flask Application Factory](../flask_application_factory.md)
+- **Quick Quiz**: [Python Q49](../../../../../QUIZ/05_Python.md#q49)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 基本設置

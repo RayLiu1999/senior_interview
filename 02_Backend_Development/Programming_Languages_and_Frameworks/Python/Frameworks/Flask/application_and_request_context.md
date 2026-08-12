@@ -8,6 +8,18 @@
 
 Flask 的上下文系統是理解 Flask 工作原理的關鍵。應用上下文和請求上下文有什麼區別？它們如何工作？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.context-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能區分 application context、request context、context local、g、request 與 current_app 的生命週期。
+  - `LO-2`：能處理 context push／pop、背景工作、thread／greenlet 邊界與 teardown cleanup。
+  - `LO-3`：能以 context error、request correlation、資源釋放與並發測試證明 context ownership 正確。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask Request 與 Response 對象](./request_and_response_objects.md)
+- **Quick Quiz**: [Python Q43](../../../../../QUIZ/05_Python.md#q43)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 為什麼需要上下文？

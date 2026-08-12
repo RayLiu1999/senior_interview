@@ -8,6 +8,18 @@
 
 Flask 的 Request 和 Response 對象是處理 HTTP 請求和響應的核心，理解它們的屬性和方法對於構建 Web 應用至關重要。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.request-response-contract`
+- **Learning Objectives**:
+  - `LO-1`：能區分 query、path、form、JSON、file、headers、cookies 與 response body 的解析及信任邊界。
+  - `LO-2`：能設計 content negotiation、validation、size limit、streaming、cookie flags 與錯誤回應。
+  - `LO-3`：能以 request class、response headers、payload limit、錯誤率與慢 client 測試驗證契約。
+- **Prerequisites**: [Flask Application 與 Request Context](./application_and_request_context.md)、[Flask Routing](./routing_and_url_rules.md)
+- **Quick Quiz**: [Python Q52](../../../../../QUIZ/05_Python.md#q52)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Request 對象

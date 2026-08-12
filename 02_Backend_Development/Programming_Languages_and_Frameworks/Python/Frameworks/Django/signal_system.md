@@ -8,6 +8,18 @@
 
 Django 的 Signal 系統是一種通知機制，允許應用的不同部分在特定事件發生時接收通知並執行相應的操作，實現鬆耦合的架構設計。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.signal-architecture`
+- **Learning Objectives**:
+  - `LO-1`：能說明 signal dispatch、sender、receiver、弱引用、transaction 與 request lifecycle 的關係。
+  - `LO-2`：能判斷 signal 與明確 service、domain event、outbox 或 transaction.on_commit 的取捨。
+  - `LO-3`：能以重複觸發、順序、失敗、延遲與 side effect audit 證據診斷 signal 造成的一致性問題。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 測試策略](./testing_strategies.md)
+- **Quick Quiz**: [Python Q41](../../../../../QUIZ/05_Python.md#q41)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Signal 的基本概念

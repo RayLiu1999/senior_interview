@@ -8,6 +8,18 @@
 
 深入探討 Django 中間件的工作原理、執行順序、常見應用場景，以及如何編寫自定義中間件來擴展 Django 的請求處理流程。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.middleware-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能依 onion model 說明 Django middleware 的進入、短路、view 前後與 response／exception 順序。
+  - `LO-2`：能安排 trace、security headers、session、authentication、timeout 與 error boundary 的責任。
+  - `LO-3`：能以 response started、correlation ID、延遲與 cleanup evidence 判斷 middleware 順序或短路錯誤。
+- **Prerequisites**: [Django 請求-響應週期](./request_response_cycle.md)、[Django 認證與權限系統](./authentication_and_permissions.md)
+- **Quick Quiz**: [Python Q35](../../../../../QUIZ/05_Python.md#q35)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 中間件的核心概念

@@ -8,6 +8,18 @@
 
 Application Factory 模式是 Flask 應用開發中的重要設計模式。這個模式如何運作？為什麼要使用它？相較於傳統的應用初始化方式有什麼優勢？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.application-factory`
+- **Learning Objectives**:
+  - `LO-1`：能說明 application factory 如何延遲建立 app、注入設定、初始化 extension 與註冊 Blueprint。
+  - `LO-2`：能處理多環境、多 app instance、測試隔離、循環依賴、啟動失敗與資源 cleanup。
+  - `LO-3`：能以 app factory integration test、config validation、extension isolation 與啟動 telemetry 驗證架構。
+- **Prerequisites**: [Flask Application 與 Request Context](./Flask/application_and_request_context.md)、[Flask Blueprint](./flask_blueprint.md)
+- **Quick Quiz**: [Python Q58](../../../../QUIZ/05_Python.md#q58)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 傳統方式 vs. Application Factory

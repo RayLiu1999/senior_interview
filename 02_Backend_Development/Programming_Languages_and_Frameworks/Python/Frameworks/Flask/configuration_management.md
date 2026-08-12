@@ -8,6 +8,18 @@
 
 解釋 Flask 的配置管理機制，包括配置加載方式、環境變量管理、多環境配置以及配置最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.configuration-management`
+- **Learning Objectives**:
+  - `LO-1`：能設計 instance config、環境變數、分層設定與啟動時驗證的責任邊界。
+  - `LO-2`：能避免 secrets、debug、testing、cookie、CORS 與 database settings 在環境間錯置。
+  - `LO-3`：能以 config snapshot、secret scan、啟動檢查、health response 與 rollout diff 驗證設定。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask Deployment](./deployment_and_production.md)
+- **Quick Quiz**: [Python Q45](../../../../../QUIZ/05_Python.md#q45)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 配置基礎

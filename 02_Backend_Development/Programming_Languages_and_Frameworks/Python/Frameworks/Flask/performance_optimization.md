@@ -8,6 +8,18 @@
 
 解釋 Flask 應用的性能優化策略，包括緩存、數據庫優化、異步處理、靜態資源優化以及性能監控。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.performance-capacity`
+- **Learning Objectives**:
+  - `LO-1`：能把 Flask 延遲拆成 WSGI worker、Python CPU、template、DB、cache、下游與 response write。
+  - `LO-2`：能比較 caching、query tuning、Celery、worker／thread pool、compression 與水平擴展的取捨。
+  - `LO-3`：能以 P99、worker queue、DB pool、cache hit、CPU／RSS 與壓測結果判斷優化成效。
+- **Prerequisites**: [Flask-SQLAlchemy 整合](./flask_sqlalchemy_integration.md)、[Flask 生產部署](./deployment_and_production.md)
+- **Quick Quiz**: [Python Q51](../../../../../QUIZ/05_Python.md#q51)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 緩存策略

@@ -8,6 +8,18 @@
 
 深入探討 Django 處理 HTTP 請求的完整生命週期，從請求到達服務器到返回響應的整個流程，包括 URL 路由、中間件執行、視圖處理和模板渲染等關鍵環節。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.request-response-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能從 WSGI／ASGI entry、URL resolver、middleware、view、template 到 response 描述完整請求鏈。
+  - `LO-2`：能說明短路、exception、streaming、session、transaction 與 client disconnect 的生命週期。
+  - `LO-3`：能以 trace、access log、response status、耗時分段與資源 cleanup evidence 診斷請求事故。
+- **Prerequisites**: [Django Middleware 機制](./middleware_mechanism.md)、[Django 認證與權限系統](./authentication_and_permissions.md)
+- **Quick Quiz**: [Python Q39](../../../../../QUIZ/05_Python.md#q39)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 請求-響應週期概覽

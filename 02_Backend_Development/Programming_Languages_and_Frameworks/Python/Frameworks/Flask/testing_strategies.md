@@ -8,6 +8,18 @@
 
 解釋 Flask 應用的測試策略，包括單元測試、集成測試、測試客戶端的使用以及測試最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.testing-strategy`
+- **Learning Objectives**:
+  - `LO-1`：能用 pytest fixture、test_client、app／request context 建立隔離且可重複的測試。
+  - `LO-2`：能區分 unit、integration、contract、security、database、負載與 shutdown／故障注入測試。
+  - `LO-3`：能以 fixture cleanup、extension isolation、query count、coverage、P99 與失敗重現率評估測試品質。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask Application 與 Request Context](./application_and_request_context.md)
+- **Quick Quiz**: [Python Q56](../../../../../QUIZ/05_Python.md#q56)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 測試基礎

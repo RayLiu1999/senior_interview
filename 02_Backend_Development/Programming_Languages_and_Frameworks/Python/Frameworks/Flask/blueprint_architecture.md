@@ -8,6 +8,18 @@
 
 深入探討 Flask Blueprint 的設計理念、使用方法、模塊化架構的最佳實踐，以及如何使用 Blueprint 構建大型、可維護的 Flask 應用。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.blueprint-architecture`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Blueprint 的 deferred registration、URL prefix、endpoint naming 與局部 hook 邊界。
+  - `LO-2`：能用 Blueprint 拆分模組，同時維持依賴方向、錯誤處理、權限與版本路由的一致性。
+  - `LO-3`：能以 route map、endpoint collision、註冊順序與 integration test 診斷模組化事故。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask Routing](./routing_and_url_rules.md)
+- **Quick Quiz**: [Python Q44](../../../../../QUIZ/05_Python.md#q44)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Blueprint 的核心概念

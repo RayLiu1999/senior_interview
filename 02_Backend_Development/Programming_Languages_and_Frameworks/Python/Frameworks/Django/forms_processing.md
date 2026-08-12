@@ -8,6 +8,18 @@
 
 Django 的表單系統提供了一套完整的機制來處理 HTML 表單的生成、數據驗證、清理和錯誤處理，使表單處理變得簡單且安全。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.forms-validation`
+- **Learning Objectives**:
+  - `LO-1`：能追蹤 Form／ModelForm 的 binding、clean、field error 與 commit 流程。
+  - `LO-2`：能區分使用者輸入驗證、業務不變量、CSRF 與資料庫 constraint 的責任。
+  - `LO-3`：能以錯誤率、拒絕原因、重複提交與交易回滾證據診斷表單處理問題。
+- **Prerequisites**: [Django 請求-響應週期](./request_response_cycle.md)、[Django 安全最佳實踐](./security_best_practices.md)
+- **Quick Quiz**: [Python Q34](../../../../../QUIZ/05_Python.md#q34)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Django 表單的核心組件

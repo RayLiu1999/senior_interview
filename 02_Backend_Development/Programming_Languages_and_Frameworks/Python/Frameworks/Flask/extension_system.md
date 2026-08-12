@@ -8,6 +8,18 @@
 
 解釋 Flask 的擴展系統設計原理，如何使用和開發擴展，以及常用擴展的集成方式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.extension-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Flask extension 的 init_app、延遲初始化、app config 與多 app／多測試實例邊界。
+  - `LO-2`：能設計 extension 的資源 ownership、teardown、錯誤處理、版本相容與依賴注入。
+  - `LO-3`：能以多 app isolation、初始化順序、connection pool、cleanup 與 integration test 找出 extension 問題。
+- **Prerequisites**: [Flask Application Factory](../flask_application_factory.md)、[Flask Application 與 Request Context](./application_and_request_context.md)
+- **Quick Quiz**: [Python Q48](../../../../../QUIZ/05_Python.md#q48)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 擴展系統概述

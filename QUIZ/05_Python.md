@@ -842,6 +842,625 @@ def file_manager(filename):
 
 📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/FastAPI/automatic_api_documentation.md)
 
+<a id="q29"></a>
+### Q29: Django 認證與授權如何建立不會繞過租戶邊界的安全模型？
+<!-- Concept ID: concept.python.django.authentication-permissions; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 authentication、authorization、permission 與 object-level access control，並說明 session／token、CSRF 與 audit log 的邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 登入成功不等於有權存取任一 object；租戶與資源權限必須在每個受保護操作驗證。
+- 認證 middleware、permission class、view query scope 與管理端點應有可測試且一致的責任。
+- 要觀察拒絕率、越權測試、敏感欄位暴露與 audit log，而非只看登入成功率。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/authentication_and_permissions.md)
+
+
+<a id="q30"></a>
+### Q30: Django Cache 框架如何在效能與一致性之間取捨？
+<!-- Concept ID: concept.python.django.caching-framework; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 per-site、view、fragment 與低階 cache，並設計 key、TTL、失效、stampede 與租戶隔離策略。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- cache hit 不代表資料正確；key 必須包含會影響結果的租戶、權限與版本維度。
+- 寫入後失效、短 TTL、single-flight 或 stale-while-revalidate 要依一致性需求選擇。
+- 以 hit rate、stale ratio、eviction、backend latency 與 DB load 驗證，不要只追求更高 hit rate。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/caching_framework.md)
+
+
+<a id="q31"></a>
+### Q31: Django 應如何設計可回滾的生產部署？
+<!-- Concept ID: concept.python.django.deployment-runtime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 WSGI／ASGI、worker、proxy、static files、migration、health check 與 graceful shutdown 的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- readiness、liveness 與 drain 必須分開；shutdown 時應停止新流量並保留可恢復的工作。
+- migration 應與 application rollout 相容，秘密、TLS、backup 和 log 不能靠開發設定。
+- 以 P99、worker／pool、錯誤率、memory 與 drain time 設定警戒線和 rollback。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/deployment_best_practices.md)
+
+
+<a id="q32"></a>
+### Q32: Django ORM 的 QuerySet lazy evaluation 與 transaction 邊界會如何影響正確性？
+<!-- Concept ID: concept.python.django.orm-architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請解釋 Model、QuerySet、lazy evaluation、transaction、select_for_update 與 connection lifecycle 的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- QuerySet 建立不一定執行 SQL；evaluation 發生時間會影響 transaction、鎖與 exception 的位置。
+- 一個業務不變量要由正確的 transaction、isolation、constraint 或 row lock 保護。
+- 用 generated SQL、query count、lock wait、慢查詢和 race test 證明設計。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/django_orm_deep_dive.md)
+
+
+<a id="q33"></a>
+### Q33: Django REST Framework 如何把 serializer、permission 與 transaction 組成可靠 API？
+<!-- Concept ID: concept.python.django.rest-framework; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請設計 DRF API 的輸入驗證、serializer、permission、throttling、版本、分頁與 transaction 邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 輸入／輸出 serializer 應分離，permission 要在 object scope 驗證，不能靠 serializer 過濾安全問題。
+- 錯誤 envelope、idempotency、版本與 schema 要保持向後相容，寫入與 side effect 要有明確 transaction 語意。
+- 以 contract test、query count、throttle rate、schema diff 和 latency 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/django_rest_framework.md)
+
+
+<a id="q34"></a>
+### Q34: Django Form 與 ModelForm 如何區分輸入驗證、業務規則與資料庫一致性？
+<!-- Concept ID: concept.python.django.forms-validation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 binding、clean、field error、ModelForm commit 與 CSRF 的責任，並處理重複提交。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 表單格式錯誤、業務不變量與資料庫 unique／constraint 是不同層次，不能只在 HTML 驗證。
+- ModelForm 的 commit、transaction、CSRF 與權限要配合，重試不能造成重複副作用。
+- 以錯誤分類、重複提交、transaction rollback 與拒絕率測試驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/forms_processing.md)
+
+
+<a id="q35"></a>
+### Q35: Django Middleware 的 onion order 如何影響短路、錯誤與資源清理？
+<!-- Concept ID: concept.python.django.middleware-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請畫出 trace、security headers、session、authentication、timeout、exception 與 view 的進出順序。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- middleware 可在 view 前短路，也可在 response／exception 路徑補充 headers 或 cleanup。
+- response started 後不能再寫第二個 body；timeout 必須連同取消和資源清理設計。
+- 以 correlation ID、response status、response started、延遲與 teardown evidence 驗證順序。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/middleware_mechanism.md)
+
+
+<a id="q36"></a>
+### Q36: Django Migration 如何在大表與多版本部署中維持安全？
+<!-- Concept ID: concept.python.django.migrations-safety; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請設計 migration graph、expand／contract、大表變更、data migration、鎖與 rollback 策略。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先新增相容欄位或表，再逐步 backfill，最後移除舊路徑；不要把長時間資料搬移塞進啟動。
+- 要知道 migration 是否可逆、會持有哪些鎖、replica lag 與舊版 application 是否仍能運作。
+- 以 migration plan、lock wait、錯誤率、replica lag、backup restore 與 staging rehearsal 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/migrations.md)
+
+
+<a id="q37"></a>
+### Q37: Django 性能優化為什麼必須先建立端到端容量模型？
+<!-- Concept ID: concept.python.django.performance-capacity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請把 middleware、view、ORM、cache、worker、serialization 與下游 I/O 拆成可觀測的延遲與容量預算。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先用 trace、query log、profile 和 load test 找瓶頸，再選 query、cache、batch、worker 或 async 工作。
+- 增加 worker 或 pool 會乘法放大 DB、cache、下游和記憶體壓力，並非免費容量。
+- 以 P99、query count、pool wait、cache hit、CPU／RSS 和 rollback threshold 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/performance_optimization.md)
+
+
+<a id="q38"></a>
+### Q38: Django QuerySet 如何避免 N+1 與過度預取？
+<!-- Concept ID: concept.python.django.query-optimization; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 select_related、prefetch_related、annotate、欄位投影、bulk 操作與 pagination 的使用邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- select_related 適合單值 JOIN，prefetch_related 適合集合但可能增加記憶體與查詢；要依資料形狀選擇。
+- 不要用盲目 prefetch 掩蓋錯誤的 API shape，values／only／iterator 也有 lazy 與 deferred 欄位代價。
+- 以 query count、EXPLAIN、rows scanned、response size 和負載測試確認改善。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/query_optimization.md)
+
+
+<a id="q39"></a>
+### Q39: Django request-response cycle 如何界定 middleware、view、streaming 與 disconnect 的資源生命週期？
+<!-- Concept ID: concept.python.django.request-response-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請從 WSGI／ASGI entry 追蹤 URL resolver、middleware、view、template、response、exception 與 client disconnect。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 短路回應、exception、streaming 與一般 response 的 cleanup 路徑不同，不能只在 happy path 釋放資源。
+- request context、session、transaction、下游呼叫與 cancellation 要有明確 owner。
+- 用 trace、access log、status、分段耗時與 connection／file cleanup evidence 定位問題。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/request_response_cycle.md)
+
+
+<a id="q40"></a>
+### Q40: Django Security Best Practices 如何形成可驗證的 Web 威脅模型？
+<!-- Concept ID: concept.python.django.security-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請整合 CSRF、XSS、SQL injection、session、TLS、CORS、上傳、secret 與 dependency patching。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 安全設定不是單一開關；輸入、輸出、身份、授權、瀏覽器 cookie 和部署 headers 必須一起考慮。
+- ORM 不能取代 object authorization，secret 不能進 source、image、log 或 trace。
+- 以 security test、headers、secret scan、越權案例與事件 telemetry 證明控制有效。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/security_best_practices.md)
+
+
+<a id="q41"></a>
+### Q41: Django Signal 何時會破壞交易一致性與可觀測性？
+<!-- Concept ID: concept.python.django.signal-architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較 signal、明確 service、domain event 與 transaction.on_commit，並處理重複、失敗和順序。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- signal 會隱藏 control flow；需要可靠 side effect 時要明確區分 transaction 內工作與 commit 後 outbox。
+- receiver 的重複註冊、例外、同步 I/O 和 retry 會放大請求延遲或造成重複副作用。
+- 觀察 receiver invocation、transaction state、latency、retry、side effect idempotency 與 audit trail。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/signal_system.md)
+
+
+<a id="q42"></a>
+### Q42: Django 測試策略如何證明 lifecycle 與資料庫行為，而不是只有 view happy path？
+<!-- Concept ID: concept.python.django.testing-strategy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請設計涵蓋 model、form、view、API、middleware、migration、transaction、security 與負載的測試矩陣。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- unit test 適合純邏輯，integration test 才能驗證 ORM、middleware、transaction、context 和 cleanup。
+- contract、security、故障注入、query count、migration rehearsal 與 load test 各自證明不同風險。
+- fixture isolation、rollback、coverage、P99、故障重現率和 production-like settings 都要納入。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Django/testing_strategies.md)
+
+
+<a id="q43"></a>
+### Q43: Flask Application Context 與 Request Context 有什麼生命週期差異？
+<!-- Concept ID: concept.python.flask.context-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 application context、request context、context local、g、request、current_app 與背景工作的邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- request context 通常包住 application context；push／pop、teardown 與 context local 不是全局共享。
+- 背景 thread、task 或 callback 不能假設仍有 request context，需顯式傳值與建立資源 scope。
+- 以 context error、teardown、correlation、resource release 和並發測試驗證 ownership。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/application_and_request_context.md)
+
+
+<a id="q44"></a>
+### Q44: Flask Blueprint 如何在大型服務中維持模組邊界？
+<!-- Concept ID: concept.python.flask.blueprint-architecture; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 deferred registration、URL prefix、endpoint naming、局部 hook 與錯誤 handler。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Blueprint 不是獨立 app；註冊時才把 routes、commands、handlers 加入 application，依賴方向要清楚。
+- domain、API version、permission 和 error boundary 應按責任拆分，避免循環 import 和 endpoint collision。
+- 用 route map、registration order、endpoint uniqueness 與 integration test 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/blueprint_architecture.md)
+
+
+<a id="q45"></a>
+### Q45: Flask Configuration 如何避免 debug、secret 與資料庫設定在環境間漂移？
+<!-- Concept ID: concept.python.flask.configuration-management; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計 instance config、環境變數、分層設定、啟動驗證與 secret 管理。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 設定應在 app factory 啟動時載入、驗證與記錄非敏感摘要，缺必要設定就 fail fast。
+- debug、testing、cookie、CORS、database URL 和 secret key 不能由 production image 或預設值誤帶入。
+- 以 config diff、secret scan、startup check、health response 和 rollout telemetry 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/configuration_management.md)
+
+
+<a id="q46"></a>
+### Q46: Flask 生產部署如何處理 WSGI worker、readiness 與 graceful shutdown？
+<!-- Concept ID: concept.python.flask.deployment-runtime; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 Flask app、WSGI server、worker、reverse proxy、static asset、health endpoint 與 process lifecycle。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 每個 worker 都可能建立自己的 DB／HTTP pool；worker 增加會放大下游與記憶體，不是單純提升容量。
+- drain 時 readiness 要失敗，shutdown 要停止新流量、排空可恢復工作並設定明確 grace period。
+- 以 P99、worker queue、pool wait、RSS、drain time、5xx 和 rollback threshold 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/deployment_and_production.md)
+
+
+<a id="q47"></a>
+### Q47: Flask Error Handling 如何統一錯誤契約又避免 response double-write？
+<!-- Concept ID: concept.python.flask.error-boundary; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較 HTTP handler、domain exception、未預期例外、Blueprint handler、teardown 與 response started 的處理。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 對外回應要有穩定 status、error type、correlation ID 和 retry semantics；stack trace、secret、SQL 只留在受控 log。
+- response 已開始後不能假設還能寫 JSON，應中止串流並完成 cleanup。
+- 以錯誤分類、trace、status distribution、故障注入與重試測試驗證邊界。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/error_handling.md)
+
+
+<a id="q48"></a>
+### Q48: Flask Extension 如何在 Application Factory 與多 app 測試中維持資源隔離？
+<!-- Concept ID: concept.python.flask.extension-lifecycle; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 init_app、延遲初始化、app config、extension resource ownership、teardown 與版本相容。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- extension 實例可共享設定介面，但 connection、cache、client 等資源要依 app instance 建立與釋放。
+- 初始化順序與 app context 要明確，不能在 import time 綁定單一 production app 或 request session。
+- 以多 app isolation、初始化失敗、pool、teardown 和 integration test 證明 lifecycle。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/extension_system.md)
+
+
+<a id="q49"></a>
+### Q49: Flask-SQLAlchemy 的 session、context 與 transaction 邊界如何設計？
+<!-- Concept ID: concept.python.flask.sqlalchemy-integration; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請界定 scoped session、application／request context、commit／rollback、pool、migration 與背景工作的 ownership。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- request 結束要 rollback 或 commit 並 remove session；背景工作要建立自己的 context／session，不能捕捉 request session。
+- N+1、長 transaction、pool saturation、timeout 和 exception cleanup 都會直接影響吞吐與正確性。
+- 觀察 pool wait、query count、transaction duration、rollback、context teardown 和慢查詢。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/flask_sqlalchemy_integration.md)
+
+
+<a id="q50"></a>
+### Q50: Flask Middleware、before_request 與 teardown hook 的順序有何差異？
+<!-- Concept ID: concept.python.flask.middleware-hooks; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 WSGI middleware、before_request、after_request、teardown 與 Blueprint hook 的執行順序和短路行為。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- before_request 可以短路；after_request 只處理已產生的 response，teardown 即使 exception 也應負責清理。
+- trace、auth、CORS、timeout、response headers 和 resource ownership 不應靠註冊順序猜測。
+- 用 short-circuit、response mutation、teardown error、latency 和 correlation log 測試。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/middleware_and_hooks.md)
+
+
+<a id="q51"></a>
+### Q51: Flask 性能優化如何避免只增加 worker 卻造成下游雪崩？
+<!-- Concept ID: concept.python.flask.performance-capacity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請拆解 WSGI worker、Python CPU、template、DB、cache、下游 I/O 與 response write 的容量預算。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先量測 event／thread queue、query、cache、downstream 和 serialization，再選 cache、query、Celery、pool 或 worker。
+- 每 worker 的 connection pool、記憶體、thread queue 會乘上 process；下游 quota 是硬上限。
+- 以 P99、worker queue、DB pool、cache hit、CPU／RSS、錯誤率和固定 workload 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/performance_optimization.md)
+
+
+<a id="q52"></a>
+### Q52: Flask Request 與 Response 對象如何形成安全且可演進的 HTTP 契約？
+<!-- Concept ID: concept.python.flask.request-response-contract; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 path、query、form、JSON、file、headers、cookies、content negotiation、streaming 與 payload limits。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 輸入解析不是驗證；要明確限制型別、大小、巢狀深度、content type 和不可信欄位。
+- response 應有穩定 schema、cookie flags、cache／security headers，streaming 要有 client disconnect cleanup。
+- 以 payload limit、schema contract、headers、慢 client、錯誤率和 response latency 測試。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/request_and_response_objects.md)
+
+
+<a id="q53"></a>
+### Q53: Flask RESTful API 如何設計可相容、可觀測且可重試的資源邊界？
+<!-- Concept ID: concept.python.flask.rest-api-design; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請設計 REST resource、method／status、serializer、pagination、validation、auth、idempotency、版本與 OpenAPI。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- HTTP status 和錯誤 envelope 要表達同步完成、已接受、重試或衝突；寫入 side effect 要有 idempotency。
+- 輸入與輸出模型分離，permission、tenant scope、rate limit 和 schema diff 需進 contract review。
+- 以 contract、security、query count、schema diff、latency、retry 和 duplicate tests 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/restful_api_development.md)
+
+
+<a id="q54"></a>
+### Q54: Flask Routing 如何避免 route collision、錯誤 method 與未授權路由暴露？
+<!-- Concept ID: concept.python.flask.routing-dispatch; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請解釋 URL rule、converter、endpoint、method dispatch、strict slash、prefix 與反向 URL。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- route map 是可觀測的契約；同一路徑 method、版本 prefix、converter 與 Blueprint 註冊順序都會影響 dispatch。
+- 404、405、redirect 與 auth failure 不應洩露管理路由或內部識別資訊。
+- 用 route map、404／405 分布、collision test、trace 和 security test 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/routing_and_url_rules.md)
+
+
+<a id="q55"></a>
+### Q55: Flask Session 應如何在 cookie 便利性與撤銷能力之間取捨？
+<!-- Concept ID: concept.python.flask.session-security; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 signed cookie、server-side session、Redis store 與 token，並說明 rotation、cookie flags、TTL 和 fixation。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- signed cookie 可驗證完整性但不等於保密或即時撤銷；資料大小與 key rotation 都是運維問題。
+- HttpOnly、Secure、SameSite、session fixation、replay、logout 和跨租戶隔離要一起設計。
+- 以 cookie headers、session size、store latency、rotation／replay test 和失效率驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/session_management.md)
+
+
+<a id="q56"></a>
+### Q56: Flask 測試策略如何同時驗證 app context、extension 與 production lifecycle？
+<!-- Concept ID: concept.python.flask.testing-strategy; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請設計 pytest fixture、test_client、app／request context、extension、database、security、contract 與 load 測試。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- factory fixture 要保證每個測試 app、config、session、cache 和 extension 資源隔離並清理。
+- happy path 不能取代 integration、故障注入、慢下游、取消、schema、security、shutdown 和壓測。
+- 用 cleanup assertion、query count、coverage、P99、fixture isolation 和失敗重現率評估。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/Flask/testing_strategies.md)
+
+
+<a id="q57"></a>
+### Q57: Django 與 Flask 如何依系統約束而不是偏好做框架選型？
+<!-- Concept ID: concept.python.web-framework-selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 Django 的 batteries-included 與 Flask 的 microframework，並提出可量測的選型決策矩陣。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Django 降低整合與一致性決策成本；Flask 提供較小核心但把 extension、契約、安全與維運責任交給團隊。
+- 要把合規、資料模型、團隊技能、流量、部署、依賴風險、交付速度和長期 ownership 納入。
+- 以 prototype、P99、缺陷率、security posture、operational toil 和 migration cost 驗證，而非只比 benchmark。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/django_vs_flask.md)
+
+
+<a id="q58"></a>
+### Q58: Flask Application Factory 如何改善多環境、測試與 extension 初始化？
+<!-- Concept ID: concept.python.flask.application-factory; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 factory 延遲建立 app、載入 config、初始化 extension、註冊 Blueprint、啟動失敗與 cleanup。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 每次 factory call 產生可隔離 app；extension 用 init_app，避免 import time 綁定單一 app。
+- config validation、循環依賴、logging、資料庫與 background resource 都應有明確 startup／teardown。
+- 用多環境 factory test、config snapshot、extension isolation、startup failure 和 telemetry 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/flask_application_factory.md)
+
+
+<a id="q59"></a>
+### Q59: Flask Blueprint 如何與 Application Factory 組合成可演進的模組架構？
+<!-- Concept ID: concept.python.flask.blueprint-modularity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較 Blueprint 的 registration、URL／endpoint 命名、版本、局部 hook 與 domain ownership。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Blueprint 應表達模組邊界，不應偷偷持有全局 app、request session 或跨模組可變狀態。
+- 在 factory 中集中註冊並用 prefix、error handler、permission 和依賴方向避免 collision。
+- 以 route map、registration test、module ownership、版本相容與 deployment smoke test 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Programming_Languages_and_Frameworks/Python/Frameworks/flask_blueprint.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

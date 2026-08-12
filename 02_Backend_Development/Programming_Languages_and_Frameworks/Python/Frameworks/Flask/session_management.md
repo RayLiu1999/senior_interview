@@ -8,6 +8,18 @@
 
 解釋 Flask 中的會話管理機制，包括基於 Cookie 的會話、服務器端會話存儲、安全配置以及會話生命週期管理。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.flask.session-security`
+- **Learning Objectives**:
+  - `LO-1`：能比較 signed cookie session、server-side session、Redis store 與無狀態 token 的容量和撤銷取捨。
+  - `LO-2`：能設計 secret key rotation、HttpOnly、Secure、SameSite、session fixation 與 TTL 策略。
+  - `LO-3`：能以 session size、失效率、跨租戶測試、replay evidence、cookie headers 與 store latency 驗證安全性。
+- **Prerequisites**: [Flask Application 與 Request Context](./application_and_request_context.md)、[Flask Request 與 Response 對象](./request_and_response_objects.md)
+- **Quick Quiz**: [Python Q55](../../../../../QUIZ/05_Python.md#q55)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Flask 會話基礎

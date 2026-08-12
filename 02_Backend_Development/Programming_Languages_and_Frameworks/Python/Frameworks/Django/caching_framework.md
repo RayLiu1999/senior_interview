@@ -8,6 +8,18 @@
 
 Django 的 Cache 框架提供了統一的 API 來使用不同的緩存後端，幫助開發者減少資料庫查詢、降低響應時間，提升應用性能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.caching-framework`
+- **Learning Objectives**:
+  - `LO-1`：能比較 per-site、view、fragment、低階 cache 與不同 backend 的一致性和失效邊界。
+  - `LO-2`：能設計 cache key、TTL、stampede protection、租戶隔離與寫入後失效策略。
+  - `LO-3`：能以 hit rate、stale ratio、eviction、backend latency 與資料庫負載驗證快取是否真的改善容量。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 性能優化](./performance_optimization.md)
+- **Quick Quiz**: [Python Q30](../../../../../QUIZ/05_Python.md#q30)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Cache 框架的架構

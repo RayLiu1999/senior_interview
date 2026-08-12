@@ -8,6 +8,18 @@
 
 深入探討 Django REST Framework 的核心概念和架構，包括序列化器、視圖、路由、認證、權限、過濾、分頁等核心功能，以及如何構建健壯的 RESTful API。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.rest-framework`
+- **Learning Objectives**:
+  - `LO-1`：能區分 serializer validation、view、permission、throttling 與 ORM transaction 的 API 邊界。
+  - `LO-2`：能設計版本、分頁、錯誤 envelope、idempotency 與輸入／輸出 schema 的相容策略。
+  - `LO-3`：能以 query count、throttle rate、schema diff、授權測試與 response latency 驗證 DRF API。
+- **Prerequisites**: [Django ORM 深入解析](./django_orm_deep_dive.md)、[Django 認證與權限系統](./authentication_and_permissions.md)
+- **Quick Quiz**: [Python Q33](../../../../../QUIZ/05_Python.md#q33)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### DRF 的核心價值

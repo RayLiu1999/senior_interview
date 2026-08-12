@@ -8,6 +8,18 @@
 
 Django ORM 是 Django 框架的核心組件之一，提供了強大的數據庫抽象層。如何高效使用 Django ORM 並避免常見的性能陷阱？
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.orm-architecture`
+- **Learning Objectives**:
+  - `LO-1`：能說明 Model、QuerySet、lazy evaluation、transaction 與資料庫連線在 Django ORM 中的關係。
+  - `LO-2`：能判斷關聯載入、bulk operation、select_for_update、isolation 與 transaction boundary 的取捨。
+  - `LO-3`：能用 generated SQL、query count、lock wait、慢查詢與資料正確性證據定位 ORM 問題。
+- **Prerequisites**: [Django 請求-響應週期](./request_response_cycle.md)、[Django 查詢優化](./query_optimization.md)
+- **Quick Quiz**: [Python Q32](../../../../../QUIZ/05_Python.md#q32)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### ORM 基礎概念

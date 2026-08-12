@@ -8,6 +8,18 @@
 
 Web 應用安全是至關重要的，Django 提供了多層安全機制來防範常見的 Web 攻擊，包括 CSRF、XSS、SQL 注入、點擊劫持等，但開發者仍需要正確配置和使用這些功能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.python.django.security-boundary`
+- **Learning Objectives**:
+  - `LO-1`：能建立涵蓋 CSRF、XSS、SQL injection、session、TLS、CORS、文件上傳與 secrets 的威脅模型。
+  - `LO-2`：能把 Django security settings、permission、輸入驗證、輸出 escaping 與 audit logging 對齊。
+  - `LO-3`：能以安全測試、headers、secret scan、越權案例與事件 telemetry 證明防護有效。
+- **Prerequisites**: [Django 認證與權限系統](./authentication_and_permissions.md)、[Django Middleware 機制](./middleware_mechanism.md)
+- **Quick Quiz**: [Python Q40](../../../../../QUIZ/05_Python.md#q40)
+- **Hard Assessment**: [Python Web Frameworks Incident](../../../../../QUIZ/Hard_Assessments/python_web_frameworks_incident.md) (`assessment.python.web-frameworks.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### CSRF (跨站請求偽造) 保護
