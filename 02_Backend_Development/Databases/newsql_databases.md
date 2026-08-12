@@ -56,3 +56,15 @@ NewSQL 的鼻祖。
 ## 程式碼範例
 
 (NewSQL 使用標準 SQL，無特殊程式碼，但配置和維運方式不同)
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.newsql.distributed-sql`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 NewSQL 如何結合 SQL、分散式儲存、交易與水平擴展。
+  - `LO-2`: 能比較 quorum、consensus、range／hash partition、latency 與 failure handling。
+  - `LO-3`: 能依 workload、跨區需求、成本與一致性要求判斷是否採用 NewSQL。
+- **Prerequisites**: relational transaction、CAP 與 distributed storage
+- **Quick Quiz**: [Database Quick Quiz：NewSQL](../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

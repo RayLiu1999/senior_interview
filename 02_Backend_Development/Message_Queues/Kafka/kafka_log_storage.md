@@ -87,3 +87,27 @@ Kafka 使用 `sendfile()` 系統調用，**跳過應用層**：
 | 按時間 | `log.retention.hours=168`（7天） | 超過時間的 Segment 整個刪除（非逐條） |
 | 按大小 | `log.retention.bytes=-1`（不限） | Partition 總大小超過閾值時，刪除最早的 Segment |
 | 壓縮（Log Compaction） | `log.cleanup.policy=compact` | 保留每個 Key 的最新 Value，用於 Changelog 場景 |
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.log-storage.retention`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 segment、retention、cleanup、replication 與 log compaction 的關係。
+  - `LO-2`: 能從 disk usage、segment age、consumer lag 與 compaction backlog 判斷容量風險。
+  - `LO-3`: 能在 replay、changelog、刪除 tombstone 與成本之間設計保留策略。
+- **Prerequisites**: Kafka partition、offset、replica 與 consumer lag
+- **Quick Quiz**: [Message Queue Quick Quiz：Kafka Log Storage](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.log-storage.retention`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 segment、retention、cleanup、replication 與 log compaction 的關係。
+  - `LO-2`: 能從 disk usage、segment age、consumer lag 與 compaction backlog 判斷容量風險。
+  - `LO-3`: 能在 replay、changelog、刪除 tombstone 與成本之間設計保留策略。
+- **Prerequisites**: Kafka partition、offset、replica 與 consumer lag
+- **Quick Quiz**: [Message Queue Quick Quiz：Kafka Log Storage](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

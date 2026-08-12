@@ -80,3 +80,15 @@ Redis 和 Memcached 都是高效能的記憶體鍵值儲存系統，廣泛應用
 | **高可用性** | 依賴客戶端 | 原生支援 (Sentinel, Cluster) |
 | **應用場景** | 純粹的快取 | 快取, 資料庫, 訊息佇列, 分散式鎖等 |
 | **網路模型** | I/O 多路複用 | I/O 多路複用 |
+
+### 測驗對應
+
+- **Concept ID**: `concept.cache.redis-memcached.selection`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Redis 與 Memcached 的資料模型、持久性、複寫與操作能力。
+  - `LO-2`: 能以容量、eviction、故障恢復、延遲與一致性證據做選型。
+  - `LO-3`: 能設計 cache miss、node failure 與資料重建時的退化與回滾策略。
+- **Prerequisites**: cache-aside、eviction 與 distributed cache 基礎
+- **Quick Quiz**: [Database Quick Quiz：Redis vs Memcached](../../../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

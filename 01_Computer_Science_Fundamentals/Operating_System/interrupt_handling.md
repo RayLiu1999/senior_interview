@@ -291,3 +291,15 @@ cat /proc/interrupts
 - 分析中斷開銷（/proc/interrupts）
 - 調優中斷性能
 - 處理中斷相關的並發問題
+
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.interrupts.hard-soft-context`
+- **Learning Objectives**:
+  - `LO-1`: 能說明硬中斷、軟中斷、ISR 與 deferred work 的責任邊界。
+  - `LO-2`: 能從 interrupt rate、softirq backlog、CPU time 與 latency 判斷中斷壓力。
+  - `LO-3`: 能在吞吐量、即時性與上下文切換成本間設計安全的處理策略。
+- **Prerequisites**: CPU mode、system call 與 I/O 基礎
+- **Quick Quiz**: [OS Quick Quiz：中斷與軟中斷](../../QUIZ/01_Operating_System.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

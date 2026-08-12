@@ -79,3 +79,15 @@
 
 **總結**:
 在現代的資料庫設計中，由於硬碟空間成本的降低和儲存引擎 (如 InnoDB) 的優化，`VARCHAR` 的使用變得越來越普遍。除非你遇到的場景非常符合 `CHAR` 的優勢 (長度極度固定且對效能有苛刻要求)，否則 **優先考慮使用 `VARCHAR`** 通常是一個更安全、更具擴展性的選擇。
+
+### 測驗對應
+
+- **Concept ID**: `concept.database.sql.char-varchar.storage`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 CHAR／VARCHAR 的儲存、padding、比較語意與索引影響。
+  - `LO-2`: 能以資料分布、字元集、row size、更新成本與 query plan 做欄位選擇。
+  - `LO-3`: 能在 schema migration 與相容性限制下驗證型別變更風險。
+- **Prerequisites**: relational schema、index 與 storage engine 基礎
+- **Quick Quiz**: [Database Quick Quiz：CHAR 與 VARCHAR](../../../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

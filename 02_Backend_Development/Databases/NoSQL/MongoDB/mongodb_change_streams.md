@@ -118,3 +118,15 @@ cs, err = collection.Watch(ctx, pipeline, opts)
 2. **DDL 操作不觸發**：集合的 `drop`、`rename`、`dropDatabase` 會收到特殊的 `invalidate` 事件，之後 Change Stream 自動關閉
 3. **At-least-once 語義**：若應用崩潰在處理成功但未保存 Resume Token 之後，重啟時可能重複收到同一事件，應確保下游是**冪等（Idempotent）**的
 4. **延遲**：Change Streams 的延遲通常在**毫秒到秒級**，受 Oplog 刷新頻率和網路影響
+
+### 測驗對應
+
+- **Concept ID**: `concept.mongodb.change-streams.resume-ordering`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Change Stream、Oplog、resume token 與 replica set 的關係。
+  - `LO-2`: 能處理斷線重連、重複事件、事件順序與 oplog window 不足。
+  - `LO-3`: 能設計可觀測、可重放且具冪等性的 CDC consumer。
+- **Prerequisites**: MongoDB replica set、CDC 與 event consumer 基礎
+- **Quick Quiz**: [Database Quick Quiz：MongoDB Change Streams](../../../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

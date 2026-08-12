@@ -528,6 +528,40 @@ ch := make(chan struct{}, 10) // 限制並發為 10
 
 ---
 
+### Q18: 硬中斷、softirq 與 deferred work 如何分工？
+<!-- Concept ID: concept.operating-system.interrupts.hard-soft-context; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請以網卡封包尖峰為例，說明 ISR、softirq、threaded work、backlog 與延遲的取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 快速上半部只做必要確認與排程，下半部處理較重工作；要觀察 interrupt／softirq rate、backlog、CPU、packet drop 與 p99。
+- 不能只把工作全部搬到背景執行緒；還要設計 bounded queue、backpressure、CPU affinity 與過載退化。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/interrupt_handling.md)
+
+### Q19: Unix signal 如何安全地支援 graceful shutdown？
+<!-- Concept ID: concept.operating-system.signals.process-control; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請設計服務收到 SIGTERM、工作尚未完成且同時收到第二個 signal 時的狀態轉換與資源清理。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 區分 signal delivery、handler／channel、cancellation、drain deadline、force exit 與 exit code；不要在非安全的 signal handler 中做任意 blocking 工作。
+- 驗證 active request、queue、connection、child process、replay／idempotency 與 shutdown timeout，並保留可觀測事件。
+
+</details>
+
+📖 [查看完整答案](../01_Computer_Science_Fundamentals/Operating_System/signal_mechanism.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

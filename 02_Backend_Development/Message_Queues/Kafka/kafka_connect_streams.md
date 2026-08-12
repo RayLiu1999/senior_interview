@@ -109,3 +109,27 @@ props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE_
 | 跨系統批次資料遷移 | Kafka Connect |
 | 需要與現有 Java 應用深度整合 | Kafka Streams |
 | 多語言（Go/Python）流處理 | Flink（多語言 SDK）或 KSQL |
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.connect-streams.integration`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Kafka Connect source／sink、Streams topology 與外部 CDC 邊界。
+  - `LO-2`: 能分析 connector offset、schema evolution、backpressure、重試與 dead letter 行為。
+  - `LO-3`: 能設計可觀測、可重放且不重複污染下游的資料管線。
+- **Prerequisites**: Kafka topic、consumer group、CDC 基礎
+- **Quick Quiz**: [Message Queue Quick Quiz：Connect 與 Streams](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.connect-streams.integration`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Kafka Connect source／sink、Streams topology 與外部 CDC 邊界。
+  - `LO-2`: 能分析 connector offset、schema evolution、backpressure、重試與 dead letter 行為。
+  - `LO-3`: 能設計可觀測、可重放且不重複污染下游的資料管線。
+- **Prerequisites**: Kafka topic、consumer group、CDC 基礎
+- **Quick Quiz**: [Message Queue Quick Quiz：Connect 與 Streams](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

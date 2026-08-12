@@ -119,3 +119,15 @@
 
 **總結**:
 PostgreSQL 的模式是一個強大的命名空間和組織工具，它通過提供額外的邏輯層，極大地增強了資料庫的結構清晰度、安全性和多租戶支援能力，是其相較於許多其他 RDBMS 的一個顯著優勢。
+
+### 測驗對應
+
+- **Concept ID**: `concept.postgresql.schema.namespace-security`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 database、schema、role、search_path 與 object ownership。
+  - `LO-2`: 能分析 schema isolation、權限、migration、跨 schema query 與多租戶風險。
+  - `LO-3`: 能設計可回滾的 schema 變更與權限驗證流程。
+- **Prerequisites**: PostgreSQL role、table、migration 基礎
+- **Quick Quiz**: [Database Quick Quiz：PostgreSQL Schema](../../../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

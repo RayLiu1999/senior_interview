@@ -94,3 +94,27 @@ kafka-storage.sh format -t <cluster-id> -c controller.properties
 # 啟動 KRaft 模式的 Kafka
 kafka-server-start.sh controller.properties
 ```
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.zookeeper-kraft.metadata`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 ZooKeeper 與 KRaft 的 metadata、controller quorum 與故障恢復模型。
+  - `LO-2`: 能分析 migration、leader election、compatibility、monitoring 與 operational risk。
+  - `LO-3`: 能在升級與回滾限制下規劃分階段驗證與容量保護。
+- **Prerequisites**: Kafka broker、controller、partition leadership
+- **Quick Quiz**: [Message Queue Quick Quiz：ZooKeeper 與 KRaft](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
+
+### 測驗對應
+
+- **Concept ID**: `concept.messaging.kafka.zookeeper-kraft.metadata`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 ZooKeeper 與 KRaft 的 metadata、controller quorum 與故障恢復模型。
+  - `LO-2`: 能分析 migration、leader election、compatibility、monitoring 與 operational risk。
+  - `LO-3`: 能在升級與回滾限制下規劃分階段驗證與容量保護。
+- **Prerequisites**: Kafka broker、controller、partition leadership
+- **Quick Quiz**: [Message Queue Quick Quiz：ZooKeeper 與 KRaft](../../../QUIZ/02_Message_Queues.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

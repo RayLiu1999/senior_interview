@@ -84,3 +84,15 @@ Nginx 使用信號實現無停服務重載：
 - **Signal Handler 的限制**：Signal Handler 可能在任意時刻打斷主程序，因此 Handler 中只能調用**異步信號安全（async-signal-safe）**的函數（如 `write()`，不是 `printf()`）
 - **信號處理與線程**：多執行緒程序中，信號由哪個執行緒處理是複雜的（預設發送給進程組），通常使用 `sigwait()` 在專用執行緒中同步等待信號
 - **Go 的信號處理**：Go 的 `os/signal` 包將信號轉化為 channel 消息，在 goroutine 中安全處理
+
+### 測驗對應
+
+- **Concept ID**: `concept.operating-system.signals.process-control`
+- **Learning Objectives**:
+  - `LO-1`: 能區分同步 fault、非同步 signal、mask、handler 與 process termination。
+  - `LO-2`: 能從 signal queue、handler latency、exit code 與 shutdown log 重建控制流程。
+  - `LO-3`: 能設計可取消、可重試且不遺失資源的 graceful shutdown 邊界。
+- **Prerequisites**: process／thread lifecycle、system call
+- **Quick Quiz**: [OS Quick Quiz：Signal 與 graceful shutdown](../../QUIZ/01_Operating_System.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

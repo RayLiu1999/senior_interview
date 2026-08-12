@@ -1125,6 +1125,108 @@ Client ────────► Master (主庫)
 
 ---
 
+### Q50: MongoDB Change Streams 如何處理斷線、重複與 oplog window？
+<!-- Concept ID: concept.mongodb.change-streams.resume-ordering; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 resume token 的持久化時機、consumer 冪等性與 oplog 保留不足時的回復方案。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 收到並完成可重放的 side effect 後保存 checkpoint；重啟可能 replay，因此 downstream 必須用 event identity／version 去重。
+- 觀察 stream lag、resume error、oplog window、processing latency、duplicate rate 與 dead-letter；window 不足時要做全量重建或明確 reconciliation。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_change_streams.md)
+
+### Q51: Redis MULTI／EXEC 與 WATCH 是否等同 ACID transaction？
+<!-- Concept ID: concept.redis.transactions.watch-atomicity; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 Redis transaction、optimistic retry、Lua 與關聯式資料庫 transaction 的責任邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- MULTI／EXEC 提供命令序列原子執行但不是任意失敗回滾；WATCH conflict 需要 bounded retry，外部 side effect 仍需冪等。
+- 把 durability、replication、failover 與 cross-system atomicity 分開說明，不可只因 EXEC 成功就宣稱業務交易完成。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_transactions_and_acid.md)
+
+### Q52: Redis 與 Memcached 如何依需求選型？
+<!-- Concept ID: concept.cache.redis-memcached.selection; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請以 session、hot cache 與可重建資料三種場景比較資料模型、持久性、故障與成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先定義 cache 是否可遺失、是否需要複合資料結構、TTL／eviction、replication、failover 與 memory budget。
+- 以 hit rate、miss amplification、rebuild latency、node failure、network latency 與成本驗證選擇，不以 benchmark 單一數字決定。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_vs_memcached.md)
+
+### Q53: CHAR 與 VARCHAR 的選擇會影響哪些資料庫邊界？
+<!-- Concept ID: concept.database.sql.char-varchar.storage; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🟡 重要
+
+請以固定長度代碼、使用者名稱與可變文字欄位說明 padding、字元集、索引與 migration 取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 說清楚資料分布、比較語意、row size、索引寬度、更新與 charset，而不是只背「固定用 CHAR」。
+- migration 需先檢查現有資料、截斷風險、讀寫相容、回滾與 production query plan。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/varchar_vs_char.md)
+
+### Q54: PostgreSQL schema 如何形成 namespace 與權限邊界？
+<!-- Concept ID: concept.postgresql.schema.namespace-security; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請說明 search_path、ownership、role、migration 與多租戶 schema 的風險與驗證方式。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 不要把 schema 當成天然的租戶隔離；需要驗證 grants、default privileges、qualified names、connection role 與 migration ownership。
+- 測試錯誤 search_path、權限提升、跨 schema query、rollback 與 connection pool reuse。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/what_is_schema.md)
+
+### Q55: NewSQL 的分散式 SQL 取捨是什麼？
+<!-- Concept ID: concept.database.newsql.distributed-sql; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請以跨區交易、故障時可用性與水平擴展比較 NewSQL、傳統 RDBMS 與 NoSQL。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 連結 consensus、quorum、partition、cross-region latency、transaction conflict、rebalance 與 cost；不能只說「NewSQL 可水平擴展」。
+- 用 workload、SLO、failure injection、p99、throughput、storage／compute cost 與 recovery evidence 驗證選型。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/newsql_databases.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

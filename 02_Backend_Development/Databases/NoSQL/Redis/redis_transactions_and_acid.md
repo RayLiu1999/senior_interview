@@ -122,3 +122,15 @@ Redis 交易的持久性 **取決於 Redis 的持久化配置**。
 | **持久性 (D)** | **依賴配置** | 持久性由 RDB/AOF 配置決定，而非交易本身。 |
 
 總而言之，Redis 提供的是一種輕量級的、樂觀鎖模式的交易。它在隔離性和執行原子性上表現出色，但在錯誤回滾和持久性方面與傳統 RDBMS 有本質區別。在設計應用時，必須清楚地認識到這些限制，並在需要時 (如 `WATCH` 失敗) 於應用程式層面實現重試邏輯。
+
+### 測驗對應
+
+- **Concept ID**: `concept.redis.transactions.watch-atomicity`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 MULTI／EXEC、WATCH、Lua 與 RDBMS transaction 的原子性邊界。
+  - `LO-2`: 能分析 watch conflict、retry、partial command error 與 durability 的風險。
+  - `LO-3`: 能依副作用、延遲與一致性需求選擇 Redis transaction 或其他方案。
+- **Prerequisites**: Redis command execution、optimistic concurrency
+- **Quick Quiz**: [Database Quick Quiz：Redis Transactions](../../../../QUIZ/02_Databases.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分

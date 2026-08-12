@@ -660,6 +660,57 @@ Redis Pub/Sub 的即時性換掉了哪些可靠性能力？若通知遺失不可
 
 ---
 
+### Q24: Kafka Connect 與 Kafka Streams 的責任邊界如何劃分？
+<!-- Concept ID: concept.messaging.kafka.connect-streams.integration; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請為 CDC、資料轉換與 materialized view 選擇 Connect、Streams 或外部處理器，並說明 offset、schema 與 backpressure。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Connect 偏 source／sink integration，Streams 偏 Kafka topic topology；兩者都需處理 retry、DLQ、schema evolution、lag 與重複。
+- 驗證 connector task、offset、source freshness、sink error、throughput、backlog 與 replay 影響。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Message_Queues/Kafka/kafka_connect_streams.md)
+
+### Q25: Kafka log retention 與 compaction 如何共同影響 replay？
+<!-- Concept ID: concept.messaging.kafka.log-storage.retention; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🟡 重要
+
+請比較 time／size retention、segment、tombstone 與 log compaction 在 event log 和 changelog 場景的取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 disk、segment、cleaner backlog、consumer lag、oldest offset、tombstone 與 replay window；compaction 不等於立即只保留最新值。
+- 為不可重建事件與可重建 state 分別設定 retention、backup、replay 與容量警戒線。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Message_Queues/Kafka/kafka_log_storage.md)
+
+### Q26: ZooKeeper 遷移 KRaft 時如何控制 metadata 與回滾風險？
+<!-- Concept ID: concept.messaging.kafka.zookeeper-kraft.metadata; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請提出分階段 migration、controller quorum、版本相容、故障演練與 rollback evidence。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先確認 broker／controller 版本、metadata quorum、leader election、storage format、backup 與 client compatibility。
+- 以 controller availability、metadata lag、partition leadership、produce／consume error、recovery time 與停止線決定是否繼續。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Message_Queues/Kafka/kafka_zookeeper_kraft.md)
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

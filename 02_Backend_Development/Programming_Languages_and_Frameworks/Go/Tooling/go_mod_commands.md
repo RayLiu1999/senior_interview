@@ -51,3 +51,27 @@ Go Modules 是自 Go 1.11 版本引入並在後續版本中成為預設的官方
 #### `go mod edit`
 -   **作用**: 提供一個命令列介面來編輯 `go.mod` 檔案。最常見的用途是使用 `replace` 指令將一個依賴替換為本地的另一個路徑，方便進行本地開發和調試。
 -   **範例**: `go mod edit -replace=example.com/original/pkg=../local/pkg`
+
+### 測驗對應
+
+- **Concept ID**: `concept.go.tooling.modules-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 `go.mod`、`go.sum`、module graph、MVS 與 replace 的責任。
+  - `LO-2`: 能診斷 dependency drift、私有 module、workspace、toolchain 與 reproducible build 問題。
+  - `LO-3`: 能設計可審計、可回滾且不污染 production build 的 module workflow。
+- **Prerequisites**: Go package、module 與 CI build 基礎
+- **Quick Quiz**: [Go Quick Quiz：Go Modules](../../../../QUIZ/06_Go.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
+
+### 測驗對應
+
+- **Concept ID**: `concept.go.tooling.modules-reproducibility`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 `go.mod`、`go.sum`、module graph、MVS 與 replace 的責任。
+  - `LO-2`: 能診斷 dependency drift、私有 module、workspace、toolchain 與 reproducible build 問題。
+  - `LO-3`: 能設計可審計、可回滾且不污染 production build 的 module workflow。
+- **Prerequisites**: Go package、module 與 CI build 基礎
+- **Quick Quiz**: [Go Quick Quiz：Go Modules](../../../../QUIZ/06_Go.md)
+- **Hard Assessment**: [Foundations／Storage／Tooling Completion Incident](../../../../QUIZ/Hard_Assessments/foundations_storage_tooling_completion_incident.md) (`assessment.foundations-storage-tooling.completion.v1`)
+- **Assessment Gate**: 0–4 分，預設至少 3 分
