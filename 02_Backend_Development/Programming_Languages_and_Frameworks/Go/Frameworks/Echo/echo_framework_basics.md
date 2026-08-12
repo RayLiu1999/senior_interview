@@ -8,6 +8,18 @@
 
 請解釋 Echo 框架的核心特性、架構設計以及它與 Gin 框架的異同。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.echo.framework-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能夠描述 Echo Engine、路由樹、RouterGroup、Context 與 Handler 之間的請求流程。
+  - `LO-2`: 能夠依全域、群組與單一路由範圍安排 middleware，並判斷路由參數、綁定與驗證的邊界。
+  - `LO-3`: 能夠設計具備錯誤處理、請求取消、逾時與可觀測性的 Echo HTTP API。
+- **Prerequisites**: `concept.go.gin.framework-architecture`, `concept.go.standard-library.context-cancellation`
+- **Quick Quiz**: [Go Q15](../../../../../QUIZ/06_Go.md#q15)
+- **Hard Assessment**: [Go Runtime Framework Incident](../../../../../QUIZ/Hard_Assessments/go_runtime_framework_incident.md) (`assessment.go.runtime-framework.incident.v1`)
+- **Assessment Gate**: 能從 route／middleware trace 說明 Echo 請求流程，並在事故情境中提出可驗證的路由、短路與資源邊界修復，達到 3/4。
+
 ## 核心理論與詳解
 
 ### 1. Echo 框架概述

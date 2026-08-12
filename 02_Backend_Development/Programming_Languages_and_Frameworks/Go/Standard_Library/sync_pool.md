@@ -8,6 +8,18 @@
 
 `sync.Pool` 是 Go 標準庫中用於**緩存和複用臨時物件**的機制。對於高頻創建和銷毀的短生命週期物件（如 buffer、parser 結構體），使用 `sync.Pool` 可以顯著減少 Heap 分配次數、降低 GC 壓力，是 Go 高效能程式碼中的常見優化手段。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.standard-library.sync-pool`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明 `sync.Pool` 的 per-P 快取、GC 可丟棄語意、`Get`／`Put` 與 `New` 的生命週期。
+  - `LO-2`: 能夠設計 reset、容量上限、ownership 與資料脫離策略，避免髒狀態、資料競態、記憶體保留或資源洩漏。
+  - `LO-3`: 能夠以 benchmark、allocation、GC、RSS 與 P99 證明物件池是否真的改善服務，並說明它不適合的場景。
+- **Prerequisites**: `concept.go.internals.concurrent-gc`, `concept.go.internals.escape-analysis`
+- **Quick Quiz**: [Go Q19](../../../../QUIZ/06_Go.md#q19)
+- **Hard Assessment**: [Go Runtime Framework Incident](../../../../QUIZ/Hard_Assessments/go_runtime_framework_incident.md) (`assessment.go.runtime-framework.incident.v1`)
+- **Assessment Gate**: 能在事故中區分 Pool 命中、GC 丟棄、buffer retained bytes 與資源 ownership，並以可回滾實驗驗證方案，達到 3/4。
+
 ## 核心理論與詳解
 
 ### sync.Pool 的設計目標

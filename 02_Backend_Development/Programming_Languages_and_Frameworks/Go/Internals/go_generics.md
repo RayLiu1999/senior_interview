@@ -8,6 +8,18 @@
 
 Go 1.18（2022年）引入了**泛型（Generics）**，透過**型別參數（Type Parameters）**讓函數和類型可以處理多種類型，避免了大量重複代碼和 `interface{}` 帶來的型別不安全和效能損失。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.internals.generics-constraints`
+- **Learning Objectives**:
+  - `LO-1`: 能夠使用型別參數、型別推斷、`any`、`comparable`、`~T` 與 union constraint 表達可重用 API。
+  - `LO-2`: 能夠區分泛型 constraint、runtime interface value 與方法集合，並判斷泛型限制是否適合某個抽象。
+  - `LO-3`: 能夠以 benchmark、allocation 與可讀性證據比較泛型、具體函數和 `interface{}` 的取捨。
+- **Prerequisites**: `concept.go.internals.interface-representation`
+- **Quick Quiz**: [Go Q17](../../../../QUIZ/06_Go.md#q17)
+- **Hard Assessment**: [Go Runtime Framework Incident](../../../../QUIZ/Hard_Assessments/go_runtime_framework_incident.md) (`assessment.go.runtime-framework.incident.v1`)
+- **Assessment Gate**: 能為型別安全的共用路徑選擇合適 constraint，並在事故情境中以編譯、效能與可維護性證據說明取捨，達到 3/4。
+
 ## 核心理論與詳解
 
 ### 為什麼需要泛型？

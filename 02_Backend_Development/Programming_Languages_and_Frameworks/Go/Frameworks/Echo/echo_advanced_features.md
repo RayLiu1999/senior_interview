@@ -8,6 +8,18 @@
 
 請深入解釋 Echo 框架的進階特性，包括中間件開發、認證授權、微服務架構以及生產環境最佳實踐。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.echo.middleware-routing-security`
+- **Learning Objectives**:
+  - `LO-1`: 能夠推導 Echo middleware 在 `next` 前後的洋蔥式執行順序，並正確處理短路與錯誤回傳。
+  - `LO-2`: 能夠把認證、授權、限流、逾時、CORS 與錯誤處理套用在正確的 route／group 邊界。
+  - `LO-3`: 能夠以 P99、下游等待、allocation、goroutine 與安全事件等證據評估生產環境取捨。
+- **Prerequisites**: `concept.go.echo.framework-architecture`, `concept.go.gin.middleware-chain`, `concept.go.standard-library.context-cancellation`
+- **Quick Quiz**: [Go Q16](../../../../../QUIZ/06_Go.md#q16)
+- **Hard Assessment**: [Go Runtime Framework Incident](../../../../../QUIZ/Hard_Assessments/go_runtime_framework_incident.md) (`assessment.go.runtime-framework.incident.v1`)
+- **Assessment Gate**: 能重建 middleware／routing／security 的執行邊界，並以容量與可觀測性證據提出可回滾的生產修復，達到 3/4。
+
 ## 核心理論與詳解
 
 ### 1. 進階中間件開發

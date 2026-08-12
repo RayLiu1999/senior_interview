@@ -8,6 +8,18 @@
 
 **逃逸分析（Escape Analysis）** 是 Go 編譯器在**編譯階段**決定變數分配在 Stack（棧）還是 Heap（堆）的靜態分析過程。理解逃逸分析是優化 Go 程序記憶體使用和減少 GC 壓力的關鍵。
 
+### 測驗對應
+
+- **Concept ID**: `concept.go.internals.escape-analysis`
+- **Learning Objectives**:
+  - `LO-1`: 能夠說明返回指標、閉包、interface、slice／map 與跨 Goroutine 傳遞為何可能改變變數生命週期。
+  - `LO-2`: 能夠使用 `go build -gcflags=-m`、benchmark、`allocs/op` 與 heap profile 驗證逃逸假設，而不是只依命名或直覺判斷。
+  - `LO-3`: 能夠在 allocation、GC、尾延遲、可讀性與 API ownership 之間做出有證據的優化取捨。
+- **Prerequisites**: `concept.go.internals.concurrent-gc`, `concept.go.internals.slice-array-representation`
+- **Quick Quiz**: [Go Q18](../../../../QUIZ/06_Go.md#q18)
+- **Hard Assessment**: [Go Runtime Framework Incident](../../../../QUIZ/Hard_Assessments/go_runtime_framework_incident.md) (`assessment.go.runtime-framework.incident.v1`)
+- **Assessment Gate**: 能從編譯器輸出與 runtime profile 建立 allocation／GC／latency 因果鏈，並提出不犧牲正確性的修復，達到 3/4。
+
 ## 核心理論與詳解
 
 ### Stack vs Heap 分配的本質差異
