@@ -8,6 +8,18 @@
 
 在 Prometheus 中，`Histogram` 和 `Summary` 都可以用來計算分位數 (Quantiles，如 P99, P95)。請解釋它們的區別，以及在什麼場景下應該選擇哪一個？
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.metrics.histogram-summary`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Histogram bucket 與 Summary client-side quantile 的計算位置、資料形狀與誤差來源。
+  - `LO-2`: 能解釋為何 Histogram 可跨 instance 聚合，而 Summary quantile 不可直接平均，並選擇合理 bucket。
+  - `LO-3`: 能從延遲分佈、查詢結果、序列數量與聚合需求驗證 P95／P99 指標是否適合發布或告警。
+- **Prerequisites**: [什麼是 Prometheus](./what_is_prometheus.md)、[PromQL 基礎](./promql_basics.md)
+- **Quick Quiz**: [Observability Q10](../../../QUIZ/10_Observability.md#q10)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 這兩種指標類型都用於統計數據的分佈情況 (如請求延遲、回應大小)，但它們計算分位數的**位置**和**原理**完全不同。

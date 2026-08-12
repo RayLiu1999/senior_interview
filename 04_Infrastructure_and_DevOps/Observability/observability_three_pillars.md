@@ -8,6 +8,18 @@
 
 可觀測性（Observability）是現代分散式系統的核心能力，它由三個互補的支柱組成：Metrics（指標）、Logs（日誌）和 Traces（追蹤）。理解這三者的定義、差異和互補關係，是構建可靠系統的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.pillars.metrics-logs-traces`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Metrics、Logs、Traces 的資料形狀、成本、時間語意與適用問題。
+  - `LO-2`: 能把三種訊號以 service、version、request／trace identifier 與時間窗口關聯，建立從症狀到根因的排查路徑。
+  - `LO-3`: 能在高流量、隱私、成本與資料遺失限制下選擇聚合、採樣、保留、脫敏與降級策略。
+- **Prerequisites**: [Observability 與 Monitoring 的差異](./observability_vs_monitoring.md)、[Effective Metrics Design](./effective_metrics_design.md)
+- **Quick Quiz**: [Observability Q6](../../QUIZ/10_Observability.md#q6)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 可觀測性的定義

@@ -8,6 +8,18 @@
 
 Grafana 不僅僅是視覺化工具，它也具備強大的告警功能。請解釋 Grafana Alerting 的工作原理，以及它與 Prometheus Alertmanager 的區別和協作方式。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.grafana.alerting`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Alert Rule、Contact Point、Notification Policy、Pending、Firing 與 Resolved 的責任。
+  - `LO-2`: 能比較 Grafana Alerting 與 Prometheus Alertmanager 在資料源、配置治理、路由、去重與可用性上的取捨。
+  - `LO-3`: 能設計以症狀、SLO、分組、抑制與升級路由為核心的告警流程，避免通知風暴與告警遺失。
+- **Prerequisites**: [什麼是 Grafana](./what_is_grafana.md)、[告警策略設計最佳實踐](../alerting_strategy.md)
+- **Quick Quiz**: [Observability Q16](../../../QUIZ/10_Observability.md#q16)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Grafana 8.0 之後推出了統一告警系統 (Unified Alerting)，大大增強了其告警能力。

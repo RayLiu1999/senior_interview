@@ -8,6 +8,18 @@
 
 Jaeger 是 Uber 開源的分散式追蹤系統。請描述 Jaeger 的核心組件 (Agent, Collector, Query, Ingester) 及其在生產環境中的部署架構。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.tracing.jaeger-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Jaeger Client／SDK、Agent、Collector、Query 與儲存後端的資料流與責任邊界。
+  - `LO-2`: 能比較直接寫入、Queue／Kafka 緩衝與不同儲存後端在吞吐、可用性、成本和查詢能力上的取捨。
+  - `LO-3`: 能從 Span drop、Collector backpressure、Storage latency 與 context 缺口證據定位追蹤管線問題。
+- **Prerequisites**: [什麼是分散式追蹤](./what_is_distributed_tracing.md)、[集中式日誌系統架構](../centralized_logging_architecture.md)
+- **Quick Quiz**: [Observability Q18](../../../QUIZ/10_Observability.md#q18)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Jaeger 的架構設計深受 Google Dapper 和 OpenZipkin 的影響。

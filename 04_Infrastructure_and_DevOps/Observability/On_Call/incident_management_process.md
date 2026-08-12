@@ -8,6 +8,18 @@
 
 當生產環境發生重大事故 (Sev-1/Sev-2) 時，混亂是最大的敵人。請描述一個標準的事故響應流程 (Incident Response Process)，以及各個角色的職責 (IC, Scribe, Ops)。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.incident.management-process`
+- **Learning Objectives**:
+  - `LO-1`: 能以 Detection、Triage、Mobilization、Mitigation、Resolution 與復盤描述事故生命週期。
+  - `LO-2`: 能分配 IC、Ops、Comms、Scribe 等角色，維持時間線、決策紀錄與安全變更邊界。
+  - `LO-3`: 能依使用者影響、SLO、回滾風險與證據品質決定止損順序，並驗證服務已恢復。
+- **Prerequisites**: [告警策略設計最佳實踐](../alerting_strategy.md)、[SLI、SLO、SLA 與錯誤預算](../sli_slo_sla.md)
+- **Quick Quiz**: [Observability Q20](../../../QUIZ/10_Observability.md#q20)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 事故管理的核心目標是：**盡快恢復服務 (MTTR - Mean Time To Recover)**，而不是在事故中尋找根因 (Root Cause)。根因分析是事後 (Post-mortem) 做的事。

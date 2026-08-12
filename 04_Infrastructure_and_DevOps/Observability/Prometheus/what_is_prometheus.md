@@ -8,6 +8,18 @@
 
 Prometheus 是目前業界最流行的開源監控解決方案，特別適合雲原生和微服務架構。理解 Prometheus 的架構、資料模型和核心概念，是建立現代監控系統的基礎。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.metrics.prometheus-fundamentals`
+- **Learning Objectives**:
+  - `LO-1`: 能解釋 metric name、label、sample、counter、gauge、histogram 與 summary 的基本資料模型。
+  - `LO-2`: 能說明 scrape、Exporter、PromQL、recording rule、Alertmanager 與服務發現如何形成監控閉環。
+  - `LO-3`: 能依服務症狀設計低基數、帶單位且可聚合的指標，並判斷抓取失敗與業務異常的差異。
+- **Prerequisites**: [可觀測性三大支柱](../observability_three_pillars.md)、[Effective Metrics Design](../effective_metrics_design.md)
+- **Quick Quiz**: [Observability Q7](../../../QUIZ/10_Observability.md#q7)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Prometheus 簡介

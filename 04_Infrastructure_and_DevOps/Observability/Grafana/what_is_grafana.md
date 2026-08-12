@@ -8,6 +8,18 @@
 
 Grafana 是業界最流行的開源監控視覺化平台，能夠將各種資料源的指標以美觀、易懂的方式呈現。理解 Grafana 的核心功能和使用方式，是建立現代監控系統的重要一環。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.grafana.visualization`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Grafana Dashboard、Panel、Data Source、變數與權限模型如何協作。
+  - `LO-2`: 能依 Metrics、Logs、Traces 與業務資料的查詢特性選擇資料源、視覺化與時間範圍。
+  - `LO-3`: 能從面板查詢延遲、錯誤的聚合或缺少版本切片等問題，提出可驗證的可讀性與操作性改進。
+- **Prerequisites**: [可觀測性三大支柱](../observability_three_pillars.md)、[什麼是 Prometheus](../Prometheus/what_is_prometheus.md)
+- **Quick Quiz**: [Observability Q14](../../../QUIZ/10_Observability.md#q14)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### Grafana 簡介

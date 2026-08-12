@@ -8,6 +8,18 @@
 
 PromQL (Prometheus Query Language) 是 Prometheus 的核心查詢語言。請解釋 PromQL 的四種數據類型 (Instant Vector, Range Vector, Scalar, String)，並舉例說明常用的聚合操作 (Aggregation) 和函數 (如 `rate` vs `irate`)。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.metrics.promql-basics`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 instant vector、range vector、scalar 與 string，正確使用 selector、時間範圍與 label matcher。
+  - `LO-2`: 能以 rate、increase、aggregation、histogram_quantile 與 join 查詢流量、錯誤、延遲和資源飽和。
+  - `LO-3`: 能控制 label cardinality、缺失資料、時間窗口與查詢成本，避免用錯 PromQL 導致錯誤告警。
+- **Prerequisites**: [什麼是 Prometheus](./what_is_prometheus.md)、[Histogram 與 Summary](./histogram_vs_summary.md)
+- **Quick Quiz**: [Observability Q9](../../../QUIZ/10_Observability.md#q9)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 PromQL 是一種函數式查詢語言，專為處理時間序列數據而設計。

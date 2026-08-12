@@ -8,6 +8,18 @@
 
 在微服務和分散式系統中，一個用戶請求可能會經過多個服務處理。分散式追蹤（Distributed Tracing）是一種追蹤請求在整個系統中流轉路徑的技術，能夠幫助我們理解系統行為、定位效能瓶頸和診斷問題。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.tracing.distributed-tracing`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Trace、Span、Parent／Child、Span Context 與 baggage，並重建跨服務的 critical path。
+  - `LO-2`: 能在 HTTP、RPC、非同步訊息與資料庫邊界傳遞 trace context，並處理採樣與脫敏。
+  - `LO-3`: 能用 trace 時間線、版本、錯誤與下游依賴證據定位長尾延遲、失敗和 context propagation 缺口。
+- **Prerequisites**: [可觀測性三大支柱](../observability_three_pillars.md)、[集中式日誌系統架構](../centralized_logging_architecture.md)
+- **Quick Quiz**: [Observability Q17](../../../QUIZ/10_Observability.md#q17)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 問題背景：單體到微服務的演進

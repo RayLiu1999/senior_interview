@@ -8,6 +8,18 @@
 
 「不指責 (Blameless)」是 Google SRE 文化的核心。請解釋什麼是 Blameless Post-mortem，以及為什麼它對團隊的長期穩定性至關重要？一份好的事故報告應該包含哪些內容？
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.incident.postmortem-culture`
+- **Learning Objectives**:
+  - `LO-1`: 能以時間線、影響範圍、偵測與恢復資料描述事故，而不是以個人責任取代系統分析。
+  - `LO-2`: 能從技術、流程、觀測與組織因素辨識可修復的 contributing factors，並把行動項目寫成可驗證結果。
+  - `LO-3`: 能追蹤 action item owner、優先級、期限與回歸測試，將復盤連回 SLO、告警和發布治理。
+- **Prerequisites**: [事故管理流程](./incident_management_process.md)、[SLI、SLO、SLA 與錯誤預算](../sli_slo_sla.md)
+- **Quick Quiz**: [Observability Q21](../../../QUIZ/10_Observability.md#q21)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Post-mortem (事後復盤/驗屍報告) 不是為了找人背鍋，而是為了**系統性地消除未來發生同樣錯誤的可能性**。

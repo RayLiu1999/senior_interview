@@ -8,6 +8,18 @@
 
 Logstash 和 Fluentd 都是流行的日誌收集與處理工具。請對比它們的架構、性能、生態系統，並說明在 Kubernetes 環境下為什麼 Fluentd (或 Fluent Bit) 更受歡迎？
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.logging.collector-choice`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Logstash、Fluentd 與 Fluent Bit 在執行模型、資源消耗、插件生態與部署邊界上的取捨。
+  - `LO-2`: 能設計包含採集、解析、緩衝、背壓、重試與轉送的日誌管線，並維持結構化欄位與 trace 關聯。
+  - `LO-3`: 能根據節點資源、流量突增、下游不可用與資料遺失風險選擇 collector 及降級策略。
+- **Prerequisites**: [集中式日誌系統架構](../centralized_logging_architecture.md)、[ELK Stack 概述](../elk_stack_overview.md)
+- **Quick Quiz**: [Observability Q12](../../../QUIZ/10_Observability.md#q12)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 這兩者都扮演著 **Shipper** (採集) 和 **Parser** (解析) 的角色，但設計哲學不同。

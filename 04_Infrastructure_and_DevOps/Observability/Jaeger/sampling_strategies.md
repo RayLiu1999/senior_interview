@@ -8,6 +8,18 @@
 
 在分散式追蹤中，全量採集 (100% Sampling) 會帶來巨大的儲存成本和性能開銷。請詳細解釋 Jaeger 支持的採樣策略 (Head-based vs Tail-based)，以及如何選擇合適的採樣率。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.tracing.sampling-strategies`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 head-based、tail-based、probabilistic、rate-limiting 與 remote sampling 的決策時點和資料需求。
+  - `LO-2`: 能依錯誤、慢請求、流量、成本與隱私限制設計採樣率、保留規則與 trace coverage 指標。
+  - `LO-3`: 能辨識採樣造成的統計盲區，並在不壓垮 Collector／Storage 的前提下優先保留高價值 Trace。
+- **Prerequisites**: [什麼是分散式追蹤](./what_is_distributed_tracing.md)、[Jaeger 架構](./jaeger_architecture.md)
+- **Quick Quiz**: [Observability Q19](../../../QUIZ/10_Observability.md#q19)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 採樣是分散式追蹤中最重要的權衡 (Trade-off) 之一：**成本 vs 數據完整性**。

@@ -8,6 +8,18 @@
 
 Prometheus 是雲原生時代最流行的監控系統。請描述 Prometheus 的核心架構組件，並解釋為什麼它選擇 Pull 模型而不是 Push 模型？
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.metrics.prometheus-architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Prometheus Server、scrape、service discovery、TSDB、Rule、Alertmanager 與 Exporter 的責任邊界。
+  - `LO-2`: 能比較 pull、push gateway、remote write、聯邦與 HA replica 在可用性、延遲和資料一致性上的取捨。
+  - `LO-3`: 能由 scrape failure、資料缺口、remote-write backlog、磁碟壓力與告警延遲證據定位監控平面故障。
+- **Prerequisites**: [什麼是 Prometheus](./what_is_prometheus.md)、[可觀測性三大支柱](../observability_three_pillars.md)
+- **Quick Quiz**: [Observability Q8](../../../QUIZ/10_Observability.md#q8)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Prometheus 是一個開源的系統監控和報警工具包，其核心是一個**時間序列資料庫 (TSDB)**。

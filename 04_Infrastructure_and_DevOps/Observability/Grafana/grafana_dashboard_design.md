@@ -8,6 +8,18 @@
 
 一個好的儀表板 (Dashboard) 應該能讓人在 5 秒內判斷系統是否健康。請分享設計高效 Grafana 儀表板的最佳實踐，以及如何避免「儀表板過載 (Dashboard Overload)」。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.grafana.dashboard-design`
+- **Learning Objectives**:
+  - `LO-1`: 能以使用者症狀、服務邊界與時間範圍組織 Dashboard，而非只堆疊資源圖表。
+  - `LO-2`: 能選擇正確單位、聚合、百分位、標籤切片與 drill-down，並控制高基數與查詢成本。
+  - `LO-3`: 能把 Metrics、Logs、Traces、SLO 與部署版本串成可操作的排查路徑，驗證圖表沒有誤導性。
+- **Prerequisites**: [什麼是 Grafana](./what_is_grafana.md)、[Prometheus 架構](../Prometheus/prometheus_architecture.md)
+- **Quick Quiz**: [Observability Q15](../../../QUIZ/10_Observability.md#q15)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 儀表板是可觀測性數據的「臉面」。設計不良的儀表板會導致資訊過載，讓運維人員在故障時手忙腳亂。

@@ -8,6 +8,18 @@
 
 說明 Jenkins 在 CI/CD 流程中的角色、核心組件（Controller/Agent、Pipeline、Jenkinsfile）、與常見整合（VCS Webhook、Artifact、容器、雲端），並給出可靠、可維護的落地做法與風險控制要點。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.jenkins.pipeline-automation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Controller、Agent、Pipeline、Jenkinsfile、Credentials 與 Shared Library 的責任邊界。
+  - `LO-2`: 能設計可重入、可審計、最小權限且以 immutable artifact promotion 為核心的 Jenkins pipeline。
+  - `LO-3`: 能由 build provenance、plugin／agent 差異、測試 gate、artifact digest 與部署結果診斷交付事故。
+- **Prerequisites**: [什麼是 CI/CD](./what_is_ci_cd.md)、[AWS CI/CD 部署流程](./aws_cicd_workflow.md)
+- **Quick Quiz**: [CI/CD Q7](../../../QUIZ/14_CI_CD.md#q7)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 1) Jenkins 是什麼？

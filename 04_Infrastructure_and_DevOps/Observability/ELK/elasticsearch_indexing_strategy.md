@@ -8,6 +8,18 @@
 
 在日誌量巨大的場景下 (如每天 1TB)，Elasticsearch 經常面臨寫入瓶頸或查詢緩慢的問題。請分享 ES 索引設計的最佳實踐 (Rollover, ILM, Sharding Strategy)。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.logging.elasticsearch-indexing`
+- **Learning Objectives**:
+  - `LO-1`: 能依寫入量、查詢模式、保留期限與恢復需求設計 ILM、Rollover、Shard 與 Replica 策略。
+  - `LO-2`: 能解釋 Bulk、Refresh、Segment Merge、Force Merge 與 Mapping 對寫入吞吐、查詢延遲和儲存成本的影響。
+  - `LO-3`: 能從 Shard 過多、Heap 壓力、Index Lag 或 Recovery 緩慢等證據定位瓶頸，並提出可回滾的容量與保留調整。
+- **Prerequisites**: [ELK Stack 概述](../elk_stack_overview.md)、[集中式日誌系統架構](../centralized_logging_architecture.md)
+- **Quick Quiz**: [Observability Q13](../../../QUIZ/10_Observability.md#q13)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 Elasticsearch 的性能高度依賴於索引 (Index) 和分片 (Shard) 的設計。

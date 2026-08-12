@@ -8,6 +8,18 @@
 
 告警是監控系統的關鍵輸出，但設計不當的告警策略會導致告警疲勞、誤報和漏報。如何設計有效的告警策略，在及時發現問題和避免打擾之間取得平衡，是資深工程師必須掌握的技能。
 
+### 測驗對應
+
+- **Concept ID**: `concept.observability.alerting.strategy`
+- **Learning Objectives**:
+  - `LO-1`: 能以使用者症狀、SLO、RED、USE 與錯誤預算設計可操作且分級的告警。
+  - `LO-2`: 能處理時間窗口、去重、分組、抑制、靜默、升級與通知頻率，降低告警疲勞。
+  - `LO-3`: 能以告警命中率、誤報率、MTTA、MTTR、runbook 使用率與 error-budget burn 驗證告警品質。
+- **Prerequisites**: [SLI、SLO、SLA 與錯誤預算](./sli_slo_sla.md)、[Effective Metrics Design](./effective_metrics_design.md)
+- **Quick Quiz**: [Observability Q22](../../QUIZ/10_Observability.md#q22)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 ### 告警的目的

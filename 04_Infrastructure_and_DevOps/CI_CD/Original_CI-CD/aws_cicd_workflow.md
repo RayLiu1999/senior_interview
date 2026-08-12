@@ -8,6 +8,18 @@
 
 在面試中，當被問到「請描述一個你熟悉的 CI/CD 流程，特別是部署到 AWS 的架構」時，面試官通常希望聽到一個包含**自動化測試**、**容器化 (Docker)**、**映像檔管理 (ECR)** 以及**容器編排 (ECS/EKS)** 的現代化流程。請描述這個標準流程的各個階段。
 
+### 測驗對應
+
+- **Concept ID**: `concept.cicd.aws.workflow-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能重建從 commit、test、build、image／artifact、registry 到 AWS deployment 的可追溯工作流。
+  - `LO-2`: 能設計 immutable artifact、OIDC／最小權限、quality gate、環境 promotion 與 canary／blue-green 驗證。
+  - `LO-3`: 能依 deployment revision、digest、production SLI、rollback 與外部副作用證據做出安全發布或回復決策。
+- **Prerequisites**: [什麼是 CI/CD](./what_is_ci_cd.md)、[部署策略](../deployment_strategies.md)
+- **Quick Quiz**: [CI/CD Q6](../../../QUIZ/14_CI_CD.md#q6)
+- **Hard Assessment**: [可觀測性與交付訊號事故診斷](../../../QUIZ/Hard_Assessments/observability_delivery_signal_incident.md) (`assessment.observability.delivery-signal.incident.v1`)
+- **Assessment Gate**: 完成 Hard Assessment 中對應的 `LO-1`～`LO-3`，並達到總分 3/4；若未達標，回讀本文後重測。
+
 ## 核心理論與詳解
 
 目前業界最主流的 AWS CI/CD 流程通常是基於 **容器化 (Containerization)** 的。以下以 **GitHub Actions + AWS ECS (Elastic Container Service)** 為例，這是最標準且高頻出現的面試答案。

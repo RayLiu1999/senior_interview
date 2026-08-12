@@ -98,3 +98,41 @@
 </details>
 
 📖 [查看完整答案](../04_Infrastructure_and_DevOps/CI_CD/gitops_principles.md)
+
+<a id="q6"></a>
+### Q6: AWS CI/CD workflow 如何做到 artifact 可追溯與安全回滾？
+<!-- Concept ID: concept.cicd.aws.workflow-delivery; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請從 commit、測試、build、registry、promotion 到 AWS deployment 說明如何避免不同環境重新 build，並定義 rollback 證據。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以 commit SHA、workflow run、artifact digest、SBOM／signature／provenance 綁定同一個產物，staging 驗證後 promotion 到 production，不在 production 重建。
+- Quality gate 必須是 promotion 的必要條件；使用 OIDC／短期憑證、最小權限、protected environment 與 canary／blue-green 驗證。
+- 回滾要對照 image／artifact digest、deployment revision、schema／event 相容性、業務 SLI 和外部副作用，不能只看 deployment 命令成功。
+
+</details>
+
+📖 [查看完整答案](../04_Infrastructure_and_DevOps/CI_CD/Original_CI-CD/aws_cicd_workflow.md)
+
+<a id="q7"></a>
+### Q7: Jenkins Pipeline 如何治理 provenance、Agent 差異與品質閘門？
+<!-- Concept ID: concept.cicd.jenkins.pipeline-automation; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請說明 Controller／Agent、Jenkinsfile、Credentials、Shared Library 與 artifact promotion 的關係，並指出 pipeline 綠燈仍可能不安全的原因。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Controller 負責協調，Agent 執行隔離工作；Jenkinsfile／Shared Library 應版本化，Credentials 用安全存放且最小權限，插件與 agent image 需可追溯。
+- Build、test、scan、package、promote、deploy、verify 要有明確必要 gate、失敗即停、可重入和 audit；以 immutable digest 傳遞產物。
+- Optional／被跳過的 integration test、agent／plugin drift、重新 build、secret 洩漏或沒有 provenance 都可能讓綠燈失去可信度。
+
+</details>
+
+📖 [查看完整答案](../04_Infrastructure_and_DevOps/CI_CD/Original_CI-CD/jenkins_with_ci_cd.md)
