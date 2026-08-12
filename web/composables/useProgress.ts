@@ -1,5 +1,5 @@
 import type { AssessmentAttempt, ProgressState, QuizAttempt } from '~/types/content'
-import { createAttemptId, createEmptyProgress, loadProgress, saveProgress } from '~/utils/progress'
+import { clearProgress, createAttemptId, createEmptyProgress, loadProgress, saveProgress } from '~/utils/progress'
 
 export function useProgress() {
   const state = useState<ProgressState>('learning-progress', createEmptyProgress)
@@ -61,6 +61,20 @@ export function useProgress() {
     void persist({ ...state.value, completedArticleIds, lastViewedArticleId: articleId })
   }
 
+  async function resetProgress() {
+    state.value = createEmptyProgress()
+    ready.value = true
+    if (!import.meta.client) return
+    saving.value = true
+    try {
+      await clearProgress()
+    } catch {
+      // The in-memory state is still reset if browser storage is unavailable.
+    } finally {
+      saving.value = false
+    }
+  }
+
   return {
     state,
     ready,
@@ -70,5 +84,6 @@ export function useProgress() {
     recordQuizAttempt,
     recordAssessmentAttempt,
     markArticleViewed,
+    resetProgress,
   }
 }

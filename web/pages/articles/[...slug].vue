@@ -7,6 +7,11 @@ const slug = computed(() => Array.isArray(route.params.slug) ? route.params.slug
 const article = computed<ArticleRecord | undefined>(() => catalog.value?.articles.find((item) => item.slug === slug.value))
 const articleQuizzes = computed(() => article.value ? (catalog.value?.quizzes.filter((quiz) => article.value?.quickQuizIds.includes(quiz.id)) ?? []) : [])
 const articleAssessments = computed(() => article.value ? (catalog.value?.assessments.filter((assessment) => article.value?.assessmentIds.includes(assessment.id)) ?? []) : [])
+const { markArticleViewed } = useProgress()
+
+onMounted(() => {
+  if (article.value) markArticleViewed(article.value.id)
+})
 </script>
 
 <template>

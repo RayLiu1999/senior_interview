@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { calculateObjectiveSummaries, createEmptyProgress, importProgress, normalizeProgress } from '../web/utils/progress'
+import { calculateObjectiveSummaries, calculateProgressMetrics, createEmptyProgress, importProgress, normalizeProgress } from '../web/utils/progress'
 
 describe('learning progress', () => {
   it('normalizes imported data without trusting malformed collections', () => {
@@ -50,5 +50,22 @@ describe('learning progress', () => {
     expect(summary.key).toBe('concept.cache.consistency/LO-2')
     expect(summary.latestScore).toBe(0.75)
     expect(summary.needsReview).toBe(false)
+  })
+
+  it('summarizes dashboard metrics from both assessment tracks', () => {
+    const state = createEmptyProgress()
+    state.completedArticleIds = ['article-1', 'article-2']
+    state.quizAttempts = [{
+      id: 'q1', questionId: 'quiz-1', conceptId: 'concept.test', learningObjectiveIds: [], answers: ['a'],
+      score: 1, maxScore: 1, correct: true, selfAssessment: 'understood', completedAt: '2026-08-12T10:00:00Z', contentHash: 'q',
+    }]
+    state.assessmentAttempts = [{
+      id: 'a1', assessmentId: 'assessment.test', conceptIds: [], learningObjectiveIds: [], answers: {}, rubricScores: { overall: 2 },
+      totalScore: 2, maxScore: 4, passed: false, notes: '', completedAt: '2026-08-12T11:00:00Z', contentHash: 'a',
+    }]
+    expect(calculateProgressMetrics(state)).toMatchObject({
+      quizAttempts: 1, quizCorrect: 1, quizAccuracy: 1, assessmentAttempts: 1, assessmentPassed: 0,
+      assessmentPassRate: 0, completedArticles: 2,
+    })
   })
 })

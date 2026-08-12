@@ -119,6 +119,39 @@ export interface ObjectiveSummary {
   lastAttemptAt: string | null
 }
 
+export interface ProgressMetrics {
+  quizAttempts: number
+  quizCorrect: number
+  quizAccuracy: number | null
+  assessmentAttempts: number
+  assessmentPassed: number
+  assessmentPassRate: number | null
+  completedArticles: number
+  objectiveCount: number
+  reviewCount: number
+}
+
+export function calculateProgressMetrics(state: ProgressState): ProgressMetrics {
+  const summaries = calculateObjectiveSummaries(state)
+  const quizCorrect = state.quizAttempts.filter((attempt) => attempt.correct === true || attempt.score >= attempt.maxScore).length
+  const assessmentPassed = state.assessmentAttempts.filter((attempt) => attempt.passed).length
+  return {
+    quizAttempts: state.quizAttempts.length,
+    quizCorrect,
+    quizAccuracy: state.quizAttempts.length ? quizCorrect / state.quizAttempts.length : null,
+    assessmentAttempts: state.assessmentAttempts.length,
+    assessmentPassed,
+    assessmentPassRate: state.assessmentAttempts.length ? assessmentPassed / state.assessmentAttempts.length : null,
+    completedArticles: state.completedArticleIds.length,
+    objectiveCount: summaries.length,
+    reviewCount: summaries.filter(isObjectiveWeak).length,
+  }
+}
+
+export function isObjectiveWeak(summary: ObjectiveSummary): boolean {
+  return summary.needsReview || summary.effectiveScore < 0.75
+}
+
 export function calculateObjectiveSummaries(state: ProgressState): ObjectiveSummary[] {
   const groups = new Map<string, ObjectiveSummary>()
   const attempts = [
@@ -130,8 +163,8 @@ export function calculateObjectiveSummaries(state: ProgressState): ObjectiveSumm
       completedAt: attempt.completedAt,
     })),
     ...state.assessmentAttempts.map((attempt) => ({
-      conceptId: attempt.conceptIds[0] ?? '',
-      objectiveIds: attempt.learningObjectiveIds,
+      conceptId: attempt.conceptIds?.[0] ?? '',
+      objectiveIds: attempt.learningObjectiveIds ?? [],
       score: attempt.maxScore ? attempt.totalScore / attempt.maxScore : 0,
       needsReview: !attempt.passed,
       completedAt: attempt.completedAt,
