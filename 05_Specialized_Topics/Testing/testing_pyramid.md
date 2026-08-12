@@ -8,6 +8,18 @@
 
 請解釋什麼是測試金字塔 (Testing Pyramid) 模型。它建議了哪幾種主要的測試類型，以及它們之間應該保持什麼樣的比例？為什麼遵循這個模型有助於建立一個健康、高效的測試策略？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.pyramid`
+- **Learning Objectives**:
+  - `LO-1`: 能說明單元、整合、契約、端對端與其他測試層級的回饋速度、成本、隔離與信心差異。
+  - `LO-2`: 能依風險、系統邊界與團隊回饋需求設計測試組合，而不是套用固定比例或把 coverage 當成品質。
+  - `LO-3`: 能從執行時間、flake rate、缺陷逃逸、定位成本與 release evidence 調整測試投資。
+- **Prerequisites**: 單元測試與 Mock、整合測試、契約測試與 CI/CD。
+- **Quick Quiz**: [Q8](../../QUIZ/19_Testing.md#q8)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q8，能以風險與回饋證據解釋測試分層取捨，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 測試金字塔是由 Mike Cohn 提出的、一個關於軟體測試策略的隱喻模型。它主張將測試投入主要集中在金字塔的底層，並隨著層級的上升而逐漸減少測試的數量。這個模型的核心目標是在**回饋速度**、**可靠性**和**成本**之間取得平衡。

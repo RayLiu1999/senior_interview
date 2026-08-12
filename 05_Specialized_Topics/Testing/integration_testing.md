@@ -8,6 +8,18 @@
 
 什麼是整合測試 (Integration Testing)？它在測試金字塔中處於什麼位置？請解釋整合測試的主要目標，並舉例說明在後端開發中，哪些場景特別適合進行整合測試。
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.integration-testing`
+- **Learning Objectives**:
+  - `LO-1`: 能界定被測邊界、真實依賴、測試資料與整合測試相對於單元／端對端測試的責任。
+  - `LO-2`: 能設計資料庫、快取、訊息、HTTP 與交易整合的隔離、初始化、清理與可重複執行策略。
+  - `LO-3`: 能以 trace、依賴 log、資料狀態、重試與 timing 證據定位整合失敗而非只增加 retry。
+- **Prerequisites**: 單元測試與 Mock、測試金字塔、資料庫／HTTP 基礎。
+- **Quick Quiz**: [Q3](../../QUIZ/19_Testing.md#q3)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q3，能明確畫出整合邊界、資料生命週期與失敗證據，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 整合測試是測試金字塔中間層的關鍵部分，它扮演著連接底層單元測試和頂層端對端測試的橋樑角色。

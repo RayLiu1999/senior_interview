@@ -8,6 +8,18 @@
 
 什麼是 OWASP Top 10？請列舉並簡要解釋當前版本中的十大安全風險。為什麼 OWASP Top 10 對於後端開發者如此重要？
 
+### 測驗對應
+
+- **Concept ID**: `concept.security.owasp.top-10`
+- **Learning Objectives**:
+  - `LO-1`: 能用 threat modeling 將 OWASP 類別映射到資產、信任邊界、攻擊路徑與可能影響。
+  - `LO-2`: 能比較存取控制、注入、加密失效、設定錯誤、元件風險與 SSRF 的防禦責任邊界。
+  - `LO-3`: 能以可重現的測試、日誌與修復證據排序安全風險，並設計可回滾的緩解方案。
+- **Prerequisites**: 身份驗證與授權、基本 HTTP／Web 架構、SQL 與瀏覽器安全基礎。
+- **Quick Quiz**: [Q6](../../QUIZ/16_Security.md#q6)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q6，能把一個 OWASP 類別連到具體資產、攻擊路徑、偵測證據與回滾方案後，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 **OWASP (Open Web Application Security Project)** 是一個致力於改善軟體安全性的非營利組織。OWASP Top 10 是該組織定期發布的一份清單,列出了 Web 應用程式面臨的最關鍵、最普遍的安全風險。

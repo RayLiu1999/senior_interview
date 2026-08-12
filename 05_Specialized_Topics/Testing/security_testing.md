@@ -8,6 +8,18 @@
 
 什麼是安全性測試？它與一般的功能測試有何不同？在後端開發中，常見的安全性測試類型有哪些（如滲透測試、弱點掃描），以及如何將安全性思維融入開發生命週期 (DevSecOps)？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.security-testing`
+- **Learning Objectives**:
+  - `LO-1`: 能把 threat modeling、SAST、DAST、dependency scan、fuzzing、滲透測試與安全回歸放在正確生命週期位置。
+  - `LO-2`: 能以 OWASP、資產、信任邊界、攻擊者能力與可利用性排序安全測試與修復優先級。
+  - `LO-3`: 能保留取證並以漏洞重現、修復驗證、誤報處理、風險接受與 rollback 證據建立安全品質閘門。
+- **Prerequisites**: OWASP Top 10、SQL Injection、XSS、安全標頭、單元與整合測試。
+- **Quick Quiz**: [Q6](../../QUIZ/19_Testing.md#q6)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q6，能從威脅模型推導測試與修復證據，而不是只列掃描工具，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 安全性測試是一種旨在發現和修復軟體系統中安全漏洞的測試過程。與專注於“系統是否按預期工作”的功能測試不同，安全性測試的核心問題是：“系統能否被惡意地破壞或濫用？” 它的目標是主動識別系統的弱點，防止資料洩露、未經授權的訪問、服務中斷等安全事件。

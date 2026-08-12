@@ -8,6 +8,18 @@
 
 什麼是性能測試？它包含哪些主要類型（如負載測試、壓力測試、浸泡測試）？在後端系統開發中，為什麼性能測試至關重要，以及如何設計和執行一個有效的性能測試？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.performance-testing`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 load、stress、spike、soak 與容量測試，並以 SLO、流量模型與資料分布定義成功條件。
+  - `LO-2`: 能從 latency percentile、throughput、error rate、CPU、memory、GC、DB pool 與 queue 指標辨識瓶頸。
+  - `LO-3`: 能設計基準、壓測環境、逐步放量、保護措施與結果可重現／回歸的分析流程。
+- **Prerequisites**: 測試金字塔、整合測試、可觀測性與容量規劃。
+- **Quick Quiz**: [Q4](../../QUIZ/19_Testing.md#q4)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q4，能把百分位延遲與資源飽和證據連到容量決策與 rollback，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 性能測試是一種非功能性測試，旨在評估系統在特定工作負載下的響應速度、穩定性、可擴展性和資源使用情況。對於後端系統而言，性能測試是確保服務品質 (QoS) 和使用者體驗的關鍵環節，尤其是在高併發場景下。

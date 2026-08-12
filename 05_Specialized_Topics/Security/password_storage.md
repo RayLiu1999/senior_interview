@@ -8,6 +8,18 @@
 
 如何安全地儲存使用者密碼？請解釋雜湊 (Hashing) 和加密 (Encryption) 的區別,並說明為什麼不應該使用 MD5 或 SHA-1 來儲存密碼。什麼是加鹽 (Salting) 和加密工作因子 (Work Factor)？
 
+### 測驗對應
+
+- **Concept ID**: `concept.security.password.storage`
+- **Learning Objectives**:
+  - `LO-1`: 能區分加密、雜湊、salt、work factor 與 pepper 的安全目的與限制。
+  - `LO-2`: 能依密碼雜湊演算法、成本參數、硬體威脅與升級策略設計註冊及登入流程。
+  - `LO-3`: 能在密碼資料庫外洩時提出風險分級、強制重設、監控與不暴露明文密碼的復原方案。
+- **Prerequisites**: OWASP Top 10、身份驗證與授權、基本密碼學與憑證治理。
+- **Quick Quiz**: [Q7](../../QUIZ/16_Security.md#q7)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q7，能解釋離線猜測成本、參數升級與外洩後處置，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 密碼儲存是資訊安全中最基本也最關鍵的問題之一。歷史上無數的資料洩露事件都源於密碼儲存不當,導致數百萬使用者的密碼被洩露。

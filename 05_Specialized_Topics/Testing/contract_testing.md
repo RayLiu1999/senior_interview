@@ -8,6 +8,18 @@
 
 什麼是契約測試？它與整合測試有何不同？在微服務架構中，契約測試如何幫助團隊獨立開發和部署服務，同時確保服務間的通訊不會中斷？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.contract-testing`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 consumer-driven contract、provider verification、schema validation 與端對端測試的責任。
+  - `LO-2`: 能設計契約版本、相容性規則、provider state、broker promotion 與獨立部署流程。
+  - `LO-3`: 能從契約差異、consumer 期待、provider response、版本與部署證據定位破壞性變更。
+- **Prerequisites**: API 設計、整合測試、版本相容性與測試金字塔。
+- **Quick Quiz**: [Q2](../../QUIZ/19_Testing.md#q2)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q2，能說明契約不是單純 schema snapshot，並提出 consumer／provider 雙向證據，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 契約測試是一種用於驗證**服務間交互**是否符合預期“契約”的測試方法。在微服務架構中，服務之間通過 API（如 REST 或 gRPC）進行通訊。契約測試確保服務的提供方（Provider）和消費方（Consumer）都遵守一個共享的契約，即使它們是獨立開發、測試和部署的。

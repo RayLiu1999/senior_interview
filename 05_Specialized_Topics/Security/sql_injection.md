@@ -8,6 +8,18 @@
 
 什麼是 SQL Injection (SQL 注入) 攻擊？請解釋其攻擊原理、常見的攻擊手法,以及後端開發者應該如何有效地防禦這種攻擊。
 
+### 測驗對應
+
+- **Concept ID**: `concept.security.injection.sql`
+- **Learning Objectives**:
+  - `LO-1`: 能從輸入、查詢組合、資料庫解析與權限邊界說明 SQL Injection 的攻擊路徑。
+  - `LO-2`: 能比較參數化查詢、ORM、動態識別字白名單、最小權限、錯誤處理與 WAF 的防禦能力。
+  - `LO-3`: 能以 payload、query log、資料庫審計、權限與資料對帳證據驗證修復並控制資料外洩範圍。
+- **Prerequisites**: OWASP Top 10、SQL 基礎、資料庫權限與 API 輸入驗證。
+- **Quick Quiz**: [Q9](../../QUIZ/16_Security.md#q9)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q9，能區分參數值與 SQL 結構、提出負向測試與資料對帳證據，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 SQL Injection 是一種**注入攻擊**,攻擊者透過將惡意的 SQL 程式碼插入到應用程式的輸入欄位中,欺騙應用程式執行非預期的資料庫操作。它在 OWASP Top 10 中長期佔據前三名的位置,是最古老也是最危險的 Web 安全漏洞之一。

@@ -8,6 +8,18 @@
 
 什麼是混沌工程？它與傳統的故障測試有何不同？在複雜的分散式系統中，為什麼混沌工程對於建立系統的“信心”至關重要，以及如何實踐混沌工程？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.chaos-engineering`
+- **Learning Objectives**:
+  - `LO-1`: 能以穩態假設、故障注入、爆炸半徑與停止條件設計可控的混沌實驗。
+  - `LO-2`: 能把延遲、斷線、節點故障、容量耗盡與依賴失效映射到韌性指標與使用者影響。
+  - `LO-3`: 能以觀測證據、回復時間、資料正確性與 rollback／kill switch 評估實驗結果。
+- **Prerequisites**: 測試金字塔、效能測試、分散式系統可觀測性與事故應變。
+- **Quick Quiz**: [Q1](../../QUIZ/19_Testing.md#q1)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q1，能提出穩態指標、最小爆炸半徑、停止條件與復原證據，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 混沌工程是一門在**生產環境**中進行實驗，以建立對系統抵禦動盪條件能力的信心的學科。它不是簡單地隨機破壞東西，而是一種主動、有計劃地注入故障（如伺服器崩潰、網路延遲、磁碟故障）的科學方法，旨在發現系統中潛在的弱點，以便在它們對使用者造成影響之前進行修復。

@@ -8,6 +8,18 @@
 
 什麼是 XSS (Cross-Site Scripting) 跨站腳本攻擊？請解釋三種主要的 XSS 攻擊類型,並說明後端開發者應該如何防禦這類攻擊。
 
+### 測驗對應
+
+- **Concept ID**: `concept.security.xss`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 reflected、stored 與 DOM-based XSS 的輸入來源、執行 sink 與影響範圍。
+  - `LO-2`: 能依 HTML、attribute、URL、JavaScript 與富文字情境選擇 context-aware output encoding、sanitization、CSP 與 cookie 防護。
+  - `LO-3`: 能以瀏覽器事件、CSP report、session／DOM 證據與回歸測試確認修復未轉移到另一個輸出 context。
+- **Prerequisites**: OWASP Top 10、HTTP、瀏覽器同源政策、CSRF 與安全標頭。
+- **Quick Quiz**: [Q10](../../QUIZ/16_Security.md#q10)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q10，能說明輸出 context、CSP 與 HttpOnly 的邊界，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 XSS (Cross-Site Scripting) 是一種**注入攻擊**,攻擊者將惡意的 JavaScript 程式碼注入到受信任的網站中,當其他使用者瀏覽該頁面時,惡意腳本會在他們的瀏覽器中執行。

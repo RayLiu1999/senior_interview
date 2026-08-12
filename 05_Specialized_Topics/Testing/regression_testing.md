@@ -8,6 +8,18 @@
 
 什麼是回歸測試？為什麼在軟體開發週期中它如此重要？如何設計一個有效且高效的回歸測試策略，特別是在敏捷開發和持續交付 (CI/CD) 的環境中？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.regression-testing`
+- **Learning Objectives**:
+  - `LO-1`: 能依變更範圍、風險、依賴與使用者旅程選擇 smoke、targeted、full regression 與 canary 驗證。
+  - `LO-2`: 能設計失敗分類、測試選擇、版本基線、資料治理與 release gate，避免只用 coverage 當品質代理。
+  - `LO-3`: 能以變更 diff、測試歷史、失敗重現、production telemetry 與 rollback 證據判定真回歸或測試 flake。
+- **Prerequisites**: 測試金字塔、CI/CD、整合測試與版本控制。
+- **Quick Quiz**: [Q5](../../QUIZ/19_Testing.md#q5)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q5，能提出風險導向的 test selection、flake 分類與回滾門檻，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 回歸測試是一種軟體測試，旨在確保**新的程式碼變更沒有對現有功能產生負面影響**。換句話說，它的目的是驗證舊的功能在引入新代碼或進行修改後是否仍然能夠正常工作。當一個 bug 被修復、一個新功能被添加，或者一個模組被重構時，都可能無意中破壞系統的其他部分，這種現象被稱為“回歸 (Regression)”。

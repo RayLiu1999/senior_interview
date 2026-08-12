@@ -8,6 +8,18 @@
 
 什麼是安全標頭 (Security Headers)？請列舉並解釋常見的安全相關 HTTP 回應標頭,如 CSP、HSTS、X-Frame-Options 等,以及它們如何增強 Web 應用的安全性。
 
+### 測驗對應
+
+- **Concept ID**: `concept.security.headers`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 CSP、HSTS、X-Frame-Options、Content-Type 與 Referrer-Policy 的威脅模型。
+  - `LO-2`: 能依資源載入、嵌入、傳輸與瀏覽器相容性需求設計逐步收緊的標頭策略。
+  - `LO-3`: 能用 response headers、CSP report、瀏覽器行為與部署版本證據診斷安全標頭造成的攻擊面或可用性回歸。
+- **Prerequisites**: HTTP、HTTPS／TLS、XSS 與瀏覽器同源政策。
+- **Quick Quiz**: [Q8](../../QUIZ/16_Security.md#q8)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q8，能把每個標頭對應到威脅、驗證證據與安全回滾策略，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 安全標頭 (Security Headers) 是伺服器在 HTTP 回應中設定的特殊標頭,用於指示瀏覽器啟用各種安全機制。它們是一種**低成本、高效益**的安全措施,只需要在伺服器端配置,瀏覽器就會自動強制執行這些安全策略。

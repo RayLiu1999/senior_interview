@@ -98,3 +98,98 @@
 </details>
 
 📖 [查看完整答案](../05_Specialized_Topics/Security/https_tls_ssl.md)
+
+<a id="q6"></a>
+### Q6: OWASP Top 10 應如何與 threat modeling 及修復優先級連結？
+<!-- Concept ID: concept.security.owasp.top-10; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請從資產、信任邊界、攻擊者能力、可利用性、影響範圍、偵測證據與回滾方案說明如何使用 OWASP Top 10。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- OWASP Top 10 是風險分類與溝通工具，不是按清單逐項打勾就完成 threat modeling；應把類別映射到具體資產、入口、信任邊界與攻擊路徑。
+- 修復優先級要考慮可利用性、資料敏感度、租戶影響、業務副作用、偵測能力與暴露時間，而不是只看掃描器嚴重度。
+- 每項修復都要有可重現的負向測試、監控證據、分階段 rollout 與安全 rollback，並保留事件取證。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Security/owasp_top_10.md)
+
+<a id="q7"></a>
+### Q7: 密碼儲存如何抵抗離線猜測與資料庫外洩？
+<!-- Concept ID: concept.security.password.storage; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較密碼雜湊、加鹽、work factor、pepper 與加密，並說明如何升級參數及處理密碼資料庫外洩。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 密碼應使用專為密碼設計的慢速、可調成本雜湊；每筆密碼使用唯一 salt，不能用 MD5／SHA-1 等快速雜湊取代。
+- Work factor 要依硬體與登入流量校準並可逐步升級；pepper 若使用，應放在受控 secret store 並設計輪替與失效處置。
+- 外洩後要保留證據、評估離線猜測風險、強制重設或重新雜湊、撤銷 session／token，且不能記錄或回收明文密碼。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Security/password_storage.md)
+
+<a id="q8"></a>
+### Q8: 安全標頭如何形成瀏覽器端的縱深防禦？
+<!-- Concept ID: concept.security.headers; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 CSP、HSTS、X-Frame-Options、Content-Type 與 Referrer-Policy 的威脅模型、部署順序與驗證方式。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- CSP 限制腳本與資源來源，HSTS 強制後續使用 HTTPS，frame／content-type／referrer 標頭則分別縮小嵌入、嗅探與資訊洩漏風險；它們不能互相取代。
+- 先以 report-only、低風險路徑與相容性觀測建立基線，再逐步收緊 policy；要處理 CDN、第三方資源、舊版瀏覽器與子網域影響。
+- 驗證應包含實際 response headers、CSP violation report、瀏覽器行為、TLS 狀態與錯誤率，並有可逆的 rollback，而非直接刪除防護。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Security/security_headers.md)
+
+<a id="q9"></a>
+### Q9: SQL Injection 的根因與有效防禦邊界是什麼？
+<!-- Concept ID: concept.security.injection.sql; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請從 SQL 結構與資料值的邊界，說明參數化查詢、動態識別字白名單、ORM、最小權限與 WAF 的取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- SQL Injection 的核心是非可信輸入改變了 SQL 結構；參數化查詢讓值保持資料，動態 table／column／sort 欄位則需要嚴格白名單。
+- ORM 可能降低風險但不會自動保護 raw query；WAF 是補充偵測與緩解，不能取代安全查詢、資料庫最小權限與錯誤脫敏。
+- 修復要用惡意與邊界 payload 做負向測試，檢查 query／database audit、錯誤回應、權限與資料存取對帳，並保留 rollback 與取證。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Security/sql_injection.md)
+
+<a id="q10"></a>
+### Q10: XSS 的輸出 context 與防禦措施如何配對？
+<!-- Concept ID: concept.security.xss; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請比較 reflected、stored、DOM-based XSS，並說明輸出編碼、HTML 清理、CSP、cookie 屬性與 CSRF 的邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先追蹤 source 到 sink，再依 HTML、attribute、URL、script 或富文字 context 使用對應的 output encoding／sanitization；單一全域過濾通常不可靠。
+- CSP 可降低 exploit 影響，HttpOnly／Secure／SameSite 可縮小 cookie 風險，但都不能取代正確輸出編碼，也不能把 XSS 當成 CSRF 修復。
+- 驗證需包含 stored／reflected／DOM 負向案例、CSP report、瀏覽器行為、session 影響與回歸測試，並確認修復沒有轉移到另一個 sink。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/Security/xss_attack.md)

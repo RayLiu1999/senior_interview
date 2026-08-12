@@ -8,6 +8,18 @@
 
 請解釋什麼是單元測試 (Unit Testing)。在進行單元測試時，為什麼需要使用測試替身 (Test Doubles)？請詳細說明兩種最常見的測試替身：模擬 (Mock) 和樁 (Stub) 的區別與各自的使用場景。
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.unit-testing-mocking`
+- **Learning Objectives**:
+  - `LO-1`: 能界定單元的隔離邊界，區分 mock、stub、fake、spy 與真實依賴的用途。
+  - `LO-2`: 能設計針對行為、狀態、錯誤、重試與時間邊界的穩定單元測試，避免過度耦合實作細節。
+  - `LO-3`: 能從 failure message、mutation／coverage、依賴互動與 flake 歷史判斷測試信號是否可信。
+- **Prerequisites**: 基本程式設計、TDD／BDD、測試金字塔與依賴反轉。
+- **Quick Quiz**: [Q9](../../QUIZ/19_Testing.md#q9)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q9，能以測試替身邊界與失敗證據說明單元測試的信心來源，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 單元測試是測試金字塔的基石，也是軟體開發中最核心的測試類型。它的主要目標是驗證應用程式中最小的可測試單元（通常是函式或方法）的行為是否符合預期。

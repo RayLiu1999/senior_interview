@@ -8,6 +8,18 @@
 
 請解釋測試驅動開發 (Test-Driven Development, TDD) 和行為驅動開發 (Behavior-Driven Development, BDD) 分別是什麼。它們的核心思想和工作流程有何不同？BDD 是如何作為 TDD 的一種演進和補充而出現的？
 
+### 測驗對應
+
+- **Concept ID**: `concept.testing.tdd-bdd`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 TDD 的紅綠重構循環、BDD 的共同語言與驗收場景，以及它們的測試邊界。
+  - `LO-2`: 能將業務行為、邊界條件、單元測試與整合／驗收測試串成可維護的規格。
+  - `LO-3`: 能以失敗訊息、測試命名、需求對照與重構結果判斷測試是否提供真正回饋而非只追求覆蓋率。
+- **Prerequisites**: 單元測試與 Mock、測試金字塔、需求與驗收標準。
+- **Quick Quiz**: [Q7](../../QUIZ/19_Testing.md#q7)
+- **Hard Assessment**: [Security Testing Quality Incident](../../QUIZ/Hard_Assessments/security_testing_quality_incident.md) (`assessment.security-testing.quality-incident.v1`)
+- **Assessment Gate**: 先完成 Q7，能把一項需求拆成可觀察行為與適當測試層級，再進入 Hard Assessment。
+
 ## 核心理論與詳解
 
 TDD 和 BDD 都是敏捷開發中重要的軟體開發方法論，它們都強調在編寫功能程式碼之前先編寫測試。然而，它們的關注點、協作方式和語言風格有著顯著的區別。BDD 通常被視為 TDD 的一種演進，旨在解決 TDD 在團隊協作和需求理解上的一些痛點。
