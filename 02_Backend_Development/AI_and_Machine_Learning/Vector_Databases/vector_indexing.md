@@ -662,3 +662,15 @@ func kMeansPlusPlus(data [][]float64, k int) [][]float64 {
 - [HNSW Paper](https://arxiv.org/abs/1603.09320)
 - [Faiss: IVF and PQ Implementation](https://github.com/facebookresearch/faiss/wiki)
 - [Vector Index Benchmarks](https://github.com/erikbern/ann-benchmarks)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.vector.indexing-recall-latency`
+- **Learning Objectives**:
+  - `concept.ai.vector.indexing-recall-latency/LO-1`: 能說明 HNSW graph 與 IVF centroid／posting list 的建立和查詢路徑。
+  - `concept.ai.vector.indexing-recall-latency/LO-2`: 能解釋 M、efSearch、efConstruction、nlist、nprobe、建置記憶體與更新成本的影響。
+  - `concept.ai.vector.indexing-recall-latency/LO-3`: 能依資料規模、更新頻率、recall、latency 與資源預算選擇索引，並規劃 benchmark 和 rollback。
+- **Prerequisites**: `concept.ai.vector.similarity-search-algorithms`, `concept.ai.vector-database.fundamentals`
+- **Quick Quiz**: [Q17](../../../QUIZ/02_AI_and_Machine_Learning.md#q17-如何選擇與調校-hnsw-或-ivf-索引)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能將索引參數變更連到 recall、延遲、記憶體和建置風險，並在事故測驗中達到 3/4。

@@ -559,3 +559,15 @@ func generateRandomVector(dim int) []float64 {
 - [Faiss: A Library for Efficient Similarity Search](https://github.com/facebookresearch/faiss)
 - [ANN Benchmarks](http://ann-benchmarks.com/)
 - [LSH Tutorial](https://web.stanford.edu/class/cs246/slides/03-lsh.pdf)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.vector.similarity-search-algorithms`
+- **Learning Objectives**:
+  - `concept.ai.vector.similarity-search-algorithms/LO-1`: 能比較 cosine、inner product、Euclidean distance 與 exact search 的適用前提。
+  - `concept.ai.vector.similarity-search-algorithms/LO-2`: 能說明 HNSW、IVF、LSH 與 PQ 如何用索引結構換取搜尋速度、記憶體和 recall。
+  - `concept.ai.vector.similarity-search-algorithms/LO-3`: 能用 ground-truth recall、latency percentiles 與資料分布設計 ANN benchmark，而不是只比較平均耗時。
+- **Prerequisites**: `concept.ai.vector-database.fundamentals`, `concept.ai.embeddings.generation`
+- **Quick Quiz**: [Q16](../../../QUIZ/02_AI_and_Machine_Learning.md#q16-如何選擇相似度與-ann-搜尋算法)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能將距離度量、ANN 索引和 recall／latency 取捨連到實際查詢需求，並在事故測驗中達到 3/4。

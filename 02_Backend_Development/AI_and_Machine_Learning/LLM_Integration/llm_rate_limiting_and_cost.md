@@ -776,3 +776,15 @@ LLM 的限流與成本控制需要：
 - [OpenAI Rate Limits](https://platform.openai.com/docs/guides/rate-limits)
 - [Anthropic Rate Limits](https://docs.anthropic.com/claude/reference/rate-limits)
 - [Token Bucket Algorithm](https://en.wikipedia.org/wiki/Token_bucket)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.llm.rate-limit-cost-control`
+- **Learning Objectives**:
+  - `concept.ai.llm.rate-limit-cost-control/LO-1`: 能區分 RPM、TPM、並發數、配額與每租戶預算等限制，並說明它們對 admission control 的影響。
+  - `concept.ai.llm.rate-limit-cost-control/LO-2`: 能設計帶有 Retry-After、指數退避、jitter、冪等性與 retry budget 的重試策略。
+  - `concept.ai.llm.rate-limit-cost-control/LO-3`: 能把 token 成本、租戶配額、provider fallback 與降級路徑整合成可監控且可回滾的控制面。
+- **Prerequisites**: `concept.ai.llm.api-integration-reliability`, `concept.ai.llm.token-prompt-optimization`, `concept.ai.llm.model-provider-selection`
+- **Quick Quiz**: [Q14](../../../QUIZ/02_AI_and_Machine_Learning.md#q14-如何設計-llm-api-限流重試與成本控制)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能在 rate limit、成本暴增與 Provider 部分失效同時發生時，提出有容量上限和 rollback 條件的處理方案，並在事故測驗中達到 3/4。

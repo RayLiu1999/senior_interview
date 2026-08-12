@@ -636,3 +636,15 @@ Token 優化需要：
 - [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 - [tiktoken Library](https://github.com/openai/tiktoken)
 - [Token Counting Best Practices](https://help.openai.com/en/articles/4936856)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.llm.token-prompt-optimization`
+- **Learning Objectives**:
+  - `concept.ai.llm.token-prompt-optimization/LO-1`: 能估算 input、output、context window 與 tokenizer 差異對延遲和成本的影響。
+  - `concept.ai.llm.token-prompt-optimization/LO-2`: 能以 prompt 壓縮、context 分層、輸出 schema 與摘要策略降低 token，並保留任務品質。
+  - `concept.ai.llm.token-prompt-optimization/LO-3`: 能建立 token、成本、延遲與品質的基線、告警和回歸評測，避免只優化單一指標。
+- **Prerequisites**: `concept.ai.llm.foundation-and-capabilities`, `concept.ai.llm.api-integration-reliability`
+- **Quick Quiz**: [Q15](../../../QUIZ/02_AI_and_Machine_Learning.md#q15-如何做-llm-prompt-token-與成本最佳化)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能用可量測的 token budget、品質門檻與 rollback 條件處理 prompt 變長或成本異常，並在事故測驗中達到 3/4。

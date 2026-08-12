@@ -466,3 +466,15 @@ LLM 不是萬能的，但在正確的場景下使用正確的方法，可以顯�
 - [Anthropic Claude Documentation](https://docs.anthropic.com/)
 - [Prompt Engineering Guide](https://www.promptingguide.ai/)
 - [LangChain Documentation](https://python.langchain.com/)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.llm.foundation-and-capabilities`
+- **Learning Objectives**:
+  - `concept.ai.llm.foundation-and-capabilities/LO-1`: 能以足夠準確但不過度深入的方式說明 token、Transformer、預訓練、推理與上下文窗口的關係。
+  - `concept.ai.llm.foundation-and-capabilities/LO-2`: 能辨識幻覺、知識截止、非確定性、成本與延遲等能力邊界，避免把生成結果當成事實或權限判斷。
+  - `concept.ai.llm.foundation-and-capabilities/LO-3`: 能把 LLM 放進後端系統的輸入驗證、檢索、工具隔離、輸出驗證與人工升級邊界中。
+- **Prerequisites**: `concept.ai.prompt.engineering`（可選）
+- **Quick Quiz**: [Q11](../../../QUIZ/02_AI_and_Machine_Learning.md#q11-什麼是-llm-以及它的能力邊界)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能清楚說明 LLM 的能力與限制，並把它們落到可靠性、評測與安全隔離設計，於事故測驗中達到 3/4。

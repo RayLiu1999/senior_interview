@@ -439,6 +439,195 @@
 
 ---
 
+### Q11: 什麼是 LLM 以及它的能力邊界
+<!-- Concept ID: concept.ai.llm.foundation-and-capabilities; Learning Objective IDs: concept.ai.llm.foundation-and-capabilities/LO-1, concept.ai.llm.foundation-and-capabilities/LO-2, concept.ai.llm.foundation-and-capabilities/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🔴 必考
+
+請說明 LLM 的基本工作方式、擅長與不擅長的任務，以及後端系統應如何隔離它的風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- LLM 以 token 為輸入輸出單位，透過 Transformer 預訓練學習語言分布，推理時依上下文產生下一段內容。
+- 它擅長語言轉換、摘要、分類、抽取與受約束的生成；不應被視為保證正確的資料庫、權限引擎或事實來源。
+- 主要邊界包括幻覺、知識截止、非確定性、上下文限制、成本與延遲。
+- 後端應加入輸入驗證、RAG／工具的權限隔離、輸出 schema 驗證、敏感資料遮罩、審計與人工升級。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/LLM_Integration/what_is_llm.md)
+
+---
+
+### Q12: 如何選擇 LLM 模型與 Provider
+<!-- Concept ID: concept.ai.llm.model-provider-selection; Learning Objective IDs: concept.ai.llm.model-provider-selection/LO-1, concept.ai.llm.model-provider-selection/LO-2, concept.ai.llm.model-provider-selection/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+面對多個商用 API 與開源模型時，如何建立可驗證、可回滾的選型決策？
+
+<details>
+<summary>💡 答案提示</summary>
+
+1. 先定義任務品質、延遲分位數、吞吐量、上下文長度、工具／結構化輸出、資料治理與成本目標。
+2. 用代表性評測集比較品質、拒答、安全性、token 使用與錯誤率；不要只看公開 benchmark 或一次 demo。
+3. 比較商用 API 與 self-hosted open model 的 lock-in、資料位置、運維、容量與升級風險。
+4. 以 provider abstraction、feature flags、分層路由、fallback 與 rollback criteria 保留替換能力。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/LLM_Integration/llm_model_comparison.md)
+
+---
+
+### Q13: LLM API 整合如何在生產環境維持可靠性
+<!-- Concept ID: concept.ai.llm.api-integration-reliability; Learning Objective IDs: concept.ai.llm.api-integration-reliability/LO-1, concept.ai.llm.api-integration-reliability/LO-2, concept.ai.llm.api-integration-reliability/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+如何設計 LLM API client，使 timeout、streaming、provider 暫時失效與請求取消不會擴散成整體事故？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 為 DNS、連線、首 token、完整回應與整體請求分別設定可解釋的 timeout，並把 cancellation 往下游傳遞。
+- 依錯誤分類重試：429／暫時性 5xx 可在 retry budget 內退避；schema、認證、內容政策或明確 4xx 不應盲目重試。
+- Streaming 要處理半途斷線、response 已開始後不能重複寫入、buffer 上限與 client disconnect。
+- 以 request ID、provider、model、token、延遲分位數、錯誤類型與 fallback 結果建立追蹤，並設計降級與回滾。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/LLM_Integration/llm_api_integration.md)
+
+---
+
+### Q14: 如何設計 LLM API 限流重試與成本控制
+<!-- Concept ID: concept.ai.llm.rate-limit-cost-control; Learning Objective IDs: concept.ai.llm.rate-limit-cost-control/LO-1, concept.ai.llm.rate-limit-cost-control/LO-2, concept.ai.llm.rate-limit-cost-control/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+當 provider 同時有 RPM、TPM、並發與每日預算限制時，如何避免重試風暴和成本失控？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 將 provider 的 RPM／TPM 與服務自身的租戶配額、並發上限、token budget 分開建模。
+- 先做 admission control；429 要尊重 Retry-After，以指數退避加 jitter，並限制最大嘗試次數與 retry budget。
+- 對不可重試錯誤直接失敗或降級；對可重試請求要有冪等性，避免重複扣費或重複副作用。
+- 按租戶、功能、model、provider 記錄 token、成本、拒絕、fallback 與 queue wait，設定熔斷與成本告警。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/LLM_Integration/llm_rate_limiting_and_cost.md)
+
+---
+
+### Q15: 如何做 LLM Prompt Token 與成本最佳化
+<!-- Concept ID: concept.ai.llm.token-prompt-optimization; Learning Objective IDs: concept.ai.llm.token-prompt-optimization/LO-1, concept.ai.llm.token-prompt-optimization/LO-2, concept.ai.llm.token-prompt-optimization/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+如何降低 prompt 與 output token，同時確保回答品質、可追溯性與上下文完整？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以實際 tokenizer 計算 input／output token，為 context、單次輸出與整體請求設定 budget。
+- 移除重複指令、壓縮歷史、只檢索必要片段、使用結構化輸出與合理的 max output；不要只截斷文字而破壞語意。
+- 對 prompt、模型、token、延遲、品質與成本建立回歸評測，確認節省沒有造成 recall 或正確率下降。
+- 將長上下文分層、摘要或快取，並對超限請求提供明確的降級與使用者提示。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/LLM_Integration/token_optimization.md)
+
+---
+
+### Q16: 如何選擇相似度與 ANN 搜尋算法
+<!-- Concept ID: concept.ai.vector.similarity-search-algorithms; Learning Objective IDs: concept.ai.vector.similarity-search-algorithms/LO-1, concept.ai.vector.similarity-search-algorithms/LO-2, concept.ai.vector.similarity-search-algorithms/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+如何依 embedding 的性質、資料規模與 SLA 選擇距離度量和 exact／ANN 搜尋？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- cosine、inner product 與 Euclidean 的選擇必須和 embedding 模型的訓練假設、是否正規化一致。
+- exact search 有最佳 recall 但成本隨資料量成長；HNSW、IVF、LSH、PQ 以結構或壓縮換取速度與資源。
+- 用 exact ground truth 比較 recall@k、P95/P99 latency、吞吐量、記憶體和建置／更新成本。
+- ANN 參數不是越大越好，需依查詢分布、filter、寫入頻率與可接受的 recall 退化驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/Vector_Databases/similarity_search_algorithms.md)
+
+---
+
+### Q17: 如何選擇與調校 HNSW 或 IVF 索引
+<!-- Concept ID: concept.ai.vector.indexing-recall-latency; Learning Objective IDs: concept.ai.vector.indexing-recall-latency/LO-1, concept.ai.vector.indexing-recall-latency/LO-2, concept.ai.vector.indexing-recall-latency/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+比較 HNSW 與 IVF 時，應如何處理 recall、延遲、記憶體、建置時間和資料更新的取捨？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- HNSW 以多層圖導覽換取低延遲，M、efConstruction、efSearch 會影響圖大小、建置成本與 recall。
+- IVF 先以 centroid 分桶，再搜尋 nprobe 個桶；nlist、nprobe 和訓練資料分布會影響召回與查詢成本。
+- 大量更新、記憶體上限、建置窗口、刪除與重建策略也要納入，不只比較一次查詢速度。
+- 先建立 benchmark 與 rollback 門檻，再逐步調參；以 recall 和 P99 同時守住品質與 SLA。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/Vector_Databases/vector_indexing.md)
+
+---
+
+### Q18: pgvector 如何在 RAG 中正確建模與查詢
+<!-- Concept ID: concept.ai.vector.pgvector-query-integration; Learning Objective IDs: concept.ai.vector.pgvector-query-integration/LO-1, concept.ai.vector.pgvector-query-integration/LO-2, concept.ai.vector.pgvector-query-integration/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+如何在 PostgreSQL 中設計 embedding、metadata、租戶隔離、距離查詢與 ANN 索引，使 RAG 結果正確且可維運？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- schema 要固定 embedding 維度與距離運算子，並保存文件版本、來源、權限範圍、更新時間等 metadata。
+- 用 `EXPLAIN (ANALYZE, BUFFERS)` 檢查 filter、排序和向量索引是否符合預期；資料分布或過濾條件可能使 planner 選擇不同路徑。
+- 釐清 PostgreSQL transaction／freshness 的優勢與單機資源、ANN 效能、分片和高規模運維的限制。
+- 每次檢索都必須帶入授權範圍，避免先取回全域候選再在應用層過濾造成資料外洩。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/Vector_Databases/pgvector_guide.md)
+
+---
+
+### Q19: 如何平衡向量檢索的 Recall 延遲與新鮮度
+<!-- Concept ID: concept.ai.vector.retrieval-performance-tradeoffs; Learning Objective IDs: concept.ai.vector.retrieval-performance-tradeoffs/LO-1, concept.ai.vector.retrieval-performance-tradeoffs/LO-2, concept.ai.vector.retrieval-performance-tradeoffs/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+當向量搜尋的 P99 變慢、recall 下降且文件更新延遲增加時，如何用證據排序調優順序？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先定義 recall@k、P50/P95/P99、QPS、寫入到可檢索的 freshness、成本和 filter selectivity，避免只看平均 latency。
+- 觀察 query plan、索引命中、候選數、cache、記憶體、分片、重建、embedding pipeline backlog 與資料庫資源。
+- 以固定評測集和線上 trace 分別確認品質和容量，調整索引／候選數／cache 前先排除資料新鮮度與權限過濾問題。
+- 任何參數或硬體變更都要有 canary、recall／P99／freshness 的 rollback 門檻，並保留降級到較小候選集或 lexical search 的路徑。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/AI_and_Machine_Learning/Vector_Databases/vector_db_performance.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：
@@ -455,5 +644,14 @@
 | 能設計智能客服系統 | ⬜ |
 | 能設計文件問答系統 | ⬜ |
 | 了解 LLM 監控方案 | ⬜ |
+| 理解 LLM 的能力邊界 | ⬜ |
+| 能進行模型與 Provider 選型 | ⬜ |
+| 能設計可靠的 LLM API 整合 | ⬜ |
+| 能處理 LLM 限流、重試與成本 | ⬜ |
+| 能最佳化 Prompt 與 Token | ⬜ |
+| 理解相似度與 ANN 搜尋算法 | ⬜ |
+| 能選擇與調校向量索引 | ⬜ |
+| 能用 pgvector 設計 RAG 查詢 | ⬜ |
+| 能平衡向量檢索 Recall、延遲與新鮮度 | ⬜ |
 
 **建議**：未能完整回答的題目，請回到對應的詳細文章深入學習。

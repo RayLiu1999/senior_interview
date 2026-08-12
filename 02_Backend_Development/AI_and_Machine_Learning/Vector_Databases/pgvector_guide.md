@@ -154,3 +154,15 @@ pgvector 是將向量搜尋整合到現有 PostgreSQL 的最佳方案。雖然�
 
 - [pgvector GitHub](https://github.com/pgvector/pgvector)
 - [PostgreSQL Vector Extension Guide](https://supabase.com/docs/guides/ai/vector-columns)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.vector.pgvector-query-integration`
+- **Learning Objectives**:
+  - `concept.ai.vector.pgvector-query-integration/LO-1`: 能設計 embedding 維度、距離運算子、metadata 與租戶欄位一致的 pgvector schema。
+  - `concept.ai.vector.pgvector-query-integration/LO-2`: 能從 SQL、filter、索引與 query plan 判斷為何 pgvector 查詢沒有使用預期的 ANN 路徑。
+  - `concept.ai.vector.pgvector-query-integration/LO-3`: 能比較 pgvector 與專用向量資料庫在交易一致性、freshness、規模、運維和隔離上的取捨。
+- **Prerequisites**: `concept.ai.vector-database.fundamentals`, `concept.ai.embeddings.generation`, `concept.ai.vector.indexing-recall-latency`
+- **Quick Quiz**: [Q18](../../../QUIZ/02_AI_and_Machine_Learning.md#q18-pgvector-如何在-rag-中正確建模與查詢)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能以 query plan、filter selectivity、索引參數和 tenant isolation 證明 pgvector 的檢索設計可用，並在事故測驗中達到 3/4。

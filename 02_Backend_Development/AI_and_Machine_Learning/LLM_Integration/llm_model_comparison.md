@@ -546,3 +546,15 @@ func EnsembleGenerate(task Task, models []LLMClient) string {
 - [Anthropic Model Comparison](https://www.anthropic.com/claude)
 - [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
 - [LLM Cost Calculator](https://docsbot.ai/tools/gpt-openai-api-pricing-calculator)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.llm.model-provider-selection`
+- **Learning Objectives**:
+  - `concept.ai.llm.model-provider-selection/LO-1`: 能以任務品質、延遲、上下文、工具能力、資料治理與成本建立模型／Provider 選型矩陣。
+  - `concept.ai.llm.model-provider-selection/LO-2`: 能說明 commercial API、self-hosted open model 與 multi-provider routing 的 lock-in、運維和可靠性取捨。
+  - `concept.ai.llm.model-provider-selection/LO-3`: 能用固定評測集、分層流量與 rollback criteria 驗證模型切換，而不是只依賴 benchmark 或單次 demo。
+- **Prerequisites**: `concept.ai.llm.foundation-and-capabilities`, `concept.ai.llm.token-prompt-optimization`
+- **Quick Quiz**: [Q12](../../../QUIZ/02_AI_and_Machine_Learning.md#q12-如何選擇-llm-模型與-provider)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能在明確的品質、延遲、成本與資料邊界下提出可驗證的模型／Provider 決策，並在事故測驗中達到 3/4。

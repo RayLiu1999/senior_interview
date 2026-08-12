@@ -289,3 +289,15 @@ diskIndex: true
 - [Faiss Performance Tuning](https://github.com/facebookresearch/faiss/wiki/Guidelines-to-choose-an-index)
 - [Milvus Performance FAQ](https://milvus.io/docs/performance_faq.md)
 - [HNSW Parameter Tuning](https://www.pinecone.io/learn/hnsw/)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.vector.retrieval-performance-tradeoffs`
+- **Learning Objectives**:
+  - `concept.ai.vector.retrieval-performance-tradeoffs/LO-1`: 能定義 recall@k、P95/P99 latency、吞吐量、成本、freshness 與 filter selectivity 的觀測方式。
+  - `concept.ai.vector.retrieval-performance-tradeoffs/LO-2`: 能從 query plan、索引命中、cache、記憶體、分片與硬體指標定位檢索延遲回歸。
+  - `concept.ai.vector.retrieval-performance-tradeoffs/LO-3`: 能在 recall、latency、freshness、寫入成本與資料規模之間提出可驗證的調優順序。
+- **Prerequisites**: `concept.ai.vector.indexing-recall-latency`, `concept.ai.vector.pgvector-query-integration`, `concept.ai.vector.similarity-search-algorithms`
+- **Quick Quiz**: [Q19](../../../QUIZ/02_AI_and_Machine_Learning.md#q19-如何平衡向量檢索的-recall-延遲與新鮮度)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能用分位延遲、recall、freshness 與容量證據排序修復步驟，並在事故測驗中達到 3/4。

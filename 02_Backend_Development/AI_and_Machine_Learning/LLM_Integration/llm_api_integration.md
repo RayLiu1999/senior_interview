@@ -953,3 +953,15 @@ func estimateCost(model string, usage Usage) float64 {
 - [OpenAI API Best Practices](https://platform.openai.com/docs/guides/production-best-practices)
 - [Anthropic API Documentation](https://docs.anthropic.com/)
 - [LangChain LLM Integration](https://python.langchain.com/docs/integrations/llms/)
+
+## 測驗對應
+
+- **Concept ID**: `concept.ai.llm.api-integration-reliability`
+- **Learning Objectives**:
+  - `concept.ai.llm.api-integration-reliability/LO-1`: 能畫出一次 LLM API 呼叫從 admission、timeout、streaming 到 cancellation 的完整生命週期。
+  - `concept.ai.llm.api-integration-reliability/LO-2`: 能依錯誤類型、重試次數、退避與預算，區分可重試和不可重試的失敗。
+  - `concept.ai.llm.api-integration-reliability/LO-3`: 能設計包含 provider abstraction、fallback、可觀測性與 SLO 的可靠 LLM 呼叫邊界。
+- **Prerequisites**: `concept.ai.llm.foundation-and-capabilities`, `concept.ai.llm.model-provider-selection`
+- **Quick Quiz**: [Q13](../../../QUIZ/02_AI_and_Machine_Learning.md#q13-llm-api-整合如何在生產環境維持可靠性)
+- **Hard Assessment**: [LLM／Vector Retrieval Incident](../../../QUIZ/Hard_Assessments/llm_vector_retrieval_incident.md) (`assessment.ai.llm-vector.retrieval-incident.v1`)
+- **Assessment Gate**: 能把 API timeout、rate limit、provider fallback 與 streaming cancellation 連到故障時間線，並在事故測驗中達到 3/4。
