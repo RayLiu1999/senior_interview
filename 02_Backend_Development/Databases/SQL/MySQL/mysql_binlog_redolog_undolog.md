@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `Binlog`, `Redo Log`, `Undo Log`, `WAL`, `崩潰恢復`, `主從複製`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.redo-undo-binlog`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 redo、undo 與 binlog 的資料、復原與複製責任。
+  - `LO-2`: 能解釋 commit、crash recovery 與兩階段提交的關聯。
+  - `LO-3`: 能依 durability、吞吐量、RPO 與複製延遲做配置取捨。
+- **Prerequisites**: `concept.database.transaction-isolation`
+- **Quick Quiz**: [Q11](../../../../QUIZ/02_Databases.md#q11-mysql-redo-undo與binlog如何協同)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能從 crash、replication 與備份證據推導 RPO，並在事故 track 中達到 3/4。
 
 MySQL InnoDB 引擎維護三種核心日誌：Binlog（二進制日誌）、Redo Log（重做日誌）和 Undo Log（撤銷日誌）。它們分工明確，分別负責**主從複製、崩潰恢復（Crash Recovery）和事務回滾/MVCC**，是 MySQL 可靠性的三大支柱。
 

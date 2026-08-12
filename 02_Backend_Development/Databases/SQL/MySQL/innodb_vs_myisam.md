@@ -5,6 +5,14 @@
 - **標籤**: `MySQL`, `Storage Engine`, `InnoDB`, `MyISAM`, `ACID`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.storage-engines`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 InnoDB 與 MyISAM 的交易、鎖、Crash Recovery 與索引語意。
+  - `LO-2`: 能依 workload、可靠性與維運需求選擇儲存引擎。
+  - `LO-3`: 能辨識引擎選擇對備份、複製與容量指標的影響。
+- **Quick Quiz**: [Q17](../../../../QUIZ/02_Databases.md#q17-innodb與myisam如何取捨)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能將引擎差異連到一致性與復原證據，並在事故 track 中達到 3/4。
 
 InnoDB 和 MyISAM 是 MySQL 中最廣為人知的兩種儲存引擎。請詳細比較它們在交易支援、鎖定機制、資料完整性、效能和使用場景等方面的核心區別。
 

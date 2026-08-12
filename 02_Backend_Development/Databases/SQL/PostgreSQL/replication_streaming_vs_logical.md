@@ -5,6 +5,15 @@
 - **標籤**: `PostgreSQL`, `Replication`, `High Availability`, `Scaling`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.replication-modes`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 streaming replication 與 logical replication 的資料邊界和用途。
+  - `LO-2`: 能用 WAL LSN、slot、lag 與 apply rate 評估複製健康度。
+  - `LO-3`: 能設計 failover、版本升級、CDC 與 slot 清理的回復方案。
+- **Prerequisites**: `concept.database.postgresql.wal`
+- **Quick Quiz**: [Q24](../../../../QUIZ/02_Databases.md#q24-postgresql複製模式如何影響高可用)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能依 RPO/RTO 和 WAL evidence 選擇複製方式，並在事故 track 中達到 3/4。
 
 資料庫複製是實現高可用性 (High Availability)、讀取擴展 (Read Scaling) 和災難恢復 (Disaster Recovery) 的關鍵技術。PostgreSQL 提供了兩種主要的內建複製方法：串流複製和邏輯複製。請詳細解釋這兩種複製技術的工作原理、它們之間的根本區別、各自的優缺點以及適用場景。
 

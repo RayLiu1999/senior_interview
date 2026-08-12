@@ -5,6 +5,15 @@
 - **標籤**: `PostgreSQL`, `VACUUM`, `Performance`, `DBA`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.vacuum-analyze`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 VACUUM、VACUUM FULL、ANALYZE 與 autovacuum 的作用。
+  - `LO-2`: 能從 bloat、統計資訊、膨脹速度與鎖等待選擇維護方式。
+  - `LO-3`: 能規劃低峰維護、監控與避免長交易阻塞清理的方案。
+- **Prerequisites**: `concept.database.postgresql.mvcc-vacuum`
+- **Quick Quiz**: [Q26](../../../../QUIZ/02_Databases.md#q26-postgresql-vacuum與analyze如何取捨)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能以 bloat、lock 與 plan evidence 排定維護，並在事故 track 中達到 3/4。
 
 `VACUUM` 是 PostgreSQL 維護資料庫健康的核心指令，但它有多種變體，如 `VACUUM FULL`，並且經常與 `ANALYZE` 指令一起出現。請詳細解釋 `VACUUM`、`VACUUM FULL` 和 `ANALYZE` 這三個指令的根本區別、它們對資料庫的影響（特別是鎖定行為），以及各自應該在何種情況下使用。
 

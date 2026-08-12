@@ -5,6 +5,15 @@
 - **標籤**: `Connection Pool`, `資料庫`, `效能調優`, `HikariCP`, `GORM`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.connection-pool.capacity`
+- **Learning Objectives**:
+  - `LO-1`: 能解釋連線取得、使用、歸還、健康檢查與 timeout 的生命週期。
+  - `LO-2`: 能依 DB max connections、pod 數、worker concurrency 與 query latency 設定 pool 上限。
+  - `LO-3`: 能用 pool wait、in-use、leak、P95/P99 與吞吐量找出容量瓶頸。
+- **Prerequisites**: `concept.database.mysql.query-plan-optimization`
+- **Quick Quiz**: [Q49](../../QUIZ/02_Databases.md#q49-資料庫連線池如何做容量取捨)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能計算連線乘法、提出 pool wait 警戒線與回滾條件，並在事故 track 中達到 3/4。
 
 資料庫連線的建立是高成本操作（TCP 握手 + MySQL 認證至少數十毫秒）。連線池（Connection Pool）透過**預先分配並複用已建立的連線**，將連線建立成本攤銷，是高效能後端系統不可或缺的基礎設施元件。
 

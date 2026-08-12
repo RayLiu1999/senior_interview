@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Concurrency`, `Performance`, `System Design`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.single-thread`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 event loop、I/O multiplexing 與命令序列化。
+  - `LO-2`: 能辨識 O(N) 命令、Lua、big key 與慢客戶端如何阻塞事件循環。
+  - `LO-3`: 能用 command latency、CPU、blocked clients 與 throughput 找出瓶頸。
+- **Quick Quiz**: [Q45](../../../../QUIZ/02_Databases.md#q45-redis單執行緒為何仍會出現尾延遲)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能將阻塞命令連到 p99 與容量證據，並在事故 track 中達到 3/4。
 
 Redis 以其卓越的效能而聞名，而其核心設計之一就是單執行緒模型。請解釋 Redis 的單執行緒模型具體指的是什麼，這個模型如何運作，以及為什麼在單執行緒的基礎上 Redis 依然能夠達到非常高的吞吐量。
 

@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Stream`, `訊息佇列`, `Consumer Group`, `事件驅動`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.stream`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 Stream、consumer group、PEL、ack 與 reclaim 的投遞語意。
+  - `LO-2`: 能設計 pending、consumer crash、重試、冪等與保留策略。
+  - `LO-3`: 能以 backlog、consumer lag、memory、trim 與持久化指標做容量管理。
+- **Quick Quiz**: [Q46](../../../../QUIZ/02_Databases.md#q46-redis-stream如何處理pending與容量)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能提出可重試且可清理的 consumer lifecycle，並在事故 track 中達到 3/4。
 
 Redis Stream（Redis 5.0 引入）是 Redis 中唯一的**持久化、可回溯的訊息串流資料結構**，填補了 List（無 ID 索引）和 Pub/Sub（無持久化）之間的空缺。它借鑑了 Apache Kafka 的 Log-based 訊息設計，是在 Redis 內部實現輕量級訊息隊列的首選方案。
 

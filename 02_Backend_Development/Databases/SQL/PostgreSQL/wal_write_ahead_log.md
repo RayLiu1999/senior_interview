@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `WAL`, `崩潰恢復`, `持久性`, `Streaming Replication`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.wal`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 WAL 如何支援 crash recovery、replication 與 durability。
+  - `LO-2`: 能用 LSN、archive、replication slot 與 archive failure 指標診斷風險。
+  - `LO-3`: 能依 RPO、儲存成本、checkpoint 與 restore 時間設計策略。
+- **Quick Quiz**: [Q27](../../../../QUIZ/02_Databases.md#q27-postgresql-wal如何支援復原與複製)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能把 WAL、備份與 RPO/RTO 對齊，並在事故 track 中達到 3/4。
 
 WAL（Write-Ahead Log，預寫式日誌）是 PostgreSQL 實現**ACID 持久性（Durability）** 和**時間點恢復（PITR）** 的核心機制。理解 WAL 是診斷複製延遲、設計備份策略和優化寫入效能的關鍵。
 

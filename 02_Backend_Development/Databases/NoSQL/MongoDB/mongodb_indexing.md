@@ -5,6 +5,14 @@
 - **標籤**: `MongoDB`, `Indexing`, `Performance`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.indexing`
+- **Learning Objectives**:
+  - `LO-1`: 能依 equality、sort、range、array、text 與 TTL 查詢選擇索引。
+  - `LO-2`: 能用 explain 的 winningPlan、keysExamined 與 docsExamined 驗證索引。
+  - `LO-3`: 能評估複合索引欄位順序、寫入成本與記憶體壓力。
+- **Quick Quiz**: [Q33](../../../../QUIZ/02_Databases.md#q33-mongodb索引如何影響查詢計畫)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 explain 與 index footprint 證明設計，並在事故 track 中達到 3/4。
 
 請解釋 MongoDB 中索引的作用和重要性。MongoDB 支援哪些主要的索引類型？並請說明複合索引 (Compound Index) 中欄位順序的影響。
 

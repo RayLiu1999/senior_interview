@@ -5,6 +5,14 @@
 - **標籤**: `MongoDB`, `SQL`, `NoSQL`, `Data Model`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.sql-comparison`
+- **Learning Objectives**:
+  - `LO-1`: 能比較文件模型與關聯模型在 schema、join、交易與擴展上的差異。
+  - `LO-2`: 能依查詢模式、一致性、資料演進與運維能力做選型。
+  - `LO-3`: 能說明選型如何影響索引、備份、複製與容量成本。
+- **Quick Quiz**: [Q37](../../../../QUIZ/02_Databases.md#q37-mongodb與sql如何依需求選型)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能用一致性與容量約束說明選型，而非只列功能，並在事故 track 中達到 3/4。
 
 請比較 MongoDB (作為 NoSQL 的代表) 與傳統 SQL 資料庫 (如 MySQL, PostgreSQL) 的核心差異。請從以下幾個方面進行闡述：
 

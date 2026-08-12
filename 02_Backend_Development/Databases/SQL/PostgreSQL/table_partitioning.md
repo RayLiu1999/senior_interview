@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `Partitioning`, `性能調優`, `大資料量`, `Partition Pruning`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.partitioning`
+- **Learning Objectives**:
+  - `LO-1`: 能依時間、租戶或範圍查詢選擇 partition key 與 partition strategy。
+  - `LO-2`: 能用 partition pruning、索引與 planner 指標驗證分區收益。
+  - `LO-3`: 能設計建分區、detach、資料保留與 schema 變更的維運流程。
+- **Quick Quiz**: [Q25](../../../../QUIZ/02_Databases.md#q25-postgresql分區如何改善查詢與維運)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能以 pruning、DDL lock 與資料保留證據評估分區，並在事故 track 中達到 3/4。
 
 當單一資料表的資料量達到數億行以上時，全表掃描和索引維護的成本急劇上升。PostgreSQL 的**聲明式表格分區（Declarative Table Partitioning）**允許將一個大表邏輯分割為多個子表（Partition），查詢時透過**分區裁剪（Partition Pruning）**只訪問相關子表，大幅提升查詢效能。
 

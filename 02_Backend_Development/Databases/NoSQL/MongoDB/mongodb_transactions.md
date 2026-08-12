@@ -5,6 +5,15 @@
 - **標籤**: `MongoDB`, `Transaction`, `ACID`, `Multi-Document`, `Replica Set`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.transactions`
+- **Learning Objectives**:
+  - `LO-1`: 能區分單文件原子性與多文件 transaction 的一致性邊界。
+  - `LO-2`: 能說明 read concern、write concern、retryable commit 與 transient error。
+  - `LO-3`: 能以 transaction 時間、鎖衝突與跨 shard 成本評估是否應改資料模型。
+- **Prerequisites**: `concept.database.mongodb.data-modeling`, `concept.database.mongodb.replication`
+- **Quick Quiz**: [Q36](../../../../QUIZ/02_Databases.md#q36-mongodb多文件交易如何控制一致性與成本)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能提出冪等 retry 與一致性證據，並在事故 track 中達到 3/4。
 
 MongoDB 在 4.0 版本引入**多文件事務（Multi-Document Transactions）**，在 4.2 版本擴展至支援**分片叢集的分散式事務**。這使 MongoDB 在需要原子性操作多個文件的場景下，不再是「NoSQL 不支援事務」的代名詞。
 

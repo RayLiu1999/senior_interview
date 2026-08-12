@@ -363,6 +363,768 @@ Client ────────► Master (主庫)
 
 ---
 
+## 🧭 Phase 3：Database Storage & Consistency
+
+### Q10: MySQL MVCC如何支援一致性讀
+<!-- Concept ID: `concept.database.mysql.mvcc`; Learning Objective IDs: `concept.database.mysql.mvcc/LO-1`, `concept.database.mysql.mvcc/LO-2`, `concept.database.mysql.mvcc/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請說明 InnoDB 的版本鏈、Read View、一致性讀與 current read 如何互動。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 連結 undo version、Read View 可見性與 Read Committed／Repeatable Read。
+- 區分 snapshot read、current read、鎖與長交易造成的 purge／undo 成本。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/what_is_mvcc.md)
+
+---
+
+### Q11: MySQL redo-undo與binlog如何協同
+<!-- Concept ID: `concept.database.mysql.redo-undo-binlog`; Learning Objective IDs: `concept.database.mysql.redo-undo-binlog/LO-1`, `concept.database.mysql.redo-undo-binlog/LO-2`, `concept.database.mysql.redo-undo-binlog/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 redo log、undo log 與 binlog 在復原、rollback 和 replication 中的責任。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 說明 redo 的 crash recovery、undo 的版本／回滾與 binlog 的複製／PITR 角色。
+- 連結 commit、durability、兩階段提交與 RPO。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/mysql_binlog_redolog_undolog.md)
+
+---
+
+### Q12: MySQL鎖機制如何診斷死鎖
+<!-- Concept ID: `concept.database.mysql.locking`; Learning Objective IDs: `concept.database.mysql.locking/LO-1`, `concept.database.mysql.locking/LO-2`, `concept.database.mysql.locking/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請解釋 record、gap、next-key、metadata lock 與死鎖診斷方法。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以 wait-for graph、索引範圍與 transaction 順序找出 cycle。
+- 以短交易、固定鎖順序、合理 timeout 與有限 retry 降低風險。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/mysql_lock_mechanism.md)
+
+---
+
+### Q13: MySQL隔離級別如何取捨
+<!-- Concept ID: `concept.database.mysql.transaction-isolation`; Learning Objective IDs: `concept.database.mysql.transaction-isolation/LO-1`, `concept.database.mysql.transaction-isolation/LO-2`, `concept.database.mysql.transaction-isolation/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較四種隔離級別及其對 dirty read、non-repeatable read、phantom read、鎖和吞吐量的影響。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用並發時間線說明各隔離級別，不只背表格。
+- 連結 MVCC、gap／next-key lock、deadlock、timeout 與 retry。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/transaction_isolation_levels.md)
+
+---
+
+### Q14: MySQL索引如何影響查詢計畫
+<!-- Concept ID: `concept.database.mysql.indexing.plan-design`; Learning Objective IDs: `concept.database.mysql.indexing.plan-design/LO-1`, `concept.database.mysql.indexing.plan-design/LO-2`, `concept.database.mysql.indexing.plan-design/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請說明 B+ Tree、複合索引欄位順序、覆蓋索引、回表與寫入成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以 WHERE、JOIN、ORDER BY、基數和最左前綴選擇索引。
+- 用 EXPLAIN、實際 rows、I/O 和 insert/update 成本驗證，不要盲目加索引。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/database_indexes.md)
+
+---
+
+### Q15: SQL查詢優化如何以證據驗證
+<!-- Concept ID: `concept.database.mysql.query-plan-optimization`; Learning Objective IDs: `concept.database.mysql.query-plan-optimization/LO-1`, `concept.database.mysql.query-plan-optimization/LO-2`, `concept.database.mysql.query-plan-optimization/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🔴 必考
+
+請提出一套從慢查詢、EXPLAIN 到壓測回歸的 SQL 優化流程。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先確認 workload、參數、估算／實際 rows、索引和鎖／I/O。
+- 比較查詢改寫、批次、分頁和 schema 變更的 p95/p99、吞吐量與回滾風險。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/how_to_optimize_sql_queries.md)
+
+---
+
+### Q16: MySQL複製模式如何影響RPO
+<!-- Concept ID: `concept.database.mysql.replication`; Learning Objective IDs: `concept.database.mysql.replication/LO-1`, `concept.database.mysql.replication/LO-2`, `concept.database.mysql.replication/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較非同步、半同步與同步複製的確認點、延遲、故障轉移和資料遺失風險。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 GTID／binlog、relay log、replication lag 和 read-after-write。
+- 以 RPO/RTO、failover、重建 replica 和 rollback plan 做選擇。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/mysql_replication.md)
+
+---
+
+### Q17: InnoDB與MyISAM如何取捨
+<!-- Concept ID: `concept.database.mysql.storage-engines`; Learning Objective IDs: `concept.database.mysql.storage-engines/LO-1`, `concept.database.mysql.storage-engines/LO-2`, `concept.database.mysql.storage-engines/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
+
+請比較 InnoDB 與 MyISAM 的交易、鎖、Crash Recovery、索引和維運取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 對照 row-level locking、ACID、foreign key、crash recovery 和全文／COUNT 特性。
+- 把引擎選擇連到 replication、backup、寫入 workload 與資料可靠性。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/innodb_vs_myisam.md)
+
+---
+
+### Q18: MySQL架構中的查詢與日誌路徑
+<!-- Concept ID: `concept.database.mysql.architecture`; Learning Objective IDs: `concept.database.mysql.architecture/LO-1`, `concept.database.mysql.architecture/LO-2`, `concept.database.mysql.architecture/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請從連線、Parser、Optimizer、Storage Engine、Buffer Pool 和 log path 重建一次查詢。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 區分 SQL layer、InnoDB、redo／undo／binlog 和磁碟 I/O 的責任。
+- 以 query latency、buffer hit、lock、I/O 和 pool wait 定位瓶頸。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/mysql_architecture.md)
+
+---
+
+### Q19: DELETE、TRUNCATE、DROP如何選擇
+<!-- Concept ID: `concept.database.mysql.ddl-lifecycle`; Learning Objective IDs: `concept.database.mysql.ddl-lifecycle/LO-1`, `concept.database.mysql.ddl-lifecycle/LO-2`, `concept.database.mysql.ddl-lifecycle/LO-3` -->
+
+**難度**: ⭐⭐⭐ (3) | **重要性**: 🟡 重要
+
+請比較 DELETE、TRUNCATE 與 DROP 的資料、Schema、交易、鎖和復原邊界。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先判斷是否需要條件刪除、rollback、觸發器、保留 schema 或完全移除物件。
+- 大批量清理要加入分批、限速、備份、監控和可回復方案。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/delete_truncate_drop.md)
+
+---
+
+### Q20: Primary Key與Unique Key如何選擇
+<!-- Concept ID: `concept.database.mysql.keys`; Learning Objective IDs: `concept.database.mysql.keys/LO-1`, `concept.database.mysql.keys/LO-2`, `concept.database.mysql.keys/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🟡 重要
+
+請比較 Primary Key 與 Unique Key 的唯一性、NULL、聚簇索引、外鍵與資料模型語意。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 主鍵是資料列的主要 identity；唯一鍵通常是業務約束或 alternate key。
+- 評估鍵長度、穩定性、寫入分佈、外鍵和未來分片需求。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/MySQL/primary_key_vs_unique_key.md)
+
+---
+
+### Q21: PostgreSQL索引類型如何對應查詢
+<!-- Concept ID: `concept.database.postgresql.index-types`; Learning Objective IDs: `concept.database.postgresql.index-types/LO-1`, `concept.database.postgresql.index-types/LO-2`, `concept.database.postgresql.index-types/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請比較 PostgreSQL 的 B-Tree、Hash、GiST、GIN 及其適用資料與查詢。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 依 equality、range、JSONB／ARRAY、地理與全文查詢選 operator class。
+- 用 EXPLAIN ANALYZE、buffers、寫入成本與 index size 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/index_types.md)
+
+---
+
+### Q22: PostgreSQL MVCC與VACUUM如何維持健康
+<!-- Concept ID: `concept.database.postgresql.mvcc-vacuum`; Learning Objective IDs: `concept.database.postgresql.mvcc-vacuum/LO-1`, `concept.database.postgresql.mvcc-vacuum/LO-2`, `concept.database.postgresql.mvcc-vacuum/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請解釋 tuple version、dead tuple、snapshot、autovacuum、bloat 與 planner 統計的關聯。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 連結長交易／xmin、清理延遲、膨脹、I/O 和查詢計畫退化。
+- 比較 VACUUM、ANALYZE、VACUUM FULL 的影響、lock 與維護窗口。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/mvcc_and_vacuum.md)
+
+---
+
+### Q23: PostgreSQL隔離級別如何處理快照與衝突
+<!-- Concept ID: `concept.database.postgresql.transaction-isolation`; Learning Objective IDs: `concept.database.postgresql.transaction-isolation/LO-1`, `concept.database.postgresql.transaction-isolation/LO-2`, `concept.database.postgresql.transaction-isolation/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 PostgreSQL Read Committed、Repeatable Read、Serializable 的 snapshot、衝突與 retry 語意。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用並發時間線說明 snapshot 何時固定及 serialization failure。
+- 依一致性需求、重試成本、長交易和吞吐量選擇隔離級別。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/transaction_isolation_levels.md)
+
+---
+
+### Q24: PostgreSQL複製模式如何影響高可用
+<!-- Concept ID: `concept.database.postgresql.replication-modes`; Learning Objective IDs: `concept.database.postgresql.replication-modes/LO-1`, `concept.database.postgresql.replication-modes/LO-2`, `concept.database.postgresql.replication-modes/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請比較 streaming replication 與 logical replication 的資料邊界、延遲、升級和故障復原用途。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 WAL LSN、apply lag、replication slot、archive 和 publisher／subscriber。
+- 以 HA、CDC、跨版本升級、選擇性同步與 RPO/RTO 做選擇。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/replication_streaming_vs_logical.md)
+
+---
+
+### Q25: PostgreSQL分區如何改善查詢與維運
+<!-- Concept ID: `concept.database.postgresql.partitioning`; Learning Objective IDs: `concept.database.postgresql.partitioning/LO-1`, `concept.database.postgresql.partitioning/LO-2`, `concept.database.postgresql.partitioning/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 partition key、partition pruning、索引、資料保留和分區 DDL 的取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 依時間／租戶／範圍查詢選 key，確認 planner 實際有 pruning。
+- 評估分區數量、唯一鍵、外鍵、lock、detach／archive 和未來分區預建。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/table_partitioning.md)
+
+---
+
+### Q26: PostgreSQL VACUUM與ANALYZE如何取捨
+<!-- Concept ID: `concept.database.postgresql.vacuum-analyze`; Learning Objective IDs: `concept.database.postgresql.vacuum-analyze/LO-1`, `concept.database.postgresql.vacuum-analyze/LO-2`, `concept.database.postgresql.vacuum-analyze/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請比較 VACUUM、VACUUM FULL、ANALYZE 與 autovacuum 的使用時機。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 dead tuple、bloat、統計新鮮度、lock 與 maintenance window 做判斷。
+- 說明何時應先處理長交易、調整 autovacuum 或採用線上重整。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/vacuum_deep_dive.md)
+
+---
+
+### Q27: PostgreSQL WAL如何支援復原與複製
+<!-- Concept ID: `concept.database.postgresql.wal`; Learning Objective IDs: `concept.database.postgresql.wal/LO-1`, `concept.database.postgresql.wal/LO-2`, `concept.database.postgresql.wal/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請解釋 WAL 在 durability、crash recovery、replication、archive 與 PITR 中的作用。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 LSN、checkpoint、archive failure、replication slot 和 restore drill 建立證據鏈。
+- 以 RPO、儲存成本、恢復時間和 replica lag 做取捨。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/wal_write_ahead_log.md)
+
+---
+
+### Q28: PostgreSQL CTE與遞迴查詢如何控制成本
+<!-- Concept ID: `concept.database.postgresql.cte-recursion`; Learning Objective IDs: `concept.database.postgresql.cte-recursion/LO-1`, `concept.database.postgresql.cte-recursion/LO-2`, `concept.database.postgresql.cte-recursion/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請說明 CTE、recursive CTE 的執行流程、物化／內聯、終止條件與成本控制。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 anchor、recursive member、cycle guard、深度上限和資料量控制風險。
+- 以 EXPLAIN、sort／work memory、索引和 timeout 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/cte_and_recursive_cte.md)
+
+---
+
+### Q29: PostgreSQL特殊資料類型如何影響索引
+<!-- Concept ID: `concept.database.postgresql.data-types`; Learning Objective IDs: `concept.database.postgresql.data-types/LO-1`, `concept.database.postgresql.data-types/LO-2`, `concept.database.postgresql.data-types/LO-3` -->
+
+**難度**: ⭐⭐⭐ (3) | **重要性**: 🟡 重要
+
+請比較 JSONB、ARRAY、range、enum、timestamp 等類型的查詢、約束、索引和演進取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 先由查詢與資料約束選型，再確認 operator class 和 migration 策略。
+- 評估 planner 統計、儲存大小、寫入更新與索引維護成本。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/special_data_types.md)
+
+---
+
+### Q30: PostgreSQL與MySQL如何依需求選型
+<!-- Concept ID: `concept.database.postgresql.engine-comparison`; Learning Objective IDs: `concept.database.postgresql.engine-comparison/LO-1`, `concept.database.postgresql.engine-comparison/LO-2`, `concept.database.postgresql.engine-comparison/LO-3` -->
+
+**難度**: ⭐⭐⭐ (3) | **重要性**: 🟡 重要
+
+請依資料模型、查詢、交易、擴展性、團隊能力與維運條件比較 PostgreSQL 與 MySQL。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 不要只列功能；要連結 workload、RPO/RTO、複製、備份、索引和 migration。
+- 指出選型後的 lock、pool、監控、故障演練與人才成本。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/SQL/PostgreSQL/postgresql_vs_mysql.md)
+
+---
+
+### Q31: MongoDB聚合管線如何控制查詢成本
+<!-- Concept ID: `concept.database.mongodb.aggregation`; Learning Objective IDs: `concept.database.mongodb.aggregation/LO-1`, `concept.database.mongodb.aggregation/LO-2`, `concept.database.mongodb.aggregation/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 MongoDB aggregation stages、索引、pipeline order、memory spill 與報表取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 盡早 match／project，確認 explain、docs examined、索引和 lookup 成本。
+- 判斷線上聚合、預計算、離線報表和限時失敗的邊界。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_aggregation_framework.md)
+
+---
+
+### Q32: MongoDB資料建模如何取捨嵌入與引用
+<!-- Concept ID: `concept.database.mongodb.data-modeling`; Learning Objective IDs: `concept.database.mongodb.data-modeling/LO-1`, `concept.database.mongodb.data-modeling/LO-2`, `concept.database.mongodb.data-modeling/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請依讀寫模式、資料增長、原子性與查詢數量比較 embedding 和 referencing。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 評估文件大小、fan-out、更新頻率、獨立存取與索引。
+- 若需要跨文件一致性，說明 transaction、冪等和資料遷移成本。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_data_modeling.md)
+
+---
+
+### Q33: MongoDB索引如何影響查詢計畫
+<!-- Concept ID: `concept.database.mongodb.indexing`; Learning Objective IDs: `concept.database.mongodb.indexing/LO-1`, `concept.database.mongodb.indexing/LO-2`, `concept.database.mongodb.indexing/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 MongoDB 單欄、複合、多鍵、TTL、text、地理和 unique index。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 equality、sort、range 和 ESR 判斷複合欄位順序。
+- 以 winning plan、keys examined、docs examined、寫入成本和 index footprint 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_indexing.md)
+
+---
+
+### Q34: MongoDB Replica Set如何設計RPO與故障轉移
+<!-- Concept ID: `concept.database.mongodb.replication`; Learning Objective IDs: `concept.database.mongodb.replication/LO-1`, `concept.database.mongodb.replication/LO-2`, `concept.database.mongodb.replication/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請說明 replica set、oplog、election、read concern 與 write concern 的關係。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 majority acknowledgement、replication lag、oplog window 和 failover time。
+- 把 write concern、backup、restore、read-after-write 和 RPO/RTO 一起設計。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_replication.md)
+
+---
+
+### Q35: MongoDB分片鍵如何影響熱點與查詢
+<!-- Concept ID: `concept.database.mongodb.sharding`; Learning Objective IDs: `concept.database.mongodb.sharding/LO-1`, `concept.database.mongodb.sharding/LO-2`, `concept.database.mongodb.sharding/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請設計 shard key，並說明基數、單調性、查詢路由、hot chunk、balancer 與 resharding。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以主要查詢和寫入分布驗證 targeted query、scatter-gather 和 chunk 平衡。
+- 評估擴容、故障轉移、資料遷移、jumbo chunk 和 rollback。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_sharding.md)
+
+---
+
+### Q36: MongoDB多文件交易如何控制一致性與成本
+<!-- Concept ID: `concept.database.mongodb.transactions`; Learning Objective IDs: `concept.database.mongodb.transactions/LO-1`, `concept.database.mongodb.transactions/LO-2`, `concept.database.mongodb.transactions/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請比較單文件原子性與多文件 transaction，並說明 retry、read/write concern 與跨 shard 成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 釐清 transient error、commit retry、transaction lifetime、鎖／衝突和冪等。
+- 先考慮資料模型是否能把一致性邊界放回單一文件。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_transactions.md)
+
+---
+
+### Q37: MongoDB與SQL如何依需求選型
+<!-- Concept ID: `concept.database.mongodb.sql-comparison`; Learning Objective IDs: `concept.database.mongodb.sql-comparison/LO-1`, `concept.database.mongodb.sql-comparison/LO-2`, `concept.database.mongodb.sql-comparison/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐ (4) | **重要性**: 🔴 必考
+
+請依 schema、join、交易、查詢、資料演進和水平擴展比較 MongoDB 與 SQL。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 將選型連到 source of truth、索引、backup、replication、sharding 和團隊運維能力。
+- 明確說明哪些一致性要求不能只靠應用習慣保證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_vs_sql.md)
+
+---
+
+### Q38: MongoDB WiredTiger如何影響持久性與容量
+<!-- Concept ID: `concept.database.mongodb.wiredtiger`; Learning Objective IDs: `concept.database.mongodb.wiredtiger/LO-1`, `concept.database.mongodb.wiredtiger/LO-2`, `concept.database.mongodb.wiredtiger/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 WiredTiger cache、journal、checkpoint、eviction、MVCC 和文件大小的取捨。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 cache pressure、dirty bytes、eviction、I/O、journal 和 index footprint。
+- 連結 read concern、durability、資料恢復和記憶體容量。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/MongoDB/mongodb_wiredtiger.md)
+
+---
+
+### Q39: Redis RDB與AOF如何取捨RPO與效能
+<!-- Concept ID: `concept.database.redis.persistence`; Learning Objective IDs: `concept.database.redis.persistence/LO-1`, `concept.database.redis.persistence/LO-2`, `concept.database.redis.persistence/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
+
+請比較 Redis RDB 與 AOF 的資料遺失窗口、恢復時間、磁碟和延遲成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以 snapshot、fsync policy、rewrite、fork、檔案大小與 restore time 估算 RPO/RTO。
+- 先分清 cache、session、queue、Stream 和 source-of-truth 的可靠性需求。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_persistence_rdb_vs_aof.md)
+
+---
+
+### Q40: Redis Sentinel與Cluster如何選擇
+<!-- Concept ID: `concept.database.redis.sentinel-cluster`; Learning Objective IDs: `concept.database.redis.sentinel-cluster/LO-1`, `concept.database.redis.sentinel-cluster/LO-2`, `concept.database.redis.sentinel-cluster/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
+
+請比較 Sentinel 的 HA 與 Cluster 的分片／容量模型，並提出 client routing 和 failover 設計。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 觀察 quorum、failover time、slot、replica、重平衡和 hot key。
+- 以資料量、寫入分布、RPO、client 能力和運維複雜度選擇。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_sentinel_vs_cluster.md)
+
+---
+
+### Q41: Redis分散式鎖如何避免誤釋放
+<!-- Concept ID: `concept.database.redis.distributed-lock`; Learning Objective IDs: `concept.database.redis.distributed-lock/LO-1`, `concept.database.redis.distributed-lock/LO-2`, `concept.database.redis.distributed-lock/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
+
+請設計含 owner token、TTL、續租、原子釋放和 fencing 的 Redis lock。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 分析 crash、GC pause、clock skew、網路分割和 stale owner。
+- 說明何時 Redis lock 不足，應改用資料庫 constraint 或共識服務。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/design_redis_distributed_lock.md)
+
+---
+
+### Q42: Redis熱點Key與大Key如何止血
+<!-- Concept ID: `concept.database.redis.hotkey-bigkey`; Learning Objective IDs: `concept.database.redis.hotkey-bigkey/LO-1`, `concept.database.redis.hotkey-bigkey/LO-2`, `concept.database.redis.hotkey-bigkey/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請區分 hot key 與 big key 的症狀、量測方式和拆分／遷移策略。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 command latency、MEMORY USAGE、sampling、blocked clients 和記憶體指標定位。
+- 評估 key sharding、local cache、拆集合、SCAN、限速和漸進遷移。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_hotkey_bigkey.md)
+
+---
+
+### Q43: Redis淘汰策略如何對應資料風險
+<!-- Concept ID: `concept.database.redis.eviction`; Learning Objective IDs: `concept.database.redis.eviction/LO-1`, `concept.database.redis.eviction/LO-2`, `concept.database.redis.eviction/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐ (8) | **重要性**: 🟡 重要
+
+請比較 noeviction、allkeys、volatile 與 LRU/LFU/random policy 的資料語意。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 依 cache、session、queue、lock 和 durable data 分配不同風險。
+- 用 hit rate、eviction、rejected writes、fragmentation 和 memory headroom 驗證。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_memory_eviction_policies.md)
+
+---
+
+### Q44: Redis Pipeline與Lua何時使用
+<!-- Concept ID: `concept.database.redis.pipeline-lua`; Learning Objective IDs: `concept.database.redis.pipeline-lua/LO-1`, `concept.database.redis.pipeline-lua/LO-2`, `concept.database.redis.pipeline-lua/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 pipeline、transaction、WATCH 與 Lua script 的 RTT、原子性、錯誤和阻塞成本。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Pipeline 主要減少 RTT；需要條件讀改寫時才考慮 transaction 或 Lua。
+- 量測批次大小、script duration、command latency、CPU 和尾延遲。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_pipeline.md)
+
+---
+
+### Q45: Redis單執行緒為何仍會出現尾延遲
+<!-- Concept ID: `concept.database.redis.single-thread`; Learning Objective IDs: `concept.database.redis.single-thread/LO-1`, `concept.database.redis.single-thread/LO-2`, `concept.database.redis.single-thread/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 event loop、I/O multiplexing、O(N) command、Lua 和 big key 如何影響 Redis latency。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 slow command、blocked clients、CPU、network 和 command latency 找根因。
+- 說明背景 I/O thread 不等於所有命令都可平行執行。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_single_thread_model.md)
+
+---
+
+### Q46: Redis Stream如何處理pending與容量
+<!-- Concept ID: `concept.database.redis.stream`; Learning Objective IDs: `concept.database.redis.stream/LO-1`, `concept.database.redis.stream/LO-2`, `concept.database.redis.stream/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
+
+請說明 consumer group、PEL、ack、reclaim、重試、冪等和 Stream trim。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 用 consumer lag、pending 數、idle time、backlog、memory 和保留政策做容量管理。
+- 處理 consumer crash、毒性訊息、重複投遞和 graceful shutdown。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/redis_stream.md)
+
+---
+
+### Q47: Redis資料結構如何對應使用情境
+<!-- Concept ID: `concept.database.redis.data-structures`; Learning Objective IDs: `concept.database.redis.data-structures/LO-1`, `concept.database.redis.data-structures/LO-2`, `concept.database.redis.data-structures/LO-3` -->
+
+**難度**: ⭐⭐ (2) | **重要性**: 🟡 重要
+
+請依存取模式比較 string、hash、list、set、sorted set 和 stream。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 說明主要操作的時間複雜度、原子性、記憶體形狀和適用 workload。
+- 把資料結構選擇連到 hot key、big key、eviction、persistence 和容量。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/NoSQL/Redis/what_is_redis_and_its_data_structures.md)
+
+---
+
+### Q48: 資料庫備份與還原如何證明RPO與RTO
+<!-- Concept ID: `concept.database.backup-restore.rpo-rto`; Learning Objective IDs: `concept.database.backup-restore.rpo-rto/LO-1`, `concept.database.backup-restore.rpo-rto/LO-2`, `concept.database.backup-restore.rpo-rto/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🟡 重要
+
+請比較 full、incremental、snapshot、WAL/binlog 與 PITR，並設計 restore drill。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 以 RPO、RTO、checksum、資料筆數、備份 freshness 和跨區域保存驗證。
+- 不能只確認備份檔案存在；要演練故障、還原、replay、切換和 rollback。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/database_backup_and_restore.md)
+
+---
+
+### Q49: 資料庫連線池如何做容量取捨
+<!-- Concept ID: `concept.database.connection-pool.capacity`; Learning Objective IDs: `concept.database.connection-pool.capacity/LO-1`, `concept.database.connection-pool.capacity/LO-2`, `concept.database.connection-pool.capacity/LO-3` -->
+
+**難度**: ⭐⭐⭐⭐⭐ (5) | **重要性**: 🔴 必考
+
+請說明 connection pool 生命週期、pool exhaustion、leak，以及如何按 pod／worker／DB budget 設定上限。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 量測 max、in-use、idle、wait、timeout、query／transaction 持有時間和 DB max connections。
+- 將所有 pod、worker、migration、replica client 和管理連線加總，保留安全餘量後再壓測。
+
+</details>
+
+📖 [查看完整答案](../02_Backend_Development/Databases/database_connection_pool.md)
+
+---
+
 ## 📊 學習進度檢核
 
 完成以上題目後，請自我評估：

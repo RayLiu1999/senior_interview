@@ -5,6 +5,14 @@
 - **標籤**: `MySQL`, `SQL`, `DDL`, `DML`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.ddl-lifecycle`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 DELETE、TRUNCATE 與 DROP 的資料、Schema、交易與鎖語意。
+  - `LO-2`: 能依 rollback、備份與停機限制選擇清理方式。
+  - `LO-3`: 能設計大批量刪除的分批、觀測與回復方案。
+- **Quick Quiz**: [Q19](../../../../QUIZ/02_Databases.md#q19-deletetruncatedrop如何選擇)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能指出不可逆操作與回復邊界，並在事故 track 中達到 3/4。
 
 在 SQL 中，`DELETE`、`TRUNCATE` 和 `DROP` 都可以用來刪除資料或資料庫物件，但它們在功能、效能和運作機制上有著本質的區別。請詳細闡述這三個指令的不同之處。
 

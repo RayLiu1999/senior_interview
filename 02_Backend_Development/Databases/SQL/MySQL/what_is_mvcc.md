@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `InnoDB`, `MVCC`, `Transaction`, `Concurrency`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.mvcc`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 undo version、Read View 與一致性讀的關係。
+  - `LO-2`: 能區分 snapshot read、current read、鎖與版本可見性。
+  - `LO-3`: 能從長交易、undo 增長與 purge lag 推導 MVCC 成本。
+- **Prerequisites**: `concept.database.transaction-isolation`
+- **Quick Quiz**: [Q10](../../../../QUIZ/02_Databases.md#q10-mysql-mvcc如何支援一致性讀)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能把 snapshot、undo 與長交易指標連成因果鏈，並在事故 track 中達到 3/4。
 
 MVCC (Multi-Version Concurrency Control, 多版本併發控制) 是現代資料庫中用於提升併發效能的關鍵技術，尤其在 InnoDB 儲存引擎中扮演著核心角色。請詳細解釋 MVCC 是什麼，它的主要目的是什麼，以及它在 InnoDB 中是如何通過 Undo Log 和 Read View 來實現的。
 

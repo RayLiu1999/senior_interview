@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `Data Types`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.data-types`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 JSONB、ARRAY、range、enum 與 timestamp 類型的語意。
+  - `LO-2`: 能依查詢、約束、索引與資料演進需求選擇類型。
+  - `LO-3`: 能指出型別選擇對 planner、儲存與 migration 風險的影響。
+- **Quick Quiz**: [Q29](../../../../QUIZ/02_Databases.md#q29-postgresql特殊資料類型如何影響索引)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能將資料型別、約束與查詢計畫連結，並在事故 track 中達到 3/4。
 
 PostgreSQL 以其豐富的資料類型而聞名，這也是它相較於其他關聯式資料庫（如 MySQL）的一大優勢。請列舉並解釋幾個 PostgreSQL 特有的、強大的資料類型，並說明它們的應用場景。
 

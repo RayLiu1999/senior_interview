@@ -5,6 +5,14 @@
 - **標籤**: `MySQL`, `SQL`, `Database Design`, `Constraints`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.keys`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 primary key 與 unique key 的唯一性、NULL、聚簇與外鍵語意。
+  - `LO-2`: 能依資料模型與查詢模式選擇穩定的主鍵。
+  - `LO-3`: 能辨識鍵設計對索引大小、寫入分佈與分片的影響。
+- **Quick Quiz**: [Q20](../../../../QUIZ/02_Databases.md#q20-primary-key與unique-key如何選擇)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能將鍵選擇連到一致性與查詢計畫，並在事故 track 中達到 3/4。
 
 在資料庫表設計中，主鍵 (Primary Key) 和唯一鍵 (Unique Key) 都用於保證欄位中資料的唯一性。請詳細說明它們之間的核心區別、各自的用途以及何時該選擇使用哪一個。
 

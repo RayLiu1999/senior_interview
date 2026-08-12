@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Distributed Lock`, `System Design`, `Concurrency`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.distributed-lock`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 token ownership、TTL、原子取得與安全釋放的必要性。
+  - `LO-2`: 能分析 crash、延遲、clock skew、續租與 fencing token 風險。
+  - `LO-3`: 能依一致性要求判斷 Redis lock、資料庫 constraint 或共識服務的取捨。
+- **Quick Quiz**: [Q41](../../../../QUIZ/02_Databases.md#q41-redis分散式鎖如何避免誤釋放)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 failure timeline 與 fencing 證明鎖的安全邊界，並在事故 track 中達到 3/4。
 
 在分散式系統中，為了保證共享資源在並發訪問時的一致性，需要使用分散式鎖。請闡述如何使用 Redis 來實現一個可靠的分散式鎖，並討論在實現過程中需要考慮的關鍵問題，如原子性、死鎖、以及鎖的可重入性。
 

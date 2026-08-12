@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `MySQL`, `Database`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.engine-comparison`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 PostgreSQL 與 MySQL 在 MVCC、索引、交易與擴充性上的差異。
+  - `LO-2`: 能以查詢、運維、團隊能力與相容性條件做選型。
+  - `LO-3`: 能說明選型如何影響備份、複製、連線池與故障復原。
+- **Quick Quiz**: [Q30](../../../../QUIZ/02_Databases.md#q30-postgresql與mysql如何依需求選型)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能以明確 workload 和 RPO/RTO 證據做引擎選型，並在事故 track 中達到 3/4。
 
 PostgreSQL 和 MySQL 都是非常流行的開源關聯式資料庫管理系統 (RDBMS)。請簡要介紹 PostgreSQL 是什麼，並重點闡述它相較於 MySQL 所具備的一些獨特特性和主要優勢。
 

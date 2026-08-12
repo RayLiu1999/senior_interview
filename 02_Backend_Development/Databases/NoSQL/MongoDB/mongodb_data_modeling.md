@@ -5,6 +5,14 @@
 - **標籤**: `MongoDB`, `Data Modeling`, `Schema Design`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.data-modeling`
+- **Learning Objectives**:
+  - `LO-1`: 能依讀寫模式、資料增長與一致性邊界選擇 embedding 或 referencing。
+  - `LO-2`: 能評估文件大小、fan-out、更新原子性與查詢數量。
+  - `LO-3`: 能設計資料遷移、索引與跨文件交易的回復方案。
+- **Quick Quiz**: [Q32](../../../../QUIZ/02_Databases.md#q32-mongodb資料建模如何取捨嵌入與引用)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能把資料模型連到原子性、索引與容量證據，並在事故 track 中達到 3/4。
 
 在 MongoDB 中進行資料建模時，有兩種主要的處理關聯資料的方式：嵌入 (Embedding) 和引用 (Referencing)。請解釋這兩種方式的區別，並討論在什麼情況下應該選擇使用哪一種，它們各自的優缺點是什麼？
 

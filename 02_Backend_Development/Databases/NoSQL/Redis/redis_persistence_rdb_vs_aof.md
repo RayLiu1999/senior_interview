@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Persistence`, `RDB`, `AOF`, `System Design`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.persistence`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 RDB snapshot 與 AOF append-only 的 durability、恢復與成本。
+  - `LO-2`: 能用 fsync policy、rewrite、檔案大小與 restore time 估算 RPO/RTO。
+  - `LO-3`: 能依 cache、session、queue 與 source-of-truth 角色選擇持久化方案。
+- **Quick Quiz**: [Q39](../../../../QUIZ/02_Databases.md#q39-redis-rdb與aof如何取捨rpo與效能)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 RPO/RTO 和寫入延遲證明 Redis durability 選擇，並在事故 track 中達到 3/4。
 
 Redis 提供了將記憶體資料存入硬碟的持久化功能。請詳細解釋 RDB (Redis Database) 和 AOF (Append-Only File) 這兩種持久化方式的運作原理，並深入比較它們各自的優缺點以及適用的場景。
 

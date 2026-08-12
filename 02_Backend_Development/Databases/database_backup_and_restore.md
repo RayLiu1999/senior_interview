@@ -5,6 +5,15 @@
 - **標籤**: `Database`, `Backup`, `Disaster Recovery`, `DevOps`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.backup-restore.rpo-rto`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 full、incremental、snapshot、WAL/binlog 與 PITR 的恢復邊界。
+  - `LO-2`: 能依 RPO、RTO、資料一致性與跨區域風險設計備份策略。
+  - `LO-3`: 能以定期 restore drill、checksum、lag 與 runbook 證明備份可用。
+- **Prerequisites**: `concept.database.mysql.redo-undo-binlog`, `concept.database.postgresql.wal`
+- **Quick Quiz**: [Q48](../../QUIZ/02_Databases.md#q48-資料庫備份與還原如何證明rpo與rto)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能以 restore drill 和 RPO/RTO 證據驗證備份，不以「檔案存在」視為完成，且在事故 track 中達到 3/4。
 
 如何制定可靠的資料庫備份策略？什麼是 RPO 和 RTO？如何實現時間點復原 (PITR)？
 

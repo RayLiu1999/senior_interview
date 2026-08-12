@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `Replication`, `High Availability`, `Scalability`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.replication`
+- **Learning Objectives**:
+  - `LO-1`: 能比較非同步、半同步與同步複製的確認點與資料遺失風險。
+  - `LO-2`: 能用 binlog position、lag、relay log 與 read-after-write 證據判斷健康度。
+  - `LO-3`: 能設計 failover、重建 replica、RPO/RTO 與回滾方案。
+- **Prerequisites**: `concept.database.mysql.redo-undo-binlog`
+- **Quick Quiz**: [Q16](../../../../QUIZ/02_Databases.md#q16-mysql複製模式如何影響rpo)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能用複製與故障轉移證據作出 RPO/RTO 決策，並在事故 track 中達到 3/4。
 
 MySQL 的主從複製是構建高可用、可擴展資料庫架構的基礎。請詳細解釋主從複製的工作原理，包括其涉及的核心執行緒和日誌檔案，並說明其常見的應用場景。
 

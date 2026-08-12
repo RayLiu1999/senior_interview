@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `SQL`, `CTE`, `Recursion`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.cte-recursion`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 CTE 的可讀性、物化與查詢計畫成本。
+  - `LO-2`: 能用 anchor 與 recursive member 建模階層資料並設定終止條件。
+  - `LO-3`: 能以 EXPLAIN、深度上限與 cycle guard 控制遞迴查詢風險。
+- **Quick Quiz**: [Q28](../../../../QUIZ/02_Databases.md#q28-postgresql-cte與遞迴查詢如何控制成本)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能以查詢計畫和資料量證明 CTE／遞迴的成本邊界，並在事故 track 中達到 3/4。
 
 通用表達式 (Common Table Expressions, CTEs) 是現代 SQL 中一個強大的功能，它可以讓複雜的查詢變得更加清晰和易於管理。請解釋什麼是 CTE，它相比於傳統的子查詢有哪些優點，並舉例說明如何在 PostgreSQL 中使用 `WITH RECURSIVE` 來編寫一個遞迴查詢。
 

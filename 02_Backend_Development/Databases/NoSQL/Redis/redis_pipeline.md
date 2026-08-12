@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Pipeline`, `Lua`, `批次操作`, `原子性`, `效能優化`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.pipeline-lua`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 pipeline 的 RTT 優化與 transaction／Lua 的原子性。
+  - `LO-2`: 能判斷命令相依、錯誤處理與 script blocking 對吞吐量的影響。
+  - `LO-3`: 能以批次大小、p99、CPU 與網路流量驗證設計。
+- **Quick Quiz**: [Q44](../../../../QUIZ/02_Databases.md#q44-redis-pipeline與lua何時使用)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能說明原子性與容量邊界，並在事故 track 中達到 3/4。
 
 每次 Redis 命令都涉及一次**網路往返（RTT）**，在高頻率批次操作下，RTT 累積成為主要瓶頸。Redis **Pipeline** 透過批次打包命令降低 RTT 次數；**Lua 腳本**則在 Pipeline 基礎上進一步提供**原子性保證**，兩者是 Redis 效能優化的重要工具。
 

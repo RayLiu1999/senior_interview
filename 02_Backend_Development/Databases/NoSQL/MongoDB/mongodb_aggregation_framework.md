@@ -5,6 +5,14 @@
 - **標籤**: `MongoDB`, `Aggregation`, `Data Processing`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.aggregation`
+- **Learning Objectives**:
+  - `LO-1`: 能以 match、group、lookup、sort 與 project 組合聚合管線。
+  - `LO-2`: 能從 explain、pipeline order、memory spill 與索引判斷成本。
+  - `LO-3`: 能在一致性、延遲與報表吞吐量之間選擇線上或離線聚合。
+- **Quick Quiz**: [Q31](../../../../QUIZ/02_Databases.md#q31-mongodb聚合管線如何控制查詢成本)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 explain 與容量指標證明聚合管線取捨，並在事故 track 中達到 3/4。
 
 請解釋 MongoDB 的聚合框架 (Aggregation Framework) 是什麼，以及它的主要用途。請描述一個典型的聚合管線 (Aggregation Pipeline) 包含哪些常見的階段 (Stages)，並舉例說明。
 

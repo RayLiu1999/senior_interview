@@ -5,6 +5,14 @@
 - **標籤**: `MySQL`, `架構`, `連接層`, `查詢優化器`, `InnoDB`, `插件式存儲引擎`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.architecture`
+- **Learning Objectives**:
+  - `LO-1`: 能從連線、Parser、Optimizer、Storage Engine 與 Log path 重建請求流程。
+  - `LO-2`: 能辨識 Query Cache、Buffer Pool 與 redo/binlog 各自的責任邊界。
+  - `LO-3`: 能用流程與指標定位 SQL、儲存層或日誌層瓶頸。
+- **Quick Quiz**: [Q18](../../../../QUIZ/02_Databases.md#q18-mysql架構中的查詢與日誌路徑)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能畫出事故相關資料路徑並提出可驗證假設，且在事故 track 中達到 3/4。
 
 深入理解 MySQL 的分層架構是診斷效能問題、理解鎖機制和事務邏輯的基礎。MySQL 採用**插件式存儲引擎架構**，將 Server 層與存儲引擎層分離，這是 InnoDB 能夠提供強大事務支持的設計基礎。
 

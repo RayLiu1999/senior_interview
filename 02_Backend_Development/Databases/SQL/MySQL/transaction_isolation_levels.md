@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `SQL`, `Transaction`, `ACID`, `Concurrency`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.transaction-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能以 dirty、non-repeatable、phantom read 描述隔離級別的差異。
+  - `LO-2`: 能依 workload、鎖成本與一致性需求選擇隔離級別。
+  - `LO-3`: 能設計重現並發異常、timeout、deadlock 與 rollback 的測試。
+- **Prerequisites**: `concept.database.transaction-isolation`, `concept.database.mysql.mvcc`
+- **Quick Quiz**: [Q13](../../../../QUIZ/02_Databases.md#q13-mysql隔離級別如何取捨)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能用並發測試證明隔離選擇與異常控制，並在事故 track 中達到 3/4。
 
 在多使用者併發存取資料庫的環境下，為了保證資料的一致性，SQL 標準定義了四種交易隔離級別 (Transaction Isolation Levels)。請詳細解釋這四種隔離級別的含義，並說明它們分別能解決髒讀 (Dirty Read)、不可重複讀 (Non-Repeatable Read) 和幻讀 (Phantom Read) 中的哪些問題。
 

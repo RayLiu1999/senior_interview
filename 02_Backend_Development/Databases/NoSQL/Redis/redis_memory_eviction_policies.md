@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Memory Management`, `System Design`, `Performance`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.eviction`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 noeviction、allkeys、volatile 與不同淘汰演算法的語意。
+  - `LO-2`: 能依 cache、session、queue 與 durable data 的風險選擇 policy。
+  - `LO-3`: 能用 hit rate、eviction、memory fragmentation 與拒絕率驗證設定。
+- **Quick Quiz**: [Q43](../../../../QUIZ/02_Databases.md#q43-redis淘汰策略如何對應資料風險)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能把淘汰策略連到資料遺失與容量警戒線，並在事故 track 中達到 3/4。
 
 當 Redis 的記憶體使用達到 `maxmemory` 上限時，會觸發記憶體淘汰機制以釋放空間。請詳細解釋 Redis 提供了哪些主要的記憶體淘汰策略，它們各自的運作原理是什麼，以及在不同場景下應該如何選擇。
 

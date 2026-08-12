@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `Database`, `Index`, `Performance`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.indexing.plan-design`
+- **Learning Objectives**:
+  - `LO-1`: 能從查詢條件、基數與排序需求選擇索引欄位順序。
+  - `LO-2`: 能用 EXPLAIN 與實際讀取量判斷索引是否改善查詢計畫。
+  - `LO-3`: 能說明索引對寫入、儲存空間與回表成本的取捨。
+- **Prerequisites**: `concept.database.indexing.b-tree-lsm-tree`
+- **Quick Quiz**: [Q14](../../../../QUIZ/02_Databases.md#q14-mysql索引如何影響查詢計畫)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能以 EXPLAIN 證據解釋索引選擇，並在事故 track 中達到 3/4。
 
 資料庫索引是提升查詢效能的關鍵工具。請詳細解釋索引的底層原理、它所帶來的優點和缺點，並介紹幾種在 MySQL (特別是 InnoDB) 中常見的索引類型及其適用場景。
 

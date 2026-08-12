@@ -5,6 +5,15 @@
 - **標籤**: `MongoDB`, `Sharding`, `Scalability`, `System Design`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.sharding`
+- **Learning Objectives**:
+  - `LO-1`: 能依基數、單調性與查詢路由選擇 shard key。
+  - `LO-2`: 能辨識 jumbo chunk、hot shard、balancer 與跨 shard 查詢成本。
+  - `LO-3`: 能設計擴容、resharding、故障轉移與資料均衡的 rollout。
+- **Prerequisites**: `concept.database.mongodb.data-modeling`, `concept.database.mongodb.indexing`
+- **Quick Quiz**: [Q35](../../../../QUIZ/02_Databases.md#q35-mongodb分片鍵如何影響熱點與查詢)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能用 chunk、routing 與容量數據證明 shard key 取捨，並在事故 track 中達到 3/4。
 
 請解釋 MongoDB 中的分片 (Sharding) 是什麼，以及它為什麼對於大規模應用如此重要。請描述一個 MongoDB 分片叢集 (Sharded Cluster) 的主要組件，並討論選擇分片鍵 (Shard Key) 時需要考慮的因素。
 

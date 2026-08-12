@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `NoSQL`, `Data Structures`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.data-structures`
+- **Learning Objectives**:
+  - `LO-1`: 能依存取模式選擇 string、hash、list、set、sorted set 或 stream。
+  - `LO-2`: 能說明各結構的時間複雜度、原子操作與記憶體成本。
+  - `LO-3`: 能辨識資料結構選擇對 hot key、big key、淘汰與持久化的影響。
+- **Quick Quiz**: [Q47](../../../../QUIZ/02_Databases.md#q47-redis資料結構如何對應使用情境)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能從 workload 和容量限制選擇資料結構，並在事故 track 中達到 3/4。
 
 請解釋 Redis 是什麼，它的主要特點，以及它原生支援的幾種核心資料結構。
 

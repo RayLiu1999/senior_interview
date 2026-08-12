@@ -5,6 +5,14 @@
 - **標籤**: `PostgreSQL`, `MVCC`, `VACUUM`, `Concurrency`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.mvcc-vacuum`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 tuple version、dead tuple、snapshot 與 vacuum 的關係。
+  - `LO-2`: 能以 autovacuum、bloat、xmin、I/O 與 lock 指標診斷膨脹。
+  - `LO-3`: 能區分 VACUUM、ANALYZE、VACUUM FULL 與線上修復取捨。
+- **Quick Quiz**: [Q22](../../../../QUIZ/02_Databases.md#q22-postgresql-mvcc與vacuum如何維持健康)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能把長快照、dead tuple 與 planner 退化連成因果鏈，並在事故 track 中達到 3/4。
 
 多版本併發控制 (MVCC) 是 PostgreSQL 實現高併發讀寫的核心機制。請解釋 PostgreSQL 中 MVCC 的基本工作原理，並闡述 `VACUUM` 指令在這個機制中扮演了什麼不可或缺的角色。
 

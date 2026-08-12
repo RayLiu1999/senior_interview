@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `SQL`, `Performance`, `Query Optimization`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.query-plan-optimization`
+- **Learning Objectives**:
+  - `LO-1`: 能從 EXPLAIN、慢查詢與資源指標定位計畫退化的原因。
+  - `LO-2`: 能以查詢改寫、索引、批次與分頁降低讀寫成本。
+  - `LO-3`: 能用固定 workload、P95/P99 與回歸測試驗證優化結果。
+- **Prerequisites**: `concept.database.mysql.indexing.plan-design`
+- **Quick Quiz**: [Q15](../../../../QUIZ/02_Databases.md#q15-sql查詢優化如何以證據驗證)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能提出可回滾的查詢計畫修復與容量驗證，並在事故 track 中達到 3/4。
 
 SQL 查詢效能是後端系統效能的關鍵瓶頸之一。當一個查詢變得緩慢時，我們應該從哪些方面入手進行分析和優化？請列舉並解釋一些常見且有效的 SQL 查詢優化策略。
 

@@ -5,6 +5,15 @@
 - **標籤**: `PostgreSQL`, `Transaction`, `Isolation`, `ACID`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.transaction-isolation`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 PostgreSQL 各隔離級別的 snapshot、serialization failure 與 predicate 行為。
+  - `LO-2`: 能依一致性、重試成本與鎖／版本開銷選擇隔離級別。
+  - `LO-3`: 能設計可重現的衝突、serialization retry 與 timeout 測試。
+- **Prerequisites**: `concept.database.postgresql.mvcc-vacuum`
+- **Quick Quiz**: [Q23](../../../../QUIZ/02_Databases.md#q23-postgresql隔離級別如何處理快照與衝突)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能用並發測試證明隔離與 retry 設計，並在事故 track 中達到 3/4。
 
 交易隔離性是 ACID 特性中的「I」，它定義了一個交易中的修改在何種程度上對其他併發交易是可見的。SQL 標準定義了四種隔離等級。請詳細解釋這四種隔離等級，它們分別解決了哪些併發問題，並說明 PostgreSQL 是如何實現這些等級的。
 

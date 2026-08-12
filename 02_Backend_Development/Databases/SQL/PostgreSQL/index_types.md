@@ -5,6 +5,15 @@
 - **標籤**: `PostgreSQL`, `Indexing`, `B-Tree`, `Hash`, `GiST`, `GIN`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.postgresql.index-types`
+- **Learning Objectives**:
+  - `LO-1`: 能依等值、範圍、JSONB、陣列與地理查詢選擇索引類型。
+  - `LO-2`: 能使用 EXPLAIN (ANALYZE, BUFFERS) 驗證 planner 是否採用索引。
+  - `LO-3`: 能衡量索引寫入成本、大小、統計資訊與維護窗口。
+- **Prerequisites**: `concept.database.mysql.indexing.plan-design`
+- **Quick Quiz**: [Q21](../../../../QUIZ/02_Databases.md#q21-postgresql索引類型如何對應查詢)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：PostgreSQL
+- **Assessment Gate**: 能用 plan、buffer 與寫入成本證明索引選擇，並在事故 track 中達到 3/4。
 
 索引是資料庫效能最佳化的關鍵。PostgreSQL 提供了多種索引類型以適應不同的查詢需求。請詳細介紹 PostgreSQL 中最主要的幾種索引類型，並重點比較 B-Tree、Hash、GiST 和 GIN 索引各自的適用場景、優點和限制。
 

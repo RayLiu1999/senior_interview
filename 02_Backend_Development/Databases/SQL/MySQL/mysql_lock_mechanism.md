@@ -5,6 +5,15 @@
 - **標籤**: `MySQL`, `行鎖`, `表鎖`, `間隙鎖`, `死鎖`, `InnoDB`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mysql.locking`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 record、gap、next-key 與 metadata lock 的保護範圍。
+  - `LO-2`: 能從 wait-for graph、索引與 transaction 順序診斷死鎖。
+  - `LO-3`: 能用短交易、固定順序與 timeout 降低鎖競爭並保留一致性。
+- **Prerequisites**: `concept.database.transaction-isolation`, `concept.database.mysql.mvcc`
+- **Quick Quiz**: [Q12](../../../../QUIZ/02_Databases.md#q12-mysql鎖機制如何診斷死鎖)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：SQL／交易與容量
+- **Assessment Gate**: 能以 wait-for graph 解釋鎖等待與回滾策略，並在事故 track 中達到 3/4。
 
 MySQL 的鎖機制是保證並發安全的核心，也是面試必考的高頻知識點。InnoDB 的行級鎖設計精妙，理解記錄鎖、間隙鎖、Next-Key Lock 的區別，是解釋死鎖、解決鎖等待問題的前提。
 

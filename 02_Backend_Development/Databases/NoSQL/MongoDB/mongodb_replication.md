@@ -5,6 +5,14 @@
 - **標籤**: `MongoDB`, `Replication`, `High Availability`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.replication`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 replica set、oplog、election 與 write concern 的關係。
+  - `LO-2`: 能用 replication lag、oplog window 與 majority acknowledgement 評估 RPO。
+  - `LO-3`: 能設計 failover、read concern、backup 與 re-sync 流程。
+- **Quick Quiz**: [Q34](../../../../QUIZ/02_Databases.md#q34-mongodb-replica-set如何設計rpo與故障轉移)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 oplog、write concern 與 backup evidence 作出故障決策，並在事故 track 中達到 3/4。
 
 請解釋 MongoDB 的複製集 (Replica Set) 是什麼，它的主要作用是什麼？請描述一個典型的複製集架構，以及主節點 (Primary) 和從節點 (Secondary) 之間的資料同步過程。
 

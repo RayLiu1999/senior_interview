@@ -5,6 +5,15 @@
 - **標籤**: `MongoDB`, `WiredTiger`, `存儲引擎`, `MVCC`, `壓縮`, `效能`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.mongodb.wiredtiger`
+- **Learning Objectives**:
+  - `LO-1`: 能說明 WiredTiger cache、checkpoint、journal 與 MVCC 的角色。
+  - `LO-2`: 能從 cache pressure、dirty bytes、eviction、I/O 與 lock 指標定位瓶頸。
+  - `LO-3`: 能在 durability、記憶體、文件大小與查詢延遲間做容量取捨。
+- **Prerequisites**: `concept.database.mongodb.indexing`, `concept.database.mongodb.replication`
+- **Quick Quiz**: [Q38](../../../../QUIZ/02_Databases.md#q38-mongodb-wiredtiger如何影響持久性與容量)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能以 cache、journal 與 durability evidence 做容量決策，並在事故 track 中達到 3/4。
 
 WiredTiger 是 MongoDB 3.2+ 的**默認存儲引擎**，取代了早期的 MMAP 引擎。理解 WiredTiger 的核心機制（文件格式、並發控制、緩存管理、压缩策略）是排查 MongoDB 效能問題和做出正確調優決策的前提。
 

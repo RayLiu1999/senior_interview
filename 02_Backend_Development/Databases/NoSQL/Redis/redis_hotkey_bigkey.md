@@ -5,6 +5,14 @@
 - **標籤**: `Redis`, `Hot Key`, `Big Key`, `效能調優`, `Cluster`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.hotkey-bigkey`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 hot key、big key 的 CPU、網路、記憶體與 latency 症狀。
+  - `LO-2`: 能用 command latency、keyspace、MEMORY USAGE 與 sampling 找出根因。
+  - `LO-3`: 能設計分片、拆 key、local cache、SCAN 與漸進遷移方案。
+- **Quick Quiz**: [Q42](../../../../QUIZ/02_Databases.md#q42-redis熱點key與大key如何止血)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能把 hot/big key 對應到容量與尾延遲證據，並在事故 track 中達到 3/4。
 
 **Hot Key（熱點 Key）** 和 **Big Key（大 Key）** 是 Redis 線上環境最常見的兩類效能問題，在 Redis Cluster 架構下危害尤其嚴重。前者導致**單個 Slot/節點的 CPU 過載**，後者導致**記憶體不均衡、網路阻塞和操作延遲**。
 

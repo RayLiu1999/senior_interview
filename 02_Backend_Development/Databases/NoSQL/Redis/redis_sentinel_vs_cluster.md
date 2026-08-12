@@ -5,6 +5,15 @@
 - **標籤**: `Redis`, `High Availability`, `Scalability`, `System Design`
 
 ## 問題詳述
+- **Concept ID**: `concept.database.redis.sentinel-cluster`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 Sentinel 的故障轉移與 Cluster 的分片／容量模型。
+  - `LO-2`: 能以 slot、replica、quorum、failover time 與 client routing 評估架構。
+  - `LO-3`: 能設計擴容、重平衡、故障演練與資料遺失的回復策略。
+- **Prerequisites**: `concept.database.redis.persistence`
+- **Quick Quiz**: [Q40](../../../../QUIZ/02_Databases.md#q40-redis-sentinel與cluster如何選擇)
+- **Hard Assessment**: [Database Storage & Consistency Incident](../../../../QUIZ/Hard_Assessments/database_storage_consistency_incident.md) (`assessment.database.storage-consistency.incident.v1`)；Track：MongoDB／Redis
+- **Assessment Gate**: 能把 HA、sharding、RPO 與 client routing 連成設計，並在事故 track 中達到 3/4。
 
 為了實現 Redis 的高可用性和可擴展性，官方提供了兩種主流的解決方案：Redis Sentinel (哨兵) 和 Redis Cluster (叢集)。請詳細闡述這兩種方案的架構、運作原理、解決的核心問題，並深入比較它們之間的權衡取捨 (Trade-offs)。
 
