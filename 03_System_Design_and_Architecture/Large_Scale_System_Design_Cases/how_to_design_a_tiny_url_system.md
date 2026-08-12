@@ -14,6 +14,18 @@
 4. **高併發與高可用**：如何應對大量的讀取（重定向）和寫入（生成）請求？如何確保系統的可用性？
 5. **進階功能**：如何設計自訂短網址、過期時間、點擊統計等功能？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.tiny-url.redirect-availability`
+- **Learning Objectives**:
+  - `LO-1`: 能比較 hash、全域 ID、隨機碼與自訂短碼的碰撞、長度和寫入一致性。
+  - `LO-2`: 能設計重定向讀路徑、快取、過期、301／302 語意與熱門短網址的熱點保護。
+  - `LO-3`: 能處理濫用、惡意 URL、點擊統計、刪除、故障切換與儲存成本。
+- **Prerequisites**: concept.system-design.unique-id.global-ordering
+- **Quick Quiz**: [Q21](../../QUIZ/12_System_Design.md#q21-tiny-url-redirect)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 設計一個短網址系統是系統設計面試中的經典問題，它能很好地考察候選人對系統架構、資料庫選擇、快取策略和可擴展性等多方面的綜合能力。

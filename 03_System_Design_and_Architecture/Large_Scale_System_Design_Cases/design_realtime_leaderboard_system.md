@@ -8,6 +8,18 @@
 
 設計一個即時排行榜系統，支援遊戲、社交、電商等場景的即時排名。系統需要處理高頻率的分數更新，支援全球和分區排行榜，並能快速查詢任意使用者的排名。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.realtime-leaderboard.ranking-consistency`
+- **Learning Objectives**:
+  - `LO-1`: 能選擇 sorted set、分片聚合或其他排名結構，支援高頻分數更新與鄰近排名查詢。
+  - `LO-2`: 能處理時間窗、區域榜、同分排序、延遲事件與跨分片合併的語意。
+  - `LO-3`: 能用事件去重、重播、快照、故障切換與成本指標驗證排名正確性和即時性。
+- **Prerequisites**: concept.system-design.unique-id.global-ordering
+- **Quick Quiz**: [Q13](../../QUIZ/12_System_Design.md#q13-leaderboard-ranking)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 排行榜系統的特點與挑戰

@@ -14,6 +14,18 @@
 4. **離線消息**：如何處理用戶離線時的消息推送？
 5. **擴展性**：如何支撐億級用戶和百萬級併發連接？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.instant-messaging.reliable-realtime-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能設計長連線 gateway、presence、心跳、重連與跨節點訊息路由。
+  - `LO-2`: 能定義訊息持久化、順序、ACK、冪等、離線同步與群組 fanout 的責任邊界。
+  - `LO-3`: 能以連線數、送達延遲、重複率、離線 backlog 與下游背壓驗證可靠性和成本。
+- **Prerequisites**: concept.system-design.reliable-chat.pubsub-durability
+- **Quick Quiz**: [Q8](../../QUIZ/12_System_Design.md#q8-instant-messaging-reliability)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 即時通訊系統是一個對實時性、可靠性要求極高的分散式系統，需要處理長連接管理、消息路由、狀態同步等複雜問題。

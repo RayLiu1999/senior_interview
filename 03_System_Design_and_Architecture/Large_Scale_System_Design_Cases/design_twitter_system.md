@@ -8,6 +8,18 @@
 
 設計一個大規模 Twitter 類社交平台，支援推文（Tweet）、關注關係、時間線（Home/User/Lists）、互動（讚、轉推、回覆）、搜尋與趨勢。需在數億 DAU、讀多寫少下提供低延遲與高可用服務。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.twitter.timeline-hotspot`
+- **Learning Objectives**:
+  - `LO-1`: 能從 DAU、發文、Feed 讀取與儲存量推導入口、快取和資料分片容量。
+  - `LO-2`: 能設計 Home、User、List timeline 與搜尋趨勢的資料模型和一致性邊界。
+  - `LO-3`: 能處理明星熱點、跨區故障、刪除合規、反濫用與成本，並提出端到端 SLO。
+- **Prerequisites**: concept.system-design.twitter-like.hybrid-fanout
+- **Quick Quiz**: [Q18](../../QUIZ/12_System_Design.md#q18-twitter-capacity-hotspot)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 需求澄清與界定

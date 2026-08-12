@@ -8,6 +8,18 @@
 
 設計 LinkedIn 類平台，強調職業社交圖、履歷/職缺與高品質內容。功能包含連結（Connections）、動態（Feed）、訊息、公司/學校頁、技能/背書、求職/招募、搜尋與推薦。需保障隱私與專業內容品質。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.linkedin.professional-graph-search`
+- **Learning Objectives**:
+  - `LO-1`: 能建模職業社交圖、職缺與個人檔案，並把隱私權限落到索引與查詢邊界。
+  - `LO-2`: 能設計搜尋、推薦、職缺配對與 Feed 召回排序，說明索引新鮮度和品質取捨。
+  - `LO-3`: 能處理多區域、合規刪除、反濫用與內容品質，並提出可驗證的公平性和可用性指標。
+- **Prerequisites**: concept.system-design.social-platform.feed-graph-evolution, concept.system-design.search-autocomplete.index-latency
+- **Quick Quiz**: [Q9](../../QUIZ/12_System_Design.md#q9-linkedin-graph-search)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 需求澄清與界定

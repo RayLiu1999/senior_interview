@@ -14,6 +14,18 @@
 4. **自動補全**：如何在用戶輸入時實時提示可能的搜尋詞？
 5. **擴展性**：如何支撐億級文檔和百萬級 QPS？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.search-autocomplete.index-latency`
+- **Learning Objectives**:
+  - `LO-1`: 能設計倒排索引、自動補全索引、分片與增量建索引流程。
+  - `LO-2`: 能以查詢 fanout、快取、tail latency、排序與新鮮度控制搜尋體驗。
+  - `LO-3`: 能處理 reindex、索引落後、權限過濾、熱門詞熱點與成本，並提出可觀測性證據。
+- **Prerequisites**: concept.system-design.distributed-kv.sharding-consistency
+- **Quick Quiz**: [Q15](../../QUIZ/12_System_Design.md#q15-search-autocomplete-latency)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 搜尋引擎是資訊檢索領域的經典應用，涉及索引建構、查詢處理、相關性排序等核心技術。

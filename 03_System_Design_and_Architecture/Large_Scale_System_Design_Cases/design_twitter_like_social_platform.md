@@ -8,6 +8,18 @@
 
 設計一個類似 Twitter 的社交媒體平台，支援使用者發佈推文（Tweet）、關注其他使用者、查看時間線動態（Timeline Feed）等核心功能。系統需要處理數億使用者和每秒數十萬次請求。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.twitter-like.hybrid-fanout`
+- **Learning Objectives**:
+  - `LO-1`: 能依粉絲數與活躍度選擇寫擴散、讀擴散或混合 Feed 策略。
+  - `LO-2`: 能設計明星帳號、趨勢、互動計數、快取失效與 timeline 合併的熱點治理。
+  - `LO-3`: 能用刪文傳播、限流、降級、延遲和儲存成本指標驗證 Feed 的可用性。
+- **Prerequisites**: concept.system-design.social-platform.feed-graph-evolution
+- **Quick Quiz**: [Q17](../../QUIZ/12_System_Design.md#q17-twitter-hybrid-fanout)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 需求澄清與系統範圍

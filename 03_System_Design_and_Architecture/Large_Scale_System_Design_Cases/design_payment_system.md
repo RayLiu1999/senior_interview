@@ -14,6 +14,18 @@
 4. **風控**：如何防範欺詐、洗錢等風險？
 5. **合規性**：如何滿足金融監管要求？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.payment.idempotent-ledger`
+- **Learning Objectives**:
+  - `LO-1`: 能以 ledger、帳戶與支付訂單建模資金變動，保證冪等、不可竄改和可對帳。
+  - `LO-2`: 能處理 provider timeout、重複 callback、未知結果、outbox 與 reconciliation 的狀態機。
+  - `LO-3`: 能將風控、權限、審計、可用性與支付成本納入容量設計，並用不變量證明不重複扣款。
+- **Prerequisites**: concept.system-design.ticket-booking.oversell-prevention, concept.system-design.unique-id.global-ordering
+- **Quick Quiz**: [Q12](../../QUIZ/12_System_Design.md#q12-payment-idempotency)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 支付系統是對可靠性、安全性、一致性要求最高的系統之一，任何錯誤都可能造成直接的財務損失。

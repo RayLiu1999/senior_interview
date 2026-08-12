@@ -8,6 +8,18 @@
 
 很多人說 Redis 的 Pub/Sub 適合用來做聊天室，但 Pub/Sub 本身是「發後不理」的，會導致訊息丟失。如何設計一個既能利用 Pub/Sub 的即時性，又能保證訊息不丟失的**可靠**聊天系統？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.reliable-chat.pubsub-durability`
+- **Learning Objectives**:
+  - `LO-1`: 能區分 Pub/Sub 的即時通知與 durable log／資料庫的訊息保存責任。
+  - `LO-2`: 能以 cursor、ACK、重連補拉、冪等去重與聊天室序號建立可靠同步流程。
+  - `LO-3`: 能處理 consumer 失聯、重放、保留期限、群組 fanout 與成本，並定義訊息遺失不變量。
+- **Prerequisites**: concept.system-design.distributed-kv.sharding-consistency
+- **Quick Quiz**: [Q22](../../QUIZ/12_System_Design.md#q22-reliable-chat-pubsub)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 這個問題非常好，它直接觸及了系統設計中的一個核心議題：**如何組合不同的技術來揚長避短**。單純使用 Pub/Sub 確實無法建立一個可靠的聊天系統，因為它不負責持久化。一個健壯的聊天系統，必須採用**混合架構 (Hybrid Architecture)**，將 Pub/Sub 的「快」和另一個持久化系統的「穩」結合起來。

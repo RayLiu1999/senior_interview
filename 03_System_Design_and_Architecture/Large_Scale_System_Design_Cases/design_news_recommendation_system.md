@@ -14,6 +14,18 @@
 4. **多樣性**：如何避免推薦結果過於單一（資訊繭房）？
 5. **冷啟動**：如何為新用戶或新內容進行推薦？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.news-recommendation.ranking-freshness`
+- **Learning Objectives**:
+  - `LO-1`: 能設計新聞採集、去重、特徵與索引更新流程，維持內容新鮮度和可追溯性。
+  - `LO-2`: 能拆分召回、排序、探索、多樣性與冷啟動，說明線上延遲和離線訓練的取捨。
+  - `LO-3`: 能以曝光、點擊、留存、延遲、偏差與安全指標評估推薦，並設計模型或索引故障的兜底。
+- **Prerequisites**: concept.system-design.search-autocomplete.index-latency
+- **Quick Quiz**: [Q11](../../QUIZ/12_System_Design.md#q11-news-recommendation-freshness)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 新聞推薦系統結合了內容理解、用戶建模、推薦演算法、大數據處理等多個技術領域，是典型的個人化推薦應用。

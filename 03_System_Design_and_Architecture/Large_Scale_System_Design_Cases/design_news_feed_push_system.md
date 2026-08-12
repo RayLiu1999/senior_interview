@@ -8,6 +8,18 @@
 
 設計一個新聞推送系統，支援向數千萬使用者推送個性化新聞內容。系統需要根據使用者興趣進行內容推薦，支援多種推送渠道（App Push、簡訊、Email），並控制推送頻率避免打擾使用者。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.news-feed-push.personalized-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能估算大規模受眾展開、推送佇列與多渠道供應商容量，設計 admission 和頻率上限。
+  - `LO-2`: 能用去重、冪等、重試、fallback 與退避處理 App Push、簡訊和 Email 的不可靠交付。
+  - `LO-3`: 能平衡個人化、新鮮度、使用者安靜時段、隱私與供應商成本，並定義送達品質指標。
+- **Prerequisites**: concept.system-design.news-recommendation.ranking-freshness
+- **Quick Quiz**: [Q10](../../QUIZ/12_System_Design.md#q10-news-push-capacity)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 系統特點與挑戰分析

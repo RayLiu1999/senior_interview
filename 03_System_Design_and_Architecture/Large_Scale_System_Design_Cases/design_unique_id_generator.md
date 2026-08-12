@@ -14,6 +14,18 @@
 4. **可讀性**：ID 的長度和格式有何要求？
 5. **高可用**：如何避免單點故障？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.unique-id.global-ordering`
+- **Learning Objectives**:
+  - `LO-1`: 能依唯一性、趨勢有序、嚴格有序、長度與吞吐需求選擇 ID 方案。
+  - `LO-2`: 能設計 worker／時間戳／序列欄位與時鐘回撥、節點重複和耗盡時的安全行為。
+  - `LO-3`: 能提出號段、Snowflake 類服務的高可用、監控、災備與隱私成本取捨。
+- **Prerequisites**: concept.system-design.distributed-kv.sharding-consistency
+- **Quick Quiz**: [Q19](../../QUIZ/12_System_Design.md#q19-unique-id-safety)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 分散式 ID 產生器是分散式系統的基礎組件，不同的業務場景對 ID 有不同的要求，需要權衡唯一性、性能、有序性等因素。

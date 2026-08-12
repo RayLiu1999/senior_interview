@@ -14,6 +14,18 @@
 4. **路線規劃**：如何計算最優路線和預估到達時間？
 5. **高可用性**：如何應對尖峰時段的大量請求？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.ride-sharing.location-matching`
+- **Learning Objectives**:
+  - `LO-1`: 能用地理索引、位置 TTL、分區與事件流維護可用司機的近即時視圖。
+  - `LO-2`: 能設計叫車、派單、接單競爭與行程狀態機，避免重複派單或幽靈訂單。
+  - `LO-3`: 能在尖峰、定位延遲、分區與路線服務故障下調整匹配品質、延遲、價格與成本。
+- **Prerequisites**: concept.system-design.distributed-lock.correctness, concept.system-design.instant-messaging.reliable-realtime-delivery
+- **Quick Quiz**: [Q14](../../QUIZ/12_System_Design.md#q14-ride-matching-consistency)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 打車系統是一個複雜的實時系統，結合了地理位置服務、匹配演算法、實時通訊等多個技術領域。

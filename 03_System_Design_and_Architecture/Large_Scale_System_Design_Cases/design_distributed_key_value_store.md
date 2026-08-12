@@ -14,6 +14,18 @@
 4. **一致性模型**：如何在 CAP 定理下做出權衡？
 5. **故障處理**：如何檢測和恢復節點故障？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.distributed-kv.sharding-consistency`
+- **Learning Objectives**:
+  - `LO-1`: 能依 key 分布、資料量與熱點設計分片、路由、重平衡與容量邊界。
+  - `LO-2`: 能比較副本、quorum、consistency level 與 CAP 取捨，定義讀寫失敗時的語意。
+  - `LO-3`: 能用故障注入、修復進度、熱點與延遲指標驗證資料可靠性和可擴展性。
+- **Prerequisites**: concept.system-design.distributed-lock.correctness
+- **Quick Quiz**: [Q6](../../QUIZ/12_System_Design.md#q6-distributed-kv-consistency)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 分散式鍵值儲存是一個經典的分散式系統設計問題，涉及分片、副本、一致性、故障恢復等核心概念。

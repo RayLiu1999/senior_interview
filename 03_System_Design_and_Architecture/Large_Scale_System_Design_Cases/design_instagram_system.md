@@ -8,6 +8,18 @@
 
 設計 Instagram 類平台，核心在於媒體（圖片/影片）上傳與分發、以關係與興趣為主的個人化 Feed、短暫內容（Stories/Reels）、探索（Explore）。需同時滿足高併發上傳、低延遲觀看與大規模儲存。
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.instagram.media-feed-delivery`
+- **Learning Objectives**:
+  - `LO-1`: 能將媒體上傳、轉碼、物件儲存、CDN 與 metadata 事件拆成可擴展的管線。
+  - `LO-2`: 能針對 Feed、Stories、Reels 選擇 fanout、排序、TTL 與最終一致性策略。
+  - `LO-3`: 能以帶寬、轉碼佇列、快取命中、內容審核與刪除延遲指標控制成本和風險。
+- **Prerequisites**: concept.system-design.social-platform.feed-graph-evolution
+- **Quick Quiz**: [Q7](../../QUIZ/12_System_Design.md#q7-instagram-media-delivery)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 ### 1. 需求澄清與界定

@@ -12,6 +12,18 @@
 - Instagram 專題：見《[如何設計 Instagram 社交平台？](./design_instagram_system.md)》
 - LinkedIn 專題：見《[如何設計 LinkedIn 社交平台？](./design_linkedin_system.md)》
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.social-platform.feed-graph-evolution`
+- **Learning Objectives**:
+  - `LO-1`: 能抽象社交圖、Feed、互動與內容媒體的共通資料邊界與讀寫模型。
+  - `LO-2`: 能比較 fanout-on-write、fanout-on-read、快取與排序服務，說明一致性和熱點取捨。
+  - `LO-3`: 能將隱私、封鎖、刪除、審核、多區域與反濫用納入恢復和觀測設計。
+- **Prerequisites**: concept.system-design.distributed-kv.sharding-consistency
+- **Quick Quiz**: [Q16](../../QUIZ/12_System_Design.md#q16-social-feed-boundary)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解（總覽）
 
 ### 1. 共通基礎

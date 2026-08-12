@@ -14,6 +14,18 @@
 4. **播放體驗**：如何實現自適應位元率串流和秒開？
 5. **成本優化**：如何在儲存和頻寬成本之間取得平衡？
 
+### 測驗對應
+
+- **Concept ID**: `concept.system-design.video-streaming.abr-cdn-cost`
+- **Learning Objectives**:
+  - `LO-1`: 能設計分片上傳、轉碼、字幕與 metadata 事件管線，隔離重型工作和同步 API。
+  - `LO-2`: 能以 HLS／DASH、ABR、CDN、Range 與快取策略控制首幀延遲和播放穩定度。
+  - `LO-3`: 能平衡儲存、轉碼、頻寬、DRM、熱冷分層與內容刪除，並用 QoE 指標驗證。
+- **Prerequisites**: concept.system-design.instagram.media-feed-delivery
+- **Quick Quiz**: [Q20](../../QUIZ/12_System_Design.md#q20-video-streaming-cost)
+- **Hard Assessment**: [Large-Scale System Design Review](../../QUIZ/Hard_Assessments/large_scale_system_design_review.md) (`assessment.system-design.large-scale-review.v1`)
+- **Assessment Gate**: 0–4 分，至少 3 分；且容量與延遲、正確性與一致性、失敗恢復、成本與可觀測性四項各至少 2 分。
+
 ## 核心理論與詳解
 
 串流影音系統是一個複雜的分散式系統，涉及大數據處理、內容分發、實時通訊等多個技術領域。
