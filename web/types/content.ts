@@ -112,6 +112,8 @@ export interface QuizAttempt {
 export interface AssessmentAttempt {
   id: string
   assessmentId: string
+  conceptIds: string[]
+  learningObjectiveIds: string[]
   answers: Record<string, string>
   rubricScores: Record<string, number>
   totalScore: number

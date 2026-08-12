@@ -77,7 +77,15 @@ export function normalizeProgress(value: unknown): ProgressState {
   return {
     schemaVersion: 1,
     quizAttempts: Array.isArray(candidate.quizAttempts) ? candidate.quizAttempts as QuizAttempt[] : [],
-    assessmentAttempts: Array.isArray(candidate.assessmentAttempts) ? candidate.assessmentAttempts as AssessmentAttempt[] : [],
+    assessmentAttempts: Array.isArray(candidate.assessmentAttempts)
+      ? (candidate.assessmentAttempts as AssessmentAttempt[]).map((attempt) => ({
+        ...attempt,
+        conceptIds: Array.isArray(attempt.conceptIds) ? attempt.conceptIds.map(String) : [],
+        learningObjectiveIds: Array.isArray(attempt.learningObjectiveIds) ? attempt.learningObjectiveIds.map(String) : [],
+        answers: attempt.answers && typeof attempt.answers === 'object' ? attempt.answers : {},
+        rubricScores: attempt.rubricScores && typeof attempt.rubricScores === 'object' ? attempt.rubricScores : {},
+      }))
+      : [],
     completedArticleIds: Array.isArray(candidate.completedArticleIds) ? candidate.completedArticleIds.map(String) : [],
     lastViewedArticleId: candidate.lastViewedArticleId ? String(candidate.lastViewedArticleId) : null,
     updatedAt: candidate.updatedAt ? String(candidate.updatedAt) : null,
@@ -122,8 +130,8 @@ export function calculateObjectiveSummaries(state: ProgressState): ObjectiveSumm
       completedAt: attempt.completedAt,
     })),
     ...state.assessmentAttempts.map((attempt) => ({
-      conceptId: '',
-      objectiveIds: [],
+      conceptId: attempt.conceptIds[0] ?? '',
+      objectiveIds: attempt.learningObjectiveIds,
       score: attempt.maxScore ? attempt.totalScore / attempt.maxScore : 0,
       needsReview: !attempt.passed,
       completedAt: attempt.completedAt,

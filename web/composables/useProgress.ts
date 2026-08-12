@@ -1,4 +1,4 @@
-import type { ProgressState, QuizAttempt } from '~/types/content'
+import type { AssessmentAttempt, ProgressState, QuizAttempt } from '~/types/content'
 import { createAttemptId, createEmptyProgress, loadProgress, saveProgress } from '~/utils/progress'
 
 export function useProgress() {
@@ -43,6 +43,17 @@ export function useProgress() {
     })
   }
 
+  async function recordAssessmentAttempt(input: Omit<AssessmentAttempt, 'id' | 'completedAt'>) {
+    await hydrate()
+    await persist({
+      ...state.value,
+      assessmentAttempts: [
+        ...state.value.assessmentAttempts,
+        { ...input, id: createAttemptId('assessment'), completedAt: new Date().toISOString() },
+      ],
+    })
+  }
+
   function markArticleViewed(articleId: string) {
     const completedArticleIds = state.value.completedArticleIds.includes(articleId)
       ? state.value.completedArticleIds
@@ -57,6 +68,7 @@ export function useProgress() {
     hydrate,
     persist,
     recordQuizAttempt,
+    recordAssessmentAttempt,
     markArticleViewed,
   }
 }

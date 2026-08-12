@@ -29,4 +29,26 @@ describe('learning progress', () => {
     expect(summary.needsReview).toBe(false)
     expect(importProgress(JSON.stringify(state)).quizAttempts).toHaveLength(2)
   })
+
+  it('includes hard assessment results in objective summaries', () => {
+    const state = createEmptyProgress()
+    state.assessmentAttempts = [{
+      id: 'assessment-1',
+      assessmentId: 'assessment.test',
+      conceptIds: ['concept.cache.consistency'],
+      learningObjectiveIds: ['concept.cache.consistency/LO-2'],
+      answers: { 'task-1': 'answer' },
+      rubricScores: { overall: 3 },
+      totalScore: 3,
+      maxScore: 4,
+      passed: true,
+      notes: '',
+      completedAt: '2026-08-12T12:00:00Z',
+      contentHash: 'assessment-hash',
+    }]
+    const [summary] = calculateObjectiveSummaries(state)
+    expect(summary.key).toBe('concept.cache.consistency/LO-2')
+    expect(summary.latestScore).toBe(0.75)
+    expect(summary.needsReview).toBe(false)
+  })
 })
