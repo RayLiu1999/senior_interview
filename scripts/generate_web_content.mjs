@@ -125,12 +125,64 @@ function resolveContentLink(fromRelativePath, target) {
   return normalizePath(path.normalize(path.join(path.dirname(fromRelativePath), withoutAnchor)))
 }
 
+function updateFenceState(line, fenceState) {
+  const fenceMatch = line.match(/^\s*(`{3,}|~{3,})/)
+  if (!fenceMatch) return fenceState
+
+  const marker = fenceMatch[1][0]
+  if (!fenceState) return marker
+  return fenceState === marker ? null : fenceState
+}
+
+function splitAssessmentMapping(raw) {
+  const lines = raw.split('\n')
+  const offsets = []
+  let offset = 0
+  for (const line of lines) {
+    offsets.push(offset)
+    offset += line.length + 1
+  }
+
+  let fenceState = null
+  let mappingLineIndex = -1
+  let mappingLevel = 0
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index].replace(/\r$/, '')
+    const headingMatch = !fenceState && line.match(/^(#{2,3})\s+測驗對應\s*$/)
+    if (headingMatch) {
+      mappingLineIndex = index
+      mappingLevel = headingMatch[1].length
+      break
+    }
+    fenceState = updateFenceState(line, fenceState)
+  }
+
+  if (mappingLineIndex < 0) return { mappingText: raw, contentText: raw }
+
+  fenceState = null
+  let mappingEndLineIndex = lines.length
+  for (let index = mappingLineIndex + 1; index < lines.length; index += 1) {
+    const line = lines[index].replace(/\r$/, '')
+    const nextHeading = !fenceState && new RegExp(`^#{1,${mappingLevel}}\\s+`).test(line)
+    if (nextHeading) {
+      mappingEndLineIndex = index
+      break
+    }
+    fenceState = updateFenceState(line, fenceState)
+  }
+
+  const mappingStart = offsets[mappingLineIndex]
+  const mappingEnd = mappingEndLineIndex < lines.length ? offsets[mappingEndLineIndex] : raw.length
+  return {
+    mappingText: raw.slice(mappingStart, mappingEnd),
+    contentText: `${raw.slice(0, mappingStart)}${raw.slice(mappingEnd)}`,
+  }
+}
+
 function parseArticle(relativePath, raw) {
   const categoryId = relativePath.split('/')[0]
-  const mappingMatch = raw.match(/\n#{2,3}\s+測驗對應[\s\S]*$/)
-  const mappingStart = mappingMatch?.index ?? -1
-  const mappingText = mappingStart >= 0 ? raw.slice(mappingStart) : raw
-  const contentText = mappingStart >= 0 ? raw.slice(0, mappingStart) : raw
+  const { mappingText, contentText } = splitAssessmentMapping(raw)
   const title = firstMatch(raw, /^#\s+(.+)$/m, path.basename(relativePath, '.md'))
   const conceptId = firstMatch(mappingText, /Concept ID[^`\n]*`(concept\.[^`]+)`/i) || (mappingText.match(conceptPattern) ?? [])[0] || ''
   const learningObjectives = parseLearningObjectives(mappingText, conceptId)

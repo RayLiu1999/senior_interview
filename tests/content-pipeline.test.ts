@@ -20,6 +20,15 @@ describe('generated web content catalog', () => {
     expect(new Set(catalog.articles.map((article) => article.id)).size).toBe(catalog.articles.length)
   })
 
+  it('retains theory content after an in-article quiz mapping section', () => {
+    const article = catalog.articles.find((item) => item.id === '01-computer-science-fundamentals__data-structures-and-algorithms__array-and-dynamic-array')
+
+    expect(article?.contentMarkdown).toContain('## 核心理論與詳解')
+    expect(article?.contentMarkdown).toContain('### 1. 靜態陣列')
+    expect(article?.contentMarkdown).not.toContain('### 測驗對應')
+    expect(article?.contentMarkdown.length).toBeGreaterThan(1_000)
+  })
+
   it('connects nearly every quiz to an article and preserves explicit pending items', () => {
     expect(catalog.quizzes.filter((quiz) => quiz.articleId === null)).toHaveLength(2)
     expect(catalog.quizzes.filter((quiz) => quiz.type !== 'reflection')).toHaveLength(3)
