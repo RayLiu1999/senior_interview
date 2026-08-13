@@ -6,4 +6,6 @@ test('renders theory content for the array article', async ({ page }) => {
   await expect(page.locator('article h1')).toHaveText('陣列與動態陣列')
   await expect(page.getByRole('heading', { name: '核心理論與詳解' })).toBeVisible()
   await expect(page.getByRole('heading', { name: /1\. 靜態陣列/ })).toBeVisible()
+  await expect(page.locator('.markdown-content pre.hljs').first()).toBeVisible()
+  await expect(page.locator('.markdown-content pre.hljs code span').first()).toBeVisible()
 })

@@ -127,6 +127,17 @@ button { cursor: pointer; }
 .markdown-content code { padding: 2px 5px; border-radius: 4px; background: #f0f1f5; color: #71478d; font-size: .88em; }
 .markdown-content pre { overflow-x: auto; padding: 16px; border-radius: 10px; background: #172039; color: #e8ecff; line-height: 1.5; }
 .markdown-content pre code { padding: 0; background: transparent; color: inherit; }
+.markdown-content pre.hljs .hljs-comment, .markdown-content pre.hljs .hljs-quote { color: #8292b2; font-style: italic; }
+.markdown-content pre.hljs .hljs-keyword, .markdown-content pre.hljs .hljs-selector-tag, .markdown-content pre.hljs .hljs-subst { color: #ff79c6; }
+.markdown-content pre.hljs .hljs-number, .markdown-content pre.hljs .hljs-literal, .markdown-content pre.hljs .hljs-variable, .markdown-content pre.hljs .hljs-template-variable { color: #bd93f9; }
+.markdown-content pre.hljs .hljs-string, .markdown-content pre.hljs .hljs-doctag, .markdown-content pre.hljs .hljs-regexp { color: #f1fa8c; }
+.markdown-content pre.hljs .hljs-title, .markdown-content pre.hljs .hljs-section, .markdown-content pre.hljs .hljs-selector-id, .markdown-content pre.hljs .hljs-type { color: #8be9fd; }
+.markdown-content pre.hljs .hljs-attribute, .markdown-content pre.hljs .hljs-name, .markdown-content pre.hljs .hljs-property, .markdown-content pre.hljs .hljs-symbol, .markdown-content pre.hljs .hljs-bullet, .markdown-content pre.hljs .hljs-addition { color: #50fa7b; }
+.markdown-content pre.hljs .hljs-built_in, .markdown-content pre.hljs .hljs-builtin-name { color: #8be9fd; }
+.markdown-content pre.hljs .hljs-meta { color: #ffb86c; }
+.markdown-content pre.hljs .hljs-deletion { color: #ff5555; }
+.markdown-content pre.hljs .hljs-emphasis { font-style: italic; }
+.markdown-content pre.hljs .hljs-strong { font-weight: 800; }
 .markdown-content table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 14px; }
 .markdown-content th, .markdown-content td { min-width: 120px; padding: 9px 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 .markdown-content th { background: var(--surface-soft); color: var(--ink); }
