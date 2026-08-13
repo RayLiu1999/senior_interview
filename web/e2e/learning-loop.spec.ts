@@ -61,3 +61,25 @@ test('article to Hard Assessment result and weak-objective dashboard', async ({ 
   await expect(page.getByRole('heading', { name: '優先處理的弱點' })).toBeVisible()
   await expect(page.locator('.weakness-card').first()).toBeVisible()
 })
+
+test('restores catalog filters after returning from an article', async ({ page }) => {
+  await page.goto('/catalog')
+  await expect(page.getByRole('heading', { name: '瀏覽全部主題' })).toBeVisible()
+
+  await page.getByLabel('分類').selectOption('01_Computer_Science_Fundamentals')
+  await page.getByLabel('最低難度').selectOption('7')
+  await expect.poll(async () => new URL(page.url()).searchParams.get('category'))
+    .toBe('01_Computer_Science_Fundamentals')
+  await expect.poll(async () => new URL(page.url()).searchParams.get('difficulty'))
+    .toBe('7')
+
+  const articleLink = page.locator('.article-card h3 a').first()
+  await expect(articleLink).toBeVisible()
+  await articleLink.click()
+  await expect(page).toHaveURL(/\/articles\//)
+
+  await page.goBack()
+  await expect(page).toHaveURL(/\/catalog\?/)
+  await expect(page.getByLabel('分類')).toHaveValue('01_Computer_Science_Fundamentals')
+  await expect(page.getByLabel('最低難度')).toHaveValue('7')
+})
