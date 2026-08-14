@@ -336,6 +336,39 @@ function parseAssessment(relativePath, raw) {
   }
 }
 
+function toArticleSummary(article) {
+  const { contentMarkdown, ...summary } = article
+  return summary
+}
+
+function toQuizSummary(quiz) {
+  const {
+    prompt,
+    answerMarkdown,
+    options,
+    correctOptionIds,
+    explanationMarkdown,
+    ...summary
+  } = quiz
+  return summary
+}
+
+function toAssessmentSummary(assessment) {
+  const {
+    objectiveMarkdown,
+    scenarioMarkdown,
+    taskMarkdown,
+    evidenceMarkdown,
+    rubricMarkdown,
+    referenceMarkdown,
+    commonMistakesMarkdown,
+    followUpMarkdown,
+    rubricScores,
+    ...summary
+  } = assessment
+  return summary
+}
+
 async function loadOverrides() {
   const filePath = path.join(webDir, 'content', 'quiz-overrides.json')
   if (!existsSync(filePath)) return {}
@@ -401,12 +434,15 @@ async function main() {
     description: categoryDescriptions[id],
     articleCount: articles.filter((article) => article.categoryId === id).length,
   }))
+  const articleSummaries = articles.map(toArticleSummary)
+  const quizSummaries = quizzes.map(toQuizSummary)
+  const assessmentSummaries = assessments.map(toAssessmentSummary)
   const catalogBase = {
     schemaVersion: 1,
     categories,
-    articles,
-    quizzes,
-    assessments,
+    articles: articleSummaries,
+    quizzes: quizSummaries,
+    assessments: assessmentSummaries,
   }
   const contentVersion = contentHash(JSON.stringify(catalogBase))
   let generatedAt = new Date().toISOString()
@@ -439,7 +475,24 @@ async function main() {
 
   await mkdir(publicContentDir, { recursive: true })
   await mkdir(generatedDir, { recursive: true })
+  await mkdir(path.join(publicContentDir, 'articles'), { recursive: true })
+  await mkdir(path.join(publicContentDir, 'quizzes'), { recursive: true })
+  await mkdir(path.join(publicContentDir, 'assessments'), { recursive: true })
   await writeFile(path.join(publicContentDir, 'catalog.json'), `${JSON.stringify(catalog)}\n`)
+  await Promise.all([
+    ...articles.map((article) => writeFile(
+      path.join(publicContentDir, 'articles', `${article.slug}.json`),
+      `${JSON.stringify(article)}\n`,
+    )),
+    ...quizzes.map((quiz) => writeFile(
+      path.join(publicContentDir, 'quizzes', `${quiz.id}.json`),
+      `${JSON.stringify(quiz)}\n`,
+    )),
+    ...assessments.map((assessment) => writeFile(
+      path.join(publicContentDir, 'assessments', `${assessment.id}.json`),
+      `${JSON.stringify(assessment)}\n`,
+    )),
+  ])
   await writeFile(path.join(generatedDir, 'routes.json'), `${JSON.stringify(routes, null, 2)}\n`)
   console.log(`Generated web content: ${articles.length} articles, ${quizzes.length} quizzes, ${assessments.length} assessments`)
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ArticleRecord } from '~/types/content'
+import type { ArticleSummary } from '~/types/content'
 import { calculateObjectiveSummaries, isObjectiveWeak, type ObjectiveSummary } from '~/utils/progress'
 
 const { catalog, pending, error } = await useCatalog()
@@ -25,7 +25,7 @@ const recommendedArticles = computed(() => (catalog.value?.articles ?? [])
   .sort((left, right) => right.importance - left.importance || right.difficulty - left.difficulty)
   .slice(0, 6))
 
-function findArticle(summary: ObjectiveSummary): ArticleRecord | undefined {
+function findArticle(summary: ObjectiveSummary): ArticleSummary | undefined {
   return catalog.value?.articles.find((article) => article.conceptId === summary.conceptId
     && article.learningObjectives.some((objective) => objective.id === summary.key || objective.id.endsWith(`/${summary.objectiveId}`)))
 }

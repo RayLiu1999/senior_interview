@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import type { ArticleRecord } from '~/types/content'
-
 const route = useRoute()
-const { catalog, pending, error } = await useCatalog()
 const slug = computed(() => Array.isArray(route.params.slug) ? route.params.slug.join('/') : String(route.params.slug))
-const article = computed<ArticleRecord | undefined>(() => catalog.value?.articles.find((item) => item.slug === slug.value))
+const { catalog, pending: catalogPending, error: catalogError } = await useCatalog()
+const { article, pending: articlePending, error: articleError } = await useArticleDetail(slug)
+const pending = computed(() => catalogPending.value || articlePending.value)
+const error = computed(() => catalogError.value || articleError.value)
 const articleQuizzes = computed(() => article.value ? (catalog.value?.quizzes.filter((quiz) => article.value?.quickQuizIds.includes(quiz.id)) ?? []) : [])
 const articleAssessments = computed(() => article.value ? (catalog.value?.assessments.filter((assessment) => article.value?.assessmentIds.includes(assessment.id)) ?? []) : [])
-const { markArticleViewed } = useProgress()
+const { hydrate, markArticleViewed } = useProgress()
 
-onMounted(() => {
-  if (article.value) markArticleViewed(article.value.id)
-})
+watch(article, async (value) => {
+  if (!value) return
+  await hydrate()
+  markArticleViewed(value.id)
+}, { immediate: true })
 </script>
 
 <template>

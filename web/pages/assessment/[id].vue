@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
-const { catalog, pending, error } = await useCatalog()
-const assessment = computed(() => catalog.value?.assessments.find((item) => item.id === String(route.params.id)))
+const assessmentId = computed(() => String(route.params.id))
+const { assessment, pending, error } = await useAssessmentDetail(assessmentId)
 </script>
 
 <template>

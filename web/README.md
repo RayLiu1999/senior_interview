@@ -21,7 +21,7 @@ pnpm e2e
 
 `pnpm e2e` 會在需要時先啟動 production server；第一次執行前請以 `pnpm exec playwright install chromium` 安裝 Chromium。
 
-`pnpm dev`、`pnpm build` 與 `pnpm generate` 都會先重新產生 `public/content/catalog.json` 與 `generated/routes.json`。生成結果包含 553 篇文章、567 題 Quick Quiz 與 52 份 Hard Assessment；內容版本以 `contentVersion` 固定，沒有內容變更時重複建置不會製造無意義 diff。
+`pnpm dev`、`pnpm build` 與 `pnpm generate` 都會先重新產生 `public/content/catalog.json`、各類內容的 detail JSON 與 `generated/routes.json`。`catalog.json` 只保存列表與關聯所需的摘要資料；文章、Quick Quiz、Hard Assessment 的完整 Markdown 會依路由從 `public/content/{articles,quizzes,assessments}` 延遲載入，避免每個頁面的 SSR payload 重複攜帶整份內容。生成結果包含 553 篇文章、567 題 Quick Quiz 與 52 份 Hard Assessment；內容版本以 `contentVersion` 固定，沒有內容變更時重複建置不會製造無意義 diff。
 
 ## 學習資料
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ArticleRecord } from '~/types/content'
+import type { ArticleSummary } from '~/types/content'
 import {
   calculateObjectiveSummaries,
   calculateProgressMetrics,
@@ -30,7 +30,7 @@ function formatPercent(value: number | null): string {
   return value === null ? '—' : `${Math.round(value * 100)}%`
 }
 
-function findArticle(summary: ObjectiveSummary): ArticleRecord | undefined {
+function findArticle(summary: ObjectiveSummary): ArticleSummary | undefined {
   return catalog.value?.articles.find((article) => article.conceptId === summary.conceptId
     && article.learningObjectives.some((objective) => objective.id === summary.key || objective.id.endsWith(`/${summary.objectiveId}`)))
 }

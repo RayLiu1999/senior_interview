@@ -1,7 +1,10 @@
 <script setup lang="ts">
 const route = useRoute()
-const { catalog, pending, error } = await useCatalog()
-const quiz = computed(() => catalog.value?.quizzes.find((item) => item.id === String(route.params.id)))
+const { catalog, pending: catalogPending, error: catalogError } = await useCatalog()
+const quizId = computed(() => String(route.params.id))
+const { quiz, pending: quizPending, error: quizError } = await useQuizDetail(quizId)
+const pending = computed(() => catalogPending.value || quizPending.value)
+const error = computed(() => catalogError.value || quizError.value)
 const article = computed(() => quiz.value?.articleId ? catalog.value?.articles.find((item) => item.id === quiz.value?.articleId) : undefined)
 const relatedQuizzes = computed(() => quiz.value && catalog.value
   ? catalog.value.quizzes.filter((item) => item.sourceFile === quiz.value?.sourceFile).sort((left, right) => left.questionNumber - right.questionNumber)

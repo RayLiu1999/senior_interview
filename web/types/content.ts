@@ -10,7 +10,7 @@ export interface CategoryRecord {
   articleCount: number
 }
 
-export interface ArticleRecord {
+export interface ArticleSummary {
   id: string
   slug: string
   path: string
@@ -23,10 +23,15 @@ export interface ArticleRecord {
   prerequisites: string[]
   conceptId: string
   learningObjectives: LearningObjective[]
-  contentMarkdown: string
   contentHash: string
+  quickQuizPath: string
+  assessmentPath: string
   quickQuizIds: string[]
   assessmentIds: string[]
+}
+
+export interface ArticleRecord extends ArticleSummary {
+  contentMarkdown: string
 }
 
 export type QuizItemType = 'reflection' | 'single-choice' | 'multiple-choice' | 'true-false'
@@ -36,7 +41,7 @@ export interface QuizOption {
   label: string
 }
 
-export interface QuizItem {
+export interface QuizSummary {
   id: string
   sourceFile: string
   questionNumber: number
@@ -48,12 +53,17 @@ export interface QuizItem {
   difficulty: number
   importance: number
   type: QuizItemType
-  options: QuizOption[]
-  correctOptionIds: string[]
-  explanationMarkdown: string
   articlePath: string
   articleId: string | null
   contentHash: string
+}
+
+export interface QuizItem extends QuizSummary {
+  prompt: string
+  answerMarkdown: string
+  options: QuizOption[]
+  correctOptionIds: string[]
+  explanationMarkdown: string
 }
 
 export interface AssessmentRubricRow {
@@ -61,7 +71,7 @@ export interface AssessmentRubricRow {
   description: string
 }
 
-export interface AssessmentRecord {
+export interface AssessmentSummary {
   id: string
   sourceFile: string
   title: string
@@ -74,6 +84,11 @@ export interface AssessmentRecord {
   difficulty: number
   importance: number
   tags: string[]
+  passScore: number
+  contentHash: string
+}
+
+export interface AssessmentRecord extends AssessmentSummary {
   objectiveMarkdown: string
   scenarioMarkdown: string
   taskMarkdown: string
@@ -82,8 +97,7 @@ export interface AssessmentRecord {
   referenceMarkdown: string
   commonMistakesMarkdown: string
   followUpMarkdown: string
-  passScore: number
-  contentHash: string
+  rubricScores: number[]
 }
 
 export interface ContentCatalog {
@@ -91,9 +105,9 @@ export interface ContentCatalog {
   contentVersion: string
   schemaVersion: number
   categories: CategoryRecord[]
-  articles: ArticleRecord[]
-  quizzes: QuizItem[]
-  assessments: AssessmentRecord[]
+  articles: ArticleSummary[]
+  quizzes: QuizSummary[]
+  assessments: AssessmentSummary[]
 }
 
 export interface QuizAttempt {

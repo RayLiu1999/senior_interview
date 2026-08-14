@@ -47,7 +47,7 @@ describe('file-backed progress store lifecycle', () => {
 
   it('upgrades a version-one record while preserving its state', async () => {
     const syncToken = createSyncToken()
-    const updatedAt = '2026-08-13T00:00:00.000Z'
+    const updatedAt = new Date(Date.now() - 12 * 60 * 60 * 1_000).toISOString()
     await writeFile(storePath, JSON.stringify({
       version: 1,
       records: {
