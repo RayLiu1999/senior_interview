@@ -1,6 +1,16 @@
 <script setup lang="ts">
 const { hydrate } = useProgress()
 
+useHead({
+  link: [
+    { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/favicon.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+  ],
+  meta: [
+    { name: 'theme-color', content: '#172039' },
+  ],
+})
+
 onMounted(() => {
   void hydrate()
 })
