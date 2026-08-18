@@ -1,0 +1,33 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      NITRO_HOST: 0.0.0.0
+      PORT: 3000
+      NITRO_PORT: 3000
+      INTERVIEW_PROGRESS_STORE: /app/.data/progress.json
+      INTERVIEW_PROGRESS_RETENTION_DAYS: "${INTERVIEW_PROGRESS_RETENTION_DAYS:-365}"
+      INTERVIEW_PROGRESS_MAX_RECORDS: "${INTERVIEW_PROGRESS_MAX_RECORDS:-10000}"
+      INTERVIEW_PROGRESS_RATE_LIMIT: "${INTERVIEW_PROGRESS_RATE_LIMIT:-30}"
+      INTERVIEW_PROGRESS_RATE_WINDOW_SECONDS: "${INTERVIEW_PROGRESS_RATE_WINDOW_SECONDS:-60}"
+      INTERVIEW_PROGRESS_MAX_BYTES: "${INTERVIEW_PROGRESS_MAX_BYTES:-2097152}"
+      INTERVIEW_PROGRESS_MAX_REQUEST_BYTES: "${INTERVIEW_PROGRESS_MAX_REQUEST_BYTES:-262144}"
+    volumes:
+      - progress-data:/app/.data
+    init: true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+volumes:
+  progress-data:

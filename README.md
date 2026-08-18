@@ -31,6 +31,24 @@
 
 網站目前已實作於 [`web/`](./web/)。執行 `cd web && pnpm install && pnpm dev` 可啟動本地網站；網站開發、測試、建置、local-first 紀錄與匿名同步 API 的說明請見 [web/README.md](./web/README.md)。
 
+### Docker Compose
+
+Production web server 可使用 Docker Compose 啟動：
+
+```sh
+docker compose up --build -d
+```
+
+啟動後開啟 `http://localhost:3000`。`progress-data` named volume 會保存匿名同步紀錄，容器重啟後仍可保留；若主機的 `3000` 已被占用，可設定 `WEB_PORT`。同步資料的保留天數、速率限制與大小限制則可用 `INTERVIEW_PROGRESS_*` 環境變數覆寫。
+
+常用指令：
+
+```sh
+docker compose logs -f web
+docker compose ps
+docker compose down
+```
+
 ## 目錄
 
 | 分類 | 說明 |

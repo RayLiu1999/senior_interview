@@ -1,0 +1,16 @@
+.git
+.github
+.obsidian
+.DS_Store
+
+**/node_modules
+web/.nuxt
+web/.output
+web/.data
+web/test-results
+web/playwright-report
+web/public/content
+
+Dockerfile*
+docker-compose*.yml
+compose*.yml
