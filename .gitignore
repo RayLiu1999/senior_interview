@@ -9,3 +9,4 @@ web/playwright-report/
 web/public/content/articles/
 web/public/content/quizzes/
 web/public/content/assessments/
+.env

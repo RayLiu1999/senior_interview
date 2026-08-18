@@ -36,10 +36,11 @@
 Production web server 可使用 Docker Compose 啟動：
 
 ```sh
+cp .env.example .env
 docker compose up --build -d
 ```
 
-啟動後開啟 `http://localhost:3000`。`progress-data` named volume 會保存匿名同步紀錄，容器重啟後仍可保留；若主機的 `3000` 已被占用，可設定 `WEB_PORT`。同步資料的保留天數、速率限制與大小限制則可用 `INTERVIEW_PROGRESS_*` 環境變數覆寫。
+預設開啟 `http://127.0.0.1:8080`。`.env` 中的 `HOST_IP` 與 `PORT` 只控制主機端的 bind address／port；container 內的 Nuxt server 固定監聽 `3000`。`progress-data` named volume 會保存匿名同步紀錄，容器重啟後仍可保留；同步資料的保留天數、速率限制與大小限制則可用 `INTERVIEW_PROGRESS_*` 環境變數覆寫。
 
 常用指令：
 
