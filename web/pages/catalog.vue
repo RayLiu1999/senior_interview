@@ -3,6 +3,7 @@ import {
   filtersFromQuery,
   filtersToQuery,
   sameFilterState,
+  sortArticles,
   type CatalogFilters,
 } from '~/utils/catalog-filters'
 
@@ -14,13 +15,15 @@ const filters = reactive<CatalogFilters>(filtersFromQuery(route.query as Record<
 
 const filteredArticles = computed(() => {
   const query = filters.search.trim().toLowerCase()
-  return (catalog.value?.articles ?? []).filter((article) => {
+  const matchedArticles = (catalog.value?.articles ?? []).filter((article) => {
     const matchesCategory = filters.category === 'all' || article.categoryId === filters.category
     const matchesImportance = filters.importance === 'all' || article.importance === Number(filters.importance)
     const matchesDifficulty = filters.difficulty === 'all' || article.difficulty >= Number(filters.difficulty)
     const searchable = [article.title, article.conceptId, article.categoryLabel, ...article.tags].join(' ').toLowerCase()
     return matchesCategory && matchesImportance && matchesDifficulty && (!query || searchable.includes(query))
   })
+
+  return sortArticles(matchedArticles, filters.sort)
 })
 
 watch(
@@ -86,7 +89,13 @@ function clearFilters() {
         </label>
         <button class="button button-quiet" type="button" @click="clearFilters">清除</button>
       </div>
-      <div class="result-bar"><span>找到 {{ filteredArticles.length }} 篇文章</span><span v-if="filters.search">搜尋：{{ filters.search }}</span></div>
+      <div class="result-bar">
+        <div class="result-summary">
+          <span>找到 {{ filteredArticles.length }} 篇文章</span>
+          <span v-if="filters.search">搜尋：{{ filters.search }}</span>
+        </div>
+        <CatalogSortControls v-model="filters.sort" />
+      </div>
       <div v-if="filteredArticles.length" class="article-grid">
         <ArticleCard v-for="article in filteredArticles" :key="article.id" :article="article" />
       </div>

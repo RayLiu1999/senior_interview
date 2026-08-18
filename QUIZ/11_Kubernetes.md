@@ -1,6 +1,6 @@
 # Kubernetes - 重點考題 (Quick Quiz)
 
-> 這份考題從 Kubernetes 工作負載、發布、健康檢查、資源與自動擴縮文章中挑選重要程度 4-5 的核心題目。
+> 這份考題從 Kubernetes 工作負載、發布、健康檢查、資源、自動擴縮與網路資料面文章中挑選重要程度 4-5 的核心題目。
 >
 > **使用方式**：先嘗試自己回答，再展開答案提示，最後閱讀對應文章；需要正式驗證時，接著完成 Kubernetes Hard Assessment。
 
@@ -271,3 +271,41 @@
 </details>
 
 📖 [查看完整答案](../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_storage.md)
+
+<a id="q15"></a>
+### Q15: Kubernetes Service 如何從 Service VIP 找到正確的 Pod？
+<!-- Concept ID: concept.kubernetes.networking.service-data-plane; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🔴 必考
+
+請沿著 selector、EndpointSlice、Pod readiness、Service port／targetPort、Service proxy 與流量政策，說明一次 ClusterIP 請求如何抵達 Pod，並提出「Service 存在但連不上」的排查順序。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Service 提供穩定的虛擬端點；selector 找出候選 Pod，EndpointSlice 反映 endpoint address、port、Ready／Serving 狀態，Service proxy 或整合式 data plane 再把流量導向 Pod IP。
+- `port` 與 `targetPort`、readiness、NetworkPolicy、跨 Node route、MTU、SNAT 與來源 IP 都是不同責任邊界；不能只確認 Service 物件存在。
+- 排查應依序檢查 selector、EndpointSlice、Pod listener、Service port、proxy／CNI 規則、policy、路由與封包，並觀察長連線、session affinity 或 rollout 對流量分布的影響。
+
+</details>
+
+📖 [查看完整答案](../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_service_data_plane_and_endpointslice.md)
+
+<a id="q16"></a>
+### Q16: Kubernetes DNS 為什麼解析成功仍可能無法使用服務？
+<!-- Concept ID: concept.kubernetes.networking.dns-service-discovery; Learning Objective IDs: LO-1, LO-2, LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐ (6) | **重要性**: 🔴 必考
+
+請比較 ClusterIP、Headless、ExternalName 與跨 namespace DNS 名稱，並說明如何區分 NXDOMAIN、DNS timeout、Service 無 endpoint、NetworkPolicy 阻擋與後端 port 錯誤。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- ClusterIP DNS 通常解析到 Service VIP，Headless Service 解析到後端 endpoint，ExternalName 是外部 DNS alias；解析成功只代表名稱有答案，不代表 Pod Ready 或應用 listener 正常。
+- 跨 namespace 要使用明確的 namespace-qualified 名稱；要同時檢查 Pod 的 `/etc/resolv.conf`、CoreDNS、Service、EndpointSlice 與實際 DNS response。
+- default-deny egress 後要明確允許到 DNS 的 UDP／TCP 53；timeout 再往 policy、route、CoreDNS endpoint、upstream、MTU 與封包證據排查，不能直接改成公共 DNS。
+
+</details>
+
+📖 [查看完整答案](../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_dns_and_service_discovery.md)

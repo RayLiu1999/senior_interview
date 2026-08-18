@@ -10,8 +10,8 @@ const catalog = JSON.parse(readFileSync(catalogPath, 'utf8')) as ContentCatalog
 
 describe('generated web content catalog', () => {
   it('contains the complete governed content set', () => {
-    expect(catalog.articles).toHaveLength(553)
-    expect(catalog.quizzes).toHaveLength(567)
+    expect(catalog.articles).toHaveLength(555)
+    expect(catalog.quizzes).toHaveLength(569)
     expect(catalog.assessments).toHaveLength(52)
   })
 

@@ -11,6 +11,8 @@
   - `concept.kubernetes.fundamentals.pod-scheduling-boundary`
   - `concept.kubernetes.control-plane.architecture`
   - `concept.kubernetes.networking.service-discovery`
+  - `concept.kubernetes.networking.service-data-plane`
+  - `concept.kubernetes.networking.dns-service-discovery`
   - `concept.kubernetes.networking.ingress-routing`
   - `concept.kubernetes.configuration.configmap-secret`
   - `concept.kubernetes.security.namespace-rbac`
@@ -28,6 +30,8 @@
   - [Namespace 與 RBAC 權限管理](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_namespace_rbac.md)
   - [Kubernetes 網路模型與 CNI](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_networking.md)
   - [Service 的類型](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_service_types.md)
+  - [Service Data Plane 與 EndpointSlice](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_service_data_plane_and_endpointslice.md)
+  - [DNS 與 Service Discovery](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_dns_and_service_discovery.md)
   - [Persistent Volume、Persistent Volume Claim 與 StorageClass](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/kubernetes_storage.md)
   - [什麼是 Kubernetes](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/what_is_kubernetes.md)
   - [Pod 是什麼](../../04_Infrastructure_and_DevOps/Containerization_and_Orchestration/K8s/what_is_pod.md)
@@ -70,6 +74,12 @@
   - `concept.kubernetes.networking.service-discovery/LO-1`
   - `concept.kubernetes.networking.service-discovery/LO-2`
   - `concept.kubernetes.networking.service-discovery/LO-3`
+  - `concept.kubernetes.networking.service-data-plane/LO-1`
+  - `concept.kubernetes.networking.service-data-plane/LO-2`
+  - `concept.kubernetes.networking.service-data-plane/LO-3`
+  - `concept.kubernetes.networking.dns-service-discovery/LO-1`
+  - `concept.kubernetes.networking.dns-service-discovery/LO-2`
+  - `concept.kubernetes.networking.dns-service-discovery/LO-3`
   - `concept.kubernetes.storage.pv-pvc-provisioning/LO-1`
   - `concept.kubernetes.storage.pv-pvc-provisioning/LO-2`
   - `concept.kubernetes.storage.pv-pvc-provisioning/LO-3`

@@ -94,9 +94,16 @@ button { cursor: pointer; }
 .field { display: grid; gap: 6px; color: var(--muted); font-size: 11px; font-weight: 750; }
 .field input, .field select, .answer-input, .notes-input { width: 100%; min-height: 40px; padding: 0 11px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; outline: none; }
 .field input:focus, .field select:focus, .answer-input:focus, .notes-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.result-bar { margin: 20px 0 15px; color: var(--muted); font-size: 13px; }
+.result-bar { flex-wrap: wrap; margin: 20px 0 15px; color: var(--muted); font-size: 13px; }
+.result-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.sort-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
+.sort-label { color: var(--muted); font-size: 11px; font-weight: 750; }
+.sort-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+.sort-button { min-height: 34px; padding: 0 10px; font-size: 12px; }
+.sort-button.active { color: #fff; border-color: var(--accent); background: var(--accent); }
+.sort-button.active:hover { color: #fff; border-color: var(--accent-dark); background: var(--accent-dark); }
 .back-link { display: inline-block; margin-bottom: 25px; color: var(--accent); font-size: 13px; font-weight: 750; }
-.category-summary { margin: -5px 0 25px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.category-summary { flex-wrap: wrap; margin: -5px 0 25px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 .article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; align-items: start; gap: 60px; padding-top: 52px; }
 .article-header { padding: 25px 0 35px; border-bottom: 1px solid var(--line); }
 .article-header h1 { margin: 18px 0 12px; font-size: clamp(33px, 4vw, 50px); line-height: 1.1; letter-spacing: -.055em; }
@@ -297,6 +304,7 @@ button { cursor: pointer; }
   .article-card h3 { min-height: auto; }
   .filter-panel { grid-template-columns: 1fr; }
   .field-search { grid-column: auto; }
+  .sort-controls { width: 100%; margin-left: 0; }
   .article-sidebar { grid-template-columns: 1fr; }
   .section-row { align-items: start; flex-direction: column; gap: 0; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 17px 0; }

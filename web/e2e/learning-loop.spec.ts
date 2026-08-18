@@ -62,16 +62,65 @@ test('article to Hard Assessment result and weak-objective dashboard', async ({ 
   await expect(page.locator('.weakness-card').first()).toBeVisible()
 })
 
+test('sorts catalog articles by difficulty and importance in both directions', async ({ page }) => {
+  await page.goto('/catalog')
+  await expect(page.getByRole('heading', { name: '瀏覽全部主題' })).toBeVisible()
+
+  const sortOptions = [
+    ['難度升冪', 'difficulty-asc'],
+    ['難度降冪', 'difficulty-desc'],
+    ['重要性升冪', 'importance-asc'],
+    ['重要性降冪', 'importance-desc'],
+  ] as const
+
+  for (const [label, queryValue] of sortOptions) {
+    const button = page.getByRole('button', { name: label, exact: true })
+    await button.click()
+    await expect.poll(async () => new URL(page.url()).searchParams.get('sort'))
+      .toBe(queryValue)
+    await expect(button).toHaveAttribute('aria-pressed', 'true')
+  }
+
+  const defaultButton = page.getByRole('button', { name: '原始順序', exact: true })
+  await defaultButton.click()
+  await expect.poll(async () => new URL(page.url()).searchParams.get('sort'))
+    .toBeNull()
+  await expect(defaultButton).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('sorts articles within a specific category and restores the category sort', async ({ page }) => {
+  await page.goto('/categories/01_Computer_Science_Fundamentals')
+  await expect(page.getByRole('heading', { name: '電腦科學基礎' })).toBeVisible()
+
+  const sortButton = page.getByRole('button', { name: '難度降冪', exact: true })
+  await sortButton.click()
+  await expect.poll(async () => new URL(page.url()).searchParams.get('sort'))
+    .toBe('difficulty-desc')
+  await expect(sortButton).toHaveAttribute('aria-pressed', 'true')
+
+  const articleLink = page.locator('.article-card h3 a').first()
+  await expect(articleLink).toBeVisible()
+  await articleLink.click()
+  await expect(page).toHaveURL(/\/articles\//)
+
+  await page.goBack()
+  await expect(page).toHaveURL(/\/categories\/01_Computer_Science_Fundamentals\?sort=difficulty-desc/)
+  await expect(page.getByRole('button', { name: '難度降冪', exact: true })).toHaveAttribute('aria-pressed', 'true')
+})
+
 test('restores catalog filters after returning from an article', async ({ page }) => {
   await page.goto('/catalog')
   await expect(page.getByRole('heading', { name: '瀏覽全部主題' })).toBeVisible()
 
   await page.getByLabel('分類').selectOption('01_Computer_Science_Fundamentals')
   await page.getByLabel('最低難度').selectOption('7')
+  await page.getByRole('button', { name: '重要性降冪', exact: true }).click()
   await expect.poll(async () => new URL(page.url()).searchParams.get('category'))
     .toBe('01_Computer_Science_Fundamentals')
   await expect.poll(async () => new URL(page.url()).searchParams.get('difficulty'))
     .toBe('7')
+  await expect.poll(async () => new URL(page.url()).searchParams.get('sort'))
+    .toBe('importance-desc')
 
   const articleLink = page.locator('.article-card h3 a').first()
   await expect(articleLink).toBeVisible()
@@ -82,4 +131,5 @@ test('restores catalog filters after returning from an article', async ({ page }
   await expect(page).toHaveURL(/\/catalog\?/)
   await expect(page.getByLabel('分類')).toHaveValue('01_Computer_Science_Fundamentals')
   await expect(page.getByLabel('最低難度')).toHaveValue('7')
+  await expect(page.getByRole('button', { name: '重要性降冪', exact: true })).toHaveAttribute('aria-pressed', 'true')
 })

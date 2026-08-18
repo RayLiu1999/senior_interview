@@ -1,9 +1,36 @@
 <script setup lang="ts">
+import {
+  sortArticles,
+  sortFromQuery,
+  sortToQuery,
+  type CatalogSort,
+} from '~/utils/catalog-filters'
+
 const route = useRoute()
+const router = useRouter()
 const { catalog, pending, error } = await useCatalog()
 const categoryId = computed(() => String(route.params.category))
 const category = computed(() => catalog.value?.categories.find((item) => item.id === categoryId.value))
-const articles = computed(() => catalog.value?.articles.filter((article) => article.categoryId === categoryId.value) ?? [])
+const sort = ref<CatalogSort>(sortFromQuery(route.query as Record<string, unknown>))
+const articles = computed(() => sortArticles(
+  catalog.value?.articles.filter((article) => article.categoryId === categoryId.value) ?? [],
+  sort.value,
+))
+
+watch(
+  () => route.query.sort,
+  (value) => {
+    const nextSort = sortFromQuery({ sort: value })
+    if (sort.value !== nextSort) sort.value = nextSort
+  },
+)
+
+watch(sort, (nextSort) => {
+  const currentSort = sortFromQuery(route.query as Record<string, unknown>)
+  if (nextSort !== currentSort) {
+    void router.replace({ query: sortToQuery(nextSort) })
+  }
+})
 </script>
 
 <template>
@@ -15,7 +42,7 @@ const articles = computed(() => catalog.value?.articles.filter((article) => arti
       <SectionHeading eyebrow="Category" :title="category.label" :description="category.description" />
       <div class="category-summary">
         <span>{{ articles.length }} 篇文章</span>
-        <span>依重要程度與難度排列</span>
+        <CatalogSortControls v-model="sort" />
       </div>
       <div class="article-grid">
         <ArticleCard v-for="article in articles" :key="article.id" :article="article" />

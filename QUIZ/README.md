@@ -106,7 +106,7 @@
 | 主題 | 題數 | 說明 |
 |------|------|------|
 | [可觀測性](./10_Observability.md) | 22 | Metrics、Logs、Traces、SLO |
-| [Kubernetes](./11_Kubernetes.md) | 14 | Rolling Update、Probe、資源、HPA、Workload |
+| [Kubernetes](./11_Kubernetes.md) | 16 | Rolling Update、Probe、資源、HPA、Workload、Service Data Plane、DNS |
 | [Docker](./13_Docker.md) | 10 | Container、Dockerfile、映像層、安全、資源限制 |
 | [CI/CD](./14_CI_CD.md) | 7 | Pipeline、部署策略、Feature Flag、GitHub Actions、GitOps |
 | [Cloud Computing](./15_Cloud_Computing.md) | 4 | AWS 服務、雲原生、責任邊界、Serverless |
