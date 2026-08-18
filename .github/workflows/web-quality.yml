@@ -33,6 +33,10 @@ jobs:
         working-directory: web
         run: pnpm install --frozen-lockfile
 
+      - name: Prepare Nuxt test environment
+        working-directory: web
+        run: pnpm exec nuxt prepare
+
       - name: Generate content manifest
         working-directory: web
         run: pnpm content:generate
