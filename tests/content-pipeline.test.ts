@@ -10,9 +10,9 @@ const catalog = JSON.parse(readFileSync(catalogPath, 'utf8')) as ContentCatalog
 
 describe('generated web content catalog', () => {
   it('contains the complete governed content set', () => {
-    expect(catalog.articles).toHaveLength(555)
-    expect(catalog.quizzes).toHaveLength(569)
-    expect(catalog.assessments).toHaveLength(52)
+    expect(catalog.articles).toHaveLength(558)
+    expect(catalog.quizzes).toHaveLength(571)
+    expect(catalog.assessments).toHaveLength(53)
   })
 
   it('keeps every article connected to a concept and learning objectives', () => {
@@ -29,7 +29,7 @@ describe('generated web content catalog', () => {
   })
 
   it('connects nearly every quiz to an article and preserves explicit pending items', () => {
-    expect(catalog.quizzes.filter((quiz) => quiz.articleId === null)).toHaveLength(2)
+    expect(catalog.quizzes.filter((quiz) => quiz.articleId === null)).toHaveLength(1)
     expect(catalog.quizzes.filter((quiz) => quiz.type !== 'reflection')).toHaveLength(3)
   })
 

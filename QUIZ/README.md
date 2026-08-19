@@ -70,7 +70,7 @@
 | Language／Tooling／Framework | [Language／Tooling／Framework Completion Incident](./Hard_Assessments/language_tooling_framework_completion_incident.md) | Runtime、依賴、框架安全、benchmark 與回滾 |
 | Architecture／Delivery／Quality | [Architecture／Delivery／Quality Completion Incident](./Hard_Assessments/architecture_delivery_quality_completion_incident.md) | Gossip、DDD、交付治理、招聘與測試品質 |
 
-目前共有 52 份 Hard Assessment；553 篇主題文章均已完成至少一份硬測驗映射，完整清單請見 [Hard Assessments 索引](./Hard_Assessments/README.md)。
+目前共有 53 份 Hard Assessment；558 篇主題文章均已完成至少一份硬測驗映射，完整清單請見 [Hard Assessments 索引](./Hard_Assessments/README.md)。
 
 ---
 

@@ -12,6 +12,33 @@
 
 AI Engineer 的角色介於後端工程師與資料科學家之間。他們不需要從頭訓練一個 GPT-4，但需要知道如何最好地使用它。
 
+### Reliable AI Systems Engineer：把 Harness 當成主軸
+
+對有後端、分散式系統、Kubernetes、DevOps 和可觀測性背景的工程師，較合適的定位不是「只會串 API」，也不是「純模型研究員」，而是：
+
+> **以 Python 理解 ML 與 AI 原理，以 Node.js／Go 建立可評估、可靠、安全且可部署的 RAG 與 Agent 系統。**
+
+這個定位的差異化不在於做出一次成功的 Agent demo，而在於能回答：
+
+- 模型提出的意圖如何經過獨立授權，才可以呼叫工具？
+- worker crash、timeout 或 client disconnect 後，如何避免遺失狀態或重複副作用？
+- Agent 說「成功」時，如何由真實環境驗證任務確實完成？
+- 新模型的 final answer 分數變高時，如何證明成本、延遲、安全與工具行為沒有回歸？
+
+學習與實作應沿著同一個可演進的 flagship project 前進：
+
+1. **Secure Harness Contract**：先定義資產、租戶、信任邊界、tool capability、威脅模型、評估 schema 與 baseline。
+2. **Deterministic Substrate**：先完成不依賴 LLM 的 API、權限、檢索、資料版本與測試基線。
+3. **Reliable Execution Kernel**：加入 state、step／token／cost budget、deadline、timeout、retry、cancel、checkpoint、resume、reconciliation 與 kill switch。
+4. **Evaluation Harness**：以 task、trial、trajectory、grader、environment outcome 和 regression gate 比較模型與 harness 的變更。
+5. **Productionization**：以 trace、SLO、成本、canary、rollback、incident learning 與安全證據完成上線閉環。
+
+這裡的 Harness 不是某一個框架，而是下列共同能力的工程層：
+
+> `Execution Boundary → Reliable Execution Kernel → Agent Harness + Evaluation Harness → Security／Reliability／Functional Profiles`
+
+安全不是最後才加的獨立章節。deny-by-default、tenant isolation、secret isolation、policy-as-code、approval binding 與副作用控制從第一個 tool 開始就要存在；大型 multi-agent、GPU／training infrastructure 和特定 SDK 的深度整合則可以延後。
+
 ### 1. 核心基礎 (Foundations)
 
 - **程式語言**: **Python** 是絕對的主流。需要熟練掌握，特別是異步編程 (asyncio) 和 API 處理。
@@ -39,9 +66,11 @@ AI Engineer 的角色介於後端工程師與資料科學家之間。他們不�
 
 從單純的問答進化到能執行任務的代理人。
 
-- **框架**: LangChain, LlamaIndex, AutoGen。
-- **工具使用 (Tool Use)**: 讓 LLM 能夠調用外部 API (如搜尋 Google、查詢資料庫、發送 Email)。
-- **記憶管理 (Memory)**: Short-term vs Long-term memory，如何讓 Agent 記住對話上下文。
+- **責任邊界**: 區分 Execution Boundary、Reliable Execution Kernel、Agent Harness、工具與真實環境；框架只是實作選項，不是可靠性保證。
+- **工具使用 (Tool Use)**: 讓 LLM 提出外部 API 意圖，但由獨立的 schema、capability、租戶、policy、approval 與 resource ownership 檢查決定是否執行。
+- **可靠執行**: 掌握 state machine、step／token／cost budget、deadline、timeout、cancellation、checkpoint、resume、replay 與 unknown outcome。
+- **副作用治理**: 區分 read-only、idempotent write、non-idempotent write 與 irreversible operation，設計 idempotency key、reconciliation、compensation 和 audit。
+- **記憶管理 (Memory)**: Short-term vs Long-term memory 不只是保存上下文，還要處理 tenant scope、資料來源、版本、過期、prompt injection 與刪除／隔離政策。
 
 ### 5. 模型微調 (Fine-tuning) & 本地部署
 
@@ -55,9 +84,10 @@ AI Engineer 的角色介於後端工程師與資料科學家之間。他們不�
 
 如何確保 AI 應用的品質？
 
-- **評估框架**: RAGAS (評估 RAG 的檢索與生成品質), TruLens, Arize Phoenix。
-- **監控**: 追蹤 Token 使用量、延遲 (Latency)、成本 (Cost)。
-- **版本控制**: Prompt 的版本管理。
+- **Evaluation Harness**: 以 task、trial、trajectory、grader、environment outcome 與 evaluation suite 評估多步 Agent，而不是只比較 final answer。
+- **多層 Gate**: 分開檢查功能正確性、tool arguments、policy／security invariant、真實環境狀態、成本、延遲、retry amplification 與 trace completeness。
+- **監控與 Trace**: 追蹤 model／provider、prompt、retriever／index、tool／policy、token、TTFT、P95／P99、checkpoint、replay 與租戶隔離證據。
+- **統計與發布**: 使用 repeated trials、paired comparison、slice、grader calibration、confidence interval、effect size、shadow、canary 與 rollback；結果要能是 `inconclusive`，不能強迫所有不完整證據變成通過。
 
 ## 程式碼範例 (Python)
 

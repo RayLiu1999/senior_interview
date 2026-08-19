@@ -393,7 +393,6 @@
 
 ### Q10: 模型監控與 LLM 可觀測性
 <!-- Concept ID: concept.ai.llm.observability; Learning Objective IDs: LO-1, LO-2, LO-3 -->
-<!-- Article mapping: pending -->
 
 **難度**: ⭐⭐⭐⭐⭐⭐⭐ (7) | **重要性**: 🟡 重要
 
@@ -436,6 +435,8 @@
 - 負面反饋增加
 
 </details>
+
+📖 [查看完整答案](../05_Specialized_Topics/AI_Engineering/llm_observability_and_tracing.md)
 
 ---
 

@@ -51,6 +51,7 @@
 | Python Testing Quality | [Python Testing Quality Incident](./python_testing_quality_incident.md) | 9 | pytest、非同步生命週期、依賴與可重現交付 |
 | LLM／Vector Retrieval | [LLM／Vector Retrieval Incident](./llm_vector_retrieval_incident.md) | 9 | Provider、LLM API、向量檢索、RAG 評測與安全 |
 | AI／Node／Microservice 韌性 | [AI／Node.js／Microservice Resilience Incident](./ai_node_microservice_resilience_incident.md) | 10 | Prompt、Runtime、微服務、共識與回滾 |
+| Agent Harness 可靠執行 | [Agent Harness Reliability Incident](./agent_harness_reliability_incident.md) | 10 | Tool 副作用、Checkpoint、Replay、租戶安全與評估閘門 |
 | 可觀測性與交付訊號 | [可觀測性與交付訊號事故診斷](./observability_delivery_signal_incident.md) | 9 | Metrics、Logs、Traces、CI/CD 與供應鏈 |
 | Security Testing Quality | [Security Testing Quality Incident](./security_testing_quality_incident.md) | 10 | 威脅模型、安全測試、品質事故與回復 |
 | AI／Engineering Management Delivery | [AI／Engineering Management Delivery Incident](./ai_management_delivery_incident.md) | 9 | 模型品質、MLOps、團隊決策、培養與領導 |
@@ -66,4 +67,4 @@
 3. 依「期待證據」與評分規準自評，記錄失分點。
 4. 回到文章補強缺口，再回答延伸追問。
 
-目前共有 52 份 Hard Assessment；553 篇主題文章均已完成至少一份硬測驗映射。新增或修改 assessment 後，請執行 `go run ./scripts/validate_assessments.go`。
+目前共有 53 份 Hard Assessment；558 篇主題文章均已完成至少一份硬測驗映射。新增或修改 assessment 後，請執行 `go run ./scripts/validate_assessments.go`。

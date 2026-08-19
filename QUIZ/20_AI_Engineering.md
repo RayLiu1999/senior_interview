@@ -1,6 +1,6 @@
 # AI Engineering - 重點考題 (Quiz)
 
-> 這份考題聚焦於 AI 功能從 RAG 與 prompt 設計走到 MLOps／LLMOps 生產運維時，資深後端工程師必須掌握的品質、安全、成本與交付邊界。
+> 這份考題聚焦於 AI 功能從 RAG 與 prompt 設計走到 Agent Harness、Evaluation Harness 與 MLOps／LLMOps 生產運維時，資深後端工程師必須掌握的品質、安全、成本與交付邊界。
 >
 > **使用方式**：先嘗試自己回答問題，再展開「答案提示」核對重點，最後點擊連結查看完整解答。
 
@@ -78,6 +78,50 @@
 
 📖 [查看完整答案](../05_Specialized_Topics/AI_Engineering/required_skills_for_ai_engineer.md)
 
+<a id="q5-agent-harness-runtime-workflow-與-evaluation-harness"></a>
+
+### Q5: Agent Harness、Runtime、Workflow 與 Evaluation Harness 的責任邊界
+<!-- Concept ID: concept.ai.agent.harness.execution-loop; Learning Objective IDs: concept.ai.agent.harness.execution-loop/LO-1, concept.ai.agent.harness.execution-loop/LO-2, concept.ai.agent.harness.execution-loop/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
+
+請說明 Execution Boundary、Reliable Execution Kernel、Agent Harness、Evaluation Harness 與 Security／Reliability Profile 的差異，並說明為什麼不能讓模型輸出直接成為工具授權。
+
+<details>
+<summary>💡 答案提示</summary>
+
+- Execution Boundary 負責 sandbox、filesystem、network 與 secret 隔離；Reliable Execution Kernel 負責 state、budget、deadline、timeout、retry、cancel、checkpoint、resume、idempotency、audit 與 replay。
+- Agent Harness 負責 context、model loop、tool orchestration 與 verification；Evaluation Harness 負責 task、trial、trajectory、grader、environment outcome、regression 與 release gate。
+- Model output 只是意圖提案，真正執行前仍要通過 schema、capability、身份、租戶、資源所有權、policy、approval 和副作用檢查。
+- Security Profile 可以注入攻擊案例和安全 grader，但 enforcement 必須在共用的 Kernel／Execution Boundary 生效，不能另建一條繞過 production controls 的測試路徑。
+- tool timeout 可能是 unknown outcome；對 non-idempotent write 要查詢狀態或 reconciliation，不能盲目 retry。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/AI_Engineering/agent_harness_and_execution_loop.md)
+
+<a id="q6-為什麼-final-answer-分數上升不代表-agent-真的變好"></a>
+
+### Q6: 為什麼 final answer 分數上升不代表 Agent 真的變好
+<!-- Concept ID: concept.ai.evaluation.harness.release-gates; Learning Objective IDs: concept.ai.evaluation.harness.release-gates/LO-1, concept.ai.evaluation.harness.release-gates/LO-2, concept.ai.evaluation.harness.release-gates/LO-3 -->
+
+**難度**: ⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9) | **重要性**: 🔴 必考
+
+新模型讓 final answer correctness 上升，但 tool error、步數、成本、P99 和跨租戶資料洩漏案例也上升。你會如何建立 Evaluation Harness 與 release gate，判斷這個版本是否能上線？
+
+<details>
+<summary>💡 答案提示</summary>
+
+- 將 task、trial、trajectory／transcript、grader 與 environment outcome 分開保存；不能只把最後文字交給 LLM-as-a-Judge。
+- 用 deterministic grader 驗證 schema、資料庫狀態、權限 invariant、工具副作用、成本與延遲；model-based grader 處理語意品質，並以 human calibration set 檢查 judge bias 與 drift。
+- 使用 golden、regression、adversarial、production slice 和 holdout dataset；對非確定性任務做多次 trial、paired comparison、slice analysis 與信賴區間／effect size。
+- 安全違規、未授權副作用、跨租戶洩漏和 approval bypass 是 blocking gate；完整結果應分為 `ship`、`do not ship` 或 `inconclusive`。
+- 先以 shadow 和隔離環境驗證，再用小比例 canary；保留 prompt、model、tool、policy、index、fixture 與資料回復方案，讓 rollback 能處理已產生的 effect。
+
+</details>
+
+📖 [查看完整答案](../05_Specialized_Topics/AI_Engineering/ai_evaluation_harness_and_release_gates.md)
+
 ## 學習進度檢核
 
 | 評估項目 | 自評 |
@@ -86,5 +130,7 @@
 | 能管理 prompt 版本、token 成本與安全防護 | ⬜ |
 | 能分層評估 RAG retrieval、generation 與 ACL | ⬜ |
 | 能提出 production-ready 的 AI capability 與 rollback | ⬜ |
+| 能設計 Agent Harness 的狀態、權限、恢復與副作用控制 | ⬜ |
+| 能以 Evaluation Harness 和 release gate 證明 Agent 版本可上線 | ⬜ |
 
-**建議**：四題都能回答後，再進入 [AI／Engineering Management Delivery Incident](./Hard_Assessments/ai_management_delivery_incident.md) 做跨主題實戰。
+**建議**：六題都能回答後，先進入 [Agent Harness Reliability Incident](./Hard_Assessments/agent_harness_reliability_incident.md)，再以 [AI／Engineering Management Delivery Incident](./Hard_Assessments/ai_management_delivery_incident.md) 做更廣的跨主題實戰。
